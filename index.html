@@ -1,86 +1,356 @@
+# Sunset Meadow Living — Modern Website Starter
+
+This is a clean, premium-feeling website layout with a large hero image, modern typography, and consistent header and footer used across all pages.
+
+Pages included:
+
+* Home (index.html)
+* About (about.html)
+* Services (services.html)
+* Contact (contact.html)
+
+---
+
+# 1. index.html (HOME PAGE)
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Sunset Meadow Living</title>
-
 <link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header>
-
+<header class="main-header">
 <div class="logo">Sunset Meadow Living</div>
-
 <nav>
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
 </nav>
-
 </header>
 
-
 <section class="hero">
+<div class="hero-overlay"></div>
 
 <div class="hero-content">
+<h1>Peaceful Living.
+<br>Exceptional Care.</h1>
 
-<h1>Luxury Care.<br> Peaceful Living.</h1>
+<p>A calm and supportive place designed for comfort, dignity, and community.</p>
 
-<p>Where comfort, dignity, and community meet.</p>
-
-<a href="services.html" class="btn">Explore Services</a>
-
+<a class="cta" href="services.html">Explore Our Services</a>
 </div>
-
 </section>
-
 
 <section class="intro">
-
 <h2>Welcome to Sunset Meadow Living</h2>
-
 <p>
-A modern and compassionate environment designed to support comfort,
-independence, and quality of life. Our team focuses on personalized care
-in a peaceful setting that truly feels like home.
+A warm and supportive environment where residents can feel at home. Our mission is to provide thoughtful care, peaceful surroundings, and meaningful community.
 </p>
-
 </section>
 
+<section class="features">
 
-<section class="cards">
-
-<div class="card">
-<h3>Personal Care</h3>
-<p>Individualized support designed around each resident’s needs.</p>
+<div class="feature-card">
+<h3>Personalized Care</h3>
+<p>Individual attention and support tailored to every resident.</p>
 </div>
 
-<div class="card">
-<h3>Comfort Living</h3>
-<p>Peaceful spaces designed for relaxation and dignity.</p>
+<div class="feature-card">
+<h3>Comfortable Living</h3>
+<p>Beautiful spaces designed to promote relaxation and dignity.</p>
 </div>
 
-<div class="card">
+<div class="feature-card">
 <h3>Community</h3>
-<p>A warm environment where residents feel connected and supported.</p>
+<p>A welcoming environment where people feel connected and supported.</p>
 </div>
 
 </section>
-
 
 <footer>
+<div class="footer-grid">
 
-<p>© 2026 Sunset Meadow Living</p>
+<div>
+<h4>Sunset Meadow Living</h4>
+<p>Compassionate care in a peaceful environment.</p>
+</div>
 
+<div>
+<h4>Navigation</h4>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+
+<div>
+<h4>Contact</h4>
+<p>Email: info@sunsetmeadowliving.com</p>
+<p>Phone: (000) 000‑0000</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 Sunset Meadow Living
+</div>
 </footer>
 
 </body>
 </html>
+```
+
+---
+
+# 2. style.css
+
+```css
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Inter;
+color:#333;
+background:white;
+}
+
+.main-header{
+position:absolute;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:30px 8%;
+z-index:100;
+}
+
+.logo{
+font-family:"Playfair Display";
+font-size:24px;
+color:white;
+font-weight:600;
+}
+
+nav a{
+margin-left:30px;
+text-decoration:none;
+color:white;
+font-weight:400;
+font-size:15px;
+}
+
+.hero{
+height:100vh;
+background:url("images/hero.jpg") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+}
+
+.hero-overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.35);
+}
+
+.hero-content{
+position:relative;
+color:white;
+text-align:center;
+max-width:700px;
+padding:20px;
+}
+
+.hero h1{
+font-size:72px;
+font-family:"Playfair Display";
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:30px;
+}
+
+.cta{
+padding:14px 36px;
+background:white;
+color:black;
+text-decoration:none;
+border-radius:6px;
+font-weight:500;
+}
+
+.intro{
+padding:120px 12%;
+text-align:center;
+max-width:900px;
+margin:auto;
+}
+
+.intro h2{
+font-family:"Playfair Display";
+font-size:40px;
+margin-bottom:20px;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:40px;
+padding:80px 12%;
+}
+
+.feature-card{
+padding:40px;
+background:#f7f7f7;
+border-radius:10px;
+transition:0.3s;
+}
+
+.feature-card:hover{
+transform:translateY(-6px);
+}
+
+footer{
+background:#111;
+color:white;
+padding:60px 12%;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:40px;
+margin-bottom:40px;
+}
+
+.footer-grid h4{
+margin-bottom:12px;
+}
+
+.footer-grid a{
+display:block;
+text-decoration:none;
+color:#ccc;
+margin-bottom:6px;
+}
+
+.footer-bottom{
+text-align:center;
+border-top:1px solid #333;
+padding-top:20px;
+color:#aaa;
+}
+```
+
+---
+
+# 3. Subpage Template (use for about, services, contact)
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page | Sunset Meadow Living</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="sub-header">
+<div class="logo dark">Sunset Meadow Living</div>
+<nav class="dark">
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section style="padding:140px 12%; max-width:900px; margin:auto;">
+
+<h1>Page Title</h1>
+
+<p>
+Replace this content with your page information.
+</p>
+
+</section>
+
+<footer>
+<div class="footer-grid">
+
+<div>
+<h4>Sunset Meadow Living</h4>
+<p>Compassionate care in a peaceful environment.</p>
+</div>
+
+<div>
+<h4>Navigation</h4>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+
+<div>
+<h4>Contact</h4>
+<p>Email: info@sunsetmeadowliving.com</p>
+<p>Phone: (000) 000‑0000</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 Sunset Meadow Living
+</div>
+</footer>
+
+</body>
+</html>
+```
+
+---
+
+# Hero Image Recommendation
+
+Use a **large image (important for the hero)**:
+
+* 2400 x 1400
+* 4k landscape photo
+* sunset field / peaceful home / nature setting
+
+Put the image here:
+
+```
+images/hero.jpg
+```
+
+---
+
+If you'd like, I can also upgrade this with:
+
+• animated scrolling effects
+• a luxury transparent glass navbar
+• a modern image gallery section
+• a booking or application form
+• SEO optimization
+• deployment to GitHub + live website
+
+which would make this look like a **$30k professional website**.
