@@ -1,1 +1,703 @@
-h
+New 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archetype</title>
+
+  <!-- Fonts & Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #fff;
+      color: #111;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 0.5rem 2%;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      height: 3.5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .brand-name {
+      font-weight: 700;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+
+    .hero {
+  position: relative; /* Important for absolute positioning inside */
+  background-image: url(https://github.com/WhiteLeafcotton/Balcony/blob/main/Cream%20and%20Brown%20Photographic%20Beauty%20Site%20Launch%20Website.png?raw=true);
+  background-size: cover;
+  background-position: center;
+  height: 75vh;
+  width: 96%;
+  margin: calc(3.5rem + 2%) auto 2%;
+  border-radius: 0;
+}
+
+.hero-content {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 2;
+  color: #000;
+}
+
+.hero-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+
+    .section {
+      width: 96%;
+      margin: 0 auto 2%;
+    }
+
+    .boho-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2%;
+      margin-bottom: 2%;
+    }
+
+    .kit {
+      position: relative;
+      overflow: hidden;
+      padding-bottom: 0;
+    }
+
+    .kit-info {
+      position: absolute;
+      top: 0.7rem;
+      left: 0.7rem;
+      background: transparent;
+      padding: 0.5rem 0.8rem;
+      border-radius: 6px;
+      z-index: 2;
+      text-align: left;
+    }
+
+    .kit-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 0.4rem;
+    }
+    .discover-link {
+  position: relative;
+  display: inline-block;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: #000;
+  padding: 0.3rem 0.7rem;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.discover-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #000;
+  transition: all 0.3s ease;
+  z-index: 0;
+}
+
+.discover-link:hover {
+  color: #fff;
+}
+
+.discover-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.discover-link:hover::before {
+  transform: translateY(0);
+}
+
+
+
+
+
+
+
+    
+
+    .kit img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .shop-link {
+  position: relative;
+  display: inline-block;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: #000;
+  padding: 0.3rem 0.7rem;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.shop-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #000;
+  transition: all 0.3s ease;
+  z-index: 0;
+}
+
+.shop-link:hover {
+  color: #fff;
+}
+
+.shop-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.shop-link:hover::before {
+  transform: translateY(0);
+}
+
+
+    .carousel {
+      margin-bottom: 2%;
+      margin-top: 4%;
+    }
+   
+
+    .carousel img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .detail-view {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2000;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: y mandatory;
+    }
+
+    .detail-carousel {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 0;
+      position: relative;
+    }
+    <style>
+.detail-slide {
+  position: relative;
+  height: 500px; /* or whatever height you want */
+  overflow: hidden;
+}
+
+.detail-info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.add-to-bag {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-to-bag:hover {
+  background-color: #333;
+}
+
+
+.detail-info p,
+.detail-info button {
+  margin: 0;
+  font-size: 14px; /* Adjust the font size as needed */
+}
+
+
+
+
+
+.kit-description,
+.kit-price {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+    .detail-carousel img {
+      width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      scroll-snap-align: center;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+    }
+
+    .shop-button {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      border-radius: 5px;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+
+    .shop-button:hover {
+      opacity: 1;
+    }
+
+
+    .kit-description, .kit-price {
+      font-size: 0.9rem;
+      color: #111;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+  color: #555;
+  background-color: #f8f8f8;
+  border-top: 1px solid #eaeaea;
+}
+
+
+
+    @media (max-width: 768px) {
+      .boho-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .kit img {
+        height: 350px;
+      }
+
+      .carousel img {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+  
+<body>
+
+<header>
+  <div class="navbar">
+    <div class="brand-name">Archetype</div>
+    <ul class="nav-links">
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="collections.html">Collections</a></li>
+      <li><a href="textiles.html">Textiles</a></li>
+      <li><a href="plant-atelier.html">Plant Atelier</a></li>
+      <li><a href="edit.html">The Edit</a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">Elevate Your Balcony</h1>
+    <a href="#kits" class="shop-link">Discover</a>
+  </div>
+</div>
+
+
+<section class="section">
+  <!-- First 2x2 Grid -->
+  <div class="boho-grid">
+    <div class="kit" data-kit="1">
+      <img src="https://github.com/WhiteLeafcotton/Balcony/blob/main/2.png?raw=true" alt="Cozy Earth Tones">
+      <div class="kit-info">
+        <h3 class="kit-title">Collections</h3>
+        <p class="kit-description">Warm, earthy tones meet cozy textures in this fall-inspired kit perfect for sipping cider under the city sky.</p>
+        <a href="shop.html" class="shop-link">Shop</a>
+      </div>
+    </div>
+    <div class="kit" data-kit="2">
+      <img src="https://github.com/WhiteLeafcotton/Balcony/blob/main/3.png?raw=true" alt="Garden Glow">
+      <div class="kit-info">
+        <h3 class="kit-title">Gallery</h3>
+        <p class="kit-description">Warm, earthy tones meet cozy textures in this fall-inspired kit perfect for sipping cider under the city sky.</p>
+        <a href="shop.html" class="shop-link">Shop</a>
+      </div>
+    </div>
+    <div class="kit" data-kit="3">
+      <img src="https://github.com/WhiteLeafcotton/Balcony/blob/main/Cream%20and%20Brown%20Photographic%20Beauty%20Site%20Launch%20Website.png?raw=true" alt="Gallery">
+      <div class="kit-info">
+        <h3 class="kit-title">Plant Atelier</h3>
+        <p class="kit-description">Warm, earthy tones meet cozy textures in this fall-inspired kit perfect for sipping cider under the city sky.</p>
+        <a href="shop.html" class="shop-link">Shop</a>
+      </div>
+    </div>
+    <div class="kit" data-kit="4">
+      <img src="https://github.com/WhiteLeafcotton/Balcony/blob/main/3.png?raw=true">
+      <div class="kit-info">
+        <h3 class="kit-title">Textles</h3>
+        <p class="kit-description">Warm, earthy tones meet cozy textures in this fall-inspired kit perfect for sipping cider under the city sky.</p>
+        <a href="shop.html" class="shop-link">Shop</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wide Featured Kit -->
+<div class="carousel featured-kit" style="margin-bottom: 20px;">
+  <div class="kit" data-kit="00">
+    <img src="https://github.com/WhiteLeafcotton/Balcony/blob/main/3.png?raw=true" alt="Garden Glow Feature Kit" />
+    <div class="kit-info">
+      <h3 class="kit-title">First Editions</h3>
+      <p class="kit-description">
+        Warm, earthy tones meet cozy textures in this fall-inspired kit perfect for sipping cider under the city sky.
+      </p>
+      <a href="#" class="discover-link">Discover</a>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Second 2x2 Grid -->
+  <div class="boho-grid">
+    <div class="kit" data-kit="5">
+      <img src="https://github.com/WhiteLeafcotton/Balcony/blob/main/3.png?raw=true" alt="Sunset Vibes">
+      <div class="kit-info">
+        <h3 class="kit-title">Fragrance</h3>
+        <p class="kit-description">Warm, earthy tones meet cozy textures in this fall-inspired kit perfect for sipping cider under the city sky.</p>
+        <a href="shop.html" class="shop-link">Shop</a>
+      </div>
+    </div>
+    <div class="kit" data-kit="6">
+      <img src="https://github.com/WhiteLeafcotton/Balcony/blob/main/6.png?raw=true" alt="Urban Escape">
+      <div class="kit-info">
+        <h3 class="kit-title">The Edit</h3>
+        <p class="kit-description">Warm, earthy tones meet cozy textures in this fall-inspired kit perfect for sipping cider under the city sky.</p>
+        <a href="shop.html" class="shop-link">Shop</a>
+      </div>
+    </div>
+  </div>
+<footer style="background-color: #f8f8f8; padding: 0.5rem 1rem 0.3rem; border-top: 1px solid #ddd; font-size: 0.72rem; color: #555;">
+  <div style="max-width: 1200px; margin: auto; display: grid; grid-template-columns: 1.7fr 1fr 1fr; gap: 1rem; align-items: start;">
+
+    <!-- Newsletter -->
+    <div>
+      <form style="display: flex; flex-direction: column; gap: 0.4rem;">
+        <label style="font-weight: 600; font-size: 0.9rem; color: #333;">Subscribe</label>
+        <input type="email" placeholder="Your email" style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.8rem; background-color: #fff;">
+        <button type="submit" style="padding: 0.45rem; background-color: #111; color: #fff; border: none; border-radius: 4px; font-size: 0.78rem; cursor: pointer;">Join</button>
+        <p style="font-size: 0.65rem; color: #777; margin: 0.3rem 0 0; line-height: 1.4;">
+          By clicking on "Subscribe", you confirm that you have read and understood our 
+          <a href="#" style="text-decoration: underline; color: #666;">Privacy Statement</a> 
+          and that you want to receive the newsletter and other marketing communication as set out therein.
+        </p>
+        <div style="margin-top: 0.4rem; display: flex; gap: 0.4rem;">
+          <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="14" height="14" style="filter: grayscale(100%) brightness(0.6); opacity: 0.75;"></a>
+          <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" width="14" height="14" style="filter: grayscale(100%) brightness(0.6); opacity: 0.75;"></a>
+          <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="Twitter" width="14" height="14" style="filter: grayscale(100%) brightness(0.6); opacity: 0.75;"></a>
+          <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/pinterest.svg" alt="Pinterest" width="14" height="14" style="filter: grayscale(100%) brightness(0.6); opacity: 0.75;"></a>
+          <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" width="14" height="14" style="filter: grayscale(100%) brightness(0.6); opacity: 0.75;"></a>
+        </div>
+      </form>
+    </div>
+
+    <!-- Legal -->
+    <div style="text-align: right;">
+      <label style="font-weight: 600; color: #333;">Legal</label>
+      <ul style="list-style: none; padding: 0; margin: 0.3rem 0 0; line-height: 1.5;">
+        <li><a href="#" style="color: #555; text-decoration: none;">Legal Notice</a></li>
+        <li><a href="#" style="color: #555; text-decoration: none;">Privacy Statement</a></li>
+        <li><a href="#" style="color: #555; text-decoration: none;">Cookie Policy</a></li>
+        <li><a href="#" style="color: #555; text-decoration: none;">Cookie Settings</a></li>
+        <li><a href="#" style="color: #555; text-decoration: none;">Terms of Sale</a></li>
+      </ul>
+    </div>
+
+    <!-- Exclusive Services -->
+    <div style="text-align: right;">
+      <label style="font-weight: 600; color: #333;">Exclusive Services</label>
+      <ul style="list-style: none; padding: 0; margin: 0.3rem 0 0; line-height: 1.5;">
+        <li><a href="#" style="color: #555; text-decoration: none;">Work with us</a></li>
+        <li><a href="#" style="color: #555; text-decoration: none;">Track your order</a></li>
+        <li><a href="#" style="color: #555; text-decoration: none;">Returns</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div style="text-align: right; margin-top: 0.4rem; font-size: 0.65rem; color: #999;">
+    &copy; 2025 Archetype. All rights reserved.
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+</section>
+
+
+<!-- Detail View Section -->
+<div class="detail-view" id="detailView" onclick="closeDetail()">
+  <div class="detail-carousel" id="detailCarousel">
+    <!-- Images dynamically injected here -->
+    <div class="detail-info">
+    <p class="kit-description">${image.description}</p>
+    <p class="kit-price">${image.price}</p>
+  </div>
+</div>
+ 
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.kit').click(function () {
+      var kitId = $(this).data('kit');
+      var images = getImagesForKit(kitId);
+
+      var $carousel = $('#detailCarousel');
+      $carousel.empty();
+
+      images.forEach(image => {
+  $carousel.append(`
+    <div class="detail-slide" style="position: relative;">
+      <div class="image-wrapper" style="position: relative; width: 100%; height: 100%;">
+        <img src="${image.src}" alt="Detail Image" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;" />
+        
+        <div class="detail-info" style="position: absolute; top: 16px; left: 16px; color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.6); z-index: 2;">
+          <p class="kit-description">${image.description}</p>
+          <p class="kit-price">${image.price}</p>
+        </div>
+        
+        <button class="add-to-bag" style="
+          position: absolute;
+          bottom: 16px;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 2;
+          padding: 10px 20px;
+          background-color: black;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          font-size: 14px;
+          cursor: pointer;
+        ">
+          Add to Bag
+        </button>
+      </div>
+    </div>
+  `);
+});
+
+
+
+
+      $('#detailView').fadeIn();
+    });
+
+    $('#detailView').on('click', function (e) {
+      if (e.target.id === 'detailView') {
+        closeDetail();
+      }
+    });
+  });
+
+  function getImagesForKit(id) {
+  switch (id) {
+    case 1:
+      return [
+        {
+          src: "https://github.com/WhiteLeafcotton/Balcony/blob/main/2.png?raw=true",
+          description: "Boho Kit 1: Cozy neutral tones with hanging planters.",
+          price: "$120.00"
+        },
+        {
+          src: "https://via.placeholder.com/800x1000?text=Boho+Kit+1+Image+2",
+          description: "Comfy pillows and low seating setup.",
+          price: "$120.00"
+        },
+        {
+          src: "https://via.placeholder.com/800x1000?text=Boho+Kit+1+Image+3",
+          description: "Soft lighting for an intimate evening vibe.",
+          price: "$120.00"
+        }
+      ];
+    case 2:
+      return [
+        {
+          src: "https://github.com/WhiteLeafcotton/Balcony/blob/main/IMG_9453.jpg?raw=true",
+          description: "Boho Kit 2: Vibrant orange tones and rich textures.",
+          price: "$135.00"
+        },
+        {
+          src: "https://via.placeholder.com/800x1000?text=Boho+Kit+2+Image+2",
+          description: "Terracotta and earthy decor blend beautifully.",
+          price: "$135.00"
+        },
+        {
+          src: "https://via.placeholder.com/800x1000?text=Boho+Kit+2+Image+3",
+          description: "Ambient lantern lighting with rattan accents.",
+          price: "$135.00"
+        }
+      ];
+       case 3:
+      return [
+        {
+          src: "https://github.com/WhiteLeafcotton/Balcony/blob/main/2.png?raw=true",
+          description: "Boho Kit 2: Vibrant orange tones and rich textures.",
+          price: "$135.00"
+        },
+        {
+          src: "https://github.com/WhiteLeafcotton/Balcony/blob/main/3.png?raw=true",
+          description: "Terracotta and earthy decor blend beautifully.",
+          price: "$135.00"
+        },
+        {
+          src: "https://github.com/WhiteLeafcotton/Balcony/blob/main/1.png?raw=true",
+          description: "Ambient lantern lighting with rattan accents.",
+          price: "$135.00"
+        }
+      ];
+    // Repeat similarly for kits 3–10...
+    default:
+      return [
+        {
+          src: "https://via.placeholder.com/800x1000?text=Default+Image+1",
+          description: "Default kit image one.",
+          price: "$100.00"
+        },
+        {
+          src: "https://via.placeholder.com/800x1000?text=Default+Image+2",
+          description: "Default kit image two.",
+          price: "$100.00"
+        },
+        {
+          src: "https://via.placeholder.com/800x1000?text=Default+Image+3",
+          description: "Default kit image three.",
+          price: "$100.00"
+        }
+      ];
+  }
+}
+
+
+  function closeDetail() {
+    $('#detailView').fadeOut();
+  }
+</script>
+  
+
+</body>
+</html>
+
+
+
