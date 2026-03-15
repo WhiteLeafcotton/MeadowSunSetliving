@@ -194,26 +194,91 @@ body{
 }
 
 /* SERVICES */
-.services-section{
-    padding:120px 10%;
-    text-align:center;
-    background:#f9f9f9;
+}
+/* SERVICES */
+.services-section {
+    padding: 120px 10%;
+    text-align: center;
+    background: #f9f9f9;
+    position: relative;
 }
 
-.services-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:30px;
-    margin-top:40px;
+/* Section title */
+.services-section h2 {
+    font-family: 'Playfair Display', serif; /* elegant serif for title */
+    font-size: 48px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.service-box{
-    background:white;
-    padding:35px;
-    border-radius:10px;
-    box-shadow:0 5px 20px rgba(0,0,0,.05);
+/* Section subtitle */
+.services-section p.services-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #555;
+    max-width: 750px;
+    margin: 0 auto 50px auto;
+    line-height: 1.6;
 }
 
+/* Optional glass/blur effect behind subtitle */
+.services-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    z-index: -1;
+    border-radius: 15px;
+}
+
+/* Grid for service boxes */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Individual service box */
+.service-box {
+    background: white;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+
+/* Service box titles */
+.service-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+}
+
+/* Service box text */
+.service-box p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
 /* PAYMENTS */
 .payment-section{
     background:white;
