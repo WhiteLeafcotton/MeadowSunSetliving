@@ -57,7 +57,7 @@ position:relative;
 .dropdown-menu{
 position:absolute;
 top:100%;
-left:0;
+right:0;
 background:white;
 list-style:none;
 padding:10px 0;
