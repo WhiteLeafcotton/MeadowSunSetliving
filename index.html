@@ -19,56 +19,54 @@
 
 
 
+  
 <header>
 
 <nav class="navbar">
 
+<div class="menu-button" onclick="toggleMenu()">
+☰
+</div>
+
 <div class="logo">Sunset Meadow Living</div>
-
-<ul class="nav-links">
-
-<li class="dropdown">
-<a href="index.html">Home</a>
-<ul class="dropdown-menu">
-<li><a href="#">Overview</a></li>
-<li><a href="#">Photo Gallery</a></li>
-<li><a href="#">Schedule Tour</a></li>
-</ul>
-</li>
-
-<li class="dropdown">
-<a href="#">Services</a>
-<ul class="dropdown-menu">
-<li><a href="#">Daily Living Assistance</a></li>
-<li><a href="#">Medication Management</a></li>
-<li><a href="#">Meals & Nutrition</a></li>
-<li><a href="#">Activities</a></li>
-</ul>
-</li>
-
-<li class="dropdown">
-<a href="#">About</a>
-<ul class="dropdown-menu">
-<li><a href="#">Our Home</a></li>
-<li><a href="#">Care Philosophy</a></li>
-<li><a href="#">Meet Our Team</a></li>
-</ul>
-</li>
-
-<li class="dropdown">
-<a href="#">Contact</a>
-<ul class="dropdown-menu">
-<li><a href="#">Call Us</a></li>
-<li><a href="#">Email</a></li>
-<li><a href="#">Schedule Tour</a></li>
-</ul>
-</li>
-
-</ul>
 
 </nav>
 
 </header>
+
+
+<!-- SIDE MENU -->
+
+<div id="sideMenu" class="side-menu">
+
+<a class="close-btn" onclick="toggleMenu()">×</a>
+
+<a href="index.html">Home</a>
+
+<div class="menu-group">
+<span>Services</span>
+<a href="#">Daily Living Assistance</a>
+<a href="#">Medication Management</a>
+<a href="#">Meals & Nutrition</a>
+<a href="#">Activities</a>
+</div>
+
+<div class="menu-group">
+<span>About</span>
+<a href="#">Our Home</a>
+<a href="#">Care Philosophy</a>
+<a href="#">Meet Our Team</a>
+</div>
+
+<div class="menu-group">
+<span>Contact</span>
+<a href="#">Call Us</a>
+<a href="#">Email</a>
+<a href="#">Schedule Tour</a>
+</div>
+
+</div>
+
 
 
 
