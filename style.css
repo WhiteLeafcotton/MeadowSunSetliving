@@ -1,4 +1,3 @@
-
 *{
     margin:0;
     padding:0;
@@ -11,7 +10,7 @@ body{
     background:white;
 }
 
-/* NAVBAR */
+/* NAVBAR – GLASS EFFECT */
 .navbar{
     display:flex;
     align-items:center;
@@ -22,6 +21,9 @@ body{
     margin:auto;
     position: relative; /* for dropdowns */
     z-index: 1000;
+
+    background: rgba(255,255,255,0.85); /* translucent glass */
+    backdrop-filter: blur(10px);
 }
 
 /* LOGO */
@@ -49,6 +51,7 @@ body{
     position:absolute;
     top:100%;
     left:0;
+    right:auto;
     background:white;
     list-style:none;
     padding:10px 0;
@@ -61,6 +64,9 @@ body{
     transform:translateY(10px);
     transition:all .25s ease;
     z-index:2000;
+
+    /* Prevent dropdown from spilling off screen */
+    max-width: calc(100vw - 40px);
 }
 
 /* REMOVE BULLETS */
@@ -81,7 +87,7 @@ body{
     background:#f2f2f2;
 }
 
-/* SHOW ON HOVER (DESKTOP ONLY) */
+/* SHOW DROPDOWN ON HOVER (DESKTOP ONLY) */
 .dropdown:hover .dropdown-menu{
     opacity:1;
     visibility:visible;
@@ -111,14 +117,15 @@ body{
     }
 }
 
-/* SIDE MENU */
+/* SIDE MENU – GLASS EFFECT */
 .side-menu{
     height:100%;
     width:0;
     position:fixed;
     top:0;
     right:0;
-    background:white;
+    background: rgba(255,255,255,0.85); /* translucent glass */
+    backdrop-filter: blur(10px);
     overflow-x:hidden;
     transition:.4s;
     padding-top:80px;
