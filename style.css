@@ -94,9 +94,11 @@ transform:translateY(0);
 
 .menu-button{
 display:none;
-font-size:30px;
+font-size:32px;
 cursor:pointer;
+z-index:3000;
 }
+
 @media (max-width:900px){
 
 .nav-links{
