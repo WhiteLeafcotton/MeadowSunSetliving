@@ -470,5 +470,37 @@ border-radius:30px;
 font-size:14px;
 }
 
+/* MOBILE NAV */
+
+@media(max-width:768px){
+
+.nav-links{
+flex-direction:column;
+gap:20px;
+background:white;
+position:absolute;
+top:80px;
+left:0;
+width:100%;
+padding:30px;
+display:none;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.dropdown-menu{
+position:static;
+box-shadow:none;
+opacity:1;
+visibility:visible;
+transform:none;
+padding-left:15px;
+}
+
+}
+
+
 
 
