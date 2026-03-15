@@ -83,7 +83,17 @@ display:none;
 font-size:30px;
 cursor:pointer;
 }
+@media (max-width:900px){
 
+.nav-links{
+display:none;
+}
+
+.menu-button{
+display:block;
+}
+
+}
 /* SIDE MENU */
 
 .side-menu{
@@ -290,15 +300,7 @@ color:#888;
 
 /* MOBILE */
 
-@media (max-width:900px){
 
-.nav-links{
-display:none;
-}
-
-.menu-button{
-display:block;
-}
 
 .hero h1{
 font-size:42px;
