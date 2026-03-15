@@ -41,11 +41,13 @@ display:flex;
 gap:40px;
 }
 
-.nav-links a{
-text-decoration:none;
-color:#222;
-font-weight:500;
+.nav-links{
+list-style:none;
+display:flex;
+gap:25px;
+align-items:center;
 }
+
 
 /* DROPDOWN */
 
