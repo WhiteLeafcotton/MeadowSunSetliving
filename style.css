@@ -13,20 +13,14 @@ background:white;
 
 /* NAVBAR */
 
-/* NAVBAR */
-
 .navbar{
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:18px 6%;
-position:fixed;
-top:0;
-left:0;
+padding:18px 30px;
 width:100%;
-background:rgba(255,255,255,0.95);
-backdrop-filter:blur(10px);
-z-index:1000;
+max-width:1400px;
+margin:auto;
 }
 
 /* LOGO */
