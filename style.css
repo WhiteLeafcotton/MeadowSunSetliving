@@ -13,24 +13,29 @@ background:white;
 
 /* NAVBAR */
 
+/* NAVBAR */
+
 .navbar{
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:18px 10%;
+padding:18px 6%;
 position:fixed;
 top:0;
 left:0;
 width:100%;
-background:rgba(255,255,255,0.85);
+background:rgba(255,255,255,0.95);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
+
+/* LOGO */
 
 .logo{
 font-family:"Playfair Display",serif;
 font-size:24px;
 font-weight:600;
+white-space:nowrap;
 }
 
 /* NAV LINKS */
@@ -38,37 +43,51 @@ font-weight:600;
 .nav-links{
 list-style:none;
 display:flex;
-gap:25px;
 align-items:center;
+gap:28px;
+margin:0;
+padding:0;
+}
+
+.nav-links li{
+position:relative;
 }
 
 .nav-links a{
 text-decoration:none;
 color:#222;
 font-weight:500;
+padding:8px 4px;
+display:block;
 }
 
 /* DROPDOWN */
-.dropdown{
-position:relative;
-}
 
 .dropdown-menu{
 position:absolute;
 top:100%;
-right:0;
+left:0;
 background:white;
 list-style:none;
-padding:10px 0;
-min-width:200px;
+padding:8px 0;
+margin:0;
+min-width:180px;
 border-radius:6px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
+box-shadow:0 10px 20px rgba(0,0,0,0.08);
 
 opacity:0;
 visibility:hidden;
-transform:translateY(10px);
-transition:all .25s ease;
-z-index:2000;
+transform:translateY(8px);
+transition:all .2s ease;
+}
+
+.dropdown-menu li{
+padding:0;
+}
+
+.dropdown-menu a{
+padding:10px 18px;
+white-space:nowrap;
 }
 
 .dropdown:hover .dropdown-menu{
@@ -76,6 +95,7 @@ opacity:1;
 visibility:visible;
 transform:translateY(0);
 }
+
 /* MOBILE MENU BUTTON */
 
 .menu-button{
