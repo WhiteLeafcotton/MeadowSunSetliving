@@ -20,11 +20,54 @@
 
 
 
+```html
 <header>
 
 <nav class="navbar">
 
 <div class="logo">Sunset Meadow Living</div>
+
+<!-- DESKTOP MENU -->
+
+<ul class="nav-links">
+
+<li class="dropdown">
+<a href="#">Home</a>
+<ul class="dropdown-menu">
+<li><a href="#">Overview</a></li>
+<li><a href="#">Gallery</a></li>
+<li><a href="#">Schedule Tour</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="#">Services</a>
+<ul class="dropdown-menu">
+<li><a href="#">Daily Living Assistance</a></li>
+<li><a href="#">Medication Management</a></li>
+<li><a href="#">Meals</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="#">About</a>
+<ul class="dropdown-menu">
+<li><a href="#">Our Home</a></li>
+<li><a href="#">Our Team</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="#">Contact</a>
+<ul class="dropdown-menu">
+<li><a href="#">Call</a></li>
+<li><a href="#">Email</a></li>
+</ul>
+</li>
+
+</ul>
+
+<!-- MOBILE MENU BUTTON -->
 
 <div class="menu-button" onclick="toggleMenu()">☰</div>
 
@@ -33,82 +76,20 @@
 </header>
 
 
-
-<!-- SIDE MENU -->
+<!-- MOBILE SLIDE MENU -->
 
 <div id="sideMenu" class="side-menu">
 
 <a class="close-btn" onclick="toggleMenu()">×</a>
 
-<a href="index.html">Home</a>
-
-<div class="menu-group">
-<span>Services</span>
-<a href="#">Daily Living Assistance</a>
-<a href="#">Medication Management</a>
-<a href="#">Meals & Nutrition</a>
-<a href="#">Activities</a>
-</div>
-
-<div class="menu-group">
-<span>About</span>
-<a href="#">Our Home</a>
-<a href="#">Care Philosophy</a>
-<a href="#">Meet Our Team</a>
-</div>
-
-<div class="menu-group">
-<span>Contact</span>
-<a href="#">Call Us</a>
-<a href="#">Email</a>
-<a href="#">Schedule Tour</a>
-</div>
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
 
 </div>
+```
 
-
-<script>
-
-function toggleMenu(){
-
-const menu = document.getElementById("sideMenu");
-
-if(menu.style.width === "280px"){
-menu.style.width = "0";
-}else{
-menu.style.width = "280px";
-}
-
-}
-
-</script>
-
-
-
-
-<section class="hero">
-
-<div class="hero-overlay"></div>
-
-<div class="hero-content">
-
-<h1>
-Peaceful Living<br>
-Exceptional Care
-</h1>
-
-<p>
-A peaceful and compassionate environment designed
-for comfort, dignity and community.
-</p>
-
-<a href="#" class="btn-primary">
-Explore Services
-</a>
-
-</div>
-
-</section>
 
 
 
