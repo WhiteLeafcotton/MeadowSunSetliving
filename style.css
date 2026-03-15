@@ -265,8 +265,7 @@ body{
     color: #555;
     line-height: 1.5;
 }
-/* FEATURE SECTION WITH LEFT LARGE CARD */
-
+/* FEATURE SECTION */
 
 .feature-section{
 width:100%;
@@ -278,8 +277,6 @@ background-repeat:no-repeat;
 position:relative;
 }
 
-/* subtle overlay for readability */
-
 .feature-section::before{
 content:"";
 position:absolute;
@@ -290,8 +287,6 @@ height:100%;
 background:rgba(0,0,0,0.25);
 }
 
-/* layout */
-
 .feature-container{
 position:relative;
 z-index:2;
@@ -301,32 +296,12 @@ gap:50px;
 align-items:center;
 }
 
-/* large left card */
-
 .feature-large{
 background:rgba(255,255,255,0.92);
 padding:50px;
 border-radius:20px;
 box-shadow:0 20px 50px rgba(0,0,0,.15);
-min-height:420px;
-display:flex;
-flex-direction:column;
-justify-content:center;
 }
-
-.feature-large h2{
-font-family:'Playfair Display',serif;
-font-size:34px;
-margin-bottom:20px;
-}
-
-.feature-large p{
-font-size:17px;
-line-height:1.7;
-color:#444;
-}
-
-/* stacked cards */
 
 .feature-cards{
 display:flex;
@@ -339,36 +314,6 @@ background:rgba(255,255,255,0.9);
 padding:28px;
 border-radius:14px;
 box-shadow:0 10px 30px rgba(0,0,0,.12);
-transition:.3s;
-}
-
-.feature-card:hover{
-transform:translateY(-6px);
-}
-
-.feature-card h3{
-font-family:'Playfair Display',serif;
-font-size:20px;
-margin-bottom:10px;
-}
-
-.feature-card p{
-font-size:15px;
-color:#555;
-}
-
-/* mobile */
-
-@media (max-width:900px){
-
-.feature-container{
-grid-template-columns:1fr;
-}
-
-.feature-large{
-min-height:auto;
-}
-
 }
 /* CTA */
 .cta-section{
