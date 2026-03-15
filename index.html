@@ -1,72 +1,294 @@
-<!-- HEADER / NAVBAR -->
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sunset Meadow Living</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
 <header>
-  <nav class="navbar">
-    <div class="logo">Sunset Meadow Living</div>
 
-    <ul class="nav-links">
-      <li class="dropdown">
-        <a href="#">Home</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Overview</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">Schedule Tour</a></li>
-        </ul>
-      </li>
+<nav class="navbar">
 
-      <li class="dropdown">
-        <a href="#">Services</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Daily Living Assistance</a></li>
-          <li><a href="#">Medication Management</a></li>
-          <li><a href="#">Meals</a></li>
-        </ul>
-      </li>
+<div class="logo">Sunset Meadow Living</div>
 
-      <li class="dropdown">
-        <a href="#">About</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Our Home</a></li>
-          <li><a href="#">Our Team</a></li>
-        </ul>
-      </li>
+<ul class="nav-links">
 
-      <li class="dropdown">
-        <a href="#">Contact</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Call</a></li>
-          <li><a href="#">Email</a></li>
-        </ul>
-      </li>
-    </ul>
+<li class="dropdown">
+<a href="#">Home</a>
+<ul class="dropdown-menu">
+<li><a href="#">Overview</a></li>
+<li><a href="#">Gallery</a></li>
+<li><a href="#">Schedule Tour</a></li>
+</ul>
+</li>
 
-    <div class="menu-button" onclick="toggleMenu()">☰</div>
-  </nav>
+<li class="dropdown">
+<a href="#">Services</a>
+<ul class="dropdown-menu">
+<li><a href="#">Daily Living Assistance</a></li>
+<li><a href="#">Medication Management</a></li>
+<li><a href="#">Meals</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="#">About</a>
+<ul class="dropdown-menu">
+<li><a href="#">Our Home</a></li>
+<li><a href="#">Our Team</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="#">Contact</a>
+<ul class="dropdown-menu">
+<li><a href="#">Call</a></li>
+<li><a href="#">Email</a></li>
+</ul>
+</li>
+
+</ul>
+
+<div class="menu-button" onclick="toggleMenu()">☰</div>
+
+</nav>
+
 </header>
 
-<!-- SIDE MENU FOR MOBILE -->
+
 <div id="sideMenu" class="side-menu">
-  <a class="close-btn" onclick="toggleMenu()">×</a>
-  <a href="#">Home</a>
-  <a href="#">Services</a>
-  <a href="#">About</a>
-  <a href="#">Contact</a>
+
+<a class="close-btn" onclick="toggleMenu()">×</a>
+
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+
 </div>
 
+
+<section class="hero">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<h1>Compassionate Care<br>Peaceful Living</h1>
+
+<p>
+A warm and supportive environment where dignity,
+comfort and quality of life come first.
+</p>
+
+<a href="#" class="btn-primary">Schedule a Tour</a>
+
+</div>
+
+</section>
+
+
+
+<section class="services-section">
+
+<h2>Clients We Serve</h2>
+
+<p class="services-sub">
+Personalized support designed to promote comfort,
+dignity and quality of life.
+</p>
+
+<div class="services-grid">
+
+<div class="service-box">
+<h3>Daily Living Assistance</h3>
+<p>Support with bathing, dressing and mobility.</p>
+</div>
+
+<div class="service-box">
+<h3>Medication Management</h3>
+<p>Safe monitoring and assistance with medications.</p>
+</div>
+
+<div class="service-box">
+<h3>24/7 Supervision</h3>
+<p>Caregivers available day and night.</p>
+</div>
+
+<div class="service-box">
+<h3>Meal Preparation</h3>
+<p>Healthy meals prepared daily.</p>
+</div>
+
+<div class="service-box">
+<h3>Social Activities</h3>
+<p>Activities designed to encourage engagement.</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="services-section">
+
+<div class="payment-section">
+
+<h3>Payment Options Accepted</h3>
+
+<div class="payments">
+
+<span>Private Pay</span>
+<span>Long-Term Care Insurance</span>
+<span>Veterans Benefits</span>
+<span>Medicaid Waiver Programs</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="cards">
+
+<div class="card">
+
+<h3>Personalized Care</h3>
+
+<p>
+Individual care plans tailored to each resident.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Comfortable Living</h3>
+
+<p>
+Peaceful surroundings designed for relaxation.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Community</h3>
+
+<p>
+A warm environment where residents feel connected.
+</p>
+
+</div>
+
+</section>
+
+
+
+<section class="cta-section">
+
+<h2>Discover a Better Living Experience</h2>
+
+<p>
+Contact us today to learn more about Sunset Meadow Living.
+</p>
+
+<a href="#" class="btn-secondary">Contact Us</a>
+
+</section>
+
+
+
+<footer class="premium-footer">
+
+<div class="footer-top">
+
+<div class="footer-brand">
+
+<h3>Sunset Meadow Living</h3>
+
+<p>
+Compassionate care in a peaceful and welcoming
+environment where comfort and dignity come first.
+</p>
+
+<div class="social-icons">
+
+<a href="#" class="social-icon">🌐</a>
+<a href="#" class="social-icon">📘</a>
+<a href="#" class="social-icon">📸</a>
+<a href="#" class="social-icon">▶️</a>
+
+</div>
+
+</div>
+
+
+<div class="footer-links">
+
+<h4>Navigation</h4>
+
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+
+</div>
+
+
+<div class="footer-links">
+
+<h4>Contact</h4>
+
+<p>Email: info@sunsetmeadowliving.com</p>
+<p>Phone: (000) 000-0000</p>
+<p>Location: United States</p>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+© 2026 Sunset Meadow Living • All Rights Reserved
+
+</div>
+
+</footer>
+
+
 <script>
+
 function toggleMenu(){
-  let menu = document.getElementById("sideMenu");
-  if(menu.style.width === "260px"){
-    menu.style.width = "0";
-  } else {
-    menu.style.width = "260px";
-  }
+
+let menu = document.getElementById("sideMenu");
+
+if(menu.style.width === "260px"){
+menu.style.width = "0";
+}else{
+menu.style.width = "260px";
 }
 
-// OPTIONAL: close menu when clicking outside
-window.addEventListener("click", function(e){
-  let menu = document.getElementById("sideMenu");
-  if(!menu.contains(e.target) && !document.querySelector(".menu-button").contains(e.target)){
-    menu.style.width = "0";
-  }
-});
+}
+
 </script>
+
+</body>
+</html>
+```
