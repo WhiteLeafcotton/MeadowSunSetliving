@@ -94,10 +94,12 @@ text-transform:uppercase;
 .close-btn{
 position:absolute;
 top:20px;
-right:30px;
+left:30px;
 font-size:30px;
 cursor:pointer;
 }
+
+
 
 
 
