@@ -266,110 +266,42 @@ body{
     line-height: 1.5;
 }
 /* FEATURE SECTION WITH LEFT LARGE CARD */
-.feature-section{
-display:flex;
-gap:40px;
-padding:120px 10%;
-background-image:url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true");
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-}
+<section class="feature-section">
 
-/* Overlay for readability */
-.feature-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.35);
-    z-index: 0;
-}
+<div class="feature-container">
 
-/* Left large card */
-.feature-left {
-    flex: 1 1 300px; /* responsive width */
-    max-width: 400px;
-    position: relative;
-    z-index: 1;
-}
+<div class="feature-large">
+<h2>Comfortable Living</h2>
+<p>
+At Sunset Meadow Assisted Living, residents enjoy a peaceful environment
+designed to support independence, dignity, and personalized care.
+Our community offers beautiful spaces, compassionate staff,
+and amenities that promote comfort and well-being.
+</p>
+</div>
 
-.large-card {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    height: 100%; /* makes it vertical and tall */
-}
+<div class="feature-cards">
 
-.large-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #1a1a1a;
-}
+<div class="feature-card">
+<h3>Private Suites</h3>
+<p>Beautifully designed rooms that provide comfort, privacy, and safety.</p>
+</div>
 
-.large-card p {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-}
+<div class="feature-card">
+<h3>Daily Activities</h3>
+<p>Engaging social programs, wellness activities, and community events.</p>
+</div>
 
-/* Right stacked cards */
-.feature-right {
-    flex: 1 1 300px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    position: relative;
-    z-index: 1;
-}
+<div class="feature-card">
+<h3>Professional Care</h3>
+<p>Dedicated caregivers and licensed nurses available 24/7.</p>
+</div>
 
-/* Individual right cards */
-.feature-card {
-    background: rgba(255, 255, 255, 0.85);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+</div>
 
-.feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
+</div>
 
-.feature-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 12px;
-    color: #1a1a1a;
-}
-
-.feature-card p {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    color: #333;
-    line-height: 1.5;
-}
-
-/* Responsive adjustments */
-@media (max-width: 900px) {
-    .feature-section {
-        flex-direction: column;
-        padding: 80px 5%;
-    }
-
-    .feature-left,
-    .feature-right {
-        max-width: 100%;
-    }
-}
+</section>
 
 /* CTA */
 .cta-section{
