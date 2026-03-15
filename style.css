@@ -15,13 +15,14 @@ background:white;
 
 .navbar{
 display:flex;
-justify-content:space-between;
 align-items:center;
+justify-content:space-between;
 padding:18px 10%;
 position:fixed;
 top:0;
+left:0;
 width:100%;
-background:rgba(255,255,255,.7);
+background:rgba(255,255,255,0.85);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
@@ -31,6 +32,8 @@ font-family:"Playfair Display",serif;
 font-size:24px;
 font-weight:600;
 }
+
+/* NAV LINKS */
 
 .nav-links{
 list-style:none;
@@ -44,38 +47,53 @@ color:#222;
 font-weight:500;
 }
 
+/* DROPDOWN */
+
 .dropdown{
 position:relative;
 }
 
 .dropdown-menu{
 position:absolute;
-top:35px;
+top:100%;
 left:0;
 background:white;
 list-style:none;
 padding:10px 0;
-min-width:180px;
-box-shadow:0 10px 25px rgba(0,0,0,.1);
+margin:0;
+min-width:200px;
+border-radius:6px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
 opacity:0;
 visibility:hidden;
-transition:.3s;
+transform:translateY(10px);
+transition:all .25s ease;
+z-index:2000;
+}
+
+.dropdown-menu li{
+list-style:none;
+padding:10px 20px;
+}
+
+.dropdown-menu a{
+text-decoration:none;
+color:#333;
+display:block;
 }
 
 .dropdown:hover .dropdown-menu{
 opacity:1;
 visibility:visible;
-}
-
-.dropdown-menu li{
-padding:10px 20px;
+transform:translateY(0);
 }
 
 /* MOBILE MENU BUTTON */
 
 .menu-button{
 display:none;
-font-size:28px;
+font-size:30px;
 cursor:pointer;
 }
 
