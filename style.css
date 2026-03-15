@@ -438,6 +438,8 @@ min-height:380px;
 
 /* FEATURE SECTION */
 
+/* FEATURE SECTION */
+
 .feature-section{
 width:100%;
 padding:120px 8%;
@@ -498,5 +500,12 @@ font-family:'Playfair Display',serif;
 margin-bottom:10px;
 }
 
+@media (max-width:900px){
+
+.feature-container{
+grid-template-columns:1fr;
+}
+
+}
 
 }
