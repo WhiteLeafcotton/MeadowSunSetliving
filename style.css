@@ -15,22 +15,25 @@ background:white;
 
 .navbar{
 display:flex;
-justify-content:space-between;
 align-items:center;
+justify-content:space-between;
 padding:18px 10%;
 position:fixed;
 top:0;
+left:0;
 width:100%;
-background:rgba(255,255,255,.7);
+background:rgba(255,255,255,0.8);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
 
 .logo{
 font-family:"Playfair Display",serif;
-font-size:24px;
+font-size:22px;
 font-weight:600;
 }
+
+/* DESKTOP NAV */
 
 .nav-links{
 list-style:none;
@@ -38,38 +41,37 @@ display:flex;
 gap:40px;
 }
 
-.nav-links a{
-text-decoration:none;
-color:#222;
-font-weight:500;
+/* MENU ICON */
+
+.menu-button{
+font-size:30px;
+cursor:pointer;
+display:none;
+color:#111;
 }
 
-.dropdown{
-position:relative;
+/* MOBILE FIX */
+
+@media (max-width:768px){
+
+.nav-links{
+display:none;
 }
 
-.dropdown-menu{
+.menu-button{
+display:block;
 position:absolute;
-top:35px;
-left:0;
-background:white;
-list-style:none;
-padding:10px 0;
-min-width:180px;
-box-shadow:0 10px 25px rgba(0,0,0,.1);
-opacity:0;
-visibility:hidden;
-transition:.3s;
+right:25px;
+top:18px;
+z-index:1100;
 }
 
-.dropdown:hover .dropdown-menu{
-opacity:1;
-visibility:visible;
+.logo{
+font-size:20px;
 }
 
-.dropdown-menu li{
-padding:10px 20px;
 }
+
 
 /* MOBILE MENU BUTTON */
 
