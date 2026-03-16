@@ -358,7 +358,56 @@ width:100%;
 }
 
 }
+/* SERVICES BUTTON AREA */
 
+.services-buttons{
+margin-top:60px;
+display:flex;
+justify-content:center;
+gap:24px;
+flex-wrap:wrap;
+}
+
+/* PRIMARY BUTTON */
+
+.btn-primary{
+padding:16px 42px;
+background:#1f3d5a;
+color:white;
+border-radius:8px;
+text-decoration:none;
+font-weight:500;
+letter-spacing:.5px;
+box-shadow:0 8px 25px rgba(0,0,0,.12);
+transition:all .25s ease;
+}
+
+.btn-primary:hover{
+transform:translateY(-3px);
+box-shadow:0 12px 35px rgba(0,0,0,.18);
+background:#274b6e;
+}
+
+/* SECONDARY BUTTON */
+
+.btn-outline{
+padding:16px 42px;
+border:2px solid #1f3d5a;
+border-radius:8px;
+text-decoration:none;
+color:#1f3d5a;
+font-weight:500;
+letter-spacing:.5px;
+background:white;
+transition:all .25s ease;
+}
+
+.btn-outline:hover{
+background:#1f3d5a;
+color:white;
+transform:translateY(-3px);
+box-shadow:0 12px 35px rgba(0,0,0,.15);
+}
 /* CTA */
 
 .cta-section{
