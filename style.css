@@ -256,6 +256,21 @@ color:#555;
 }
 
 /* FEATURE SECTION */
+.service-icon{
+font-size:28px;
+margin-bottom:18px;
+color:#1f3d5a;
+display:inline-block;
+
+/* subtle circle background */
+width:60px;
+height:60px;
+line-height:60px;
+text-align:center;
+border-radius:50%;
+
+background:rgba(31,61,90,0.08);
+}
 /* FEATURE SECTION */
 /* PREMIUM INTRO CARD */
 
