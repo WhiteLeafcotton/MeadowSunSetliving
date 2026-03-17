@@ -309,6 +309,19 @@ transform:translateY(-2px);
 transform:translateY(-2px);
 }
 /* FEATURE SECTION */
+
+.feature-section::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(
+to right,
+rgba(0,0,0,0.35),
+rgba(0,0,0,0.05)
+);
+}
+
+
 /* PREMIUM INTRO CARD */
 
 .services-intro{
