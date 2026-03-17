@@ -257,12 +257,53 @@ color:#555;
 
 /* FEATURE SECTION */
 /* FEATURE SECTION */
+/* PREMIUM INTRO CARD */
 
+.services-intro{
+max-width:900px;
+margin:0 auto 60px;
+padding:50px 60px;
+border-radius:18px;
+
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(12px);
+
+box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+/* TITLE */
+
+.services-intro h2{
+font-family:'Playfair Display',serif;
+font-size:48px;
+color:white;
+margin-bottom:20px;
+}
+
+/* MAIN TEXT */
+
+.services-intro p{
+color:rgba(255,255,255,0.85);
+font-size:18px;
+line-height:1.7;
+margin-bottom:18px;
+}
+
+/* HIGHLIGHT LINE */
+
+.services-intro .highlight{
+font-size:19px;
+color:white;
+font-weight:500;
+border-left:3px solid rgba(255,255,255,0.6);
+padding-left:18px;
+margin-top:10px;
+}
 .feature-section{
 padding:140px 8%;
 position:relative;
 }
-
+/* FEATURE SECTION */
 /* CONTAINER */
 
 .feature-container{
