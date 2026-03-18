@@ -15,19 +15,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<script>
 
-const cta = document.querySelector(".cta-content");
-
-window.addEventListener("scroll", () => {
-  const rect = cta.getBoundingClientRect();
-
-  if(rect.top < window.innerHeight - 100){
-    cta.classList.add("show");
-  }
-});
-
-</script>
   
 <body>
 
@@ -314,7 +302,18 @@ menu.style.width = "260px";
 }
 
 </script>
+<script>
+const cta = document.querySelector(".cta-content");
+
+window.addEventListener("scroll", () => {
+  const rect = cta.getBoundingClientRect();
+
+  if(rect.top < window.innerHeight - 100){
+    cta.classList.add("show");
+  }
+});
+</script>
 
 </body>
 </html>
-```
+
