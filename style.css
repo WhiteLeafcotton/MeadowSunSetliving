@@ -646,7 +646,9 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
 
 /* BUTTON (same style as your premium buttons) */
 
-.btn-primary{
+/* CTA BUTTON (ISOLATED — WON’T AFFECT OTHER BUTTONS) */
+
+.cta-btn{
   background:white;
   color:black;
   padding:14px 36px;
@@ -654,9 +656,10 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
   border-radius:30px;
   font-weight:500;
   transition:all .3s ease;
+  display:inline-block;
 }
 
-.btn-primary:hover{
+.cta-btn:hover{
   background:#eaeaea;
   transform:translateY(-2px);
 }
