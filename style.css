@@ -588,6 +588,7 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
 }
 
 /* DARK BLUE → TRANSPARENT GRADIENT */
+/* PREMIUM BLUE FADE */
 
 .cta-gradient{
   position:absolute;
@@ -595,12 +596,15 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
   z-index:1;
 
   background:linear-gradient(
-    to right,
-    rgba(8,22,45,0.95) 0%,
-    rgba(8,22,45,0.9) 35%,
-    rgba(8,22,45,0.65) 55%,
-    rgba(8,22,45,0.25) 75%,
-    rgba(8,22,45,0) 100%
+    90deg,
+    #08162d 0%,
+    #0a1c38 25%,
+    rgba(10,28,56,0.95) 40%,
+    rgba(10,28,56,0.75) 55%,
+    rgba(10,28,56,0.45) 70%,
+    rgba(10,28,56,0.2) 82%,
+    rgba(10,28,56,0.05) 92%,
+    rgba(10,28,56,0) 100%
   );
 }
 
