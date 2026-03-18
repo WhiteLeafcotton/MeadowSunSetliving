@@ -814,4 +814,17 @@ color:#888;
 }
 
 /* MOBILE */
+@media(max-width:768px){
+
+  .cta-content{
+    grid-template-columns:1fr;
+    gap:30px;
+    padding:0 25px;
+  }
+
+  .cta-left h2{
+    font-size:36px;
+  }
+
+}
 
