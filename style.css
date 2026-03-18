@@ -636,41 +636,55 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
 
 /* LEFT SIDE TEXT */
 
+/* LEFT SIDE TEXT */
+
 .cta-left{
-  max-width:620px;
+  max-width:600px;
 }
+
+/* HEADLINE */
 
 .cta-left h2{
   font-family:'Playfair Display', serif;
-  font-size:58px;
-  line-height:1.1;
-  margin-bottom:18px;
+  font-size:52px; /* slightly reduced */
+  line-height:1.12;
+  margin-bottom:22px;
 
-  letter-spacing:-1px;
+  letter-spacing:-0.8px;
+  font-weight:600;
 
-  /* 🔥 THIS IS THE KEY */
-  text-shadow:0 10px 30px rgba(0,0,0,0.4);
+  text-shadow:0 8px 25px rgba(0,0,0,0.35);
 }
+
+/* PARAGRAPH */
 
 .cta-left p{
-  font-size:19px;
-  line-height:1.85;
+  font-size:18px;
+  line-height:1.9;
 
-  color:rgba(255,255,255,0.92);
+  color:rgba(255,255,255,0.9);
 
-  max-width:520px;
+  max-width:500px;
 
-  /* subtle depth */
-  text-shadow:0 5px 20px rgba(0,0,0,0.25);
+  text-shadow:0 4px 18px rgba(0,0,0,0.25);
 }
+
+/* PREMIUM ACCENT LINE */
 
 .cta-left::before{
   content:"";
   display:block;
-  width:60px;
+
+  width:70px;
   height:2px;
-  background:rgba(255,255,255,0.6);
-  margin-bottom:25px;
+
+  background:linear-gradient(
+    to right,
+    rgba(255,255,255,0.9),
+    rgba(255,255,255,0.2)
+  );
+
+  margin-bottom:28px;
 }
 
 /* RIGHT SIDE BUTTON */
