@@ -635,12 +635,13 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
   font-family:'Playfair Display',serif;
   font-size:48px;
   margin-bottom:20px;
+  color:white; /* FORCE VISIBILITY */
 }
 
 .cta-content p{
   font-size:18px;
   line-height:1.7;
-  color:rgba(255,255,255,0.9);
+  color:rgba(255,255,255,0.95); /* BRIGHTER */
   margin-bottom:35px;
 }
 
