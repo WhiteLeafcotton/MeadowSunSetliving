@@ -750,23 +750,7 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
 
 /* MOBILE */
 
-@media(max-width:768px){
 
-  .cta-content{
-    flex-direction:column;
-    align-items:flex-start;
-    padding:0 25px;
-  }
-
-  .cta-left h2{
-    font-size:36px;
-  }
-
-  .cta-right{
-    margin-top:25px;
-  }
-
-}
 /* FOOTER */
 
 .premium-footer{
