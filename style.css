@@ -609,7 +609,9 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
   opacity:1; /* FORCE VISIBLE (debug safe) */
   transform:none;
 }
-
+.cta-content{
+  background:red;
+}
 /* TEXT */
 
 .cta-content h2{
