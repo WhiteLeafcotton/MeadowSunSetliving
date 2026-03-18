@@ -15,7 +15,20 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+<script>
 
+const cta = document.querySelector(".cta-content");
+
+window.addEventListener("scroll", () => {
+  const rect = cta.getBoundingClientRect();
+
+  if(rect.top < window.innerHeight - 100){
+    cta.classList.add("show");
+  }
+});
+
+</script>
+  
 <body>
 
 <header>
@@ -201,16 +214,27 @@ comfort, and personalized care.
 
 <section class="cta-section">
 
-<h2>Discover a Better Living Experience</h2>
+  <!-- BACKGROUND SLIDES -->
+  <div class="cta-bg">
+    <div class="cta-slide"></div>
+    <div class="cta-slide"></div>
+    <div class="cta-slide"></div>
+    <div class="cta-slide"></div>
+  </div>
 
-<p>
-Contact us today to learn more about Sunset Meadow Living.
-</p>
+  <!-- DARK OVERLAY -->
+  <div class="cta-overlay"></div>
 
-<div class="hero-buttons">
-<a href="#" class="btn-primary">Schedule a Tour</a>
-<a href="#" class="btn-outline">View Services</a>
-</div>
+  <!-- CONTENT -->
+  <div class="cta-content">
+    <h2>Experience Care That Feels Like Home</h2>
+
+    <p>
+      Schedule a private tour and discover a warm, welcoming environment designed for comfort, dignity, and peace of mind.
+    </p>
+
+    <a href="#" class="btn-primary">Contact Us</a>
+  </div>
 
 </section>
 
