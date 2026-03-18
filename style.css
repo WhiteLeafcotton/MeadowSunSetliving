@@ -563,12 +563,12 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
 }
 
 .cta-slide:nth-child(2){
-  background-image:url("https://images.unsplash.com/photo-1581579185169-1c0c0b7b1e6b");
+  background-image:url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true");
   animation-delay:6s;
 }
 
 .cta-slide:nth-child(3){
-  background-image:url("https://images.unsplash.com/photo-1576765607924-b1d3c7d2e60d");
+  background-image:url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true");
   animation-delay:12s;
 }
 
@@ -808,6 +808,23 @@ color:#888;
 
   .cta-left h2{
     font-size:36px;
+  }
+
+}
+@media(max-width:768px){
+
+  .cta-content{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:0 25px;
+  }
+
+  .cta-left h2{
+    font-size:36px;
+  }
+
+  .cta-right{
+    margin-top:25px;
   }
 
 }
