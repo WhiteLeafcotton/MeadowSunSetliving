@@ -484,64 +484,71 @@ width:340px;
   .feature-cards{
     position:absolute;
     right:20px;
-    top:35%; /* push stack higher on the image */
+    top:30%; /* push stack higher */
     transform:translateY(-50%);
     display:flex;
     flex-direction:column;
-    align-items:flex-end; /* keeps stack right-aligned */
+    align-items:flex-end;
     gap:20px;
     z-index:10;
   }
 
-  /* FEATURE CARD RESET */
+  /* FULL RESET OF FEATURE CARD */
   .feature-card{
-    position:relative;
-    display:flex;
-    flex-direction:column; /* vertical stack */
-    align-items:center;
-    width:auto; /* shrink to content */
-    padding:0; /* remove all padding */
-    background:none !important; /* remove white background */
-    box-shadow:none !important; /* remove shadow */
-    border-radius:0;
-    text-decoration:none;
-    color:inherit;
+    position:relative !important;
+    display:flex !important;
+    flex-direction:column !important; /* icon on top */
+    align-items:center !important;
+    justify-content:flex-start !important;
+
+    width:auto !important;
+    padding:0 !important;
+
+    background:transparent !important; /* 🔥 completely transparent */
+    box-shadow:none !important;
+    border-radius:0 !important;
+
+    color:inherit !important;
+    text-decoration:none !important;
   }
 
   /* ICON */
   .feature-card i{
-    font-size:32px; /* bigger */
-    width:60px;
-    height:60px;
-    color:white;
-    background:#0b1f3f;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    margin-bottom:8px; /* space to text */
-    position:relative; /* stacked layout */
-    top:0;
-    right:0;
+    font-size:36px !important;
+    width:64px !important;
+    height:64px !important;
+
+    color:white !important;
+    background:#0b1f3f !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    border-radius:50% !important;
+    margin-bottom:8px !important;
+    position:relative !important;
+    top:0 !important;
+    right:0 !important;
   }
 
   /* TEXT UNDER ICON */
   .feature-card h3{
-    font-size:16px;
-    font-weight:600;
-    color:white; /* now text is readable on image */
-    text-align:center;
-    margin:0;
-    padding:0;
+    font-size:16px !important;
+    font-weight:600 !important;
+    color:white !important;
+    text-align:center !important;
+    margin:0 !important;
+    padding:0 !important;
   }
 
   .feature-card p{
-    display:none;
+    display:none !important;
   }
 
   /* TAP EFFECT */
   .feature-card:active{
-    transform:scale(0.96);
+    transform:scale(0.96) !important;
   }
 
 }
