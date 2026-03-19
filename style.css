@@ -481,10 +481,11 @@ width:340px;
 
 @media(max-width:768px){
 
+  /* STACKED FEATURE CARDS */
   .feature-cards{
     position:absolute;
     right:20px;
-    top:30%; /* push stack higher */
+    top:35%; /* moved slightly down from 30% so icons don't bleed */
     transform:translateY(-50%);
     display:flex;
     flex-direction:column;
@@ -503,7 +504,7 @@ width:340px;
     width:auto !important;
     padding:0 !important;
 
-    background:none !important; /* 🔥 transparent */
+    background:none !important; 
     box-shadow:none !important;
     border-radius:0 !important;
 
@@ -511,6 +512,7 @@ width:340px;
     text-decoration:none !important;
   }
 
+  /* ICON */
   .feature-card i{
     font-size:36px !important;
     width:64px !important;
@@ -524,9 +526,10 @@ width:340px;
     justify-content:center !important;
 
     border-radius:50% !important;
-    margin-bottom:8px !important;
+    margin-bottom:12px !important; /* increase space to text */
   }
 
+  /* TEXT UNDER ICON */
   .feature-card h3{
     font-size:16px !important;
     font-weight:600 !important;
@@ -542,6 +545,27 @@ width:340px;
 
   .feature-card:active{
     transform:scale(0.96) !important;
+  }
+
+  /* MAIN FEATURE TEXT ON IMAGE */
+  .feature-large .feature-text{
+    position:absolute !important;
+    bottom:16px !important; /* push to bottom */
+    left:16px !important;   /* push to left */
+    right:auto !important;
+    top:auto !important;
+    color:white !important;
+  }
+
+  .feature-large .feature-text h2{
+    font-size:28px !important;
+    margin:0 0 8px 0 !important;
+  }
+
+  .feature-large .feature-text p{
+    font-size:14px !important;
+    max-width:80% !important;
+    margin:0 !important;
   }
 
 }
