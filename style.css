@@ -494,58 +494,66 @@ width:340px;
   .feature-cards{
     position:absolute;
     right:20px;
-    top:50%;
+    top:40%; /* ⬅️ pushed UP slightly */
     transform:translateY(-50%);
 
     display:flex;
     flex-direction:column;
-    gap:18px;
+    gap:22px; /* more breathing room */
     z-index:10;
   }
 
-  /* CLEAN ROW (NO WHITE BOX) */
+  /* CLEAN ROW */
 
   .feature-card{
     display:flex;
+    flex-direction:row-reverse; /* 🔥 FORCES ICON TO RIGHT SIDE */
     align-items:center;
-    justify-content:space-between;
+    justify-content:flex-start;
 
-    width:180px;
+    width:200px;
 
     padding:0;
 
-    background:transparent; /* ✅ removes white box */
-    box-shadow:none;        /* ✅ removes shadow */
+    background:transparent;
+    box-shadow:none;
 
-    cursor:default;
+    text-decoration:none;
+    color:inherit;
   }
 
-  /* TEXT LEFT */
+  /* TEXT */
 
   .feature-card h3{
-    font-size:14px;
+    font-size:16px; /* ⬅️ bigger */
     margin:0;
-    color:white; /* 🔥 important for readability on image */
-    font-weight:500;
+    margin-right:12px;
+
+    color:#0b1f3f; /* 🔥 your brand blue */
+    font-weight:600;
   }
 
-  /* ICON RIGHT */
+  /* ICON */
 
   .feature-card i{
-    font-size:18px;
-    color:white;
+    font-size:20px; /* ⬅️ bigger */
 
-    margin-left:12px;
+    color:#0b1f3f; /* 🔥 same blue */
 
-    /* ❌ REMOVE ALL BACKGROUND */
     background:none;
     padding:0;
   }
 
-  /* HIDE DESCRIPTION COMPLETELY */
+  /* REMOVE DESCRIPTION */
 
   .feature-card p{
     display:none;
+  }
+
+  /* TAP FEEDBACK */
+
+  .feature-card:active{
+    transform:scale(0.96);
   }
 
 }
