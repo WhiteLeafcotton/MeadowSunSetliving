@@ -500,10 +500,13 @@ margin-top:10px;
 
   /* MAIN CARD FIX (prevents stretching) */
   .feature-large{
-    display:block !important;
-    height:auto !important; /* 🔥 prevents stretch */
-    min-height:420px;
-  }
+  display:block !important;
+  height:420px !important; /* ✅ fixed size */
+  width:100%;
+  border-radius:18px;
+  position:relative;
+  overflow:hidden;
+}
 
   .feature-text{
     position:absolute !important;
