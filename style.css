@@ -507,33 +507,7 @@ margin-top:10px;
   color: #555;
   margin: 0;
 }
-
-/* 🔥 REMOVE LINK LOOK COMPLETELY */
-.feature-card,
-.feature-card:link,
-.feature-card:visited,
-.feature-card:hover,
-.feature-card:active {
-  text-decoration: none !important;
-  color: inherit !important;
-}
-
-.feature-card h3,
-.feature-card p {
-  text-decoration: none !important;
-  color: inherit !important;
-}
-
-/* LARGE SCREEN */
-@media (min-width: 1200px){
-  .feature-large{
-    height: 600px;
-  }
-}
-
-}
-
-/* 🔥 HARD RESET LINK STYLING */
+/* 🔥 REMOVE LINK STYLING (FINAL CLEAN VERSION) */
 .feature-card,
 .feature-card:link,
 .feature-card:visited,
@@ -542,23 +516,16 @@ margin-top:10px;
 .feature-card:focus {
   text-decoration: none !important;
   color: inherit !important;
-  -webkit-text-fill-color: inherit !important;
 }
 
-/* 🔥 FORCE CHILD TEXT */
-.feature-card h3,
-.feature-card p {
-  color: #0b1f3f !important;   /* title color */
+/* 🔥 TEXT ONLY (SAFE) */
+.feature-card h3{
+  color: #0b1f3f !important;
   text-decoration: none !important;
 }
 
-/* subtext color separately */
-.feature-card p {
+.feature-card p{
   color: #555 !important;
-}
-
-/* remove any underline behavior anywhere */
-.feature-card * {
   text-decoration: none !important;
 }
 
