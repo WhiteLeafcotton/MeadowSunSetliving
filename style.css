@@ -493,18 +493,17 @@ width:340px;
     z-index:10;
   }
 
-  /* FULL RESET OF FEATURE CARD */
   .feature-card{
     position:relative !important;
     display:flex !important;
-    flex-direction:column !important; /* icon on top */
+    flex-direction:column !important; /* vertical stack */
     align-items:center !important;
     justify-content:flex-start !important;
 
     width:auto !important;
     padding:0 !important;
 
-    background:transparent !important; /* 🔥 completely transparent */
+    background:none !important; /* 🔥 transparent */
     box-shadow:none !important;
     border-radius:0 !important;
 
@@ -512,7 +511,6 @@ width:340px;
     text-decoration:none !important;
   }
 
-  /* ICON */
   .feature-card i{
     font-size:36px !important;
     width:64px !important;
@@ -527,12 +525,8 @@ width:340px;
 
     border-radius:50% !important;
     margin-bottom:8px !important;
-    position:relative !important;
-    top:0 !important;
-    right:0 !important;
   }
 
-  /* TEXT UNDER ICON */
   .feature-card h3{
     font-size:16px !important;
     font-weight:600 !important;
@@ -546,7 +540,6 @@ width:340px;
     display:none !important;
   }
 
-  /* TAP EFFECT */
   .feature-card:active{
     transform:scale(0.96) !important;
   }
