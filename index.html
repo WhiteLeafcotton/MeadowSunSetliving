@@ -330,33 +330,50 @@ function toggleMenu(){
 }
 
 // ANIMATIONS
-const cards = document.querySelectorAll(".feature-card");
-const cta = document.querySelector(".cta-content");
+// Select elements
+const featureCards = document.querySelectorAll(".feature-card");
+const ctaSection = document.querySelector(".cta-content");
 
-function handleScroll(){
+// Intersection Observer options
+const observerOptions = {
+  root: null, // viewport
+  rootMargin: "0px",
+  threshold: 0.1 // triggers when 10% visible
+};
 
-  // FEATURE CARDS
-  cards.forEach(card => {
-    const rect = card.getBoundingClientRect();
-
-    if(rect.top < window.innerHeight - 80){
-      card.classList.add("show");
+// Callback for feature cards
+const featureCardsCallback = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show"); // optional: remove if scrolling away
     }
   });
+};
 
-  // CTA
-  if(cta){
-    const rect = cta.getBoundingClientRect();
-
-    if(rect.top < window.innerHeight - 100){
-      cta.classList.add("show");
+// Callback for CTA section
+const ctaCallback = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show"); // optional
     }
-  }
-}
+  });
+};
 
-// RUN
-window.addEventListener("scroll", handleScroll);
-handleScroll();
+// Create observers
+const cardsObserver = new IntersectionObserver(featureCardsCallback, observerOptions);
+const ctaObserver = new IntersectionObserver(ctaCallback, observerOptions);
+
+// Observe each feature card
+featureCards.forEach(card => cardsObserver.observe(card));
+
+// Observe CTA section if it exists
+if (ctaSection) {
+  ctaObserver.observe(ctaSection);
+}
 
 </script>
 
