@@ -479,7 +479,7 @@ margin-top:10px;
 }
 
 .feature-card p{
-  display:block; /* ✅ SHOW on desktop */
+  display: block !important; /* ✅ SHOW on desktop */
   color:#555;
   font-size:14px;
   line-height:1.6;
