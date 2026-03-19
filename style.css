@@ -507,27 +507,7 @@ margin-top:10px;
   color: #555;
   margin: 0;
 }
-/* 🔥 REMOVE LINK STYLING (FINAL CLEAN VERSION) */
-.feature-card,
-.feature-card:link,
-.feature-card:visited,
-.feature-card:hover,
-.feature-card:active,
-.feature-card:focus {
-  text-decoration: none !important;
-  color: inherit !important;
-}
 
-/* 🔥 TEXT ONLY (SAFE) */
-.feature-card h3{
-  color: #0b1f3f !important;
-  text-decoration: none !important;
-}
-
-.feature-card p{
-  color: #555 !important;
-  text-decoration: none !important;
-}
 
  /* MOBILE VIEW */
 /* MOBILE VIEW */
@@ -1019,4 +999,24 @@ color:#888;
   }
 
 }
+/* 🔥 REMOVE LINK STYLING (FINAL CLEAN VERSION) */
+.feature-card,
+.feature-card:link,
+.feature-card:visited,
+.feature-card:hover,
+.feature-card:active,
+.feature-card:focus {
+  text-decoration: none !important;
+  color: inherit !important;
+}
 
+/* 🔥 TEXT ONLY (SAFE) */
+.feature-card h3{
+  color: #0b1f3f !important;
+  text-decoration: none !important;
+}
+
+.feature-card p{
+  color: #555 !important;
+  text-decoration: none !important;
+}
