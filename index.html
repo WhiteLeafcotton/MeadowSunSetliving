@@ -335,3 +335,19 @@ window.addEventListener("scroll", () => {
 </body>
 </html>
 
+<script>
+const cards = document.querySelectorAll(".feature-card");
+
+function revealCards(){
+  cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+
+    if(rect.top < window.innerHeight - 80){
+      card.classList.add("show");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealCards);
+</script>
+
