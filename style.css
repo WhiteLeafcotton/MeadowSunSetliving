@@ -495,7 +495,7 @@ width:340px;
 
   .feature-cards{
     position:absolute;
-    right:15px;
+    left:15px;
     top:50%;
     transform:translateY(-50%);
 
