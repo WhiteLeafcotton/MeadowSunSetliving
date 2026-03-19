@@ -454,10 +454,10 @@ width:340px;
 
   color:#0b1f3f;
 
-  background:rgba(11,31,63,0.06); /* softer than before */
-  padding:10px;
+  background:none;
+  padding:0;
 
-  border-radius:8px; /* ⬅️ not too round */
+  margin-left:10px; /* 🔥 space between icon and text */
 }
 
 /* TEXT */
