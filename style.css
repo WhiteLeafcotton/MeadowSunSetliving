@@ -361,8 +361,21 @@ margin-top:10px;
   background-repeat:no-repeat;
 }
 /* FEATURE SECTION */
-.feature-card:active{
-  transform:scale(0.97);
+.feature-card{
+  position:relative; /* 🔥 needed for icon positioning */
+
+  background:white;
+  padding:22px 22px 22px 60px; /* 🔥 space for icon */
+
+  border-radius:12px;
+  box-shadow:0 8px 25px rgba(0,0,0,.1);
+
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:6px;
+
+  max-width:280px;
 }
 /* CONTAINER */
 
@@ -438,27 +451,41 @@ width:340px;
 /* ICON STYLE */
 
 .feature-card i{
-  font-size:20px;
+  position:absolute;
 
-  color:#0b1f3f;
+  left:-22px; /* 🔥 pushes icon OUTSIDE card */
+  top:18px;   /* 🔥 vertical alignment */
 
-  background:none;
-  padding:0;
+  font-size:18px;
 
-  margin-left:10px; /* 🔥 space between icon and text */
+  width:44px;
+  height:44px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:white;
+  background:#0b1f3f;
+
+  border-radius:50%;
+  box-shadow:0 6px 14px rgba(0,0,0,0.2);
 }
 
 /* TEXT */
 
 .feature-card h3{
   font-family:'Playfair Display',serif;
+  font-size:18px;
   margin:0;
+  color:#0b1f3f;
 }
 
 .feature-card p{
   color:#555;
-  font-size:15px;
-  line-height:1.5;
+  font-size:14px;
+  line-height:1.6;
+  margin:0;
 }
 
 /* MOBILE */
