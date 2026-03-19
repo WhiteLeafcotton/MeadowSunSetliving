@@ -246,7 +246,7 @@ margin-bottom:12px;
 color:#555;
 }
 
-/* FEATURE SECTION */
+
 
 /* SERVICE CARD */
 
@@ -364,6 +364,8 @@ margin-top:10px;
 ========================= */
 /* =========================
    DESKTOP FEATURES (min-width: 769px)
+/* =========================
+   DESKTOP FEATURES (min-width: 769px)
 ========================= */
 @media (min-width: 769px){
 
@@ -399,8 +401,8 @@ margin-top:10px;
   background-position: center;
   border-radius: 28px;
   height: 520px;
-  position: relative;
-  overflow: hidden;
+  position: relative; /* icons positioned relative to this */
+  overflow: visible;  /* allow icons to float slightly outside */
   display: flex;
   align-items: flex-end;
   padding: 40px;
@@ -446,8 +448,8 @@ margin-top:10px;
 ========================= */
 .feature-cards{
   position: absolute;
-  top: 50%;
-  right: 20px; /* inside the section */
+  top: 50%;                /* vertically center relative to main card */
+  right: -40px;             /* slight float outside card */
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -481,7 +483,7 @@ margin-top:10px;
 /* ICON */
 .feature-card i{
   position: absolute;
-  left: -30px;
+  left: -30px; /* icon pops out slightly */
   top: 18px;
   width: 52px;
   height: 52px;
@@ -548,7 +550,7 @@ margin-top:10px;
   }
 }
 
-} /* END desktop media query */
+} /* END desktop media query *//* END desktop media query */
 
 
  /* MOBILE VIEW */
