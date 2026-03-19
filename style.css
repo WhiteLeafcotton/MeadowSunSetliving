@@ -616,7 +616,7 @@ margin-top:10px;
 
   /* ❌ HIDE SUBTEXT ON MOBILE */
   .feature-card p{
-    display:none !important;
+    display: none;
   }
 
 }
