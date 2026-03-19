@@ -762,7 +762,35 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
   z-index:2;
 }
 
-/* MOBILE */
+/* =========================
+   FEATURE CARD ANIMATION
+========================= */
+
+/* Initial hidden state */
+.feature-card{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* When visible */
+.feature-card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Staggered delay (one-by-one effect) */
+.feature-card:nth-child(1).show{
+  transition-delay:0.1s;
+}
+
+.feature-card:nth-child(2).show{
+  transition-delay:0.3s;
+}
+
+.feature-card:nth-child(3).show{
+  transition-delay:0.5s;
+}
 
 
 /* FOOTER */
