@@ -305,40 +305,27 @@ environment where comfort and dignity come first.
 </footer>
 
 
+
 <script>
 
+// MENU TOGGLE
 function toggleMenu(){
+  let menu = document.getElementById("sideMenu");
 
-let menu = document.getElementById("sideMenu");
-
-if(menu.style.width === "260px"){
-menu.style.width = "0";
-}else{
-menu.style.width = "260px";
+  if(menu.style.width === "260px"){
+    menu.style.width = "0";
+  }else{
+    menu.style.width = "260px";
+  }
 }
 
-}
-
-</script>
-<script>
+// ANIMATIONS
+const cards = document.querySelectorAll(".feature-card");
 const cta = document.querySelector(".cta-content");
 
-window.addEventListener("scroll", () => {
-  const rect = cta.getBoundingClientRect();
+function handleScroll(){
 
-  if(rect.top < window.innerHeight - 100){
-    cta.classList.add("show");
-  }
-});
-</script>
-
-</body>
-</html>
-
-<script>
-const cards = document.querySelectorAll(".feature-card");
-
-function revealCards(){
+  // FEATURE CARDS
   cards.forEach(card => {
     const rect = card.getBoundingClientRect();
 
@@ -346,8 +333,25 @@ function revealCards(){
       card.classList.add("show");
     }
   });
+
+  // CTA
+  if(cta){
+    const rect = cta.getBoundingClientRect();
+
+    if(rect.top < window.innerHeight - 100){
+      cta.classList.add("show");
+    }
+  }
 }
 
-window.addEventListener("scroll", revealCards);
+// RUN
+window.addEventListener("scroll", handleScroll);
+handleScroll();
+
 </script>
+
+</body>
+</html>
+
+
 
