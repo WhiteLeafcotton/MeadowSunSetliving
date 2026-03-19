@@ -399,18 +399,15 @@ align-items:flex-end;
 
 /* TEXT ON IMAGE */
 
-.feature-large h2,
-.feature-large p{
-position:relative;
-color:white;
-z-index:2;
-}
-
 .feature-large h2{
-font-family:'Playfair Display',serif;
-font-size:40px;
-padding:40px 40px 10px;
-}
+    font-size:34px; /* 🔥 bigger overall */
+    line-height:1.1;
+    letter-spacing:-0.5px;
+  }
+
+  .feature-large h2 span{
+    display:block; /* 🔥 forces each word on its own line */
+  }
 
 .feature-large p{
 padding:0 40px 40px;
