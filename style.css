@@ -481,19 +481,6 @@ width:340px;
 
 @media(max-width:768px){
 
-  .feature-container{
-    position:relative;
-  }
-
-  .feature-large{
-    min-height:420px;
-    border-radius:18px;
-    overflow:hidden;
-    position:relative;
-  }
-
-  /* FLOATING STACK (RIGHT SIDE) */
-
   .feature-cards{
     position:absolute;
     right:20px;
@@ -502,19 +489,15 @@ width:340px;
 
     display:flex;
     flex-direction:column;
-    align-items:flex-end; /* 🔥 keeps cards aligned right */
+    align-items:flex-end;
     gap:20px;
-
     z-index:10;
   }
 
-  /* CARD */
-
   .feature-card{
-    position:relative; /* 🔥 anchor for icon */
+    position:relative !important; /* 🔥 FORCE anchor */
 
-    display:flex;
-    flex-direction:column;
+    display:block !important; /* 🔥 kills flex interference */
 
     width:200px;
     padding:16px;
@@ -523,18 +506,13 @@ width:340px;
     border-radius:12px;
 
     box-shadow:0 8px 20px rgba(0,0,0,.08);
-
-    text-decoration:none;
-    color:inherit;
   }
 
-  /* ICON (TOP RIGHT) */
-
   .feature-card i{
-    position:absolute;
+    position:absolute !important;
 
-    top:12px;
-    right:12px;
+    top:10px !important;
+    right:10px !important;
 
     width:32px;
     height:32px;
@@ -545,31 +523,23 @@ width:340px;
 
     font-size:14px;
 
-    color:white;
-    background:#0b1f3f;
+    color:white !important;
+    background:#0b1f3f !important;
 
     border-radius:50%;
+
+    margin:0 !important; /* 🔥 removes any leftover spacing */
   }
 
-  /* TEXT */
-
   .feature-card h3{
-    font-size:16px;
     margin:0;
-    padding-right:40px; /* prevents overlap with icon */
-
+    padding-right:42px; /* space for icon */
+    font-size:16px;
     color:#0b1f3f;
-    font-weight:600;
   }
 
   .feature-card p{
     display:none;
-  }
-
-  /* TAP EFFECT */
-
-  .feature-card:active{
-    transform:scale(0.96);
   }
 
 }
