@@ -550,8 +550,8 @@ width:340px;
   /* MAIN FEATURE TEXT ON IMAGE */
   .feature-large .feature-text{
     position:absolute !important;
-    bottom:16px !important; /* push to bottom */
-    left:16px !important;   /* push to left */
+    bottom:16px !important; /* 🔹 distance from bottom edge */
+    left:16px !important;   /* 🔹 distance from left edge */
     right:auto !important;
     top:auto !important;
     color:white !important;
@@ -559,13 +559,13 @@ width:340px;
 
   .feature-large .feature-text h2{
     font-size:28px !important;
-    margin:0 0 8px 0 !important;
+    margin:0 0 8px 0 !important; /* bottom spacing under title */
   }
 
   .feature-large .feature-text p{
     font-size:14px !important;
     max-width:80% !important;
-    margin:0 !important;
+    margin:0 !important; /* can add margin-top if needed */
   }
 
 }
