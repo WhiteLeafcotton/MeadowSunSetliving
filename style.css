@@ -482,8 +482,6 @@ width:340px;
     position:relative;
   }
 
-  /* LARGE CARD (background stays visible) */
-
   .feature-large{
     min-height:420px;
     border-radius:18px;
@@ -491,11 +489,11 @@ width:340px;
     position:relative;
   }
 
-  /* ICON STACK (RIGHT SIDE FLOATING) */
+  /* FLOATING STACK */
 
   .feature-cards{
     position:absolute;
-    left:15px;
+    right:15px;
     top:50%;
     transform:translateY(-50%);
 
@@ -505,38 +503,46 @@ width:340px;
     z-index:10;
   }
 
-  /* DEFAULT ICON BUTTON */
+  /* BASE CARD */
 
   .feature-card{
-    width:60px;
-    height:60px;
-    border-radius:50%;
+    width:170px;
+    min-height:60px;
 
     display:flex;
     align-items:center;
-    justify-content:center;
+    justify-content:space-between; /* ⬅️ pushes icon right */
+
+    padding:10px 14px;
+    border-radius:40px;
 
     background:white;
     box-shadow:0 10px 25px rgba(0,0,0,.2);
 
     cursor:pointer;
-    transition:all .35s ease;
 
-    padding:0;
+    /* 🔥 smoother animation */
+    transition:all .45s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  /* ICON */
+  /* TEXT SIDE */
+
+  .feature-card h3{
+    font-size:14px;
+    margin:0;
+    font-family:'Inter', sans-serif;
+  }
+
+  /* ICON RIGHT */
 
   .feature-card i{
-    font-size:20px;
+    font-size:16px;
     color:#0b1f3f;
-    background:none;
-    padding:0;
+    margin-left:10px;
   }
 
-  /* HIDE TEXT BY DEFAULT */
+  /* HIDE DESCRIPTION */
 
-  .feature-card h3,
   .feature-card p{
     display:none;
   }
@@ -544,32 +550,29 @@ width:340px;
   /* EXPANDED STATE */
 
   .feature-card.active{
-    width:220px;
-    height:auto;
-    border-radius:14px;
+    width:230px;
+    border-radius:16px;
 
+    flex-direction:column;
     align-items:flex-start;
-    padding:18px;
-  }
-
-  .feature-card.active h3,
-  .feature-card.active p{
-    display:block;
+    gap:6px;
   }
 
   .feature-card.active i{
-    margin-bottom:8px;
-  }
-
-  .feature-card.active h3{
-    font-size:16px;
-    margin-bottom:5px;
+    align-self:flex-end; /* ⬅️ keeps icon right on expand */
   }
 
   .feature-card.active p{
+    display:block;
     font-size:13px;
     color:#555;
     line-height:1.4;
+  }
+
+  /* 🔥 TAP FEEDBACK (vibration feel) */
+
+  .feature-card:active{
+    transform:scale(0.96);
   }
 
 }
