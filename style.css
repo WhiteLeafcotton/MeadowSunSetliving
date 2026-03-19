@@ -370,6 +370,9 @@ padding:140px 8%;
 position:relative;
 }
 /* FEATURE SECTION */
+.feature-card:active{
+  transform:scale(0.97);
+}
 /* CONTAINER */
 
 .feature-container{
