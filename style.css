@@ -362,6 +362,9 @@ margin-top:10px;
 /* =========================
    FEATURE SECTION
 ========================= */
+/* =========================
+   DESKTOP FEATURES (min-width: 769px)
+========================= */
 @media (min-width: 769px){
 
 /* =========================
@@ -369,12 +372,12 @@ margin-top:10px;
 ========================= */
 .feature-section{
   position: relative;
+  z-index: 1;
   background-image: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%208.jpeg?raw=true");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  padding: 100px 0 120px;
+  padding: 100px 0 120px; /* top + bottom spacing */
 }
 
 /* =========================
@@ -394,22 +397,22 @@ margin-top:10px;
   background-image: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%207.jpeg?raw=true");
   background-size: cover;
   background-position: center;
-
   border-radius: 28px;
   height: 520px;
-
   position: relative;
   overflow: hidden;
-
   display: flex;
   align-items: flex-end;
-
   padding: 40px;
-
   box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  transition: transform 0.4s ease;
 }
 
-/* OVERLAY */
+.feature-large:hover {
+  transform: scale(1.01);
+}
+
+/* OVERLAY FOR DEPTH */
 .feature-large::after {
   content: '';
   position: absolute;
@@ -419,7 +422,7 @@ margin-top:10px;
 }
 
 /* =========================
-   TEXT
+   TEXT ON IMAGE
 ========================= */
 .feature-large h2{
   font-family: 'Playfair Display', serif;
@@ -444,12 +447,13 @@ margin-top:10px;
 .feature-cards{
   position: absolute;
   top: 50%;
-  right: -60px;
+  right: 20px; /* inside the section */
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   gap: 28px;
   width: 360px;
+  z-index: 2;
 }
 
 /* =========================
@@ -461,14 +465,11 @@ margin-top:10px;
   padding: 24px 24px 24px 80px;
   border-radius: 18px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-
   display: flex;
   flex-direction: column;
   gap: 8px;
-
   max-width: 300px;
   cursor: pointer;
-
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -491,9 +492,18 @@ margin-top:10px;
   color: white;
   background: #0b1f3f;
   border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* TEXT */
+.feature-card:hover i{
+  transform: scale(1.15);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+}
+
+/* =========================
+   CARD TEXT
+========================= */
 .feature-card h3{
   font-family: 'Playfair Display', serif;
   font-size: 20px;
@@ -507,6 +517,38 @@ margin-top:10px;
   color: #555;
   margin: 0;
 }
+
+/* =========================
+   FORCE TEXT TO LOOK NON-LINK
+========================= */
+.feature-card,
+.feature-card:link,
+.feature-card:visited,
+.feature-card:hover,
+.feature-card:active,
+.feature-card:focus {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.feature-card h3{
+  text-decoration: none !important;
+}
+
+.feature-card p{
+  text-decoration: none !important;
+}
+
+/* =========================
+   LARGE SCREEN TWEAK
+========================= */
+@media (min-width: 1200px){
+  .feature-large{
+    height: 600px;
+  }
+}
+
+} /* END desktop media query */
 
 
  /* MOBILE VIEW */
