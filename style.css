@@ -360,13 +360,16 @@ margin-top:10px;
 /* =========================
    FEATURE SECTION
 ========================= */
+/* =========================
+   FEATURE SECTION
+========================= */
 .feature-section{
   position: relative;
   background-image: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%208.jpeg?raw=true");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 80px 0; /* add breathing space top/bottom */
+  padding: 80px 0; /* breathing room */
 }
 
 /* =========================
@@ -376,7 +379,7 @@ margin-top:10px;
   position: relative;
   max-width: 1200px;
   margin: auto;
-  padding: 0 40px; /* horizontal padding for larger screens */
+  padding: 0 40px;
 }
 
 /* =========================
@@ -386,19 +389,28 @@ margin-top:10px;
   background-image: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%207.jpeg?raw=true");
   background-size: cover;
   background-position: center;
-  border-radius: 28px;      /* slightly more premium rounded corners */
+  border-radius: 28px;
   height: 520px;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
-  padding: 40px;             /* ensures text isn’t glued to edges */
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2); /* soft lift */
+  padding: 40px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
   transition: transform 0.4s ease;
 }
 
 .feature-large:hover {
-  transform: scale(1.01); /* subtle hover lift */
+  transform: scale(1.01);
+}
+
+/* Background overlay for depth */
+.feature-large::after {
+  content: '';
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent 60%);
+  border-radius: 28px;
 }
 
 /* =========================
@@ -406,11 +418,17 @@ margin-top:10px;
 ========================= */
 .feature-large h2{
   font-family: 'Playfair Display', serif;
-  font-size: 42px;          /* slightly bigger for high-end feel */
-  line-height: 1.2;
-  letter-spacing: -0.5px;
-  color: white;
-  margin: 0 0 10px;
+  font-size: 48px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: #fff;
+  margin: 0 0 12px;
+  background: linear-gradient(120deg, #ffffff 0%, #f0f0ff 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s forwards 0.3s;
 }
 
 .feature-large h2 span{
@@ -418,12 +436,23 @@ margin-top:10px;
 }
 
 .feature-large p{
-  padding: 0;
-  max-width: 500px;
-  line-height: 1.7;
+  font-size: 17px;
+  line-height: 1.8;
   color: rgba(255,255,255,0.95);
-  font-size: 16px;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.35); /* subtle readability boost */
+  text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+  max-width: 520px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.8s forwards 0.6s;
+  margin: 0;
+}
+
+/* Animation keyframes */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* =========================
@@ -437,7 +466,7 @@ margin-top:10px;
   display: flex;
   flex-direction: column;
   gap: 28px;
-  width: 360px;            /* slightly wider for more premium feel */
+  width: 360px;
   z-index: 10;
 }
 
@@ -447,19 +476,19 @@ margin-top:10px;
 .feature-card{
   position: relative;
   background: white;
-  padding: 22px 22px 22px 75px; /* more space for icon */
-  border-radius: 16px;           /* smoother curves */
-  box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+  padding: 24px 24px 24px 80px;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
-  gap: 8px;                      /* slightly more space inside card */
-  max-width: 300px;               /* slightly larger card */
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  gap: 8px;
+  max-width: 300px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .feature-card:hover {
-  transform: translateX(6px) translateY(-4px);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+  transform: translateX(10px) translateY(-5px) rotateZ(-1deg);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.3);
 }
 
 /* =========================
@@ -479,12 +508,12 @@ margin-top:10px;
   background: #0b1f3f;
   border-radius: 50%;
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .feature-card:hover i{
-  transform: scale(1.1);
-  box-shadow: 0 14px 35px rgba(0,0,0,0.3);
+  transform: scale(1.15);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
 }
 
 /* =========================
@@ -492,13 +521,20 @@ margin-top:10px;
 ========================= */
 .feature-card h3{
   font-family: 'Playfair Display', serif;
-  font-size: 18px;
-  color: #0b1f3f;
+  font-size: 20px;
+  background: linear-gradient(120deg, #0b1f3f, #4b6cb7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.4s ease;
   margin: 0;
 }
 
+.feature-card:hover h3{
+  background: linear-gradient(120deg, #4b6cb7, #0b1f3f);
+}
+
 .feature-card p{
-  display: block !important; /* show on desktop */
+  display: block !important; /* desktop only */
   color: #555;
   font-size: 14px;
   line-height: 1.6;
@@ -506,14 +542,13 @@ margin-top:10px;
 }
 
 /* =========================
-   RESPONSIVENESS (Desktop Only)
+   DESKTOP RESPONSIVENESS
 ========================= */
 @media (min-width: 1200px){
   .feature-large{
-    height: 600px;          /* slightly taller on ultra-wide screens */
+    height: 600px;
   }
 }
-/* MOBILE */
 
 /* =========================
    MOBILE FEATURE SECTION
