@@ -176,24 +176,29 @@ comfort, and personalized care.
 <script>
 
 // MOBILE EXPAND ON TAP
+<script>
 const mobileCards = document.querySelectorAll(".feature-card");
 
 mobileCards.forEach(card => {
   card.addEventListener("click", () => {
 
-    // close others (clean UX)
+    // close others
     mobileCards.forEach(c => {
       if(c !== card){
         c.classList.remove("active");
       }
     });
 
-    // toggle clicked one
+    // toggle current
     card.classList.toggle("active");
+
+    // 🔥 HAPTIC FEEDBACK (phones only)
+    if(navigator.vibrate){
+      navigator.vibrate(15);
+    }
 
   });
 });
-
 </script>
 
 <div class="feature-cards">
