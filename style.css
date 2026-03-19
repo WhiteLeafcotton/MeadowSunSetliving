@@ -484,62 +484,63 @@ width:340px;
   .feature-cards{
     position:absolute;
     right:20px;
-    top:40%;
+    top:35%; /* 🔥 push stack slightly higher */
     transform:translateY(-50%);
-
     display:flex;
     flex-direction:column;
-    align-items:flex-end;
+    align-items:flex-end; /* keeps stack aligned right */
     gap:20px;
     z-index:10;
   }
 
+  /* FEATURE CARD */
   .feature-card{
-    position:relative !important; /* 🔥 FORCE anchor */
-
-    display:block !important; /* 🔥 kills flex interference */
-
-    width:200px;
+    position:relative; /* anchor for icon */
+    display:flex;
+    flex-direction:column; /* 🔥 stack icon above text */
+    align-items:center; /* center everything horizontally */
+    width:180px;
     padding:16px;
-
-    
     border-radius:12px;
-
     box-shadow:0 8px 20px rgba(0,0,0,.08);
+    text-decoration:none;
+    color:inherit;
   }
 
+  /* ICON */
   .feature-card i{
-    position:absolute !important;
-
-    top:10px !important;
-    right:10px !important;
-
-    width:32px;
-    height:32px;
-
+    font-size:28px; /* 🔥 bigger */
+    width:50px;
+    height:50px;
+    color:white;
+    background:#0b1f3f;
     display:flex;
     align-items:center;
     justify-content:center;
-
-    font-size:14px;
-
-    color:white !important;
-    background:#0b1f3f !important;
-
     border-radius:50%;
-
-    margin:0 !important; /* 🔥 removes any leftover spacing */
+    margin-bottom:12px; /* spacing to text */
+    position:relative; /* no longer absolute since stacked */
+    top:0; /* reset */
+    right:0; /* reset */
   }
 
+  /* TEXT UNDER ICON */
   .feature-card h3{
-    margin:0;
-    padding-right:42px; /* space for icon */
     font-size:16px;
+    font-weight:600;
     color:#0b1f3f;
+    text-align:center; /* centered under icon */
+    margin:0;
+    padding:0;
   }
 
   .feature-card p{
     display:none;
+  }
+
+  /* TAP EFFECT */
+  .feature-card:active{
+    transform:scale(0.96);
   }
 
 }
