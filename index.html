@@ -175,24 +175,13 @@ comfort, and personalized care.
 </div>
 <script>
 
-// MOBILE EXPAND ON TAP
 <script>
-const mobileCards = document.querySelectorAll(".feature-card");
+const featureLinks = document.querySelectorAll(".feature-card");
 
-mobileCards.forEach(card => {
-  card.addEventListener("click", () => {
+featureLinks.forEach(link => {
+  link.addEventListener("click", () => {
 
-    // close others
-    mobileCards.forEach(c => {
-      if(c !== card){
-        c.classList.remove("active");
-      }
-    });
-
-    // toggle current
-    card.classList.toggle("active");
-
-    // 🔥 HAPTIC FEEDBACK (phones only)
+    // 🔥 vibration (mobile only)
     if(navigator.vibrate){
       navigator.vibrate(15);
     }
