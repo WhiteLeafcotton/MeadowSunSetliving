@@ -366,8 +366,10 @@ padding-left:18px;
 margin-top:10px;
 }
 .feature-section{
-padding:140px 8%;
-position:relative;
+  background-image:url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
 }
 /* FEATURE SECTION */
 .feature-card:active{
