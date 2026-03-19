@@ -478,14 +478,44 @@ width:340px;
 /* =========================
    MOBILE FEATURE SECTION
 ========================= */
-
 @media(max-width:768px){
 
-  /* STACKED FEATURE CARDS */
+  /* REMOVE DESKTOP PADDING (CRUCIAL) */
+  .feature-large h2,
+  .feature-large p{
+    padding:0 !important;
+  }
+
+  .feature-large h2{
+    margin:0 0 8px 0;
+    font-size:26px;
+  }
+
+  .feature-large p{
+    margin:0;
+    font-size:14px;
+  }
+
+  /* MAIN FEATURE TEXT POSITION */
+  .feature-large{
+    position:relative;
+  }
+
+  .feature-text{
+    position:absolute;
+    bottom:20px; /* 🔥 adjust this */
+    left:20px;   /* 🔥 adjust this */
+    right:auto;
+    top:auto;
+    z-index:5;
+    max-width:80%;
+  }
+
+  /* FLOATING FEATURE CARDS */
   .feature-cards{
     position:absolute;
     right:20px;
-    top:40%; /* moved slightly down from 30% so icons don't bleed */
+    top:40%; /* adjust vertical position */
     transform:translateY(-50%);
     display:flex;
     flex-direction:column;
@@ -497,7 +527,7 @@ width:340px;
   .feature-card{
     position:relative !important;
     display:flex !important;
-    flex-direction:column !important; /* vertical stack */
+    flex-direction:column !important;
     align-items:center !important;
     justify-content:flex-start !important;
 
@@ -526,11 +556,11 @@ width:340px;
     justify-content:center !important;
 
     border-radius:50% !important;
-    margin-bottom:12px !important; /* increase space to text */
+    margin-bottom:12px !important;
   }
 
   /* TEXT UNDER ICON */
-   .feature-card h3{
+  .feature-card h3{
     font-size:16px !important;
     font-weight:600 !important;
     color:white !important;
@@ -547,23 +577,7 @@ width:340px;
     transform:scale(0.96) !important;
   }
 
-  /* MAIN FEATURE TEXT ON IMAGE */
- 
-
-  .feature-large{
-    position:relative;
-  }
-
-  .feature-text{
-    position:absolute;
-    bottom:20px; /* 🔥 move up/down here */
-    left:20px;   /* 🔥 move left/right here */
-    right:auto;
-    top:auto;
-    z-index:5;
-    max-width:80%;
-  }
-
+}
 /* PRIMARY BUTTON */
 
 .btn-primary{
