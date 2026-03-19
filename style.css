@@ -530,22 +530,18 @@ width:340px;
   }
 
   /* TEXT UNDER ICON */
-    .feature-large h2,
-  .feature-large p{
-    padding:0 !important; /* 🔥 THIS is the key fix */
+   .feature-card h3{
+    font-size:16px !important;
+    font-weight:600 !important;
+    color:white !important;
+    text-align:center !important;
+    margin:0 !important;
+    padding:0 !important;
   }
 
-  .feature-large h2{
-    margin:0 0 8px 0;
-    font-size:26px;
+  .feature-card p{
+    display:none !important;
   }
-
-  .feature-large p{
-    margin:0;
-    font-size:14px;
-  }
-
-}
 
   .feature-card:active{
     transform:scale(0.96) !important;
