@@ -359,7 +359,6 @@ margin-top:10px;
 ========================= */
 /* =========================
    FEATURE SECTION
-========================= */
 /* =========================
    FEATURE SECTION
 ========================= */
@@ -369,7 +368,8 @@ margin-top:10px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 80px 0; /* breathing room */
+
+  padding: 100px 0 120px; /* 🔥 FIXED spacing (top & bottom) */
 }
 
 /* =========================
@@ -389,13 +389,18 @@ margin-top:10px;
   background-image: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%207.jpeg?raw=true");
   background-size: cover;
   background-position: center;
+
   border-radius: 28px;
   height: 520px;
+
   position: relative;
   overflow: hidden;
+
   display: flex;
   align-items: flex-end;
+
   padding: 40px;
+
   box-shadow: 0 15px 35px rgba(0,0,0,0.2);
   transition: transform 0.4s ease;
 }
@@ -404,12 +409,12 @@ margin-top:10px;
   transform: scale(1.01);
 }
 
-/* Background overlay for depth */
+/* OVERLAY FOR DEPTH */
 .feature-large::after {
   content: '';
   position: absolute;
-  top:0; left:0; right:0; bottom:0;
-  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent 60%);
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.55), transparent 60%);
   border-radius: 28px;
 }
 
@@ -421,11 +426,13 @@ margin-top:10px;
   font-size: 48px;
   line-height: 1.1;
   letter-spacing: -1px;
-  color: #fff;
+
   margin: 0 0 12px;
+
   background: linear-gradient(120deg, #ffffff 0%, #f0f0ff 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
   opacity: 0;
   transform: translateY(20px);
   animation: fadeUp 0.8s forwards 0.3s;
@@ -440,14 +447,16 @@ margin-top:10px;
   line-height: 1.8;
   color: rgba(255,255,255,0.95);
   text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+
   max-width: 520px;
+  margin: 0;
+
   opacity: 0;
   transform: translateY(10px);
   animation: fadeUp 0.8s forwards 0.6s;
-  margin: 0;
 }
 
-/* Animation keyframes */
+/* ANIMATION */
 @keyframes fadeUp {
   to {
     opacity: 1;
@@ -463,29 +472,49 @@ margin-top:10px;
   top: 50%;
   right: -60px;
   transform: translateY(-50%);
+
   display: flex;
   flex-direction: column;
   gap: 28px;
+
   width: 360px;
   z-index: 10;
 }
 
 /* =========================
-   CARD
+   CARD (LINK FIX INCLUDED)
 ========================= */
 .feature-card{
   position: relative;
+
   background: white;
   padding: 24px 24px 24px 80px;
+
   border-radius: 18px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+
   display: flex;
   flex-direction: column;
   gap: 8px;
+
   max-width: 300px;
+
+  /* 🔥 REMOVE LINK LOOK */
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
+.feature-card:visited,
+.feature-card:active,
+.feature-card:focus{
+  text-decoration: none;
+  color: inherit;
+}
+
+/* HOVER */
 .feature-card:hover {
   transform: translateX(10px) translateY(-5px) rotateZ(-1deg);
   box-shadow: 0 25px 60px rgba(0,0,0,0.3);
@@ -498,16 +527,22 @@ margin-top:10px;
   position: absolute;
   left: -30px;
   top: 18px;
+
   width: 52px;
   height: 52px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-size: 22px;
+
   color: white;
   background: #0b1f3f;
+
   border-radius: 50%;
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -522,11 +557,13 @@ margin-top:10px;
 .feature-card h3{
   font-family: 'Playfair Display', serif;
   font-size: 20px;
+  margin: 0;
+
   background: linear-gradient(120deg, #0b1f3f, #4b6cb7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
   transition: all 0.4s ease;
-  margin: 0;
 }
 
 .feature-card:hover h3{
@@ -534,22 +571,26 @@ margin-top:10px;
 }
 
 .feature-card p{
-  display: block !important; /* desktop only */
-  color: #555;
+  display: block !important;
   font-size: 14px;
   line-height: 1.6;
+  color: #555;
   margin: 0;
+  text-decoration: none;
+}
+
+.feature-card:hover p{
+  color: #333;
 }
 
 /* =========================
-   DESKTOP RESPONSIVENESS
+   LARGE SCREEN TWEAK
 ========================= */
 @media (min-width: 1200px){
   .feature-large{
     height: 600px;
   }
 }
-
 /* =========================
    MOBILE FEATURE SECTION
 ========================= */
