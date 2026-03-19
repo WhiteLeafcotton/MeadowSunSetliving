@@ -472,20 +472,105 @@ width:340px;
 
 /* MOBILE */
 
-@media (max-width:900px){
+/* =========================
+   MOBILE FEATURE SECTION
+========================= */
 
-.feature-large{
-height:420px;
-}
+@media(max-width:768px){
 
-.feature-cards{
-position:relative;
-top:auto;
-right:auto;
-transform:none;
-margin-top:30px;
-width:100%;
-}
+  .feature-container{
+    position:relative;
+  }
+
+  /* LARGE CARD (background stays visible) */
+
+  .feature-large{
+    min-height:420px;
+    border-radius:18px;
+    overflow:hidden;
+    position:relative;
+  }
+
+  /* ICON STACK (RIGHT SIDE FLOATING) */
+
+  .feature-cards{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    z-index:10;
+  }
+
+  /* DEFAULT ICON BUTTON */
+
+  .feature-card{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:white;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+    cursor:pointer;
+    transition:all .35s ease;
+
+    padding:0;
+  }
+
+  /* ICON */
+
+  .feature-card i{
+    font-size:20px;
+    color:#0b1f3f;
+    background:none;
+    padding:0;
+  }
+
+  /* HIDE TEXT BY DEFAULT */
+
+  .feature-card h3,
+  .feature-card p{
+    display:none;
+  }
+
+  /* EXPANDED STATE */
+
+  .feature-card.active{
+    width:220px;
+    height:auto;
+    border-radius:14px;
+
+    align-items:flex-start;
+    padding:18px;
+  }
+
+  .feature-card.active h3,
+  .feature-card.active p{
+    display:block;
+  }
+
+  .feature-card.active i{
+    margin-bottom:8px;
+  }
+
+  .feature-card.active h3{
+    font-size:16px;
+    margin-bottom:5px;
+  }
+
+  .feature-card.active p{
+    font-size:13px;
+    color:#555;
+    line-height:1.4;
+  }
 
 }
 /* SERVICES BUTTON AREA */
