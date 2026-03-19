@@ -532,9 +532,35 @@ margin-top:10px;
 }
 
 }
-/* =========================
-   MOBILE FEATURE SECTION
-========================= */
+
+/* 🔥 HARD RESET LINK STYLING */
+.feature-card,
+.feature-card:link,
+.feature-card:visited,
+.feature-card:hover,
+.feature-card:active,
+.feature-card:focus {
+  text-decoration: none !important;
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+}
+
+/* 🔥 FORCE CHILD TEXT */
+.feature-card h3,
+.feature-card p {
+  color: #0b1f3f !important;   /* title color */
+  text-decoration: none !important;
+}
+
+/* subtext color separately */
+.feature-card p {
+  color: #555 !important;
+}
+
+/* remove any underline behavior anywhere */
+.feature-card * {
+  text-decoration: none !important;
+}
 
  /* MOBILE VIEW */
 /* MOBILE VIEW */
