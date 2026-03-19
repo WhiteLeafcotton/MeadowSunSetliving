@@ -354,122 +354,119 @@ border-left:3px solid rgba(255,255,255,0.6);
 padding-left:18px;
 margin-top:10px;
 }
+/* =========================
+   FEATURE SECTION BACKGROUND
+========================= */
+
 .feature-section{
+  position:relative;
   background-image:url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85");
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
 }
-/* FEATURE SECTION */
-.feature-card{
-  position:relative; /* 🔥 needed for icon positioning */
 
-  background:white;
-  padding:22px 22px 22px 60px; /* 🔥 space for icon */
-
-  border-radius:12px;
-  box-shadow:0 8px 25px rgba(0,0,0,.1);
-
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:6px;
-
-  max-width:280px;
-}
-/* CONTAINER */
+/* =========================
+   CONTAINER
+========================= */
 
 .feature-container{
-position:relative;
-max-width:1200px;
-margin:auto;
+  position:relative;
+  max-width:1200px;
+  margin:auto;
 }
 
-/* LARGE BACKGROUND CARD */
+/* =========================
+   MAIN CARD
+========================= */
 
 .feature-large{
-background-image:url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%207.jpeg?raw=true");
-background-size:cover;
-background-position:center;
-border-radius:24px;
-height:520px;
-position:relative;
-overflow:hidden;
-display:flex;
-align-items:flex-end;
+  background-image:url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%207.jpeg?raw=true");
+  background-size:cover;
+  background-position:center;
+  border-radius:24px;
+  height:520px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
 }
-
-
 
 /* TEXT ON IMAGE */
 
 .feature-large h2{
-    font-size:34px; /* 🔥 bigger overall */
-    line-height:1.1;
-    letter-spacing:-0.5px;
-  }
+  font-family:'Playfair Display',serif;
+  font-size:34px;
+  line-height:1.1;
+  letter-spacing:-0.5px;
+}
 
-  .feature-large h2 span{
-    display:block; /* 🔥 forces each word on its own line */
-  }
+.feature-large h2 span{
+  display:block;
+}
 
 .feature-large p{
-padding:0 40px 40px;
-max-width:500px;
-line-height:1.6;
+  padding:0 40px 40px;
+  max-width:500px;
+  line-height:1.6;
+  color:white;
 }
 
-/* FEATURE CARDS LAYER */
+/* =========================
+   FLOATING CARDS
+========================= */
 
 .feature-cards{
-position:absolute;
-top:50%;
-right:-60px;
-transform:translateY(-50%);
-display:flex;
-flex-direction:column;
-gap:25px;
-width:340px;
+  position:absolute;
+  top:50%;
+  right:-60px;
+  transform:translateY(-50%);
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+  width:340px;
 }
 
-/* CARD STYLE */
+/* CARD */
 
 .feature-card{
+  position:relative;
+
   background:white;
-  padding:22px 22px; /* ⬅️ reduced */
+  padding:22px 22px 22px 70px; /* space for icon */
+
   border-radius:12px;
-  box-shadow:0 8px 25px rgba(0,0,0,.1);
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
 
   display:flex;
   flex-direction:column;
-  align-items:flex-start;
-  gap:10px;
+  gap:6px;
 
-  max-width:280px; /* ⬅️ keeps them tighter */
+  max-width:280px;
+  transition:0.4s ease;
 }
 
-/* ICON STYLE */
+/* ICON (DESKTOP STYLE MATCHING MOBILE) */
 
 .feature-card i{
   position:absolute;
+  left:-30px; /* 🔥 more space from card */
+  top:18px;
 
-  left:-22px; /* 🔥 pushes icon OUTSIDE card */
-  top:18px;   /* 🔥 vertical alignment */
-
-  font-size:18px;
-
-  width:44px;
-  height:44px;
+  width:50px;
+  height:50px;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
+  font-size:20px;
+
   color:white;
   background:#0b1f3f;
 
   border-radius:50%;
-  box-shadow:0 6px 14px rgba(0,0,0,0.2);
+  box-shadow:0 8px 18px rgba(0,0,0,0.25);
 }
 
 /* TEXT */
@@ -477,17 +474,23 @@ width:340px;
 .feature-card h3{
   font-family:'Playfair Display',serif;
   font-size:18px;
-  margin:0;
   color:#0b1f3f;
+  margin:0;
 }
 
 .feature-card p{
+  display:block; /* ✅ SHOW on desktop */
   color:#555;
   font-size:14px;
   line-height:1.6;
   margin:0;
 }
 
+/* HOVER */
+
+.feature-card.show:hover{
+  transform:translateY(0) translateX(6px);
+}
 /* MOBILE */
 
 /* =========================
@@ -495,25 +498,19 @@ width:340px;
 ========================= */
 @media(max-width:768px){
 
-  /* =========================
-     MAIN FEATURE IMAGE FIX
-  ========================= */
-
+  /* MAIN CARD FIX (prevents stretching) */
   .feature-large{
     display:block !important;
-    position:relative !important;
+    height:auto !important; /* 🔥 prevents stretch */
+    min-height:420px;
   }
 
-  /* TEXT IN TRUE BOTTOM-LEFT CORNER */
   .feature-text{
     position:absolute !important;
     bottom:0 !important;
     left:0 !important;
-
-    padding:22px !important; /* 🔥 slightly more breathing room */
-
+    padding:22px !important;
     width:100%;
-    max-width:100%;
     z-index:5;
   }
 
@@ -525,47 +522,38 @@ width:340px;
     color:white;
   }
 
-  /* 🔥 EDITORIAL TITLE */
+  /* EDITORIAL TITLE */
   .feature-large h2{
     display:flex;
     flex-direction:column;
-    font-family:'Playfair Display', serif;
-    font-size:34px; /* 🔥 bigger but controlled */
+    font-size:34px;
     line-height:1;
-    letter-spacing:-0.5px;
     margin-bottom:10px;
   }
 
-  .feature-large h2 .line1{
-    font-weight:600;
-  }
-
+  .feature-large h2 .line1{ font-weight:600; }
   .feature-large h2 .line2{
     font-weight:500;
-    margin-top:-4px; /* 🔥 removes awkward gap */
+    margin-top:-4px;
   }
 
-  /* SUBTEXT */
   .feature-large p{
     font-size:14px;
-    max-width:80%; /* 🔥 tighter line length */
+    max-width:80%;
     line-height:1.6;
-    opacity:0.95; /* 🔥 softer than title */
   }
 
-  /* =========================
-     FLOATING FEATURE CARDS
-  ========================= */
+  /* FLOATING ICON STACK */
 
   .feature-cards{
     position:absolute;
     right:20px;
-    top:42%; /* 🔥 tiny adjustment down */
+    top:42%;
     transform:translateY(-50%);
     display:flex;
     flex-direction:column;
     align-items:flex-end;
-    gap:20px; /* 🔥 slightly more spacing */
+    gap:20px;
     z-index:10;
   }
 
@@ -577,17 +565,17 @@ width:340px;
     padding:0 !important;
     background:none !important;
     box-shadow:none !important;
-    border-radius:0 !important;
 
     text-decoration:none;
-    color:inherit;
   }
 
-  /* ICON */
+  /* ICON (UNCHANGED MOBILE STYLE) */
   .feature-card i{
-    font-size:38px; /* 🔥 slightly bigger */
+    position:static !important; /* 🔥 FIXES broken mobile icons */
+
     width:66px;
     height:66px;
+    font-size:38px;
 
     display:flex;
     align-items:center;
@@ -598,25 +586,19 @@ width:340px;
 
     border-radius:50%;
     margin-bottom:10px;
-
-    box-shadow:0 6px 14px rgba(0,0,0,0.2); /* 🔥 subtle depth */
   }
 
-  /* TEXT UNDER ICON */
   .feature-card h3{
     font-size:15px;
-    font-weight:500; /* 🔥 softer than title */
+    font-weight:500;
     color:white;
     text-align:center;
     margin:0;
   }
 
+  /* ❌ HIDE SUBTEXT ON MOBILE */
   .feature-card p{
-    display:none;
-  }
-
-  .feature-card:active{
-    transform:scale(0.96);
+    display:none !important;
   }
 
 }
