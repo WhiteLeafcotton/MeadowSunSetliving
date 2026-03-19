@@ -530,18 +530,22 @@ width:340px;
   }
 
   /* TEXT UNDER ICON */
-  .feature-card h3{
-    font-size:16px !important;
-    font-weight:600 !important;
-    color:white !important;
-    text-align:center !important;
-    margin:0 !important;
-    padding:0 !important;
+    .feature-large h2,
+  .feature-large p{
+    padding:0 !important; /* 🔥 THIS is the key fix */
   }
 
-  .feature-card p{
-    display:none !important;
+  .feature-large h2{
+    margin:0 0 8px 0;
+    font-size:26px;
   }
+
+  .feature-large p{
+    margin:0;
+    font-size:14px;
+  }
+
+}
 
   .feature-card:active{
     transform:scale(0.96) !important;
@@ -549,19 +553,20 @@ width:340px;
 
   /* MAIN FEATURE TEXT ON IMAGE */
  
+
   .feature-large{
-    display:block !important;
+    position:relative;
   }
 
   .feature-text{
-    position:absolute !important;
-    bottom:32px !important;
-    left:24px !important;
-    width:80%;
+    position:absolute;
+    bottom:20px; /* 🔥 move up/down here */
+    left:20px;   /* 🔥 move left/right here */
+    right:auto;
+    top:auto;
     z-index:5;
+    max-width:80%;
   }
-
-}
 
 /* PRIMARY BUTTON */
 
