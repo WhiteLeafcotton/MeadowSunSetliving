@@ -484,52 +484,53 @@ width:340px;
   .feature-cards{
     position:absolute;
     right:20px;
-    top:35%; /* 🔥 push stack slightly higher */
+    top:35%; /* push stack higher on the image */
     transform:translateY(-50%);
     display:flex;
     flex-direction:column;
-    align-items:flex-end; /* keeps stack aligned right */
+    align-items:flex-end; /* keeps stack right-aligned */
     gap:20px;
     z-index:10;
   }
 
-  /* FEATURE CARD */
+  /* FEATURE CARD RESET */
   .feature-card{
-    position:relative; /* anchor for icon */
+    position:relative;
     display:flex;
-    flex-direction:column; /* 🔥 stack icon above text */
-    align-items:center; /* center everything horizontally */
-    width:180px;
-    padding:16px;
-    border-radius:12px;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    flex-direction:column; /* vertical stack */
+    align-items:center;
+    width:auto; /* shrink to content */
+    padding:0; /* remove all padding */
+    background:none !important; /* remove white background */
+    box-shadow:none !important; /* remove shadow */
+    border-radius:0;
     text-decoration:none;
     color:inherit;
   }
 
   /* ICON */
   .feature-card i{
-    font-size:28px; /* 🔥 bigger */
-    width:50px;
-    height:50px;
+    font-size:32px; /* bigger */
+    width:60px;
+    height:60px;
     color:white;
     background:#0b1f3f;
     display:flex;
     align-items:center;
     justify-content:center;
     border-radius:50%;
-    margin-bottom:12px; /* spacing to text */
-    position:relative; /* no longer absolute since stacked */
-    top:0; /* reset */
-    right:0; /* reset */
+    margin-bottom:8px; /* space to text */
+    position:relative; /* stacked layout */
+    top:0;
+    right:0;
   }
 
   /* TEXT UNDER ICON */
   .feature-card h3{
     font-size:16px;
     font-weight:600;
-    color:#0b1f3f;
-    text-align:center; /* centered under icon */
+    color:white; /* now text is readable on image */
+    text-align:center;
     margin:0;
     padding:0;
   }
