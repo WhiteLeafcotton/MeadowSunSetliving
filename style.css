@@ -498,34 +498,32 @@ margin-top:10px;
 ========================= */
 
  /* MOBILE VIEW */
+/* MOBILE VIEW */
 @media (max-width: 768px){
   .feature-large{
     all: unset; /* wipes desktop influence */
     display: block;
     position: relative;
-
     width: 82%;
     height: 420px;
     margin: 0 auto;
-
     border-radius: 18px;
     overflow: hidden;
-
     background-image: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%207.jpeg?raw=true");
     background-size: cover;
     background-position: center;
   }
 
   /* HIDE SUBTEXT ONLY ON MOBILE */
-  .feature-card p{
+  .feature-card p {
     display: none;
   }
 }
 
 /* DESKTOP VIEW */
 @media (min-width: 769px){
-  .feature-card p{
-    display: block; /* ensure subtext is visible */
+  .feature-card p {
+    display: block; /* ensure subtext shows on desktop */
   }
 }
 
@@ -577,11 +575,9 @@ margin-top:10px;
   display:flex !important;
   flex-direction:column !important;
   align-items:center !important;
-
   padding:0 !important;
   background:none !important;
   box-shadow:none !important;
-
   text-decoration:none;
 }
 
