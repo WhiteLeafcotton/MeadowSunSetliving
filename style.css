@@ -1028,41 +1028,58 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
    (Ultra-Luxe Line Art Version)
    ================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Montserrat:wght@100;300;400&display=swap');
+/* ==================================
+   THE VISIBLE CREST FOOTER 
+   (High-Contrast Luxe Version)
+   ================================== */
 
 .luxury-footer {
   position: relative;
-  /* Deepening the Sunset Blue to a "Midnight Sapphire" */
-  background: #030a16; 
+  background: #030a16; /* Deepest Sunset Blue */
   color: rgba(255, 255, 255, 0.92);
   padding: 140px 8% 60px;
   overflow: hidden;
   font-family: 'Montserrat', sans-serif;
 }
 
-/* THE TOP-TIER FOX CREST (Watermark) */
+/* THE BREATHING FOX WATERMARK (Visibility Fix) */
 .footer-watermark {
   position: absolute;
-  bottom: -15%; 
-  right: -5%;
-  width: 700px;
-  height: 700px;
-  /* Using a sophisticated Geometric Fox Head SVG */
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21l-4-4h8l-4 4zM12 3L4 9l1 8 7 4 7-4 1-8-8-6zM8 10l4 3 4-3"/></svg>') no-repeat center;
+  bottom: -5%; 
+  right: -2%;
+  width: 500px;
+  height: 500px;
+  /* High-end Geometric Fox Head SVG */
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 1L3 5v2c0 9 9 14 9 14s9-5 9-14V5l-9-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.5 5.5c-.8.8-2 1.5-3.5 1.5s-2.7-.7-3.5-1.5c-.5-.5-.5-1.5 0-2s1.5-.5 2 0c.4.4.9.5 1.5.5s1.1-.1 1.5-.5c.5-.5 1.5-.5 2 0s.5 1.5 0 2z"/></svg>') no-repeat center;
   background-size: contain;
-  opacity: 0.05; /* Faint and prestigious */
+  
+  /* Increased Opacity and Glow */
+  opacity: 0.08; 
+  filter: blur(1px) drop-shadow(0 0 10px rgba(255,255,255,0.2));
+  
   pointer-events: none;
   z-index: 1;
-  /* The "Estate" Animation: A slow, breathing pulse */
-  animation: crestPulse 20s infinite alternate ease-in-out;
+  
+  /* The Breathing Animation */
+  animation: foxBreath 8s infinite ease-in-out;
 }
 
-@keyframes crestPulse {
-  0% { transform: scale(1) rotate(-5deg); opacity: 0.03; }
-  50% { transform: scale(1.08) rotate(0deg); opacity: 0.06; }
-  100% { transform: scale(1) rotate(5deg); opacity: 0.03; }
+@keyframes foxBreath {
+  0% { 
+    transform: scale(1) rotate(-5deg); 
+    opacity: 0.06; 
+  }
+  50% { 
+    transform: scale(1.1) rotate(0deg); 
+    opacity: 0.12; /* It gets brighter as it "inhales" */
+  }
+  100% { 
+    transform: scale(1) rotate(-5deg); 
+    opacity: 0.06; 
+  }
 }
 
+/* THE 4-COLUMN GRID */
 .footer-inner {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
@@ -1071,16 +1088,15 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
   z-index: 5;
 }
 
-/* BRANDING: Editorial Style */
+/* BRANDING */
 .footer-brand h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 46px;
+  font-size: 42px;
   font-weight: 300;
   letter-spacing: 6px;
   text-transform: uppercase;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   color: #fff;
-  line-height: 1;
 }
 
 .footer-tagline {
@@ -1088,45 +1104,18 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
   font-weight: 200;
   line-height: 2.2;
   letter-spacing: 2px;
-  color: #aeb4be; /* Soft Dove Grey */
-  max-width: 340px;
-  border-left: 1px solid rgba(255,255,255,0.1);
-  padding-left: 20px;
+  color: #cfd6df;
+  max-width: 320px;
 }
 
-/* NAVIGATION */
-.footer-header {
-  font-size: 10px;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.3);
-  margin-bottom: 40px;
-}
-
-.footer-links a {
-  display: block;
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 20px;
-  font-size: 15px;
-  font-style: italic;
-  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.footer-links a:hover {
-  color: #fff;
-  padding-left: 10px;
-  letter-spacing: 1px;
-}
-
-/* THE SHIMMERING "ADMISSIONS" BUTTON */
+/* THE SHIMMERING BUTTON */
 .btn-tour {
   position: relative;
   display: inline-block;
-  padding: 22px 45px;
-  background: rgba(255, 255, 255, 0.02);
+  padding: 20px 45px;
+  background: rgba(255, 255, 255, 0.03);
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   text-transform: uppercase;
   font-size: 11px;
   letter-spacing: 4px;
@@ -1135,21 +1124,21 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
   transition: 0.5s;
 }
 
-.btn-tour::before {
+.btn-tour::after {
   content: '';
   position: absolute;
   top: 0; left: -100%;
   width: 100%; height: 100%;
   background: linear-gradient(
-    120deg,
+    90deg,
     transparent,
-    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.4),
     transparent
   );
-  transition: 0.8s;
+  transition: 0.6s;
 }
 
-.btn-tour:hover::before {
+.btn-tour:hover::after {
   left: 100%;
 }
 
@@ -1159,10 +1148,10 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
   border-color: #fff;
 }
 
-/* CONCIERGE PHONE */
+/* PHONE NUMBER */
 .concierge-phone {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 32px;
+  font-size: 30px;
   color: #fff;
   text-decoration: none;
   font-style: italic;
@@ -1170,17 +1159,16 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
   margin-top: 20px;
 }
 
-/* FOOTER BOTTOM */
+/* BOTTOM STRIP */
 .footer-bottom {
-  margin-top: 120px;
+  margin-top: 100px;
   padding-top: 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   justify-content: space-between;
   font-size: 10px;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   color: rgba(255, 255, 255, 0.2);
-  text-transform: uppercase;
 }
 
 /* MOBILE */
