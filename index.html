@@ -382,6 +382,31 @@ featureLinks.forEach(link => {
 
 <script>
 
+
+<script>
+function openModal(){
+  document.getElementById("bookingModal").style.display = "block";
+}
+
+function closeModal(){
+  document.getElementById("bookingModal").style.display = "none";
+}
+
+// CLOSE ON OUTSIDE CLICK
+window.onclick = function(event){
+  const modal = document.getElementById("bookingModal");
+  if(event.target == modal){
+    modal.style.display = "none";
+  }
+}
+
+// PARALLAX VIDEO
+window.addEventListener("scroll", function(){
+  const video = document.querySelector(".footer-video");
+  let offset = window.scrollY;
+  video.style.transform = "translateY(" + offset * 0.2 + "px)";
+});
+</script>
 // MENU TOGGLE
 function toggleMenu(){
   let menu = document.getElementById("sideMenu");
