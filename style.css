@@ -991,146 +991,125 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
    THE SUNSET MANOR SIGNATURE FOOTER
    ================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,400&family=Montserrat:wght@200;300;500&display=swap');
+/* ==================================
+   DEEP MIDNIGHT LUXE FOOTER
+   ================================== */
 
 .luxury-footer {
   position: relative;
-  /* Applying your Brand Sunset Blue */
-  background: #08162d; 
-  background: linear-gradient(
-    90deg,
-    #08162d 0%,
-    #0a1c38 25%,
-    rgba(10,28,56,0.95) 40%,
-    rgba(10,28,56,0.75) 55%,
-    rgba(10,28,56,0.45) 70%,
-    rgba(10,28,56,0.2) 82%,
-    rgba(10,28,56,0.05) 92%,
-    rgba(10,28,56,0) 100%
-  );
-  color: #ffffff;
-  padding: 160px 10% 60px;
-  font-family: 'Cormorant Garamond', serif;
+  /* Deepened and Darkened: No more "stepped" fade */
+  background: linear-gradient(180deg, #050d1a 0%, #08162d 100%);
+  color: rgba(255,255,255,0.92); 
+  padding: 100px 10% 40px;
   overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.08); /* Subtle crisp top edge */
 }
 
-/* Subtle Light Grey Top Divider */
+/* Luxury Texture Overlay */
 .luxury-footer::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 10%;
-  right: 10%;
-  height: 1px;
-  background: rgba(207, 214, 223, 0.2); /* Light Grey Fade */
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+  opacity: 0.1; /* Barely visible texture for depth */
+  pointer-events: none;
 }
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr;
-  gap: 60px;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 80px;
   position: relative;
   z-index: 2;
 }
 
 /* BRANDING */
 .footer-brand h2 {
-  font-size: 38px;
-  font-weight: 300;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  margin-bottom: 15px;
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
   color: #ffffff;
 }
 
 .footer-tagline {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  font-weight: 200;
-  line-height: 2;
-  letter-spacing: 1px;
-  color: #cfd6df; /* Light Grey */
-  max-width: 340px;
+  font-size: 15px;
+  color: #aeb4be; /* Soft Light Grey */
+  line-height: 1.8;
+  max-width: 400px;
+  font-weight: 300;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  padding-left: 25px;
 }
 
 /* HEADERS */
-.footer-header {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
-  font-weight: 500;
+.footer-links h4,
+.footer-contact h4 {
+  font-size: 12px;
+  font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #ffffff;
-  margin-bottom: 35px;
-  opacity: 0.9;
+  color: #cfd6df; /* Light Grey Header */
+  margin-bottom: 25px;
 }
 
-/* LINKS: Soft Grey to Pure White transition */
+/* LINKS */
 .footer-links a {
   display: block;
   text-decoration: none;
-  color: #cfd6df;
-  margin-bottom: 20px;
-  font-size: 16px;
-  font-style: italic;
-  transition: all 0.4s ease;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 12px;
+  font-size: 15px;
+  transition: all 0.3s ease;
 }
 
 .footer-links a:hover {
   color: #ffffff;
-  transform: translateX(5px);
+  padding-left: 5px;
 }
 
-/* CONCIERGE & CONTACT */
+/* CONTACT */
 .footer-contact p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
   color: #cfd6df;
+  font-size: 15px;
   margin-bottom: 10px;
 }
 
-.concierge-line {
-  font-size: 24px;
-  color: #ffffff;
-  display: block;
-  margin-bottom: 25px;
-  text-decoration: none;
-  font-weight: 300;
-}
-
-/* THE INVITATION BUTTON: White & Grey Aesthetic */
-.btn-invitation {
-  display: inline-block;
-  padding: 15px 35px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #ffffff;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: all 0.4s;
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.btn-invitation:hover {
-  background: #ffffff;
-  color: #08162d; /* Inverts to your brand blue */
-  border-color: #ffffff;
-}
-
-/* FOOTER BOTTOM */
-.footer-bottom {
-  margin-top: 100px;
-  padding-top: 40px;
-  border-top: 1px solid rgba(207, 214, 223, 0.1);
+/* SOCIALS - Minimalist */
+.social-icons {
   display: flex;
-  justify-content: space-between;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.social-icon {
+  width: 35px;
+  height: 35px;
+  display: flex;
   align-items: center;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: #ffffff;
+  color: #08162d;
+}
+
+/* BOTTOM BAR */
+.footer-bottom {
+  margin-top: 80px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  color: #6b7280; /* Dimmed Grey */
+  font-size: 13px;
   letter-spacing: 1px;
-  color: #cfd6df;
 }
 
 /* MOBILE */
