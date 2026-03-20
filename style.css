@@ -996,138 +996,165 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
    ================================== */
 
 /* ==================================
-   ULTRA-LUXE SIGNATURE FOOTER
+   THE SIGNATURE MOTION FOOTER
+   (High-End Modern / Sunset Blue)
    ================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Montserrat:wght@100;300;400&display=swap');
 
 .luxury-footer {
   position: relative;
-  /* Deep, Dark Sunset Blue Base */
-  background: #050d1a; 
-  color: rgba(255,255,255,0.92);
-  padding: 140px 10% 60px;
+  background: #050d1a; /* Deepest Sunset Blue */
+  color: rgba(255, 255, 255, 0.92);
+  padding: 160px 10% 80px;
   overflow: hidden;
   font-family: 'Montserrat', sans-serif;
+  /* Top Glow to simulate a "Sunset" horizon */
+  box-shadow: inset 0 20px 50px -20px rgba(10, 28, 56, 1);
 }
 
-/* THE MONOGRAM WATERMARK (The "Not-Plain" Secret) */
-.luxury-footer::before {
-  content: "A"; /* Change this to your Brand's Initial */
+/* THE FLOATING MONOGRAM - Animated subtle drift */
+.footer-watermark {
   position: absolute;
-  top: -20px;
-  right: 5%;
+  top: -10%;
+  right: -5%;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 550px;
-  line-height: 1;
-  color: rgba(255, 255, 255, 0.03); /* Very faint ghost letter */
+  font-size: 600px;
+  color: rgba(255, 255, 255, 0.02); /* Ghost-like */
   font-style: italic;
   pointer-events: none;
-  z-index: 1;
+  animation: floatMonogram 20s infinite alternate ease-in-out;
 }
 
-/* Subtle Gold Divider Line */
-.luxury-footer::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(207, 214, 223, 0.3), transparent);
+@keyframes floatMonogram {
+  from { transform: translate(0, 0); }
+  to { transform: translate(-30px, 20px); }
 }
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
-  gap: 60px;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 100px;
   position: relative;
-  z-index: 2; /* Sits above the watermark */
+  z-index: 5;
 }
 
 /* BRANDING */
 .footer-brand h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 42px;
+  font-size: 48px;
   font-weight: 300;
-  letter-spacing: 3px;
-  margin-bottom: 15px;
-  color: #ffffff;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  color: #fff;
 }
 
 .footer-tagline {
-  font-size: 14px;
-  font-weight: 100;
-  line-height: 2;
-  letter-spacing: 1px;
-  color: #cfd6df; /* Light Grey */
-  max-width: 320px;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 2.2;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 400px;
   text-transform: uppercase;
 }
 
-/* SECTION TITLES */
+/* NAVIGATION */
 .footer-header {
   font-size: 10px;
-  font-weight: 400;
   letter-spacing: 5px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.3);
   margin-bottom: 40px;
 }
 
-/* INTERACTIVE LINKS */
 .footer-links a {
   display: block;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 20px;
   font-size: 15px;
-  font-weight: 300;
+  font-style: italic;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .footer-links a:hover {
-  color: #ffffff;
-  letter-spacing: 2px;
-  padding-left: 10px;
+  color: #fff;
+  padding-left: 12px;
 }
 
-/* CONCIERGE BUTTON (Glassmorphism) */
+/* THE "SCHEDULE TOUR" ANIMATED BUTTON */
 .btn-tour {
+  position: relative;
   display: inline-block;
-  margin-top: 15px;
-  padding: 18px 30px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  color: #ffffff;
-  font-size: 11px;
-  letter-spacing: 3px;
+  padding: 22px 50px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 4px;
   text-decoration: none;
-  transition: all 0.4s;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+/* Shimmer Effect */
+.btn-tour::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: all 0.6s ease;
 }
 
 .btn-tour:hover {
-  background: rgba(255, 255, 255, 0.92);
-  color: #050d1a;
-  border-color: #ffffff;
+  border-color: #fff;
+  letter-spacing: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* CONTACT INFO */
-.concierge-number {
+.btn-tour:hover::before {
+  left: 100%; /* Shimmer slides across on hover */
+}
+
+/* CONCIERGE LINE */
+.concierge-wrap {
+  margin-top: 40px;
+}
+
+.concierge-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 10px;
+}
+
+.concierge-phone {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 26px;
-  font-style: italic;
-  display: block;
-  margin-bottom: 20px;
-  color: #ffffff;
+  font-size: 32px;
+  color: #fff;
   text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+  transition: border 0.4s;
+}
+
+.concierge-phone:hover {
+  border-bottom-color: #fff;
 }
 
 /* FOOTER BOTTOM */
 .footer-bottom {
-  margin-top: 100px;
+  margin-top: 120px;
   padding-top: 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
@@ -1135,8 +1162,7 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
   align-items: center;
   font-size: 10px;
   letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.3);
-  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.2);
 }
 
 /* MOBILE */
