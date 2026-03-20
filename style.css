@@ -559,23 +559,23 @@ margin-top:10px;
 @media (max-width: 768px){
 
   /* FEATURE LARGE CARD */
-  .feature-large{
-    all: unset; /* wipes desktop styles safely */
-    display: block;
-    position: relative;
+  /* FEATURE LARGE CARD */
+.feature-large{
+  position: relative;
+  display: block;
 
-    width: 82%;          /* narrower card */
-    max-width: 360px;    /* optional cap */
-    height: 420px;
+  width: 82%;
+  max-width: 360px;
+  height: 420px;
 
-    margin: 20px auto;   /* space from top/bottom */
-    border-radius: 18px;
-    overflow: hidden;
+  margin: 20px auto;
+  border-radius: 18px;
+  overflow: hidden;
 
-    background-image: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%207.jpeg?raw=true");
-    background-size: cover;
-    background-position: center;
-  }
+  background-image: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%207.jpeg?raw=true");
+  background-size: cover;
+  background-position: center;
+}
 
   /* TEXT IN BOTTOM-LEFT */
   .feature-text{
