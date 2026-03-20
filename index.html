@@ -193,8 +193,10 @@ featureLinks.forEach(link => {
 
   <div class="feature-container">
 
+    <!-- ✅ ONLY ONE MAIN CARD -->
     <div class="feature-large">
 
+      <!-- TEXT -->
       <div class="feature-text">
         <h2>
           <span>Live</span>
@@ -205,7 +207,7 @@ featureLinks.forEach(link => {
         </p>
       </div>
 
-      <!-- ✅ MUST BE INSIDE HERE -->
+      <!-- ✅ ICON CARDS INSIDE MAIN CARD -->
       <div class="feature-cards">
 
         <a href="private-pay.html" class="feature-card">
@@ -228,19 +230,19 @@ featureLinks.forEach(link => {
 
       </div>
 
-    </div> <!-- ✅ NOW closes AFTER cards -->
+    </div> <!-- ✅ END feature-large -->
 
-  </div>
+  </div> <!-- END container -->
 
 </section>
 
-<!-- ✅ script goes AFTER everything -->
+<!-- ✅ SCRIPT OUTSIDE (clean + safe) -->
 <script>
 const featureLinks = document.querySelectorAll(".feature-card");
 
 featureLinks.forEach(link => {
   link.addEventListener("click", () => {
-    if(navigator.vibrate){
+    if (navigator.vibrate) {
       navigator.vibrate(15);
     }
   });
