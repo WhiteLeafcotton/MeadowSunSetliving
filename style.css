@@ -1000,41 +1000,47 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
    (High-End Modern / Sunset Blue)
    ================================== */
 
+/* ==================================
+   THE SILVER FOX ESTATE FOOTER
+   (4-Column Ultra-Luxe Layout)
+   ================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Montserrat:wght@100;300;400&display=swap');
 
 .luxury-footer {
   position: relative;
-  background: #050d1a; /* Deepest Sunset Blue */
+  background: #050d1a; /* Deepest Midnight Blue */
   color: rgba(255, 255, 255, 0.92);
-  padding: 160px 10% 80px;
+  padding: 140px 8% 60px;
   overflow: hidden;
   font-family: 'Montserrat', sans-serif;
-  /* Top Glow to simulate a "Sunset" horizon */
-  box-shadow: inset 0 20px 50px -20px rgba(10, 28, 56, 1);
 }
 
-/* THE FLOATING MONOGRAM - Animated subtle drift */
+/* THE FLOATING FOX WATERMARK */
+/* Replace the URL with your actual SVG/PNG Fox Logo */
 .footer-watermark {
   position: absolute;
-  top: -10%;
-  right: -5%;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 600px;
-  color: rgba(255, 255, 255, 0.02); /* Ghost-like */
-  font-style: italic;
+  top: 5%;
+  right: -2%;
+  width: 500px;
+  height: 500px;
+  background: url('https://cdn-icons-png.flaticon.com/512/2319/2319808.png') no-repeat center;
+  background-size: contain;
+  opacity: 0.03; /* Barely there, like a watermark on fine paper */
+  filter: grayscale(100%) brightness(200%);
   pointer-events: none;
-  animation: floatMonogram 20s infinite alternate ease-in-out;
+  animation: floatFox 25s infinite alternate ease-in-out;
 }
 
-@keyframes floatMonogram {
-  from { transform: translate(0, 0); }
-  to { transform: translate(-30px, 20px); }
+@keyframes floatFox {
+  0% { transform: rotate(0deg) translate(0, 0); }
+  100% { transform: rotate(5deg) translate(-40px, 30px); }
 }
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 2fr 1fr 1.5fr;
-  gap: 100px;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr; /* Restored 4 columns */
+  gap: 50px;
   position: relative;
   z-index: 5;
 }
@@ -1042,127 +1048,107 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
 /* BRANDING */
 .footer-brand h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 300;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   color: #fff;
 }
 
 .footer-tagline {
   font-size: 13px;
-  font-weight: 300;
+  font-weight: 200;
   line-height: 2.2;
-  letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.5);
-  max-width: 400px;
-  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #cfd6df; /* Soft Light Grey */
+  max-width: 300px;
 }
 
-/* NAVIGATION */
+/* HEADERS */
 .footer-header {
   font-size: 10px;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.3);
-  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 35px;
 }
 
+/* LINKS */
 .footer-links a {
   display: block;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 20px;
-  font-size: 15px;
+  margin-bottom: 18px;
+  font-size: 14px;
   font-style: italic;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.5s ease;
 }
 
 .footer-links a:hover {
   color: #fff;
-  padding-left: 12px;
+  padding-left: 8px;
 }
 
-/* THE "SCHEDULE TOUR" ANIMATED BUTTON */
+/* THE SHIMMERING BUTTON */
 .btn-tour {
   position: relative;
   display: inline-block;
-  padding: 22px 50px;
+  padding: 18px 35px;
   background: transparent;
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   text-transform: uppercase;
   font-size: 11px;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   text-decoration: none;
   overflow: hidden;
-  transition: all 0.5s ease;
+  margin-bottom: 30px;
 }
 
-/* Shimmer Effect */
 .btn-tour::before {
   content: '';
   position: absolute;
   top: 0; left: -100%;
   width: 100%; height: 100%;
   background: linear-gradient(
-    120deg,
+    90deg,
     transparent,
-    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.15),
     transparent
   );
-  transition: all 0.6s ease;
+  transition: 0.6s;
+}
+
+.btn-tour:hover::before {
+  left: 100%;
 }
 
 .btn-tour:hover {
   border-color: #fff;
-  letter-spacing: 6px;
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
-.btn-tour:hover::before {
-  left: 100%; /* Shimmer slides across on hover */
-}
-
-/* CONCIERGE LINE */
-.concierge-wrap {
-  margin-top: 40px;
-}
-
-.concierge-label {
-  font-size: 10px;
-  letter-spacing: 3px;
-  color: rgba(255, 255, 255, 0.3);
-  margin-bottom: 10px;
-}
-
+/* CONCIERGE PHONE */
 .concierge-phone {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 32px;
+  font-size: 24px;
   color: #fff;
   text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 10px;
-  transition: border 0.4s;
+  font-style: italic;
 }
 
-.concierge-phone:hover {
-  border-bottom-color: #fff;
-}
-
-/* FOOTER BOTTOM */
+/* BOTTOM BAR */
 .footer-bottom {
-  margin-top: 120px;
+  margin-top: 100px;
   padding-top: 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   justify-content: space-between;
-  align-items: center;
   font-size: 10px;
   letter-spacing: 2px;
   color: rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
 }
 
 /* MOBILE */
