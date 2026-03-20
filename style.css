@@ -690,7 +690,12 @@ transform:translateY(-3px);
 box-shadow:0 12px 35px rgba(0,0,0,.18);
 background:#274b6e;
 }
-
+@media (max-width: 768px){
+  .feature-card i{
+    position: static !important;
+    transform: none !important;
+  }
+}
 /* SECONDARY BUTTON */
 
 .btn-outline{
