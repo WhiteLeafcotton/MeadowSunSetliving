@@ -343,47 +343,11 @@ featureLinks.forEach(link => {
 
   </div>
 </footer>
-
-<!-- BOOKING MODAL -->
-<div id="bookingModal" class="modal">
-
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-
-    <h2>Schedule a Private Tour</h2>
-
-    <form action="https://formsubmit.co/clarkkimberly415@gmail.com" method="POST">
-
-      <input type="text" name="name" placeholder="Full Name" required>
-      <input type="tel" name="phone" placeholder="Phone Number" required>
-      <input type="email" name="email" placeholder="Email" required>
-
-      <input type="date" name="date" required>
-
-      <select name="service">
-        <option>Private Pay</option>
-        <option>Flex Pay</option>
-        <option>Insurance</option>
-      </select>
-
-      <textarea name="notes" placeholder="Additional notes"></textarea>
-
-      <input type="hidden" name="_subject" value="New Tour Booking Request">
-      <input type="hidden" name="_captcha" value="false">
-
-      <button type="submit" class="btn-gold">Submit Request</button>
-    </form>
-
-  </div>
-
-</div>
-
-
-
 <script>
 
-
-<script>
+/* =========================
+   MODAL
+========================= */
 function openModal(){
   document.getElementById("bookingModal").style.display = "block";
 }
@@ -392,82 +356,74 @@ function closeModal(){
   document.getElementById("bookingModal").style.display = "none";
 }
 
-// CLOSE ON OUTSIDE CLICK
-window.onclick = function(event){
+window.addEventListener("click", function(event){
   const modal = document.getElementById("bookingModal");
-  if(event.target == modal){
+  if(event.target === modal){
     modal.style.display = "none";
   }
-}
-
-// PARALLAX VIDEO
-window.addEventListener("scroll", function(){
-  const video = document.querySelector(".footer-video");
-  let offset = window.scrollY;
-  video.style.transform = "translateY(" + offset * 0.2 + "px)";
 });
 
-// MENU TOGGLE
+/* =========================
+   PARALLAX (SAFE)
+========================= */
+window.addEventListener("scroll", function(){
+  const video = document.querySelector(".footer-video");
+  if(video){
+    let offset = window.scrollY;
+    video.style.transform = "translateY(" + offset * 0.2 + "px)";
+  }
+});
+
+/* =========================
+   MENU TOGGLE
+========================= */
 function toggleMenu(){
   let menu = document.getElementById("sideMenu");
-
-  if(menu.style.width === "260px"){
-    menu.style.width = "0";
-  }else{
-    menu.style.width = "260px";
-  }
+  menu.style.width = (menu.style.width === "260px") ? "0" : "260px";
 }
 
-// ANIMATIONS
-// Select elements
+/* =========================
+   ANIMATIONS (UNCHANGED LOGIC)
+========================= */
+
 const featureCards = document.querySelectorAll(".feature-card");
 const ctaSection = document.querySelector(".cta-content");
 
-// Intersection Observer options
 const observerOptions = {
-  root: null, // viewport
+  root: null,
   rootMargin: "0px",
-  threshold: 0.1 // triggers when 10% visible
+  threshold: 0.1
 };
 
-// Callback for feature cards
-const featureCardsCallback = (entries, observer) => {
+const featureCardsCallback = (entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
     } else {
-      entry.target.classList.remove("show"); // optional: remove if scrolling away
+      entry.target.classList.remove("show");
     }
   });
 };
 
-// Callback for CTA section
-const ctaCallback = (entries, observer) => {
+const ctaCallback = (entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
     } else {
-      entry.target.classList.remove("show"); // optional
+      entry.target.classList.remove("show");
     }
   });
 };
 
-// Create observers
 const cardsObserver = new IntersectionObserver(featureCardsCallback, observerOptions);
 const ctaObserver = new IntersectionObserver(ctaCallback, observerOptions);
 
-// Observe each feature card
 featureCards.forEach(card => cardsObserver.observe(card));
 
-// Observe CTA section if it exists
 if (ctaSection) {
   ctaObserver.observe(ctaSection);
 }
 
 </script>
-
-</body>
-</html>
-
 
 
