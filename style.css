@@ -570,7 +570,7 @@ margin-top:10px;
 
   margin: 20px auto;
   border-radius: 18px;
-  overflow: hidden;
+  overflow: visible;
 
   background-image: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%207.jpeg?raw=true");
   background-size: cover;
