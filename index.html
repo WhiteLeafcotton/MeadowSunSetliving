@@ -348,11 +348,14 @@ featureLinks.forEach(link => {
 /* =========================
    MODAL
 ========================= */
-function openModal(){
+<script>
+
+/* FORCE GLOBAL ACCESS */
+window.openModal = function(){
   document.getElementById("bookingModal").style.display = "block";
 }
 
-function closeModal(){
+window.closeModal = function(){
   document.getElementById("bookingModal").style.display = "none";
 }
 
@@ -362,6 +365,8 @@ window.addEventListener("click", function(event){
     modal.style.display = "none";
   }
 });
+
+</script>
 
 /* =========================
    PARALLAX (SAFE)
