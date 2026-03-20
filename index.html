@@ -279,48 +279,57 @@ featureLinks.forEach(link => {
 
 
 
+<!-- FOOTER -->
 <footer class="lux-footer">
 
-  <!-- VIDEO BACKGROUND -->
   <video autoplay muted loop playsinline class="footer-video">
-    <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+    <source src="YOUR-VIDEO.mp4" type="video/mp4">
   </video>
 
-  <!-- DARK OVERLAY -->
   <div class="footer-overlay"></div>
-
   <div class="footer-grain"></div>
   <div class="footer-divider"></div>
 
-  <!-- CONTENT -->
   <div class="footer-content">
 
-    <div class="footer-top">
-      <h2>Refined Living, Thoughtfully Designed</h2>
-      <p>Experience comfort, dignity, and care in an environment built around you.</p>
+    <!-- CTA -->
+    <div class="footer-cta">
+      <h2>Experience Care That Feels Like Home</h2>
+      <p>Private, comfortable, and designed around dignity. Schedule your private tour today.</p>
+
+      <div class="footer-cta-buttons">
+        <button class="btn-gold" onclick="openModal()">Schedule a Tour</button>
+
+        <a href="tel:0000000000" class="btn-phone">
+          <i class="fa-solid fa-phone"></i> Call Now
+        </a>
+      </div>
     </div>
 
-    <div class="footer-middle">
-      <div class="footer-brand">
-        <h3>Your Brand</h3>
-        <p>Luxury senior living with a personal touch.</p>
+    <!-- GRID -->
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Our Community</h4>
+        <p>Luxury senior living focused on comfort, safety, and personalized care.</p>
       </div>
 
-      <div class="footer-links">
-        <a href="#">Home</a>
+      <div class="footer-col">
+        <h4>Explore</h4>
         <a href="#">Care Options</a>
         <a href="#">Pricing</a>
+        <a href="#">Amenities</a>
         <a href="#">Contact</a>
       </div>
 
-      <div class="footer-contact">
-        <p>📍 Location</p>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>📍 Your Location</p>
         <p>📞 (000) 000-0000</p>
         <p>✉️ info@email.com</p>
       </div>
     </div>
 
-    <!-- SOCIALS -->
+    <!-- SOCIAL -->
     <div class="footer-socials">
       <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
       <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -328,13 +337,46 @@ featureLinks.forEach(link => {
       <a href="#"><i class="fa-brands fa-youtube"></i></a>
     </div>
 
-    <!-- BOTTOM -->
     <div class="footer-bottom">
       <p>© 2026 Your Brand. All rights reserved.</p>
     </div>
 
   </div>
 </footer>
+
+<!-- BOOKING MODAL -->
+<div id="bookingModal" class="modal">
+
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+
+    <h2>Schedule a Private Tour</h2>
+
+    <form action="https://formsubmit.co/YOUR@email.com" method="POST">
+
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <input type="email" name="email" placeholder="Email" required>
+
+      <input type="date" name="date" required>
+
+      <select name="service">
+        <option>Private Pay</option>
+        <option>Flex Pay</option>
+        <option>Insurance</option>
+      </select>
+
+      <textarea name="notes" placeholder="Additional notes"></textarea>
+
+      <input type="hidden" name="_subject" value="New Tour Booking Request">
+      <input type="hidden" name="_captcha" value="false">
+
+      <button type="submit" class="btn-gold">Submit Request</button>
+    </form>
+
+  </div>
+
+</div>
 
 
 
