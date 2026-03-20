@@ -982,157 +982,162 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
    LUXURY FOOTER (FINAL)
 ========================= */
 
-.luxury-footer{
-  position:relative;
-  color:#fff;
-  padding:120px 10% 40px;
-  overflow:hidden;
+/* ==================================
+   THE SIGNATURE ESTATE FOOTER
+   (Prestige Assisted Living)
+   ================================== */
 
-  /* Base + soft lighting */
-  background:
-    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.04), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.03), transparent 50%),
-    #0f2742; /* rich deep blue */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Montserrat:wght@200;400&display=swap');
+
+.luxury-footer {
+  position: relative;
+  background: #0d0d0d; /* True Black for ultimate depth */
+  color: #e5e0d8; /* Warm Silk White */
+  padding: 180px 12% 80px;
+  font-family: 'Cormorant Garamond', serif; /* The "Masterpiece" font */
+  overflow: hidden;
 }
 
-/* TOP FADE */
-.luxury-footer::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:120px;
-  background:linear-gradient(to bottom, rgba(255,255,255,0), #0f2742);
-  pointer-events:none;
+/* Subtle Gold Silk Shine (Top Gradient) */
+.luxury-footer::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 1px;
+  background: linear-gradient(90deg, transparent, #c5a059, transparent);
 }
 
-/* SUBTLE TEXTURE */
-.luxury-footer::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background-image:url("https://www.transparenttextures.com/patterns/noise.png");
-  opacity:0.08;
-  pointer-events:none;
+/* The Background Monogram (Watermark effect) */
+.footer-watermark {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  font-size: 500px;
+  font-family: 'Cormorant Garamond', serif;
+  color: rgba(197, 160, 89, 0.03); /* Extremely faint gold */
+  user-select: none;
+  pointer-events: none;
+  font-style: italic;
 }
 
-/* =========================
-   GRID LAYOUT
-========================= */
-
-.footer-inner{
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr;
-  gap:80px;
-  margin-bottom:60px;
+.footer-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 80px;
+  position: relative;
+  z-index: 5;
 }
 
-/* =========================
-   BRAND
-========================= */
-
-.footer-brand h2{
-  font-family:'Playfair Display', serif;
-  font-size:28px;
-  font-weight:600;
-  margin-bottom:20px;
-  letter-spacing:1px;
+/* BRANDING: The "Crest" feel */
+.footer-brand .monogram {
+  font-size: 40px;
+  color: #c5a059;
+  margin-bottom: 20px;
+  display: block;
+  font-weight: 300;
 }
 
-.footer-tagline{
-  font-size:17px;
-  color:#d6dbe1;
-  line-height:1.7;
-  max-width:420px;
-  position:relative;
+.footer-brand h2 {
+  font-size: 42px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #fff;
 }
 
-/* LIGHT GREY ACCENT LINE */
-.footer-tagline::before{
-  content:"";
-  display:block;
-  width:50px;
-  height:2px;
-  background:#cfd6df;
-  margin-bottom:20px;
+.footer-tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 200;
+  line-height: 2.2;
+  letter-spacing: 2px;
+  color: #999;
+  max-width: 320px;
+  text-transform: uppercase;
 }
 
-/* =========================
-   LINKS
-========================= */
-
-.footer-links h4,
-.footer-contact h4{
-  font-size:13px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:#aab4c0;
-  margin-bottom:18px;
+/* SECTION HEADERS */
+.footer-header {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #c5a059;
+  margin-bottom: 40px;
+  position: relative;
 }
 
-.footer-links a{
-  display:block;
-  text-decoration:none;
-  color:#d6dbe1;
-  margin-bottom:10px;
-  font-size:15px;
-  transition:all 0.3s ease;
+/* ELEGANT NAVIGATION */
+.footer-links a {
+  display: block;
+  text-decoration: none;
+  color: #d1cfcc;
+  margin-bottom: 22px;
+  font-size: 16px;
+  font-style: italic;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.footer-links a:hover{
-  color:#ffffff;
-  transform:translateX(4px);
+.footer-links a:hover {
+  color: #c5a059;
+  letter-spacing: 2px; /* Smooth expansion on hover */
 }
 
-/* =========================
-   CONTACT
-========================= */
-
-.footer-contact p{
-  color:#d6dbe1;
-  font-size:15px;
-  margin-bottom:8px;
+/* CONTACT SECTION: Concierge Style */
+.footer-contact p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  color: #999;
+  margin-bottom: 15px;
 }
 
-/* =========================
-   SOCIAL ICONS
-========================= */
-
-.social-icons{
-  display:flex;
-  gap:12px;
-  margin-top:18px;
+.concierge-line {
+  font-size: 26px;
+  color: #fff;
+  display: block;
+  margin-bottom: 30px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+  padding-bottom: 10px;
+  width: fit-content;
 }
 
-.social-icon{
-  width:42px;
-  height:42px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:rgba(255,255,255,0.06);
-  border-radius:50%;
-  color:white;
-  transition:all 0.3s ease;
-  backdrop-filter:blur(4px);
+/* THE INVITATION BUTTON */
+.btn-invitation {
+  display: inline-block;
+  padding: 18px 45px;
+  background: rgba(197, 160, 159, 0.05);
+  border: 1px solid #c5a059;
+  color: #c5a059;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.6s;
+  backdrop-filter: blur(10px);
 }
 
-.social-icon:hover{
-  transform:translateY(-4px);
-  background:rgba(255,255,255,0.15);
+.btn-invitation:hover {
+  background: #c5a059;
+  color: #000;
+  box-shadow: 0 10px 30px rgba(197, 160, 89, 0.2);
 }
 
-/* =========================
-   FOOTER BOTTOM
-========================= */
-
-.footer-bottom{
-  border-top:1px solid rgba(255,255,255,0.1);
-  padding-top:20px;
-  text-align:center;
-  color:#aab4c0;
-  font-size:14px;
+/* FOOTER BOTTOM: The "Gilt" Finish */
+.footer-bottom {
+  margin-top: 120px;
+  padding-top: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #444;
 }
 
 /* MOBILE */
