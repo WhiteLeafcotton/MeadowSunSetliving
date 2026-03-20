@@ -619,8 +619,8 @@ margin-top:10px;
   /* FLOATING ICON STACK */
   .feature-cards{
   position: absolute;
-  bottom: 60px;   /* move up from 20px */
-  right: -10px;   /* move further right */
+  bottom: 80px;   /* move up from 20px */
+  right: -15px;   /* move further right */
   transform: none;
 
   display: flex;
