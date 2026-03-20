@@ -644,7 +644,7 @@ margin-top:10px;
 
   /* ICON */
   .feature-card i{
-    position: static !important; /* fixes mobile icon positioning */
+    position: absolute !important; /* fixes mobile icon positioning */
     width: 66px;
     height: 66px;
     font-size: 38px;
