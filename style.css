@@ -1023,38 +1023,44 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
    (Minimalist Fox Watermark)
    ================================== */
 
+/* ==================================
+   THE CRESTED FOXMOOR FOOTER 
+   (Ultra-Luxe Line Art Version)
+   ================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Montserrat:wght@100;300;400&display=swap');
 
 .luxury-footer {
   position: relative;
-  background: #050d1a; /* Deep Sunset Blue */
+  /* Deepening the Sunset Blue to a "Midnight Sapphire" */
+  background: #030a16; 
   color: rgba(255, 255, 255, 0.92);
   padding: 140px 8% 60px;
   overflow: hidden;
   font-family: 'Montserrat', sans-serif;
 }
 
-/* THE WATERMARK: Replaced with a Luxe Line-Art Fox */
+/* THE TOP-TIER FOX CREST (Watermark) */
 .footer-watermark {
   position: absolute;
-  bottom: -5%; /* Tucked into the corner for elegance */
-  right: -2%;
-  width: 550px;
-  height: 550px;
-  /* Using a clean, high-end geometric fox silhouette */
-  background: url('https://upload.wikimedia.org/wikipedia/commons/3/3d/Fox_Head_Silhouette.svg') no-repeat center;
+  bottom: -15%; 
+  right: -5%;
+  width: 700px;
+  height: 700px;
+  /* Using a sophisticated Geometric Fox Head SVG */
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21l-4-4h8l-4 4zM12 3L4 9l1 8 7 4 7-4 1-8-8-6zM8 10l4 3 4-3"/></svg>') no-repeat center;
   background-size: contain;
-  opacity: 0.04; /* The "Faint" sweet spot */
-  filter: invert(1); /* Makes it white/silver against the blue */
+  opacity: 0.05; /* Faint and prestigious */
   pointer-events: none;
   z-index: 1;
-  transform: rotate(-10deg); /* Slight tilt for a modern look */
-  animation: subtleDrift 20s infinite alternate ease-in-out;
+  /* The "Estate" Animation: A slow, breathing pulse */
+  animation: crestPulse 20s infinite alternate ease-in-out;
 }
 
-@keyframes subtleDrift {
-  from { transform: rotate(-10deg) scale(1); }
-  to { transform: rotate(-5deg) scale(1.05); }
+@keyframes crestPulse {
+  0% { transform: scale(1) rotate(-5deg); opacity: 0.03; }
+  50% { transform: scale(1.08) rotate(0deg); opacity: 0.06; }
+  100% { transform: scale(1) rotate(5deg); opacity: 0.03; }
 }
 
 .footer-inner {
@@ -1065,15 +1071,16 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
   z-index: 5;
 }
 
-/* BRANDING */
+/* BRANDING: Editorial Style */
 .footer-brand h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 42px;
+  font-size: 46px;
   font-weight: 300;
-  letter-spacing: 5px;
+  letter-spacing: 6px;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   color: #fff;
+  line-height: 1;
 }
 
 .footer-tagline {
@@ -1081,54 +1088,53 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
   font-weight: 200;
   line-height: 2.2;
   letter-spacing: 2px;
-  color: #cfd6df; /* Light Grey */
-  max-width: 320px;
+  color: #aeb4be; /* Soft Dove Grey */
+  max-width: 340px;
+  border-left: 1px solid rgba(255,255,255,0.1);
+  padding-left: 20px;
 }
 
 /* NAVIGATION */
 .footer-header {
   font-size: 10px;
-  letter-spacing: 4px;
+  letter-spacing: 5px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
-  margin-bottom: 35px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 10px;
-  width: fit-content;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 40px;
 }
 
 .footer-links a {
   display: block;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
   font-size: 15px;
   font-style: italic;
-  transition: 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .footer-links a:hover {
   color: #fff;
   padding-left: 10px;
+  letter-spacing: 1px;
 }
 
-/* ANIMATED TOUR BUTTON */
+/* THE SHIMMERING "ADMISSIONS" BUTTON */
 .btn-tour {
   position: relative;
   display: inline-block;
-  padding: 20px 45px;
-  background: transparent;
+  padding: 22px 45px;
+  background: rgba(255, 255, 255, 0.02);
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   text-transform: uppercase;
   font-size: 11px;
   letter-spacing: 4px;
   text-decoration: none;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: 0.5s;
 }
 
-/* The Shimmering Light-Streak */
 .btn-tour::before {
   content: '';
   position: absolute;
@@ -1137,10 +1143,10 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
   background: linear-gradient(
     120deg,
     transparent,
-    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.3),
     transparent
   );
-  transition: 0.6s;
+  transition: 0.8s;
 }
 
 .btn-tour:hover::before {
@@ -1148,40 +1154,31 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
 }
 
 .btn-tour:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: #fff;
+  color: #030a16;
   border-color: #fff;
-  letter-spacing: 5px;
 }
 
-/* CONCIERGE LINE */
-.concierge-wrap {
-  margin-top: 40px;
-}
-
+/* CONCIERGE PHONE */
 .concierge-phone {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 30px;
+  font-size: 32px;
   color: #fff;
   text-decoration: none;
   font-style: italic;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  padding-bottom: 5px;
-  transition: border 0.3s;
+  display: block;
+  margin-top: 20px;
 }
 
-.concierge-phone:hover {
-  border-bottom-color: #fff;
-}
-
-/* BOTTOM BAR */
+/* FOOTER BOTTOM */
 .footer-bottom {
-  margin-top: 100px;
+  margin-top: 120px;
   padding-top: 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   justify-content: space-between;
   font-size: 10px;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   color: rgba(255, 255, 255, 0.2);
   text-transform: uppercase;
 }
