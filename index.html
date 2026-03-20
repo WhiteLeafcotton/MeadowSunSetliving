@@ -385,12 +385,13 @@ featureLinks.forEach(link => {
   </div>
 
 </div>
+
+  <script>
+
 /* =========================
    MODAL
 ========================= */
 
-
-/* FORCE GLOBAL ACCESS */
 window.openModal = function(){
   document.getElementById("bookingModal").style.display = "block";
 }
@@ -406,10 +407,8 @@ window.addEventListener("click", function(event){
   }
 });
 
-
-
 /* =========================
-   PARALLAX (SAFE)
+   PARALLAX
 ========================= */
 window.addEventListener("scroll", function(){
   const video = document.querySelector(".footer-video");
@@ -428,7 +427,7 @@ function toggleMenu(){
 }
 
 /* =========================
-   ANIMATIONS (UNCHANGED LOGIC)
+   ANIMATIONS
 ========================= */
 
 const featureCards = document.querySelectorAll(".feature-card");
@@ -470,5 +469,3 @@ if (ctaSection) {
 }
 
 </script>
-
-
