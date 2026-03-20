@@ -620,7 +620,7 @@ margin-top:10px;
   .feature-cards{
   position: absolute;
   bottom: 84px;   /* move up from 20px */
-  right: -15px;   /* move further right */
+  right: -17px;   /* move further right */
   transform: none;
 
   display: flex;
