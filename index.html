@@ -189,32 +189,62 @@ featureLinks.forEach(link => {
 });
 </script>
 
-<div class="feature-cards">
+<section class="feature-section">
 
-  <a href="private-pay.html" class="feature-card">
-    <i class="fa-solid fa-dollar-sign"></i>
-    <h3>Private Pay</h3>
-    <p>Flexible payment options tailored to your needs.</p>
-  </a>
+  <div class="feature-container">
 
-  <a href="flex-pay.html" class="feature-card">
-    <i class="fa-solid fa-bed"></i>
-    <h3>Flex Pay</h3>
-    <p>Comfortable accommodations with adaptable care plans.</p>
-  </a>
+    <div class="feature-large">
 
-  <a href="insurance.html" class="feature-card">
-    <i class="fa-solid fa-shield-heart"></i>
-    <h3>Insurance</h3>
-    <p>Coverage options to support your long-term care journey.</p>
-  </a>
+      <div class="feature-text">
+        <h2>
+          <span>Live</span>
+          <span>Comfortably</span>
+        </h2>
+        <p>
+          Find Peace of Mind, With Flexible Payment Options That Make Care Affordable and Simple. Our counselors can help.
+        </p>
+      </div>
 
+      <!-- ✅ MOVE CARDS HERE -->
+      <div class="feature-cards">
 
-</div>
+        <a href="private-pay.html" class="feature-card">
+          <i class="fa-solid fa-dollar-sign"></i>
+          <h3>Private Pay</h3>
+          <p>Flexible payment options tailored to your needs.</p>
+        </a>
 
-</div>
+        <a href="flex-pay.html" class="feature-card">
+          <i class="fa-solid fa-bed"></i>
+          <h3>Flex Pay</h3>
+          <p>Comfortable accommodations with adaptable care plans.</p>
+        </a>
+
+        <a href="insurance.html" class="feature-card">
+          <i class="fa-solid fa-shield-heart"></i>
+          <h3>Insurance</h3>
+          <p>Coverage options to support your long-term care journey.</p>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
+
+<script>
+const featureLinks = document.querySelectorAll(".feature-card");
+
+featureLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    if(navigator.vibrate){
+      navigator.vibrate(15);
+    }
+  });
+});
+</script>
 
 
 
