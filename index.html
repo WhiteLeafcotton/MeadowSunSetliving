@@ -448,33 +448,7 @@ window.addEventListener('scroll', function() {
 /* ==========================================
    2. MENU TOGGLE (Mobile)
 ============================================= */
-<script>
-    // THE MENU TOGGLE
-    function toggleMenu() {
-        const menu = document.getElementById("sideMenu");
-        menu.classList.toggle("active");
-    }
 
-    // THE ANIMATION OBSERVER
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px 0px -50px 0px', 
-        threshold: 0.05 
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-            }
-        });
-    }, observerOptions);
-
-    // ACTIVATE REVEALS
-    document.querySelectorAll('.premium-reveal, .glass-card').forEach(el => {
-        observer.observe(el);
-    });
-</script> 
 
    
     
