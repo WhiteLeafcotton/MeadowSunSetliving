@@ -1645,3 +1645,28 @@ body { font-family: sans-serif; overflow-x: hidden; }
   color: #555 !important;
   text-decoration: none !important;
 }
+/* --- THE TRAFFIC CONTROLLER --- */
+
+/* 1. If the screen is WIDE (Desktop), HIDE the mobile menu elements */
+@media (min-width: 993px) {
+    .side-menu {
+        display: none !important;
+    }
+    .menu-button {
+        display: none !important;
+    }
+}
+
+/* 2. If the screen is SMALL (Mobile), HIDE the desktop links */
+@media (max-width: 992px) {
+    .nav-wrapper {
+        display: none !important;
+    }
+    /* Ensure the mobile menu is ready to pop out */
+    .side-menu {
+        display: flex !important;
+        position: fixed;
+        right: -100%; /* Keeps it off-screen until clicked */
+        transition: 0.5s;
+    }
+}
