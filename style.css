@@ -283,17 +283,80 @@ cursor:pointer;
 }
 
 /* --- MOBILE ADAPTATION --- */
+/* --- EXTRA SPECIAL MOBILE HERO --- */
 @media (max-width: 768px) {
     .hero {
-        padding: 0 25px;
-        background-attachment: scroll; /* Smoother for mobile */
+        padding: 0; /* Remove side padding to let the glass float */
+        justify-content: center;
+        align-items: flex-end; /* Push content to the bottom for thumb-reach */
+        background-attachment: scroll; 
     }
+
     .hero-light-overlay {
-        background: rgba(255, 255, 255, 0.85); /* Whiter on mobile for readability */
+        /* Darker bottom vignette to make the white glass pop */
+        background: linear-gradient(to bottom, 
+            rgba(255,255,255,0.2) 0%, 
+            rgba(15, 23, 42, 0.4) 100%);
     }
-    .hero h1 { font-size: 3.2rem; }
-    .hero-buttons { flex-direction: column; width: 100%; }
-    .scroll-indicator { display: none; }
+
+    .hero-content {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        padding: 40px 30px;
+        border-radius: 30px 30px 0 0; /* Rounded "Sheet" look */
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        box-shadow: 0 -10px 40px rgba(0,0,0,0.1);
+        border-top: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .hero-badge {
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        color: #0f172a;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+        margin: 0 auto 30px;
+        color: #475569;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn-midnight, .btn-glass-light {
+        width: 100%;
+        padding: 16px;
+        border-radius: 12px; /* Modern rounded buttons */
+        font-size: 0.75rem;
+    }
+
+    /* Floating Fox Watermark for Mobile */
+    .hero-watermark {
+        display: block;
+        bottom: auto;
+        top: 40px;
+        right: 20px;
+        width: 60px;
+        opacity: 0.4;
+        animation: foxPulse 4s infinite ease-in-out;
+    }
+}
+
+/* Sublte Breathing Animation */
+@keyframes foxPulse {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.05); opacity: 0.5; }
 }
 /* SERVICES */
 
