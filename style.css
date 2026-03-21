@@ -249,35 +249,48 @@
 }
 /* SIDE MENU */
 
-.side-menu{
-height:100%;
-width:0;
-position:fixed;
-top:0;
-right:0;
-background:rgba(255,255,255,0.85);
-backdrop-filter:blur(10px);
-overflow-x:hidden;
-transition:.4s;
-padding-top:80px;
-box-shadow:-5px 0 20px rgba(0,0,0,.2);
-z-index:2000;
+/* --- UPDATED SIDE MENU --- */
+.side-menu {
+    height: 100vh; /* Use vh for full screen height */
+    width: 0;      /* Starts at zero width */
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #0f172a; /* Midnight Blue for a 'Luxe' pop-out */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    overflow-x: hidden;
+    transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1); /* Smoother slide */
+    z-index: 9999; /* Stay above everything */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers links vertically */
+    padding-top: 0; /* Let flexbox handle centering */
 }
 
-.side-menu a{
-display:block;
-padding:16px 40px;
-text-decoration:none;
-color:#333;
-font-size:18px;
+/* THE TRIGGER: This makes the width 100% when clicked */
+.side-menu.active {
+    width: 100% !important; 
 }
 
-.close-btn{
-position:absolute;
-top:20px;
-left:30px;
-font-size:30px;
-cursor:pointer;
+/* Updated link colors for the dark background */
+.side-menu a {
+    display: block;
+    padding: 20px 40px;
+    text-decoration: none;
+    color: #ffffff; /* White text for contrast */
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px; /* Moved to right for easier thumb reach */
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
 }
 
 /* HERO */
