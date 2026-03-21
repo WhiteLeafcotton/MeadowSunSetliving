@@ -1005,16 +1005,6 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
    (4-Column Ultra-Luxe Layout)
    ================================== */
 
-@import url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/raw/refs/heads/main/timelapse-of-noctilucent-clouds-and-a-vibrant-sunrise.mp4');
-
-.luxury-footer {
-  position: relative;
-  background: #050d1a; /* Deepest Midnight Blue */
-  color: rgba(255, 255, 255, 0.92);
-  padding: 140px 8% 60px;
-  overflow: hidden;
-  font-family: 'Montserrat', sans-serif;
-}
 
 /* THE FLOATING FOX WATERMARK */
 /* Replace the URL with your actual SVG/PNG Fox Logo */
