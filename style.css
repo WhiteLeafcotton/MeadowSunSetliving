@@ -1100,8 +1100,27 @@ body { font-family: sans-serif; overflow-x: hidden; }
   z-index: 1;
 }
 
-.footer-fox { position: absolute; bottom: 15px; right: 25px; z-index: 2; pointer-events: none; }
-.footer-fox img { width: 150px; opacity: 0.08; filter: brightness(0) invert(1); }
+.footer-fox {
+  position: absolute;
+  /* Reduced from 15px to 5px to get closer to the edge */
+  bottom: 5px; 
+  right: 10px; 
+  
+  /* Reduced width from 130px to 90px for a sleeker look */
+  width: 90px; 
+  
+  z-index: 2;
+  opacity: 0.12; /* Slightly more transparent to keep it subtle */
+  pointer-events: none;
+}
+
+.footer-fox svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* This ensures the lines stay crisp even when small */
+  color: #ffffff; 
+}
 
 /* --- SOCIAL ICONS STYLE --- */
 /* --- THE "LUXURY" SOCIALS --- */
