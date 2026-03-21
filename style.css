@@ -95,6 +95,14 @@ background:white;
     margin-top: 2px;
 }
 
+.logo-mark svg {
+    height: 100%;
+    width: 100%;
+    /* This color is what "currentColor" refers to */
+    color: #0f172a; 
+    display: block;
+}
+
 /* Nav Links */
 .nav-wrapper {
     display: flex;
