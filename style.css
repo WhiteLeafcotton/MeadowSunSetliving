@@ -1046,28 +1046,49 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
 /* =========================
    FOOTER BASE
 /* --- RESET & BASE --- */
+/* --- RESET & BASE --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: sans-serif; line-height: 1.5; }
+body { font-family: sans-serif; overflow-x: hidden; }
 
-/* --- WHITE PRE-FOOTER --- */
+/* --- 1. PRE-FOOTER (WHITE) + TYPING CURSOR --- */
 .pre-footer {
   background: #ffffff;
   text-align: center;
-  padding: 80px 20px;
+  padding: 60px 20px;
 }
-.pre-footer h2 { font-size: 32px; color: #030a16; margin-bottom: 10px; font-weight: 300; }
-.pre-footer p { color: #64748b; max-width: 600px; margin: 0 auto; font-size: 16px; }
+.pre-footer h2 { 
+  font-size: 32px; 
+  color: #030a16; 
+  min-height: 40px; /* Prevents layout jump while typing */
+  font-weight: 300;
+}
+/* The flashing typing cursor */
+#typing-text::after {
+  content: "|";
+  animation: blink 0.7s infinite;
+}
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-/* --- VIDEO STRIP --- */
+/* --- 2. ULTRA-SLIM VIDEO STRIP --- */
 .video-footer {
   position: relative;
   width: 100%;
-  min-height: 480px; /* Desktop Height */
+  min-height: 400px; /* Thinner desktop height */
   background: #030a16;
   overflow: hidden;
   display: flex;
   align-items: center;
   color: white;
+  /* Scroll Animation Initial State */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+}
+
+/* Class added by JS when scrolled into view */
+.video-footer.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .footer-video-bg {
@@ -1077,124 +1098,58 @@ body { font-family: sans-serif; line-height: 1.5; }
   object-fit: cover;
   transform: translate(-50%, -50%);
   z-index: 0;
-  filter: brightness(0.5);
+  filter: brightness(0.4);
 }
 
 .footer-tint {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(3,10,22,0.4), rgba(3,10,22,0.85));
+  background: linear-gradient(to bottom, rgba(3,10,22,0.3), rgba(3,10,22,0.8));
   z-index: 1;
 }
 
-.footer-fox { position: absolute; bottom: 20px; right: 30px; z-index: 2; pointer-events: none; }
-.footer-fox img { width: 180px; opacity: 0.1; filter: brightness(0) invert(1); }
+.footer-fox { position: absolute; bottom: 15px; right: 25px; z-index: 2; pointer-events: none; }
+.footer-fox img { width: 150px; opacity: 0.08; filter: brightness(0) invert(1); }
 
-/* --- CONTENT WRAPPER --- */
+/* --- 3. CONTENT LAYOUT --- */
 .footer-content {
   position: relative;
   z-index: 3;
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 30px 20px;
 }
 
-/* --- BUTTONS: WIDE & SIDE-BY-SIDE --- */
-.footer-actions {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 40px;
-  width: 100%;
-}
+.footer-actions { display: flex; gap: 12px; margin-bottom: 30px; }
 
 .btn-gold {
-  flex: 1; /* Makes button grow to fill space */
-  background: white;
-  color: #030a16;
-  padding: 16px;
-  border: none;
-  border-radius: 4px;
-  font-weight: 600;
-  cursor: pointer;
-  text-align: center;
-  font-size: 15px;
+  flex: 1; background: white; color: #030a16; padding: 14px;
+  border: none; border-radius: 4px; font-weight: 600; cursor: pointer;
 }
 
 .btn-phone {
-  flex: 1; /* Makes button grow to fill space */
-  border: 1px solid rgba(255,255,255,0.4);
-  color: white;
-  padding: 16px;
-  text-decoration: none;
-  border-radius: 4px;
-  text-align: center;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+  flex: 1; border: 1px solid rgba(255,255,255,0.4); color: white; padding: 14px;
+  text-decoration: none; border-radius: 4px; text-align: center;
 }
 
-/* --- GRID LAYOUT --- */
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 30px;
   border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: 30px;
+  padding-top: 25px;
 }
 
-.footer-grid h4 {
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #94a3b8;
-  margin-bottom: 12px;
-}
+.footer-grid h4 { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #94a3b8; margin-bottom: 10px; }
+.footer-grid p, .footer-grid a { color: #cbd5e1; font-size: 14px; text-decoration: none; margin-bottom: 4px; display: block; }
 
-.footer-grid p, .footer-grid a {
-  color: #cbd5e1;
-  font-size: 14px;
-  text-decoration: none;
-  margin-bottom: 6px;
-  display: block;
-}
-
-/* --- PREMIUM MOBILE REFINEMENT --- */
+/* --- MOBILE REFINEMENT --- */
 @media (max-width: 768px) {
-  .video-footer { 
-    min-height: 380px; /* Slimmed down height */
-    padding: 30px 0;
-  }
-
-  .footer-content { padding: 20px; }
-
-  /* Keeps buttons side-by-side and wide */
-  .footer-actions {
-    gap: 10px;
-  }
-  
-  .btn-gold, .btn-phone {
-    padding: 14px 10px;
-    font-size: 13px;
-  }
-
-  /* Adjusts grid for small screens without disappearing content */
-  .footer-grid {
-    grid-template-columns: 1fr 1fr; /* Two columns side-by-side */
-    gap: 20px;
-  }
-
-  .community-col {
-    grid-column: span 2; /* Community paragraph takes full width at top of grid */
-    margin-bottom: 10px;
-  }
-
-  .footer-fox img {
-    width: 110px;
-    opacity: 0.06;
-  }
+  .video-footer { min-height: 340px; padding: 20px 0; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .community-col { grid-column: span 2; margin-bottom: 5px; }
+  .pre-footer h2 { font-size: 26px; }
 }
 /* =========================
    BOOKING MODAL
