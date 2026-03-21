@@ -440,64 +440,82 @@ function toggleMenu() {
 /* ==========================================
    3. ANIMATIONS & TYPING (Intersection Observer)
 ============================================= */
+/* =========================
+   MENU TOGGLE
+========================= */
+function toggleMenu(){
+  let menu = document.getElementById("sideMenu");
+  menu.style.width = (menu.style.width === "260px") ? "0" : "260px";
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+/* ========================= 
+   ANIMATIONS & TYPING
+========================= */
+
 const featureCards = document.querySelectorAll(".feature-card");
 const ctaSection = document.querySelector(".cta-content");
-const footerSection = document.querySelector(".video-footer");
-const preFooter = document.querySelector(".pre-footer");
+const footerSection = document.querySelector(".video-footer"); // New Footer Target
+const preFooter = document.querySelector(".pre-footer");     // New Pre-Footer Target
 
-// --- TYPING LOGIC ---
+// --- 1. TYPING LOGIC ---
 const typeText = "Experience Care That Feels Like Home";
 let typeIndex = 0;
 
 function typeWriter() {
-    const target = document.getElementById("typing-text");
-    if (target && typeIndex < typeText.length) {
-        target.innerHTML += typeText.charAt(typeIndex);
-        typeIndex++;
-        setTimeout(typeWriter, 70); 
-    }
+  const target = document.getElementById("typing-text");
+  if (target && typeIndex < typeText.length) {
+    target.innerHTML += typeText.charAt(typeIndex);
+    typeIndex++;
+    setTimeout(typeWriter, 70); // Typing speed
+  }
 }
 
-// --- OBSERVER SETTINGS ---
+// --- 2. OBSERVER SETTINGS ---
 const observerOptions = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.15
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.15
 };
 
-// --- COMBINED CALLBACK ---
+// --- 3. COMBINED CALLBACK ---
 const universalCallback = (entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-            
-            // Start typing once
-            if (entry.target.classList.contains("pre-footer")) {
-                typeWriter();
-                observer.unobserve(entry.target); 
-            }
-            
-            // Video Footer Slide Up
-            if (entry.target.classList.contains("video-footer")) {
-                entry.target.classList.add("is-visible"); 
-            }
-        } else {
-            // Re-fade logic
-            if (!entry.target.classList.contains("pre-footer")) {
-                entry.target.classList.remove("show");
-            }
-        }
-    });
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+      
+      // If the Pre-Footer is seen, start the typing effect once
+      if (entry.target.classList.contains("pre-footer")) {
+        typeWriter();
+        observer.unobserve(entry.target); // Stops observing so it only types once
+      }
+      
+      // If you want the footer to slide up once and stay
+      if (entry.target.classList.contains("video-footer")) {
+        entry.target.classList.add("is-visible"); 
+      }
+
+    } else {
+      // Keep your existing "remove" logic for cards/CTA if you like the "re-fade"
+      if (!entry.target.classList.contains("pre-footer")) {
+        entry.target.classList.remove("show");
+      }
+    }
+  });
 };
 
 const mainObserver = new IntersectionObserver(universalCallback, observerOptions);
 
-// START OBSERVING
+// --- 4. START OBSERVING EVERYTHING ---
 featureCards.forEach(card => mainObserver.observe(card));
+
 if (ctaSection) mainObserver.observe(ctaSection);
 if (preFooter) mainObserver.observe(preFooter);
 if (footerSection) mainObserver.observe(footerSection);
 
-</script> 
-</body>
+</script> </body>
 </html>
+
