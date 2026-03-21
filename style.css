@@ -1053,6 +1053,18 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
    TOP WHITE SECTION
 ========================= */
 
+/* =========================
+   FOOTER BASE
+========================= */
+
+.lux-footer{
+  width:100%;
+}
+
+/* =========================
+   TOP WHITE SECTION
+========================= */
+
 .footer-top{
   background:#ffffff;
   text-align:center;
@@ -1075,17 +1087,18 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
 }
 
 /* =========================
-   VIDEO STRIP (DO NOT CHANGE HEIGHT)
+   VIDEO STRIP (LOCKED SIZE)
 ========================= */
 
 .footer-bottom-strip{
   position:relative;
+  height:420px; /* KEEP THIS */
   overflow:hidden;
-  height:420px; /* 👈 keeps your strip size stable */
   color:#fff;
+  background:black; /* fallback */
 }
 
-/* VIDEO */
+/* VIDEO (CRITICAL FIX) */
 .footer-video{
   position:absolute;
   top:0;
@@ -1097,16 +1110,16 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
   display:block;
 }
 
-.footer-bottom-strip{
-  position:relative;
-  height:420px;
-  overflow:hidden;
-  background:black;
-}
-
-/* OVERLAY (SOFT FIX) */
+/* OVERLAY (BALANCED) */
 .footer-overlay{
-  background:transparent;
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(8,15,30,0.4),
+    rgba(5,10,25,0.85)
+  );
+  z-index:1;
 }
 
 /* FOX */
@@ -1139,15 +1152,17 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
 .footer-actions{
   display:flex;
   gap:15px;
+  flex-wrap:wrap;
 }
 
 .btn-gold{
-  background:#fff;
+  background:#ffffff;
   color:#0a1428;
   padding:12px 24px;
   border-radius:6px;
   border:none;
   cursor:pointer;
+  font-weight:500;
 }
 
 .btn-phone{
@@ -1156,6 +1171,9 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
   border-radius:6px;
   color:#fff;
   text-decoration:none;
+  display:flex;
+  align-items:center;
+  gap:8px;
 }
 
 /* GRID */
@@ -1170,6 +1188,7 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
   letter-spacing:2px;
   text-transform:uppercase;
   color:#cbd5e1;
+  margin-bottom:10px;
 }
 
 .footer-grid p,
@@ -1177,6 +1196,7 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
   font-size:14px;
   color:#e5e7eb;
   text-decoration:none;
+  line-height:1.6;
 }
 
 /* SOCIAL */
@@ -1187,39 +1207,27 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
 
 .footer-socials a{
   color:#cbd5e1;
+  font-size:16px;
 }
 
 /* MOBILE */
 @media(max-width:768px){
 
-  .footer-cta h2{
-    font-size:32px;
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr;
-    gap:40px;
-    text-align:center;
-  }
-
-  .footer-col p{
-    margin:0 auto;
-  }
-
-}
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:768px){
-
-  .footer-cta h2{
+  .footer-top h2{
     font-size:32px;
   }
 
   .footer-grid{
     grid-template-columns:1fr;
     text-align:center;
+  }
+
+  .footer-actions{
+    justify-content:center;
+  }
+
+  .footer-socials{
+    justify-content:center;
   }
 
 }
