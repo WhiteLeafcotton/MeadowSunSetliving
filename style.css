@@ -661,78 +661,86 @@
 
     /* THE COMPACT 2x2 GRID */
     /* --- FIX: SERVICES 2x2 GRID ON MOBILE --- */
+/* ==========================================
+   SERVICES RESPONSIVE (MOBILE & TABLET)
+============================================= */
 @media (max-width: 768px) {
-    /* 1. Reset the container to allow the grid to take full width */
-    .services-container {
-        display: flex;
-        flex-direction: column;
-        padding: 40px 20px;
-    }
-
-    /* 2. Force the 2x2 Layout */
-    .services-grid-thin {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important; /* The Magic Line */
-        gap: 12px !important;
-        width: 100% !important;
-        margin-top: 30px;
-    }
-
-    /* 3. Adjust the Glass Cards for the smaller space */
-    .glass-card {
-        padding: 20px 15px !important;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-height: 150px; /* Keeps boxes even */
-    }
-
-    .glass-card i {
-        font-size: 1.4rem !important;
-        margin-bottom: 10px;
-    }
-
-    .glass-card h3 {
-        font-size: 0.9rem !important;
-        margin-bottom: 5px;
-        line-height: 1.2;
-    }
-
-    .glass-card p {
-        font-size: 0.75rem !important;
-        display: none; /* Optional: Hide text on tiny screens to keep it clean */
-    }
-}
-
-/* Extra small screens (iPhone SE / Fold) */
-@media (max-width: 380px) {
-    .services-grid-thin {
-        gap: 8px;
-    }
-    .services-sidebar h2 {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    /* 1. Ensure the container doesn't clip the animation */
+    /* 1. Stack the layout vertically */
     .services-section {
+        padding: 60px 20px;
+        min-height: auto;
         overflow: visible !important;
     }
 
-    /* 2. The "Fade & Slide Up" for mobile cards */
+    .services-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .services-sidebar {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .accent-line {
+        margin: 0 auto 15px;
+    }
+
+    /* 2. THE COMPACT 2x2 GRID */
+    .services-grid-thin {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 15px !important;
+        width: 100% !important;
+        max-width: 500px; /* Keeps it from stretching too wide on tablets */
+        margin: 0 auto;
+    }
+
+    /* 3. Glass Card Refinement */
     .glass-card {
+        padding: 25px 15px !important;
+        min-height: 140px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* Animation setup */
         opacity: 0;
         transform: translateY(30px);
         transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    /* 3. The Magic Trigger: This forces them to appear when 10% on screen */
-    .glass-card.is-visible, 
-    .premium-reveal.is-visible .glass-card {
+    /* Reveal animation trigger */
+    .services-section.show .glass-card {
         opacity: 1;
         transform: translateY(0);
+    }
+
+    .glass-card i {
+        font-size: 1.5rem !important;
+        margin-bottom: 12px;
+    }
+
+    .glass-card h3 {
+        font-size: 1rem !important;
+        margin: 0;
+    }
+
+    .glass-card p {
+        display: none; /* Keeps the 2x2 grid clean and elegant */
+    }
+}
+
+/* Extra small screens adjustment */
+@media (max-width: 380px) {
+    .services-grid-thin {
+        gap: 10px !important;
+    }
+    .glass-card {
+        min-height: 120px;
     }
 }
 /* =========================
