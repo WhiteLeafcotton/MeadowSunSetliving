@@ -428,7 +428,25 @@ function toggleMenu(){
 /* =========================
    ANIMATIONS
 ========================= */
+<script>
+      // The Scroll-Aware Logic
+      window.addEventListener('scroll', function() {
+          const header = document.querySelector('.navbar'); // Or '.main-header' if you used that class
+          if (window.scrollY > 50) {
+              header.classList.add('scrolled');
+          } else {
+              header.classList.remove('scrolled');
+          }
+      });
 
+      // Your existing toggleMenu function for mobile
+      function toggleMenu() {
+          const sideMenu = document.querySelector('.side-menu');
+          // your logic here...
+      }
+    </script>
+</body>
+</html>
 /* ========================= 
    ANIMATIONS & TYPING
 ========================= */
