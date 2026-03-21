@@ -1046,178 +1046,163 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
 /* =========================
    FOOTER BASE
 ========================= */
-/* =========================
-/* --- BASE STYLES --- */
-.lux-footer {
-  width: 100%;
-  overflow: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
+/* --- GLOBAL RESET --- */
+* { margin: 0; padding: 0; box-box: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
 
-.footer-top {
+/* --- 1. PRE-FOOTER (WHITE) --- */
+.pre-footer {
   background: #ffffff;
   text-align: center;
   padding: 100px 20px;
+  width: 100%;
 }
 
-.footer-top h2 {
+.pre-footer h2 {
   font-size: 42px;
-  color: #030a16;
+  color: #030a16; /* Rich Blue */
   margin-bottom: 20px;
   font-weight: 300;
   letter-spacing: -1px;
 }
 
-.footer-top p {
-  max-width: 650px;
+.pre-footer p {
+  max-width: 600px;
   margin: 0 auto;
   color: #64748b;
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
-/* --- VIDEO STRIP --- */
-.footer-video {
+/* --- 2. VIDEO FOOTER STRIP (DARK BLUE) --- */
+.video-footer {
+  position: relative;
+  width: 100%;
+  min-height: 520px; /* Tall, premium strip */
+  background: #030a16; /* Fallback brand color */
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.footer-video-bg {
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 100%; 
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  z-index: -1; /* Puts it behind everything */
-  display: block; /* Ensures it isn't hidden */
-  background: transparent; /* Removes any black "placeholder" color */
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  filter: brightness(0.55) saturate(0.8);
 }
 
-.footer-bottom-strip {
-  position: relative;
-  overflow: hidden;
-  background: none; /* 👈 Remove the #050d1a color temporarily to see if the video appears */
-}
-
-
-
-/* --- FOX WATERMARK (SVG) --- */
-.footer-fox-wrapper {
+.footer-tint {
   position: absolute;
-  bottom: -20px; /* Slightly off-screen for a subtle look */
-  right: 2%;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(3,10,22,0.4), rgba(3,10,22,0.9));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* --- 3. FOX WATERMARK --- */
+.footer-fox-branding {
+  position: absolute;
+  bottom: 20px;
+  right: 3%;
   z-index: 2;
   pointer-events: none;
 }
 
-.fox-watermark {
-  width: 280px;
-  opacity: 0.1; /* Very faint light grey/white */
-  filter: brightness(0) invert(1); /* Forces SVG to White/Grey */
+.footer-fox-branding img {
+  width: 240px;
+  opacity: 0.12; /* Light grey/faint appearance */
+  filter: brightness(0) invert(1); /* Forces SVG to white/grey tones */
 }
 
-/* --- CONTENT --- */
-.footer-inner {
+/* --- 4. CONTENT & INTERACTION --- */
+.footer-main-container {
   position: relative;
-  z-index: 3;
+  z-index: 3; /* Above video and tint */
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 80px 5%;
+  padding: 60px 5%;
 }
 
-.footer-actions {
+.footer-cta-row {
   display: flex;
   gap: 20px;
   margin-bottom: 60px;
 }
 
-.btn-gold {
+.btn-tour {
   background: #ffffff;
   color: #030a16;
   padding: 16px 32px;
   border-radius: 4px;
   border: none;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-.btn-phone {
+.btn-tour:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+.btn-call {
   border: 1px solid rgba(255, 255, 255, 0.4);
   padding: 16px 32px;
   border-radius: 4px;
   color: #ffffff;
   text-decoration: none;
+  font-weight: 500;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.footer-grid {
+/* INFO GRID */
+.footer-info-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: 80px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 50px;
+  gap: 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 40px;
 }
 
-.footer-grid h4 {
-  font-size: 12px;
+.footer-info-grid h4 {
+  font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #94a3b8; /* Light Grey */
+  letter-spacing: 2px;
+  color: #94a3b8; /* Light Grey header */
   margin-bottom: 20px;
 }
 
-.footer-grid p, .footer-links a {
+.footer-info-grid p, .footer-nav-links a {
   font-size: 15px;
-  color: #cbd5e1;
-  line-height: 2;
+  color: #e2e8f0;
+  line-height: 1.8;
   text-decoration: none;
 }
 
-.footer-links a { display: block; }
+.footer-nav-links a { display: block; margin-bottom: 8px; }
 
-.footer-socials {
-  margin-top: 50px;
-  display: flex;
-  gap: 30px;
-}
+.footer-social-row { margin-top: 50px; display: flex; gap: 25px; }
+.footer-social-row i { font-size: 20px; color: rgba(255, 255, 255, 0.5); }
 
-.footer-socials i { font-size: 20px; color: rgba(255, 255, 255, 0.5); }
-
-/* --- PREMIUM MOBILE VIEW --- */
+/* --- 5. PREMIUM MOBILE DESIGN --- */
 @media (max-width: 768px) {
-  .footer-top { padding: 60px 20px; }
-  .footer-top h2 { font-size: 32px; }
+  .pre-footer { padding: 60px 20px; }
+  .pre-footer h2 { font-size: 30px; }
   
-  .footer-bottom-strip { min-height: 600px; }
+  .video-footer { min-height: 680px; text-align: center; }
+  .footer-cta-row { flex-direction: column; align-items: center; }
+  .btn-tour, .btn-call { width: 100%; max-width: 320px; justify-content: center; }
   
-  .footer-actions {
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  .btn-gold, .btn-phone {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-  }
-  
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
-  }
-  
-  .footer-socials { justify-content: center; }
-  
-  .fox-watermark {
-    width: 180px; /* Smaller for mobile */
-    right: 0;
-    bottom: 0;
-  }
+  .footer-info-grid { grid-template-columns: 1fr; gap: 40px; }
+  .footer-social-row { justify-content: center; }
+  .footer-fox-branding img { width: 160px; opacity: 0.08; }
 }
 /* =========================
    BOOKING MODAL
