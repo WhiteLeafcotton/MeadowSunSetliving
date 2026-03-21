@@ -506,19 +506,29 @@ const universalCallback = (entries) => {
 const mainObserver = new IntersectionObserver(universalCallback, { threshold: 0.15 });
 
 // Activate Observers
-<div id="sideMenu" class="side-menu">
-        <a class="close-btn" onclick="toggleMenu()">×</a>
-        <div class="mobile-nav-content">
-            <a href="#">Resident Experience</a>
-            <a href="#">About Us</a>
-            <a href="#">Payment Solutions</a>
-            <a href="#">Suites</a>
-            <a href="tel:YOURNUMBER" class="nav-cta">Contact</a>
-        </div>
-    </div>
+background: #030a16;  blue
+
+
+
+featureCards.forEach(card => mainObserver.observe(card));
+if (ctaSection) mainObserver.observe(ctaSection);
+if (preFooter) mainObserver.observe(preFooter);
+if (footerSection) mainObserver.observe(footerSection);
+
+</script> 
 
     <script>
-        // TOGGLE MENU
+      window.chatbaseConfig = {
+        chatbotId: "PhPwg7-iLonUCo-_uKjPY",
+      }
+    </script>
+    <script
+      src="https://www.chatbase.co/embed.min.js"
+      id="PhPwg7-iLonUCo-_uKjPY"
+      defer>
+    </script>
+
+ <script>
         function toggleMenu() {
             const menu = document.getElementById("sideMenu");
             if (menu) {
@@ -526,11 +536,10 @@ const mainObserver = new IntersectionObserver(universalCallback, { threshold: 0.
             }
         }
 
-        // ANIMATION OBSERVER
         const observerOptions = {
             root: null,
-            rootMargin: '0px 0px -50px 0px',
-            threshold: 0.05
+            rootMargin: '0px 0px -50px 0px', 
+            threshold: 0.05 
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -541,18 +550,18 @@ const mainObserver = new IntersectionObserver(universalCallback, { threshold: 0.
             });
         }, observerOptions);
 
-        // ACTIVATE ANIMATIONS
         document.querySelectorAll('.premium-reveal, .glass-card, .feature-card').forEach(el => {
             observer.observe(el);
         });
 
-        // CHATBOT CONFIG
         window.chatbaseConfig = {
             chatbotId: "PhPwg7-iLonUCo-_uKjPY",
-        };
+        }
     </script>
 
     <script src="https://www.chatbase.co/embed.min.js" id="PhPwg7-iLonUCo-_uKjPY" defer></script>
 
 </body>
+</html>   
+</script> </body>
 </html>
