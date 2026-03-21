@@ -457,7 +457,16 @@ window.addEventListener('scroll', function() {
    2. MENU TOGGLE (Mobile)
 ============================================= */
 
-
+/* ==========================================
+   2. MENU TOGGLE (Mobile)
+============================================= */
+function toggleMenu() {
+    const menu = document.getElementById("sideMenu");
+    if (menu) {
+        menu.classList.toggle("active");
+        console.log("Menu state toggled");
+    }
+}
    
     
 /* ==========================================
