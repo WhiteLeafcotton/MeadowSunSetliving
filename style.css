@@ -16,15 +16,7 @@ background:white;
 
 /* --- EDITORIAL NAVBAR --- */
 /* --- EDITORIAL NAVBAR --- */
-.main-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: all 0.4s ease;
-    padding: 20px 0;
-}
+
 
 /* Glass effect when scrolling (added via JS later) */
 .main-header.scrolled {
