@@ -198,20 +198,7 @@
     color: #fff;
 }
 
-/* Menu Button (Mobile) */
-.menu-button {
-    display: none;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
-}
 
-.bar {
-    width: 25px;
-    height: 1px;
-    background: #0f172a;
-    transition: 0.3s;
-}
 
 /* --- MOBILE NAV --- */
 /* --- FULL PAGE MOBILE MENU --- */
