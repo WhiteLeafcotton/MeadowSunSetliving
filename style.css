@@ -15,25 +15,34 @@
     width: 100%;
     z-index: 1000;
     transition: all 0.4s ease;
-    padding: 20px 0;
+    /* Remove vertical padding here, move it to the navbar for better control */
+    background: transparent; 
+    box-sizing: border-box; /* The 'Safety Net' for width */
 }
 
-/* Glass effect when scrolling (added via JS later) */
+/* Glass effect when scrolling */
 .main-header.scrolled {
-    padding: 12px 0;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-    border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+    background: rgba(255, 255, 255, 0.8); /* Slightly more transparent for 'Luxe' feel */
+    backdrop-filter: blur(15px); /* Stronger blur for that frosted glass look */
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .navbar {
-    max-width: 1400px;
+    width: 100%; /* Ensures it tries to fill the header */
+    max-width: 1440px; /* Limits how far the logo/links spread on huge screens */
     margin: 0 auto;
-    padding: 0 5%;
+    /* Put your padding here instead! */
+    padding: 25px 5%; 
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: padding 0.4s ease; /* Smoothly shrinks the logo/links on scroll */
+}
+
+/* Shrink the inner navbar when the header is scrolled */
+.main-header.scrolled .navbar {
+    padding: 15px 5%;
 }
 
 /* Logo Styling */
