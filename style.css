@@ -1104,33 +1104,37 @@ body { font-family: sans-serif; overflow-x: hidden; }
 .footer-fox img { width: 150px; opacity: 0.08; filter: brightness(0) invert(1); }
 
 /* --- SOCIAL ICONS STYLE --- */
+/* --- THE "LUXURY" SOCIALS --- */
 .footer-socials {
   display: flex;
-  gap: 20px;
-  margin-top: 20px;
-  padding-top: 15px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Very faint line */
-  justify-content: flex-start; /* Aligns with text on desktop */
+  gap: 25px; /* Wider spacing feels more expensive */
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08); /* Very faint line */
+  justify-content: flex-start;
 }
 
 .footer-socials a {
-  color: rgba(255, 255, 255, 0.5); /* Faint white */
-  font-size: 18px;
-  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.3); /* Almost invisible until you hover */
+  font-size: 16px; /* Slightly smaller is sleeker */
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* THE HOVER EFFECT */
 .footer-socials a:hover {
-  color: #ffffff;
-  transform: translateY(-3px);
+  color: #ffffff; /* Brightens up perfectly */
+  transform: translateY(-2px); /* Very subtle lift */
 }
 
-/* --- MOBILE TWEAK --- */
+/* --- MOBILE REFINEMENT --- */
 @media (max-width: 768px) {
   .footer-socials {
-    justify-content: center; /* Centers them on mobile */
-    margin-top: 15px;
-    gap: 25px;
+    justify-content: center; /* Centered on mobile for symmetry */
+    gap: 35px; /* Even wider gap on mobile to prevent "fat finger" clicks */
   }
 }
 
