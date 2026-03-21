@@ -192,214 +192,140 @@ flex-wrap:wrap;
 
 /* --- SERVICES REDESIGN --- */
 /* --- ULTRATHIN SERVICES SECTION --- */
+/* --- ULTRATHIN MIDNIGHT SERVICES --- */
 .services-section {
     position: relative;
-    /* Reduced padding from 120px to 60px to make it 2x thinner */
-    padding: 60px 5%; 
-    background: url('your-meadow-image.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    overflow: hidden;
+    padding: 40px 5%; /* Heavily reduced padding */
+    min-height: 450px; /* Forces it to stay thin */
     display: flex;
-    align-items: center; /* Centers content vertically in the thinner strip */
+    align-items: center;
+    background: #0f172a; /* Deep Slate Blue/Grey base */
+    color: #ffffff;
+    overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-.services-content-wrapper {
+.services-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Gradient from Deep Blue-Grey to Black */
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(2, 6, 23, 0.95) 100%);
+    z-index: 1;
+}
+
+.services-container {
     position: relative;
     z-index: 2;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
+    display: flex;
+    gap: 50px;
+    align-items: center;
     width: 100%;
 }
 
-/* Tightened Intro */
-.services-intro {
-    margin-bottom: 30px; /* Reduced from 60px */
+/* Sidebar Styling */
+.services-sidebar {
+    flex: 0 0 300px; /* Fixed width for the text side */
 }
 
-.services-intro h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem; /* Slightly smaller to fit the thin profile */
-    margin-bottom: 10px;
-}
-
-.gold-divider {
-    width: 40px;
-    height: 1px; /* Thinner line */
-    background: #d4af37;
-    margin: 0 auto 15px;
-}
-
-.intro-text {
-    font-size: 1rem;
-    max-width: 600px;
-    margin: 0 auto 20px;
-    line-height: 1.5;
-}
-
-/* Compact Glass Cards */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px; /* Tighter gap */
-    margin-bottom: 30px;
-}
-
-.service-card {
-    position: relative;
-    padding: 30px 20px; /* Thinner internal padding */
-    text-align: center;
-}
-
-.service-icon {
-    font-size: 1.8rem; /* Smaller icons */
-    margin-bottom: 15px;
-}
-
-.service-card h3 {
-    font-size: 1.1rem;
+.sub-label {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.7rem;
+    color: #94a3b8; /* Steel Grey */
+    display: block;
     margin-bottom: 8px;
 }
 
-.service-card p {
-    font-size: 0.85rem; /* Crisper, smaller text */
-    line-height: 1.4;
+.services-sidebar h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    color: #f8fafc; /* Crisp White */
 }
 
-/* Compact Buttons */
-.services-buttons {
+.accent-line {
+    width: 40px;
+    height: 2px;
+    background: #334155; /* Blue-Grey accent */
+    margin-bottom: 15px;
+}
+
+.services-sidebar p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* The Horizontal Grid */
+.services-grid-thin {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 boxes in one row */
     gap: 15px;
 }
 
-.btn-gold-fill, .btn-glass-outline {
-    padding: 12px 25px; /* Slimmer buttons */
-    font-size: 0.75rem;
-}
-
-/* Typography */
-.sub-setting {
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 0.8rem;
-    color: #d4af37; /* Gold */
-    display: block;
-    margin-bottom: 10px;
-}
-
-.services-intro h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    margin-bottom: 20px;
-}
-
-.gold-divider {
-    width: 60px;
-    height: 2px;
-    background: #d4af37;
-    margin: 0 auto 30px;
-}
-
-.intro-text {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 40px;
-    font-weight: 300;
-    line-height: 1.8;
-    color: rgba(255,255,255,0.8);
-}
-
-/* The Glass Cards */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
-}
-
-.service-card {
-    position: relative;
-    padding: 50px 30px;
+.glass-card {
+    background: rgba(30, 41, 59, 0.4); /* Deep Blue-Grey Glass */
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 25px 15px;
     text-align: center;
-    transition: transform 0.4s ease;
-    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.card-glass {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 2px; /* Sharp edges feel more high-end than round */
-    z-index: -1;
-    transition: all 0.4s ease;
+.glass-card:hover {
+    background: rgba(51, 65, 85, 0.6);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
 }
 
-.service-card:hover .card-glass {
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid #d4af37;
-    transform: scale(1.02);
-}
-
-.service-icon {
-    font-size: 2.5rem;
-    color: #d4af37;
-    margin-bottom: 25px;
-    transition: 0.3s;
-}
-
-.service-card:hover .service-icon {
-    transform: scale(1.1);
-    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
-}
-
-.service-card h3 {
-    font-family: 'Playfair Display', serif;
+.glass-card i {
+    font-size: 1.5rem;
+    color: #f8fafc; /* White icons */
     margin-bottom: 15px;
-    letter-spacing: 1px;
+    display: block;
 }
 
-.service-card p {
+.glass-card h3 {
     font-size: 0.95rem;
-    color: rgba(255,255,255,0.6);
-    line-height: 1.6;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    color: #f8fafc;
+}
+
+.glass-card p {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin: 0;
 }
 
 /* Buttons */
-.services-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.btn-gold-fill {
-    padding: 18px 35px;
-    background: #d4af37;
-    color: #000;
+.btn-main {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #f8fafc;
+    color: #020617;
     text-decoration: none;
-    font-weight: 600;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-    transition: 0.3s;
 }
 
-.btn-glass-outline {
-    padding: 18px 35px;
-    border: 1px solid rgba(255,255,255,0.3);
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-    backdrop-filter: blur(5px);
-    transition: 0.3s;
-}
-
-.btn-glass-outline:hover {
-    background: #fff;
-    color: #000;
+/* Responsive (Stack for mobile) */
+@media (max-width: 1024px) {
+    .services-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .services-sidebar { flex: 1; }
+    .services-grid-thin { grid-template-columns: 1fr 1fr; }
+    .accent-line { margin: 0 auto 15px; }
 }
 /* =========================
    FEATURE SECTION BACKGROUND
