@@ -1107,7 +1107,7 @@ body { font-family: sans-serif; overflow-x: hidden; }
   right: 10px; 
   
   /* Reduced width from 130px to 90px for a sleeker look */
-  width: 110px; 
+  width: 130px; 
   
   z-index: 2;
   opacity: 0.12; /* Slightly more transparent to keep it subtle */
