@@ -1047,177 +1047,188 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
    FOOTER BASE
 ========================= */
 /* =========================
-   FOOTER BASE
-========================= */
-
-.lux-footer{
-  width:100%;
+/* --- BASE STYLES --- */
+.lux-footer {
+  width: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* =========================
-   TOP SECTION
-========================= */
-
-.footer-top{
-  background:#ffffff;
-  text-align:center;
-  padding:90px 20px 70px;
+.footer-top {
+  background: #ffffff;
+  text-align: center;
+  padding: 100px 20px;
 }
 
-.footer-top h2{
-  font-family:'Playfair Display', serif;
-  font-size:46px;
-  color:#0a1428;
-  margin-bottom:20px;
+.footer-top h2 {
+  font-size: 42px;
+  color: #030a16;
+  margin-bottom: 20px;
+  font-weight: 300;
+  letter-spacing: -1px;
 }
 
-.footer-top p{
-  max-width:650px;
-  margin:0 auto;
-  color:#4b5563;
-  font-size:18px;
-  line-height:1.6;
+.footer-top p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #64748b;
+  font-size: 18px;
+  line-height: 1.7;
 }
 
-/* =========================
-   VIDEO STRIP
-========================= */
-
-.footer-bottom-strip{
-  position:relative;
-  height:420px; /* KEEP YOUR SIZE */
-  overflow:hidden;
-  background:#050d1a; /* elegant fallback */
-  color:#fff;
+/* --- VIDEO STRIP --- */
+.footer-bottom-strip {
+  position: relative;
+  min-height: 500px; /* Tall and premium */
+  display: flex;
+  align-items: center;
+  background: #030a16; /* Fallback Rich Blue */
+  color: #ffffff;
 }
 
-/* VIDEO (FIXED + ENHANCED) */
-.footer-video{
-  position:absolute;
-  top:-5%;              /* 👈 gives extra breathing room */
-  left:0;
-  width:100%;
-  height:110%;          /* 👈 KEY FIX (restores visibility) */
-  object-fit:cover;
-  z-index:0;
-  filter:brightness(0.7) saturate(1.15);
+.footer-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  filter: brightness(0.6) saturate(0.8);
 }
 
-/* OVERLAY (BALANCED) */
 .footer-overlay {
   position: absolute;
-  inset: 0; /* Fills the entire strip */
+  inset: 0;
+  z-index: 1;
+  /* Blend from transparent blue to deep rich blue */
   background: linear-gradient(
-    to bottom,
-    rgba(8, 15, 30, 0.4),  /* Lighter at the top to see the sunset cottage */
-    rgba(5, 10, 25, 0.85)  /* Darker at the bottom to make white text pop */
+    180deg, 
+    rgba(3, 10, 22, 0.4) 0%, 
+    rgba(3, 10, 22, 0.9) 100%
   );
-  z-index: 1; /* Sits above video (0) but below content (2) */
-  pointer-events: none; /* 👈 IMPORTANT: allows clicks to pass through to buttons */
 }
 
-/* FOX */
-.footer-fox{
-  position:absolute;
-  bottom:20px;
-  right:40px;
-  opacity:0.08;
-  z-index:1;
+/* --- FOX WATERMARK (SVG) --- */
+.footer-fox-wrapper {
+  position: absolute;
+  bottom: -20px; /* Slightly off-screen for a subtle look */
+  right: 2%;
+  z-index: 2;
+  pointer-events: none;
 }
 
-.footer-fox img{
-  width:160px;
-  filter:invert(1);
+.fox-watermark {
+  width: 280px;
+  opacity: 0.1; /* Very faint light grey/white */
+  filter: brightness(0) invert(1); /* Forces SVG to White/Grey */
 }
 
-/* CONTENT */
-.footer-inner{
-  position:relative;
-  z-index:2;
-  height:100%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:30px;
-  padding:40px 8%;
+/* --- CONTENT --- */
+.footer-inner {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 5%;
 }
 
-/* BUTTONS */
-.footer-actions{
-  display:flex;
-  gap:15px;
-  flex-wrap:wrap;
+.footer-actions {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 60px;
 }
 
-.btn-gold{
-  background:#ffffff;
-  color:#0a1428;
-  padding:12px 24px;
-  border-radius:6px;
-  border:none;
-  cursor:pointer;
+.btn-gold {
+  background: #ffffff;
+  color: #030a16;
+  padding: 16px 32px;
+  border-radius: 4px;
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
 }
 
-.btn-phone{
-  border:1px solid rgba(255,255,255,0.5);
-  padding:12px 22px;
-  border-radius:6px;
-  color:#fff;
-  text-decoration:none;
-  display:flex;
-  align-items:center;
-  gap:8px;
+.btn-phone {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 16px 32px;
+  border-radius: 4px;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-/* GRID */
-.footer-grid{
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr;
-  gap:40px;
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 80px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 50px;
 }
 
-.footer-grid h4{
-  font-size:12px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:#cbd5e1;
-  margin-bottom:10px;
+.footer-grid h4 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #94a3b8; /* Light Grey */
+  margin-bottom: 20px;
 }
 
-.footer-grid p,
-.footer-grid a{
-  font-size:14px;
-  color:#e5e7eb;
-  text-decoration:none;
+.footer-grid p, .footer-links a {
+  font-size: 15px;
+  color: #cbd5e1;
+  line-height: 2;
+  text-decoration: none;
 }
 
-/* SOCIAL */
-.footer-socials{
-  display:flex;
-  gap:18px;
+.footer-links a { display: block; }
+
+.footer-socials {
+  margin-top: 50px;
+  display: flex;
+  gap: 30px;
 }
 
-/* MOBILE */
-@media(max-width:768px){
+.footer-socials i { font-size: 20px; color: rgba(255, 255, 255, 0.5); }
 
-  .footer-top h2{
-    font-size:32px;
+/* --- PREMIUM MOBILE VIEW --- */
+@media (max-width: 768px) {
+  .footer-top { padding: 60px 20px; }
+  .footer-top h2 { font-size: 32px; }
+  
+  .footer-bottom-strip { min-height: 600px; }
+  
+  .footer-actions {
+    flex-direction: column;
+    width: 100%;
   }
-
-  .footer-grid{
-    grid-template-columns:1fr;
-    text-align:center;
+  
+  .btn-gold, .btn-phone {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
   }
-
-  .footer-actions{
-    justify-content:center;
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
   }
-
-  .footer-socials{
-    justify-content:center;
+  
+  .footer-socials { justify-content: center; }
+  
+  .fox-watermark {
+    width: 180px; /* Smaller for mobile */
+    right: 0;
+    bottom: 0;
   }
 }
-
 /* =========================
    BOOKING MODAL
 ========================= */
