@@ -50,47 +50,47 @@ background:white;
 /* --- THE LOGO LOCKUP --- */
 .logo {
     display: flex;
-    align-items: center; /* Perfectly centers the fox with the 2-line text block */
-    gap: 10px; /* Snugs the text up to the fox */
+    align-items: center;
+    gap: 12px;
     text-decoration: none;
+    padding: 5px;
 }
 
 .logo-mark {
-    /* Since your SVG is 368x752, we use a height that matches 
-       the text and let the width scale proportionally */
-    height: 48px; 
-    width: 24px; /* This is the correct aspect ratio for your fox */
+    /* We must give the container a width because the SVG is tall */
+    height: 50px; 
+    width: 25px; 
     display: flex;
     align-items: center;
+    justify-content: center;
+    overflow: visible; /* Ensures no clipping */
 }
 
 .logo-mark svg {
     height: 100%;
     width: 100%;
-    color: #0f172a; /* This sets the fox color to Midnight Blue */
+    color: #0f172a; /* Midnight Blue */
     display: block;
 }
 
 .logo-type {
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 .brand-name {
     font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1;
     color: #0f172a;
-    letter-spacing: -0.02em; /* Tighter tracking for a high-end look */
 }
 
 .brand-sub {
     font-family: 'Inter', sans-serif;
     font-size: 0.65rem;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     color: #64748b;
     margin-top: 2px;
 }
