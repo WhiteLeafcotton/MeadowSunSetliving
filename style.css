@@ -1070,22 +1070,14 @@ body { font-family: sans-serif; overflow-x: hidden; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
 /* --- 2. ULTRA-SLIM VIDEO STRIP --- */
+/* Update this in your CSS to match your existing animation style */
 .video-footer {
-  position: relative;
-  width: 100%;
-  min-height: 400px; /* Thinner desktop height */
-  background: #030a16;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  color: white;
-  /* Scroll Animation Initial State */
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 1s ease-out;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
 }
 
-/* Class added by JS when scrolled into view */
+/* When the script adds "is-visible", it triggers the slide */
 .video-footer.is-visible {
   opacity: 1;
   transform: translateY(0);
