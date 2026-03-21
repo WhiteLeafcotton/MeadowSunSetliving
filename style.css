@@ -909,7 +909,7 @@ cursor:pointer;
   background-position: center;
 }
 
-  /* TEXT IN BOTTOM-LEFT */
+
   
 
   /* FLOATING ICON STACK */
@@ -961,7 +961,13 @@ cursor:pointer;
     text-align: center;
     margin: 0;
   }
+  /* TEXT IN BOTTOM-LEFT */
 
+    @media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+}
   /* HIDE SUBTEXT ON MOBILE */
   .feature-card p{
     display: none !important;
