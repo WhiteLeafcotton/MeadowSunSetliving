@@ -318,14 +318,84 @@ flex-wrap:wrap;
 }
 
 /* Responsive (Stack for mobile) */
-@media (max-width: 1024px) {
+/* --- PREMIUM MOBILE REFINEMENT --- */
+@media (max-width: 768px) {
+    .services-section {
+        padding: 40px 20px;
+        min-height: auto; /* Let it hug the content */
+    }
+
     .services-container {
-        flex-direction: column;
+        flex-direction: column; /* Stack sidebar over grid */
+        gap: 30px;
         text-align: center;
     }
-    .services-sidebar { flex: 1; }
-    .services-grid-thin { grid-template-columns: 1fr 1fr; }
-    .accent-line { margin: 0 auto 15px; }
+
+    .services-sidebar {
+        flex: 1;
+        width: 100%;
+    }
+
+    .services-sidebar h2 {
+        font-size: 1.8rem; /* Slightly smaller for mobile headers */
+        margin-bottom: 10px;
+    }
+
+    .accent-line {
+        margin: 0 auto 15px; /* Center the line */
+    }
+
+    .services-sidebar p {
+        font-size: 0.8rem;
+        max-width: 280px;
+        margin: 0 auto 20px;
+    }
+
+    /* THE COMPACT 2x2 GRID */
+    .services-grid-thin {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two boxes per row */
+        gap: 10px; /* Tight gap for that "app-like" look */
+        width: 100%;
+    }
+
+    .glass-card {
+        padding: 20px 10px;
+        background: rgba(30, 41, 59, 0.5); /* Slightly darker for better mobile contrast */
+        border-radius: 4px;
+    }
+
+    .glass-card i {
+        font-size: 1.2rem; /* Scale down icons */
+        margin-bottom: 8px;
+    }
+
+    .glass-card h3 {
+        font-size: 0.75rem; /* Clean and small */
+        letter-spacing: 0.5px;
+        margin-bottom: 4px;
+    }
+
+    .glass-card p {
+        font-size: 0.65rem; /* Ultra-compact descriptions */
+        line-height: 1.2;
+    }
+
+    .services-actions .btn-main {
+        width: 100%; /* Full width button is easier to thumb-click */
+        padding: 14px;
+        font-size: 0.7rem;
+    }
+}
+
+/* Extra small screens (iPhone SE / Fold) */
+@media (max-width: 380px) {
+    .services-grid-thin {
+        gap: 8px;
+    }
+    .services-sidebar h2 {
+        font-size: 1.5rem;
+    }
 }
 /* =========================
    FEATURE SECTION BACKGROUND
