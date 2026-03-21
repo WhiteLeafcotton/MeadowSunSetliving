@@ -1104,15 +1104,16 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
 }
 
 /* OVERLAY (BALANCED) */
-.footer-overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
+.footer-overlay {
+  position: absolute;
+  inset: 0; /* Fills the entire strip */
+  background: linear-gradient(
     to bottom,
-    rgba(8,15,30,0.35),
-    rgba(5,10,25,0.85)
+    rgba(8, 15, 30, 0.4),  /* Lighter at the top to see the sunset cottage */
+    rgba(5, 10, 25, 0.85)  /* Darker at the bottom to make white text pop */
   );
-  z-index:1;
+  z-index: 1; /* Sits above video (0) but below content (2) */
+  pointer-events: none; /* 👈 IMPORTANT: allows clicks to pass through to buttons */
 }
 
 /* FOX */
