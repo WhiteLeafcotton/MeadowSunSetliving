@@ -660,39 +660,48 @@
     }
 
     /* THE COMPACT 2x2 GRID */
-    .services-grid-thin {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* Two boxes per row */
-        gap: 10px; /* Tight gap for that "app-like" look */
-        width: 100%;
+    /* --- FIX: SERVICES 2x2 GRID ON MOBILE --- */
+@media (max-width: 768px) {
+    /* 1. Reset the container to allow the grid to take full width */
+    .services-container {
+        display: flex;
+        flex-direction: column;
+        padding: 40px 20px;
     }
 
+    /* 2. Force the 2x2 Layout */
+    .services-grid-thin {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* The Magic Line */
+        gap: 12px !important;
+        width: 100% !important;
+        margin-top: 30px;
+    }
+
+    /* 3. Adjust the Glass Cards for the smaller space */
     .glass-card {
-        padding: 20px 10px;
-        background: rgba(30, 41, 59, 0.5); /* Slightly darker for better mobile contrast */
-        border-radius: 4px;
+        padding: 20px 15px !important;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 150px; /* Keeps boxes even */
     }
 
     .glass-card i {
-        font-size: 1.2rem; /* Scale down icons */
-        margin-bottom: 8px;
+        font-size: 1.4rem !important;
+        margin-bottom: 10px;
     }
 
     .glass-card h3 {
-        font-size: 0.75rem; /* Clean and small */
-        letter-spacing: 0.5px;
-        margin-bottom: 4px;
-    }
-
-    .glass-card p {
-        font-size: 0.65rem; /* Ultra-compact descriptions */
+        font-size: 0.9rem !important;
+        margin-bottom: 5px;
         line-height: 1.2;
     }
 
-    .services-actions .btn-main {
-        width: 100%; /* Full width button is easier to thumb-click */
-        padding: 14px;
-        font-size: 0.7rem;
+    .glass-card p {
+        font-size: 0.75rem !important;
+        display: none; /* Optional: Hide text on tiny screens to keep it clean */
     }
 }
 
