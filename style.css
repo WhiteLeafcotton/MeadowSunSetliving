@@ -1098,17 +1098,7 @@ box-shadow:0 12px 35px rgba(0,0,0,.15);
   background: none; /* 👈 Remove the #050d1a color temporarily to see if the video appears */
 }
 
-.footer-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  /* Blend from transparent blue to deep rich blue */
-  background: linear-gradient(
-    180deg, 
-    rgba(3, 10, 22, 0.4) 0%, 
-    rgba(3, 10, 22, 0.9) 100%
-  );
-}
+
 
 /* --- FOX WATERMARK (SVG) --- */
 .footer-fox-wrapper {
