@@ -8,73 +8,102 @@
 /* --- EDITORIAL NAVBAR --- */
 
 /* --- 1. MAIN HEADER & SCROLL LOGIC --- */
+
 .main-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s ease;
+    /* Remove vertical padding here, move it to the navbar for better control */
     background: transparent; 
-    box-sizing: border-box;
+    box-sizing: border-box; /* The 'Safety Net' for width */
 }
 
-/* Frosted Midnight effect when scrolling */
+/* Glass effect when scrolling */
 .main-header.scrolled {
-    background: rgba(15, 23, 42, 0.95) !important; /* Midnight Blue */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    padding: 5px 0; /* Subtle shrink */
+    background: rgba(255, 255, 255, 0.8); /* Slightly more transparent for 'Luxe' feel */
+    backdrop-filter: blur(15px); /* Stronger blur for that frosted glass look */
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* --- 2. THE NAVBAR LAYOUT --- */
 .navbar {
-    width: 100%;
-    max-width: 1440px;
+    width: 100%; /* Ensures it tries to fill the header */
+    max-width: 1440px; /* Limits how far the logo/links spread on huge screens */
     margin: 0 auto;
+    /* Put your padding here instead! */
     padding: 25px 5%; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: padding 0.4s ease;
+    transition: padding 0.4s ease; /* Smoothly shrinks the logo/links on scroll */
 }
 
-/* --- 3. LOGO & FOX COLOR SHIFT --- */
+/* Shrink the inner navbar when the header is scrolled */
+.main-header.scrolled .navbar {
+    padding: 15px 5%;
+}
+
+/* Logo Styling */
+/* --- THE LOGO LOCKUP --- */
 .logo {
     display: flex;
     align-items: center;
     gap: 12px;
     text-decoration: none;
+    padding: 5px;
+}
+
+.logo-mark {
+    /* We must give the container a width because the SVG is tall */
+    height: 50px; 
+    width: 25px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible; /* Ensures no clipping */
 }
 
 .logo-mark svg {
-    height: 50px;
-    width: 25px;
-    color: #0f172a; /* Dark on light background */
-    transition: color 0.4s ease;
+    height: 100%;
+    width: 100%;
+    color: #0f172a; /* Midnight Blue */
+    display: block;
+}
+
+.logo-type {
+    display: flex;
+    flex-direction: column;
 }
 
 .brand-name {
     font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1;
     color: #0f172a;
-    transition: color 0.4s ease;
 }
 
-/* WHITE TEXT/FOX ON SCROLL */
-.main-header.scrolled .logo-mark svg,
-.main-header.scrolled .brand-name,
-.main-header.scrolled .nav-item,
-.main-header.scrolled .nav-cta {
-    color: #ffffff !important;
+.brand-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #64748b;
+    margin-top: 2px;
 }
 
-.main-header.scrolled .nav-cta {
-    border-color: #ffffff;
+.logo-mark svg {
+    height: 100%;
+    width: 100%;
+    /* This color is what "currentColor" refers to */
+    color: #0f172a; 
+    display: block;
 }
 
-/* --- 4. DESKTOP NAV LINKS --- */
+/* Nav Links */
 .nav-wrapper {
     display: flex;
     align-items: center;
@@ -91,77 +120,166 @@
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.75rem;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #0f172a;
     transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-/* --- 5. MOBILE HAMBURGER BUTTON --- */
+.nav-item i {
+    font-size: 0.6rem;
+    opacity: 0.5;
+}
+
+.nav-item:hover {
+    color: #64748b;
+}
+
+/* Dropdown Menu - Editorial Style */
+.dropdown { position: relative; }
+
+.dropdown-menu {
+    position: absolute;
+    top: 150%;
+    left: 0;
+    background: #ffffff;
+    min-width: 200px;
+    padding: 20px;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: 0.3s;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border-top: 2px solid #0f172a;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    color: #475569;
+    display: block;
+    padding: 10px 0;
+    letter-spacing: 1px;
+    transition: 0.2s;
+}
+
+.dropdown-menu li a:hover {
+    color: #0f172a;
+    padding-left: 5px;
+}
+
+/* Nav CTA Button */
+.nav-cta {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 12px 24px;
+    border: 1px solid #0f172a;
+    color: #0f172a;
+    transition: 0.4s;
+}
+
+.nav-cta:hover {
+    background: #0f172a;
+    color: #fff;
+}
+
+/* Menu Button (Mobile) */
 .menu-button {
-    display: none; /* Hidden on Desktop */
+    display: none;
     flex-direction: column;
     gap: 6px;
     cursor: pointer;
-    z-index: 10001;
 }
 
-.menu-button .bar {
-    width: 28px;
-    height: 2px;
+.bar {
+    width: 25px;
+    height: 1px;
     background: #0f172a;
     transition: 0.3s;
 }
 
-/* --- 6. FULL-PAGE MOBILE SIDE MENU --- */
-.side-menu {
-    height: 100vh !important;
-    width: 100% !important;
-    position: fixed !important;
-    top: 0 !important;
-    right: -100% !important; /* Start hidden */
-    background: #0f172a !important; 
-    transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-    z-index: 9999 !important;
-    display: flex !important;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    visibility: hidden; /* Safety lock */
-}
-
-.side-menu.active {
-    right: 0 !important;
-    visibility: visible !important;
-}
-
-.side-menu a {
-    color: #ffffff !important;
-    font-size: 1.8rem !important;
-    text-decoration: none;
-    padding: 15px 0;
-    font-family: 'Playfair Display', serif;
-}
-
-.close-btn {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-}
-
-/* --- 7. RESPONSIVE BREAKPOINTS --- */
+/* --- MOBILE NAV --- */
 @media (max-width: 992px) {
-    .nav-wrapper { display: none !important; }
-    .menu-button { display: flex !important; }
-    
-    /* Ensure bars turn white when header scrolls */
-    .main-header.scrolled .menu-button .bar {
-        background: #ffffff !important;
-    }
+    .nav-wrapper { display: none; }
+    .menu-button { display: flex; }
+    .main-header { padding: 15px 0; }
 }
+.mobile-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    width: 100%;
+    text-align: center;
+}
+
+.group-title {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #64748b; /* Your Brand Grey */
+    margin-bottom: 10px;
+}
+
+.mobile-nav-content a {
+    font-size: 1.2rem;
+    padding: 8px 0;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.mobile-nav-content a:hover {
+    color: #94a3b8; /* Light slate hover */
+}
+/* SIDE MENU */
+
+.side-menu{
+height:100%;
+width:0;
+position:fixed;
+top:0;
+right:0;
+background:rgba(255,255,255,0.85);
+backdrop-filter:blur(10px);
+overflow-x:hidden;
+transition:.4s;
+padding-top:80px;
+box-shadow:-5px 0 20px rgba(0,0,0,.2);
+z-index:2000;
+}
+
+.side-menu a{
+display:block;
+padding:16px 40px;
+text-decoration:none;
+color:#333;
+font-size:18px;
+}
+
+.close-btn{
+position:absolute;
+top:20px;
+left:30px;
+font-size:30px;
+cursor:pointer;
+}
+
 /* HERO */
 
 /* --- FULL-WIDTH LIGHT LUXURY HERO --- */
