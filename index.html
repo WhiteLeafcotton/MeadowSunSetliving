@@ -412,6 +412,17 @@ featureLinks.forEach(link => {
   <script>
 
 
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('.main-header');
+    
+    // If the user scrolls more than 50px, add the 'scrolled' class
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
 /* ==========================================
    MOBILE DROPDOWN TOGGLE LOGIC
 ============================================= */
