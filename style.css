@@ -375,220 +375,170 @@
 /* 1. BASE HERO DEFAULTS */
 /* --- 1. THE MAIN INDEX HERO (Full Height) --- */
 /* --- FULL-WIDTH LIGHT LUXURY HERO (RESTORED ORIGINAL) --- */
-.hero {
-    height: 100vh;
-    width: 100%;
-    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    padding: 0 10%;
-    position: relative;
-    overflow: hidden;
-    background-attachment: fixed; /* Your original parallax effect */
-    z-index: 5;
+/* ============================================================
+   1. RESET & CORE TYPOGRAPHY
+   ============================================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+/* ============================================================
+   2. NAVBAR (Editorial Slim)
+   ============================================================ */
+.main-header {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
 }
 
-/* Specific override for About Page Hero */
+.main-header.scrolled {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+}
+
+.navbar {
+    width: 100%; max-width: 1440px;
+    margin: 0 auto; padding: 20px 5%;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.logo { text-decoration: none !important; display: flex; align-items: center; }
+.brand-name { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: #0a1128; line-height: 1; }
+.brand-sub { font-family: 'Inter', sans-serif; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; color: #64748b; }
+
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-item { 
+    text-decoration: none; font-family: 'Montserrat', sans-serif; 
+    font-size: 0.75rem; font-weight: 600; text-transform: uppercase; 
+    letter-spacing: 2px; color: #0a1128; transition: 0.3s; 
+}
+.nav-item:hover { color: #64748b; }
+
+/* ============================================================
+   3. HERO SYSTEM (Index vs About)
+   ============================================================ */
+.hero {
+    height: 100vh; width: 100%;
+    display: flex; align-items: center; padding: 0 10%;
+    position: relative; overflow: hidden; z-index: 5;
+    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat;
+    background-attachment: fixed; /* Parallax on Web */
+}
+
+/* About Page Specific Hero */
 .hero.hero-about {
     height: 50vh; 
     background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat;
     background-attachment: scroll;
-    position: sticky; /* This enables the slide-over */
-    top: 0;
-    z-index: -1; /* Pushes it back ONLY on the about page */
+    position: sticky; top: 0; z-index: -1;
 }
 
-/* THE SLIDE-OVER TRIGGER (ABOUT PAGE ONLY) */
-/* This ensures other sections slide over the sticky About hero */
+/* Ensure content slides over the About Hero */
 .hero.hero-about ~ section,
 .hero.hero-about ~ .main-content-wrapper {
-    position: relative;
-    z-index: 10;
-    background: #ffffff;
+    position: relative; z-index: 10; background: #ffffff;
 }
 
-/* --- THE REST IS YOUR ORIGINAL DESIGN CODE --- */
+.hero h1 { font-family: "Playfair Display", serif; font-size: clamp(50px, 7vw, 90px); color: #0f172a; line-height: 1.05; }
+.italic-serif { font-style: italic; color: #64748b; }
 
-.hero-light-overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(to right, 
-        rgba(255, 255, 255, 0.7) 0%, 
-        rgba(255, 255, 255, 0.3) 50%, 
-        transparent 100%);
-    z-index: 1;
+/* ============================================================
+   4. ABOUT PAGE: MAGAZINE EDITORIAL (WEB VIEW)
+   ============================================================ */
+.magazine-editorial { padding: 100px 0; background: #fff; position: relative; }
+
+.editorial-row {
+    display: flex; align-items: flex-start;
+    margin-bottom: 120px; width: 100%;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 750px;
+/* Staggering the Rows on Web */
+.top-row { justify-content: flex-start; padding-left: 10%; }
+.bottom-row { justify-content: flex-end; padding-right: 10%; }
+
+.photo-frame {
+    width: 450px; height: 600px; overflow: hidden;
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
 }
 
-.hero-badge {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 25px;
+.photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+.label-stack { margin-top: 30px; }
+.name-label { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: #0f172a; }
+
+.bio-col {
+    border-left: 1px solid #475569; padding-left: 20px;
+    max-width: 400px; margin-top: 20px;
 }
 
-.badge-line {
-    width: 40px;
-    height: 1px;
-    background: #475569;
+/* ============================================================
+   5. MOTION ENGINE (The "Alive" Feeling)
+   ============================================================ */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.badge-text {
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 0.7rem;
-    color: #475569;
-    font-weight: 600;
+.animate-on-scroll.is-visible, 
+.animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.hero h1 {
-    font-size: clamp(50px, 7vw, 90px);
-    font-family: "Playfair Display", serif;
-    color: #0f172a;
-    line-height: 1.05;
-    margin-bottom: 25px;
-    font-weight: 400;
-}
-
-.italic-serif {
-    font-style: italic;
-    color: #64748b;
-}
-
-.hero p {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: #334155;
-    max-width: 500px;
-    margin-bottom: 45px;
-    font-weight: 300;
-}
-
-/* Luxury Buttons */
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-}
-
-.btn-midnight {
-    padding: 18px 40px;
-    background: #0f172a;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: 0.4s ease;
-}
-
-.btn-glass-light {
-    padding: 18px 40px;
-    border: 1px solid #0f172a;
-    color: #0f172a;
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: 0.4s ease;
-}
-
-.scroll-indicator {
-    position: absolute;
-    bottom: 40px;
-    left: 10%;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.scroll-text {
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #64748b;
-    writing-mode: vertical-lr;
-}
-
-.scroll-line {
-    width: 1px;
-    height: 60px;
-    background: linear-gradient(to bottom, #64748b, transparent);
-}
-/* --- MOBILE ADAPTATION --- */
-/* --- EXTRA SPECIAL MOBILE HERO --- */
-/* --- MOBILE ADAPTATION --- */
-/* --- PREMIUM DESKTOP-STYLE MOBILE HERO --- */
+/* ============================================================
+   6. ABOUT MOBILE VIEW (0 IMPACT ON WEB)
+   ============================================================ */
 @media (max-width: 768px) {
-    .hero {
-        padding: 0 10%; /* Keep that generous 10% breathing room on the left */
-        justify-content: flex-start; /* Keeps text left-aligned, not centered */
-        background-attachment: scroll; /* Better performance on mobile chips */
+    .hero.hero-about {
+        height: 60vh !important;
+        background-attachment: scroll !important;
     }
 
-    .hero-light-overlay {
-        /* We make the light wash a bit more solid (0.8) so text is 100% readable over the image */
-        background: linear-gradient(to right, 
-            rgba(255, 255, 255, 0.85) 0%, 
-            rgba(255, 255, 255, 0.4) 70%, 
-            transparent 100%);
+    .editorial-row {
+        flex-direction: column !important;
+        padding: 0 25px !important;
+        margin-bottom: 80px;
     }
 
-    .hero-content {
-        max-width: 100%; /* Let it use the available width */
-        text-align: left; /* Strict left alignment to match desktop */
+    /* Staggered Mobile Profiles */
+    .profile-box.julianne { 
+        align-self: flex-start; width: 90% !important; 
+    }
+    
+    .profile-box.eleanor { 
+        align-self: flex-end; width: 90% !important; 
+        margin-top: -30px; /* Editorial overlap */
     }
 
-    .hero h1 {
-        font-size: 2.8rem; /* Large enough to feel "Premium" but fits the screen */
-        line-height: 1.1;
-        margin-bottom: 20px;
+    .photo-frame { width: 100% !important; height: 400px !important; }
+
+    /* Alternate the alignment to keep the magazine look */
+    .julianne .bio-col {
+        border-left: 1px solid #475569 !important;
+        padding-left: 15px !important;
+        text-align: left !important;
     }
 
-    .hero p {
-        font-size: 0.95rem;
-        max-width: 90%; /* Don't let text hit the right edge */
-        margin-bottom: 35px;
+    .eleanor .bio-col {
+        border-left: none !important;
+        border-right: 1px solid #475569 !important;
+        padding-right: 15px !important;
+        text-align: right !important;
     }
 
-    /* Keep the buttons sleek and side-by-side if they fit, or stack elegantly */
-    .hero-buttons {
-        flex-direction: column; /* Stacking is safer for long mobile text */
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .btn-midnight, .btn-glass-light {
-        width: auto; /* Keeps them from looking like "blocks" */
-        min-width: 200px;
-        padding: 14px 25px;
-        text-align: center;
-    }
-
-    /* The Scroll Indicator - We keep this because it looks expensive */
-    .scroll-indicator {
-        left: 10%;
-        bottom: 30px;
-        transform: scale(0.8); /* Scale it down slightly for mobile */
-    }
-
-    /* The Fox Watermark - Move it to the bottom right corner */
-    .hero-watermark {
-        right: 20px;
-        bottom: 20px;
-        width: 80px;
-        opacity: 0.1; /* Keep it very faint like a real watermark */
-    }
+    .eleanor .label-stack { text-align: right !important; }
+    
+    .name-label { font-size: 2.2rem !important; }
 }
+
+/* ============================================================
+   7. SERVICES & OTHER SECTIONS (EXISTING STYLES)
+   ============================================================ */
+.services-section { background: #0f172a; color: #fff; padding: 60px 5%; }
+/* ... [Rest of your existing services/cta/footer CSS] ... */
 /* SERVICES */
 
 /* --- SERVICES REDESIGN --- */
