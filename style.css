@@ -249,48 +249,35 @@
 }
 /* SIDE MENU */
 
-/* --- UPDATED SIDE MENU --- */
-.side-menu {
-    height: 100vh; /* Use vh for full screen height */
-    width: 0;      /* Starts at zero width */
-    position: fixed;
-    top: 0;
-    right: 0;
-    background: #0f172a; /* Midnight Blue for a 'Luxe' pop-out */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    overflow-x: hidden;
-    transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1); /* Smoother slide */
-    z-index: 9999; /* Stay above everything */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centers links vertically */
-    padding-top: 0; /* Let flexbox handle centering */
+.side-menu{
+height:100%;
+width:0;
+position:fixed;
+top:0;
+right:0;
+background:rgba(255,255,255,0.85);
+backdrop-filter:blur(10px);
+overflow-x:hidden;
+transition:.4s;
+padding-top:80px;
+box-shadow:-5px 0 20px rgba(0,0,0,.2);
+z-index:2000;
 }
 
-/* THE TRIGGER: This makes the width 100% when clicked */
-.side-menu.active {
-    width: 100% !important; 
+.side-menu a{
+display:block;
+padding:16px 40px;
+text-decoration:none;
+color:#333;
+font-size:18px;
 }
 
-/* Updated link colors for the dark background */
-.side-menu a {
-    display: block;
-    padding: 20px 40px;
-    text-decoration: none;
-    color: #ffffff; /* White text for contrast */
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    text-align: center;
-}
-
-.close-btn {
-    position: absolute;
-    top: 30px;
-    right: 30px; /* Moved to right for easier thumb reach */
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
+.close-btn{
+position:absolute;
+top:20px;
+left:30px;
+font-size:30px;
+cursor:pointer;
 }
 
 /* HERO */
@@ -660,84 +647,70 @@
     }
 
     /* THE COMPACT 2x2 GRID */
-    /* --- FIX: SERVICES 2x2 GRID ON MOBILE --- */
-/* ==========================================
-   SERVICES RESPONSIVE (MOBILE & TABLET)
-============================================= */
-/* ==========================================
-   SERVICES SECTION: MOBILE REFINEMENT
-============================================= */
-@media (max-width: 768px) {
-    /* 1. Reset Section & Container */
-    .services-section {
-        padding: 50px 0;
-        min-height: auto;
-    }
-
-    .services-container {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center;
-        width: 90%;
-        margin: 0 auto;
-        gap: 30px;
-    }
-
-    /* 2. Sidebar Centering */
-    .services-sidebar {
-        text-align: center;
+    .services-grid-thin {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two boxes per row */
+        gap: 10px; /* Tight gap for that "app-like" look */
         width: 100%;
     }
 
-    .services-sidebar h2 {
-        font-size: 1.8rem;
-    }
-
-    .accent-line {
-        margin: 10px auto; /* Centers the line */
-    }
-
-    /* 3. THE COMPACT 2x2 GRID */
-    .services-grid-thin {
-        display: grid !important;
-        /* Forces exactly 2 columns */
-        grid-template-columns: repeat(2, 1fr) !important; 
-        gap: 15px !important;
-        width: 100% !important;
-        max-width: 450px; /* Prevents stretching on tablets */
-    }
-
-    /* 4. The Glass Cards */
     .glass-card {
-        padding: 20px 10px !important;
-        min-height: 130px; /* Keeps them as uniform squares */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+        padding: 20px 10px;
+        background: rgba(30, 41, 59, 0.5); /* Slightly darker for better mobile contrast */
+        border-radius: 4px;
     }
 
     .glass-card i {
-        font-size: 1.5rem;
+        font-size: 1.2rem; /* Scale down icons */
         margin-bottom: 8px;
     }
 
     .glass-card h3 {
-        font-size: 0.95rem;
-        margin: 0;
+        font-size: 0.75rem; /* Clean and small */
+        letter-spacing: 0.5px;
+        margin-bottom: 4px;
     }
 
-    /* Hiding the P tag keeps the 2x2 look clean on small screens */
     .glass-card p {
-        display: none; 
+        font-size: 0.65rem; /* Ultra-compact descriptions */
+        line-height: 1.2;
+    }
+
+    .services-actions .btn-main {
+        width: 100%; /* Full width button is easier to thumb-click */
+        padding: 14px;
+        font-size: 0.7rem;
     }
 }
 
-/* Small adjustments for very narrow phones */
+/* Extra small screens (iPhone SE / Fold) */
 @media (max-width: 380px) {
     .services-grid-thin {
-        gap: 10px !important;
+        gap: 8px;
+    }
+    .services-sidebar h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* 1. Ensure the container doesn't clip the animation */
+    .services-section {
+        overflow: visible !important;
+    }
+
+    /* 2. The "Fade & Slide Up" for mobile cards */
+    .glass-card {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* 3. The Magic Trigger: This forces them to appear when 10% on screen */
+    .glass-card.is-visible, 
+    .premium-reveal.is-visible .glass-card {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 /* =========================
@@ -1671,37 +1644,4 @@ body { font-family: sans-serif; overflow-x: hidden; }
 .feature-card p{
   color: #555 !important;
   text-decoration: none !important;
-}
-/* --- THE TRAFFIC CONTROLLER --- */
-
-/* --- HIDE MOBILE STUFF ON DESKTOP --- */
-@media (min-width: 993px) {
-    .side-menu, 
-    .menu-button,
-    .mobile-nav-content {
-        display: none !important;
-    }
-}
-
-/* --- MOBILE SETUP --- */
-@media (max-width: 992px) {
-    .side-menu {
-        display: flex !important;
-        position: fixed;
-        top: 0;
-        right: -100%; /* PARKED OFF-SCREEN */
-        width: 100%;
-        height: 100vh;
-        background: #0f172a; /* Midnight Blue */
-        z-index: 9999;
-        transition: 0.5s ease-in-out;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* This shows the menu when you click the button */
-    .side-menu.active {
-        right: 0 !important;
-    }
 }
