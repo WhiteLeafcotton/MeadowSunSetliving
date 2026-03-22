@@ -8,84 +8,70 @@
 /* --- EDITORIAL NAVBAR --- */
 
 
-/* --- INITIAL STATE (Top of page) --- */
-/* ==========================================
-   EDITORIAL SLIM NAVBAR (OUTLINE LOGO)
-============================================= */
-
-/* --- 1. HEADER CORE --- */
 .main-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    background: transparent;
+    transition: all 0.4s ease;
+    /* Remove vertical padding here, move it to the navbar for better control */
+    background: transparent; 
+    box-sizing: border-box; /* The 'Safety Net' for width */
 }
 
-/* Scrolled State (Frosted White) */
+/* Glass effect when scrolling */
 .main-header.scrolled {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    background: rgba(255, 255, 255, 0.8); /* Slightly more transparent for 'Luxe' feel */
+    backdrop-filter: blur(15px); /* Stronger blur for that frosted glass look */
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* --- 2. NAVIGATION LAYOUT --- */
 .navbar {
-    width: 100%;
-    max-width: 1440px;
+    width: 100%; /* Ensures it tries to fill the header */
+    max-width: 1440px; /* Limits how far the logo/links spread on huge screens */
     margin: 0 auto;
-    padding: 20px 5%; /* Breathable for cottage comfort */
+    /* Put your padding here instead! */
+    padding: 25px 5%; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: padding 0.4s ease;
+    transition: padding 0.4s ease; /* Smoothly shrinks the logo/links on scroll */
 }
 
+/* Shrink the inner navbar when the header is scrolled */
 .main-header.scrolled .navbar {
-    padding: 12px 5%; 
+    padding: 15px 5%;
 }
 
-/* --- 3. LOGO LOCKUP (FOX + TEXT) --- */
+/* Logo Styling */
+/* --- THE LOGO LOCKUP --- */
 .logo {
     display: flex;
     align-items: center;
-    gap: 15px; 
+    gap: 12px;
     text-decoration: none;
+    padding: 5px;
 }
 
 .logo-mark {
-    height: 60px; 
-    width: auto;
+    /* We must give the container a width because the SVG is tall */
+    height: 50px; 
+    width: 25px; 
     display: flex;
     align-items: center;
-    transition: height 0.4s ease;
+    justify-content: center;
+    overflow: visible; /* Ensures no clipping */
 }
 
-.main-header.scrolled .logo-mark {
-    height: 48px; 
-}
-
-/* Fox Outline Styling */
-.fox-logo {
+.logo-mark svg {
     height: 100%;
-    width: auto;
+    width: 100%;
+    color: #0f172a; /* Midnight Blue */
     display: block;
-    overflow: visible;
 }
 
-.fox-logo path {
-    fill: none !important;
-    stroke: #0a1128 !important; 
-    stroke-width: 2.5px;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    vector-effect: non-scaling-stroke;
-}
-
-/* Brand Typography */
 .logo-type {
     display: flex;
     flex-direction: column;
@@ -93,48 +79,10 @@
 
 .brand-name {
     font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    color: #0a1128;
-    line-height: 1.1;
-}
-
-.brand-sub {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    color: #64748b;
-}
-
-/* --- 4. NAV LINKS MENU --- */
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 35px;
-}
-
-.nav-item {
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #0a1128;
-    transition: 0.3s;
-}
-
-.nav-item:hover {
-    color: #64748b;
-}/* Keep the rest of the logo text looking sharp */
-
-.brand-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem; 
-    font-weight: 700;
-    color: #0a1128;
     line-height: 1;
+    color: #0f172a;
 }
 
 .brand-sub {
