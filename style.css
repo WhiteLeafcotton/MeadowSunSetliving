@@ -1827,13 +1827,17 @@ body { font-family: sans-serif; overflow-x: hidden; }
 
 .magazine-editorial {
     position: relative;
-    /* CHANGE: changed '60px 0' to '60px 0 0' to kill bottom padding */
-    padding: 60px 0 0; 
+    padding: 60px 0; /* Keeps your original editorial spacing */
     background: #ffffff;
-    overflow: hidden;
-    /* ADD: This ensures no hidden margin is pushing the next section away */
-    margin-bottom: 0 !important;
+    overflow: visible; /* Changed from hidden so the overlapping works */
+    
+    /* This is the magic number. It cancels out the 250px gap 
+       created by Eleanor moving up. Adjust this until the blue hits the image. */
+    margin-bottom: -280px; 
+    z-index: 5;
 }
+
+
 
 .editorial-row {
     display: grid;
@@ -2069,11 +2073,11 @@ body {
     --brand-gold: #c5a059;
 }
 
-.stewardship-directory.brand-bg-blue {
-    background-color: var(--brand-blue) !important;
-    padding: 0px 0; 
-    overflow: hidden; /* Vital to hide the cards as they leave the screen */
+/* Ensure the Directory section is ready to receive the overlap */
+.stewardship-directory {
     position: relative;
+    z-index: 10; /* Keeps the blue section on top */
+    margin-top: 0;
 }
 
 /* THE SLIDER ENGINE */
