@@ -2050,78 +2050,90 @@ body {
 
 /* ==========================================
    REFINED SECTION 1: WHO WE SERVE (SLIM)
+
+
+
+/* ==========================================
+   REFINED SECTION 1: SLIM DIRECTORY (TOP-HEAVY LAYOUT)
 ============================================= */
 .stewardship-directory.brand-bg-blue {
     background-color: var(--brand-blue) !important;
-    padding: 60px 0; /* 2x Thinner than the original 120px */
+    padding: 50px 0; /* Ultra-slim vertical profile */
     overflow: hidden;
-    color: var(--white);
-}
-
-.directory-header {
-    margin-bottom: 40px; 
-    max-width: 750px;
-    margin-left: 10%;
 }
 
 .dir-track {
     display: flex;
-    gap: 20px; /* Tighter gap for a sleeker look */
-    width: max-content;
+    gap: 15px; /* Tight, high-tech spacing */
     padding-left: 10%;
-    padding-right: 10%;
 }
 
-/* COMPACT CARD DESIGN */
+/* COMPACT TOP-ALIGNED CARD */
 .dir-item {
-    flex: 0 0 260px; /* Slightly narrower cards */
+    flex: 0 0 240px; /* Slimmer width */
     background: rgba(255, 255, 255, 0.02); 
     border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 25px; 
-    min-height: 200px; /* Significantly shorter */
+    padding: 20px; 
+    min-height: 160px; /* Very thin profile */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    justify-content: flex-start; /* Aligns content to the top */
+    transition: all 0.4s ease;
 }
 
 .dir-item:hover {
     background: rgba(255, 255, 255, 0.06);
     border-color: var(--brand-gold);
-    transform: translateY(-5px);
 }
 
-/* HIGH-END ICON STYLING (Font Awesome) */
-.dir-icon i {
-    font-size: 1.8rem; /* Sharp and precise */
-    color: var(--brand-gold);
-    margin-bottom: 15px;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.dir-item:hover .dir-icon i {
-    transform: scale(1.1);
+/* TEXT AT THE TOP */
+.dir-meta {
+    margin-bottom: auto; /* Pushes the icon to the bottom */
 }
 
 .client-type { 
-    font-size: 1.2rem; 
-    margin-bottom: 5px; 
+    font-size: 1.1rem; 
+    margin-bottom: 2px; 
     font-family: 'Playfair Display', serif;
-    letter-spacing: 0.5px;
+    color: var(--white);
 }
 
 .client-status { 
-    font-size: 0.7rem; 
+    font-size: 0.65rem; 
     text-transform: uppercase;
-    letter-spacing: 1.5px; 
-    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 1.2px; 
+    color: var(--brand-gold); /* Gold subtext for high-end contrast */
+    display: block;
 }
 
-/* COMPACT 11th CARD */
+/* ICON AT THE BOTTOM */
+.dir-icon {
+    margin-top: 15px;
+    text-align: right; /* Aligns icon to the bottom right for a modern touch */
+}
+
+.dir-icon i {
+    font-size: 1.4rem; 
+    color: rgba(255, 255, 255, 0.2); /* Muted icon until hover */
+    transition: all 0.3s ease;
+}
+
+.dir-item:hover .dir-icon i {
+    color: var(--brand-gold);
+    transform: scale(1.1);
+}
+
+/* 11th CARD ADJUSTMENT */
+.dir-index-end {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid var(--brand-gold) !important;
+}
+
 .index-digit {
-    font-size: 3.5rem; 
-    line-height: 1;
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
     color: var(--brand-gold);
 }
 
