@@ -49,41 +49,7 @@
 }
 
 /* --- 3. LOGO LOCKUP (FOX + TEXT) --- */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 15px; 
-    text-decoration: none;
-}
 
-.logo-mark {
-    height: 60px; 
-    width: auto;
-    display: flex;
-    align-items: center;
-    transition: height 0.4s ease;
-}
-
-.main-header.scrolled .logo-mark {
-    height: 48px; 
-}
-
-/* Fox Outline Styling */
-.fox-logo {
-    height: 100%;
-    width: auto;
-    display: block;
-    overflow: visible;
-}
-
-.fox-logo path {
-    fill: none !important;
-    stroke: #0a1128 !important; 
-    stroke-width: 2.5px;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    vector-effect: non-scaling-stroke;
-}
 
 /* Brand Typography */
 .logo-type {
