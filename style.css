@@ -1769,67 +1769,51 @@ body { font-family: sans-serif; overflow-x: hidden; }
    ULTRATHIN EDITORIAL LEADERSHIP
 ============================================= */
 
+/* ==========================================
+   MAGAZINE OVERLAP & COLUMN LAYOUT
+============================================= */
+
 .editorial-leadership {
-    padding: 60px 0; /* Reduced thickness from 120px to 60px */
+    position: relative;
+    padding: 100px 0;
     background-color: #ffffff;
-    border-top: 1px solid rgba(15, 23, 42, 0.05);
+    overflow: hidden;
+}
+
+/* Background Fox Watermark */
+.leadership-watermark {
+    position: absolute;
+    bottom: -50px;
+    right: -20px;
+    width: 350px;
+    opacity: 0.04;
+    pointer-events: none;
 }
 
 .luxe-container {
-    max-width: 1100px; /* Narrower container for a tighter look */
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 5%;
 }
 
-/* Slimmed Header */
-.editorial-header {
-    text-align: left; /* Left align for a more modern editorial feel */
-    margin-bottom: 40px;
-}
-
-.gold-eyebrow {
-    font-family: 'Inter', sans-serif;
-    color: #c5a059;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 0.65rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-    display: block;
-}
-
-.editorial-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem; /* Scaled down from 3.5rem */
-    color: #0f172a;
-    font-weight: 400;
-}
-
-/* Compact Card System */
-.editorial-flex {
+.leadership-stack {
     display: flex;
-    justify-content: space-between;
-    gap: 30px;
+    flex-direction: column;
+    gap: 120px; /* Large gap for a clean, expensive feel */
+}
+
+.member-row {
+    display: flex;
     align-items: flex-start;
+    position: relative;
 }
 
-.editorial-member {
-    flex: 0 1 260px; /* Reduced card size to 260px */
-}
-
-/* Stagger is now more subtle for a thinner section */
-.offset-down {
-    margin-top: 30px; 
-}
-
-/* Small, Crisp Portrait Frames */
-.member-image-container {
-    width: 100%;
-    aspect-ratio: 1 / 1; /* Square portraits take up less vertical space */
+/* 1. THE PHOTO BOX */
+.member-image-box {
+    flex: 0 0 400px; /* Small-to-medium portrait size */
+    height: 500px;
     overflow: hidden;
-    margin-bottom: 18px;
-    background: #f8fafc;
-    border: 1px solid rgba(0,0,0,0.03);
+    background: #f1f5f9;
 }
 
 .member-photo {
@@ -1837,46 +1821,79 @@ body { font-family: sans-serif; overflow-x: hidden; }
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-/* Clean Text Stack */
-.member-role {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.6rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #64748b;
-    margin-bottom: 6px;
-    display: block;
+/* 2. THE TEXT COLUMN */
+.member-text-column {
+    position: relative;
+    margin-left: -80px; /* This pulls the text OVER the photo */
+    margin-top: 60px;   /* Offsets it vertically for the "stagger" */
+    z-index: 2;
+}
+
+/* The Overlap Header (Starts over the image) */
+.text-overlap-header {
+    background: transparent;
+    padding-bottom: 20px;
 }
 
 .member-name {
     font-family: 'Playfair Display', serif;
-    font-size: 1.3rem; /* Smaller, more elegant sizing */
+    font-size: 3.2rem; /* Large and bold magazine style */
     color: #0f172a;
-    margin-bottom: 10px;
-    line-height: 1.2;
+    line-height: 1.1;
+    margin-top: 5px;
+}
+
+/* The Body Column (Narrows down) */
+.text-column-body {
+    background: #ffffff; /* Gives text its own clean space */
+    padding: 40px;
+    max-width: 380px;    /* Forces the narrow magazine column shape */
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.03); /* Subtle lift */
+    border-left: 1px solid #c5a059; /* Your brand gold accent */
+}
+
+.member-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #c5a059;
+    display: block;
+    margin-bottom: 20px;
 }
 
 .member-desc {
     font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
-    line-height: 1.6;
+    font-size: 0.95rem;
+    line-height: 1.9; /* Breathable line height */
     color: #475569;
     font-weight: 300;
 }
 
-/* Mobile: Stack but keep cards small */
-@media (max-width: 768px) {
-    .editorial-flex {
-        flex-direction: column;
-        align-items: center;
-        gap: 50px;
-    }
-    .editorial-member {
-        max-width: 260px;
-        text-align: center;
-    }
-    .offset-down { margin-top: 0; }
+/* --- STAGGER RIGHT (Flipping the layout) --- */
+.stagger-right {
+    flex-direction: row-reverse;
+}
+
+.stagger-right .member-text-column {
+    margin-left: 0;
+    margin-right: -80px; /* Pulls over from the right side */
+    text-align: right;
+}
+
+.stagger-right .text-column-body {
+    margin-left: auto; /* Aligns the narrow column to the right */
+    border-left: none;
+    border-right: 1px solid #c5a059;
+}
+
+/* Mobile: Clean stack */
+@media (max-width: 850px) {
+    .member-row { flex-direction: column !important; }
+    .member-text-column { margin: -40px 0 0 20px !important; }
+    .member-image-box { width: 100%; height: 400px; flex: none; }
+    .text-column-body { max-width: 100%; padding: 25px; }
+    .member-name { font-size: 2.2rem; }
 }
