@@ -2097,30 +2097,33 @@ body {
 /* 3. THE DIRECTORY (BLUE STRIP) */
 /* This forces the blue section to the front so it doesn't "disappear" */
 /* 3. THE DIRECTORY (THIN BLUE STRIP) */
+:root {
+    --brand-blue: #0c1833;
+    --brand-gold: #c5a059;
+}
+
+/* 3. THE DIRECTORY (THIN BLUE STRIP) */
 .stewardship-directory {
     position: relative;
     z-index: 20; 
-    
-    /* 1. REMOVE THE SAUCE: Tighten the top and bottom padding */
-    padding: 30px 0; /* Changed from 80px to 30px for a slim profile */
-    
-    /* 2. REMOVE THE GAP: Set margin-top to 0 to touch the section above */
     margin-top: 0; 
-    
     background-color: #0f172a !important; 
     display: block;
     
-    /* 3. OPTIONAL: Add a very thin gold border to top and bottom for premium feel */
-    border-top: 1px solid rgba(197, 160, 89, 0.2);
-    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    /* SHAVED SECTION HEIGHT: Reduced from 80px/30px to 15px */
+    padding: 15px 0; 
+    
+    /* Subtle premium hairline borders */
+    border-top: 1px solid rgba(197, 160, 89, 0.15);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.15);
 }
 
 /* TIGHTEN THE HEADER SPACE */
 .directory-header {
     max-width: 800px; 
-    margin-bottom: 25px; /* Reduced from 40px to keep the cards close to the title */
+    margin-bottom: 15px; /* Shaved space to pull cards closer to title */
     text-align: left; 
-    padding: 0 10%; /* Matches your page gutters */
+    padding: 0 10%; 
 }
 
 /* THE SLIDER ENGINE */
@@ -2132,129 +2135,114 @@ body {
 
 .dir-track {
     display: flex;
-    gap: 20px;
+    gap: 15px; /* Tightened gap */
     width: max-content;
-    /* This makes it rotate constantly */
     animation: scrollInfinite 40s linear infinite; 
 }
 
-/* Pause the rotation when someone wants to read a card */
 .dir-track:hover {
     animation-play-state: paused;
 }
 
-/* THE ANIMATION MAGIC */
 @keyframes scrollInfinite {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); } 
-    /* Note: For this to look perfect, you must duplicate your 11 cards 
-       in the HTML so the line never "ends" */
 }
 
-/* COMPACT TOP-ALIGNED CARD */
+/* COMPACT LOW-PROFILE CARD */
 .dir-item {
-    flex: 0 0 260px;
+    flex: 0 0 240px; /* Slimmer width */
     background: rgba(255, 255, 255, 0.03); 
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 25px; 
-    min-height: 180px;
+    
+    /* SHAVED CARD SAUCE: Reduced padding from 25px to 12px */
+    padding: 12px 20px; 
+    
+    /* SHAVED CARD HEIGHT: Reduced from 180px to 110px */
+    min-height: 110px; 
+    
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center; /* Centers text in the thinner space */
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .dir-item:hover {
     background: rgba(255, 255, 255, 0.08);
     border-color: var(--brand-gold);
-    transform: translateY(-5px);
+    transform: translateY(-3px); /* Subtle lift for thin cards */
 }
 
 /* TEXT AT THE TOP */
 .client-type { 
-    font-size: 1.25rem; 
-    margin-bottom: 4px; 
+    font-size: 1rem; /* Slightly smaller for the thin profile */
+    margin-bottom: 2px; 
     font-family: 'Playfair Display', serif;
     color: #ffffff;
+    line-height: 1.2;
 }
 
 .client-status { 
-    font-size: 0.7rem; 
+    font-size: 0.6rem; 
     text-transform: uppercase;
-    letter-spacing: 1.5px; 
+    letter-spacing: 1.2px; 
     color: var(--brand-gold);
 }
 
 /* HIGH-END ICON AT THE BOTTOM */
 .dir-icon {
     text-align: right;
-    margin-top: auto;
+    margin-top: 5px; /* Pulls icon closer to text */
 }
 
 .dir-icon i {
-    font-size: 1.6rem; 
-    color: rgba(255, 255, 255, 0.3); /* Muted until hover */
+    font-size: 1.2rem; /* Scaled down icon */
+    color: rgba(255, 255, 255, 0.3); 
     transition: 0.3s ease;
 }
 
 .dir-item:hover .dir-icon i {
     color: var(--brand-gold);
-    transform: scale(1.1);
 }
 
 /* 11th CARD (GOLD INDEX) */
 .dir-index-end {
     border: 1px solid var(--brand-gold) !important;
     background: rgba(197, 160, 89, 0.1) !important;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 
 .index-digit {
     font-family: 'Playfair Display', serif;
-    font-size: 4rem;
+    font-size: 2.2rem; /* Reduced from 4rem to fit the new height */
     font-weight: 700;
     color: var(--brand-gold);
     line-height: 1;
 }
 
 /* --- DIRECTORY HEADER TEXT LAYOUT --- */
-
-.directory-header {
-    max-width: 800px; /* Keeps the text from stretching too wide */
-    margin-bottom: 40px; /* Space between the text and the scrolling cards */
-    text-align: left; /* Ensures a clean "left-edge" alignment */
-}
-
 .gold-eyebrow {
     display: block;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-size: 0.75rem;
     color: var(--brand-gold);
-    margin-bottom: 8px; /* Tight gap to the main title */
+    margin-bottom: 5px; 
 }
 
 .magazine-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 5vw, 3.5rem); /* Responsive sizing */
+    font-size: clamp(2rem, 4vw, 3rem); /* Slightly smaller scale */
     line-height: 1.1;
-    margin: 0 0 15px 0; /* Tight gap to the subtext below */
+    margin: 0 0 10px 0; 
     color: #ffffff;
-}
-
-.italic-serif {
-    font-style: italic;
-    opacity: 0.9;
 }
 
 .section-lead {
     font-family: 'Inter', sans-serif;
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.7); /* Muted white for high-end contrast */
-    max-width: 600px; /* Prevents the paragraph from getting too long/hard to read */
+    font-size: 0.95rem; /* Tighter font */
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.6); 
+    max-width: 550px; 
     margin: 0;
 }
 /* ==========================================
