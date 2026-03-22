@@ -1761,67 +1761,72 @@ body { font-family: sans-serif; overflow-x: hidden; }
 /* =========================
    ABOUT PAGE SPECIFIC STYLES
    ========================= */
+/* ==========================================
+   EDITORIAL LEADERSHIP SECTION (REFINED)
+============================================= */
 
-/* --- 50K DESIGN VARIABLES --- */
 .editorial-leadership {
-    padding: 140px 0;
-    background-color: #fff; /* Clean white background to reduce clutter */
+    padding: 120px 0;
+    background-color: #ffffff; /* Clean white to contrast your midnight services */
 }
 
 .luxe-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 5%;
 }
 
-/* Header */
+/* Header Styling */
 .editorial-header {
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 90px;
 }
 
 .gold-eyebrow {
     font-family: 'Inter', sans-serif;
-    color: #c5a059;
+    color: #c5a059; /* Elegant Gold Accent */
     text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 11px;
+    letter-spacing: 5px;
+    font-size: 0.7rem;
+    font-weight: 600;
     display: block;
     margin-bottom: 15px;
 }
 
 .editorial-title {
     font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    color: #1a1a1a;
-    font-weight: 500;
+    font-size: clamp(32px, 5vw, 54px);
+    color: #0f172a; /* Matching your Midnight Blue */
+    font-weight: 400;
 }
 
-/* The Grid/Flex System */
+/* Flexbox Layout for the Cards */
 .editorial-flex {
     display: flex;
-    justify-content: space-between;
-    gap: 60px;
+    justify-content: center;
     align-items: flex-start;
+    gap: 40px;
 }
 
 .editorial-member {
     flex: 1;
-    max-width: 320px; /* Keeps the cards small and high-end */
+    max-width: 300px; /* Kept small as requested */
+    transition: transform 0.4s ease;
 }
 
-/* Stagger Effect */
+/* The Staggered "Editorial" Offset */
 .offset-down {
-    margin-top: 80px;
+    margin-top: 60px;
 }
 
-/* Image Container */
+/* Image Presentation */
 .member-image-container {
-    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4; /* Professional vertical portrait ratio */
     overflow: hidden;
-    margin-bottom: 30px;
-    background: #f8f8f8;
-    aspect-ratio: 3 / 4; /* Elegant vertical proportion */
+    margin-bottom: 25px;
+    background: #f1f5f9; /* Slate background while images load */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
 }
 
 .member-photo {
@@ -1829,47 +1834,56 @@ body { font-family: sans-serif; overflow-x: hidden; }
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.7s ease;
+    filter: grayscale(20%); /* Subtle editorial desaturation */
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .editorial-member:hover .member-photo {
-    transform: scale(1.03); /* Very subtle zoom */
+    transform: scale(1.05);
+    filter: grayscale(0%);
 }
 
-/* Text Elements */
+/* Text Detail Styling */
 .member-role {
     font-family: 'Inter', sans-serif;
-    font-size: 10px;
+    font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #c5a059;
+    color: #64748b; /* Your Steel Grey */
     display: block;
     margin-bottom: 10px;
 }
 
 .member-name {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    color: #2c2c2c;
+    font-size: 1.6rem;
+    color: #0f172a;
     margin-bottom: 15px;
-    line-height: 1.2;
+    font-weight: 600;
 }
 
 .member-desc {
     font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
-    line-height: 1.7;
-    color: #666;
+    line-height: 1.8;
+    color: #475569; /* Slate grey for readability */
     font-weight: 300;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 992px) {
+/* Responsive Mobile Layout */
+@media (max-width: 768px) {
     .editorial-flex {
         flex-direction: column;
         align-items: center;
-        gap: 80px;
+        gap: 60px;
     }
-    .offset-down { margin-top: 0; }
-    .editorial-member { text-align: center; }
+    
+    .editorial-member {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .offset-down {
+        margin-top: 0;
+    }
 }
