@@ -1805,22 +1805,25 @@ body { font-family: sans-serif; overflow-x: hidden; }
    VOGUE EDITORIAL: MASTER GRID FIX
 ============================================= */
 
-.vogue-wrapper {
+/* ==========================================
+   VOGUE MASTER EDITORIAL STYLE
+============================================= */
+
+.vogue-master {
     position: relative;
-    padding: 80px 0;
+    padding: 60px 0;
     background: #ffffff;
     overflow: hidden;
 }
 
-.vogue-fox-bg {
+.vogue-fox-watermark {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 700px;
-    opacity: 0.02; /* Nearly invisible ghosting */
+    width: 600px;
+    opacity: 0.02; /* Extremely subtle */
     pointer-events: none;
-    z-index: 0;
 }
 
 .vogue-container {
@@ -1828,19 +1831,19 @@ body { font-family: sans-serif; overflow-x: hidden; }
     margin: 0 auto;
     padding: 0 40px;
     position: relative;
-    z-index: 1;
+    z-index: 10;
 }
 
-/* ROW 1: VISION + RN PORTRAIT */
-.vogue-header-row {
+/* TOP ROW LAYOUT */
+.vogue-top-row {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
-    gap: 80px;
+    gap: 60px;
     align-items: end;
-    margin-bottom: 120px;
+    margin-bottom: 100px;
 }
 
-.editorial-title {
+.vogue-title {
     font-family: 'Playfair Display', serif !important;
     font-size: 4rem;
     line-height: 1;
@@ -1848,79 +1851,65 @@ body { font-family: sans-serif; overflow-x: hidden; }
     margin: 20px 0;
 }
 
-.article-text {
+.vogue-para {
     font-family: 'Inter', sans-serif !important;
-    font-size: 1.05rem;
+    font-size: 1rem;
     line-height: 2;
     color: #475569;
-    max-width: 550px;
+    font-weight: 300;
 }
 
-/* PORTRAIT BOXES (Fixed Aspect Ratios) */
-.portrait-box {
-    background: #f8fafc;
+/* PORTRAIT SIZING (FIXES THE "THIN" IMAGE ISSUE) */
+.v-portrait {
+    background: #f1f5f9;
     overflow: hidden;
 }
 
-.portrait-box img {
+.v-portrait img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.portrait-box.mini {
-    width: 320px;
-    height: 400px;
-    margin-bottom: 25px;
+.v-mini {
+    width: 320px; /* Fixed width */
+    height: 400px; /* Fixed height */
+    margin-bottom: 20px;
 }
 
-.portrait-box.large {
+.v-large {
     width: 500px;
     height: 650px;
 }
 
-/* ROW 2: EXECUTIVE DIRECTOR STAGGER */
-.vogue-feature-row {
+/* BOTTOM ROW (STAGGERED) */
+.vogue-bottom-row {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: 1fr 1fr;
     align-items: center;
 }
 
-.vogue-feature-row .portrait-box {
-    grid-column: 1 / span 6;
+.v-hero-text {
+    margin-left: -120px; /* Vogue Overlap */
 }
 
-.feature-text {
-    grid-column: 6 / span 7;
-    margin-left: -100px; /* The Vogue Overlap */
-    z-index: 2;
-}
-
-.hero-name {
+.v-hero-name {
     font-family: 'Playfair Display', serif !important;
     font-size: 5.5rem;
     line-height: 0.85;
     color: #0f172a;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
-/* MAGAZINE COLUMNS */
-.feature-column {
+/* NARROW MAGAZINE BIO */
+.v-bio-column {
     max-width: 320px;
     padding-left: 30px;
     border-left: 1px solid #c5a059;
 }
 
-.column-text {
-    font-family: 'Inter', sans-serif !important;
-    font-size: 0.95rem;
-    line-height: 1.9;
-    color: #334155;
-    text-align: justify;
-}
-
-/* REUSABLE BRAND STYLES */
-.gold-eyebrow {
+/* SHARED BRANDING */
+.vogue-gold {
     font-family: 'Inter', sans-serif !important;
     color: #c5a059;
     text-transform: uppercase;
@@ -1929,7 +1918,7 @@ body { font-family: sans-serif; overflow-x: hidden; }
     font-weight: 600;
 }
 
-.role-label {
+.v-role {
     font-family: 'Inter', sans-serif !important;
     font-size: 0.65rem;
     text-transform: uppercase;
@@ -1939,12 +1928,12 @@ body { font-family: sans-serif; overflow-x: hidden; }
     margin-bottom: 10px;
 }
 
-.italic { font-style: italic; }
+.v-italic { font-style: italic; }
+.v-bold { font-weight: 700; color: #0f172a; }
 
-/* MOBILE RESPONSIVE */
+/* MOBILE FIX */
 @media (max-width: 900px) {
-    .vogue-header-row, .vogue-feature-row { display: block; }
-    .portrait-box { width: 100% !important; height: 450px !important; margin-bottom: 30px; }
-    .feature-text { margin: -60px 0 0 0 !important; }
-    .editorial-title, .hero-name { font-size: 3rem; }
+    .vogue-top-row, .vogue-bottom-row { display: block; }
+    .v-portrait { width: 100% !important; height: 450px !important; margin-bottom: 25px; }
+    .v-hero-text { margin: -60px 0 0 0 !important; }
 }
