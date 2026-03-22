@@ -664,83 +664,80 @@
 /* ==========================================
    SERVICES RESPONSIVE (MOBILE & TABLET)
 ============================================= */
+/* ==========================================
+   SERVICES SECTION: MOBILE REFINEMENT
+============================================= */
 @media (max-width: 768px) {
-    /* 1. Stack the layout vertically */
+    /* 1. Reset Section & Container */
     .services-section {
-        padding: 60px 20px;
+        padding: 50px 0;
         min-height: auto;
-        overflow: visible !important;
     }
 
     .services-container {
         display: flex !important;
         flex-direction: column !important;
         align-items: center;
-        text-align: center;
-        gap: 40px;
+        width: 90%;
+        margin: 0 auto;
+        gap: 30px;
     }
 
+    /* 2. Sidebar Centering */
     .services-sidebar {
+        text-align: center;
         width: 100%;
-        max-width: 400px;
+    }
+
+    .services-sidebar h2 {
+        font-size: 1.8rem;
     }
 
     .accent-line {
-        margin: 0 auto 15px;
+        margin: 10px auto; /* Centers the line */
     }
 
-    /* 2. THE COMPACT 2x2 GRID */
+    /* 3. THE COMPACT 2x2 GRID */
     .services-grid-thin {
         display: grid !important;
+        /* Forces exactly 2 columns */
         grid-template-columns: repeat(2, 1fr) !important; 
         gap: 15px !important;
         width: 100% !important;
-        max-width: 500px; /* Keeps it from stretching too wide on tablets */
-        margin: 0 auto;
+        max-width: 450px; /* Prevents stretching on tablets */
     }
 
-    /* 3. Glass Card Refinement */
+    /* 4. The Glass Cards */
     .glass-card {
-        padding: 25px 15px !important;
-        min-height: 140px;
+        padding: 20px 10px !important;
+        min-height: 130px; /* Keeps them as uniform squares */
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        /* Animation setup */
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    /* Reveal animation trigger */
-    .services-section.show .glass-card {
-        opacity: 1;
-        transform: translateY(0);
+        text-align: center;
     }
 
     .glass-card i {
-        font-size: 1.5rem !important;
-        margin-bottom: 12px;
+        font-size: 1.5rem;
+        margin-bottom: 8px;
     }
 
     .glass-card h3 {
-        font-size: 1rem !important;
+        font-size: 0.95rem;
         margin: 0;
     }
 
+    /* Hiding the P tag keeps the 2x2 look clean on small screens */
     .glass-card p {
-        display: none; /* Keeps the 2x2 grid clean and elegant */
+        display: none; 
     }
 }
 
-/* Extra small screens adjustment */
+/* Small adjustments for very narrow phones */
 @media (max-width: 380px) {
     .services-grid-thin {
         gap: 10px !important;
-    }
-    .glass-card {
-        min-height: 120px;
     }
 }
 /* =========================
