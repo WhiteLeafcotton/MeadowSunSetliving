@@ -453,10 +453,14 @@ window.addEventListener('scroll', function() {
    2. MENU TOGGLE (Mobile)
 ============================================= */
 function toggleMenu() {
-    // Looks for sideMenu OR side-menu to prevent ID errors
-    let menu = document.getElementById("sideMenu") || document.getElementById("side-menu");
-    if (menu) {
-        menu.style.width = (menu.style.width === "260px") ? "0" : "260px";
+    const menu = document.getElementById("sideMenu");
+    menu.classList.toggle("active");
+    
+    // Prevent background scrolling when menu is open
+    if (menu.classList.contains("active")) {
+        document.body.style.overflow = "hidden";
+    } else {
+        document.body.style.overflow = "auto";
     }
 }
 const observerOptions = {
