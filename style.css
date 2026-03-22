@@ -8,24 +8,24 @@
 /* --- EDITORIAL NAVBAR --- */
 
 
-/* --- SLIM INITIAL STATE --- */
 .main-header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 1000;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    background: transparent;
-    padding: 15px 0; /* Reduced from 20-30px */
+    transition: all 0.4s ease;
+    /* Remove vertical padding here, move it to the navbar for better control */
+    background: transparent; 
+    box-sizing: border-box; /* The 'Safety Net' for width */
 }
 
-/* --- THE SLIM SCROLLED STATE --- */
+/* Glass effect when scrolling */
 .main-header.scrolled {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(15px) saturate(150%);
-    -webkit-backdrop-filter: blur(15px) saturate(150%);
-    padding: 8px 0; /* Very thin on scroll */
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.03);
+    background: rgba(255, 255, 255, 0.8); /* Slightly more transparent for 'Luxe' feel */
+    backdrop-filter: blur(15px); /* Stronger blur for that frosted glass look */
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .navbar {
@@ -55,17 +55,22 @@
     padding: 5px;
 }
 
-/* This shrinks the logo slightly to allow the bar to be thinner */
+.logo-mark {
+    /* We must give the container a width because the SVG is tall */
+    height: 50px; 
+    width: 25px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible; /* Ensures no clipping */
+}
+
 .logo-mark svg {
-    height: 35px; /* Adjust this number to control the overall thickness */
-    width: auto;
-    transition: height 0.4s ease;
+    height: 100%;
+    width: 100%;
+    color: #0f172a; /* Midnight Blue */
+    display: block;
 }
-
-.main-header.scrolled .logo-mark svg {
-    height: 30px; /* Shrinks even more when scrolling */
-}
-
 
 .logo-type {
     display: flex;
@@ -129,9 +134,8 @@
     opacity: 0.5;
 }
 
-.nav-item {
-    padding: 5px 15px; /* Less vertical padding */
-    font-size: 0.9rem; /* Slightly smaller font for the "slim" look */
+.nav-item:hover {
+    color: #64748b;
 }
 
 /* Dropdown Menu - Editorial Style */
