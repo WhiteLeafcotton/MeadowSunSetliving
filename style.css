@@ -1825,25 +1825,21 @@ body { font-family: sans-serif; overflow-x: hidden; }
    ULTIMATE VOGUE EDITORIAL SYSTEM
 ============================================= */
 
+/* 1. THE MAIN CONTAINER */
 .magazine-editorial {
     position: relative;
-    padding: 60px 0 0 0; /* No bottom padding */
+    padding: 60px 0 0 0; /* Remove bottom padding entirely */
     background: #ffffff;
-    /* Remove 'overflow: hidden' if it's there so the blue can slide under */
-    overflow: visible; 
-    /* This 'trims' the bottom of the section to match where Eleanor moved to */
-    margin-bottom: -220px; 
-    z-index: 1; 
+    overflow: visible; /* Allows the blue to slide in properly */
 }
 
 
-
+/* 4. THE ROW SPACING */
 .editorial-row {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 20px;
-    /* CHANGE: changed '80px' to '0' so the grid doesn't push down */
-    margin-bottom: 0; 
+    margin-bottom: 0; /* Ensures no gap between top and bottom rows */
 }
 
 .fox-bg {
@@ -1967,16 +1963,13 @@ body { font-family: sans-serif; overflow-x: hidden; }
 /* This is the most reliable way to move her up */
 .bottom-row.eleanor-adjust {
     transform: translateY(-250px);
-    margin-bottom: -250px; /* This 'cancels' the ghost space Eleanor left behind */
+    /* This "collapses" the ghost space Eleanor left behind */
+    margin-bottom: -250px; 
     position: relative;
-    z-index: 5;
+    z-index: 2;
 }
 
-/* If the space below her becomes too large because she moved up, 
-   add this to pull the next section up too: */
-.magazine-editorial {
-    margin-bottom: -80px; 
-}
+
 
 /* --- ADJUSTING TEXT FOR THE SMALLER ABOUT HERO --- */
 
@@ -2073,13 +2066,15 @@ body {
     --brand-gold: #c5a059;
 }
 
-/* Ensure the Directory section is ready to receive the overlap */
-.stewardship-directory.brand-bg-blue {
-    position: relative; 
-    z-index: 10; /* This pulls the blue color to the very front */
+/* 3. THE DIRECTORY (BLUE STRIP) */
+/* This forces the blue section to the front so it doesn't "disappear" */
+.stewardship-directory {
+    position: relative;
+    z-index: 20; /* High number to stay on top of the white background */
     margin-top: 0;
-    background-color: #0f172a !important; /* Forces your brand blue to show */
-    padding: 80px 0; /* Ensures the text inside has breathing room */
+    background-color: #0f172a !important; /* Your brand blue */
+    display: block;
+    padding: 80px 0; /* Adds breathing room so text isn't cut off */
 }
 
 /* THE SLIDER ENGINE */
