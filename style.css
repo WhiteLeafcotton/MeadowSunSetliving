@@ -2273,3 +2273,18 @@ body { font-family: sans-serif; overflow-x: hidden; }
     .step-content { flex-direction: column; gap: 10px; padding-bottom: 40px; }
     .step-line { height: 120px; }
 }
+
+
+/* Animation Engine */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* This is the class your JS adds on scroll */
+.animate-on-scroll.show, 
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
