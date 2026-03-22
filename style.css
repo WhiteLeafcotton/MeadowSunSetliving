@@ -61,14 +61,16 @@
 }
 
 .logo-type {
-    text-decoration: none;
+    display: flex;          /* Activates Flexbox */
+    flex-direction: column; /* Stacks children vertically */
+    align-items: flex-start; /* Keeps them aligned to the left */
+    text-decoration: none;  /* Double-check to keep lines off */
+    line-height: 1.1;       /* Pulls the two lines closer together for a tight, pro look */
 }
 
-/* This ensures the text doesn't turn purple or blue after being clicked */
-.brand-name, 
-.brand-sub {
-    text-decoration: none !important;
-    color: #0a1128; /* Your Midnight Blue */
+/* Optional: Add a tiny bit of space if they feel too crowded */
+.brand-name {
+    margin-bottom: 2px;
 }
 
 /* Optional: Subtle hover effect instead of an underline */
