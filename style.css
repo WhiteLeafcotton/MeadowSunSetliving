@@ -400,32 +400,47 @@
 
 /* --- 2. INDEX PAGE HERO (Full Screen & Fixed) --- */
 /* This restores your homepage to its original glory */
-.hero.hero-index {
-    height: 100vh !important;
-    z-index: 5 !important; /* Higher than the content so it stays visible */
-    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat !important;
-    background-attachment: fixed !important; /* Parallax effect for Index */
+/* --- 1. GLOBAL HERO DEFAULTS --- */
+.hero {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    overflow: hidden;
+    position: relative; 
+    z-index: 5; /* Keeps heroes visible by default */
 }
 
-/* --- 3. ABOUT PAGE HERO (50% Height & Sticky) --- */
-/* This creates the "Slide-Over" effect for the subpage */
+/* --- 2. INDEX PAGE HERO (The Fix) --- */
+.hero.hero-index {
+    height: 100vh !important;
+    /* We use 'fixed' here for the classic homepage parallax */
+    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat !important;
+    background-attachment: fixed !important; 
+    position: relative !important; 
+}
+
+/* --- 3. ABOUT PAGE HERO (The "Sticky" version) --- */
 .hero.hero-about {
     height: 50vh !important;
     position: sticky !important;
     top: 0;
-    z-index: -1 !important; /* Pushes it behind for the slide-over */
+    z-index: -1 !important; /* Pushes it behind specifically on this page */
     background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat !important;
-    background-attachment: scroll !important; /* Crucial: 'fixed' breaks 'sticky' */
+    background-attachment: scroll !important; 
 }
 
-/* --- 4. THE CONTENT LAYERING --- */
-/* This makes sure the white cards have the 'weight' to slide over the About hero */
-.main-content-wrapper, 
-.admissions-journey, 
-section {
+/* --- 4. THE CONTENT LAYERING (THE CRITICAL CHANGE) --- */
+/* We ONLY apply the white "Slide-Over" background to the About page content 
+   This prevents the Index page sections from breaking the Index Hero */
+
+.hero-about ~ section, 
+.hero-about ~ .main-content-wrapper,
+.about-content-section {
     position: relative;
-    z-index: 10; /* Keeps all page content above the sticky About hero */
-    background: #ffffff; /* Must be solid white */
+    z-index: 10; 
+    background: #ffffff !important; 
+    box-shadow: 0 -20px 40px rgba(0,0,0,0.05); /* Adds that premium 'lifting' look */
 }
 
 /* --- 5. OVERLAYS & CONTENT (STAYS THE SAME) --- */
