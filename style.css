@@ -268,63 +268,93 @@
 }
 
 /* When the menu is active */
-.side-menu.active {
-    width: 100%; /* Full screen width */
-}
-
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 45px;
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.mobile-nav-content {
-    width: 100%;
-    text-align: center;
-    padding: 20px;
-}
-
-.mobile-group {
-    margin-bottom: 30px;
+/* ==========================================
+   FROSTED GLASS MOBILE MENU (SLIDE FROM RIGHT)
+   ============================================= */
+.side-menu {
+    height: 100%;
+    width: 0; 
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 0; /* Changed from left: 0 */
+    left: auto; 
+    
+    /* Frosted Glass Effect */
+    background: rgba(255, 255, 255, 0.7); /* Light frost */
+    backdrop-filter: blur(15px); /* The "Glass" blur */
+    -webkit-backdrop-filter: blur(15px);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    
+    overflow-x: hidden;
+    transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    padding-top: 80px;
     display: flex;
     flex-direction: column;
 }
 
+.side-menu.active {
+    width: 100%; /* Full screen */
+}
+
+/* Close Button Styling */
+.close-btn {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 35px;
+    color: #0a1128; /* Midnight Blue for contrast on light frost */
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 200;
+}
+
+/* Consistent Typography */
+.mobile-nav-content {
+    width: 100%;
+    padding: 0 40px;
+}
+
 .group-title {
-    color: #d4af37; /* Gold accent */
-    font-family: 'Playfair Display', serif;
-    font-size: 0.8rem;
+    color: #d4af37; /* Gold */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-    opacity: 0.7;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    display: block;
 }
 
 .side-menu a {
-    padding: 10px;
+    padding: 12px 0;
     text-decoration: none;
-    font-size: 1.5rem;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: #0a1128; /* Midnight Blue */
+    font-family: 'Playfair Display', serif; /* Matching your headers */
+    font-weight: 500;
     transition: 0.3s;
     display: block;
+    border-bottom: 1px solid rgba(10, 17, 40, 0.05);
 }
 
 .side-menu a:hover {
     color: #d4af37;
+    padding-left: 10px; /* Subtle interaction */
 }
 
+/* Button Style Consistency */
 .side-menu .nav-cta {
-    background: #d4af37;
-    color: #0a1128 !important;
-    margin: 20px auto;
-    width: 200px;
-    border-radius: 5px;
-    font-weight: bold;
+    background: #0a1128; /* Matching your .btn-midnight style */
+    color: #ffffff !important;
+    margin-top: 40px;
+    padding: 18px;
+    text-align: center;
+    border-radius: 0; /* Or keep 5px if your other buttons are rounded */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: none;
 }
 
 /* HERO */
