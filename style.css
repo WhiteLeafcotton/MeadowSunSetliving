@@ -2008,26 +2008,58 @@ body { font-family: sans-serif; overflow-x: hidden; }
    CLIENT DIRECTORY - BRAND BLUE MASTER
    Refinement: No Fox / Centered Gutter / Sliding Cards
 ============================================= */
+/* ==========================================
+   GLOBAL BRAND VARIABLES & CORE
+============================================= */
+:root {
+    --brand-blue: #0c1833;
+    --brand-gold: #c5a059;
+    --white: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+}
 
-/* 1. SECTION WRAPPER */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+.italic-serif { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+.luxe-container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 5%; }
+
+/* --- REVEAL ANIMATION ENGINE --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.animate-on-scroll.show, 
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================
+   SECTION 1: WHO WE SERVE (BLUE THEME)
+============================================= */
 .stewardship-directory.brand-bg-blue {
-    background-color: #0c1833; /* Your Primary Brand Blue */
+    background-color: var(--brand-blue) !important;
     padding: 120px 0;
-    position: relative;
-    overflow: hidden; /* Clips the sliding cards at the screen edge */
+    overflow: hidden;
+    color: var(--white);
 }
 
-/* 2. THE HEADER ALIGNMENT (Fixes the "Pushed Left" issue) */
 .directory-header {
-    max-width: 800px;
-    margin-left: 10%; /* Creates a consistent left gutter */
-    margin-bottom: 80px;
-    text-align: left;
+    margin-bottom: 60px;
+    max-width: 750px;
 }
 
-.directory-header .gold-eyebrow {
+.gold-eyebrow {
     display: block;
-    color: #c5a059; /* Brand Gold */
+    color: var(--brand-gold);
     text-transform: uppercase;
     letter-spacing: 3px;
     font-size: 0.85rem;
@@ -2035,153 +2067,99 @@ body { font-family: sans-serif; overflow-x: hidden; }
     font-weight: 600;
 }
 
-.magazine-title.white-text {
+.magazine-title {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2.5rem, 5vw, 4rem);
-    color: #ffffff;
     line-height: 1.1;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
-.section-lead.white-text-muted {
-    font-family: 'Inter', sans-serif;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.2rem;
-    line-height: 1.6;
-    max-width: 600px;
-}
+.white-text { color: var(--white); }
+.white-text-muted { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; }
 
-/* 3. THE SLIDING ENGINE (The Track) */
+/* HORIZONTAL SCROLL ENGINE */
 .dir-scroller-wrap {
     width: 100%;
     overflow-x: auto;
-    overflow-y: hidden;
-    padding-left: 10%; /* Matches the header gutter */
     padding-bottom: 40px;
     cursor: grab;
-    
-    /* Hide scrollbars for a cleaner look */
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none;    /* Firefox */
 }
 
-.dir-scroller-wrap::-webkit-scrollbar {
-    display: none;
-}
+.dir-scroller-wrap::-webkit-scrollbar { display: none; } /* Chrome/Safari */
 
 .dir-track {
     display: flex;
     gap: 30px;
-    width: max-content; /* Vital: Allows the container to expand horizontally */
-    padding-right: 10%; /* Symmetrical padding for the end of the scroll */
+    width: max-content;
+    padding-right: 10%;
 }
 
-/* 4. INDIVIDUAL CARD DESIGN */
+/* CARD DESIGN */
 .dir-item {
-    flex: 0 0 320px; /* Fixed width: Cards won't shrink */
-    background: rgba(255, 255, 255, 0.03); /* Subtle "Glass" effect */
+    flex: 0 0 320px;
+    background: var(--glass-bg);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 40px 35px;
-    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    padding: 40px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 280px;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .dir-item:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: #c5a059; /* Brand Gold border on hover */
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--brand-gold);
     transform: translateY(-10px);
 }
 
-/* 5. ICON & TEXT STYLING */
 .dir-icon svg {
-    width: 40px;
-    height: 40px;
-    fill: #c5a059; /* Icons default to Brand Gold */
-    margin-bottom: 30px;
-    transition: transform 0.3s ease;
+    width: 42px;
+    height: 42px;
+    fill: var(--brand-gold);
+    margin-bottom: 25px;
+    transition: transform 0.4s ease;
 }
 
-.dir-item:hover .dir-icon svg {
-    transform: scale(1.1);
-}
+.dir-item:hover .dir-icon svg { transform: scale(1.1) rotate(-5deg); }
 
-.client-type.white-text {
-    font-family: 'Playfair Display', serif;
-    color: #ffffff;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
+.client-type { font-size: 1.6rem; margin-bottom: 8px; }
+.client-status { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; }
 
-.client-status.white-text-muted {
-    font-family: 'Inter', sans-serif;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-}
-
-/* 6. THE 11th "INDEX" CARD */
+/* THE 11th CARD (GOLD INDEX) */
 .dir-index-end {
-    border: 1px solid #c5a059;
-    background: rgba(197, 160, 89, 0.05);
+    border: 2px solid var(--brand-gold) !important;
+    background: rgba(197, 160, 89, 0.15) !important;
 }
 
-.index-digit.white-text {
+.index-digit {
     font-family: 'Playfair Display', serif;
-    font-size: 5rem;
+    font-size: 5.5rem;
     font-weight: 700;
     line-height: 1;
-    color: #c5a059;
-    margin-bottom: 20px;
+    color: var(--brand-gold);
+    margin-bottom: 15px;
 }
-
-/* 7. RESPONSIVE ADJUSTMENTS */
-@media (max-width: 1024px) {
-    .directory-header, .dir-scroller-wrap {
-        margin-left: 5%;
-        padding-left: 5%;
-    }
-}
-
-@media (max-width: 768px) {
-    .stewardship-directory.brand-bg-blue {
-        padding: 80px 0;
-    }
-    .dir-item {
-        flex: 0 0 280px;
-        padding: 30px 25px;
-    }
-}
-
 
 /* ==========================================
-   ADMISSIONS JOURNEY - WHITE THEME
+   SECTION 2: ADMISSIONS JOURNEY (WHITE THEME)
 ============================================= */
-
 .admissions-journey {
-    background-color: #ffffff;
-    padding: 100px 0;
+    background-color: var(--white);
+    padding: 120px 0;
+    color: var(--brand-blue);
 }
 
-.journey-header {
-    text-align: center;
-    margin-bottom: 80px;
-}
+.journey-header { text-align: center; margin-bottom: 100px; }
+.journey-header .magazine-title { color: var(--brand-blue); }
 
-.stepper-wrap {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+.stepper-wrap { max-width: 850px; margin: 0 auto; }
 
-/* 2.1: The Vertical Step Layout */
 .step-card {
     display: flex;
-    gap: 40px;
-    margin-bottom: 0; /* Managed by the line height */
+    gap: 50px;
     position: relative;
 }
 
@@ -2193,98 +2171,70 @@ body { font-family: sans-serif; overflow-x: hidden; }
 }
 
 .step-number {
-    width: 50px;
-    height: 50px;
-    background: #0c1833; /* Brand Blue */
-    color: #ffffff;
+    width: 60px;
+    height: 60px;
+    background: var(--brand-blue);
+    color: var(--white);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Playfair Display', serif;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     z-index: 2;
-    transition: background 0.3s ease;
+    transition: all 0.4s ease;
 }
 
 .step-line {
     width: 1px;
-    height: 100px; /* Adjust based on text length */
+    height: 100%;
     background: rgba(12, 24, 51, 0.1);
+    position: absolute;
+    top: 60px; /* Starts below the number */
     z-index: 1;
 }
 
-/* 2.2: The Content Styling */
+/* Removes the line from the last step */
+.step-card:last-child .step-line { display: none; }
+
 .step-content {
     display: flex;
-    gap: 25px;
-    padding-top: 10px;
-    padding-bottom: 60px;
+    gap: 30px;
+    padding-bottom: 80px;
 }
 
-.step-icon svg {
-    width: 32px;
-    height: 32px;
-    fill: #c5a059; /* Brand Gold */
-    opacity: 0.8;
-}
+.step-icon svg { width: 35px; height: 35px; fill: var(--brand-gold); }
 
 .step-text h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    color: #0c1833;
-    margin-bottom: 8px;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
 }
 
 .step-text p {
-    font-family: 'Inter', sans-serif;
-    color: #666;
-    font-size: 1rem;
-    line-height: 1.5;
-    max-width: 450px;
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 500px;
 }
 
-/* 2.3: Hover & Animation States */
+/* INTERACTION */
 .step-card:hover .step-number {
-    background: #c5a059;
+    background: var(--brand-gold);
+    transform: scale(1.1);
 }
 
-.welcome-gold svg {
-    fill: #c5a059;
-    filter: drop-shadow(0 0 5px rgba(197, 160, 89, 0.3));
+/* ==========================================
+   RESPONSIVE OVERRIDES
+============================================= */
+@media (max-width: 991px) {
+    .dir-item { flex: 0 0 280px; }
+    .step-card { gap: 25px; }
 }
 
-/* Animation trigger */
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease-out;
-}
-
-.animate-on-scroll.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Mobile Tweak */
-@media (max-width: 600px) {
-    .step-card { gap: 20px; }
-    .step-content { flex-direction: column; gap: 10px; padding-bottom: 40px; }
-    .step-line { height: 120px; }
-}
-
-
-/* Animation Engine */
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-/* This is the class your JS adds on scroll */
-.animate-on-scroll.show, 
-.animate-on-scroll.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+@media (max-width: 768px) {
+    .magazine-title { font-size: 2.5rem; }
+    .step-content { flex-direction: column; gap: 15px; }
+    .step-line { left: 30px; } /* Aligns with centered mobile step-number */
 }
