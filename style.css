@@ -1793,136 +1793,171 @@ body { font-family: sans-serif; overflow-x: hidden; }
    VOGUE GRID: NO SQUISHING / REAL WRAP
 ============================================= */
 
+/* ==========================================
+   VOGUE EDITORIAL MASTER STYLING
+============================================= */
+
 .vogue-editorial {
     position: relative;
-    padding: 60px 0;
+    padding: 100px 0;
     background: #ffffff;
     overflow: hidden;
 }
 
-/* Background Fox - Fixed and Faint */
+/* THE FOX WATERMARK */
 .editorial-fox {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
+    width: 800px;
     opacity: 0.02;
     z-index: 0;
     pointer-events: none;
 }
 
-.editorial-grid-container {
+.editorial-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px;
-    z-index: 1;
+    padding: 0 5%;
     position: relative;
+    z-index: 1;
 }
 
-/* THE GRID ROW */
-.grid-row {
-    display: grid;
-    grid-template-columns: repeat(12, 1-fr); /* 12 column layout */
-    gap: 0;
-    align-items: center;
+/* 1. VISION HEADER (The Article Part) */
+.editorial-vision {
     margin-bottom: 120px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
 }
 
-/* IMAGE BOX: FIXED SIZE, NO SQUISH */
-.grid-image {
-    grid-column: span 5; /* Takes up 5 out of 12 columns */
-    height: 600px;
-    width: 450px; /* FORCED FIXED WIDTH */
+.vision-content {
+    grid-column: 2 / span 6; /* Off-center for editorial feel */
+}
+
+.vision-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: #0f172a;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.vision-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #475569;
+    font-weight: 300;
+}
+
+/* 2. STAGGERED GRID (The Leadership Part) */
+.editorial-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+}
+
+.editorial-item {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+}
+
+/* Image Sizing (Fixed Premium Ratio) */
+.image-frame {
+    grid-column: span 6;
+    height: 650px;
     overflow: hidden;
-    background: #f8fafc;
 }
 
-.grid-image img {
+.image-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* TEXT CONTENT */
-.grid-text-content {
-    grid-column: span 7;
-    padding-left: 40px;
-    position: relative;
+/* The Overlap Typography */
+.text-overlay {
+    grid-column: 6 / span 6; /* Starts halfway across the image */
+    margin-left: -80px; /* Pulls text onto the image */
 }
 
-/* THE VOGUE OVERLAP */
-.overlap-name-box {
-    margin-left: -180px; /* This pulls the name OVER the image */
-    margin-bottom: 30px;
-    position: relative;
-    z-index: 5;
-}
-
-.editorial-name {
-    font-family: 'Playfair Display', serif !important;
+.member-name {
+    font-family: 'Playfair Display', serif;
     font-size: 5rem;
     line-height: 0.85;
     color: #0f172a;
-    margin: 10px 0;
+    margin-bottom: 30px;
 }
 
-.italic-serif { font-style: italic; }
+.italic-serif {
+    font-style: italic;
+    font-weight: 400;
+}
 
-/* THE NARROW MAGAZINE COLUMN */
-.magazine-column {
-    max-width: 320px; /* Keeps the bio thin */
-    padding-left: 20px;
+/* The Narrow Bio Column */
+.member-info {
+    max-width: 320px;
+    padding-left: 30px;
     border-left: 1px solid #c5a059;
 }
 
-.article-lead {
-    font-family: 'Inter', sans-serif !important;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #64748b;
-    margin-bottom: 40px;
+.member-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #c5a059;
+    display: block;
+    margin-bottom: 15px;
 }
 
-.editorial-bio {
-    font-family: 'Inter', sans-serif !important;
-    font-size: 0.9rem;
-    line-height: 1.9;
+.member-bio {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
     color: #334155;
     text-align: justify;
 }
 
-/* REVERSE LAYOUT (Julianne) */
-.right-image {
-    direction: rtl; /* Flips the columns */
+/* ITEM RIGHT (Staggering Julianne) */
+.item-right .image-frame {
+    grid-column: 7 / span 6; /* Pushes image to the right */
+    grid-row: 1;
 }
 
-.right-image .grid-text-content, 
-.right-image .magazine-column,
-.right-image .overlap-name-box {
-    direction: ltr; /* Keeps text reading left-to-right */
-}
-
-.right-image .overlap-name-box {
+.item-right .text-overlay {
+    grid-column: 2 / span 6; /* Pulls text to the left */
+    grid-row: 1;
     margin-left: 0;
-    margin-right: -180px; /* Overlap from the other side */
+    margin-right: -80px;
     text-align: right;
 }
 
-.right-image .magazine-column {
+.item-right .member-info {
     margin-left: auto;
     border-left: none;
     border-right: 1px solid #c5a059;
     padding-left: 0;
-    padding-right: 20px;
-    text-align: right;
+    padding-right: 30px;
 }
 
-/* MOBILE: STACKING */
+/* EYEBROW STYLE */
+.gold-eyebrow {
+    font-family: 'Inter', sans-serif;
+    color: #c5a059;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* MOBILE RESPONSIVE */
 @media (max-width: 900px) {
-    .grid-row { display: flex; flex-direction: column; }
-    .grid-image { width: 100%; height: 400px; }
-    .overlap-name-box { margin: -60px 0 20px 0 !important; text-align: left !important; }
-    .editorial-name { font-size: 3.5rem; }
-    .magazine-column { border: none; padding: 0; max-width: 100%; }
+    .editorial-item { display: block; }
+    .image-frame { height: 400px; margin-bottom: 40px; }
+    .text-overlay { margin: 0 !important; text-align: left !important; }
+    .member-name { font-size: 3.5rem; }
+    .member-info { border: none !important; padding: 0 !important; max-width: 100%; }
 }
