@@ -1832,6 +1832,11 @@ body { font-family: sans-serif; overflow-x: hidden; }
     background: #ffffff;
     overflow: visible; /* Allows the blue to slide in properly */
 }
+/* If the space below her becomes too large because she moved up, 
+   add this to pull the next section up too: */
+.magazine-editorial {
+    margin-bottom: -120px; 
+}
 
 
 /* 4. THE ROW SPACING */
