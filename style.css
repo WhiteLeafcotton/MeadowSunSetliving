@@ -1773,127 +1773,121 @@ body { font-family: sans-serif; overflow-x: hidden; }
    MAGAZINE OVERLAP & COLUMN LAYOUT
 ============================================= */
 
-.editorial-leadership {
+/* ==========================================
+   REFINED MAGAZINE LEADERSHIP CSS
+============================================= */
+
+.leader-section {
     position: relative;
-    padding: 100px 0;
-    background-color: #ffffff;
+    padding: 80px 0;
+    background: #ffffff;
     overflow: hidden;
 }
 
 /* Background Fox Watermark */
-.leadership-watermark {
+.fox-watermark {
     position: absolute;
-    bottom: -50px;
-    right: -20px;
+    bottom: -10%;
+    right: -5%;
     width: 350px;
-    opacity: 0.04;
+    opacity: 0.03; /* Barely visible, very luxe */
     pointer-events: none;
+    z-index: 0;
 }
 
-.luxe-container {
-    max-width: 1100px;
+.leader-container {
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 5%;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
 }
 
-.leadership-stack {
+.leader-row {
     display: flex;
-    flex-direction: column;
-    gap: 120px; /* Large gap for a clean, expensive feel */
-}
-
-.member-row {
-    display: flex;
-    align-items: flex-start;
+    align-items: center;
+    margin-bottom: 100px;
     position: relative;
 }
 
-/* 1. THE PHOTO BOX */
-.member-image-box {
-    flex: 0 0 400px; /* Small-to-medium portrait size */
-    height: 500px;
-    overflow: hidden;
+/* THE PHOTO */
+.leader-image-box {
+    flex: 0 0 320px; /* Small-to-medium card size */
+    height: 420px;
     background: #f1f5f9;
+    overflow: hidden;
 }
 
-.member-photo {
+.leader-image-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
 
-/* 2. THE TEXT COLUMN */
-.member-text-column {
-    position: relative;
-    margin-left: -80px; /* This pulls the text OVER the photo */
-    margin-top: 60px;   /* Offsets it vertically for the "stagger" */
+/* THE OVERLAP TEXT */
+.leader-text-column {
+    margin-left: -60px; /* Pulls the name over the image */
     z-index: 2;
 }
 
-/* The Overlap Header (Starts over the image) */
-.text-overlap-header {
-    background: transparent;
-    padding-bottom: 20px;
-}
-
-.member-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.2rem; /* Large and bold magazine style */
+.leader-name {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 3rem;
     color: #0f172a;
-    line-height: 1.1;
-    margin-top: 5px;
+    line-height: 1;
+    margin-bottom: -10px; /* Pulls the card up toward the name */
+    position: relative;
+    z-index: 3;
 }
 
-/* The Body Column (Narrows down) */
-.text-column-body {
-    background: #ffffff; /* Gives text its own clean space */
-    padding: 40px;
-    max-width: 380px;    /* Forces the narrow magazine column shape */
-    box-shadow: 20px 20px 60px rgba(0,0,0,0.03); /* Subtle lift */
-    border-left: 1px solid #c5a059; /* Your brand gold accent */
+/* THE NARROW COLUMN BODY */
+.leader-body-card {
+    background: #ffffff;
+    padding: 30px;
+    max-width: 320px; /* Forces the narrow column shape */
+    border-left: 1px solid #c5a059; /* Your Gold Accent */
+    box-shadow: 15px 15px 40px rgba(0,0,0,0.03);
 }
 
-.member-role {
-    font-family: 'Inter', sans-serif;
+.leader-role {
+    font-family: 'Inter', sans-serif !important;
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 3px;
     color: #c5a059;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-.member-desc {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    line-height: 1.9; /* Breathable line height */
+.leader-bio {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.9rem;
+    line-height: 1.8;
     color: #475569;
     font-weight: 300;
 }
 
-/* --- STAGGER RIGHT (Flipping the layout) --- */
+/* STAGGER RIGHT LAYOUT */
 .stagger-right {
     flex-direction: row-reverse;
 }
 
-.stagger-right .member-text-column {
+.stagger-right .leader-text-column {
     margin-left: 0;
-    margin-right: -80px; /* Pulls over from the right side */
+    margin-right: -60px; /* Pulls name over from the right side */
     text-align: right;
 }
 
-.stagger-right .text-column-body {
-    margin-left: auto; /* Aligns the narrow column to the right */
+.stagger-right .leader-body-card {
     border-left: none;
     border-right: 1px solid #c5a059;
+    margin-left: auto;
 }
 
-/* Mobile: Clean stack */
-@media (max-width: 850px) {
-    .member-row { flex-direction: column !important; }
-    .member-text-column { margin: -40px 0 0 20px !important; }
-    .member-image-box { width: 100%; height: 400px; flex: none; }
-    .text-column-body { max-width: 100%; padding: 25px; }
-    .member-name { font-size: 2.2rem; }
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .leader-row { flex-direction: column !important; align-items: flex-start; }
+    .leader-text-column { margin: -30px 0 0 15px !important; text-align: left !important; }
+    .leader-image-box { width: 100%; height: 350px; flex: none; }
+    .leader-body-card { border-right: none !important; border-left: 1px solid #c5a059 !important; }
 }
