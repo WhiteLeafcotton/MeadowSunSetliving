@@ -2227,6 +2227,8 @@ body {
 /* --- BLUEPRINT ADMISSIONS STYLING --- */
 /* --- BLUEPRINT ADMISSIONS STYLING --- */
 
+/* --- ADMISSIONS JOURNEY: MASTER LAYOUT --- */
+
 .admissions-journey {
     height: 100vh;
     background: #ffffff;
@@ -2238,17 +2240,17 @@ body {
 
 .split-view-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal vertical cards */
+    grid-template-columns: 1fr 1fr; /* Balanced symmetry */
     gap: 40px;
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    height: 80vh; /* Consistent height for both cards */
+    height: 80vh; /* Both cards share this height */
 }
 
-/* THE OUTLINED CARDS */
+/* THE BLUEPRINT OUTLINES */
 .journey-card-outline {
-    border: 1px solid rgba(15, 23, 42, 0.15); /* Subtle Brand Blue Outline */
+    border: 1px solid rgba(15, 23, 42, 0.15); /* Brand Blue Outline */
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -2257,8 +2259,7 @@ body {
     border-radius: 4px;
 }
 
-/* LEFT SIDE: TIMELINE REFINEMENTS */
-/* --- EDITORIAL UPGRADE: LEFT CARD --- */
+/* --- LEFT CARD: EDITORIAL CONTENT --- */
 
 .journey-header-editorial {
     margin-bottom: 50px;
@@ -2277,10 +2278,10 @@ body {
 }
 
 .magazine-title {
-    font-size: 3.5rem; /* Large, commanding presence */
+    font-size: 3.5rem;
     line-height: 1;
     color: #0f172a;
-    margin-bottom: 20px;
+    margin: 0 0 20px 0;
 }
 
 .header-subtext {
@@ -2289,16 +2290,19 @@ body {
     line-height: 1.6;
     max-width: 90%;
     font-style: italic;
+    margin: 0;
 }
 
-/* THE TIMELINE LAYOUT */
+/* THE TIMELINE STEPS */
 .editorial-spacing {
-    gap: 40px; /* Increased gap to fill vertical space */
+    display: flex;
+    flex-direction: column;
+    gap: 40px; 
 }
 
 .step-card-editorial {
     display: grid;
-    grid-template-columns: 80px 1fr; /* Dedicates space for large numbers */
+    grid-template-columns: 80px 1fr;
     align-items: start;
 }
 
@@ -2306,21 +2310,21 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
     font-weight: 700;
-    color: rgba(15, 23, 42, 0.1); /* Ghosted look */
+    color: rgba(15, 23, 42, 0.1); 
     line-height: 1;
     transition: 0.4s ease;
 }
 
 .step-card-editorial:hover .step-number-large {
-    color: #0f172a; /* Pops on hover */
+    color: #0f172a;
     transform: translateX(5px);
 }
 
 .vertical-connector-blue {
     width: 2px;
     height: 50px;
-    background: #0f172a; /* Brand Blue */
-    margin: 15px 0 0 18px; /* Aligns perfectly under the '0' */
+    background: #0f172a;
+    margin: 15px 0 0 18px;
     opacity: 0.1;
 }
 
@@ -2328,72 +2332,26 @@ body {
     font-size: 1.2rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
     color: #0f172a;
     font-weight: 700;
 }
 
 .step-body p {
-    font-size: 1rem; /* Increased size to fill space */
+    font-size: 1rem;
     color: #475569;
     line-height: 1.7;
+    margin: 0;
 }
 
-.gold-text {
-    color: #c5a059 !important;
-}
-
-/* RIGHT SIDE: VIDEO CARD */
-.video-card {
-    padding: 0; /* Remove padding to let video fill the outline */
-    overflow: hidden;
-}
-
-.vertical-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* High-end crop */
-}
-
-/* THE GLASS MUTE TOGGLE */
-.mute-toggle-glass {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 12px 24px;
-    border-radius: 50px;
-    color: white;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    transition: 0.3s ease;
-}
-
-.mute-toggle-glass:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateX(-50%) translateY(-3px);
-}
-
-.gold-text {
-    color: #c5a059 !important;
-}
-/* --- BLUEPRINT CSS ADDITIONS --- */
+/* --- RIGHT CARD: VIDEO COMPONENT --- */
 
 .video-card-container {
-    padding: 0 !important; /* Video must touch the blue outline */
+    padding: 0 !important; /* Video fills to the outline edge */
     background: #000;
     overflow: hidden;
     position: relative;
-    height: 100%; /* Matches the left card height */
+    height: 100%; 
 }
 
 .iframe-viewport {
@@ -2408,10 +2366,11 @@ body {
     width: 100%;
     height: 100%;
     border: none;
-    transform: scale(1.35); /* Zooms slightly to hide YouTube black bars */
-    pointer-events: none; /* Prevents users from clicking the YouTube logo */
+    transform: scale(1.35); /* Zooms to remove YouTube's black cinematic bars */
+    pointer-events: none; /* User clicks the overlay, not the YT logo */
 }
 
+/* THE GLASS MUTE TOGGLE */
 .video-overlay-wrapper {
     position: absolute;
     inset: 0;
@@ -2437,5 +2396,22 @@ body {
     gap: 12px;
     font-size: 0.75rem;
     letter-spacing: 2px;
-    pointer-events: auto; /* Allows clicking through the overlay */
+    transition: 0.3s ease;
+    pointer-events: auto;
+}
+
+.mute-toggle-glass:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+/* UTILITIES */
+.gold-text {
+    color: #c5a059 !important;
+}
+
+.italic-serif {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
 }
