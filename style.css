@@ -1763,232 +1763,113 @@ body { font-family: sans-serif; overflow-x: hidden; }
    ========================= */
 
 /* --- 50K DESIGN VARIABLES --- */
-:root {
-    --gold: #c5a059;
-    --navy: #0a1128;
-    --white-soft: #f8fafc;
-    --text-muted: #64748b;
-    --glass: rgba(255, 255, 255, 0.03);
-    --transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+.editorial-leadership {
+    padding: 140px 0;
+    background-color: #fff; /* Clean white background to reduce clutter */
 }
 
-/* --- UTILITIES --- */
-.section-padding { padding: 140px 0; overflow: hidden; }
-.container { max-width: 1300px; margin: 0 auto; padding: 0 5%; }
-.gold-sub { font-family: 'Montserrat'; font-size: 0.75rem; letter-spacing: 5px; color: var(--gold); text-transform: uppercase; display: block; margin-bottom: 20px; }
-.italic-serif { font-family: 'Playfair Display'; font-style: italic; font-weight: 400; }
-
-/* --- HERO REFINEMENT --- */
-.about-hero {
-    height: 85vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-}
-.hero-video-wrap { position: absolute; inset: 0; z-index: -2; }
-.hero-bg-video { width: 100%; height: 100%; object-fit: cover; }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,17,40,0.4), rgba(10,17,40,0.8)); z-index: -1; }
-.hero-badge { border: 1px solid rgba(255,255,255,0.3); padding: 8px 20px; border-radius: 50px; font-size: 0.7rem; letter-spacing: 2px; display: inline-block; margin-bottom: 30px; }
-.about-hero h1 { font-size: clamp(3rem, 8vw, 6rem); line-height: 1.1; font-family: 'Playfair Display'; }
-
-/* --- EDITORIAL LAYOUT --- */
-.editorial-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center; }
-.reveal-img-wrap { position: relative; }
-.reveal-img-wrap img { width: 100%; border-radius: 2px; filter: contrast(1.05); }
-.img-caption { position: absolute; bottom: -30px; right: 0; font-family: 'Playfair Display'; font-style: italic; font-size: 0.9rem; color: var(--gold); }
-.editorial-text h2 { font-family: 'Playfair Display'; font-size: 3rem; margin-bottom: 30px; color: var(--navy); }
-.sig-line { width: 100px; height: 1px; background: var(--gold); margin-top: 15px; }
-
-/* --- BENTO GRID --- */
-.bento-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    margin-top: 50px;
-}
-.bento-card {
-    background: #fff;
-    border: 1px solid #f1f5f9;
-    padding: 40px 20px;
-    transition: var(--transition);
-    text-align: center;
-}
-.bento-card:hover { background: var(--navy); color: white; transform: scale(1.02); z-index: 2; }
-.bento-card i { display: block; font-family: 'Montserrat'; font-size: 0.7rem; color: var(--gold); margin-bottom: 20px; }
-.bento-card.featured { background: var(--gold); color: white; border: none; }
-
-/* --- TIMELINE --- */
-.timeline { display: flex; flex-wrap: wrap; gap: 40px; margin-top: 60px; position: relative; }
-.t-circle { width: 60px; height: 60px; border: 1px solid var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 20px; transition: 0.4s; }
-.t-step:hover .t-circle { background: var(--navy); color: white; }
-
-/* --- ANIMATION STATES --- */
-.animate-up { opacity: 0; transform: translateY(40px); transition: var(--transition); }
-.animate-left { opacity: 0; transform: translateX(-40px); transition: var(--transition); }
-.animate-right { opacity: 0; transform: translateX(40px); transition: var(--transition); }
-
-.revealed { opacity: 1 !important; transform: translate(0) !important; }
-
-/* --- RESPONSIVE --- */
-@media (max-width: 992px) {
-    .editorial-grid { grid-template-columns: 1fr; }
-    .section-padding { padding: 80px 0; }
-}
-
-
-
-:root {
-    --gold-accent: #c5a059; /* Classic luxury gold */
-    --deep-text: #2c2c2c;
-    --light-bg: #fdfbf8;
-}
-
-.leadership-section {
-    padding: 120px 0;
-    background-color: var(--light-bg);
-    overflow: hidden;
-}
-
-.container {
+.luxe-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 40px;
 }
 
-.leadership-intro {
+/* Header */
+.editorial-header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
 }
 
-.section-subtitle {
+.gold-eyebrow {
     font-family: 'Inter', sans-serif;
+    color: #c5a059;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 12px;
-    color: var(--gold-accent);
+    letter-spacing: 4px;
+    font-size: 11px;
     display: block;
     margin-bottom: 15px;
 }
 
-.section-title {
+.editorial-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    color: var(--deep-text);
-    line-height: 1.1;
-    margin-bottom: 25px;
+    font-size: 3.5rem;
+    color: #1a1a1a;
+    font-weight: 500;
 }
 
-.section-description {
-    font-family: 'Inter', sans-serif;
-    max-width: 600px;
-    margin: 0 auto;
-    color: #666;
-    line-height: 1.8;
+/* The Grid/Flex System */
+.editorial-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    align-items: flex-start;
 }
 
-/* Grid Layout */
-.leadership-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    align-items: start;
+.editorial-member {
+    flex: 1;
+    max-width: 320px; /* Keeps the cards small and high-end */
 }
 
-.leader-card {
-    position: relative;
-    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+/* Stagger Effect */
+.offset-down {
+    margin-top: 80px;
 }
 
-.leader-card.staggered {
-    margin-top: 100px; /* Creates the editorial staggered look */
-}
-
-/* Image Styling */
-.leader-image-wrapper {
+/* Image Container */
+.member-image-container {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 4/5;
-    background: #eee;
+    margin-bottom: 30px;
+    background: #f8f8f8;
+    aspect-ratio: 3 / 4; /* Elegant vertical proportion */
 }
 
-.leader-img {
+.member-photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: sepia(20%) contrast(1.05); /* Subtle vintage/luxe filter */
-    transition: transform 0.8s ease;
+    display: block;
+    transition: transform 0.7s ease;
 }
 
-.leader-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(44, 44, 44, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-    opacity: 0;
-    transition: opacity 0.4s ease;
+.editorial-member:hover .member-photo {
+    transform: scale(1.03); /* Very subtle zoom */
 }
 
-.leader-quote {
-    color: white;
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    text-align: center;
-    font-size: 1.2rem;
-}
-
-/* Hover States */
-.leader-card:hover .leader-img {
-    transform: scale(1.05);
-}
-
-.leader-card:hover .leader-overlay {
-    opacity: 1;
-}
-
-/* Text Info */
-.leader-info {
-    padding-top: 25px;
-}
-
-.leader-role {
+/* Text Elements */
+.member-role {
     font-family: 'Inter', sans-serif;
-    font-size: 11px;
+    font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--gold-accent);
+    color: #c5a059;
+    display: block;
+    margin-bottom: 10px;
 }
 
-.leader-name {
+.member-name {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    margin: 10px 0;
-    color: var(--deep-text);
+    font-size: 1.8rem;
+    color: #2c2c2c;
+    margin-bottom: 15px;
+    line-height: 1.2;
 }
 
-.leader-line {
-    width: 40px;
-    height: 1px;
-    background-color: var(--gold-accent);
-    transition: width 0.4s ease;
+.member-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #666;
+    font-weight: 300;
 }
 
-.leader-card:hover .leader-line {
-    width: 100%;
-}
-
-/* Responsive */
+/* Mobile Responsiveness */
 @media (max-width: 992px) {
-    .leadership-grid {
-        grid-template-columns: 1fr;
-        gap: 60px;
+    .editorial-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 80px;
     }
-    .leader-card.staggered {
-        margin-top: 0;
-    }
+    .offset-down { margin-top: 0; }
+    .editorial-member { text-align: center; }
 }
