@@ -2229,6 +2229,8 @@ body {
 
 /* --- ADMISSIONS JOURNEY: MASTER LAYOUT --- */
 
+/* --- ADMISSIONS JOURNEY: MASTER LAYOUT --- */
+
 .admissions-journey {
     height: 100vh;
     background: #ffffff;
@@ -2240,31 +2242,33 @@ body {
 
 .split-view-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Balanced symmetry */
+    grid-template-columns: 1fr 1fr; 
     gap: 40px;
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    height: 80vh; /* Both cards share this height */
+    height: 80vh; 
 }
 
 /* THE BLUEPRINT OUTLINES */
 .journey-card-outline {
-    border: 1px solid rgba(15, 23, 42, 0.15); /* Brand Blue Outline */
+    border: 1px solid rgba(15, 23, 42, 0.15); 
     padding: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start; /* Changed to start to support top-aligned header */
     position: relative;
     border-radius: 4px;
+    overflow: hidden; /* Keeps scrollbar inside card radius */
 }
 
 /* --- LEFT CARD: EDITORIAL CONTENT --- */
 
 .journey-header-editorial {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     border-bottom: 1px solid rgba(15, 23, 42, 0.05);
-    padding-bottom: 30px;
+    padding-bottom: 25px;
+    flex-shrink: 0; /* Prevents header from shrinking when steps scroll */
 }
 
 .gold-eyebrow {
@@ -2293,11 +2297,26 @@ body {
     margin: 0;
 }
 
-/* THE TIMELINE STEPS */
-.editorial-spacing {
+/* INTERNAL SCROLLING STEPS */
+.scrollable-steps {
+    flex-grow: 1;
+    overflow-y: auto; /* Enables scrolling for steps only */
+    padding-right: 15px;
     display: flex;
     flex-direction: column;
-    gap: 40px; 
+    gap: 40px;
+}
+
+/* Subtle Premium Scrollbar */
+.scrollable-steps::-webkit-scrollbar {
+    width: 3px;
+}
+.scrollable-steps::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.02);
+}
+.scrollable-steps::-webkit-scrollbar-thumb {
+    background: #c5a059;
+    border-radius: 10px;
 }
 
 .step-card-editorial {
@@ -2347,7 +2366,7 @@ body {
 /* --- RIGHT CARD: VIDEO COMPONENT --- */
 
 .video-card-container {
-    padding: 0 !important; /* Video fills to the outline edge */
+    padding: 0 !important; 
     background: #000;
     overflow: hidden;
     position: relative;
@@ -2366,30 +2385,32 @@ body {
     width: 100%;
     height: 100%;
     border: none;
-    transform: scale(1.35); /* Zooms to remove YouTube's black cinematic bars */
-    pointer-events: none; /* User clicks the overlay, not the YT logo */
+    transform: scale(1.35); 
+    pointer-events: none; 
 }
 
 /* THE GLASS MUTE TOGGLE */
 .video-overlay-wrapper {
     position: absolute;
     inset: 0;
-    z-index: 20;
+    z-index: 50; /* Ensure it stays above the video */
     display: flex;
     align-items: flex-end;
     justify-content: center;
     padding-bottom: 40px;
     background: rgba(0,0,0,0.05);
+    pointer-events: none; /* Allows clicks to reach the toggle button */
 }
 
 .mute-toggle-glass {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    pointer-events: auto; /* Makes the button itself clickable */
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
     padding: 14px 28px;
     border-radius: 50px;
-    color: #fff;
+    color: #ffffff;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -2397,11 +2418,10 @@ body {
     font-size: 0.75rem;
     letter-spacing: 2px;
     transition: 0.3s ease;
-    pointer-events: auto;
 }
 
 .mute-toggle-glass:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2) !important;
     transform: translateY(-3px);
 }
 
