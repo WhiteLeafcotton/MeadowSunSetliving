@@ -1757,123 +1757,65 @@ body { font-family: sans-serif; overflow-x: hidden; }
    REFINED ABOUT PAGE (ANTI-BLEED VERSION)
    ============================================= */
 
-/* --- 1. SHARED UTILITIES --- */
-.section-padding {
-    padding: 100px 5%;
-    overflow: hidden; /* Prevents side-scrolling */
+/* --- HEADER STYLES --- */
+.main-header {
+    position: fixed;
+    top: 0; width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
-
-/* --- 2. LEADERSHIP SECTION --- */
-.leadership-section {
-    width: 100%;
-    background: #ffffff;
-}
-
-.owner-card {
+.navbar {
     display: flex;
-    flex-wrap: wrap; /* Allows stacking if content is too wide */
+    justify-content: space-between;
     align-items: center;
-    gap: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.owner-image {
-    flex: 1;
-    min-width: 300px; /* Prevents shrinking too small */
-}
-
-.owner-image img {
-    width: 100%;
-    max-height: 600px; /* Limits height to prevent bleeding */
-    object-fit: cover;
-    border-radius: 4px;
-    display: block;
-}
-
-.owner-text {
-    flex: 1.2;
-    min-width: 300px;
-}
-
-/* --- 3. MISSION & VISION (FLUID HEIGHT) --- */
-.mission-vision {
-    display: flex;
-    flex-wrap: wrap; 
-    min-height: 600px; /* Changed from fixed height to min-height */
-    background: #0a1128;
-    width: 100%;
-}
-
-.mission-video-side, .mission-content-side {
-    flex: 1;
-    min-width: 350px; /* Forces stack on smaller screens */
-}
-
-.mission-video-side {
-    position: relative;
-    min-height: 400px;
-}
-
-.mission-video-side video {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.mission-content-side {
-    padding: 80px 8%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* --- 4. WHO WE SERVE (11-POINT GRID) --- */
-.who-we-serve {
-    background: #fdfdfd;
-}
-
-.serve-grid {
-    display: grid;
-    /* This "auto-fit" is the magic for preventing bleeding */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    padding: 15px 5%;
     max-width: 1400px;
     margin: 0 auto;
 }
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-item { text-decoration: none; color: #0a1128; font-family: 'Montserrat'; font-size: 0.85rem; font-weight: 600; }
+.nav-item.active { color: #64748b; }
 
-.serve-item {
-    height: auto; /* Let content dictate height */
-    min-height: 180px;
-    background: #ffffff;
-    padding: 30px;
-    border: 1px solid rgba(0,0,0,0.05);
+/* --- FOOTER STYLES --- */
+.video-footer {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+    color: white;
     display: flex;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
+.footer-video-bg video {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%; min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+.footer-overlay {
+    position: absolute; inset: 0;
+    background: rgba(10, 17, 40, 0.7);
+    z-index: 0;
+}
+.footer-content { position: relative; z-index: 1; }
 
-/* --- 5. ADMISSION PATHWAY (SAFE STEPS) --- */
-.admission-process {
-    display: flex;
-    flex-wrap: wrap; /* Prevents steps from bleeding off-screen */
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+/* --- ABOUT SPECIFIC FIXES --- */
+.about-hero {
+    margin-top: 70px; /* Accounts for fixed header */
 }
-
-.step {
-    flex: 1;
-    min-width: 200px; /* Ensures text doesn't get too thin */
-    margin-bottom: 40px;
+.container { max-width: 1200px; margin: 0 auto; }
+.owner-card { display: flex; flex-wrap: wrap; gap: 40px; }
+.owner-image, .owner-text { flex: 1; min-width: 300px; }
+.serve-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px; 
 }
-
-/* --- MOBILE TWEAKS --- */
-@media (max-width: 768px) {
-    .owner-card { gap: 30px; }
-    .owner-image img { max-height: 400px; }
-    .mission-content-side { padding: 60px 5%; }
-    .mission-tile p { font-size: 1.1rem; }
-    .journey-line { display: none; }
-}
+.admission-process { display: flex; flex-wrap: wrap; gap: 20px; }
+.step { flex: 1; min-width: 200px; text-align: center; }
