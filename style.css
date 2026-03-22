@@ -1749,90 +1749,289 @@ body { font-family: sans-serif; overflow-x: hidden; }
 /* =========================
    ABOUT PAGE SPECIFIC STYLES
    ========================= */
+/* ==========================================
+   ABOUT PAGE & ELITE SECTIONS
+   ============================================= */
 
-/* Hero badge specific to About Us */
+/* --- 1. ABOUT HERO OVERRIDE --- */
 .about-hero {
+    background-image: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true");
     background-attachment: fixed;
 }
 
-/* --- THE STORY SECTION (Cottage Comfort Layout) --- */
-.story-section {
-    padding: 100px 10%;
+/* --- 2. LEADERSHIP & OWNER MESSAGE --- */
+.leadership-section {
+    padding: 120px 0;
     background: #ffffff;
+}
+
+.leadership-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.owner-card {
     display: flex;
     align-items: center;
     gap: 80px;
 }
 
-.story-content {
-    flex: 1;
-}
-
-.story-content h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    color: #0a1128;
-    margin-bottom: 25px;
-}
-
-.story-content p {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #475569;
-    margin-bottom: 20px;
-}
-
-.story-image {
+.owner-image {
     flex: 1;
     position: relative;
 }
 
-.story-image img {
+.owner-image img {
     width: 100%;
-    height: 500px;
+    height: 650px;
     object-fit: cover;
-    border-radius: 4px; /* Slight rounding for a soft "cottage" feel */
-    box-shadow: 20px 20px 0px #f1f5f9; /* Premium offset shadow */
+    border-radius: 4px;
+    box-shadow: 30px 30px 0px #f8fafc; /* Premium Offset */
 }
 
-/* --- MISSION & VISION TILES --- */
-.mission-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-top: 50px;
+.image-accent {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 120px;
+    height: 120px;
+    border-top: 2px solid #0a1128;
+    border-left: 2px solid #0a1128;
+    z-index: 1;
 }
 
-.mission-card {
-    padding: 40px;
-    background: #f8fafc;
-    border-left: 3px solid #0a1128;
+.owner-text {
+    flex: 1.2;
 }
 
-.mission-card h4 {
+.owner-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    color: #0a1128;
+    margin: 20px 0;
+}
+
+.owner-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #475569;
+    margin-bottom: 30px;
+}
+
+.signature-fox {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #0a1128;
+    border-top: 1px solid #eee;
+    padding-top: 25px;
+}
+
+/* --- 3. MISSION & VISION (VIDEO SPLIT) --- */
+.mission-vision {
+    display: flex;
+    height: 80vh;
+    min-height: 600px;
+    background: #0a1128;
+    overflow: hidden;
+}
+
+.mission-video-side {
+    flex: 1;
+    position: relative;
+}
+
+.mission-video-side video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+.mission-content-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10%;
+    background: #0a1128;
+    color: white;
+}
+
+.mission-tile {
+    margin-bottom: 60px;
+}
+
+.mission-tile i {
+    font-size: 2.5rem;
+    color: #94a3b8;
+    margin-bottom: 20px;
+}
+
+.mission-tile h3 {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.8rem;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
     margin-bottom: 15px;
-    color: #0a1128;
+    color: #f8fafc;
 }
 
-/* --- MOBILE RESPONSIVENESS FOR ABOUT --- */
+.mission-tile p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* --- 4. WHO WE SERVE (11-POINT GRID) --- */
+.who-we-serve {
+    padding: 120px 5%;
+    background: #fdfdfd;
+}
+
+.serve-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.serve-item {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.04);
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.serve-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    border-color: #0a1128;
+}
+
+.serve-item i {
+    font-size: 2rem;
+    color: #0a1128;
+    margin-top: 5px;
+}
+
+.serve-text span {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #94a3b8;
+    margin-bottom: 10px;
+}
+
+.serve-text h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #0a1128;
+    margin-bottom: 10px;
+}
+
+.serve-text p {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* --- 5. ADMISSION PATHWAY --- */
+.admission-process {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.journey-line {
+    position: absolute;
+    top: 35px;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: #e2e8f0;
+    z-index: 0;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.step-circle {
+    width: 70px;
+    height: 70px;
+    background: #0a1128;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border: 8px solid #ffffff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.step h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #0a1128;
+    margin-bottom: 15px;
+}
+
+.step p {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+    padding: 0 10px;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 992px) {
-    .story-section {
+    .owner-card {
         flex-direction: column;
-        padding: 60px 5%;
         gap: 40px;
     }
-    
-    .story-image img {
-        height: 350px;
-        box-shadow: 10px 10px 0px #f1f5f9;
+    .owner-image img {
+        height: 450px;
     }
-    
-    .mission-grid {
-        grid-template-columns: 1fr;
+    .mission-vision {
+        flex-direction: column;
+        height: auto;
+    }
+    .mission-video-side {
+        height: 350px;
+    }
+    .mission-content-side {
+        padding: 80px 10%;
+    }
+    .admission-process {
+        flex-direction: column;
+        gap: 60px;
+    }
+    .journey-line {
+        display: none;
     }
 }
