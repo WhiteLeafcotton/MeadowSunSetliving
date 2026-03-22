@@ -1777,117 +1777,139 @@ body { font-family: sans-serif; overflow-x: hidden; }
    REFINED MAGAZINE LEADERSHIP CSS
 ============================================= */
 
-.leader-section {
+/* ==========================================
+   VOGUE MAGAZINE EDITORIAL LAYOUT
+============================================= */
+
+.vogue-editorial {
     position: relative;
-    padding: 80px 0;
+    padding: 120px 0;
     background: #ffffff;
     overflow: hidden;
 }
 
-/* Background Fox Watermark */
-.fox-watermark {
+/* Subtlest Fox Watermark */
+.editorial-fox {
     position: absolute;
-    bottom: -10%;
-    right: -5%;
-    width: 350px;
-    opacity: 0.03; /* Barely visible, very luxe */
+    top: 50%;
+    right: -100px;
+    transform: translateY(-50%);
+    width: 500px;
+    opacity: 0.02; /* Almost invisible, high-end ghosting */
     pointer-events: none;
     z-index: 0;
 }
 
-.leader-container {
-    max-width: 1000px;
+.editorial-container {
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
     position: relative;
     z-index: 1;
 }
 
-.leader-row {
+.editorial-row {
     display: flex;
-    align-items: center;
-    margin-bottom: 100px;
-    position: relative;
+    align-items: flex-end; /* Aligns text to the bottom of the photo */
+    margin-bottom: 180px;
 }
 
 /* THE PHOTO */
-.leader-image-box {
-    flex: 0 0 320px; /* Small-to-medium card size */
-    height: 420px;
-    background: #f1f5f9;
+.editorial-image-wrapper {
+    flex: 0 0 45%;
+    height: 600px;
+    background: #f8fafc;
     overflow: hidden;
 }
 
-.leader-image-box img {
+.editorial-image-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: sepia(10%) contrast(105%); /* Gentle vintage editorial filter */
 }
 
-/* THE OVERLAP TEXT */
-.leader-text-column {
-    margin-left: -60px; /* Pulls the name over the image */
+/* THE TYPOGRAPHY STACK */
+.editorial-text-stack {
+    margin-left: -120px; /* The "Vogue" overlap */
+    margin-bottom: -40px; /* Pulls text down for a staggered look */
     z-index: 2;
 }
 
-.leader-name {
-    font-family: 'Playfair Display', serif !important;
-    font-size: 3rem;
-    color: #0f172a;
-    line-height: 1;
-    margin-bottom: -10px; /* Pulls the card up toward the name */
-    position: relative;
-    z-index: 3;
-}
-
-/* THE NARROW COLUMN BODY */
-.leader-body-card {
-    background: #ffffff;
-    padding: 30px;
-    max-width: 320px; /* Forces the narrow column shape */
-    border-left: 1px solid #c5a059; /* Your Gold Accent */
-    box-shadow: 15px 15px 40px rgba(0,0,0,0.03);
-}
-
-.leader-role {
-    font-family: 'Inter', sans-serif !important;
-    font-size: 0.7rem;
+.editorial-eyebrow {
+    font-family: 'Inter', sans-serif;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #c5a059;
+    letter-spacing: 6px;
+    font-size: 0.65rem;
+    color: #64748b;
     display: block;
     margin-bottom: 15px;
 }
 
-.leader-bio {
-    font-family: 'Inter', sans-serif !important;
-    font-size: 0.9rem;
-    line-height: 1.8;
-    color: #475569;
-    font-weight: 300;
+.editorial-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem; /* Huge, dramatic scaling */
+    line-height: 0.9;
+    color: #0f172a;
+    font-weight: 400;
+    margin-bottom: 40px;
 }
 
-/* STAGGER RIGHT LAYOUT */
-.stagger-right {
+.italic-serif {
+    font-style: italic;
+    color: #0f172a;
+    font-family: 'Playfair Display', serif;
+}
+
+/* THE NARROW COLUMN */
+.editorial-column {
+    max-width: 320px;
+    padding-left: 20px;
+}
+
+.editorial-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #c5a059;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.editorial-bio {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 2; /* Very breathable line height */
+    color: #334155;
+    font-weight: 300;
+    text-align: justify; /* Crisp magazine edges */
+}
+
+/* REVERSE LAYOUT */
+.editorial-row.reverse {
     flex-direction: row-reverse;
 }
 
-.stagger-right .leader-text-column {
+.editorial-row.reverse .editorial-text-stack {
     margin-left: 0;
-    margin-right: -60px; /* Pulls name over from the right side */
+    margin-right: -120px;
     text-align: right;
 }
 
-.stagger-right .leader-body-card {
-    border-left: none;
-    border-right: 1px solid #c5a059;
+.editorial-row.reverse .editorial-column {
     margin-left: auto;
+    padding-left: 0;
+    padding-right: 20px;
+    text-align: right;
 }
 
-/* MOBILE FIX */
-@media (max-width: 768px) {
-    .leader-row { flex-direction: column !important; align-items: flex-start; }
-    .leader-text-column { margin: -30px 0 0 15px !important; text-align: left !important; }
-    .leader-image-box { width: 100%; height: 350px; flex: none; }
-    .leader-body-card { border-right: none !important; border-left: 1px solid #c5a059 !important; }
+/* MOBILE ADAPTATION */
+@media (max-width: 900px) {
+    .editorial-row, .editorial-row.reverse { flex-direction: column; align-items: flex-start; margin-bottom: 80px; }
+    .editorial-text-stack, .editorial-row.reverse .editorial-text-stack { margin: -60px 0 0 0; text-align: left; }
+    .editorial-image-wrapper { width: 100%; height: 450px; flex: none; }
+    .editorial-name { font-size: 3.5rem; }
+    .editorial-column { padding: 0; text-align: left !important; }
 }
