@@ -23,24 +23,43 @@
             <div class="nav-wrapper">
                 <ul class="nav-links">
                     <li><a href="index.html" class="nav-item">Home</a></li>
-                    <li><a href="about.html" class="nav-item active">About</a></li>
+                    <li><a href="about.html" class="nav-item active" style="color: #64748b;">About</a></li>
                     <li><a href="#" class="nav-item">Services</a></li>
                     <li><a href="#" class="nav-item">Contact</a></li>
                 </ul>
                 <a href="#" class="nav-cta">Book a Tour</a>
             </div>
+            <div class="menu-button" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
         </nav>
     </header>
 
-    <section class="about-hero">
+    <div id="sideMenu" class="side-menu">
+        <span class="close-btn" onclick="toggleMenu()">&times;</span>
+        <div class="mobile-nav-content">
+            <a href="index.html" class="main-link">Home</a>
+            <a href="about.html" class="main-link">About Us</a>
+            <a href="#" class="main-link">Services</a>
+            <a href="#" class="nav-cta">Schedule Visit</a>
+        </div>
+    </div>
+
+    <section class="hero about-hero">
+        <div class="hero-light-overlay"></div>
         <div class="hero-content">
-            <span class="sub-label" style="color: white; letter-spacing: 5px;">OUR HERITAGE</span>
-            <h1>A Legacy of <span class="italic-serif">Heartfelt Care</span></h1>
+            <div class="hero-badge">
+                <div class="badge-line"></div>
+                <span class="badge-text">OUR HERITAGE</span>
+            </div>
+            <h1>Building a <span class="italic-serif">Legacy of Care</span></h1>
+            <p>Discover the heart behind Sunset Meadow—where high-end clinical excellence meets the warm embrace of a cottage home.</p>
         </div>
     </section>
 
-    <section class="leadership-section section-padding">
-        <div class="container">
+    <section class="leadership-section">
+        <div class="leadership-container">
             <div class="owner-card animate-on-scroll">
                 <div class="owner-image">
                     <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80" alt="Founder">
@@ -48,10 +67,10 @@
                 </div>
                 <div class="owner-text">
                     <span class="sub-label">A Message from our Founder</span>
-                    <h2>"At Sunset Meadow, we welcome you into our family."</h2>
+                    <h2>"At Sunset Meadow, we don't just provide care; we welcome you into our family."</h2>
                     <p>Guided by a vision of dignity and grace, I founded Sunset Meadow to be a sanctuary. Our leadership team is dedicated to ensuring every resident feels the warmth of a true home combined with the security of expert support.</p>
                     <div class="signature-fox">
-                        <i class="fa-solid fa-paw"></i>
+                        <i class="fa-solid fa-paw" style="color: #0a1128;"></i>
                         <span>Julianna Sterling, Founder & CEO</span>
                     </div>
                 </div>
@@ -64,6 +83,7 @@
             <video autoplay muted loop playsinline>
                 <source src="https://assets.mixkit.co/videos/preview/mixkit-view-of-a-beautiful-backyard-with-a-garden-34304-large.mp4" type="video/mp4">
             </video>
+            <div class="video-overlay-dark" style="position:absolute; inset:0; background:rgba(10,28,56,0.4);"></div>
         </div>
         <div class="mission-content-side">
             <div class="mission-tile animate-on-scroll">
@@ -74,128 +94,167 @@
             <div class="mission-tile animate-on-scroll">
                 <i class="fa-solid fa-eye"></i>
                 <h3>Our Vision</h3>
-                <p>To lead the future of senior wellness where independence is celebrated.</p>
+                <p>To lead the future of senior wellness where independence is celebrated and every sunset is met with peace of mind.</p>
             </div>
         </div>
     </section>
 
-    <section class="who-we-serve section-padding">
-        <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+    <section class="who-we-serve">
+        <div class="section-header" style="text-align: center; margin-bottom: 60px;">
             <span class="sub-label">SPECIALIZED CARE</span>
-            <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">Client Groups We Serve</h2>
+            <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem; color: #0a1128;">Who We Serve</h2>
+            <div class="accent-line" style="margin: 20px auto;"></div>
         </div>
 
         <div class="serve-grid">
-            <div class="serve-item">
+            <div class="serve-item animate-on-scroll">
                 <i class="fa-solid fa-hand-holding-heart"></i>
-                <div class="serve-text"><span>01</span><h4>High Behavior</h4><p>Hard-to-place support.</p></div>
+                <div class="serve-text">
+                    <span>01</span>
+                    <h4>High Behavior Support</h4>
+                    <p>Expert management for complex, hard-to-place needs.</p>
+                </div>
             </div>
-            <div class="serve-item">
+            <div class="serve-item animate-on-scroll">
                 <i class="fa-solid fa-hourglass-end"></i>
-                <div class="serve-text"><span>02</span><h4>Advanced Aged</h4><p>Attentive senior care.</p></div>
+                <div class="serve-text">
+                    <span>02</span>
+                    <h4>Advanced Aged</h4>
+                    <p>Specialized physical care for our most senior residents.</p>
+                </div>
             </div>
-            <div class="serve-item">
+            <div class="serve-item animate-on-scroll">
                 <i class="fa-solid fa-puzzle-piece"></i>
-                <div class="serve-text"><span>03</span><h4>Developmentally Disabled</h4><p>Individual growth focus.</p></div>
+                <div class="serve-text">
+                    <span>03</span>
+                    <h4>Developmentally Disabled</h4>
+                    <p>Programs designed for individual growth and safety.</p>
+                </div>
             </div>
-            <div class="serve-item">
+            <div class="serve-item animate-on-scroll">
                 <i class="fa-solid fa-brain"></i>
-                <div class="serve-text"><span>04</span><h4>Mental Illness</h4><p>Emotional wellness support.</p></div>
+                <div class="serve-text">
+                    <span>04</span>
+                    <h4>Mental Wellness</h4>
+                    <p>Disturbed or persistent mental illness support.</p>
+                </div>
             </div>
-            <div class="serve-item">
+            <div class="serve-item animate-on-scroll">
                 <i class="fa-solid fa-cloud-sun"></i>
-                <div class="serve-text"><span>05</span><h4>Memory Care</h4><p>Alzheimer's & Dementia.</p></div>
+                <div class="serve-text">
+                    <span>05</span>
+                    <h4>Alzheimer's & Dementia</h4>
+                    <p>Secure, respectful memory enhancement care.</p>
+                </div>
             </div>
-            <div class="serve-item">
+            <div class="serve-item animate-on-scroll">
                 <i class="fa-solid fa-wheelchair"></i>
-                <div class="serve-text"><span>06</span><h4>Physically Disabled</h4><p>Adaptive environments.</p></div>
+                <div class="serve-text">
+                    <span>06</span>
+                    <h4>Physically Disabled</h4>
+                    <p>Adaptive environments for full mobility support.</p>
+                </div>
             </div>
-            <div class="serve-item">
+            <div class="serve-item animate-on-scroll">
                 <i class="fa-solid fa-feather-pointed"></i>
-                <div class="serve-text"><span>07</span><h4>Terminally Ill</h4><p>Palliative support.</p></div>
+                <div class="serve-text">
+                    <span>07</span>
+                    <h4>Terminally Ill</h4>
+                    <p>Compassionate end-of-life and palliative support.</p>
+                </div>
             </div>
-            <div class="serve-item">
+            <div class="serve-item animate-on-scroll">
                 <i class="fa-solid fa-sparkles"></i>
-                <div class="serve-text"><span>08</span><h4>Traumatic Brain Injury</h4><p>Neurological recovery.</p></div>
+                <div class="serve-text">
+                    <span>08</span>
+                    <h4>Traumatic Brain Injury</h4>
+                    <p>Neurological support and TBI recovery care.</p>
+                </div>
             </div>
-            <div class="serve-item">
+            <div class="serve-item animate-on-scroll">
                 <i class="fa-solid fa-shield-halved"></i>
-                <div class="serve-text"><span>09</span><h4>Correctional Clients</h4><p>Secure transition care.</p></div>
+                <div class="serve-text">
+                    <span>09</span>
+                    <h4>Correctional Clients</h4>
+                    <p>Structured, secure transition and long-term care.</p>
+                </div>
             </div>
-            <div class="serve-item">
+            <div class="serve-item animate-on-scroll">
                 <i class="fa-solid fa-leaf"></i>
-                <div class="serve-text"><span>10</span><h4>Respite Care</h4><p>Short-term relief stays.</p></div>
+                <div class="serve-text">
+                    <span>10</span>
+                    <h4>Respite Available</h4>
+                    <p>Temporary relief stays for primary caregivers.</p>
+                </div>
             </div>
-            <div class="serve-item featured-serve">
-                <i class="fa-solid fa-plus"></i>
-                <div class="serve-text"><span>11</span><h4>Custom Care</h4><p>Unique care evaluations.</p></div>
+            <div class="serve-item animate-on-scroll featured-serve" style="background: #0a1128; color: white;">
+                <i class="fa-solid fa-circle-plus" style="color: white;"></i>
+                <div class="serve-text">
+                    <span style="color: #94a3b8;">11</span>
+                    <h4 style="color: white;">Customized Needs</h4>
+                    <p style="color: #94a3b8;">We evaluate every unique situation with care.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="admission-journey section-padding">
-        <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+    <section class="admission-journey-section" style="padding: 100px 5%; background: #fff;">
+        <div class="section-header" style="text-align: center; margin-bottom: 80px;">
             <span class="sub-label">THE PROCESS</span>
             <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">Admission Pathway</h2>
         </div>
+        
         <div class="admission-process">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h4>Inquiry</h4>
-                <p>Understanding your story.</p>
+            <div class="journey-line"></div>
+            <div class="step animate-on-scroll">
+                <div class="step-circle">1</div>
+                <h4>Initial Inquiry</h4>
+                <p>A simple conversation to understand your unique needs and story.</p>
             </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h4>Tour</h4>
-                <p>Experience the comfort.</p>
+            <div class="step animate-on-scroll">
+                <div class="step-circle">2</div>
+                <h4>Discovery Tour</h4>
+                <p>Experience the Cottage Comfort firsthand with a private walkthrough.</p>
             </div>
-            <div class="step">
-                <div class="step-number">3</div>
+            <div class="step animate-on-scroll">
+                <div class="step-circle">3</div>
                 <h4>Assessment</h4>
-                <p>Personalized care plan.</p>
+                <p>Our clinical team crafts your perfect personalized care plan.</p>
             </div>
-            <div class="step">
-                <div class="step-number">4</div>
+            <div class="step animate-on-scroll">
+                <div class="step-circle">4</div>
                 <h4>Welcome Home</h4>
-                <p>Your journey begins here.</p>
+                <p>A seamless move-in day where every detail is handled by us.</p>
             </div>
         </div>
     </section>
 
     <footer class="video-footer">
-        <div class="footer-video-bg">
-            <video autoplay muted loop playsinline>
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-slow-motion-of-a-golden-sunset-over-the-ocean-14022-large.mp4" type="video/mp4">
-            </video>
+        <div class="pre-footer">
+            <h2 id="typing-text">Welcome Home to Sunset Meadow.</h2>
         </div>
-        <div class="footer-overlay"></div>
-        <div class="footer-content">
-            <h2 class="typing-text">Welcome Home to Sunset Meadow.</h2>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Careers</a>
-                <a href="#">Contact Us</a>
-            </div>
-            <p class="copyright">© 2026 Sunset Meadow Assisted Living. All Rights Reserved.</p>
-        </div>
-    </footer>
+        </footer>
 
     <script>
-        // Scroll Reveal Logic
+        function toggleMenu() {
+            const menu = document.getElementById("sideMenu");
+            menu.classList.toggle("active");
+        }
+
+        // Scroll Reveal Animation
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
                     entry.target.style.opacity = "1";
                     entry.target.style.transform = "translateY(0)";
                 }
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.animate-on-scroll, .serve-item, .step').forEach((el) => {
+        document.querySelectorAll('.animate-on-scroll').forEach((el) => {
             el.style.opacity = "0";
-            el.style.transform = "translateY(20px)";
-            el.style.transition = "all 0.6s ease-out";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = "all 0.8s ease-out";
             observer.observe(el);
         });
     </script>
