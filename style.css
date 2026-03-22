@@ -374,19 +374,22 @@
 .hero {
     height: 100vh;
     width: 100%;
+    /* Use 'background' here */
     background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat;
     display: flex;
     align-items: center;
     padding: 0 10%;
     position: relative;
     overflow: hidden;
-    background-attachment: fixed; /* Parallax effect for premium feel */
+    background-attachment: fixed;
 }
-/* This overrides the 100vh from your main .hero class */
+
+/* This targets the About page specifically */
 .hero.hero-about {
     height: 50vh; 
-    background-attachment: scroll; /* Optional: turning off parallax for smaller heights often looks cleaner */
-    background-image: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%209.jpeg?raw=true");
+    /* Use 'background' here too to ensure it overrides the first one completely */
+    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%209.jpeg?raw=true") center/cover no-repeat;
+    background-attachment: scroll; 
 }
 
 .hero-light-overlay {
