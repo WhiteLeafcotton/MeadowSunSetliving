@@ -411,6 +411,30 @@ featureLinks.forEach(link => {
 
   <script>
 
+
+/* ==========================================
+   MOBILE DROPDOWN TOGGLE LOGIC
+============================================= */
+document.querySelectorAll('.mobile-dropdown .main-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        // Only trigger if there is a sub-menu
+        const subMenu = this.nextElementSibling;
+        if (subMenu && subMenu.classList.contains('sub-links')) {
+            e.preventDefault(); // Stop the "#" from jumping the page
+            
+            // Toggle the display
+            const isVisible = subMenu.style.display === 'block';
+            subMenu.style.display = isVisible ? 'none' : 'block';
+            
+            // Optional: Rotate the chevron icon
+            const icon = this.querySelector('i');
+            if(icon) {
+                icon.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)';
+                icon.style.transition = '0.3s';
+            }
+        }
+    });
+});
 /* =========================
    MODAL
 ========================= */
