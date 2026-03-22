@@ -2226,108 +2226,77 @@ body {
 ============================================= */
 .admissions-journey {
     height: 100vh;
-    width: 100%;
     background: #ffffff;
-    overflow: hidden; /* Prevents scrolling */
+    overflow: hidden;
     display: flex;
     align-items: center;
-    padding: 0 5%;
+    padding: 0 10%;
 }
 
 .split-view-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    gap: 60px;
+    grid-template-columns: 1.2fr 0.8fr; /* Timeline gets more space than the vertical video */
+    gap: 80px;
     width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
     align-items: center;
 }
 
-/* LEFT SIDE: VIDEO & TITLE */
-.journey-visual-side {
+/* LEFT SIDE: TEXT & STEPS */
+.stepper-wrap {
+    height: 85vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 80vh;
+    justify-content: space-between;
 }
 
-.video-frame {
-    width: 100%;
-    height: 100%;
-    max-height: 450px; /* Adjust based on your video's verticality */
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    margin-top: 40px;
+}
+
+/* RIGHT SIDE: THE VERTICAL VIDEO */
+.journey-visual-side {
+    display: flex;
+    justify-content: flex-end;
+    height: 85vh;
+}
+
+.vertical-video-frame {
+    height: 100%; /* Matches the 85vh height */
+    aspect-ratio: 9 / 16; /* Forces the vertical "Phone/Shorts" shape */
     background: #0f172a;
-    border-radius: 8px;
+    border-radius: 20px; /* Softer, high-end rounded corners */
     overflow: hidden;
-    margin-top: 30px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 8px solid #f8fafc; /* Subtle frame look */
 }
 
-.video-frame iframe {
+.vertical-video-frame iframe {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* RIGHT SIDE: THE TIMELINE */
-.stepper-wrap.vertical-stepper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 80vh; /* Matches the video side height */
-    padding-left: 40px;
-    border-left: 1px solid #e2e8f0;
-}
-
+/* TYPOGRAPHY REFINEMENTS */
 .step-card {
     display: flex;
-    gap: 20px;
-    align-items: flex-start;
-}
-
-.step-indicator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 40px;
+    gap: 25px;
 }
 
 .step-number {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #c5a059;
-    font-weight: 700;
+    line-height: 1;
 }
 
 .step-line {
     width: 1px;
-    flex-grow: 1;
     background: #c5a059;
-    height: 40px; /* Adjust to connect the dots */
-    opacity: 0.3;
-}
-
-.step-text h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    margin: 0 0 5px 0;
-    color: #0f172a;
-}
-
-.step-text p {
-    font-size: 0.9rem;
-    color: #64748b;
-    margin: 0;
-    line-height: 1.4;
-}
-
-.welcome-gold {
-    color: #c5a059 !important;
-}
-
-/* MOBILE FIX */
-@media (max-width: 992px) {
-    .admissions-journey { height: auto; overflow: visible; padding: 60px 5%; }
-    .split-view-container { grid-template-columns: 1fr; }
-    .stepper-wrap.vertical-stepper { height: auto; border-left: none; padding-left: 0; }
+    flex-grow: 1;
+    margin: 10px 0;
+    opacity: 0.2;
 }
