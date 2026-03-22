@@ -371,26 +371,44 @@
 /* HERO */
 
 /* --- FULL-WIDTH LIGHT LUXURY HERO --- */
+/* BASE HERO LOGIC */
 .hero {
-    height: 100vh;
     width: 100%;
-    /* Use 'background' here */
-    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat;
     display: flex;
     align-items: center;
     padding: 0 10%;
-    position: relative;
+    position: sticky; /* Pins the hero to the top */
+    top: 0;
+    z-index: -1; /* Pushes it behind the content cards */
     overflow: hidden;
-    background-attachment: fixed;
 }
 
-/* This targets the About page specifically */
+/* INDEX PAGE HERO (Full Height) */
+.hero.hero-index {
+    height: 100vh;
+    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat;
+}
+
+/* ABOUT PAGE HERO (50% Height) */
 .hero.hero-about {
     height: 50vh; 
-    /* Use 'background' here too to ensure it overrides the first one completely */
     background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat;
-    background-attachment: scroll; 
 }
+
+/* THE MAGIC FIX: YOUR CONTENT WRAPPER */
+/* Everything below the hero MUST have a solid background and a higher z-index */
+.main-content-wrapper, 
+.admissions-journey, 
+section {
+    position: relative;
+    z-index: 10; /* Ensures cards slide OVER the pinned hero */
+    background: #ffffff; /* Must be solid to "hide" the image as you scroll */
+}
+
+/* update for about page hero annimation above */
+
+
+
 
 .hero-light-overlay {
     position: absolute;
