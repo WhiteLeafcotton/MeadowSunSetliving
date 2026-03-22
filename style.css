@@ -382,9 +382,11 @@
     overflow: hidden;
     background-attachment: fixed; /* Parallax effect for premium feel */
 }
+/* This overrides the 100vh from your main .hero class */
 .hero.hero-about {
-    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%209.jpeg?raw=true") center/cover no-repeat;
-    background-attachment: fixed; /* Maintains the premium parallax feel */
+    height: 50vh; 
+    background-attachment: scroll; /* Optional: turning off parallax for smaller heights often looks cleaner */
+    background-image: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/YOUR_ABOUT_IMAGE.jpeg?raw=true");
 }
 
 .hero-light-overlay {
