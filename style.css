@@ -2094,36 +2094,16 @@ body {
     --brand-gold: #c5a059;
 }
 
-/* 3. THE DIRECTORY (BLUE STRIP) */
-/* This forces the blue section to the front so it doesn't "disappear" */
-/* 3. THE DIRECTORY (THIN BLUE STRIP) */
-:root {
-    --brand-blue: #0c1833;
-    --brand-gold: #c5a059;
-}
-
 /* 3. THE DIRECTORY (THIN BLUE STRIP) */
 .stewardship-directory {
     position: relative;
     z-index: 20; 
-    margin-top: 0; 
     background-color: #0f172a !important; 
     display: block;
-    
-    /* SHAVED SECTION HEIGHT: Reduced from 80px/30px to 15px */
-    padding: 15px 0; 
-    
-    /* Subtle premium hairline borders */
-    border-top: 1px solid rgba(197, 160, 89, 0.15);
-    border-bottom: 1px solid rgba(197, 160, 89, 0.15);
-}
-
-/* TIGHTEN THE HEADER SPACE */
-.directory-header {
-    max-width: 800px; 
-    margin-bottom: 15px; /* Shaved space to pull cards closer to title */
-    text-align: left; 
-    padding: 0 10%; 
+    padding: 15px 0; /* Minimal vertical "sauce" */
+    margin-top: 0; 
+    border-top: 1px solid rgba(197, 160, 89, 0.1);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.1);
 }
 
 /* THE SLIDER ENGINE */
@@ -2135,7 +2115,7 @@ body {
 
 .dir-track {
     display: flex;
-    gap: 15px; /* Tightened gap */
+    gap: 12px; /* Tighter gap for sleeker flow */
     width: max-content;
     animation: scrollInfinite 40s linear infinite; 
 }
@@ -2149,100 +2129,84 @@ body {
     100% { transform: translateX(-50%); } 
 }
 
-/* COMPACT LOW-PROFILE CARD */
+/* SLEEK LOW-PROFILE CARD */
 .dir-item {
-    flex: 0 0 240px; /* Slimmer width */
-    background: rgba(255, 255, 255, 0.03); 
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    
-    /* SHAVED CARD SAUCE: Reduced padding from 25px to 12px */
-    padding: 12px 20px; 
-    
-    /* SHAVED CARD HEIGHT: Reduced from 180px to 110px */
-    min-height: 110px; 
-    
+    flex: 0 0 220px; /* Slightly narrower */
+    background: rgba(255, 255, 255, 0.02); 
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 12px 18px; 
+    min-height: 90px; /* Drastically thinner to hug the words */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centers text in the thinner space */
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    justify-content: center;
+    transition: all 0.4s ease;
 }
 
 .dir-item:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.06);
     border-color: var(--brand-gold);
-    transform: translateY(-3px); /* Subtle lift for thin cards */
 }
 
-/* TEXT AT THE TOP */
+/* --- SLEEK TEXT REFINEMENTS --- */
+
 .client-type { 
-    font-size: 1rem; /* Slightly smaller for the thin profile */
+    font-size: 0.95rem; /* Reduced for a sophisticated, small-text look */
     margin-bottom: 2px; 
     font-family: 'Playfair Display', serif;
     color: #ffffff;
-    line-height: 1.2;
+    line-height: 1.1; /* Tight line height prevents vertical bloat */
+    letter-spacing: 0.5px;
 }
 
 .client-status { 
-    font-size: 0.6rem; 
+    font-size: 0.55rem; /* Tiny, elegant eyebrow text */
     text-transform: uppercase;
-    letter-spacing: 1.2px; 
+    letter-spacing: 1.5px; 
     color: var(--brand-gold);
+    line-height: 1;
+    margin: 0;
 }
 
-/* HIGH-END ICON AT THE BOTTOM */
+/* ICON TIGHTENING */
 .dir-icon {
-    text-align: right;
-    margin-top: 5px; /* Pulls icon closer to text */
+    margin-top: 4px; /* Pulls the icon right up under the text */
+    line-height: 1;
 }
 
 .dir-icon i {
-    font-size: 1.2rem; /* Scaled down icon */
-    color: rgba(255, 255, 255, 0.3); 
-    transition: 0.3s ease;
-}
-
-.dir-item:hover .dir-icon i {
-    color: var(--brand-gold);
+    font-size: 1rem; /* Smaller, sharper icon */
+    color: rgba(255, 255, 255, 0.2); 
 }
 
 /* 11th CARD (GOLD INDEX) */
 .dir-index-end {
-    border: 1px solid var(--brand-gold) !important;
-    background: rgba(197, 160, 89, 0.1) !important;
+    border: 1px solid rgba(197, 160, 89, 0.4) !important;
 }
 
 .index-digit {
     font-family: 'Playfair Display', serif;
-    font-size: 2.2rem; /* Reduced from 4rem to fit the new height */
+    font-size: 1.8rem; /* Scaled down to match the new thin card */
     font-weight: 700;
     color: var(--brand-gold);
     line-height: 1;
 }
 
-/* --- DIRECTORY HEADER TEXT LAYOUT --- */
+/* --- COMPACT HEADER TEXT --- */
+.directory-header {
+    max-width: 800px; 
+    margin-bottom: 12px; 
+    padding: 0 10%; 
+}
+
 .gold-eyebrow {
-    display: block;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.75rem;
-    color: var(--brand-gold);
-    margin-bottom: 5px; 
+    font-size: 0.65rem; 
+    letter-spacing: 2px;
+    margin-bottom: 4px;
 }
 
 .magazine-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 4vw, 3rem); /* Slightly smaller scale */
-    line-height: 1.1;
-    margin: 0 0 10px 0; 
-    color: #ffffff;
-}
-
-.section-lead {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem; /* Tighter font */
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.6); 
-    max-width: 550px; 
+    font-size: 1.8rem; /* Much thinner and sleeker */
+    line-height: 1;
     margin: 0;
 }
 /* ==========================================
