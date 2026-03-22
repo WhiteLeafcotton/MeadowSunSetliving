@@ -47,55 +47,56 @@
 }
 
 /* --- THE FOX LOGO (OUTLINE ONLY) --- */
+/* --- 1. THE LOGO CONTAINER --- */
 .logo-mark {
-    height: 60px; /* Big Editorial Size */
+    height: 60px; 
     width: auto;
     display: flex;
     align-items: center;
     transition: height 0.4s ease;
 }
 
-/* Scales down on scroll */
+/* Scales down on scroll for a slim look */
 .main-header.scrolled .logo-mark {
-    height: 45px;
+    height: 45px; 
 }
 
+/* Clean SVG Rules - Auto width prevents squashing */
 .logo-mark svg {
     height: 100%;
-    width: auto;
+    width: auto; 
     display: block;
+    overflow: visible; 
 }
 
 /* --- THE FIX: FORCING OUTLINE --- */
 /* --- THE FOX SILHOUETTE OUTLINE --- */
 .logo-mark svg path {
-    /* 1. Remove the solid center */
-    fill: none !important;
-    
-    /* 2. Create the outline around the shape */
-    stroke: #0a1128 !important; 
-    
-    /* 3. Control the thickness of the line */
-    stroke-width: 2px; /* Increase this to 3px or 4px if the line is too thin */
-    
-    /* 4. Smooth out the corners of the lines */
+    fill: none !important; /* Forces the center to be transparent */
+    stroke: #0a1128 !important; /* Midnight Blue Outline */
+    stroke-width: 2.5px; /* Clean, elegant line */
     stroke-linecap: round;
     stroke-linejoin: round;
-    
-    /* 5. Ensure the outline stays inside the viewbox */
     vector-effect: non-scaling-stroke; 
 }
 
 /* Keep the rest of the logo text looking sharp */
+
 .brand-name {
     font-family: 'Playfair Display', serif;
-    font-size: 1.6rem; /* Scaled up with the fox */
+    font-size: 1.5rem; 
     font-weight: 700;
     color: #0a1128;
+    line-height: 1;
 }
 
 .brand-sub {
-    color: #64748b; /* Slate Grey for the subtitle */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #64748b;
+    margin-top: 2px;
 }
 
 .logo-mark svg {
