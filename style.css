@@ -1827,14 +1827,13 @@ body { font-family: sans-serif; overflow-x: hidden; }
 
 .magazine-editorial {
     position: relative;
-    padding: 60px 0; /* Keeps your original editorial spacing */
+    padding: 60px 0 0 0; /* No bottom padding */
     background: #ffffff;
-    overflow: visible; /* Changed from hidden so the overlapping works */
-    
-    /* This is the magic number. It cancels out the 250px gap 
-       created by Eleanor moving up. Adjust this until the blue hits the image. */
-    margin-bottom: -280px; 
-    z-index: 5;
+    /* Remove 'overflow: hidden' if it's there so the blue can slide under */
+    overflow: visible; 
+    /* This 'trims' the bottom of the section to match where Eleanor moved to */
+    margin-bottom: -220px; 
+    z-index: 1; 
 }
 
 
