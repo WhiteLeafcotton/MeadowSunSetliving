@@ -52,25 +52,29 @@
 
 
 /* Brand Typography */
-.logo-type {
+/* Removes the link underline and forces the brand color */
+.logo {
+    text-decoration: none !important; /* This kills the line */
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    outline: none;
 }
 
-.brand-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #0a1128;
-    line-height: 1.1;
+.logo-type {
+    text-decoration: none;
 }
 
+/* This ensures the text doesn't turn purple or blue after being clicked */
+.brand-name, 
 .brand-sub {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    color: #64748b;
+    text-decoration: none !important;
+    color: #0a1128; /* Your Midnight Blue */
+}
+
+/* Optional: Subtle hover effect instead of an underline */
+.logo:hover .brand-name {
+    color: #64748b; /* Shifts to Slate Grey on hover */
+    transition: 0.3s ease;
 }
 
 /* --- 4. NAV LINKS MENU --- */
