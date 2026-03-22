@@ -2226,123 +2226,56 @@ body {
 ============================================= */
 /* --- BLUEPRINT ADMISSIONS STYLING --- */
 
-.admissions-journey {
-    height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    padding: 0 10%;
+/* --- BLUEPRINT CSS ADDITIONS --- */
+
+.video-card-container {
+    padding: 0 !important; /* Video must touch the blue outline */
+    background: #000;
     overflow: hidden;
-}
-
-.split-view-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal vertical cards */
-    gap: 40px;
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    height: 80vh; /* Consistent height for both cards */
-}
-
-/* THE OUTLINED CARDS */
-.journey-card-outline {
-    border: 1px solid rgba(15, 23, 42, 0.15); /* Subtle Brand Blue Outline */
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     position: relative;
-    border-radius: 4px;
+    height: 100%; /* Matches the left card height */
 }
 
-/* LEFT SIDE: TIMELINE REFINEMENTS */
-.journey-header-minimal {
-    margin-bottom: 40px;
-}
-
-.steps-container {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.step-card {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-}
-
-.step-number {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    color: #0f172a;
-    font-weight: 700;
-}
-
-.vertical-connector {
-    width: 1px;
-    height: 30px;
-    background: rgba(15, 23, 42, 0.1);
-    margin: 10px auto;
-}
-
-.step-text h3 {
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 4px;
-    color: #0f172a;
-}
-
-.step-text p {
-    font-size: 0.85rem;
-    color: #64748b;
-    line-height: 1.5;
-    max-width: 320px;
-}
-
-/* RIGHT SIDE: VIDEO CARD */
-.video-card {
-    padding: 0; /* Remove padding to let video fill the outline */
-    overflow: hidden;
-}
-
-.vertical-video {
+.iframe-viewport {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* High-end crop */
 }
 
-/* THE GLASS MUTE TOGGLE */
-.mute-toggle-glass {
+.iframe-viewport iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    transform: scale(1.35); /* Zooms slightly to hide YouTube black bars */
+    pointer-events: none; /* Prevents users from clicking the YouTube logo */
+}
+
+.video-overlay-wrapper {
     position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
+    inset: 0;
+    z-index: 20;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 40px;
+    background: rgba(0,0,0,0.05);
+}
+
+.mute-toggle-glass {
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 12px 24px;
+    padding: 14px 28px;
     border-radius: 50px;
-    color: white;
+    color: #fff;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     letter-spacing: 2px;
-    transition: 0.3s ease;
-}
-
-.mute-toggle-glass:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateX(-50%) translateY(-3px);
-}
-
-.gold-text {
-    color: #c5a059 !important;
+    pointer-events: auto; /* Allows clicking through the overlay */
 }
