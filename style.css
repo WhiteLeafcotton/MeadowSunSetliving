@@ -1957,7 +1957,7 @@ body { font-family: sans-serif; overflow-x: hidden; }
 
 /* Target Eleanor's row individually */
 .bottom-row.eleanor-adjust {
-    margin-top: -100px; /* Pulls the entire section up */
+    margin-top: -150px; /* Pulls the entire section up */
     position: relative;
     z-index: 20; /* Ensures it stays above the watermark */
 }
