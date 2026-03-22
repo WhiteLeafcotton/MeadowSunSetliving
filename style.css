@@ -1941,3 +1941,76 @@ body { font-family: sans-serif; overflow-x: hidden; }
     .v-portrait { width: 100% !important; height: 450px !important; margin-bottom: 25px; }
     .v-hero-text { margin: -60px 0 0 0 !important; }
 }
+/* ==========================================
+   JULIANNE CARD FIX: MATCHING HERO SCALE
+============================================= */
+
+/* Force the right-side container to allow the large photo */
+.rn-feature-vogue {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Keeps her aligned to the right of the Vision */
+}
+
+/* Matching the large size exactly */
+.v-portrait.v-large {
+    width: 500px !important; 
+    height: 650px !important;
+    background: #f1f5f9;
+    z-index: 1;
+}
+
+/* Styling the Text Overlap for the Right Side */
+.v-hero-text-right {
+    margin-top: -120px; /* Pulls name UP over the photo */
+    margin-right: -40px; /* Pulls name to the RIGHT edge */
+    text-align: right;
+    z-index: 10;
+    position: relative;
+}
+
+.v-hero-name-alt {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 4.5rem; /* Massive Vogue scale */
+    line-height: 0.85;
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+
+/* Right-aligned narrow bio column */
+.v-bio-column-right {
+    max-width: 300px;
+    margin-left: auto; /* Pushes column to the right */
+    padding-right: 25px;
+    border-right: 1px solid #c5a059; /* Gold spine on the right side */
+    text-align: right;
+}
+
+/* Ensuring the Vision block doesn't get squished by the larger photo */
+.vogue-top-row {
+    grid-template-columns: 1fr 500px !important; /* Locks the right column to 500px */
+    gap: 100px;
+}
+
+/* Mobile Fix: Ensure it doesn't break on phones */
+@media (max-width: 1100px) {
+    .vogue-top-row {
+        display: block;
+    }
+    .v-portrait.v-large {
+        width: 100% !important;
+        height: 450px !important;
+    }
+    .v-hero-text-right {
+        margin: -60px 0 0 0 !important;
+        text-align: left;
+    }
+    .v-bio-column-right {
+        margin-left: 0;
+        text-align: left;
+        border-right: none;
+        border-left: 1px solid #c5a059;
+        padding-left: 20px;
+    }
+}
