@@ -360,26 +360,65 @@
 
                 <div class="step-card">
                     <div class="step-indicator">
+                        <span class="step-number">02</span>
+                        <div class="vertical-connector"></div>
+                    </div>
+                    <div class="step-text">
+                        <h3>Documentation</h3>
+                        <p>Gathering medical records and essential identity verification.</p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-indicator">
+                        <span class="step-number">03</span>
+                        <div class="vertical-connector"></div>
+                    </div>
+                    <div class="step-text">
+                        <h3>Personal Care Plan</h3>
+                        <p>A bespoke roadmap for restorative health and hospitality.</p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-indicator">
+                        <span class="step-number">04</span>
+                        <div class="vertical-connector"></div>
+                    </div>
+                    <div class="step-text">
+                        <h3>Financial & Residency</h3>
+                        <p>Transparent agreements and residency confirmation.</p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-indicator">
                         <span class="step-number gold-text">05</span>
                     </div>
                     <div class="step-text">
                         <h3 class="gold-text">Welcome Home</h3>
-                        <p>The transition into a life of dignity and expert care begins.</p>
+                        <p>The transition into a life of dignity and care begins.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="journey-card-outline video-card animate-on-scroll">
-            <button class="mute-toggle-glass" onclick="toggleMute()">
-                <i id="muteIcon" class="fa-solid fa-volume-xmark"></i>
-                <span id="muteText">TAP FOR AUDIO</span>
-            </button>
+        <div class="journey-card-outline video-card-container animate-on-scroll">
+            <div class="video-overlay-wrapper">
+                <button class="mute-toggle-glass" id="customMuteBtn">
+                    <i id="muteIcon" class="fa-solid fa-volume-xmark"></i>
+                    <span id="muteText">TAP FOR AUDIO</span>
+                </button>
+            </div>
 
-            <video id="admissionsVideo" autoplay muted loop playsinline class="vertical-video">
-                <source src="YOUR_VIDEO_FILE.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <div class="iframe-viewport">
+                <iframe 
+                    id="journeyVideo"
+                    src="https://www.youtube.com/embed/jUxY2QqMDX0?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=jUxY2QqMDX0&controls=0&modestbranding=1&rel=0" 
+                    allow="autoplay; encrypted-media" 
+                    allowfullscreen>
+                </iframe>
+            </div>
         </div>
 
     </div>
@@ -433,6 +472,10 @@
         </div>
     </footer>
 
+
+
+
+
     <div id="bookingModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -457,6 +500,46 @@
 
     <script>
 
+
+
+
+
+
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('journeyVideo', {
+        events: {
+            'onReady': onPlayerReady
+        }
+    });
+}
+
+function onPlayerReady(event) {
+    document.getElementById('customMuteBtn').addEventListener('click', function() {
+        if (player.isMuted()) {
+            player.unMute();
+            document.getElementById('muteIcon').className = 'fa-solid fa-volume-high';
+            document.getElementById('muteText').innerText = 'SOUND ON';
+        } else {
+            player.mute();
+            document.getElementById('muteIcon').className = 'fa-solid fa-volume-xmark';
+            document.getElementById('muteText').innerText = 'TAP FOR AUDIO';
+        }
+    });
+}
+        
+
+
+
+
+
+
+        
         function toggleMute() {
     const video = document.getElementById('admissionsVideo');
     const icon = document.getElementById('muteIcon');
