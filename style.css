@@ -1971,7 +1971,7 @@ body { font-family: sans-serif; overflow-x: hidden; }
 /* If the space below her becomes too large because she moved up, 
    add this to pull the next section up too: */
 .magazine-editorial {
-    margin-bottom: -120px; 
+    margin-bottom: -80px; 
 }
 
 /* --- ADJUSTING TEXT FOR THE SMALLER ABOUT HERO --- */
