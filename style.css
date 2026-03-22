@@ -372,37 +372,43 @@
 
 /* --- FULL-WIDTH LIGHT LUXURY HERO --- */
 /* BASE HERO LOGIC */
+/* 1. BASE HERO DEFAULTS */
 .hero {
     width: 100%;
     display: flex;
     align-items: center;
     padding: 0 10%;
-    position: sticky; /* Pins the hero to the top */
-    top: 0;
-    z-index: -1; /* Pushes it behind the content cards */
+    position: relative; /* Default for Index */
     overflow: hidden;
 }
 
-/* INDEX PAGE HERO (Full Height) */
+/* 2. INDEX PAGE HERO (Full Height & Fixed Background) */
+/* This brings back the classic full-screen look for your homepage */
 .hero.hero-index {
     height: 100vh;
     background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat;
+    background-attachment: fixed; /* This creates the scroll effect for full-screen */
+    z-index: 1; /* Brings it back to the front */
 }
 
-/* ABOUT PAGE HERO (50% Height) */
+/* 3. ABOUT PAGE HERO (50% Height & Sticky Slide-Over) */
+/* This keeps the cool "Sliding Door" effect for your subpage */
 .hero.hero-about {
     height: 50vh; 
     background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat;
+    position: sticky; 
+    top: 0;
+    z-index: -1; /* Pushes it behind the About page cards */
 }
 
-/* THE MAGIC FIX: YOUR CONTENT WRAPPER */
-/* Everything below the hero MUST have a solid background and a higher z-index */
+/* 4. THE CONTENT LAYERING */
+/* This ensures your sections have the "weight" to slide over the About hero */
 .main-content-wrapper, 
 .admissions-journey, 
 section {
     position: relative;
-    z-index: 10; /* Ensures cards slide OVER the pinned hero */
-    background: #ffffff; /* Must be solid to "hide" the image as you scroll */
+    z-index: 10; 
+    background: #ffffff; 
 }
 
 /* update for about page hero annimation above */
