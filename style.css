@@ -2096,13 +2096,31 @@ body {
 
 /* 3. THE DIRECTORY (BLUE STRIP) */
 /* This forces the blue section to the front so it doesn't "disappear" */
+/* 3. THE DIRECTORY (THIN BLUE STRIP) */
 .stewardship-directory {
     position: relative;
-    z-index: 20; /* High number to stay on top of the white background */
-    margin-top: 5;
-    background-color: #0f172a !important; /* Your brand blue */
+    z-index: 20; 
+    
+    /* 1. REMOVE THE SAUCE: Tighten the top and bottom padding */
+    padding: 30px 0; /* Changed from 80px to 30px for a slim profile */
+    
+    /* 2. REMOVE THE GAP: Set margin-top to 0 to touch the section above */
+    margin-top: 0; 
+    
+    background-color: #0f172a !important; 
     display: block;
-    padding: 80px 0; /* Adds breathing room so text isn't cut off */
+    
+    /* 3. OPTIONAL: Add a very thin gold border to top and bottom for premium feel */
+    border-top: 1px solid rgba(197, 160, 89, 0.2);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+/* TIGHTEN THE HEADER SPACE */
+.directory-header {
+    max-width: 800px; 
+    margin-bottom: 25px; /* Reduced from 40px to keep the cards close to the title */
+    text-align: left; 
+    padding: 0 10%; /* Matches your page gutters */
 }
 
 /* THE SLIDER ENGINE */
