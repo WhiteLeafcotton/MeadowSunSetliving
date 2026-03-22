@@ -1757,65 +1757,94 @@ body { font-family: sans-serif; overflow-x: hidden; }
    REFINED ABOUT PAGE (ANTI-BLEED VERSION)
    ============================================= */
 
-/* --- HEADER STYLES --- */
-.main-header {
-    position: fixed;
-    top: 0; width: 100%;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-.nav-links { display: flex; list-style: none; gap: 30px; }
-.nav-item { text-decoration: none; color: #0a1128; font-family: 'Montserrat'; font-size: 0.85rem; font-weight: 600; }
-.nav-item.active { color: #64748b; }
 
-/* --- FOOTER STYLES --- */
-.video-footer {
-    position: relative;
-    height: 400px;
-    width: 100%;
-    overflow: hidden;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-.footer-video-bg video {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%; min-height: 100%;
-    z-index: -1;
-    object-fit: cover;
-}
-.footer-overlay {
-    position: absolute; inset: 0;
-    background: rgba(10, 17, 40, 0.7);
-    z-index: 0;
-}
-.footer-content { position: relative; z-index: 1; }
+/* =========================
+   ABOUT PAGE SPECIFIC STYLES
+   ========================= */
 
-/* --- ABOUT SPECIFIC FIXES --- */
+/* Hero badge specific to About Us */
 .about-hero {
-    margin-top: 70px; /* Accounts for fixed header */
+    background-attachment: fixed;
 }
-.container { max-width: 1200px; margin: 0 auto; }
-.owner-card { display: flex; flex-wrap: wrap; gap: 40px; }
-.owner-image, .owner-text { flex: 1; min-width: 300px; }
-.serve-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 20px; 
+
+/* --- THE STORY SECTION (Cottage Comfort Layout) --- */
+.story-section {
+    padding: 100px 10%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 80px;
 }
-.admission-process { display: flex; flex-wrap: wrap; gap: 20px; }
-.step { flex: 1; min-width: 200px; text-align: center; }
+
+.story-content {
+    flex: 1;
+}
+
+.story-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #0a1128;
+    margin-bottom: 25px;
+}
+
+.story-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #475569;
+    margin-bottom: 20px;
+}
+
+.story-image {
+    flex: 1;
+    position: relative;
+}
+
+.story-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 4px; /* Slight rounding for a soft "cottage" feel */
+    box-shadow: 20px 20px 0px #f1f5f9; /* Premium offset shadow */
+}
+
+/* --- MISSION & VISION TILES --- */
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.mission-card {
+    padding: 40px;
+    background: #f8fafc;
+    border-left: 3px solid #0a1128;
+}
+
+.mission-card h4 {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+    color: #0a1128;
+}
+
+/* --- MOBILE RESPONSIVENESS FOR ABOUT --- */
+@media (max-width: 992px) {
+    .story-section {
+        flex-direction: column;
+        padding: 60px 5%;
+        gap: 40px;
+    }
+    
+    .story-image img {
+        height: 350px;
+        box-shadow: 10px 10px 0px #f1f5f9;
+    }
+    
+    .mission-grid {
+        grid-template-columns: 1fr;
+    }
+}
