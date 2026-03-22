@@ -1827,9 +1827,20 @@ body { font-family: sans-serif; overflow-x: hidden; }
 
 .magazine-editorial {
     position: relative;
-    padding: 60px 0;
+    /* CHANGE: changed '60px 0' to '60px 0 0' to kill bottom padding */
+    padding: 60px 0 0; 
     background: #ffffff;
     overflow: hidden;
+    /* ADD: This ensures no hidden margin is pushing the next section away */
+    margin-bottom: 0 !important;
+}
+
+.editorial-row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    /* CHANGE: changed '80px' to '0' so the grid doesn't push down */
+    margin-bottom: 0; 
 }
 
 .fox-bg {
@@ -1851,13 +1862,7 @@ body { font-family: sans-serif; overflow-x: hidden; }
     z-index: 10;
 }
 
-/* THE LAYOUT GRID */
-.editorial-row {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 20px;
-    margin-bottom: 80px;
-}
+
 
 /* VISION (Top Left) */
 .vision-box {
@@ -1966,7 +1971,7 @@ body { font-family: sans-serif; overflow-x: hidden; }
 /* If the space below her becomes too large because she moved up, 
    add this to pull the next section up too: */
 .magazine-editorial {
-    margin-bottom: 0px; 
+    margin-bottom: -120px; 
 }
 
 /* --- ADJUSTING TEXT FOR THE SMALLER ABOUT HERO --- */
