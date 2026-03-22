@@ -248,35 +248,83 @@
 }
 /* SIDE MENU */
 
-.side-menu{
-height:100%;
-width:0;
-position:fixed;
-top:0;
-right:0;
-background:rgba(255,255,255,0.85);
-backdrop-filter:blur(10px);
-overflow-x:hidden;
-transition:.4s;
-padding-top:80px;
-box-shadow:-5px 0 20px rgba(0,0,0,.2);
-z-index:2000;
+/* =========================
+   FULL SCREEN MOBILE MENU
+   ========================= */
+.side-menu {
+    height: 100%;
+    width: 0; /* Starts hidden */
+    position: fixed;
+    z-index: 2000; /* Stays on top of everything */
+    top: 0;
+    left: 0;
+    background-color: #0a1128; /* Midnight Blue */
+    overflow-x: hidden;
+    transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0); /* Smooth slide */
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.side-menu a{
-display:block;
-padding:16px 40px;
-text-decoration:none;
-color:#333;
-font-size:18px;
+/* When the menu is active */
+.side-menu.active {
+    width: 100%; /* Full screen width */
 }
 
-.close-btn{
-position:absolute;
-top:20px;
-left:30px;
-font-size:30px;
-cursor:pointer;
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 45px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.mobile-nav-content {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.mobile-group {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.group-title {
+    color: #d4af37; /* Gold accent */
+    font-family: 'Playfair Display', serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    opacity: 0.7;
+}
+
+.side-menu a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.3s;
+    display: block;
+}
+
+.side-menu a:hover {
+    color: #d4af37;
+}
+
+.side-menu .nav-cta {
+    background: #d4af37;
+    color: #0a1128 !important;
+    margin: 20px auto;
+    width: 200px;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
 /* HERO */
