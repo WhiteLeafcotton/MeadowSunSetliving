@@ -2258,50 +2258,89 @@ body {
 }
 
 /* LEFT SIDE: TIMELINE REFINEMENTS */
-.journey-header-minimal {
-    margin-bottom: 40px;
+/* --- EDITORIAL UPGRADE: LEFT CARD --- */
+
+.journey-header-editorial {
+    margin-bottom: 50px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+    padding-bottom: 30px;
 }
 
-.steps-container {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.gold-eyebrow {
+    color: #c5a059;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 15px;
 }
 
-.step-card {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
+.magazine-title {
+    font-size: 3.5rem; /* Large, commanding presence */
+    line-height: 1;
+    color: #0f172a;
+    margin-bottom: 20px;
 }
 
-.step-number {
+.header-subtext {
+    font-size: 1.1rem;
+    color: #64748b;
+    line-height: 1.6;
+    max-width: 90%;
+    font-style: italic;
+}
+
+/* THE TIMELINE LAYOUT */
+.editorial-spacing {
+    gap: 40px; /* Increased gap to fill vertical space */
+}
+
+.step-card-editorial {
+    display: grid;
+    grid-template-columns: 80px 1fr; /* Dedicates space for large numbers */
+    align-items: start;
+}
+
+.step-number-large {
     font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: rgba(15, 23, 42, 0.1); /* Ghosted look */
+    line-height: 1;
+    transition: 0.4s ease;
+}
+
+.step-card-editorial:hover .step-number-large {
+    color: #0f172a; /* Pops on hover */
+    transform: translateX(5px);
+}
+
+.vertical-connector-blue {
+    width: 2px;
+    height: 50px;
+    background: #0f172a; /* Brand Blue */
+    margin: 15px 0 0 18px; /* Aligns perfectly under the '0' */
+    opacity: 0.1;
+}
+
+.step-body h3 {
     font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
     color: #0f172a;
     font-weight: 700;
 }
 
-.vertical-connector {
-    width: 1px;
-    height: 30px;
-    background: rgba(15, 23, 42, 0.1);
-    margin: 10px auto;
+.step-body p {
+    font-size: 1rem; /* Increased size to fill space */
+    color: #475569;
+    line-height: 1.7;
 }
 
-.step-text h3 {
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 4px;
-    color: #0f172a;
-}
-
-.step-text p {
-    font-size: 0.85rem;
-    color: #64748b;
-    line-height: 1.5;
-    max-width: 320px;
+.gold-text {
+    color: #c5a059 !important;
 }
 
 /* RIGHT SIDE: VIDEO CARD */
