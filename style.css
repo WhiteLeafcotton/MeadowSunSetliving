@@ -1812,119 +1812,116 @@ body { font-family: sans-serif; overflow-x: hidden; }
 /* ==========================================
    VOGUE MASTER EDITORIAL STYLE
 ============================================= */
+/* ==========================================
+   VOGUE COMPACT: NO CLIP / TIGHT PADDING
+============================================= */
 
-.vogue-master {
+.vogue-editorial-compact {
     position: relative;
-    padding: 60px 0;
+    padding: 40px 0; /* Extremely tight vertical space */
     background: #ffffff;
     overflow: hidden;
 }
 
-.vogue-fox-watermark {
+.vogue-fox-fixed {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
-    opacity: 0.02; /* Extremely subtle */
+    width: 500px;
+    opacity: 0.02;
+    z-index: 0;
     pointer-events: none;
 }
 
-.vogue-container {
-    max-width: 1200px;
+.v-editorial-container {
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 30px;
     position: relative;
-    z-index: 10;
+    z-index: 5;
 }
 
-/* TOP ROW LAYOUT */
-.vogue-top-row {
+/* THE GRID SYSTEM */
+.v-row {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 60px;
-    align-items: end;
-    margin-bottom: 100px;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px; /* Reduced gap between leaders */
+    align-items: flex-start;
 }
 
-.vogue-title {
+/* VISION BLOCK (TOP LEFT) */
+.v-vision-block {
+    margin-top: 0; /* Pinned to top */
+}
+
+.v-main-title {
     font-family: 'Playfair Display', serif !important;
-    font-size: 4rem;
-    line-height: 1;
+    font-size: 3.2rem; /* Scaled down slightly to fit screen */
+    line-height: 0.95;
     color: #0f172a;
-    margin: 20px 0;
+    margin: 10px 0 20px 0;
 }
 
-.vogue-para {
+.v-article-para {
     font-family: 'Inter', sans-serif !important;
-    font-size: 1rem;
-    line-height: 2;
+    font-size: 0.95rem;
+    line-height: 1.8;
     color: #475569;
-    font-weight: 300;
+    max-width: 450px;
 }
 
-/* PORTRAIT SIZING (FIXES THE "THIN" IMAGE ISSUE) */
-.v-portrait {
-    background: #f1f5f9;
+/* PORTRAIT FRAMES (REDUCED SIZE TO PREVENT CUTOFF) */
+.v-frame {
+    width: 380px; /* Reduced from 500px */
+    height: 480px; /* Reduced from 650px */
+    background: #f8fafc;
     overflow: hidden;
+    position: relative;
 }
 
-.v-portrait img {
+.v-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.v-mini {
-    width: 320px; /* Fixed width */
-    height: 400px; /* Fixed height */
+/* OVERLAP TEXT LOGIC */
+.v-overlap-text {
+    position: relative;
+    margin-top: -80px; /* Pulls text up onto the image */
+    z-index: 10;
+}
+
+.v-name-hero {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 4.5rem;
+    line-height: 0.8;
+    color: #0f172a;
     margin-bottom: 20px;
 }
 
-.v-large {
-    width: 500px;
-    height: 650px;
-}
-
-/* BOTTOM ROW (STAGGERED) */
-.vogue-bottom-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-}
-
-.v-hero-text {
-    margin-left: -120px; /* Vogue Overlap */
-}
-
-.v-hero-name {
+.v-name-small {
     font-family: 'Playfair Display', serif !important;
-    font-size: 5.5rem;
+    font-size: 3.5rem;
     line-height: 0.85;
     color: #0f172a;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
-/* NARROW MAGAZINE BIO */
-.v-bio-column {
-    max-width: 320px;
-    padding-left: 30px;
-    border-left: 1px solid #c5a059;
+/* NARROW BIO COLUMNS */
+.v-column-box {
+    max-width: 280px;
+    padding: 0 20px;
 }
 
-/* SHARED BRANDING */
-.vogue-gold {
+.v-border-left { border-left: 1px solid #c5a059; }
+.v-border-right { border-right: 1px solid #c5a059; margin-left: auto; }
+
+.v-role-tag {
     font-family: 'Inter', sans-serif !important;
-    color: #c5a059;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 0.7rem;
-    font-weight: 600;
-}
-
-.v-role {
-    font-family: 'Inter', sans-serif !important;
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     text-transform: uppercase;
     letter-spacing: 3px;
     color: #c5a059;
@@ -1932,85 +1929,28 @@ body { font-family: sans-serif; overflow-x: hidden; }
     margin-bottom: 10px;
 }
 
+.v-mini-bio {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #334155;
+}
+
+/* ALIGNMENT HELPERS */
+.v-align-right { text-align: right; margin-right: -30px; }
+.v-align-left { text-align: left; margin-left: 300px; } /* Offset to right of photo */
+
+.v-right { justify-self: end; }
+
+/* BRANDING */
+.v-gold-label { font-family: 'Inter', sans-serif; color: #c5a059; text-transform: uppercase; letter-spacing: 4px; font-size: 0.65rem; font-weight: 600; }
 .v-italic { font-style: italic; }
 .v-bold { font-weight: 700; color: #0f172a; }
 
-/* MOBILE FIX */
+/* MOBILE CLEANUP */
 @media (max-width: 900px) {
-    .vogue-top-row, .vogue-bottom-row { display: block; }
-    .v-portrait { width: 100% !important; height: 450px !important; margin-bottom: 25px; }
-    .v-hero-text { margin: -60px 0 0 0 !important; }
-}
-/* ==========================================
-   JULIANNE CARD FIX: MATCHING HERO SCALE
-============================================= */
-
-/* Force the right-side container to allow the large photo */
-.rn-feature-vogue {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* Keeps her aligned to the right of the Vision */
-}
-
-/* Matching the large size exactly */
-.v-portrait.v-large {
-    width: 500px !important; 
-    height: 650px !important;
-    background: #f1f5f9;
-    z-index: 1;
-}
-
-/* Styling the Text Overlap for the Right Side */
-.v-hero-text-right {
-    margin-top: -120px; /* Pulls name UP over the photo */
-    margin-right: -40px; /* Pulls name to the RIGHT edge */
-    text-align: right;
-    z-index: 10;
-    position: relative;
-}
-
-.v-hero-name-alt {
-    font-family: 'Playfair Display', serif !important;
-    font-size: 4.5rem; /* Massive Vogue scale */
-    line-height: 0.85;
-    color: #0f172a;
-    margin-bottom: 20px;
-}
-
-/* Right-aligned narrow bio column */
-.v-bio-column-right {
-    max-width: 300px;
-    margin-left: auto; /* Pushes column to the right */
-    padding-right: 25px;
-    border-right: 1px solid #c5a059; /* Gold spine on the right side */
-    text-align: right;
-}
-
-/* Ensuring the Vision block doesn't get squished by the larger photo */
-.vogue-top-row {
-    grid-template-columns: 1fr 500px !important; /* Locks the right column to 500px */
-    gap: 100px;
-}
-
-/* Mobile Fix: Ensure it doesn't break on phones */
-@media (max-width: 1100px) {
-    .vogue-top-row {
-        display: block;
-    }
-    .v-portrait.v-large {
-        width: 100% !important;
-        height: 450px !important;
-    }
-    .v-hero-text-right {
-        margin: -60px 0 0 0 !important;
-        text-align: left;
-    }
-    .v-bio-column-right {
-        margin-left: 0;
-        text-align: left;
-        border-right: none;
-        border-left: 1px solid #c5a059;
-        padding-left: 20px;
-    }
+    .v-row { display: block; }
+    .v-frame { width: 100%; height: 350px; }
+    .v-overlap-text { margin: -40px 0 30px 0 !important; text-align: left !important; }
+    .v-column-box { border: none !important; padding: 0 !important; max-width: 100%; }
 }
