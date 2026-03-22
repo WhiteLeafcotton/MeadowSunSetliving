@@ -12,42 +12,50 @@
 /* ==========================================
    EDITORIAL SLIM NAVBAR (OUTLINE LOGO)
 ============================================= */
+
+/* --- 1. HEADER CORE --- */
 .main-header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 1000;
-    transition: all 0.4s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     background: transparent;
 }
 
-/* Scrolled state for the Frosted White look */
+/* Scrolled State (Frosted White) */
 .main-header.scrolled {
-    background: rgba(255, 255, 255, 0.8) !important;
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
 }
 
+/* --- 2. NAVIGATION LAYOUT --- */
 .navbar {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    /* --- REDUCED PADDING FOR THIN FEEL --- */
-    padding: 10px 5%; 
+    padding: 20px 5%; /* Breathable for cottage comfort */
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: padding 0.4s ease;
 }
 
-/* Even thinner on scroll */
 .main-header.scrolled .navbar {
-    padding: 6px 5%;
+    padding: 12px 5%; 
 }
 
-/* --- THE FOX LOGO (OUTLINE ONLY) --- */
-/* --- 1. THE LOGO CONTAINER --- */
+/* --- 3. LOGO LOCKUP (FOX + TEXT) --- */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    text-decoration: none;
+}
+
 .logo-mark {
     height: 60px; 
     width: auto;
@@ -56,31 +64,70 @@
     transition: height 0.4s ease;
 }
 
-/* Scales down on scroll for a slim look */
 .main-header.scrolled .logo-mark {
-    height: 45px; 
+    height: 48px; 
 }
 
-/* Clean SVG Rules - Auto width prevents squashing */
-.logo-mark svg {
+/* Fox Outline Styling */
+.fox-logo {
     height: 100%;
-    width: auto; 
+    width: auto;
     display: block;
-    overflow: visible; 
+    overflow: visible;
 }
 
-/* --- THE FIX: FORCING OUTLINE --- */
-/* --- THE FOX SILHOUETTE OUTLINE --- */
-.logo-mark svg path {
-    fill: none !important; /* Forces the center to be transparent */
-    stroke: #0a1128 !important; /* Midnight Blue Outline */
-    stroke-width: 2.5px; /* Clean, elegant line */
+.fox-logo path {
+    fill: none !important;
+    stroke: #0a1128 !important; 
+    stroke-width: 2.5px;
     stroke-linecap: round;
     stroke-linejoin: round;
-    vector-effect: non-scaling-stroke; 
+    vector-effect: non-scaling-stroke;
 }
 
-/* Keep the rest of the logo text looking sharp */
+/* Brand Typography */
+.logo-type {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0a1128;
+    line-height: 1.1;
+}
+
+.brand-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: #64748b;
+}
+
+/* --- 4. NAV LINKS MENU --- */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-item {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #0a1128;
+    transition: 0.3s;
+}
+
+.nav-item:hover {
+    color: #64748b;
+}/* Keep the rest of the logo text looking sharp */
 
 .brand-name {
     font-family: 'Playfair Display', serif;
