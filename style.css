@@ -2094,16 +2094,32 @@ body {
     --brand-gold: #c5a059;
 }
 
-/* 3. THE DIRECTORY (THIN BLUE STRIP) */
+/* 3. THE DIRECTORY (ULTRA-THIN RIBBON) */
 .stewardship-directory {
     position: relative;
     z-index: 20; 
     background-color: #0f172a !important; 
     display: block;
-    padding: 15px 0; /* Minimal vertical "sauce" */
+    /* Minimal sauce for a thin ribbon effect */
+    padding: 10px 0 20px 0; 
     margin-top: 0; 
     border-top: 1px solid rgba(197, 160, 89, 0.1);
     border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+}
+
+/* THE BROW LINE (ONLY TEXT ABOVE CARDS) */
+.directory-header {
+    padding: 0 10%; 
+    margin-bottom: 8px; /* Tight gap to cards */
+}
+
+.gold-eyebrow {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 4px; /* Increased for high-end look */
+    font-size: 0.65rem; 
+    color: var(--brand-gold);
+    opacity: 0.8;
 }
 
 /* THE SLIDER ENGINE */
@@ -2115,9 +2131,9 @@ body {
 
 .dir-track {
     display: flex;
-    gap: 12px; /* Tighter gap for sleeker flow */
+    gap: 12px; 
     width: max-content;
-    animation: scrollInfinite 40s linear infinite; 
+    animation: scrollInfinite 45s linear infinite; /* Slightly slower for elegance */
 }
 
 .dir-track:hover {
@@ -2131,11 +2147,12 @@ body {
 
 /* SLEEK LOW-PROFILE CARD */
 .dir-item {
-    flex: 0 0 220px; /* Slightly narrower */
+    flex: 0 0 220px; 
     background: rgba(255, 255, 255, 0.02); 
     border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 12px 18px; 
-    min-height: 90px; /* Drastically thinner to hug the words */
+    padding: 10px 18px; 
+    /* The "Thin" Logic: Cards now hug the text tightly */
+    min-height: 85px; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2143,23 +2160,22 @@ body {
 }
 
 .dir-item:hover {
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.05);
     border-color: var(--brand-gold);
 }
 
-/* --- SLEEK TEXT REFINEMENTS --- */
-
+/* --- REFINED TEXT --- */
 .client-type { 
-    font-size: 0.95rem; /* Reduced for a sophisticated, small-text look */
+    font-size: 0.9rem; 
     margin-bottom: 2px; 
     font-family: 'Playfair Display', serif;
     color: #ffffff;
-    line-height: 1.1; /* Tight line height prevents vertical bloat */
+    line-height: 1; 
     letter-spacing: 0.5px;
 }
 
 .client-status { 
-    font-size: 0.55rem; /* Tiny, elegant eyebrow text */
+    font-size: 0.55rem; 
     text-transform: uppercase;
     letter-spacing: 1.5px; 
     color: var(--brand-gold);
@@ -2167,47 +2183,28 @@ body {
     margin: 0;
 }
 
-/* ICON TIGHTENING */
+/* ICON */
 .dir-icon {
-    margin-top: 4px; /* Pulls the icon right up under the text */
+    margin-top: 4px;
     line-height: 1;
 }
 
 .dir-icon i {
-    font-size: 1rem; /* Smaller, sharper icon */
+    font-size: 0.9rem; 
     color: rgba(255, 255, 255, 0.2); 
 }
 
 /* 11th CARD (GOLD INDEX) */
 .dir-index-end {
-    border: 1px solid rgba(197, 160, 89, 0.4) !important;
+    border: 1px solid rgba(197, 160, 89, 0.3) !important;
 }
 
 .index-digit {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem; /* Scaled down to match the new thin card */
+    font-size: 1.6rem; 
     font-weight: 700;
     color: var(--brand-gold);
     line-height: 1;
-}
-
-/* --- COMPACT HEADER TEXT --- */
-.directory-header {
-    max-width: 800px; 
-    margin-bottom: 12px; 
-    padding: 0 10%; 
-}
-
-.gold-eyebrow {
-    font-size: 0.65rem; 
-    letter-spacing: 2px;
-    margin-bottom: 4px;
-}
-
-.magazine-title {
-    font-size: 1.8rem; /* Much thinner and sleeker */
-    line-height: 1;
-    margin: 0;
 }
 /* ==========================================
    SECTION 2: ADMISSIONS JOURNEY (WHITE THEME)
