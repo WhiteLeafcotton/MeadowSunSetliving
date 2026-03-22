@@ -2042,105 +2042,87 @@ body {
     transform: translateY(0);
 }
 
+
+
+
+
+
+
 /* ==========================================
-   SECTION 1: WHO WE SERVE (BLUE THEME)
+   REFINED SECTION 1: WHO WE SERVE (SLIM)
 ============================================= */
 .stewardship-directory.brand-bg-blue {
     background-color: var(--brand-blue) !important;
-    padding: 120px 0;
+    padding: 60px 0; /* 2x Thinner than the original 120px */
     overflow: hidden;
     color: var(--white);
 }
 
 .directory-header {
-    margin-bottom: 60px;
+    margin-bottom: 40px; 
     max-width: 750px;
+    margin-left: 10%;
 }
-
-.gold-eyebrow {
-    display: block;
-    color: var(--brand-gold);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.85rem;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
-.magazine-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-.white-text { color: var(--white); }
-.white-text-muted { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; }
-
-/* HORIZONTAL SCROLL ENGINE */
-.dir-scroller-wrap {
-    width: 100%;
-    overflow-x: auto;
-    padding-bottom: 40px;
-    cursor: grab;
-    -ms-overflow-style: none; /* IE/Edge */
-    scrollbar-width: none;    /* Firefox */
-}
-
-.dir-scroller-wrap::-webkit-scrollbar { display: none; } /* Chrome/Safari */
 
 .dir-track {
     display: flex;
-    gap: 30px;
+    gap: 20px; /* Tighter gap for a sleeker look */
     width: max-content;
+    padding-left: 10%;
     padding-right: 10%;
 }
 
-/* CARD DESIGN */
+/* COMPACT CARD DESIGN */
 .dir-item {
-    flex: 0 0 320px;
-    background: var(--glass-bg);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 40px;
-    min-height: 300px;
+    flex: 0 0 260px; /* Slightly narrower cards */
+    background: rgba(255, 255, 255, 0.02); 
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 25px; 
+    min-height: 200px; /* Significantly shorter */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .dir-item:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.06);
     border-color: var(--brand-gold);
-    transform: translateY(-10px);
+    transform: translateY(-5px);
 }
 
-.dir-icon svg {
-    width: 42px;
-    height: 42px;
-    fill: var(--brand-gold);
-    margin-bottom: 25px;
-    transition: transform 0.4s ease;
-}
-
-.dir-item:hover .dir-icon svg { transform: scale(1.1) rotate(-5deg); }
-
-.client-type { font-size: 1.6rem; margin-bottom: 8px; }
-.client-status { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; }
-
-/* THE 11th CARD (GOLD INDEX) */
-.dir-index-end {
-    border: 2px solid var(--brand-gold) !important;
-    background: rgba(197, 160, 89, 0.15) !important;
-}
-
-.index-digit {
-    font-family: 'Playfair Display', serif;
-    font-size: 5.5rem;
-    font-weight: 700;
-    line-height: 1;
+/* HIGH-END ICON STYLING (Font Awesome) */
+.dir-icon i {
+    font-size: 1.8rem; /* Sharp and precise */
     color: var(--brand-gold);
     margin-bottom: 15px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.dir-item:hover .dir-icon i {
+    transform: scale(1.1);
+}
+
+.client-type { 
+    font-size: 1.2rem; 
+    margin-bottom: 5px; 
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.5px;
+}
+
+.client-status { 
+    font-size: 0.7rem; 
+    text-transform: uppercase;
+    letter-spacing: 1.5px; 
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* COMPACT 11th CARD */
+.index-digit {
+    font-size: 3.5rem; 
+    line-height: 1;
+    color: var(--brand-gold);
 }
 
 /* ==========================================
