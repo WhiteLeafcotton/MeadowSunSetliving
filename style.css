@@ -1966,9 +1966,10 @@ body { font-family: sans-serif; overflow-x: hidden; }
 /* Target Eleanor's row individually */
 /* This is the most reliable way to move her up */
 .bottom-row.eleanor-adjust {
-    transform: translateY(-250px); /* <--- MANIPULATE THIS NUMBER */
+    transform: translateY(-250px);
+    margin-bottom: -250px; /* This 'cancels' the ghost space Eleanor left behind */
     position: relative;
-    z-index: 20;
+    z-index: 5;
 }
 
 /* If the space below her becomes too large because she moved up, 
@@ -2073,10 +2074,12 @@ body {
 }
 
 /* Ensure the Directory section is ready to receive the overlap */
-.stewardship-directory {
-    position: relative;
-    z-index: 10; /* Keeps the blue section on top */
+.stewardship-directory.brand-bg-blue {
+    position: relative; 
+    z-index: 10; /* This pulls the blue color to the very front */
     margin-top: 0;
+    background-color: #0f172a !important; /* Forces your brand blue to show */
+    padding: 80px 0; /* Ensures the text inside has breathing room */
 }
 
 /* THE SLIDER ENGINE */
