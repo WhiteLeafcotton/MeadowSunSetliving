@@ -8,24 +8,29 @@
 /* --- EDITORIAL NAVBAR --- */
 
 
+/* --- INITIAL STATE (Top of page) --- */
 .main-header {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     z-index: 1000;
-    transition: all 0.4s ease;
-    /* Remove vertical padding here, move it to the navbar for better control */
-    background: transparent; 
-    box-sizing: border-box; /* The 'Safety Net' for width */
+    transition: all 0.4s ease; /* Smooth transition */
+    background: transparent; /* Invisible at first */
 }
 
-/* Glass effect when scrolling */
+/* --- SCROLLED STATE (As user moves down) --- */
 .main-header.scrolled {
-    background: rgba(255, 255, 255, 0.8); /* Slightly more transparent for 'Luxe' feel */
-    backdrop-filter: blur(15px); /* Stronger blur for that frosted glass look */
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.7); /* Translucent white */
+    backdrop-filter: blur(15px); /* The Frosted Effect */
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+    padding: 10px 0; /* Optional: shrink header slightly for a "compact" feel */
+}
+
+/* Ensure your nav text stays readable against the frost */
+.main-header.scrolled .nav-item, 
+.main-header.scrolled .brand-name {
+    color: #0a1128; /* Midnight Blue */
 }
 
 .navbar {
