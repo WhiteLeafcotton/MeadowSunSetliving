@@ -2155,3 +2155,121 @@ body { font-family: sans-serif; overflow-x: hidden; }
         padding: 30px 25px;
     }
 }
+
+
+/* ==========================================
+   ADMISSIONS JOURNEY - WHITE THEME
+============================================= */
+
+.admissions-journey {
+    background-color: #ffffff;
+    padding: 100px 0;
+}
+
+.journey-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.stepper-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 2.1: The Vertical Step Layout */
+.step-card {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 0; /* Managed by the line height */
+    position: relative;
+}
+
+.step-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: #0c1833; /* Brand Blue */
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    z-index: 2;
+    transition: background 0.3s ease;
+}
+
+.step-line {
+    width: 1px;
+    height: 100px; /* Adjust based on text length */
+    background: rgba(12, 24, 51, 0.1);
+    z-index: 1;
+}
+
+/* 2.2: The Content Styling */
+.step-content {
+    display: flex;
+    gap: 25px;
+    padding-top: 10px;
+    padding-bottom: 60px;
+}
+
+.step-icon svg {
+    width: 32px;
+    height: 32px;
+    fill: #c5a059; /* Brand Gold */
+    opacity: 0.8;
+}
+
+.step-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #0c1833;
+    margin-bottom: 8px;
+}
+
+.step-text p {
+    font-family: 'Inter', sans-serif;
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 450px;
+}
+
+/* 2.3: Hover & Animation States */
+.step-card:hover .step-number {
+    background: #c5a059;
+}
+
+.welcome-gold svg {
+    fill: #c5a059;
+    filter: drop-shadow(0 0 5px rgba(197, 160, 89, 0.3));
+}
+
+/* Animation trigger */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+.animate-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile Tweak */
+@media (max-width: 600px) {
+    .step-card { gap: 20px; }
+    .step-content { flex-direction: column; gap: 10px; padding-bottom: 40px; }
+    .step-line { height: 120px; }
+}
