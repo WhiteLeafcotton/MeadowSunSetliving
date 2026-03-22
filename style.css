@@ -388,39 +388,51 @@
 }
 
 /* --- 2. THE ABOUT PAGE HERO (50% Height) --- */
-.hero.hero-about {
-    height: 50vh !important;
-    width: 100% !important;
+/* --- 1. GLOBAL HERO DEFAULTS --- */
+.hero {
+    width: 100%;
     display: flex;
     align-items: center;
     padding: 0 10%;
-    position: sticky !important; /* Pins it for the "slide over" effect */
-    top: 0;
-    z-index: -1 !important; /* Pushes it behind the cards */
-    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat !important;
-    background-attachment: scroll !important; /* Standard scroll for the 50% version */
+    overflow: hidden;
+    position: relative; 
 }
 
-/* --- 3. THE CONTENT WRAPPER --- */
-/* This ensures your page content is "solid" enough to slide OVER the About hero */
+/* --- 2. INDEX PAGE HERO (Full Screen & Fixed) --- */
+/* This restores your homepage to its original glory */
+.hero.hero-index {
+    height: 100vh !important;
+    z-index: 5 !important; /* Higher than the content so it stays visible */
+    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat !important;
+    background-attachment: fixed !important; /* Parallax effect for Index */
+}
+
+/* --- 3. ABOUT PAGE HERO (50% Height & Sticky) --- */
+/* This creates the "Slide-Over" effect for the subpage */
+.hero.hero-about {
+    height: 50vh !important;
+    position: sticky !important;
+    top: 0;
+    z-index: -1 !important; /* Pushes it behind for the slide-over */
+    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat !important;
+    background-attachment: scroll !important; /* Crucial: 'fixed' breaks 'sticky' */
+}
+
+/* --- 4. THE CONTENT LAYERING --- */
+/* This makes sure the white cards have the 'weight' to slide over the About hero */
 .main-content-wrapper, 
 .admissions-journey, 
 section {
     position: relative;
-    z-index: 10; 
-    background: #ffffff !important; /* Forces solid white so hero doesn't bleed through */
+    z-index: 10; /* Keeps all page content above the sticky About hero */
+    background: #ffffff; /* Must be solid white */
 }
 
-/* update for about page hero annimation above */
-
-
-
-
+/* --- 5. OVERLAYS & CONTENT (STAYS THE SAME) --- */
 .hero-light-overlay {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    /* A soft gradient that clears up toward the right to show the image */
     background: linear-gradient(to right, 
         rgba(255, 255, 255, 0.7) 0%, 
         rgba(255, 255, 255, 0.3) 50%, 
@@ -432,111 +444,6 @@ section {
     position: relative;
     z-index: 2;
     max-width: 750px;
-}
-
-.hero-badge {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
-.badge-line {
-    width: 40px;
-    height: 1px;
-    background: #475569; /* Midnight Steel */
-}
-
-.badge-text {
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 0.7rem;
-    color: #475569;
-    font-weight: 600;
-}
-
-.hero h1 {
-    font-size: clamp(50px, 7vw, 90px);
-    font-family: "Playfair Display", serif;
-    color: #0f172a; /* Deep Midnight Blue */
-    line-height: 1.05;
-    margin-bottom: 25px;
-    font-weight: 400;
-}
-
-.italic-serif {
-    font-style: italic;
-    color: #64748b; /* Steel Blue-Grey */
-}
-
-.hero p {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: #334155;
-    max-width: 500px;
-    margin-bottom: 45px;
-    font-weight: 300;
-}
-
-/* Luxury Buttons */
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-}
-
-.btn-midnight {
-    padding: 18px 40px;
-    background: #0f172a;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: 0.4s ease;
-}
-
-.btn-glass-light {
-    padding: 18px 40px;
-    border: 1px solid #0f172a;
-    color: #0f172a;
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: 0.4s ease;
-}
-
-.btn-glass-light:hover {
-    background: #0f172a;
-    color: #fff;
-}
-
-/* Scroll Indicator */
-.scroll-indicator {
-    position: absolute;
-    bottom: 40px;
-    left: 10%;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.scroll-text {
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #64748b;
-    writing-mode: vertical-lr; /* Vertical text looks high-end */
-}
-
-.scroll-line {
-    width: 1px;
-    height: 60px;
-    background: linear-gradient(to bottom, #64748b, transparent);
 }
 
 /* --- MOBILE ADAPTATION --- */
