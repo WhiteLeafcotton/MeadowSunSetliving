@@ -71,31 +71,14 @@
 
 
 <div id="sideMenu" class="side-menu">
-    <span class="close-btn" onclick="toggleMenu()">&times;</span>
-    
-    <div class="mobile-nav-content">
-        <div class="mobile-group">
-            <span class="group-title">Resident Experience</span>
-            <a href="#">Events</a>
-            <a href="#">The Table</a>
-            <a href="#">Car Service</a>
-            <a href="#">Life Enrichment</a>
-        </div>
 
-        <div class="mobile-group">
-            <span class="group-title">About Sunset Meadow</span>
-            <a href="#">Leadership Team</a>
-            <a href="#">Mission & Vision</a>
-            <a href="#">Admission Process</a>
-        </div>
+<a class="close-btn" onclick="toggleMenu()">×</a>
 
-        <div class="mobile-group">
-            <a href="#">Payment Solutions</a>
-            <a href="#">Suites</a>
-        </div>
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
 
-        <a href="tel:YOURNUMBER" class="nav-cta">Contact Us</a>
-    </div>
 </div>
 
 
@@ -408,10 +391,6 @@ featureLinks.forEach(link => {
 
   <script>
 
-
-
-   
-
 /* =========================
    MODAL
 ========================= */
@@ -456,7 +435,33 @@ window.addEventListener('scroll', function() {
 /* ==========================================
    2. MENU TOGGLE (Mobile)
 ============================================= */
+function toggleMenu() {
+    // Looks for sideMenu OR side-menu to prevent ID errors
+    let menu = document.getElementById("sideMenu") || document.getElementById("side-menu");
+    if (menu) {
+        menu.style.width = (menu.style.width === "260px") ? "0" : "260px";
+    }
+}
+const observerOptions = {
+    root: null,
+    // rootMargin '0px -20px' helps trigger animations slightly before 
+    // they hit the viewport edge on narrow mobile screens
+    rootMargin: '0px 0px -50px 0px', 
+    threshold: 0.05 // Trigger when only 5% of the card is visible
+};
 
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+        }
+    });
+}, observerOptions);
+
+// Apply it to your section and cards
+document.querySelectorAll('.premium-reveal, .glass-card').forEach(el => {
+    observer.observe(el);
+});
 
    
     
@@ -510,7 +515,6 @@ const universalCallback = (entries) => {
 const mainObserver = new IntersectionObserver(universalCallback, { threshold: 0.15 });
 
 // Activate Observers
-
 featureCards.forEach(card => mainObserver.observe(card));
 if (ctaSection) mainObserver.observe(ctaSection);
 if (preFooter) mainObserver.observe(preFooter);
