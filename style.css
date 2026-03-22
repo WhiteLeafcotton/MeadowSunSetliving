@@ -374,73 +374,41 @@
 /* BASE HERO LOGIC */
 /* 1. BASE HERO DEFAULTS */
 /* --- 1. THE MAIN INDEX HERO (Full Height) --- */
-.hero.hero-index {
-    height: 100vh !important;
-    width: 100% !important;
-    display: flex;
-    align-items: center;
-    padding: 0 10%;
-    position: relative !important; /* Resets from the sticky mess */
-    z-index: 1 !important; /* Brings it to the front */
-    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat !important;
-    background-attachment: fixed !important; /* This is the "magic" scroll effect */
-    overflow: hidden;
-}
-
-/* --- 2. THE ABOUT PAGE HERO (50% Height) --- */
-/* --- 1. GLOBAL HERO DEFAULTS --- */
+/* --- FULL-WIDTH LIGHT LUXURY HERO (RESTORED ORIGINAL) --- */
 .hero {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0 10%;
-    overflow: hidden;
-    position: relative; 
-}
-
-/* --- 2. INDEX PAGE HERO (Full Screen & Fixed) --- */
-/* This restores your homepage to its original glory */
-/* --- 1. GLOBAL HERO DEFAULTS --- */
-/* --- 1. THE INDEX HERO (100% ORIGINAL STATE) --- */
-.hero.hero-index {
     height: 100vh;
     width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0 10%;
-    /* Original positioning: sits at the top, scrolls away naturally */
-    position: relative; 
-    z-index: 5; 
     background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat;
-    overflow: hidden;
-}
-
-/* --- 2. THE ABOUT HERO (50% SLIDE-OVER STATE) --- */
-.hero.hero-about {
-    height: 50vh;
-    width: 100%;
     display: flex;
     align-items: center;
     padding: 0 10%;
-    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat;
-    /* Sticky positioning: stays pinned while content slides over */
-    position: sticky;
-    top: 0;
-    z-index: -1; 
+    position: relative;
     overflow: hidden;
+    background-attachment: fixed; /* Your original parallax effect */
+    z-index: 5;
 }
 
-/* --- 3. THE MAGIC LAYER (ABOUT PAGE ONLY) --- */
-/* This ensures that ON THE ABOUT PAGE ONLY, the sections slide OVER the hero.
-   By using the '~' selector, it won't affect your Index page at all. */
-.hero-about ~ section, 
-.hero-about ~ .main-content-wrapper {
+/* Specific override for About Page Hero */
+.hero.hero-about {
+    height: 50vh; 
+    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat;
+    background-attachment: scroll;
+    position: sticky; /* This enables the slide-over */
+    top: 0;
+    z-index: -1; /* Pushes it back ONLY on the about page */
+}
+
+/* THE SLIDE-OVER TRIGGER (ABOUT PAGE ONLY) */
+/* This ensures other sections slide over the sticky About hero */
+.hero.hero-about ~ section,
+.hero.hero-about ~ .main-content-wrapper {
     position: relative;
     z-index: 10;
-    background: #ffffff; /* Must be solid to hide the hero behind it */
+    background: #ffffff;
 }
 
-/* --- 4. SHARED HERO ELEMENTS (TEXT & OVERLAYS) --- */
+/* --- THE REST IS YOUR ORIGINAL DESIGN CODE --- */
+
 .hero-light-overlay {
     position: absolute;
     top: 0; left: 0;
@@ -458,15 +426,51 @@
     max-width: 750px;
 }
 
+.hero-badge {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.badge-line {
+    width: 40px;
+    height: 1px;
+    background: #475569;
+}
+
+.badge-text {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 0.7rem;
+    color: #475569;
+    font-weight: 600;
+}
+
 .hero h1 {
     font-size: clamp(50px, 7vw, 90px);
     font-family: "Playfair Display", serif;
     color: #0f172a;
     line-height: 1.05;
     margin-bottom: 25px;
+    font-weight: 400;
 }
 
-/* --- 5. BUTTONS & INDICATORS --- */
+.italic-serif {
+    font-style: italic;
+    color: #64748b;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #334155;
+    max-width: 500px;
+    margin-bottom: 45px;
+    font-weight: 300;
+}
+
+/* Luxury Buttons */
 .hero-buttons {
     display: flex;
     gap: 15px;
@@ -481,6 +485,7 @@
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
+    transition: 0.4s ease;
 }
 
 .btn-glass-light {
@@ -492,6 +497,7 @@
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
+    transition: 0.4s ease;
 }
 
 .scroll-indicator {
@@ -499,6 +505,24 @@
     bottom: 40px;
     left: 10%;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.scroll-text {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #64748b;
+    writing-mode: vertical-lr;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, #64748b, transparent);
 }
 /* --- MOBILE ADAPTATION --- */
 /* --- EXTRA SPECIAL MOBILE HERO --- */
