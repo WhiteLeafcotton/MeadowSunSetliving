@@ -8,70 +8,84 @@
 /* --- EDITORIAL NAVBAR --- */
 
 
+/* --- INITIAL STATE (Top of page) --- */
+/* ==========================================
+   EDITORIAL SLIM NAVBAR (OUTLINE LOGO)
+============================================= */
+
+/* --- 1. HEADER CORE --- */
 .main-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    transition: all 0.4s ease;
-    /* Remove vertical padding here, move it to the navbar for better control */
-    background: transparent; 
-    box-sizing: border-box; /* The 'Safety Net' for width */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
 }
 
-/* Glass effect when scrolling */
+/* Scrolled State (Frosted White) */
 .main-header.scrolled {
-    background: rgba(255, 255, 255, 0.8); /* Slightly more transparent for 'Luxe' feel */
-    backdrop-filter: blur(15px); /* Stronger blur for that frosted glass look */
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
 }
 
+/* --- 2. NAVIGATION LAYOUT --- */
 .navbar {
-    width: 100%; /* Ensures it tries to fill the header */
-    max-width: 1440px; /* Limits how far the logo/links spread on huge screens */
+    width: 100%;
+    max-width: 1440px;
     margin: 0 auto;
-    /* Put your padding here instead! */
-    padding: 25px 5%; 
+    padding: 20px 5%; /* Breathable for cottage comfort */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: padding 0.4s ease; /* Smoothly shrinks the logo/links on scroll */
+    transition: padding 0.4s ease;
 }
 
-/* Shrink the inner navbar when the header is scrolled */
 .main-header.scrolled .navbar {
-    padding: 15px 5%;
+    padding: 12px 5%; 
 }
 
-/* Logo Styling */
-/* --- THE LOGO LOCKUP --- */
+/* --- 3. LOGO LOCKUP (FOX + TEXT) --- */
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px; 
     text-decoration: none;
-    padding: 5px;
 }
 
 .logo-mark {
-    /* We must give the container a width because the SVG is tall */
-    height: 50px; 
-    width: 25px; 
+    height: 60px; 
+    width: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
-    overflow: visible; /* Ensures no clipping */
+    transition: height 0.4s ease;
 }
 
-.logo-mark svg {
+.main-header.scrolled .logo-mark {
+    height: 48px; 
+}
+
+/* Fox Outline Styling */
+.fox-logo {
     height: 100%;
-    width: 100%;
-    color: #0f172a; /* Midnight Blue */
+    width: auto;
     display: block;
+    overflow: visible;
 }
 
+.fox-logo path {
+    fill: none !important;
+    stroke: #0a1128 !important; 
+    stroke-width: 2.5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+}
+
+/* Brand Typography */
 .logo-type {
     display: flex;
     flex-direction: column;
@@ -79,10 +93,48 @@
 
 .brand-name {
     font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 700;
+    color: #0a1128;
+    line-height: 1.1;
+}
+
+.brand-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: #64748b;
+}
+
+/* --- 4. NAV LINKS MENU --- */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-item {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #0a1128;
+    transition: 0.3s;
+}
+
+.nav-item:hover {
+    color: #64748b;
+}/* Keep the rest of the logo text looking sharp */
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; 
+    font-weight: 700;
+    color: #0a1128;
     line-height: 1;
-    color: #0f172a;
 }
 
 .brand-sub {
@@ -264,18 +316,35 @@
     z-index: 2000;
     top: 0;
     right: 0; 
-    left: auto; /* Ensures it stays on the right */
+    left: auto;
     
-    /* Frosted Background */
-    background: rgba(255, 255, 255, 0.88); 
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    /* --- THE FROSTED GLASS RECIPE --- */
+    background: rgba(255, 255, 255, 0.7) !important; /* Lowered opacity for more transparency */
+    backdrop-filter: blur(20px) saturate(160%) !important; /* Deep blur + vibrant colors behind */
+    -webkit-backdrop-filter: blur(20px) saturate(160%); /* Safari Support */
     
+    border-left: 1px solid rgba(255, 255, 255, 0.3); /* Soft edge highlight */
     overflow-x: hidden;
     transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
     padding-top: 100px;
     display: flex;
     flex-direction: column;
+}
+/* SUB LINKS (GREY - NO LINES) */
+/* Ensure the sub-links are hidden initially */
+.sub-links {
+    display: none;
+    padding: 10px 0 20px 0;
+    text-align: center;
+}
+.sub-links a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #6c757d !important;
+    text-decoration: none;
+    padding: 8px 0;
+    display: block;
+    border: none !important;
 }
 
 /* Slide distance - Full screen */
@@ -300,21 +369,8 @@
     border: none !important; /* Removes the grey lines */
 }
 
-/* SUB LINKS (GREY - NO LINES) */
-.sub-links {
-    display: none; 
-    padding-bottom: 10px;
-}
 
-.sub-links a {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
-    color: #6c757d !important;
-    text-decoration: none;
-    padding: 8px 0;
-    display: block;
-    border: none !important;
-}
+
 
 /* THE BUTTON (MIDNIGHT) */
 .side-menu .nav-cta {
