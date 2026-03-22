@@ -1966,3 +1966,25 @@ body { font-family: sans-serif; overflow-x: hidden; }
 .eleanor .label-stack {
     margin-top: -50px; 
 }
+
+/* --- ADJUSTING TEXT FOR THE SMALLER ABOUT HERO --- */
+
+/* Targets the main heading on the About page */
+.hero.hero-about h1 {
+    font-size: 2.5rem; /* Reduced from the standard hero size */
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+/* Targets the paragraph text on the About page */
+.hero.hero-about p {
+    font-size: 1rem; /* Slightly smaller for a cleaner look */
+    max-width: 600px; /* Keeps the text from stretching too wide */
+    margin: 0 auto;  /* Centers the paragraph */
+}
+
+/* Reduces the spacing of the badge area */
+.hero.hero-about .hero-badge {
+    margin-bottom: 10px;
+    transform: scale(0.9); /* Makes the badge 10% smaller */
+}
