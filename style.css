@@ -2224,79 +2224,90 @@ body {
 /* ==========================================
    SECTION 2: ADMISSIONS JOURNEY (WHITE THEME)
 ============================================= */
+/* --- 5-STAR REFINEMENT: ADMISSIONS --- */
+
+/* --- 5-STAR REFINEMENT: ADMISSIONS --- */
+
 .admissions-journey {
     height: 100vh;
     background: #ffffff;
-    overflow: hidden;
     display: flex;
     align-items: center;
-    padding: 0 10%;
+    padding: 0 8%; /* More breathing room on the sides */
+    overflow: hidden;
 }
 
 .split-view-container {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr; /* Timeline gets more space than the vertical video */
-    gap: 80px;
+    grid-template-columns: 1fr 450px; /* Precise width for the vertical video */
+    gap: 120px; /* Massive gap for a 'Gallery' feel */
     width: 100%;
-    align-items: center;
+    max-width: 1600px;
+    margin: 0 auto;
+    align-items: flex-start; /* Align to top for editorial look */
 }
 
-/* LEFT SIDE: TEXT & STEPS */
-.stepper-wrap {
-    height: 85vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+/* THE HEADER CARD: Refined & Subtle */
+.journey-header-card {
+    border-left: 2px solid #0f172a; /* Sophisticated side-accent instead of full box */
+    padding-left: 40px;
+    margin-bottom: 60px;
 }
 
+.magazine-title {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    letter-spacing: -1px;
+    line-height: 1.05;
+}
+
+/* THE TIMELINE: Thinner, cleaner lines */
 .steps-container {
+    height: 55vh; /* Shorter than the video to create 'Visual Balance' */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    flex-grow: 1;
-    margin-top: 40px;
 }
 
-/* RIGHT SIDE: THE VERTICAL VIDEO */
-.journey-visual-side {
-    display: flex;
-    justify-content: flex-end;
-    height: 85vh;
-}
-
-.vertical-video-frame {
-    height: 100%; /* Matches the 85vh height */
-    aspect-ratio: 9 / 16; /* Forces the vertical "Phone/Shorts" shape */
-    background: #0f172a;
-    border-radius: 20px; /* Softer, high-end rounded corners */
-    overflow: hidden;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    border: 8px solid #f8fafc; /* Subtle frame look */
-}
-
-.vertical-video-frame iframe {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* TYPOGRAPHY REFINEMENTS */
 .step-card {
     display: flex;
-    gap: 25px;
+    gap: 30px;
+    opacity: 0.7;
+    transition: 0.5s ease;
+}
+
+.step-card:hover {
+    opacity: 1;
+    transform: translateX(10px); /* Subtle high-end interaction */
 }
 
 .step-number {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
+    font-size: 1.1rem; /* Smaller is often more 'luxury' */
     color: #c5a059;
-    line-height: 1;
+    font-weight: 300;
+    width: 30px;
 }
 
-.step-line {
-    width: 1px;
-    background: #c5a059;
-    flex-grow: 1;
-    margin: 10px 0;
-    opacity: 0.2;
+.step-text h3 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    color: #0f172a;
+}
+
+.step-text p {
+    font-size: 0.85rem;
+    max-width: 350px;
+    line-height: 1.6;
+    color: #64748b;
+}
+
+/* THE VIDEO: The Masterpiece */
+.vertical-video-frame {
+    height: 80vh; /* Taller than the timeline for 'Vertical Dominance' */
+    width: 100%;
+    border-radius: 4px; /* Minimalist, sharper corners for 'High-Tech' */
+    box-shadow: 40px 40px 80px rgba(15, 23, 42, 0.05); /* Soft, expansive shadow */
+    border: 1px solid rgba(15, 23, 42, 0.05); /* Barely visible border */
 }
