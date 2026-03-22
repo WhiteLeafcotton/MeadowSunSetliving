@@ -401,49 +401,46 @@
 /* --- 2. INDEX PAGE HERO (Full Screen & Fixed) --- */
 /* This restores your homepage to its original glory */
 /* --- 1. GLOBAL HERO DEFAULTS --- */
-.hero {
+/* --- 1. THE INDEX HERO (100% ORIGINAL STATE) --- */
+.hero.hero-index {
+    height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
     padding: 0 10%;
-    overflow: hidden;
+    /* Original positioning: sits at the top, scrolls away naturally */
     position: relative; 
-    z-index: 5; /* Keeps heroes visible by default */
+    z-index: 5; 
+    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat;
+    overflow: hidden;
 }
 
-/* --- 2. INDEX PAGE HERO (The Fix) --- */
-.hero.hero-index {
-    height: 100vh !important;
-    /* We use 'fixed' here for the classic homepage parallax */
-    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat !important;
-    background-attachment: fixed !important; 
-    position: relative !important; 
-}
-
-/* --- 3. ABOUT PAGE HERO (The "Sticky" version) --- */
+/* --- 2. THE ABOUT HERO (50% SLIDE-OVER STATE) --- */
 .hero.hero-about {
-    height: 50vh !important;
-    position: sticky !important;
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat;
+    /* Sticky positioning: stays pinned while content slides over */
+    position: sticky;
     top: 0;
-    z-index: -1 !important; /* Pushes it behind specifically on this page */
-    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat !important;
-    background-attachment: scroll !important; 
+    z-index: -1; 
+    overflow: hidden;
 }
 
-/* --- 4. THE CONTENT LAYERING (THE CRITICAL CHANGE) --- */
-/* We ONLY apply the white "Slide-Over" background to the About page content 
-   This prevents the Index page sections from breaking the Index Hero */
-
+/* --- 3. THE MAGIC LAYER (ABOUT PAGE ONLY) --- */
+/* This ensures that ON THE ABOUT PAGE ONLY, the sections slide OVER the hero.
+   By using the '~' selector, it won't affect your Index page at all. */
 .hero-about ~ section, 
-.hero-about ~ .main-content-wrapper,
-.about-content-section {
+.hero-about ~ .main-content-wrapper {
     position: relative;
-    z-index: 10; 
-    background: #ffffff !important; 
-    box-shadow: 0 -20px 40px rgba(0,0,0,0.05); /* Adds that premium 'lifting' look */
+    z-index: 10;
+    background: #ffffff; /* Must be solid to hide the hero behind it */
 }
 
-/* --- 5. OVERLAYS & CONTENT (STAYS THE SAME) --- */
+/* --- 4. SHARED HERO ELEMENTS (TEXT & OVERLAYS) --- */
 .hero-light-overlay {
     position: absolute;
     top: 0; left: 0;
@@ -461,6 +458,48 @@
     max-width: 750px;
 }
 
+.hero h1 {
+    font-size: clamp(50px, 7vw, 90px);
+    font-family: "Playfair Display", serif;
+    color: #0f172a;
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+/* --- 5. BUTTONS & INDICATORS --- */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-midnight {
+    padding: 18px 40px;
+    background: #0f172a;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.btn-glass-light {
+    padding: 18px 40px;
+    border: 1px solid #0f172a;
+    color: #0f172a;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 10%;
+    z-index: 2;
+}
 /* --- MOBILE ADAPTATION --- */
 /* --- EXTRA SPECIAL MOBILE HERO --- */
 /* --- MOBILE ADAPTATION --- */
