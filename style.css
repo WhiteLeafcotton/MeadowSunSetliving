@@ -1951,3 +1951,15 @@ body { font-family: sans-serif; overflow-x: hidden; }
     .bio-col { border: none !important; padding: 0 !important; max-width: 100%; }
     .name-label { font-size: 3rem !important; }
 }
+
+/* Target Eleanor's row individually */
+.bottom-row.eleanor-adjust {
+    margin-top: -100px; /* Pulls the entire section up */
+    position: relative;
+    z-index: 20; /* Ensures it stays above the watermark */
+}
+
+/* Optional: If you want her text to overlap the Vision statement above it */
+.eleanor .label-stack {
+    margin-top: -50px; 
+}
