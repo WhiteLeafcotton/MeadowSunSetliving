@@ -264,35 +264,18 @@
     z-index: 2000;
     top: 0;
     right: 0; 
-    left: auto;
+    left: auto; /* Ensures it stays on the right */
     
-    /* --- THE FROSTED GLASS RECIPE --- */
-    background: rgba(255, 255, 255, 0.7) !important; /* Lowered opacity for more transparency */
-    backdrop-filter: blur(20px) saturate(160%) !important; /* Deep blur + vibrant colors behind */
-    -webkit-backdrop-filter: blur(20px) saturate(160%); /* Safari Support */
+    /* Frosted Background */
+    background: rgba(255, 255, 255, 0.88); 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     
-    border-left: 1px solid rgba(255, 255, 255, 0.3); /* Soft edge highlight */
     overflow-x: hidden;
     transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
     padding-top: 100px;
     display: flex;
     flex-direction: column;
-}
-/* SUB LINKS (GREY - NO LINES) */
-/* Ensure the sub-links are hidden initially */
-.sub-links {
-    display: none;
-    padding: 10px 0 20px 0;
-    text-align: center;
-}
-.sub-links a {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
-    color: #6c757d !important;
-    text-decoration: none;
-    padding: 8px 0;
-    display: block;
-    border: none !important;
 }
 
 /* Slide distance - Full screen */
@@ -317,8 +300,21 @@
     border: none !important; /* Removes the grey lines */
 }
 
+/* SUB LINKS (GREY - NO LINES) */
+.sub-links {
+    display: none; 
+    padding-bottom: 10px;
+}
 
-
+.sub-links a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #6c757d !important;
+    text-decoration: none;
+    padding: 8px 0;
+    display: block;
+    border: none !important;
+}
 
 /* THE BUTTON (MIDNIGHT) */
 .side-menu .nav-cta {
