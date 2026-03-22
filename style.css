@@ -1869,12 +1869,17 @@ body { font-family: sans-serif; overflow-x: hidden; }
     align-self: start;
 }
 
+
+
+/* 1. This controls the gap BETWEEN the Title and the Paragraph */
 .magazine-title {
     font-family: 'Playfair Display', serif !important;
     font-size: 3.5rem;
     line-height: 1;
     color: #0f172a;
-    margin: 15px 0;
+    /* CHANGE THIS: The 15px is the gap below the title. 
+       Lower it to 5px or 0 to close the gap. */
+    margin: 15px 0 5px 0; 
 }
 
 .magazine-para {
