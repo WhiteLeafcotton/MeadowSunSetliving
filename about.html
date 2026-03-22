@@ -1,57 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Sunset Meadow Living</title>
-
+    <title>About Us | Sunset Meadow Assisted Living</title>
+    
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
 
     <header class="main-header">
         <nav class="navbar">
             <a href="index.html" class="logo">
                 <div class="logo-type">
-                    <span class="brand-name">Sunset Meadow</span>
+                    <span class="brand-name">SUNSET MEADOW</span>
                     <span class="brand-sub">Assisted Living</span>
                 </div>
             </a>
-
             <div class="nav-wrapper">
                 <ul class="nav-links">
-                    <li class="dropdown">
-                        <a href="#" class="nav-item">Resident Experience <i class="fa-solid fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Events</a></li>
-                            <li><a href="#">THE TABLE</a></li>
-                            <li><a href="#">Car Service</a></li>
-                            <li><a href="#">Life Enrichment</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="about.html" class="nav-item">About Us <i class="fa-solid fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Leadership Team</a></li>
-                            <li><a href="#">Mission & Vision</a></li>
-                            <li><a href="#">Who We Serve</a></li>
-                            <li><a href="#">Admission Process</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#" class="nav-item">Payment Solutions</a></li>
-                    <li><a href="#" class="nav-item">Suites</a></li>
+                    <li><a href="index.html" class="nav-item">Home</a></li>
+                    <li><a href="about.html" class="nav-item active" style="color: #64748b;">About</a></li>
+                    <li><a href="#" class="nav-item">Services</a></li>
+                    <li><a href="#" class="nav-item">Contact</a></li>
                 </ul>
-                <a href="tel:YOURNUMBER" class="nav-cta">Contact</a>
+                <a href="#" class="nav-cta">Book a Tour</a>
             </div>
-
             <div class="menu-button" onclick="toggleMenu()">
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <div class="bar"></div>
+                <div class="bar"></div>
             </div>
         </nav>
     </header>
@@ -59,165 +39,224 @@
     <div id="sideMenu" class="side-menu">
         <span class="close-btn" onclick="toggleMenu()">&times;</span>
         <div class="mobile-nav-content">
-            <div class="mobile-dropdown">
-                <a href="#" class="main-link">Resident Experience <i class="fa-solid fa-chevron-down"></i></a>
-                <div class="sub-links">
-                    <a href="#">Events</a>
-                    <a href="#">The Table</a>
-                    <a href="#">Car Service</a>
-                    <a href="#">Life Enrichment</a>
-                </div>
-            </div>
-            <div class="mobile-dropdown">
-                <a href="#" class="main-link">About Us <i class="fa-solid fa-chevron-down"></i></a>
-                <div class="sub-links">
-                    <a href="#">Leadership Team</a>
-                    <a href="#">Mission & Vision</a>
-                    <a href="#">Admission Process</a>
-                </div>
-            </div>
-            <a href="#" class="main-link">Payment Solutions</a>
-            <a href="#" class="main-link">Suites</a>
-            <a href="tel:YOURNUMBER" class="nav-cta">Contact Us</a>
+            <a href="index.html" class="main-link">Home</a>
+            <a href="about.html" class="main-link">About Us</a>
+            <a href="#" class="main-link">Services</a>
+            <a href="#" class="nav-cta">Schedule Visit</a>
         </div>
     </div>
 
-    <section class="hero">
+    <section class="hero about-hero">
         <div class="hero-light-overlay"></div>
         <div class="hero-content">
             <div class="hero-badge">
-                <span class="badge-line"></span>
-                <span class="badge-text">Our Story</span>
+                <div class="badge-line"></div>
+                <span class="badge-text">OUR HERITAGE</span>
             </div>
-            <h1>The Heart of <br><span class="italic-serif">Sunset Meadow</span></h1>
-            <p>We believe that care should feel like home. Discover our mission and the dedicated team providing refined support every single day.</p>
+            <h1>Building a <span class="italic-serif">Legacy of Care</span></h1>
+            <p>Discover the heart behind Sunset Meadow—where high-end clinical excellence meets the warm embrace of a cottage home.</p>
         </div>
     </section>
 
-    <footer class="video-footer animate-on-scroll">
-        <video autoplay muted loop playsinline class="footer-video-bg">
-            <source src="timelapse-of-noctilucent-clouds-and-a-vibrant-sunrise.mp4" type="video/mp4">
-        </video>
-        <div class="footer-tint"></div>
-        <div class="footer-fox">
-            <img src="fox.svg" alt="Fox Logo">
-        </div>
-        <div class="footer-content">
-            <div class="footer-actions">
-                <button class="btn-gold" onclick="openModal()">Schedule a Tour</button>
-                <a href="tel:0000000000" class="btn-phone">Call Now</a>
-            </div>
-            <div class="footer-grid">
-                <div class="grid-col community-col">
-                    <h4>Our Community</h4>
-                    <p>Refined living with personalized care in a calm environment.</p>
+    <section class="leadership-section">
+        <div class="leadership-container">
+            <div class="owner-card animate-on-scroll">
+                <div class="owner-image">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80" alt="Founder">
+                    <div class="image-accent"></div>
                 </div>
-                <div class="grid-col">
-                    <h4>Explore</h4>
-                    <div class="footer-links">
-                        <a href="#">Care Options</a>
-                        <a href="#">Pricing</a>
-                        <a href="#">Amenities</a>
+                <div class="owner-text">
+                    <span class="sub-label">A Message from our Founder</span>
+                    <h2>"At Sunset Meadow, we don't just provide care; we welcome you into our family."</h2>
+                    <p>Guided by a vision of dignity and grace, I founded Sunset Meadow to be a sanctuary. Our leadership team is dedicated to ensuring every resident feels the warmth of a true home combined with the security of expert support.</p>
+                    <div class="signature-fox">
+                        <i class="fa-solid fa-paw" style="color: #0a1128;"></i>
+                        <span>Julianna Sterling, Founder & CEO</span>
                     </div>
                 </div>
-                <div class="grid-col">
-                    <h4>Contact</h4>
-                    <p>Your Location Address</p>
-                    <p>info@email.com</p>
-                    <p>(000) 000-0000</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-vision">
+        <div class="mission-video-side">
+            <video autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-view-of-a-beautiful-backyard-with-a-garden-34304-large.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay-dark" style="position:absolute; inset:0; background:rgba(10,28,56,0.4);"></div>
+        </div>
+        <div class="mission-content-side">
+            <div class="mission-tile animate-on-scroll">
+                <i class="fa-solid fa-compass"></i>
+                <h3>Our Mission</h3>
+                <p>To redefine the standard of assisted living by blending modern innovation with timeless, compassionate care.</p>
+            </div>
+            <div class="mission-tile animate-on-scroll">
+                <i class="fa-solid fa-eye"></i>
+                <h3>Our Vision</h3>
+                <p>To lead the future of senior wellness where independence is celebrated and every sunset is met with peace of mind.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="who-we-serve">
+        <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+            <span class="sub-label">SPECIALIZED CARE</span>
+            <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem; color: #0a1128;">Who We Serve</h2>
+            <div class="accent-line" style="margin: 20px auto;"></div>
+        </div>
+
+        <div class="serve-grid">
+            <div class="serve-item animate-on-scroll">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                <div class="serve-text">
+                    <span>01</span>
+                    <h4>High Behavior Support</h4>
+                    <p>Expert management for complex, hard-to-place needs.</p>
                 </div>
             </div>
-            <div class="footer-socials">
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <div class="serve-item animate-on-scroll">
+                <i class="fa-solid fa-hourglass-end"></i>
+                <div class="serve-text">
+                    <span>02</span>
+                    <h4>Advanced Aged</h4>
+                    <p>Specialized physical care for our most senior residents.</p>
+                </div>
+            </div>
+            <div class="serve-item animate-on-scroll">
+                <i class="fa-solid fa-puzzle-piece"></i>
+                <div class="serve-text">
+                    <span>03</span>
+                    <h4>Developmentally Disabled</h4>
+                    <p>Programs designed for individual growth and safety.</p>
+                </div>
+            </div>
+            <div class="serve-item animate-on-scroll">
+                <i class="fa-solid fa-brain"></i>
+                <div class="serve-text">
+                    <span>04</span>
+                    <h4>Mental Wellness</h4>
+                    <p>Disturbed or persistent mental illness support.</p>
+                </div>
+            </div>
+            <div class="serve-item animate-on-scroll">
+                <i class="fa-solid fa-cloud-sun"></i>
+                <div class="serve-text">
+                    <span>05</span>
+                    <h4>Alzheimer's & Dementia</h4>
+                    <p>Secure, respectful memory enhancement care.</p>
+                </div>
+            </div>
+            <div class="serve-item animate-on-scroll">
+                <i class="fa-solid fa-wheelchair"></i>
+                <div class="serve-text">
+                    <span>06</span>
+                    <h4>Physically Disabled</h4>
+                    <p>Adaptive environments for full mobility support.</p>
+                </div>
+            </div>
+            <div class="serve-item animate-on-scroll">
+                <i class="fa-solid fa-feather-pointed"></i>
+                <div class="serve-text">
+                    <span>07</span>
+                    <h4>Terminally Ill</h4>
+                    <p>Compassionate end-of-life and palliative support.</p>
+                </div>
+            </div>
+            <div class="serve-item animate-on-scroll">
+                <i class="fa-solid fa-sparkles"></i>
+                <div class="serve-text">
+                    <span>08</span>
+                    <h4>Traumatic Brain Injury</h4>
+                    <p>Neurological support and TBI recovery care.</p>
+                </div>
+            </div>
+            <div class="serve-item animate-on-scroll">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div class="serve-text">
+                    <span>09</span>
+                    <h4>Correctional Clients</h4>
+                    <p>Structured, secure transition and long-term care.</p>
+                </div>
+            </div>
+            <div class="serve-item animate-on-scroll">
+                <i class="fa-solid fa-leaf"></i>
+                <div class="serve-text">
+                    <span>10</span>
+                    <h4>Respite Available</h4>
+                    <p>Temporary relief stays for primary caregivers.</p>
+                </div>
+            </div>
+            <div class="serve-item animate-on-scroll featured-serve" style="background: #0a1128; color: white;">
+                <i class="fa-solid fa-circle-plus" style="color: white;"></i>
+                <div class="serve-text">
+                    <span style="color: #94a3b8;">11</span>
+                    <h4 style="color: white;">Customized Needs</h4>
+                    <p style="color: #94a3b8;">We evaluate every unique situation with care.</p>
+                </div>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Schedule a Private Tour</h2>
-            <form action="https://formsubmit.co/sunsetmeadowlivingllc@gmail.com" method="POST">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="tel" name="phone" placeholder="Phone Number" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="date" name="date" required>
-                <select name="service">
-                    <option>Private Pay</option>
-                    <option>Flex Pay</option>
-                    <option>Insurance</option>
-                </select>
-                <textarea name="notes" placeholder="Additional notes"></textarea>
-                <input type="hidden" name="_subject" value="New Tour Booking Request">
-                <input type="hidden" name="_captcha" value="false">
-                <button type="submit" class="btn-gold">Submit Request</button>
-            </form>
+    <section class="admission-journey-section" style="padding: 100px 5%; background: #fff;">
+        <div class="section-header" style="text-align: center; margin-bottom: 80px;">
+            <span class="sub-label">THE PROCESS</span>
+            <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">Admission Pathway</h2>
         </div>
-    </div>
+        
+        <div class="admission-process">
+            <div class="journey-line"></div>
+            <div class="step animate-on-scroll">
+                <div class="step-circle">1</div>
+                <h4>Initial Inquiry</h4>
+                <p>A simple conversation to understand your unique needs and story.</p>
+            </div>
+            <div class="step animate-on-scroll">
+                <div class="step-circle">2</div>
+                <h4>Discovery Tour</h4>
+                <p>Experience the Cottage Comfort firsthand with a private walkthrough.</p>
+            </div>
+            <div class="step animate-on-scroll">
+                <div class="step-circle">3</div>
+                <h4>Assessment</h4>
+                <p>Our clinical team crafts your perfect personalized care plan.</p>
+            </div>
+            <div class="step animate-on-scroll">
+                <div class="step-circle">4</div>
+                <h4>Welcome Home</h4>
+                <p>A seamless move-in day where every detail is handled by us.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="video-footer">
+        <div class="pre-footer">
+            <h2 id="typing-text">Welcome Home to Sunset Meadow.</h2>
+        </div>
+        </footer>
 
     <script>
-        // Toggle Mobile Menu
         function toggleMenu() {
             const menu = document.getElementById("sideMenu");
             menu.classList.toggle("active");
-            document.body.style.overflow = menu.classList.contains("active") ? "hidden" : "auto";
         }
 
-        // Header Scroll Effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.main-header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile Dropdowns
-        document.querySelectorAll('.mobile-dropdown .main-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                const subMenu = this.nextElementSibling;
-                if (subMenu && subMenu.classList.contains('sub-links')) {
-                    e.preventDefault();
-                    const isVisible = subMenu.style.display === 'block';
-                    subMenu.style.display = isVisible ? 'none' : 'block';
-                    const icon = this.querySelector('i');
-                    if(icon) {
-                        icon.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)';
-                        icon.style.transition = '0.3s';
-                    }
-                }
-            });
-        });
-
-        // Modal Logic
-        window.openModal = function(){ document.getElementById("bookingModal").style.display = "block"; }
-        window.closeModal = function(){ document.getElementById("bookingModal").style.display = "none"; }
-        window.onclick = function(event){
-            const modal = document.getElementById("bookingModal");
-            if(event.target === modal){ modal.style.display = "none"; }
-        }
-
-        // Reveal Animations
+        // Scroll Reveal Animation
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    entry.target.classList.add('show');
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
                 }
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.animate-on-scroll, .video-footer').forEach(el => observer.observe(el));
+        document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = "all 0.8s ease-out";
+            observer.observe(el);
+        });
     </script>
-
-    <script>
-        window.chatbaseConfig = { chatbotId: "PhPwg7-iLonUCo-_uKjPY" }
-    </script>
-    <script src="https://www.chatbase.co/embed.min.js" id="PhPwg7-iLonUCo-_uKjPY" defer></script>
-
 </body>
 </html>
