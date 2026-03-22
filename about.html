@@ -7,8 +7,8 @@
     <title>About Us | Sunset Meadow Living</title>
 
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -35,12 +35,12 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="about.html" class="nav-item">About Us <i class="fa-solid fa-chevron-down"></i></a>
+                        <a href="about.html" class="nav-item active">About Us <i class="fa-solid fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Leadership Team</a></li>
-                            <li><a href="#">Mission & Vision</a></li>
-                            <li><a href="#">Who We Serve</a></li>
-                            <li><a href="#">Admission Process</a></li>
+                            <li><a href="#leadership">Leadership Team</a></li>
+                            <li><a href="#mission">Mission & Vision</a></li>
+                            <li><a href="#serve">Who We Serve</a></li>
+                            <li><a href="#admission">Admission Process</a></li>
                         </ul>
                     </li>
                     <li><a href="#" class="nav-item">Payment Solutions</a></li>
@@ -71,9 +71,9 @@
             <div class="mobile-dropdown">
                 <a href="#" class="main-link">About Us <i class="fa-solid fa-chevron-down"></i></a>
                 <div class="sub-links">
-                    <a href="#">Leadership Team</a>
-                    <a href="#">Mission & Vision</a>
-                    <a href="#">Admission Process</a>
+                    <a href="#leadership">Leadership Team</a>
+                    <a href="#mission">Mission & Vision</a>
+                    <a href="#admission">Admission Process</a>
                 </div>
             </div>
             <a href="#" class="main-link">Payment Solutions</a>
@@ -94,9 +94,100 @@
         </div>
     </section>
 
+    <section id="leadership" class="leadership-block section-padding">
+        <div class="container">
+            <div class="owner-card animate-on-scroll">
+                <div class="owner-image">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80" alt="Founder Portrait">
+                    <div class="image-accent-frame"></div>
+                </div>
+                <div class="owner-text">
+                    <span class="section-label">A Message from our Founder</span>
+                    <h2>"We built Sunset Meadow to be a sanctuary, not a facility."</h2>
+                    <p>Clinical excellence should never feel clinical. Our leadership is committed to a 'Cottage Comfort' philosophy—ensuring that every resident is treated with the same dignity and warmth we would give our own family.</p>
+                    <div class="signature-fox">
+                        <i class="fa-solid fa-paw"></i>
+                        <span>The Sunset Meadow Executive Team</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mission" class="mission-split">
+        <div class="mission-video-container">
+            <video autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-view-of-a-beautiful-backyard-with-a-garden-34304-large.mp4" type="video/mp4">
+            </video>
+            <div class="video-tint"></div>
+        </div>
+        <div class="mission-content-area">
+            <div class="mission-box animate-on-scroll">
+                <span class="mission-num">01</span>
+                <h3>Our Mission</h3>
+                <p>To redefine the standard of assisted living by blending modern innovation with timeless, compassionate care.</p>
+            </div>
+            <div class="mission-box animate-on-scroll">
+                <span class="mission-num">02</span>
+                <h3>Our Vision</h3>
+                <p>To lead the future of senior wellness where independence is celebrated and every sunset is met with peace of mind.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="serve" class="serve-bento section-padding">
+        <div class="container text-center mb-60">
+            <span class="section-label">SPECIALIZED CARE</span>
+            <h2 class="playfair-title">Client Groups We Serve</h2>
+        </div>
+        <div class="serve-grid">
+            <div class="serve-item animate-on-scroll"><i>01</i><h4>High Behavior</h4><p>Hard-to-place care.</p></div>
+            <div class="serve-item animate-on-scroll"><i>02</i><h4>Advanced Aged</h4><p>Attentive senior support.</p></div>
+            <div class="serve-item animate-on-scroll"><i>03</i><h4>Developmental</h4><p>Growth-focused programs.</p></div>
+            <div class="serve-item animate-on-scroll"><i>04</i><h4>Mental Wellness</h4><p>Emotional illness support.</p></div>
+            <div class="serve-item animate-on-scroll"><i>05</i><h4>Memory Care</h4><p>Alzheimer's & Dementia.</p></div>
+            <div class="serve-item animate-on-scroll"><i>06</i><h4>Physical Needs</h4><p>Mobility-adaptive care.</p></div>
+            <div class="serve-item animate-on-scroll"><i>07</i><h4>Terminally Ill</h4><p>Palliative & End-of-life.</p></div>
+            <div class="serve-item animate-on-scroll"><i>08</i><h4>Brain Injury</h4><p>TBI recovery support.</p></div>
+            <div class="serve-item animate-on-scroll"><i>09</i><h4>Correctional</h4><p>Safe transition care.</p></div>
+            <div class="serve-item animate-on-scroll"><i>10</i><h4>Respite Care</h4><p>Short-term relief stays.</p></div>
+            <div class="serve-item animate-on-scroll featured"><i>11</i><h4>Bespoke Care</h4><p>Unique care evaluations.</p></div>
+        </div>
+    </section>
+
+    <section id="admission" class="admission-timeline section-padding">
+        <div class="container text-center mb-60">
+            <span class="section-label">THE JOURNEY</span>
+            <h2 class="playfair-title">Admission Pathway</h2>
+        </div>
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+            <div class="timeline-step animate-on-scroll">
+                <div class="step-circle">1</div>
+                <h4>Inquiry</h4>
+                <p>A confidential conversation about your story.</p>
+            </div>
+            <div class="timeline-step animate-on-scroll">
+                <div class="step-circle">2</div>
+                <h4>Discovery</h4>
+                <p>Experience the Cottage Comfort on a private tour.</p>
+            </div>
+            <div class="timeline-step animate-on-scroll">
+                <div class="step-circle">3</div>
+                <h4>Assessment</h4>
+                <p>Collaborative care planning with our experts.</p>
+            </div>
+            <div class="timeline-step animate-on-scroll">
+                <div class="step-circle">4</div>
+                <h4>Welcome Home</h4>
+                <p>Your transition into the Sunset Meadow family.</p>
+            </div>
+        </div>
+    </section>
+
     <footer class="video-footer animate-on-scroll">
         <video autoplay muted loop playsinline class="footer-video-bg">
-            <source src="timelapse-of-noctilucent-clouds-and-a-vibrant-sunrise.mp4" type="video/mp4">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-slow-motion-of-a-golden-sunset-over-the-ocean-14022-large.mp4" type="video/mp4">
         </video>
         <div class="footer-tint"></div>
         <div class="footer-fox">
@@ -122,8 +213,8 @@
                 </div>
                 <div class="grid-col">
                     <h4>Contact</h4>
-                    <p>Your Location Address</p>
-                    <p>info@email.com</p>
+                    <p>Sunset Meadow Living</p>
+                    <p>info@sunsetmeadow.com</p>
                     <p>(000) 000-0000</p>
                 </div>
             </div>
@@ -159,65 +250,26 @@
     </div>
 
     <script>
-        // Toggle Mobile Menu
         function toggleMenu() {
             const menu = document.getElementById("sideMenu");
             menu.classList.toggle("active");
             document.body.style.overflow = menu.classList.contains("active") ? "hidden" : "auto";
         }
 
-        // Header Scroll Effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.main-header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile Dropdowns
-        document.querySelectorAll('.mobile-dropdown .main-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                const subMenu = this.nextElementSibling;
-                if (subMenu && subMenu.classList.contains('sub-links')) {
-                    e.preventDefault();
-                    const isVisible = subMenu.style.display === 'block';
-                    subMenu.style.display = isVisible ? 'none' : 'block';
-                    const icon = this.querySelector('i');
-                    if(icon) {
-                        icon.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)';
-                        icon.style.transition = '0.3s';
-                    }
-                }
-            });
-        });
-
-        // Modal Logic
         window.openModal = function(){ document.getElementById("bookingModal").style.display = "block"; }
         window.closeModal = function(){ document.getElementById("bookingModal").style.display = "none"; }
-        window.onclick = function(event){
-            const modal = document.getElementById("bookingModal");
-            if(event.target === modal){ modal.style.display = "none"; }
-        }
-
-        // Reveal Animations
-        const observer = new IntersectionObserver((entries) => {
+        
+        // Finalized Scroll Animations
+        const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
                     entry.target.classList.add('show');
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.15 });
 
-        document.querySelectorAll('.animate-on-scroll, .video-footer').forEach(el => observer.observe(el));
+        document.querySelectorAll('.animate-on-scroll, .serve-item, .timeline-step').forEach(el => revealObserver.observe(el));
     </script>
-
-    <script>
-        window.chatbaseConfig = { chatbotId: "PhPwg7-iLonUCo-_uKjPY" }
-    </script>
-    <script src="https://www.chatbase.co/embed.min.js" id="PhPwg7-iLonUCo-_uKjPY" defer></script>
-
 </body>
 </html>
