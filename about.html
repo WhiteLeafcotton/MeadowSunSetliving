@@ -456,6 +456,24 @@
     </div>
 
     <script>
+
+        function toggleMute() {
+    const video = document.getElementById('admissionsVideo');
+    const icon = document.getElementById('muteIcon');
+    const text = document.getElementById('muteText');
+
+    if (video.muted) {
+        video.muted = false;
+        icon.classList.remove('fa-volume-xmark');
+        icon.classList.add('fa-volume-high');
+        text.innerText = "SOUND ON";
+    } else {
+        video.muted = true;
+        icon.classList.remove('fa-volume-high');
+        icon.classList.add('fa-volume-xmark');
+        text.innerText = "TAP FOR AUDIO";
+    }
+}
         // Toggle Mobile Menu
         function toggleMenu() {
             const menu = document.getElementById("sideMenu");
