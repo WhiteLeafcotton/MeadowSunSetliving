@@ -2220,94 +2220,109 @@ body {
    SECTION 2: ADMISSIONS JOURNEY (WHITE THEME)
 ============================================= */
 .admissions-journey {
-    background-color: var(--white);
-    padding: 120px 0;
-    color: var(--brand-blue);
+    height: 100vh;
+    width: 100%;
+    background: #ffffff;
+    overflow: hidden; /* Prevents scrolling */
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
 }
 
-.journey-header { text-align: center; margin-bottom: 100px; }
-.journey-header .magazine-title { color: var(--brand-blue); }
+.split-view-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 60px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+}
 
-.stepper-wrap { max-width: 850px; margin: 0 auto; }
+/* LEFT SIDE: VIDEO & TITLE */
+.journey-visual-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+}
+
+.video-frame {
+    width: 100%;
+    height: 100%;
+    max-height: 450px; /* Adjust based on your video's verticality */
+    background: #0f172a;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.video-frame iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* RIGHT SIDE: THE TIMELINE */
+.stepper-wrap.vertical-stepper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80vh; /* Matches the video side height */
+    padding-left: 40px;
+    border-left: 1px solid #e2e8f0;
+}
 
 .step-card {
     display: flex;
-    gap: 50px;
-    position: relative;
+    gap: 20px;
+    align-items: flex-start;
 }
 
 .step-indicator {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-shrink: 0;
+    min-width: 40px;
 }
 
 .step-number {
-    width: 60px;
-    height: 60px;
-    background: var(--brand-blue);
-    color: var(--white);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #c5a059;
     font-weight: 700;
-    font-size: 1.2rem;
-    z-index: 2;
-    transition: all 0.4s ease;
 }
 
 .step-line {
     width: 1px;
-    height: 100%;
-    background: rgba(12, 24, 51, 0.1);
-    position: absolute;
-    top: 60px; /* Starts below the number */
-    z-index: 1;
+    flex-grow: 1;
+    background: #c5a059;
+    height: 40px; /* Adjust to connect the dots */
+    opacity: 0.3;
 }
-
-/* Removes the line from the last step */
-.step-card:last-child .step-line { display: none; }
-
-.step-content {
-    display: flex;
-    gap: 30px;
-    padding-bottom: 80px;
-}
-
-.step-icon svg { width: 35px; height: 35px; fill: var(--brand-gold); }
 
 .step-text h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    margin-bottom: 12px;
+    font-size: 1.3rem;
+    margin: 0 0 5px 0;
+    color: #0f172a;
 }
 
 .step-text p {
-    color: #555;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    max-width: 500px;
+    font-size: 0.9rem;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.4;
 }
 
-/* INTERACTION */
-.step-card:hover .step-number {
-    background: var(--brand-gold);
-    transform: scale(1.1);
+.welcome-gold {
+    color: #c5a059 !important;
 }
 
-/* ==========================================
-   RESPONSIVE OVERRIDES
-============================================= */
-@media (max-width: 991px) {
-    .dir-item { flex: 0 0 280px; }
-    .step-card { gap: 25px; }
-}
-
-@media (max-width: 768px) {
-    .magazine-title { font-size: 2.5rem; }
-    .step-content { flex-direction: column; gap: 15px; }
-    .step-line { left: 30px; } /* Aligns with centered mobile step-number */
+/* MOBILE FIX */
+@media (max-width: 992px) {
+    .admissions-journey { height: auto; overflow: visible; padding: 60px 5%; }
+    .split-view-container { grid-template-columns: 1fr; }
+    .stepper-wrap.vertical-stepper { height: auto; border-left: none; padding-left: 0; }
 }
