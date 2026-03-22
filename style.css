@@ -1762,41 +1762,78 @@ body { font-family: sans-serif; overflow-x: hidden; }
    ABOUT PAGE SPECIFIC STYLES
    ========================= */
 
-/* --- LAYOUT TAMERS --- */
-.container { max-width: 1200px; margin: 0 auto; width: 100%; padding: 0 5%; box-sizing: border-box; }
-.section-padding { padding: 120px 0; overflow: hidden; }
-.mb-60 { margin-bottom: 60px; }
-.text-center { text-align: center; }
+/* --- 50K DESIGN VARIABLES --- */
+:root {
+    --gold: #c5a059;
+    --navy: #0a1128;
+    --white-soft: #f8fafc;
+    --text-muted: #64748b;
+    --glass: rgba(255, 255, 255, 0.03);
+    --transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-/* --- LEADERSHIP --- */
-.owner-card { display: flex; flex-wrap: wrap; gap: 60px; align-items: center; }
-.owner-image { flex: 1; min-width: 320px; position: relative; }
-.owner-image img { width: 100%; height: auto; border-radius: 4px; box-shadow: 20px 20px 0px #f8fafc; }
-.owner-text { flex: 1.2; min-width: 320px; }
+/* --- UTILITIES --- */
+.section-padding { padding: 140px 0; overflow: hidden; }
+.container { max-width: 1300px; margin: 0 auto; padding: 0 5%; }
+.gold-sub { font-family: 'Montserrat'; font-size: 0.75rem; letter-spacing: 5px; color: var(--gold); text-transform: uppercase; display: block; margin-bottom: 20px; }
+.italic-serif { font-family: 'Playfair Display'; font-style: italic; font-weight: 400; }
 
-/* --- MISSION VIDEO --- */
-.mission-split { display: flex; flex-wrap: wrap; background: #0a1128; min-height: 600px; }
-.mission-video-container, .mission-content-area { flex: 1; min-width: 350px; }
-.mission-video-container { position: relative; min-height: 400px; }
-.mission-video-container video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
-.mission-content-area { padding: 80px 8%; color: white; display: flex; flex-direction: column; justify-content: center; gap: 50px; }
-.mission-num { font-family: 'Montserrat'; font-size: 0.8rem; letter-spacing: 4px; opacity: 0.5; display: block; margin-bottom: 10px; }
+/* --- HERO REFINEMENT --- */
+.about-hero {
+    height: 85vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+.hero-video-wrap { position: absolute; inset: 0; z-index: -2; }
+.hero-bg-video { width: 100%; height: 100%; object-fit: cover; }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,17,40,0.4), rgba(10,17,40,0.8)); z-index: -1; }
+.hero-badge { border: 1px solid rgba(255,255,255,0.3); padding: 8px 20px; border-radius: 50px; font-size: 0.7rem; letter-spacing: 2px; display: inline-block; margin-bottom: 30px; }
+.about-hero h1 { font-size: clamp(3rem, 8vw, 6rem); line-height: 1.1; font-family: 'Playfair Display'; }
+
+/* --- EDITORIAL LAYOUT --- */
+.editorial-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center; }
+.reveal-img-wrap { position: relative; }
+.reveal-img-wrap img { width: 100%; border-radius: 2px; filter: contrast(1.05); }
+.img-caption { position: absolute; bottom: -30px; right: 0; font-family: 'Playfair Display'; font-style: italic; font-size: 0.9rem; color: var(--gold); }
+.editorial-text h2 { font-family: 'Playfair Display'; font-size: 3rem; margin-bottom: 30px; color: var(--navy); }
+.sig-line { width: 100px; height: 1px; background: var(--gold); margin-top: 15px; }
 
 /* --- BENTO GRID --- */
-.serve-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 0 5%; }
-.serve-item { background: #fdfdfd; padding: 40px; border: 1px solid #eee; transition: 0.4s; }
-.serve-item:hover { transform: translateY(-10px); border-color: #0a1128; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-.serve-item i { font-family: 'Montserrat'; font-style: normal; font-weight: 600; font-size: 0.7rem; color: #94a3b8; letter-spacing: 2px; display: block; margin-bottom: 15px; }
-.serve-item.featured { background: #0a1128; color: white; border-color: #0a1128; }
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 50px;
+}
+.bento-card {
+    background: #fff;
+    border: 1px solid #f1f5f9;
+    padding: 40px 20px;
+    transition: var(--transition);
+    text-align: center;
+}
+.bento-card:hover { background: var(--navy); color: white; transform: scale(1.02); z-index: 2; }
+.bento-card i { display: block; font-family: 'Montserrat'; font-size: 0.7rem; color: var(--gold); margin-bottom: 20px; }
+.bento-card.featured { background: var(--gold); color: white; border: none; }
 
 /* --- TIMELINE --- */
-.timeline-container { position: relative; display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between; margin-top: 50px; padding: 0 5%; }
-.timeline-line { position: absolute; top: 35px; left: 10%; right: 10%; height: 1px; background: #eee; z-index: 0; }
-.timeline-step { flex: 1; min-width: 220px; text-align: center; position: relative; z-index: 1; }
-.step-circle { width: 70px; height: 70px; background: #0a1128; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; border: 8px solid white; font-weight: 600; }
+.timeline { display: flex; flex-wrap: wrap; gap: 40px; margin-top: 60px; position: relative; }
+.t-circle { width: 60px; height: 60px; border: 1px solid var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 20px; transition: 0.4s; }
+.t-step:hover .t-circle { background: var(--navy); color: white; }
 
-/* --- MOBILE FIXES --- */
-@media (max-width: 768px) {
-    .timeline-line { display: none; }
+/* --- ANIMATION STATES --- */
+.animate-up { opacity: 0; transform: translateY(40px); transition: var(--transition); }
+.animate-left { opacity: 0; transform: translateX(-40px); transition: var(--transition); }
+.animate-right { opacity: 0; transform: translateX(40px); transition: var(--transition); }
+
+.revealed { opacity: 1 !important; transform: translate(0) !important; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+    .editorial-grid { grid-template-columns: 1fr; }
     .section-padding { padding: 80px 0; }
 }
