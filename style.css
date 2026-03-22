@@ -373,42 +373,42 @@
 /* --- FULL-WIDTH LIGHT LUXURY HERO --- */
 /* BASE HERO LOGIC */
 /* 1. BASE HERO DEFAULTS */
-.hero {
-    width: 100%;
+/* --- 1. THE MAIN INDEX HERO (Full Height) --- */
+.hero.hero-index {
+    height: 100vh !important;
+    width: 100% !important;
     display: flex;
     align-items: center;
     padding: 0 10%;
-    position: relative; /* Default for Index */
+    position: relative !important; /* Resets from the sticky mess */
+    z-index: 1 !important; /* Brings it to the front */
+    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat !important;
+    background-attachment: fixed !important; /* This is the "magic" scroll effect */
     overflow: hidden;
 }
 
-/* 2. INDEX PAGE HERO (Full Height & Fixed Background) */
-/* This brings back the classic full-screen look for your homepage */
-.hero.hero-index {
-    height: 100vh;
-    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat;
-    background-attachment: fixed; /* This creates the scroll effect for full-screen */
-    z-index: 1; /* Brings it back to the front */
-}
-
-/* 3. ABOUT PAGE HERO (50% Height & Sticky Slide-Over) */
-/* This keeps the cool "Sliding Door" effect for your subpage */
+/* --- 2. THE ABOUT PAGE HERO (50% Height) --- */
 .hero.hero-about {
-    height: 50vh; 
-    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat;
-    position: sticky; 
+    height: 50vh !important;
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: sticky !important; /* Pins it for the "slide over" effect */
     top: 0;
-    z-index: -1; /* Pushes it behind the About page cards */
+    z-index: -1 !important; /* Pushes it behind the cards */
+    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat !important;
+    background-attachment: scroll !important; /* Standard scroll for the 50% version */
 }
 
-/* 4. THE CONTENT LAYERING */
-/* This ensures your sections have the "weight" to slide over the About hero */
+/* --- 3. THE CONTENT WRAPPER --- */
+/* This ensures your page content is "solid" enough to slide OVER the About hero */
 .main-content-wrapper, 
 .admissions-journey, 
 section {
     position: relative;
     z-index: 10; 
-    background: #ffffff; 
+    background: #ffffff !important; /* Forces solid white so hero doesn't bleed through */
 }
 
 /* update for about page hero annimation above */
