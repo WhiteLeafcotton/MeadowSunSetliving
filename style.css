@@ -1785,153 +1785,121 @@ body { font-family: sans-serif; overflow-x: hidden; }
    integrated VOGUE ARTICLE & WRAPPING
 ============================================= */
 
+/* ==========================================
+   VOGUE WRAP: FIXED ASPECT RATIO
+============================================= */
+
 .vogue-editorial {
     position: relative;
-    padding: 60px 0; /* Reduced from 120px for an "Ultrathin" look */
+    padding: 40px 0; /* Ultra-thin section height */
     background: #ffffff;
-    overflow: hidden;
-}
-
-/* 1. Subtlest Ghost Fox Watermark */
-.editorial-fox {
-    position: absolute;
-    top: 50%;
-    right: -150px;
-    transform: translateY(-50%);
-    width: 600px;
-    opacity: 0.02; /* Extremely faint, ghosted luxury ghosting */
-    pointer-events: none;
-    z-index: 0;
 }
 
 .editorial-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 40px;
-    position: relative;
-    z-index: 1;
 }
 
-/* 2. THE CHRONOLOGICAL ARTICLE SYSTEM */
-.vogue-article {
-    display: flex;
-    flex-direction: column;
-}
-
-/* 3. The Article Text Styling */
+/* 1. THE TEXT WRAP LOGIC */
 .article-paragraph {
     font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    line-height: 2.1; /* Exceptionally breathable magazine spacing */
+    font-size: 1rem;
+    line-height: 1.8;
     color: #334155;
-    font-weight: 300;
-    margin-bottom: 25px;
-    text-align: justify; /* Essential for the magazine column look */
+    margin-bottom: 20px;
+    text-align: justify;
+    hyphens: auto; /* Helps with the magazine column look */
 }
 
-/* Editorial Hooks */
-.brand-serif {
-    font-family: 'Playfair Display', serif;
-    color: #0f172a;
-    font-weight: 600;
-}
-
-.vogue-callout {
-    font-family: 'Playfair Display', serif;
-    color: #c5a059;
-    font-style: italic;
-    font-weight: 500;
-    margin: 0 5px;
-}
-
-/* 4. The INTEGRATED PROFILES (Where wrapping happens) */
-.integrated-profile {
-    display: flow-root; /* Forces the block to clear floats */
-    width: 100%;
-    position: relative;
-    margin-bottom: 60px; /* Reduced from 180px for a continuous feel */
-}
-
-/* THE PHOTO BOX (Used for Shape Wrapping) */
+/* 2. THE IMAGE WRAPPER (Prevents "Skinny" Images) */
 .editorial-image-wrapper {
-    flex: 0 0 45%;
-    height: 600px;
-    overflow: hidden;
-    position: relative;
+    width: 450px; /* Fixed width ensures it never gets skinny */
+    height: 550px; /* Fixed height for portrait ratio */
     background: #f8fafc;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .editorial-image-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: sepia(10%) contrast(105%);
 }
 
-/* THE INTEGRATED TYPOGRAPHY (Stays exactly the same) */
+/* LEFT WRAP (Eleanor) */
+.left-stagger .editorial-image-wrapper {
+    float: left;
+    margin-right: 50px; /* Space between image and wrapping text */
+    shape-outside: rect(0, 450px, 550px, 0); /* Explicit wrap boundary */
+}
+
+/* RIGHT WRAP (Julianne) */
+.right-stagger .editorial-image-wrapper {
+    float: right;
+    margin-left: 50px;
+    shape-outside: rect(0, 450px, 550px, 0);
+}
+
+/* 3. THE TYPOGRAPHY OVERLAP (Absolute position to prevent squishing) */
 .editorial-text-stack {
-    margin-left: -120px;
-    margin-bottom: -40px;
-    z-index: 2;
     position: relative;
+    z-index: 10;
+}
+
+.left-stagger .editorial-text-stack {
+    margin-left: 380px; /* Pushes the name to overlap the image edge */
+    margin-top: -100px;  /* Pulls the name UP over the photo */
+}
+
+.right-stagger .editorial-text-stack {
+    text-align: right;
+    margin-right: 380px;
+    margin-top: -100px;
 }
 
 .editorial-name {
     font-family: 'Playfair Display', serif;
-    font-size: 5rem;
-    line-height: 0.9;
+    font-size: 4.5rem;
+    line-height: 0.8;
     color: #0f172a;
-    font-weight: 400;
-}
-
-.italic-serif { font-style: italic; color: #0f172a; font-family: 'Playfair Display', serif; }
-.editorial-role { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: #c5a059; display: block; margin: 15px 0 20px 20px; }
-.editorial-bio { font-family: 'Inter', sans-serif; font-size: 0.85rem; line-height: 1.8; color: #334155; font-weight: 300; max-width: 300px; padding-left: 20px; }
-
-/* --- 5. THE MAGIC: TEXT WRAPPING --- */
-/* For elements floating on the Left */
-.left-stagger .editorial-image-wrapper {
-    float: left;
-    margin-right: 40px;
-    margin-bottom: 10px;
-    /* This defines the invisible boundary the text must follow */
-    shape-outside: inset(0 0 0 0);
-}
-
-/* For elements floating on the Right */
-.right-stagger {
-    margin-bottom: 80px;
-}
-
-.right-stagger .editorial-image-wrapper {
-    float: right;
-    margin-left: -120px; /* This maintains the original overlap visually */
     margin-bottom: 20px;
-    margin-top: 50px;
-    shape-outside: inset(0 0 0 0);
 }
 
-.right-stagger .editorial-text-stack {
-    margin-left: 0;
-    margin-right: 0px;
-    margin-top: -60px;
+/* THE NARROW BIO COLUMN */
+.editorial-column {
+    max-width: 300px;
+    display: inline-block;
+    text-align: left;
+}
+
+.right-stagger .editorial-column {
     text-align: right;
-    float: right;
-    width: 100%;
 }
 
-.right-stagger .editorial-bio {
-    margin-left: auto;
-    text-align: right;
-    padding-left: 0;
-    padding-right: 20px;
+/* THE FOX BACKGROUND */
+.editorial-fox {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    opacity: 0.02;
+    z-index: 0;
+    pointer-events: none;
 }
 
-/* MOBILE ADAPTATION (Clean Stack) */
+/* MOBILE FIX */
 @media (max-width: 900px) {
-    .editorial-image-wrapper { float: none !important; width: 100%; height: 450px; margin: 0 0 30px 0 !important; shape-outside: none !important; }
-    .editorial-text-stack { margin: 0 !important; text-align: left !important; }
-    .editorial-name { font-size: 3.5rem; }
-    .editorial-bio { padding: 0; max-width: 100%; text-align: left !important; }
-    .right-stagger { margin-bottom: 60px; }
+    .editorial-image-wrapper {
+        width: 100%; 
+        float: none !important; 
+        shape-outside: none !important;
+        margin: 0 0 20px 0 !important;
+    }
+    .editorial-text-stack {
+        margin: -60px 0 0 0 !important;
+        text-align: left !important;
+    }
+    .editorial-name { font-size: 3rem; }
 }
