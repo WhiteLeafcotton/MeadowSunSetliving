@@ -2166,6 +2166,45 @@ body {
     color: var(--brand-gold);
     line-height: 1;
 }
+
+/* --- DIRECTORY HEADER TEXT LAYOUT --- */
+
+.directory-header {
+    max-width: 800px; /* Keeps the text from stretching too wide */
+    margin-bottom: 40px; /* Space between the text and the scrolling cards */
+    text-align: left; /* Ensures a clean "left-edge" alignment */
+}
+
+.gold-eyebrow {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    color: var(--brand-gold);
+    margin-bottom: 8px; /* Tight gap to the main title */
+}
+
+.magazine-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem); /* Responsive sizing */
+    line-height: 1.1;
+    margin: 0 0 15px 0; /* Tight gap to the subtext below */
+    color: #ffffff;
+}
+
+.italic-serif {
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.section-lead {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7); /* Muted white for high-end contrast */
+    max-width: 600px; /* Prevents the paragraph from getting too long/hard to read */
+    margin: 0;
+}
 /* ==========================================
    SECTION 2: ADMISSIONS JOURNEY (WHITE THEME)
 ============================================= */
