@@ -67,15 +67,23 @@
 }
 
 /* --- THE FIX: FORCING OUTLINE --- */
+/* --- THE FOX SILHOUETTE OUTLINE --- */
 .logo-mark svg path {
-    /* REMOVE THE FILL */
+    /* 1. Remove the solid center */
     fill: none !important;
     
-    /* ADD THE OUTLINE (STROKE) */
-    stroke: #0a1128 !important; /* Midnight Blue Outline */
-    stroke-width: 15px; /* Adjust this number to change line thickness */
+    /* 2. Create the outline around the shape */
+    stroke: #0a1128 !important; 
+    
+    /* 3. Control the thickness of the line */
+    stroke-width: 2px; /* Increase this to 3px or 4px if the line is too thin */
+    
+    /* 4. Smooth out the corners of the lines */
     stroke-linecap: round;
     stroke-linejoin: round;
+    
+    /* 5. Ensure the outline stays inside the viewbox */
+    vector-effect: non-scaling-stroke; 
 }
 
 /* Keep the rest of the logo text looking sharp */
