@@ -1765,68 +1765,71 @@ body { font-family: sans-serif; overflow-x: hidden; }
    EDITORIAL LEADERSHIP SECTION (REFINED)
 ============================================= */
 
+/* ==========================================
+   ULTRATHIN EDITORIAL LEADERSHIP
+============================================= */
+
 .editorial-leadership {
-    padding: 120px 0;
-    background-color: #ffffff; /* Clean white to contrast your midnight services */
+    padding: 60px 0; /* Reduced thickness from 120px to 60px */
+    background-color: #ffffff;
+    border-top: 1px solid rgba(15, 23, 42, 0.05);
 }
 
 .luxe-container {
-    max-width: 1200px;
+    max-width: 1100px; /* Narrower container for a tighter look */
     margin: 0 auto;
     padding: 0 5%;
 }
 
-/* Header Styling */
+/* Slimmed Header */
 .editorial-header {
-    text-align: center;
-    margin-bottom: 90px;
+    text-align: left; /* Left align for a more modern editorial feel */
+    margin-bottom: 40px;
 }
 
 .gold-eyebrow {
     font-family: 'Inter', sans-serif;
-    color: #c5a059; /* Elegant Gold Accent */
+    color: #c5a059;
     text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 0.7rem;
+    letter-spacing: 4px;
+    font-size: 0.65rem;
     font-weight: 600;
+    margin-bottom: 8px;
     display: block;
-    margin-bottom: 15px;
 }
 
 .editorial-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(32px, 5vw, 54px);
-    color: #0f172a; /* Matching your Midnight Blue */
+    font-size: 2.2rem; /* Scaled down from 3.5rem */
+    color: #0f172a;
     font-weight: 400;
 }
 
-/* Flexbox Layout for the Cards */
+/* Compact Card System */
 .editorial-flex {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 30px;
     align-items: flex-start;
-    gap: 40px;
 }
 
 .editorial-member {
-    flex: 1;
-    max-width: 300px; /* Kept small as requested */
-    transition: transform 0.4s ease;
+    flex: 0 1 260px; /* Reduced card size to 260px */
 }
 
-/* The Staggered "Editorial" Offset */
+/* Stagger is now more subtle for a thinner section */
 .offset-down {
-    margin-top: 60px;
+    margin-top: 30px; 
 }
 
-/* Image Presentation */
+/* Small, Crisp Portrait Frames */
 .member-image-container {
     width: 100%;
-    aspect-ratio: 3 / 4; /* Professional vertical portrait ratio */
+    aspect-ratio: 1 / 1; /* Square portraits take up less vertical space */
     overflow: hidden;
-    margin-bottom: 25px;
-    background: #f1f5f9; /* Slate background while images load */
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    margin-bottom: 18px;
+    background: #f8fafc;
+    border: 1px solid rgba(0,0,0,0.03);
 }
 
 .member-photo {
@@ -1834,56 +1837,46 @@ body { font-family: sans-serif; overflow-x: hidden; }
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: grayscale(20%); /* Subtle editorial desaturation */
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-.editorial-member:hover .member-photo {
-    transform: scale(1.05);
-    filter: grayscale(0%);
-}
-
-/* Text Detail Styling */
+/* Clean Text Stack */
 .member-role {
     font-family: 'Inter', sans-serif;
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #64748b; /* Your Steel Grey */
+    color: #64748b;
+    margin-bottom: 6px;
     display: block;
-    margin-bottom: 10px;
 }
 
 .member-name {
     font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
+    font-size: 1.3rem; /* Smaller, more elegant sizing */
     color: #0f172a;
-    margin-bottom: 15px;
-    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.2;
 }
 
 .member-desc {
     font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    line-height: 1.8;
-    color: #475569; /* Slate grey for readability */
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #475569;
     font-weight: 300;
 }
 
-/* Responsive Mobile Layout */
+/* Mobile: Stack but keep cards small */
 @media (max-width: 768px) {
     .editorial-flex {
         flex-direction: column;
         align-items: center;
-        gap: 60px;
+        gap: 50px;
     }
-    
     .editorial-member {
-        max-width: 100%;
+        max-width: 260px;
         text-align: center;
     }
-
-    .offset-down {
-        margin-top: 0;
-    }
+    .offset-down { margin-top: 0; }
 }
