@@ -1781,21 +1781,25 @@ body { font-family: sans-serif; overflow-x: hidden; }
    VOGUE MAGAZINE EDITORIAL LAYOUT
 ============================================= */
 
+/* ==========================================
+   integrated VOGUE ARTICLE & WRAPPING
+============================================= */
+
 .vogue-editorial {
     position: relative;
-    padding: 120px 0;
+    padding: 60px 0; /* Reduced from 120px for an "Ultrathin" look */
     background: #ffffff;
     overflow: hidden;
 }
 
-/* Subtlest Fox Watermark */
+/* 1. Subtlest Ghost Fox Watermark */
 .editorial-fox {
     position: absolute;
     top: 50%;
-    right: -100px;
+    right: -150px;
     transform: translateY(-50%);
-    width: 500px;
-    opacity: 0.02; /* Almost invisible, high-end ghosting */
+    width: 600px;
+    opacity: 0.02; /* Extremely faint, ghosted luxury ghosting */
     pointer-events: none;
     z-index: 0;
 }
@@ -1808,108 +1812,126 @@ body { font-family: sans-serif; overflow-x: hidden; }
     z-index: 1;
 }
 
-.editorial-row {
+/* 2. THE CHRONOLOGICAL ARTICLE SYSTEM */
+.vogue-article {
     display: flex;
-    align-items: flex-end; /* Aligns text to the bottom of the photo */
-    margin-bottom: 180px;
+    flex-direction: column;
 }
 
-/* THE PHOTO */
+/* 3. The Article Text Styling */
+.article-paragraph {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 2.1; /* Exceptionally breathable magazine spacing */
+    color: #334155;
+    font-weight: 300;
+    margin-bottom: 25px;
+    text-align: justify; /* Essential for the magazine column look */
+}
+
+/* Editorial Hooks */
+.brand-serif {
+    font-family: 'Playfair Display', serif;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.vogue-callout {
+    font-family: 'Playfair Display', serif;
+    color: #c5a059;
+    font-style: italic;
+    font-weight: 500;
+    margin: 0 5px;
+}
+
+/* 4. The INTEGRATED PROFILES (Where wrapping happens) */
+.integrated-profile {
+    display: flow-root; /* Forces the block to clear floats */
+    width: 100%;
+    position: relative;
+    margin-bottom: 60px; /* Reduced from 180px for a continuous feel */
+}
+
+/* THE PHOTO BOX (Used for Shape Wrapping) */
 .editorial-image-wrapper {
     flex: 0 0 45%;
     height: 600px;
-    background: #f8fafc;
     overflow: hidden;
+    position: relative;
+    background: #f8fafc;
 }
 
 .editorial-image-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: sepia(10%) contrast(105%); /* Gentle vintage editorial filter */
+    filter: sepia(10%) contrast(105%);
 }
 
-/* THE TYPOGRAPHY STACK */
+/* THE INTEGRATED TYPOGRAPHY (Stays exactly the same) */
 .editorial-text-stack {
-    margin-left: -120px; /* The "Vogue" overlap */
-    margin-bottom: -40px; /* Pulls text down for a staggered look */
+    margin-left: -120px;
+    margin-bottom: -40px;
     z-index: 2;
-}
-
-.editorial-eyebrow {
-    font-family: 'Inter', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 6px;
-    font-size: 0.65rem;
-    color: #64748b;
-    display: block;
-    margin-bottom: 15px;
+    position: relative;
 }
 
 .editorial-name {
     font-family: 'Playfair Display', serif;
-    font-size: 5rem; /* Huge, dramatic scaling */
+    font-size: 5rem;
     line-height: 0.9;
     color: #0f172a;
     font-weight: 400;
-    margin-bottom: 40px;
 }
 
-.italic-serif {
-    font-style: italic;
-    color: #0f172a;
-    font-family: 'Playfair Display', serif;
+.italic-serif { font-style: italic; color: #0f172a; font-family: 'Playfair Display', serif; }
+.editorial-role { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: #c5a059; display: block; margin: 15px 0 20px 20px; }
+.editorial-bio { font-family: 'Inter', sans-serif; font-size: 0.85rem; line-height: 1.8; color: #334155; font-weight: 300; max-width: 300px; padding-left: 20px; }
+
+/* --- 5. THE MAGIC: TEXT WRAPPING --- */
+/* For elements floating on the Left */
+.left-stagger .editorial-image-wrapper {
+    float: left;
+    margin-right: 40px;
+    margin-bottom: 10px;
+    /* This defines the invisible boundary the text must follow */
+    shape-outside: inset(0 0 0 0);
 }
 
-/* THE NARROW COLUMN */
-.editorial-column {
-    max-width: 320px;
-    padding-left: 20px;
+/* For elements floating on the Right */
+.right-stagger {
+    margin-bottom: 80px;
 }
 
-.editorial-role {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #c5a059;
-    display: block;
+.right-stagger .editorial-image-wrapper {
+    float: right;
+    margin-left: -120px; /* This maintains the original overlap visually */
     margin-bottom: 20px;
+    margin-top: 50px;
+    shape-outside: inset(0 0 0 0);
 }
 
-.editorial-bio {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    line-height: 2; /* Very breathable line height */
-    color: #334155;
-    font-weight: 300;
-    text-align: justify; /* Crisp magazine edges */
-}
-
-/* REVERSE LAYOUT */
-.editorial-row.reverse {
-    flex-direction: row-reverse;
-}
-
-.editorial-row.reverse .editorial-text-stack {
+.right-stagger .editorial-text-stack {
     margin-left: 0;
-    margin-right: -120px;
+    margin-right: 0px;
+    margin-top: -60px;
     text-align: right;
+    float: right;
+    width: 100%;
 }
 
-.editorial-row.reverse .editorial-column {
+.right-stagger .editorial-bio {
     margin-left: auto;
+    text-align: right;
     padding-left: 0;
     padding-right: 20px;
-    text-align: right;
 }
 
-/* MOBILE ADAPTATION */
+/* MOBILE ADAPTATION (Clean Stack) */
 @media (max-width: 900px) {
-    .editorial-row, .editorial-row.reverse { flex-direction: column; align-items: flex-start; margin-bottom: 80px; }
-    .editorial-text-stack, .editorial-row.reverse .editorial-text-stack { margin: -60px 0 0 0; text-align: left; }
-    .editorial-image-wrapper { width: 100%; height: 450px; flex: none; }
+    .editorial-image-wrapper { float: none !important; width: 100%; height: 450px; margin: 0 0 30px 0 !important; shape-outside: none !important; }
+    .editorial-text-stack { margin: 0 !important; text-align: left !important; }
     .editorial-name { font-size: 3.5rem; }
-    .editorial-column { padding: 0; text-align: left !important; }
+    .editorial-bio { padding: 0; max-width: 100%; text-align: left !important; }
+    .right-stagger { margin-bottom: 60px; }
 }
