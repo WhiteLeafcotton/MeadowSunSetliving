@@ -2517,3 +2517,98 @@ body {
         margin-top: 2rem;
     }
 }
+
+/* ==========================================
+   MOBILE COMPACT & BALANCE (ADD THIS)
+   ============================================= */
+@media (max-width: 768px) {
+    
+    /* 1. Reset Spacing for Compact Flow */
+    .magazine-editorial {
+        padding: 60px 20px; /* Reduced vertical padding */
+    }
+
+    .editorial-wrapper {
+        gap: 40px; /* Tighter gap between rows */
+    }
+
+    .editorial-row {
+        margin-bottom: 40px; /* Less space between sections */
+    }
+
+    /* 2. Compact Text Styling */
+    .gold-eyebrow {
+        font-size: 0.65rem; /* Smaller, precise label */
+        letter-spacing: 3px;
+    }
+
+    .magazine-title {
+        font-size: 1.8rem; /* Balanced header size */
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    .magazine-para {
+        font-size: 0.9rem; /* Readable but compact text */
+        line-height: 1.6;
+        max-width: 100%; /* Use full width */
+    }
+
+    /* 3. Balanced Profile Boxes */
+    .profile-box {
+        display: flex;
+        flex-direction: column; /* Stack image over text */
+        gap: 20px;
+        align-items: center; /* Center everything */
+        text-align: center;
+    }
+
+    .photo-frame {
+        width: 100%;
+        max-width: 320px; /* Limit image size for balance */
+        height: auto;
+        aspect-ratio: 4 / 5; /* Maintain vertical "magazine" ratio */
+    }
+
+    .label-stack {
+        width: 100%;
+        padding: 0;
+        align-items: center; /* Center text stack */
+    }
+
+    /* Reset desktop alignments */
+    .right-align, .left-align {
+        text-align: center;
+        align-items: center;
+    }
+
+    .name-label {
+        font-size: 1.4rem;
+        line-height: 1.2;
+        margin-bottom: 10px;
+    }
+
+    .name-label.hero-size {
+        font-size: 1.6rem; /* Slightly larger for Eleanor but not huge */
+    }
+
+    /* 4. Tighter Bio Columns */
+    .bio-col {
+        padding: 15px 0 0 0;
+        border: none !important; /* Remove desktop side borders */
+        border-top: 1px solid rgba(0,0,0,0.1) !important; /* Add top border for definition */
+        width: 100%;
+        max-width: 280px; /* Keep text narrow for elegance */
+    }
+
+    .mini-bio {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+
+    /* 5. Keep the Fox Subtle */
+    .fox-bg img {
+        width: 150px; /* Smaller watermark */
+        opacity: 0.03; /* Barely visible */
+    }
+}
