@@ -2988,8 +2988,40 @@ body {
 
 
 
+/* --- WEB WATERMARK --- */
 
-/* --- ARCHITECTURAL ACCENT --- */
+
+
+.cc-watermark-web {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    height: 24px; /* Changed from 12px to 24px */
+    width: auto; 
+    opacity: 0.3; 
+    pointer-events: none; 
+    z-index: 10;
+}
+
+
+.cc-watermark-mobile {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    height: 20px; /* Changed from 10px to 20px */
+    width: auto;
+    opacity: 0.2; 
+    pointer-events: none;
+    z-index: 10;
+}
+
+
+
+
+
+
+
+
 /* --- TOP RIGHT ARCHITECTURAL ACCENT --- */
 /* --- TOP RIGHT ACCENT (REVISED) --- */
 .financial-section-wrapper {
@@ -3073,3 +3105,14 @@ body {
     }
 }
 </style>
+
+
+
+
+
+
+
+
+
+
+
