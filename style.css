@@ -2447,83 +2447,92 @@ body {
 
 
 
+/* --- GLOBAL VIDEO TOGGLE --- */
+.mobile-only-video { display: none; }
 
-/* --- ABOUT US MOBILE REFINEMENTS --- */
+/* --- MOBILE REFINEMENTS (768px and below) --- */
 @media (max-width: 768px) {
     
-    /* 1. HIDE ALL PROFILE ELEMENTS (Images, Names, Titles, Text) */
-    /* This targets common classes for profile cards and their internal content */
-    .profile-photo, 
-    .team-member,
-    .team-member-card,
-    .leadership-card,
-    .profile-card,
-    .profile-col, /* Targets the column in your grid */
-    .team-grid > div,
-    .leadership-grid > div,
-    .profile-name,  /* Specific name class */
-    .profile-title, /* Specific title class */
-    .profile-text   /* Specific bio/text class */ { 
-        display: none !important; 
+    /* 1. RESTORE STICKY HERO ANIMATION */
+    /* Hero stays fixed while content slides over it */
+    .hero.hero-about {
+        height: 60vh !important; 
+        position: sticky !important;
+        top: 0;
+        z-index: -1;
     }
 
-    /* 2. HIDE LEADERSHIP HEADINGS & INTROS */
-    .leadership-section h2, 
-    .leadership-intro,
-    .team-section-header {
+    /* Pushes the content up to overlap the sticky hero */
+    .magazine-editorial {
+        position: relative;
+        background: white; 
+        z-index: 2;
+        margin-top: 0;
+        padding: 60px 20px;
+    }
+
+    /* 2. HIDE ALL PROFILE ELEMENTS */
+    /* Hides photos, names, titles, and bio text for Julianne and Eleanor */
+    .profile-box, 
+    .label-stack, 
+    .name-label, 
+    .bio-col, 
+    .photo-frame, 
+    .role-tag, 
+    .mini-bio,
+    .leadership-card,
+    .team-member-card,
+    .profile-card,
+    .profile-col {
         display: none !important;
     }
 
-    /* 3. HERO ADJUSTMENTS */
-    .hero.hero-about {
-        height: 40vh; 
-        position: relative; 
-        z-index: 1;
+    /* Center the Vision text since profiles are hidden */
+    .vision-box {
+        width: 100% !important;
+        padding: 0;
+        text-align: center;
+        margin-bottom: 40px;
     }
 
-    .hero.hero-about ~ section {
-        margin-top: 0;
-    }
-
-    /* 4. ADMISSIONS REORGANIZATION */
-    .admissions-container {
+    /* 3. ADMISSIONS & VIDEO FIX (No Squishing) */
+    .admissions-journey .split-view-container {
         display: flex;
         flex-direction: column;
     }
 
-    .admissions-video-wrapper {
-        order: -1; 
-        margin-bottom: 30px;
-        width: 100%;
-    }
-
-    .video-card-container,
-    .right-card {
+    .video-card-container {
+        order: -1; /* Video moves to the top on mobile */
         width: 100% !important;
-        height: 250px !important; 
+        height: auto !important; 
+        aspect-ratio: 16 / 9; /* Maintains perfect horizontal shape */
+        margin-bottom: 30px;
         border-radius: 12px;
         overflow: hidden;
     }
 
-    .video-card-container video,
-    .video-card-container iframe {
+    .video-card-container iframe, 
+    .video-card-container video {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover;
     }
 
-    /* 5. JOURNEY/STEPS ADJUSTMENTS */
+    /* 4. VIDEO SWAP LOGIC */
+    .desktop-only-video { display: none !important; }
+    .mobile-only-video { display: block !important; }
+
+    /* 5. JOURNEY BUTTON & STEPS */
     .journey-steps-container {
         display: none; 
     }
 
     .journey-steps-container.mobile-active {
         display: block;
-        animation: fadeIn 0.5s ease;
     }
 
     .mobile-process-btn {
-        display: block !important; /* Ensure button shows when profiles are hidden */
+        display: block !important;
         width: 100%;
         margin: 20px 0;
         padding: 18px;
@@ -2533,61 +2542,10 @@ body {
         text-transform: uppercase;
         letter-spacing: 2px;
         font-size: 0.8rem;
-        cursor: pointer;
     }
 }
 
-/* Desktop Fix: Ensure mobile button stays hidden on large screens */
+/* Desktop Fix */
 @media (min-width: 769px) {
-    .mobile-process-btn {
-        display: none !important;
-    }
-}
-/* --- ABOUT US MOBILE REFINEMENTS --- */
-@media (max-width: 768px) {
-    
-    /* 1. HIDE ENTIRE PROFILE SECTION CONTENT */
-    /* This targets the containers for Julianne and Eleanor and all their details */
-    .profile-box,
-    .label-stack,
-    .name-label,
-    .bio-col,
-    .photo-frame,
-    .role-tag,
-    .mini-bio {
-        display: none !important;
-    }
-
-    /* 2. OPTIONAL: Adjust spacing of the Vision Box */
-    /* Since the profiles are gone, we center the vision text for a cleaner look */
-    .vision-box {
-        width: 100% !important;
-        padding: 0;
-        text-align: center;
-        margin-bottom: 40px;
-    }
-
-    /* 3. HERO & LAYOUT ADJUSTMENTS */
-    .hero.hero-about {
-        height: 40vh;
-        position: relative;
-        z-index: 1;
-    }
-
-    .hero.hero-about ~ section {
-        margin-top: 0;
-    }
-
-    /* 4. ADMISSIONS JOURNEY MOBILE FIXES */
-    .admissions-journey .split-view-container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .video-card-container {
-        order: -1; /* Puts the video above the steps on mobile */
-        width: 100% !important;
-        height: 250px !important;
-        margin-bottom: 20px;
-    }
+    .mobile-process-btn { display: none !important; }
 }
