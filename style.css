@@ -2916,37 +2916,44 @@ body {
 /* --- THE TIER HOVER LOGIC --- */
 /* We apply the hover to the inner content so it doesn't fight the reveal-up */
 /* --- TIER HOVER & COLOR ENGINE --- */
+/* --- THE FIXED TIER ENGINE --- */
 .tier-v3 { 
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
-    background: #ffffff; /* Default side background */
-    color: #0f172a;      /* Default side text */
+    background: #ffffff; 
     border: 1px solid #e2e8f0;
+    position: relative;
+    z-index: 1;
 }
 
-/* Middle Tier: Dark Blue by default */
+/* MIDDLE TIER: Starts Dark Blue and rests 40px higher */
 .tier-v3.featured {
     background: #0f172a !important;
-    color: #ffffff !important;
-    transform: translateY(-40px); /* Resting higher */
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transform: translateY(-40px); 
 }
 
-/* Hover State: Inverse colors to Dark Blue */
+/* HOVER EFFECT: Background turns Dark Blue */
 .tier-v3:hover { 
     background: #0f172a !important;
-    color: #ffffff !important;
     transform: translateY(-20px); 
     box-shadow: 0 30px 60px rgba(15, 23, 42, 0.2);
     z-index: 10;
 }
 
-/* Hover State for Middle Tier: Stays dark, goes even higher */
+/* HOVER MIDDLE: Stays dark but lifts higher */
 .tier-v3.featured:hover {
     transform: translateY(-60px);
 }
 
-/* Ensure text colors change correctly on hover */
-.tier-v3:hover p, .tier-v3:hover h3 { color: #ffffff !important; }
+/* --- THE COLOR FLIP ENGINE --- */
+/* This forces ALL text inside to turn white when the box is hovered */
+.tier-v3:hover h3, 
+.tier-v3:hover p, 
+.tier-v3:hover span,
+.tier-v3:hover .price-text { 
+    color: #ffffff !important; 
+}
+
+/* Keep the price and labels gold/gray even on hover for that premium look */
+.tier-v3:hover .price-amt { color: #bfa15f !important; }
 .tier-v3:hover .daily-label { color: #94a3b8 !important; }
-.tier-v3:hover .price-text { color: #bfa15f !important; }
