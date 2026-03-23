@@ -2895,3 +2895,29 @@ body {
 .flex-pay-frosted.is-visible img {
     transform: scale(1);
 }
+
+
+
+
+
+/* --- TIER HOVER ENGINE --- */
+.tier-v3 { 
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease; 
+}
+
+/* The Middle Tier (Signature) stays higher by default */
+.tier-v3.featured {
+    transform: translateY(-30px); /* Permanent elevation */
+}
+
+/* Hover State: All tiers (including the middle) press higher */
+.tier-v3:hover { 
+    transform: translateY(-20px) !important; 
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15);
+    z-index: 10;
+}
+
+/* Hover State for Middle Tier: It's already at -30px, so we push it to -50px */
+.tier-v3.featured:hover {
+    transform: translateY(-50px) !important;
+}
