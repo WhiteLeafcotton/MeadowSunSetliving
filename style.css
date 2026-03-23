@@ -2926,13 +2926,40 @@ body {
     z-index: 1;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- THE TIER ENGINE --- */
+.tier-v3 { 
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    background: #ffffff !important; /* Force side tiers white */
+    border: 1px solid #e2e8f0;
+    position: relative;
+    z-index: 1;
+}
+
 /* MIDDLE TIER: Starts Dark Blue and rests 40px higher */
 .tier-v3.featured {
     background: #0f172a !important;
     transform: translateY(-40px); 
 }
 
-/* HOVER EFFECT: Background turns Dark Blue */
+/* HOVER: Background turns Dark Blue */
 .tier-v3:hover { 
     background: #0f172a !important;
     transform: translateY(-20px); 
@@ -2946,14 +2973,12 @@ body {
 }
 
 /* --- THE COLOR FLIP ENGINE --- */
-/* This forces ALL text inside to turn white when the box is hovered */
+/* This forces the text to turn white when the parent .tier-v3 is hovered */
 .tier-v3:hover h3, 
 .tier-v3:hover p, 
-.tier-v3:hover span,
 .tier-v3:hover .price-text { 
     color: #ffffff !important; 
 }
 
-/* Keep the price and labels gold/gray even on hover for that premium look */
-.tier-v3:hover .price-amt { color: #bfa15f !important; }
+/* Keep the labels gold/gray even on hover */
 .tier-v3:hover .daily-label { color: #94a3b8 !important; }
