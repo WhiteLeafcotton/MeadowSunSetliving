@@ -184,105 +184,9 @@
 
 
 
-<style>
-/* --- DESKTOP REMAINS UNTOUCHED --- */
-#community-care-section {
-    padding: 80px 5%;
-    background: #0f172a;
-    color: white;
-    position: relative;
-    overflow: hidden;
-}
-.cc-swipe-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 60px;
-}
-.cc-branding-slide { flex: 1; }
-.cc-card-slide { flex: 1.2; }
 
-/* --- MOBILE "EDITORIAL STRIP" FIX --- */
-@media (max-width: 768px) {
-    #community-care-section {
-        padding: 0 !important;
-        height: 450px; /* Restored your preferred thickness */
-    }
 
-    .cc-swipe-container {
-        display: flex !important;
-        flex-direction: row !important;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 0 !important;
-        height: 100%;
-        max-width: none;
-        scrollbar-width: none;
-    }
-    .cc-swipe-container::-webkit-scrollbar { display: none; }
 
-    /* Slide Containers */
-    .cc-branding-slide, .cc-card-slide {
-        min-width: 100vw; /* Exactly one screen wide */
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        scroll-snap-align: center;
-        flex: none !important;
-        background: #0f172a;
-        box-sizing: border-box;
-    }
-
-    /* Branding Alignment */
-    .cc-content-limiter { 
-        width: 100%;
-        padding: 0 40px; 
-        text-align: left;
-    }
-
-    /* THE FIX: Compact Frosted Card */
-    .cc-frosted-card {
-        width: 85% !important; /* Constrains the card so it doesn't stretch */
-        max-width: 320px; /* Prevents it from getting too wide on larger phones */
-        padding: 25px !important;
-        margin: 0 auto; /* Centers it in the second slide */
-        background: rgba(255, 255, 255, 0.05) !important;
-        box-sizing: border-box;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-    }
-
-    .cc-quote { 
-        font-size: 1.15rem !important; 
-        line-height: 1.3 !important;
-        margin-bottom: 15px !important;
-    }
-    
-    .cc-details { 
-        font-size: 0.75rem !important; 
-        line-height: 1.5 !important;
-        margin-bottom: 20px !important;
-    }
-
-    .cc-footer {
-        flex-direction: row !important;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px !important;
-    }
-
-    .cc-swipe-hint {
-        display: block;
-        margin-top: 20px;
-        font-size: 0.6rem;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        color: #bfa15f;
-    }
-}
-</style>
 
 <section class="insurance-brand-strip reveal-up" id="community-care-section">
     <div class="cc-swipe-container">
@@ -308,6 +212,112 @@
 
     </div>
 </section>
+
+<style>
+/* ============================================================
+   1. DESKTOP VIEW (Your Original "Magazine" Layout)
+   ============================================================ */
+#community-care-section {
+    padding: 80px 5%;
+    background: #0f172a;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.cc-swipe-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex; /* Side-by-side on desktop */
+    align-items: center;
+    gap: 60px;
+}
+
+.cc-branding-slide { flex: 1; }
+.cc-card-slide { flex: 1.2; }
+
+.cc-eyebrow { color: #bfa15f; letter-spacing: 8px; text-transform: uppercase; font-size: 0.7rem; font-family: 'Inter'; font-weight: 800; display: block; }
+.cc-main-title { font-family: 'Playfair Display'; font-size: 5rem; line-height: 0.8; margin: 20px 0; color: #fff; }
+.italic-gold { font-style: italic; font-weight: 400; color: #bfa15f; }
+
+.cc-frosted-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 50px; /* Big padding for desktop */
+}
+
+.cc-quote { font-family: 'Cormorant Garamond'; font-style: italic; font-size: 1.6rem; color: #fff; margin-bottom: 25px; }
+.cc-details { font-family: 'Inter'; font-size: 0.95rem; line-height: 1.8; color: #94a3b8; margin-bottom: 30px; }
+.cc-footer { display: flex; align-items: center; gap: 40px; }
+.cc-link { color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; border-bottom: 1px solid #bfa15f; padding-bottom: 5px; }
+.cc-id { font-size: 0.7rem; color: #475569; text-transform: uppercase; }
+
+.cc-swipe-hint { display: none; } /* Hidden on Desktop */
+
+
+/* ============================================================
+   2. MOBILE VIEW (The Horizontal Strip + Compact Card)
+   ============================================================ */
+@media (max-width: 768px) {
+    #community-care-section {
+        padding: 0 !important; /* Removes desktop padding */
+        height: 450px !important; /* The thick blue strip */
+    }
+
+    .cc-swipe-container {
+        display: flex !important;
+        flex-direction: row !important; /* Forces side-by-side swipe */
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 0 !important;
+        height: 100%;
+        max-width: none;
+        scrollbar-width: none;
+    }
+    .cc-swipe-container::-webkit-scrollbar { display: none; }
+
+    /* Each slide takes exactly one screen width */
+    .cc-branding-slide, .cc-card-slide {
+        min-width: 100vw !important;
+        height: 100%;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        scroll-snap-align: center;
+        flex: none !important;
+        padding: 0 40px;
+        box-sizing: border-box;
+    }
+
+    /* Mobile Text Sizes */
+    .cc-main-title { font-size: 3.5rem !important; }
+
+    /* The Fix: Compact, Non-stretched card */
+    .cc-frosted-card {
+        padding: 25px !important;
+        width: 85% !important; /* Contained card */
+        max-width: 320px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.05) !important;
+    }
+
+    .cc-quote { font-size: 1.2rem !important; line-height: 1.3 !important; }
+    .cc-details { font-size: 0.75rem !important; margin-bottom: 15px !important; }
+    
+    .cc-swipe-hint {
+        display: block;
+        margin-top: 20px;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #bfa15f;
+    }
+}
+</style>
+
+        
 
 
 
