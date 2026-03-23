@@ -2982,3 +2982,31 @@ body {
 
 /* Keep the labels gold/gray even on hover */
 .tier-v3:hover .daily-label { color: #94a3b8 !important; }
+
+
+
+
+
+
+
+/* --- ARCHITECTURAL ACCENT --- */
+.top-right-accent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35%; /* Adjust this to make the line longer or shorter */
+    height: 1px;
+    background: #0f172a; /* Match your Dark Blue */
+    opacity: 0.2; /* Subtle, so it doesn't distract from the text */
+}
+
+/* Optional: Add a small vertical tick at the end for a "blueprints" look */
+.top-right-accent::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: 40px;
+    background: #0f172a;
+}
