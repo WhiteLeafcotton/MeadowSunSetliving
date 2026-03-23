@@ -2481,3 +2481,81 @@ body {
     font-size: 0.7rem;
     cursor: pointer;
 }
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    /* 1. Hero Adjustments */
+    .hero-about h1 {
+        font-size: 2.2rem; /* Smaller for mobile headers */
+        line-height: 1.2;
+    }
+
+    /* 2. Magazine Editorial Layout */
+    .editorial-wrapper {
+        padding: 0 15px; /* Tighter padding for small screens */
+    }
+
+    .editorial-row {
+        flex-direction: column; /* Stack vertically */
+        gap: 3rem;
+        margin-bottom: 5rem;
+    }
+
+    /* 3. The "Compact" Staggered Look */
+    .vision-box {
+        width: 100%;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .profile-box {
+        width: 100%;
+        max-width: 100%; /* Ensure it doesn't overflow */
+    }
+
+    /* Offset the images slightly to keep the "Editorial" vibe */
+    .julianne {
+        padding-left: 10%; /* Pushes image slightly right */
+    }
+
+    .eleanor {
+        padding-right: 10%; /* Pushes image slightly left */
+    }
+
+    .photo-frame img {
+        height: 400px; /* Shorter height for mobile comfort */
+        border-radius: 4px; /* Subtle high-end touch */
+    }
+
+    /* 4. Directory (The Scroller) */
+    .dir-track {
+        gap: 15px;
+        padding-bottom: 20px;
+    }
+
+    .dir-item {
+        min-width: 260px; /* Standardizes size for swiping */
+        padding: 20px;
+    }
+
+    /* 5. Admissions Journey */
+    .split-view-container {
+        display: flex;
+        flex-direction: column; /* Video goes below text on mobile */
+    }
+
+    .step-number-large {
+        font-size: 2.5rem; /* Scale down the giant numbers */
+    }
+    
+    .video-card-container {
+        height: 300px; /* Prevents the video from taking too much vertical space */
+        margin-top: 2rem;
+    }
+}
