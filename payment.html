@@ -201,11 +201,11 @@
 
         <div class="cc-card-slide">
             <div class="cc-frosted-card">
-                <div class="quote-wrapper" style="min-height: 80px; display: flex; align-items: center;">
+                <div class="quote-wrapper" style="min-height: 45px; display: flex; align-items: center;">
                     <p class="cc-quote">"We navigate coverage, so you focus on the moments."</p>
                 </div>
                 
-                <p class="cc-details">Authorized provider with direct-liaison service. We work directly with insurance coordinators.</p>
+                <p class="cc-details">Authorized provider with direct-liaison service.</p>
                 
                 <div class="cc-footer">
                     <a href="tel:YOUR-NUMBER" class="cc-link">Eligibility</a>
@@ -218,7 +218,7 @@
 </section>
 
 <style>
-/* --- 1. DESKTOP VIEW (Original) --- */
+/* --- 1. DESKTOP VIEW (Original - No Changes) --- */
 #community-care-section {
     padding: 80px 5%;
     background: #0f172a;
@@ -251,18 +251,18 @@
     font-style: italic; 
     font-size: 1.6rem; 
     color: #fff; 
-    transition: opacity 0.4s ease-in-out; /* Faster, crisper transition */
+    transition: opacity 0.4s ease-in-out; 
 }
 .cc-details { font-family: 'Inter'; font-size: 0.85rem; line-height: 1.6; color: #94a3b8; margin-top: 20px; }
 .cc-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 25px; }
 .cc-link { color: #fff; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; border-bottom: 1px solid #bfa15f; padding-bottom: 5px; }
 .cc-id { font-size: 0.65rem; color: #475569; text-transform: uppercase; }
 
-/* --- 2. MOBILE VIEW (Thinner Strip & Card) --- */
+/* --- 2. MOBILE VIEW (Ultra-Thin Ribbon) --- */
 @media (max-width: 768px) {
     #community-care-section {
         padding: 0 !important; 
-        height: 380px !important; /* Thinner Mobile Strip */
+        height: 280px !important; /* The new thin ribbon height */
     }
     .cc-swipe-container {
         display: flex !important;
@@ -282,18 +282,20 @@
         scroll-snap-align: center;
         flex: none !important;
     }
-    .cc-main-title { font-size: 3.2rem !important; }
+    .cc-main-title { font-size: 2.8rem !important; margin: 10px 0 !important; }
+    .cc-eyebrow { font-size: 0.55rem !important; letter-spacing: 4px !important; }
     
     .cc-frosted-card {
-        padding: 20px !important;
-        width: 75% !important; /* Even thinner card */
+        padding: 15px 20px !important; /* Ultra-tight padding */
+        width: 80% !important; 
         max-width: 280px;
         background: rgba(255, 255, 255, 0.05) !important;
     }
-    .quote-wrapper { min-height: 60px !important; }
-    .cc-quote { font-size: 1.1rem !important; line-height: 1.2 !important; }
-    .cc-details { font-size: 0.7rem !important; margin-top: 10px !important; }
-    .cc-swipe-hint { display: block; margin-top: 15px; font-size: 0.55rem; color: #bfa15f; letter-spacing: 2px; }
+    .quote-wrapper { min-height: 45px !important; }
+    .cc-quote { font-size: 1rem !important; line-height: 1.2 !important; }
+    .cc-details { font-size: 0.65rem !important; margin-top: 8px !important; line-height: 1.3 !important; }
+    .cc-footer { margin-top: 12px !important; }
+    .cc-swipe-hint { display: block; margin-top: 10px; font-size: 0.5rem; color: #bfa15f; letter-spacing: 2px; }
 }
 </style>
 
@@ -308,16 +310,16 @@
         const el = document.querySelector('.cc-quote');
 
         setInterval(() => {
+            if(!el) return;
             el.style.opacity = 0;
             setTimeout(() => {
                 i = (i + 1) % quotes.length;
                 el.textContent = quotes[i];
                 el.style.opacity = 1;
-            }, 450); // Sharp, quick timing
+            }, 450); 
         }, 4000);
     });
 </script>
-
 
 
 
