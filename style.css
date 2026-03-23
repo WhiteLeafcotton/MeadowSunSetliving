@@ -2449,74 +2449,55 @@ body {
 
 
 @media (max-width: 768px) {
-    /* 1. Hero & Base Layout */
+    /* 1. Header & Vision Text (Readable & Regular) */
     .hero-about h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
+        line-height: 1.2;
     }
 
     .magazine-editorial {
-        padding: 40px 20px;
+        padding: 60px 20px;
     }
 
-    /* Use Grid to force the order: Text FIRST, then Photos */
-    .editorial-wrapper {
-        display: grid !important;
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-
-    /* 2. VISION TEXT: Large, readable, and full width */
     .vision-box {
-        grid-row: 1; /* Ensures text is always at the top */
         width: 100% !important;
-        margin-bottom: 2.5rem;
         text-align: left;
+        margin-bottom: 2rem;
     }
 
     .magazine-para {
-        font-size: 1.15rem !important; /* Prominent size for clarity */
+        font-size: 1rem !important; /* Regular readable size */
         line-height: 1.7;
         color: #333;
     }
 
-    /* 3. STAGGERED PHOTOS: Vertical rectangles appearing after text */
+    /* 2. The Diagonal Layout Container */
     .editorial-row {
-        grid-row: 2; /* Photos drop below the vision box */
-        display: grid !important;
-        grid-template-columns: 1fr 1fr; /* Two-column stagger */
-        gap: 15px;
-        align-items: flex-start;
-        height: auto !important;
+        position: relative;
+        display: block !important; /* Required for diagonal absolute positioning */
+        width: 100%;
+        height: 380px; /* Gives the photos room to stagger vertically */
         margin-bottom: 4rem;
-        padding-top: 10px;
+        overflow: visible; /* Allows the lower photo to exist below the row boundary */
     }
 
+    /* 3. Base Profile Box (Small 'Verbal' Rectangles) */
     .profile-box {
-        position: relative !important;
-        width: 100% !important;
+        position: absolute !important;
+        width: 140px !important; /* Small footprint */
         display: flex !important;
         flex-direction: column;
         align-items: center;
-    }
-
-    /* Julianne: Left Column */
-    .julianne {
-        grid-column: 1;
-    }
-
-    /* Eleanor: Right Column + Staggered Downward */
-    .eleanor {
-        grid-column: 2;
-        margin-top: 70px !important; /* Increased offset for that diagonal feel */
+        text-align: center;
     }
 
     .photo-frame {
-        width: 125px !important; /* Narrower width */
-        height: 200px !important; /* Taller height for 'Verbal Rectangle' look */
+        width: 100% !important;
+        height: 190px !important; /* Taller 'verbal' portrait shape */
         border: 4px solid #fff;
-        box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         border-radius: 2px;
+        overflow: hidden;
     }
 
     .photo-frame img {
@@ -2525,36 +2506,55 @@ body {
         object-fit: cover !important;
     }
 
-    /* 4. Labels */
+    /* 4. The Diagonal Placement */
+    
+    /* Julianne: Top Right */
+    .julianne {
+        top: 0;
+        right: 0;
+        z-index: 2;
+    }
+
+    /* Eleanor: Lowered & Offset Left (Diagonal) */
+    .eleanor {
+        top: 150px; /* Offset downward */
+        left: 0;   /* Offset to the other side */
+        z-index: 1;
+        /* Use transform instead of left/right for better off-screen containment */
+        transform: translateX(20px); 
+    }
+
+    /* 5. Fixed Labels (Kept Compact & In-bounds) */
     .label-stack {
-        text-align: center;
-        margin-top: 12px;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
+        margin-top: 10px;
+        position: relative !important; /* Required to keep text inside the screen */
+        bottom: 0 !important;
     }
 
     .name-label {
-        font-size: 0.95rem !important;
-        line-height: 1.2;
-        font-weight: 600;
+        font-size: 0.9rem !important;
+        line-height: 1.1;
+        color: #0a1128;
     }
 
     .mini-bio {
-        display: none; /* Keeps mobile layout clean and focused on the photos */
+        display: none; /* Hide mini-bio on mobile to focus on the diagonal effect */
     }
 
-    /* 5. Functional Cleanup */
+    /* 6. Functional UI Cleanup */
     .dir-track {
         gap: 15px;
-        padding-bottom: 20px;
     }
 
     .dir-item {
-        min-width: 220px;
-        padding: 15px;
+        min-width: 240px;
     }
 
-    .split-view-container {
-        display: flex;
-        flex-direction: column;
+    .video-card-container {
+        height: 250px;
     }
 }
