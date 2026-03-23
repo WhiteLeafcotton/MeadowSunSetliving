@@ -195,7 +195,6 @@
             <div class="cc-content-limiter">
                 <span class="cc-eyebrow">Certified Partner</span>
                 <h1 class="cc-main-title">Community <br> <span class="italic-gold">Care.</span></h1>
-                <p class="cc-branding-sub">Direct Liaison Stewardship & Insurance Coordination.</p>
                 <div class="cc-swipe-hint">Details <i class="fa-solid fa-arrow-right"></i></div>
             </div>
         </div>
@@ -205,9 +204,7 @@
                 <div class="quote-wrapper">
                     <p class="cc-quote">"We navigate coverage, so you focus on the moments."</p>
                 </div>
-                
-                <p class="cc-details">Authorized provider with direct-liaison service. We manage the clinical-insurance interface with absolute precision.</p>
-                
+                <p class="cc-details">Direct-liaison stewardship and insurance coordination.</p>
                 <div class="cc-footer">
                     <a href="tel:YOUR-NUMBER" class="cc-link">Verify Eligibility</a>
                     <span class="cc-id">CC-8829-X</span>
@@ -219,15 +216,14 @@
 </section>
 
 <style>
-/* --- 1. DESKTOP VIEW (Locked 80px Padding) --- */
+/* --- 1. WEB VIEW (LOCKED - PERFECT) --- */
 #community-care-section {
-    padding: 80px 5%; /* BACK TO ORIGINAL THICKNESS */
+    padding: 80px 5%; 
     background: #0f172a;
     color: white;
     position: relative;
     overflow: hidden;
 }
-
 .cc-swipe-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -235,11 +231,9 @@
     align-items: center;
     gap: 40px;
 }
-
 .cc-branding-slide { flex: 1.2; }
 .cc-card-slide { flex: 1; }
 
-/* Elite Branding Style */
 .cc-eyebrow { 
     color: #bfa15f; 
     letter-spacing: 12px; 
@@ -248,27 +242,17 @@
     font-family: 'Inter'; 
     font-weight: 800; 
     display: block;
-    margin-bottom: -10px;
 }
 .cc-main-title { 
     font-family: 'Playfair Display'; 
-    font-size: 7rem; /* MASSIVE EDITORIAL SIZE */
+    font-size: 7rem; 
     line-height: 0.75; 
     margin: 20px 0; 
     color: #fff; 
     letter-spacing: -4px;
 }
 .italic-gold { font-style: italic; font-weight: 400; color: #bfa15f; }
-.cc-branding-sub {
-    font-family: 'Inter';
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    color: #475569;
-    margin-top: 10px;
-}
 
-/* Frosted Card */
 .cc-frosted-card {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px);
@@ -283,11 +267,11 @@
 .cc-id { font-size: 0.65rem; color: #475569; text-transform: uppercase; }
 .cc-swipe-hint { display: none; } 
 
-/* --- 2. MOBILE VIEW (Locked 450px Height) --- */
+/* --- 2. MOBILE VIEW (THIN RIBBON & HUGE TEXT) --- */
 @media (max-width: 768px) {
     #community-care-section {
         padding: 0 !important; 
-        height: 450px !important; /* BACK TO YOUR PERFECT THICKNESS */
+        height: 260px !important; /* ULTRA-THIN RIBBON */
     }
     .cc-swipe-container {
         display: flex !important;
@@ -309,22 +293,40 @@
         flex: none !important;
     }
 
-    .cc-content-limiter { padding: 0 40px; }
-    .cc-main-title { font-size: 4rem !important; }
-    .cc-eyebrow { font-size: 0.6rem !important; letter-spacing: 8px !important; }
-    .cc-branding-sub { font-size: 0.6rem !important; letter-spacing: 2px !important; }
+    .cc-content-limiter { 
+        padding: 0 30px; 
+        width: 100%; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center;
+    }
+
+    /* Scaling title to fill the thin height */
+    .cc-main-title { 
+        font-size: 3.4rem !important; 
+        margin: 5px 0 !important; 
+        letter-spacing: -2px !important;
+        line-height: 0.8 !important;
+    }
+    .cc-eyebrow { 
+        font-size: 0.55rem !important; 
+        letter-spacing: 6px !important; 
+        margin-bottom: 0 !important;
+    }
 
     .cc-frosted-card {
-        padding: 30px !important;
+        padding: 15px 20px !important;
         width: 85% !important; 
-        height: 80% !important; /* Larger card to fill the 450px space */
+        height: 80% !important; /* Fits perfectly inside the 260px ribbon */
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-    .cc-quote { font-size: 1.3rem !important; }
-    .cc-details { font-size: 0.75rem !important; }
-    .cc-swipe-hint { display: block; margin-top: 20px; font-size: 0.6rem; color: #bfa15f; text-transform: uppercase; letter-spacing: 3px; }
+    .quote-wrapper { min-height: 40px !important; }
+    .cc-quote { font-size: 1rem !important; }
+    .cc-details { font-size: 0.65rem !important; margin-top: 5px !important; padding-top: 5px !important; border-top: 1px solid rgba(255,255,255,0.1); }
+    .cc-footer { margin-top: 10px !important; }
+    .cc-swipe-hint { display: block; margin-top: 10px; font-size: 0.5rem; color: #bfa15f; }
 }
 </style>
 
@@ -332,12 +334,11 @@
     document.addEventListener('DOMContentLoaded', () => {
         const quotes = [
             `"We navigate coverage, so you focus on the moments."`,
-            `"Clinical stewardship meets insurance-liaison excellence."`,
+            `"Clinical stewardship meets insurance excellence."`,
             `"Transparent fiscal management for your peace of mind."`
         ];
         let i = 0;
         const el = document.querySelector('.cc-quote');
-
         setInterval(() => {
             if(!el) return;
             el.style.opacity = 0;
@@ -345,8 +346,8 @@
                 i = (i + 1) % quotes.length;
                 el.textContent = quotes[i];
                 el.style.opacity = 1;
-            }, 450); 
-        }, 5000);
+            }, 400); 
+        }, 4500);
     });
 </script>
 
