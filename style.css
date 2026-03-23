@@ -2443,6 +2443,37 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+/* GIVES THE VISION PARAGRAPH BREATHING ROOM */
+.vision-box {
+    padding-top: 40px; /* Adjust this to push the whole box down */
+    display: flex;
+    flex-direction: column;
+}
+
+.header-accent-line {
+    margin-bottom: 25px; /* Creates space between the blue bar and the paragraph */
+    height: 2px;
+    background-color: #003366; /* Ensuring your brand blue is visible */
+    width: 60px; /* Adjust based on your preferred line width */
+}
+
+.magazine-para {
+    line-height: 1.8; /* Makes the text easier to read */
+    margin-top: 10px;
+}
+
+
+
+
 /* --- FIX DESKTOP VIDEO SIZE --- */
 .iframe-viewport {
     width: 100%;
