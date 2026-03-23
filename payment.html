@@ -201,15 +201,15 @@
 
         <div class="cc-card-slide">
             <div class="cc-frosted-card">
-                <div class="quote-wrapper" style="min-height: 45px; display: flex; align-items: center;">
+                <div class="quote-wrapper">
                     <p class="cc-quote">"We navigate coverage, so you focus on the moments."</p>
                 </div>
                 
-                <p class="cc-details">Authorized provider with direct-liaison service.</p>
+                <p class="cc-details">Direct-liaison stewardship. We manage the clinical-insurance interface with absolute precision.</p>
                 
                 <div class="cc-footer">
-                    <a href="tel:YOUR-NUMBER" class="cc-link">Eligibility</a>
-                    <span class="cc-id">CC-8829-X</span>
+                    <a href="tel:YOUR-NUMBER" class="cc-link">Verify Eligibility</a>
+                    <span class="cc-id">Signature Provider — CC-8829-X</span>
                 </div>
             </div>
         </div>
@@ -218,7 +218,7 @@
 </section>
 
 <style>
-/* --- 1. DESKTOP VIEW (Original - No Changes) --- */
+/* --- 1. DESKTOP VIEW (Original Thickness - Elite Typography) --- */
 #community-care-section {
     padding: 80px 5%;
     background: #0f172a;
@@ -231,38 +231,56 @@
     margin: 0 auto;
     display: flex; 
     align-items: center;
-    gap: 60px;
+    gap: 80px;
 }
 .cc-branding-slide { flex: 1; }
-.cc-card-slide { flex: 1.2; }
-.cc-eyebrow { color: #bfa15f; letter-spacing: 8px; text-transform: uppercase; font-size: 0.7rem; font-family: 'Inter'; font-weight: 800; display: block; }
-.cc-main-title { font-family: 'Playfair Display'; font-size: 5rem; line-height: 0.8; margin: 20px 0; color: #fff; }
+.cc-card-slide { flex: 1.3; }
+
+.cc-eyebrow { color: #bfa15f; letter-spacing: 8px; text-transform: uppercase; font-size: 0.65rem; font-family: 'Inter'; font-weight: 800; display: block; }
+.cc-main-title { font-family: 'Playfair Display'; font-size: 5.5rem; line-height: 0.8; margin: 25px 0; color: #fff; letter-spacing: -2px; }
 .italic-gold { font-style: italic; font-weight: 400; color: #bfa15f; }
 
+/* Expanded Desktop Card */
 .cc-frosted-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 50px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 60px; /* Large padding for Elite feel */
+    width: 100%;
 }
+
 .cc-quote { 
     font-family: 'Cormorant Garamond'; 
     font-style: italic; 
-    font-size: 1.6rem; 
+    font-size: 1.8rem; 
     color: #fff; 
-    transition: opacity 0.4s ease-in-out; 
+    transition: opacity 0.4s ease-in-out;
+    margin: 0;
 }
-.cc-details { font-family: 'Inter'; font-size: 0.85rem; line-height: 1.6; color: #94a3b8; margin-top: 20px; }
-.cc-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 25px; }
-.cc-link { color: #fff; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; border-bottom: 1px solid #bfa15f; padding-bottom: 5px; }
-.cc-id { font-size: 0.65rem; color: #475569; text-transform: uppercase; }
+.quote-wrapper { min-height: 80px; display: flex; align-items: center; }
 
-/* --- 2. MOBILE VIEW (Ultra-Thin Ribbon) --- */
+.cc-details { 
+    font-family: 'Inter'; 
+    font-size: 0.85rem; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    line-height: 2; 
+    color: #94a3b8; 
+    margin-top: 30px; 
+    border-top: 1px solid rgba(191, 161, 95, 0.3);
+    padding-top: 30px;
+}
+
+.cc-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 40px; }
+.cc-link { color: #fff; text-decoration: none; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; border-bottom: 1px solid #bfa15f; padding-bottom: 5px; font-weight: 700; }
+.cc-id { font-size: 0.6rem; color: #475569; text-transform: uppercase; letter-spacing: 1px; }
+
+/* --- 2. MOBILE VIEW (Thin Ribbon - Full Height Card) --- */
 @media (max-width: 768px) {
     #community-care-section {
         padding: 0 !important; 
-        height: 280px !important; /* The new thin ribbon height */
+        height: 280px !important; /* Kept your perfect thin height */
     }
     .cc-swipe-container {
         display: flex !important;
@@ -273,6 +291,7 @@
         scrollbar-width: none;
     }
     .cc-swipe-container::-webkit-scrollbar { display: none; }
+    
     .cc-branding-slide, .cc-card-slide {
         min-width: 100vw !important;
         height: 100%;
@@ -282,20 +301,30 @@
         scroll-snap-align: center;
         flex: none !important;
     }
-    .cc-main-title { font-size: 2.8rem !important; margin: 10px 0 !important; }
-    .cc-eyebrow { font-size: 0.55rem !important; letter-spacing: 4px !important; }
-    
+
+    /* Mobile Card expanded to nearly match the strip height */
     .cc-frosted-card {
-        padding: 15px 20px !important; /* Ultra-tight padding */
-        width: 80% !important; 
-        max-width: 280px;
+        padding: 20px 25px !important;
+        width: 85% !important; 
+        height: 85% !important; /* Expanded to fill the blue strip height */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         background: rgba(255, 255, 255, 0.05) !important;
     }
-    .quote-wrapper { min-height: 45px !important; }
-    .cc-quote { font-size: 1rem !important; line-height: 1.2 !important; }
-    .cc-details { font-size: 0.65rem !important; margin-top: 8px !important; line-height: 1.3 !important; }
-    .cc-footer { margin-top: 12px !important; }
-    .cc-swipe-hint { display: block; margin-top: 10px; font-size: 0.5rem; color: #bfa15f; letter-spacing: 2px; }
+
+    .cc-main-title { font-size: 2.8rem !important; }
+    .quote-wrapper { min-height: 50px !important; }
+    .cc-quote { font-size: 1.1rem !important; line-height: 1.2 !important; }
+    
+    .cc-details { 
+        font-size: 0.6rem !important; 
+        margin-top: 10px !important; 
+        padding-top: 10px !important;
+        letter-spacing: 1px !important; 
+    }
+    .cc-footer { margin-top: 15px !important; }
+    .cc-swipe-hint { display: block; margin-top: 10px; font-size: 0.5rem; color: #bfa15f; }
 }
 </style>
 
@@ -303,8 +332,8 @@
     document.addEventListener('DOMContentLoaded', () => {
         const quotes = [
             `"We navigate coverage, so you focus on the moments."`,
-            `"Direct coordination with clinical directors and insurance."`,
-            `"Transparent stewardship for your peace of mind."`
+            `"Clinical stewardship meets insurance-liaison excellence."`,
+            `"Transparent fiscal management for your peace of mind."`
         ];
         let i = 0;
         const el = document.querySelector('.cc-quote');
@@ -317,10 +346,9 @@
                 el.textContent = quotes[i];
                 el.style.opacity = 1;
             }, 450); 
-        }, 4000);
+        }, 4500);
     });
 </script>
-
 
 
 
