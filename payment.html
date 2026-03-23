@@ -189,14 +189,19 @@
 
 
 <section class="insurance-brand-strip reveal-up" id="community-care-section">
+    <div class="cc-watermark-web cc-desktop-only">SM // LIAISON</div>
+    
     <div class="cc-swipe-container">
         
         <div class="cc-branding-slide">
             <div class="cc-content-limiter">
                 <span class="cc-eyebrow">Certified Partner</span>
                 <h1 class="cc-main-title">Community <br> <span class="italic-gold">Care.</span></h1>
+                
                 <div class="cc-swipe-hint">Details <i class="fa-solid fa-arrow-right"></i></div>
             </div>
+            
+            <div class="cc-watermark-mobile cc-mobile-only">SM // LIAISON</div>
         </div>
 
         <div class="cc-card-slide">
@@ -216,41 +221,45 @@
 </section>
 
 <style>
-/* --- 1. WEB VIEW (LOCKED - PERFECT) --- */
+/* --- 1. WEB VIEW (LOCKED 80px PADDING - PERFECT) --- */
 #community-care-section {
-    padding: 80px 5%; 
+    padding: 80px 5%; /* NO CHANGES TO THICKNESS */
     background: #0f172a;
     color: white;
     position: relative;
     overflow: hidden;
 }
+
+/* Web Watermark (Top Left) */
+.cc-watermark-web {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    font-family: 'Inter';
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #bfa15f;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 10;
+}
+
 .cc-swipe-container {
     max-width: 1400px;
     margin: 0 auto;
     display: flex; 
     align-items: center;
     gap: 40px;
+    position: relative;
+    z-index: 5;
 }
 .cc-branding-slide { flex: 1.2; }
 .cc-card-slide { flex: 1; }
 
-.cc-eyebrow { 
-    color: #bfa15f; 
-    letter-spacing: 12px; 
-    text-transform: uppercase; 
-    font-size: 0.8rem; 
-    font-family: 'Inter'; 
-    font-weight: 800; 
-    display: block;
-}
-.cc-main-title { 
-    font-family: 'Playfair Display'; 
-    font-size: 7rem; 
-    line-height: 0.75; 
-    margin: 20px 0; 
-    color: #fff; 
-    letter-spacing: -4px;
-}
+.cc-eyebrow { color: #bfa15f; letter-spacing: 12px; text-transform: uppercase; font-size: 0.8rem; font-family: 'Inter'; font-weight: 800; display: block; }
+.cc-main-title { font-family: 'Playfair Display'; font-size: 7rem; line-height: 0.75; margin: 20px 0; color: #fff; letter-spacing: -4px; }
 .italic-gold { font-style: italic; font-weight: 400; color: #bfa15f; }
 
 .cc-frosted-card {
@@ -265,14 +274,23 @@
 .cc-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 40px; }
 .cc-link { color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; border-bottom: 1px solid #bfa15f; padding-bottom: 5px; }
 .cc-id { font-size: 0.65rem; color: #475569; text-transform: uppercase; }
+
+/* Desktop-only/Mobile-only utility classes */
+.cc-desktop-only { display: block; }
+.cc-mobile-only { display: none; }
 .cc-swipe-hint { display: none; } 
 
-/* --- 2. MOBILE VIEW (THIN RIBBON & HUGE TEXT) --- */
+/* --- 2. MOBILE VIEW (LOCKED 260px ULTRA-THIN RIBBON) --- */
 @media (max-width: 768px) {
     #community-care-section {
         padding: 0 !important; 
-        height: 260px !important; /* ULTRA-THIN RIBBON */
+        height: 260px !important; /* NO CHANGES TO THICKNESS */
     }
+
+    /* Toggle visibility classes */
+    .cc-desktop-only { display: none !important; }
+    .cc-mobile-only { display: block !important; }
+
     .cc-swipe-container {
         display: flex !important;
         flex-direction: row !important;
@@ -283,7 +301,17 @@
     }
     .cc-swipe-container::-webkit-scrollbar { display: none; }
     
-    .cc-branding-slide, .cc-card-slide {
+    .cc-branding-slide {
+        min-width: 100vw !important;
+        height: 100%;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        scroll-snap-align: center;
+        flex: none !important;
+        position: relative; /* Needed for the mobile watermark on BLUE CARD */
+    }
+    .cc-card-slide {
         min-width: 100vw !important;
         height: 100%;
         display: flex !important;
@@ -293,15 +321,9 @@
         flex: none !important;
     }
 
-    .cc-content-limiter { 
-        padding: 0 30px; 
-        width: 100%; 
-        display: flex; 
-        flex-direction: column; 
-        justify-content: center;
-    }
+    .cc-content-limiter { padding: 0 30px; }
 
-    /* Scaling title to fill the thin height */
+    /* Scaling huge text to fill the 260px strip vertically */
     .cc-main-title { 
         font-size: 3.4rem !important; 
         margin: 5px 0 !important; 
@@ -311,13 +333,12 @@
     .cc-eyebrow { 
         font-size: 0.55rem !important; 
         letter-spacing: 6px !important; 
-        margin-bottom: 0 !important;
     }
 
     .cc-frosted-card {
-        padding: 15px 20px !important;
+        padding: 15px 20px !important; /* Untouched compact padding */
         width: 85% !important; 
-        height: 80% !important; /* Fits perfectly inside the 260px ribbon */
+        height: 80% !important; /* Perfectly sized inside the 260px strip */
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -326,7 +347,23 @@
     .cc-quote { font-size: 1rem !important; }
     .cc-details { font-size: 0.65rem !important; margin-top: 5px !important; padding-top: 5px !important; border-top: 1px solid rgba(255,255,255,0.1); }
     .cc-footer { margin-top: 10px !important; }
+    
     .cc-swipe-hint { display: block; margin-top: 10px; font-size: 0.5rem; color: #bfa15f; }
+
+    /* Mobile Watermark (Bottom Right of BLUE CARD) */
+    .cc-watermark-mobile {
+        position: absolute;
+        bottom: 10px;
+        right: 15px;
+        font-family: 'Inter';
+        font-size: 0.45rem;
+        font-weight: 700;
+        color: #bfa15f;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        opacity: 0.2;
+        pointer-events: none;
+    }
 }
 </style>
 
