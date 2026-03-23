@@ -2901,23 +2901,40 @@ body {
 
 
 /* --- TIER HOVER ENGINE --- */
+/* --- HIGH-END ANIMATION ENGINE --- */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.is-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* --- THE TIER HOVER LOGIC --- */
+/* We apply the hover to the inner content so it doesn't fight the reveal-up */
 .tier-v3 { 
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease; 
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
 }
 
-/* The Middle Tier (Signature) stays higher by default */
+/* Static State: Middle tier stays higher */
 .tier-v3.featured {
-    transform: translateY(-30px); /* Permanent elevation */
+    transform: translateY(-30px);
 }
 
-/* Hover State: All tiers (including the middle) press higher */
+/* Hover State: All tiers press higher */
 .tier-v3:hover { 
-    transform: translateY(-20px) !important; 
+    transform: translateY(-20px); 
     box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15);
     z-index: 10;
 }
 
-/* Hover State for Middle Tier: It's already at -30px, so we push it to -50px */
+/* Hover State for Middle Tier: It's at -30, we push to -50 */
 .tier-v3.featured:hover {
-    transform: translateY(-50px) !important;
+    transform: translateY(-50px);
 }
