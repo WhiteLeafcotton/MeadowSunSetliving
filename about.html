@@ -475,23 +475,33 @@ tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-var player;
+var playerDesktop, playerMobile;
+
 function onYouTubeIframeAPIReady() {
-    player = new YT.Player('journeyVideo', {
-        events: {
-            'onReady': onPlayerReady
-        }
+    // Initialize Desktop Player
+    playerDesktop = new YT.Player('journeyVideo', {
+        events: { 'onReady': onPlayersReady }
+    });
+    
+    // Initialize Mobile Player
+    playerMobile = new YT.Player('journeyVideoMobile', {
+        events: { 'onReady': onPlayersReady }
     });
 }
 
-function onPlayerReady(event) {
-    document.getElementById('customMuteBtn').addEventListener('click', function() {
-        if (player.isMuted()) {
-            player.unMute();
+function onPlayersReady() {
+    const muteBtn = document.getElementById('customMuteBtn');
+    
+    muteBtn.addEventListener('click', function() {
+        // Determine which player is currently visible/active
+        let activePlayer = (window.innerWidth <= 768) ? playerMobile : playerDesktop;
+
+        if (activePlayer.isMuted()) {
+            activePlayer.unMute();
             document.getElementById('muteIcon').className = 'fa-solid fa-volume-high';
             document.getElementById('muteText').innerText = 'SOUND ON';
         } else {
-            player.mute();
+            activePlayer.mute();
             document.getElementById('muteIcon').className = 'fa-solid fa-volume-xmark';
             document.getElementById('muteText').innerText = 'TAP FOR AUDIO';
         }
