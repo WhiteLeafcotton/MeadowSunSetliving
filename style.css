@@ -2991,29 +2991,32 @@ body {
 
 /* --- ARCHITECTURAL ACCENT --- */
 /* --- TOP RIGHT ARCHITECTURAL ACCENT --- */
+/* --- TOP RIGHT ACCENT (REVISED) --- */
 .financial-section-wrapper {
-    position: relative; /* This is the "anchor" for the line */
+    position: relative;
+    padding-top: 180px !important; /* Pushes the "Private Investment" text down further from the Hero */
     overflow: hidden;
+    background: #fff;
 }
 
 .top-right-accent {
     position: absolute;
-    top: 0;
+    top: 60px;        /* Moves the line DOWN from the very top edge */
     right: 0;
-    width: 30%;         /* How far left the line stretches */
-    height: 1px;        /* Ultra thin for a premium look */
+    width: 70%;       /* EXTENDED 2X: Now spans more of the screen */
+    height: 1px;
     background: #0f172a; 
-    opacity: 0.15;      /* Subtle so it feels like a blueprint line */
+    opacity: 0.1;     /* Keep it elegant and faint */
     z-index: 1;
 }
 
-/* The vertical "tick" at the very edge */
+/* The vertical "Blueprint" tick */
 .top-right-accent::after {
     content: '';
     position: absolute;
     right: 0;
     top: 0;
     width: 1px;
-    height: 60px;
+    height: 80px;     /* Longer vertical line for better balance */
     background: #0f172a;
 }
