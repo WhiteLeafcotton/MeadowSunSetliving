@@ -2453,53 +2453,58 @@ body {
 
 
 @media (max-width: 768px) {
-    /* 1. Reset the wrapper to allow text to fill the screen */
+    /* 1. Reset the Page Flow */
     .editorial-wrapper {
         display: block !important; 
         width: 100% !important;
-        padding: 0 10px !important;
+        padding: 0 15px !important;
     }
 
     .editorial-row {
-        display: block !important; /* Forces it out of Grid/Flex */
+        display: block !important; /* Disables flex/grid that causes overlapping */
+        position: relative;
         width: 100% !important;
         margin-bottom: 40px !important;
-        clear: both !important; /* Prevents portraits from overlapping each other */
+        clear: both !important; /* Keeps Julianne and Eleanor separate */
     }
 
-    /* 2. Make the Vision Text WIDE and READABLE */
+    /* 2. Text Styling (Wide & Readable) */
     .vision-box {
         display: block !important;
         width: 100% !important;
     }
 
     .magazine-title {
-        font-size: 1.6rem !important;
-        line-height: 1.1 !important;
-        margin-bottom: 10px !important;
-        text-transform: uppercase !important;
+        font-size: 1.8rem !important;
+        line-height: 1.1;
+        margin-bottom: 15px;
+        text-transform: uppercase;
     }
 
     .magazine-para {
-        display: inline !important; /* This allows the text to wrap UP around the photo */
+        display: block !important; /* Para acts as the 'container' for the wrap */
         font-size: 1rem !important;
-        line-height: 1.6 !important;
+        line-height: 1.6;
+        color: #333;
     }
 
-    /* 3. The "Portrait" Photo Wrap */
+    /* 3. THE MAGIC WRAP: Floating Portrait Boxes */
     .profile-box {
-        width: 135px !important; /* Small enough for text to fit beside it */
+        width: 140px !important; /* Verbal Rectangle Width */
         height: auto !important;
+        position: relative !important; /* Ensures it stays in the flow */
+        top: auto !important;
+        left: auto !important;
     }
 
-    /* Julianne wraps on the RIGHT */
+    /* Julianne sits on the RIGHT, text wraps LEFT */
     .julianne {
         float: right !important;
         margin-left: 15px !important;
         margin-bottom: 10px !important;
     }
 
-    /* Eleanor wraps on the LEFT */
+    /* Eleanor sits on the LEFT, text wraps RIGHT */
     .eleanor {
         float: left !important;
         margin-right: 15px !important;
@@ -2508,26 +2513,35 @@ body {
 
     .photo-frame {
         width: 100% !important;
-        height: 190px !important; /* Forces the 'Verbal Rectangle' shape */
+        height: 190px !important; /* Vertical 'Verbal' Rectangle */
         border: none !important;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    .photo-frame img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-    }
-
-    /* 4. Labels */
+    /* 4. Labels: Minimalist Fashion Style */
     .label-stack {
         text-align: inherit !important;
-        margin-top: 5px !important;
+        margin-top: 8px !important;
+        width: 100% !important;
     }
 
     .name-label {
-        font-size: 0.8rem !important;
-        font-weight: 900 !important;
-        text-transform: uppercase !important;
+        font-size: 0.85rem !important;
+        font-weight: 800 !important;
+        text-transform: uppercase;
+        display: block;
+    }
+
+    .medical-excellence {
+        font-size: 0.65rem;
+        color: #B8860B;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .mini-bio {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin-top: 5px;
     }
 }
