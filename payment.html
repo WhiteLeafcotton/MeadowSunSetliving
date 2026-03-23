@@ -202,7 +202,9 @@
         <div class="cc-card-slide">
             <div class="cc-frosted-card">
                 <p class="cc-quote">"We navigate coverage, so you focus on the moments."</p>
+                
                 <p class="cc-details">Authorized provider with direct-liaison service. We work directly with insurance coordinators.</p>
+                
                 <div class="cc-footer">
                     <a href="tel:YOUR-NUMBER" class="cc-link">Eligibility</a>
                     <span class="cc-id">CC-8829-X</span>
@@ -228,7 +230,7 @@
 .cc-swipe-container {
     max-width: 1400px;
     margin: 0 auto;
-    display: flex; /* Side-by-side on desktop */
+    display: flex; 
     align-items: center;
     gap: 60px;
 }
@@ -245,30 +247,38 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 50px; /* Big padding for desktop */
+    padding: 50px;
 }
 
-.cc-quote { font-family: 'Cormorant Garamond'; font-style: italic; font-size: 1.6rem; color: #fff; margin-bottom: 25px; }
+.cc-quote { 
+    font-family: 'Cormorant Garamond'; 
+    font-style: italic; 
+    font-size: 1.6rem; 
+    color: #fff; 
+    margin-bottom: 25px;
+    transition: opacity 0.8s ease-in-out; /* Smooth fade for rotation */
+    min-height: 60px; /* Prevents card jumping */
+}
+
 .cc-details { font-family: 'Inter'; font-size: 0.95rem; line-height: 1.8; color: #94a3b8; margin-bottom: 30px; }
-.cc-footer { display: flex; align-items: center; gap: 40px; }
+.cc-footer { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
 .cc-link { color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; border-bottom: 1px solid #bfa15f; padding-bottom: 5px; }
 .cc-id { font-size: 0.7rem; color: #475569; text-transform: uppercase; }
 
-.cc-swipe-hint { display: none; } /* Hidden on Desktop */
-
+.cc-swipe-hint { display: none; } 
 
 /* ============================================================
-   2. MOBILE VIEW (The Horizontal Strip + Compact Card)
+   2. MOBILE VIEW (The Horizontal Strip + Thinner Compact Card)
    ============================================================ */
 @media (max-width: 768px) {
     #community-care-section {
-        padding: 0 !important; /* Removes desktop padding */
-        height: 450px !important; /* The thick blue strip */
+        padding: 0 !important; 
+        height: 450px !important; /* Thick Blue Strip */
     }
 
     .cc-swipe-container {
         display: flex !important;
-        flex-direction: row !important; /* Forces side-by-side swipe */
+        flex-direction: row !important;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         gap: 0 !important;
@@ -278,7 +288,6 @@
     }
     .cc-swipe-container::-webkit-scrollbar { display: none; }
 
-    /* Each slide takes exactly one screen width */
     .cc-branding-slide, .cc-card-slide {
         min-width: 100vw !important;
         height: 100%;
@@ -291,21 +300,27 @@
         box-sizing: border-box;
     }
 
-    /* Mobile Text Sizes */
     .cc-main-title { font-size: 3.5rem !important; }
 
-    /* The Fix: Compact, Non-stretched card */
+    /* THINNER COMPACT CARD FIX */
     .cc-frosted-card {
-        padding: 25px !important;
-        width: 85% !important; /* Contained card */
-        max-width: 320px;
+        padding: 20px 25px !important; /* Reduced vertical padding */
+        width: 80% !important; /* Thinner width */
+        max-width: 300px;
         margin: 0 auto;
         background: rgba(255, 255, 255, 0.05) !important;
     }
 
-    .cc-quote { font-size: 1.2rem !important; line-height: 1.3 !important; }
-    .cc-details { font-size: 0.75rem !important; margin-bottom: 15px !important; }
+    .cc-quote { 
+        font-size: 1.1rem !important; 
+        line-height: 1.3 !important; 
+        margin-bottom: 12px !important;
+        min-height: 50px; 
+    }
+    .cc-details { font-size: 0.75rem !important; line-height: 1.4; margin-bottom: 15px !important; }
     
+    .cc-footer { gap: 10px !important; }
+
     .cc-swipe-hint {
         display: block;
         margin-top: 20px;
@@ -317,6 +332,31 @@
 }
 </style>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const quotes = [
+            `"We navigate coverage, so you focus on the moments."`,
+            `"Direct coordination with clinical directors and insurance."`,
+            `"Transparent stewardship for your peace of mind."`
+        ];
+        let currentQuoteIndex = 0;
+        const quoteElement = document.querySelector('.cc-quote');
+
+        function rotateQuote() {
+            if(!quoteElement) return;
+            
+            quoteElement.style.opacity = 0; // Fade out
+            
+            setTimeout(() => {
+                currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+                quoteElement.textContent = quotes[currentQuoteIndex];
+                quoteElement.style.opacity = 1; // Fade in
+            }, 800); 
+        }
+
+        setInterval(rotateQuote, 5000); // Change every 5 seconds
+    });
+</script>
         
 
 
