@@ -2453,95 +2453,103 @@ body {
 
 
 @media (max-width: 768px) {
-    /* 1. Reset the Page Flow */
+    /* 1. Vision Section - Full Width & Elegant */
     .editorial-wrapper {
-        display: block !important; 
-        width: 100% !important;
-        padding: 0 15px !important;
-    }
-
-    .editorial-row {
-        display: block !important; /* Disables flex/grid that causes overlapping */
-        position: relative;
-        width: 100% !important;
-        margin-bottom: 40px !important;
-        clear: both !important; /* Keeps Julianne and Eleanor separate */
-    }
-
-    /* 2. Text Styling (Wide & Readable) */
-    .vision-box {
         display: block !important;
+        padding: 0 20px !important;
+    }
+
+    .editorial-row.top-row {
+        display: block !important;
+        margin-bottom: 60px !important;
+    }
+
+    .vision-box {
         width: 100% !important;
+        display: block !important;
     }
 
     .magazine-title {
-        font-size: 1.8rem !important;
+        font-size: 2.2rem !important; /* Bold Header */
         line-height: 1.1;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
         text-transform: uppercase;
     }
 
     .magazine-para {
-        display: block !important; /* Para acts as the 'container' for the wrap */
-        font-size: 1rem !important;
-        line-height: 1.6;
+        font-size: 1.1rem !important;
+        line-height: 1.7;
         color: #333;
+        display: block !important;
     }
 
-    /* 3. THE MAGIC WRAP: Floating Portrait Boxes */
-    .profile-box {
-        width: 140px !important; /* Verbal Rectangle Width */
-        height: auto !important;
-        position: relative !important; /* Ensures it stays in the flow */
-        top: auto !important;
-        left: auto !important;
-    }
-
-    /* Julianne sits on the RIGHT, text wraps LEFT */
-    .julianne {
+    /* 2. Single Profile - Tucked to the Right */
+    .profile-box.eleanor {
         float: right !important;
-        margin-left: 15px !important;
-        margin-bottom: 10px !important;
-    }
-
-    /* Eleanor sits on the LEFT, text wraps RIGHT */
-    .eleanor {
-        float: left !important;
-        margin-right: 15px !important;
-        margin-bottom: 10px !important;
+        width: 150px !important;
+        margin-left: 20px;
+        margin-top: 20px;
+        position: relative !important;
     }
 
     .photo-frame {
         width: 100% !important;
-        height: 190px !important; /* Vertical 'Verbal' Rectangle */
+        height: 220px !important; /* Tall 'Verbal' Rectangle */
         border: none !important;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
 
-    /* 4. Labels: Minimalist Fashion Style */
     .label-stack {
-        text-align: inherit !important;
-        margin-top: 8px !important;
-        width: 100% !important;
+        text-align: right !important;
+        margin-top: 10px;
     }
 
     .name-label {
-        font-size: 0.85rem !important;
-        font-weight: 800 !important;
+        font-size: 0.9rem !important;
+        font-weight: 800;
         text-transform: uppercase;
-        display: block;
     }
 
-    .medical-excellence {
-        font-size: 0.65rem;
-        color: #B8860B;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+    /* 3. Care Directory (Blue Section) - Full Width Horizontal */
+    .dir-track {
+        display: flex !important;
+        overflow-x: auto !important; /* Allows swiping */
+        gap: 15px;
+        padding: 20px 0;
+        -webkit-overflow-scrolling: touch;
     }
 
-    .mini-bio {
-        font-size: 0.8rem;
-        line-height: 1.4;
-        margin-top: 5px;
+    .dir-item {
+        min-width: 280px !important; /* Large enough to read easily */
+        flex-shrink: 0;
+    }
+
+    /* 4. YouTube Video - Full Width Under Directory */
+    .video-card-container {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 9; /* Maintains video shape */
+        margin: 30px 0 !important;
+    }
+
+    .video-card-container iframe {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    /* 5. Admission Journey - Under Video */
+    .split-view-container {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .step-card {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+
+    .step-number-large {
+        font-size: 2.5rem !important;
     }
 }
