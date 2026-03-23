@@ -166,10 +166,11 @@
         </section>
 
         <section class="insurance-brand-strip reveal-up" style="padding: 40px 5%; background: #0f172a; color: white; position: relative; overflow: hidden;">
-            <div class="logo-watermark reveal-left" style="position: absolute; top: 50%; left: 5%; transform: translateY(-50%); opacity: 0.05; pointer-events: none;">
-                <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2018.jpeg?raw=true" alt="Community Care Logo" style="width: 400px; filter: grayscale(1) brightness(2);">
+            <div class="reveal-left" style="position: absolute; top: 0; left: 0; margin: 0; padding: 20px; z-index: 2;">
+                <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2018.jpeg?raw=true" alt="Community Care Logo" style="width: 150px; filter: grayscale(1) brightness(2);">
             </div>
-            <div style="max-width: 1400px; margin: 0 auto; display: flex; align-items: center; gap: 60px; position: relative; z-index: 1;">
+
+            <div style="max-width: 1400px; margin: 80px auto 0; display: flex; align-items: center; gap: 60px; position: relative; z-index: 1;">
                 <div style="flex: 1;" class="reveal-left stagger-1">
                     <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
                         <div style="width: 40px; height: 1px; background: #bfa15f;"></div>
@@ -235,7 +236,7 @@
         </section>
     </main>
 
-    <footer class="video-footer animate-on-scroll">
+    <footer class="video-footer reveal-up">
         <video autoplay muted loop playsinline class="footer-video-bg">
             <source src="timelapse-of-noctilucent-clouds-and-a-vibrant-sunrise.mp4" type="video/mp4">
         </video>
@@ -301,14 +302,14 @@
         window.openModal = function(){ document.getElementById("bookingModal").style.display = "block"; }
         window.closeModal = function(){ document.getElementById("bookingModal").style.display = "none"; }
 
-        // --- THE ANIMATION LOGIC ---
+        // --- ANIMATION LOGIC ---
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
                 }
             });
-        }, { threshold: 0.15 });
+        }, { threshold: 0.1 }); // Lower threshold so footer shows sooner
 
         document.querySelectorAll('.reveal-up, .reveal-left').forEach(el => observer.observe(el));
     </script>
