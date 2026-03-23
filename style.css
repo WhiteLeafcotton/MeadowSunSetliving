@@ -2449,55 +2449,73 @@ body {
 
 
 @media (max-width: 768px) {
-    /* 1. Header & Vision Text (Readable & Regular) */
-    .hero-about h1 {
-        font-size: 2rem;
-        line-height: 1.2;
-    }
-
+    /* 1. The Container (The Magazine Page) */
     .magazine-editorial {
-        padding: 60px 20px;
+        padding: 40px 15px;
+        background-color: #fff;
     }
 
+    .editorial-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 40px;
+    }
+
+    /* 2. The Interlocking Row (60/40 Split) */
+    .editorial-row {
+        display: grid !important;
+        grid-template-columns: 1.2fr 0.8fr; /* Text gets slightly more room */
+        gap: 15px;
+        align-items: start;
+        border-bottom: 1px solid #eee; /* Light divider like a newspaper */
+        padding-bottom: 30px;
+    }
+
+    /* Reverse the second row (Eleanor) to match the screenshot pattern */
+    .editorial-row:nth-child(even) {
+        grid-template-columns: 0.8fr 1.2fr;
+    }
+    
+    .editorial-row:nth-child(even) .vision-box,
+    .editorial-row:nth-child(even) .label-stack {
+        grid-column: 2;
+    }
+    
+    .editorial-row:nth-child(even) .profile-box {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    /* 3. Text Styling (Tight & Professional) */
     .vision-box {
-        width: 100% !important;
         text-align: left;
-        margin-bottom: 2rem;
+    }
+
+    .magazine-title {
+        font-size: 1.4rem !important;
+        line-height: 1.1;
+        margin-bottom: 10px;
+        text-transform: uppercase; /* For that 'Fashion News' header feel */
+        letter-spacing: -0.5px;
     }
 
     .magazine-para {
-        font-size: 1rem !important; /* Regular readable size */
-        line-height: 1.7;
-        color: #333;
+        font-size: 0.85rem !important; /* Smaller, dense editorial font */
+        line-height: 1.5;
+        margin: 0;
     }
 
-    /* 2. The Diagonal Layout Container */
-    .editorial-row {
-        position: relative;
-        display: block !important; /* Required for diagonal absolute positioning */
-        width: 100%;
-        height: 380px; /* Gives the photos room to stagger vertically */
-        margin-bottom: 4rem;
-        overflow: visible; /* Allows the lower photo to exist below the row boundary */
-    }
-
-    /* 3. Base Profile Box (Small 'Verbal' Rectangles) */
+    /* 4. The Photos (The Vertical Rectangles) */
     .profile-box {
-        position: absolute !important;
-        width: 140px !important; /* Small footprint */
-        display: flex !important;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        width: 100% !important;
     }
 
     .photo-frame {
         width: 100% !important;
-        height: 190px !important; /* Taller 'verbal' portrait shape */
-        border: 4px solid #fff;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        border-radius: 2px;
-        overflow: hidden;
+        height: 180px !important; /* Verbal Rectangle shape */
+        border: none !important; /* Cleaner, modern look like the screenshot */
+        box-shadow: none !important;
+        filter: grayscale(100%); /* Optional: for that B&W fashion look in the shot */
     }
 
     .photo-frame img {
@@ -2506,55 +2524,19 @@ body {
         object-fit: cover !important;
     }
 
-    /* 4. The Diagonal Placement */
-    
-    /* Julianne: Top Right */
-    .julianne {
-        top: 0;
-        right: 0;
-        z-index: 2;
-    }
-
-    /* Eleanor: Lowered & Offset Left (Diagonal) */
-    .eleanor {
-        top: 150px; /* Offset downward */
-        left: 0;   /* Offset to the other side */
-        z-index: 1;
-        /* Use transform instead of left/right for better off-screen containment */
-        transform: translateX(20px); 
-    }
-
-    /* 5. Fixed Labels (Kept Compact & In-bounds) */
+    /* 5. Labels (Small & Minimal) */
     .label-stack {
-        display: flex !important;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        margin-top: 10px;
-        position: relative !important; /* Required to keep text inside the screen */
-        bottom: 0 !important;
+        margin-top: 8px;
     }
 
     .name-label {
-        font-size: 0.9rem !important;
-        line-height: 1.1;
-        color: #0a1128;
+        font-size: 0.75rem !important;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: bold;
     }
 
     .mini-bio {
-        display: none; /* Hide mini-bio on mobile to focus on the diagonal effect */
-    }
-
-    /* 6. Functional UI Cleanup */
-    .dir-track {
-        gap: 15px;
-    }
-
-    .dir-item {
-        min-width: 240px;
-    }
-
-    .video-card-container {
-        height: 250px;
+        display: none; /* Keeps it minimal */
     }
 }
