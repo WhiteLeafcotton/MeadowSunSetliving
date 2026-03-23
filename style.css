@@ -2915,26 +2915,38 @@ body {
 
 /* --- THE TIER HOVER LOGIC --- */
 /* We apply the hover to the inner content so it doesn't fight the reveal-up */
+/* --- TIER HOVER & COLOR ENGINE --- */
 .tier-v3 { 
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
-    position: relative;
-    z-index: 1;
+    background: #ffffff; /* Default side background */
+    color: #0f172a;      /* Default side text */
+    border: 1px solid #e2e8f0;
 }
 
-/* Static State: Middle tier stays higher */
+/* Middle Tier: Dark Blue by default */
 .tier-v3.featured {
-    transform: translateY(-30px);
+    background: #0f172a !important;
+    color: #ffffff !important;
+    transform: translateY(-40px); /* Resting higher */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-/* Hover State: All tiers press higher */
+/* Hover State: Inverse colors to Dark Blue */
 .tier-v3:hover { 
+    background: #0f172a !important;
+    color: #ffffff !important;
     transform: translateY(-20px); 
-    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15);
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.2);
     z-index: 10;
 }
 
-/* Hover State for Middle Tier: It's at -30, we push to -50 */
+/* Hover State for Middle Tier: Stays dark, goes even higher */
 .tier-v3.featured:hover {
-    transform: translateY(-50px);
+    transform: translateY(-60px);
 }
+
+/* Ensure text colors change correctly on hover */
+.tier-v3:hover p, .tier-v3:hover h3 { color: #ffffff !important; }
+.tier-v3:hover .daily-label { color: #94a3b8 !important; }
+.tier-v3:hover .price-text { color: #bfa15f !important; }
