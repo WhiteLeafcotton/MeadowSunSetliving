@@ -2555,19 +2555,32 @@ body {
     }
 
     /* 3. Balanced Profile Boxes */
+    /* 3. Balanced Profile Boxes - FORCED RESET */
     .profile-box {
         display: flex;
-        flex-direction: column; /* Stack image over text */
+        flex-direction: column;
         gap: 20px;
-        align-items: center; /* Center everything */
+        align-items: center; 
         text-align: center;
+        padding: 0 !important; /* Removes side padding that might be squishing it */
+        width: 100% !important;
     }
 
     .photo-frame {
-        width: 100%;
-        max-width: 320px; /* Limit image size for balance */
-        height: auto;
-        aspect-ratio: 4 / 5; /* Maintain vertical "magazine" ratio */
+        /* Force the container to be smaller */
+        width: 85% !important; /* Takes up 85% of the phone screen width */
+        max-width: 280px !important; /* Caps it so it stays 'compact' */
+        margin: 0 auto !important; /* Centers it */
+        height: auto !important; 
+        aspect-ratio: 4 / 5;
+        overflow: hidden;
+    }
+
+    .photo-frame img {
+        /* Force the image to fill that new smaller container */
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
     }
 
     .label-stack {
