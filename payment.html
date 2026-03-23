@@ -3,68 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Solutions | Meadow Sunset Assisted Living</title>
+    <title>Payment Solutions | Sunset Meadow Living</title>
+
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
-    <header class="main-header" id="navbar">
+    <header class="main-header">
         <nav class="navbar">
             <a href="index.html" class="logo">
                 <div class="logo-type">
-                    <span class="brand-name">Meadow Sunset</span>
+                    <span class="brand-name">Sunset Meadow</span>
                     <span class="brand-sub">Assisted Living</span>
                 </div>
             </a>
-            
+
             <div class="nav-wrapper">
                 <ul class="nav-links">
-                    <li><a href="index.html" class="nav-item">Home</a></li>
-                    <li><a href="about.html" class="nav-item">About Us</a></li>
                     <li class="dropdown">
-                        <a href="#" class="nav-item">Care & Services <i class="fas fa-chevron-down"></i></a>
+                        <a href="#" class="nav-item">Resident Experience <i class="fa-solid fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Memory Care</a></li>
-                            <li><a href="#">Respite Care</a></li>
-                            <li><a href="payment.html">Payment Solutions</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">THE TABLE</a></li>
+                            <li><a href="#">Car Service</a></li>
+                            <li><a href="#">Life Enrichment</a></li>
                         </ul>
                     </li>
+                    <li class="dropdown">
+                        <a href="about.html" class="nav-item">About Us <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Leadership Team</a></li>
+                            <li><a href="#">Mission & Vision</a></li>
+                            <li><a href="#">Who We Serve</a></li>
+                            <li><a href="#">Admission Process</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="payment.html" class="nav-item">Payment Solutions</a></li>
+                    <li><a href="#" class="nav-item">Suites</a></li>
                 </ul>
-                <a href="javascript:void(0)" onclick="openBookingForm()" class="nav-cta">Book a Tour</a>
+                <a href="tel:YOURNUMBER" class="nav-cta">Contact</a>
             </div>
 
-            <div class="menu-button" onclick="openNav()">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
+            <div class="menu-button" onclick="toggleMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </nav>
     </header>
 
-    <div id="mySidenav" class="side-menu">
-        <span class="close-btn" onclick="closeNav()">&times;</span>
+    <div id="sideMenu" class="side-menu">
+        <span class="close-btn" onclick="toggleMenu()">&times;</span>
         <div class="mobile-nav-content">
-            <a href="index.html" class="main-link">Home</a>
-            <a href="about.html" class="main-link">About Us</a>
-            
-            <div class="mobile-group">
-                <span class="group-title">Financial & Care</span>
-                <a href="payment.html">Payment Solutions</a>
-                <a href="#">Our Services</a>
+            <div class="mobile-dropdown">
+                <a href="#" class="main-link">Resident Experience <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="sub-links">
+                    <a href="#">Events</a>
+                    <a href="#">The Table</a>
+                    <a href="#">Car Service</a>
+                    <a href="#">Life Enrichment</a>
+                </div>
             </div>
-            
-            <a href="javascript:void(0)" onclick="closeNav(); openBookingForm()" class="nav-cta">Book a Tour</a>
+            <div class="mobile-dropdown">
+                <a href="#" class="main-link">About Us <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="sub-links">
+                    <a href="#">Leadership Team</a>
+                    <a href="#">Mission & Vision</a>
+                    <a href="#">Admission Process</a>
+                </div>
+            </div>
+            <a href="payment.html" class="main-link">Payment Solutions</a>
+            <a href="#" class="main-link">Suites</a>
+            <a href="tel:YOURNUMBER" class="nav-cta">Contact Us</a>
         </div>
     </div>
 
-    <main class="main-content-wrapper">
-        
+    <main>
         <section class="hero hero-about">
             <div class="hero-light-overlay"></div>
             <div class="hero-content">
                 <div class="hero-badge">
-                    <div class="badge-line"></div>
+                    <span class="badge-line"></span>
                     <span class="badge-text">Secure & Simple</span>
                 </div>
                 <h1>Payment <span class="italic-serif">Solutions</span></h1>
@@ -100,7 +122,6 @@
                             <p style="font-size: 0.9rem; color: #64748b;">All major cards accepted via our secure resident portal.</p>
                         </div>
                     </div>
-
                     <div class="payment-card reveal-card" style="display: flex; align-items: center; padding: 30px; border: 1px solid #e2e8f0; transition: 0.4s;">
                         <div class="card-icon" style="width: 60px; height: 60px; background: #0f172a; color: white; display: flex; align-items: center; justify-content: center; margin-right: 25px;">
                             <i class="fas fa-university"></i>
@@ -110,14 +131,13 @@
                             <p style="font-size: 0.9rem; color: #64748b;">Link your bank account for automated, hassle-free monthly billing.</p>
                         </div>
                     </div>
-
                     <div class="payment-card reveal-card" style="display: flex; align-items: center; padding: 30px; border: 1px solid #e2e8f0; transition: 0.4s;">
                         <div class="card-icon" style="width: 60px; height: 60px; background: #0f172a; color: white; display: flex; align-items: center; justify-content: center; margin-right: 25px;">
                             <i class="fas fa-file-invoice-dollar"></i>
                         </div>
                         <div class="card-details">
-                            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #0f172a;">Long-Term Care Insurance</h3>
-                            <p style="font-size: 0.9rem; color: #64748b;">We assist with coordination and billing directly to your provider.</p>
+                            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #0f172a;">Insurance Coordination</h3>
+                            <p style="font-size: 0.9rem; color: #64748b;">We assist with coordination and billing directly to your long-term care provider.</p>
                         </div>
                     </div>
                 </div>
@@ -125,46 +145,73 @@
         </section>
     </main>
 
-    <footer class="services-section">
-        <div class="services-overlay"></div>
-        <div class="services-container">
-            <div class="services-sidebar">
-                <span class="sub-label">Experience Luxury</span>
-                <h2>Meadow Sunset</h2>
-                <div class="accent-line"></div>
-                <p>123 Signature Way<br>Heritage Valley, 90210</p>
-                <div class="services-actions">
-                    <a href="javascript:void(0)" onclick="openBookingForm()" class="btn-main">Schedule a Visit</a>
-                </div>
+    <footer class="video-footer animate-on-scroll">
+        <video autoplay muted loop playsinline class="footer-video-bg">
+            <source src="timelapse-of-noctilucent-clouds-and-a-vibrant-sunrise.mp4" type="video/mp4">
+        </video>
+        <div class="footer-tint"></div>
+        <div class="footer-fox">
+            <img src="fox.svg" alt="Fox Logo">
+        </div>
+        <div class="footer-content">
+            <div class="footer-actions">
+                <button class="btn-gold" onclick="openModal()">Schedule a Tour</button>
+                <a href="tel:0000000000" class="btn-phone">Call Now</a>
             </div>
-            
-            <div class="services-grid-thin">
-                <div class="glass-card">
-                    <i class="fas fa-phone-alt"></i>
-                    <h3>Call Us</h3>
-                    <p>(555) 012-3456</p>
+            <div class="footer-grid">
+                <div class="grid-col community-col">
+                    <h4>Our Community</h4>
+                    <p>Refined living with personalized care in a calm environment.</p>
                 </div>
-                <div class="glass-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Location</h3>
-                    <p>View Directions</p>
+                <div class="grid-col">
+                    <h4>Explore</h4>
+                    <div class="footer-links">
+                        <a href="#">Care Options</a>
+                        <a href="payment.html">Pricing</a>
+                        <a href="#">Amenities</a>
+                    </div>
                 </div>
-                <div class="glass-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>Availability</h3>
-                    <p>Open 24/7</p>
-                </div>
-                <div class="glass-card">
-                    <i class="fas fa-shield-heart"></i>
-                    <h3>Care</h3>
-                    <p>Assisted Living</p>
+                <div class="grid-col">
+                    <h4>Contact</h4>
+                    <p>Your Location Address</p>
+                    <p>info@email.com</p>
+                    <p>(000) 000-0000</p>
                 </div>
             </div>
         </div>
     </footer>
 
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Schedule a Private Tour</h2>
+            <form action="https://formsubmit.co/sunsetmeadowlivingllc@gmail.com" method="POST">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="date" name="date" required>
+                <select name="service">
+                    <option>Private Pay</option>
+                    <option>Flex Pay</option>
+                    <option>Insurance</option>
+                </select>
+                <textarea name="notes" placeholder="Additional notes"></textarea>
+                <input type="hidden" name="_subject" value="New Tour Booking Request">
+                <input type="hidden" name="_captcha" value="false">
+                <button type="submit" class="btn-gold">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
     <script>
-        // Navbar scroll effect
+        // Toggle Mobile Menu
+        function toggleMenu() {
+            const menu = document.getElementById("sideMenu");
+            menu.classList.toggle("active");
+            document.body.style.overflow = menu.classList.contains("active") ? "hidden" : "auto";
+        }
+
+        // Header Scroll Effect
         window.addEventListener('scroll', function() {
             const header = document.querySelector('.main-header');
             if (window.scrollY > 50) {
@@ -174,26 +221,41 @@
             }
         });
 
-        // Mobile Menu Logic
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "100%";
-        }
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
+        // Mobile Dropdowns
+        document.querySelectorAll('.mobile-dropdown .main-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const subMenu = this.nextElementSibling;
+                if (subMenu && subMenu.classList.contains('sub-links')) {
+                    e.preventDefault();
+                    const isVisible = subMenu.style.display === 'block';
+                    subMenu.style.display = isVisible ? 'none' : 'block';
+                    const icon = this.querySelector('i');
+                    if(icon) {
+                        icon.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)';
+                    }
+                }
+            });
+        });
+
+        // Modal Logic
+        window.openModal = function(){ document.getElementById("bookingModal").style.display = "block"; }
+        window.closeModal = function(){ document.getElementById("bookingModal").style.display = "none"; }
+        window.onclick = function(event){
+            const modal = document.getElementById("bookingModal");
+            if(event.target === modal){ modal.style.display = "none"; }
         }
 
-        // TRIGGER YOUR BOOKING FORM MODEL
-        function openBookingForm() {
-            // This links to your existing form model code
-            const modal = document.getElementById("bookingModal"); 
-            if(modal) {
-                modal.style.display = "flex";
-                document.body.style.overflow = "hidden";
-            } else {
-                alert("Booking Form Coming Soon!");
-            }
-        }
+        // Reveal Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll, .reveal-card').forEach(el => observer.observe(el));
     </script>
-
 </body>
 </html>
