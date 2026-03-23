@@ -149,33 +149,34 @@
             
             <div style="max-width: 1400px; margin: 0 auto; position: relative; z-index: 2;">
                 <div class="section-header reveal-up" style="margin-bottom: 60px;">
-    <span style="color: #bfa15f; letter-spacing: 10px; text-transform: uppercase; font-size: 0.7rem; font-family: 'Inter'; font-weight: 800; display: block; margin-bottom: 15px;">Financial Options</span>
+    <span style="color: #bfa15f; letter-spacing: 10px; text-transform: uppercase; font-size: 0.65rem; font-family: 'Inter'; font-weight: 800; display: block; margin-bottom: 20px;">Financial Options</span>
     
-    <h2 style="font-family: 'Playfair Display'; font-size: 5rem; color: #0f172a; margin: 0; letter-spacing: -2px; display: flex; align-items: baseline; flex-wrap: wrap; gap: 15px;">
-        Private <span class="italic-pay-inline">Pay.</span>
+    <h2 style="font-family: 'Playfair Display'; font-size: 6rem; color: #0f172a; margin: 0; letter-spacing: -2px; display: flex; align-items: baseline; flex-wrap: wrap;">
+        Private <span class="italic-pay-match">Pay.</span>
     </h2>
 </div>
 
 <style>
-    .italic-pay-inline {
+    /* Exact replica of your .italic-pay class */
+    .italic-pay-match {
         font-family: 'Cormorant Garamond', serif;
         font-style: italic;
         font-weight: 400;
         color: #bfa15f;
-        font-size: 7.5rem; /* Larger than "Private" for that elite pop */
+        font-size: 7.5rem; /* 20% bigger than the main word */
+        margin-left: 15px; /* Adds breathing room on the same line */
         line-height: 1;
-        position: relative;
-        top: 10px; /* Aligns the visual baseline perfectly */
     }
 
     @media (max-width: 768px) {
+        /* Matches your mobile .flex-main-title exactly */
         .section-header h2 {
-            font-size: 3rem !important; /* Scale "Private" down for mobile */
-            gap: 10px !important;
+            font-size: 3.8rem !important;
         }
-        .italic-pay-inline {
-            font-size: 4.5rem !important; /* Scale "Pay" down for mobile */
-            top: 5px !important;
+        /* Matches your mobile .italic-pay exactly */
+        .italic-pay-match {
+            font-size: 4.8rem !important;
+            margin-left: 10px !important;
         }
     }
 </style>
