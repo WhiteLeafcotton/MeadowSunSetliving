@@ -2475,15 +2475,23 @@ body {
 
 
 /* --- ADMISSIONS MOBILE REORGANIZATION --- */
+/* --- ABSOLUTE MOBILE PHOTO HIDE --- */
 @media (max-width: 768px) {
-    /* 1. FLIP THE LAYOUT: Moves Right Card (Video) above Left Card (Text) */
-    .split-view-container, 
-    .admissions-journey {
-        display: flex !important;
-        flex-direction: column-reverse !important; 
-        gap: 20px;
-        padding: 40px 5% !important;
+    /* Target images specifically within the about/leadership sections */
+    .about-section img, 
+    .leadership-section img, 
+    .team-member img,
+    .profile-photo,
+    [class*="profile"] img { 
+        display: none !important; 
+        visibility: hidden !important;
+        height: 0 !important;
+        width: 0 !important;
+        opacity: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
+
 
     /* 2. MAKE VIDEO HORIZONTAL: Forces the video container to adapt */
     .video-card-container,
