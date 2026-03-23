@@ -2453,55 +2453,67 @@ body {
 
 
 @media (max-width: 768px) {
-    /* 1. Vision Section - Full Width & Elegant */
+    /* 1. Hero Adjustments */
+    .hero-about h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    /* 2. Magazine Editorial Layout - Clear the Grid for Floating */
     .editorial-wrapper {
         display: block !important;
-        padding: 0 20px !important;
+        padding: 0 15px;
     }
 
-    .editorial-row.top-row {
-        display: block !important;
-        margin-bottom: 60px !important;
+    .editorial-row {
+        display: block !important; /* Required for the photo to float next to text */
+        margin-bottom: 40px;
+        clear: both;
     }
 
+    /* 3. The "Fashion News" Float Logic */
     .vision-box {
         width: 100% !important;
-        display: block !important;
-    }
-
-    .magazine-title {
-        font-size: 2.2rem !important; /* Bold Header */
-        line-height: 1.1;
-        margin-bottom: 20px;
-        text-transform: uppercase;
+        text-align: left;
     }
 
     .magazine-para {
-        font-size: 1.1rem !important;
-        line-height: 1.7;
-        color: #333;
+        font-size: 1rem;
+        line-height: 1.6;
         display: block !important;
     }
 
-    /* 2. Single Profile - Tucked to the Right */
+    /* The Administrator (Eleanor) Tucked Right */
     .profile-box.eleanor {
         float: right !important;
-        width: 150px !important;
-        margin-left: 20px;
-        margin-top: 20px;
+        width: 140px !important; /* Narrow 'Verbal Rectangle' */
+        margin-left: 15px;
+        margin-bottom: 10px;
         position: relative !important;
+    }
+
+    /* Remove the nurse (Julianne) from mobile view */
+    .profile-box.julianne {
+        display: none !important;
     }
 
     .photo-frame {
         width: 100% !important;
-        height: 220px !important; /* Tall 'Verbal' Rectangle */
+        height: 200px !important; /* Vertical 'Magazine' Portrait */
         border: none !important;
         box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        border-radius: 4px;
+    }
+
+    .photo-frame img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
     }
 
     .label-stack {
-        text-align: right !important;
-        margin-top: 10px;
+        text-align: right;
+        margin-top: 8px;
     }
 
     .name-label {
@@ -2510,38 +2522,24 @@ body {
         text-transform: uppercase;
     }
 
-    /* 3. Care Directory (Blue Section) - Full Width Horizontal */
+    /* 4. Directory (Blue Scroller) - Full Width */
     .dir-track {
         display: flex !important;
-        overflow-x: auto !important; /* Allows swiping */
         gap: 15px;
-        padding: 20px 0;
-        -webkit-overflow-scrolling: touch;
+        padding-bottom: 20px;
+        overflow-x: auto;
+        clear: both; /* Prevents the float from affecting the blue section */
     }
 
     .dir-item {
-        min-width: 280px !important; /* Large enough to read easily */
-        flex-shrink: 0;
+        min-width: 280px; 
+        padding: 20px;
     }
 
-    /* 4. YouTube Video - Full Width Under Directory */
-    .video-card-container {
-        width: 100% !important;
-        height: auto !important;
-        aspect-ratio: 16 / 9; /* Maintains video shape */
-        margin: 30px 0 !important;
-    }
-
-    .video-card-container iframe {
-        width: 100% !important;
-        height: 100% !important;
-    }
-
-    /* 5. Admission Journey - Under Video */
+    /* 5. Admissions Journey & Video Stack */
     .split-view-container {
         display: flex !important;
         flex-direction: column !important;
-        width: 100% !important;
     }
 
     .step-card {
@@ -2550,6 +2548,20 @@ body {
     }
 
     .step-number-large {
-        font-size: 2.5rem !important;
+        font-size: 2.2rem;
+    }
+    
+    /* YouTube Video - Full Width Under Directory */
+    .video-card-container {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 9; /* Perfect video shape */
+        margin-top: 2rem;
+        display: block !important;
+    }
+
+    .video-card-container iframe {
+        width: 100% !important;
+        height: 100% !important;
     }
 }
