@@ -2475,6 +2475,15 @@ body {
 
 
 /* --- ADMISSIONS MOBILE REORGANIZATION --- */
+
+
+
+/* Ensure the mobile button is invisible on desktop */
+.mobile-process-btn {
+    display: none;
+}
+
+
 /* --- ABSOLUTE MOBILE PHOTO HIDE --- */
 /* --- FULL MOBILE LEADERSHIP HIDE --- */
 @media (max-width: 768px) {
@@ -2520,5 +2529,48 @@ body {
     }
 }
 
+/* --- ABOUT PAGE MOBILE REFINEMENTS --- */
+@media (max-width: 768px) {
+    /* 1. Admissions Journey - Reorder Video to Top */
+    .admissions-container {
+        display: flex;
+        flex-direction: column;
+    }
 
+    .admissions-video-wrapper {
+        order: -1; /* Forces video above the text */
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    /* 2. Hide Desktop Step Animation & Show Mobile Button */
+    .journey-steps-container {
+        display: none; /* Hide the long list on mobile */
+    }
+
+    .journey-steps-container.mobile-active {
+        display: block; /* Shown only when JS adds this class */
+        animation: fadeIn 0.5s ease;
+    }
+
+    .mobile-process-btn {
+        display: block; /* Show the button we discussed */
+        width: 100%;
+        margin: 20px 0;
+        padding: 18px;
+        background: #0f172a;
+        color: white;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.8rem;
+        cursor: pointer;
+    }
+
+    /* 3. Leadership Profiles Hide/Show */
+    /* If you want to keep the "Magazine" look on desktop but simplify mobile */
+    .leadership-grid .profile-col:nth-child(n+3) {
+        display: none; /* Hides Julianne and Eleanor on mobile */
+    }
+}
 
