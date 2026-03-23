@@ -132,15 +132,7 @@
 
      <section class="pricing-tiers" style="padding: 20px 5% 80px; background: #fff; position: relative; overflow: hidden;">
     
-    <div class="top-right-accent" style="
-        position: absolute; 
-        top: 40px; 
-        right: 0; 
-        width: 70%; 
-        height: 1px; 
-        background: #0f172a; 
-        opacity: 0.15; 
-        z-index: 1;">
+    <div class="top-right-accent" style="position: absolute; top: 40px; right: 0; width: 70%; height: 1px; background: #0f172a; opacity: 0.15; z-index: 1;">
         <div style="position: absolute; right: 0; top: 0; width: 1px; height: 60px; background: #0f172a;"></div>
     </div>
 
@@ -153,47 +145,110 @@
             </h2>
         </div>
 
-        <div class="tier-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; align-items: stretch; padding-top: 30px;">
-            
-            <div class="reveal-up stagger-1">
-                <div class="tier-v3" style="padding: 40px 30px; height: 100%; border: 1px solid #f1f5f9; transition: 0.4s ease;">
-                    <span style="font-family: 'Inter'; font-size: 0.65rem; letter-spacing: 4px; color: #bfa15f; text-transform: uppercase;">01 / Essential</span>
-                    <h3 style="font-family: 'Playfair Display'; font-size: 2.2rem; margin: 15px 0; color: #0f172a;">Wellness <br>Base</h3>
-                    <p style="line-height: 1.8; margin-bottom: 25px; min-height: 80px; color: #64748b; font-size: 0.95rem;">An intimate setting for those who value independence with the security of 24/7 oversight.</p>
-                    <div class="price-text" style="font-size: 2rem; font-family: 'Inter'; font-weight: 300; color: #0f172a;">
-                        $203.50 <span class="daily-label" style="font-size: 0.8rem; letter-spacing: 2px; color: #94a3b8;">DAILY</span>
+        <div class="tier-scroll-container">
+            <div class="tier-grid">
+                
+                <div class="reveal-up stagger-1">
+                    <div class="tier-v3 tier-compact">
+                        <span class="tier-label">01 / Essential</span>
+                        <h3 class="tier-title">Wellness <br>Base</h3>
+                        <p class="tier-desc">An intimate setting for those who value independence with the security of 24/7 oversight.</p>
+                        <div class="price-text">$203.50 <span>DAILY</span></div>
                     </div>
                 </div>
-            </div>
 
-            <div class="reveal-up stagger-2">
-                <div class="tier-v3 featured" style="padding: 60px 40px; position: relative; height: 100%; background: #0f172a; color: white; transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.12);">
-                    <div style="position: absolute; top: 0; right: 40px; background: #bfa15f; padding: 8px 12px; font-size: 0.6rem; color: #0f172a; letter-spacing: 2px; font-weight: 800; text-transform: uppercase;">Signature</div>
-                    <span style="font-family: 'Inter'; font-size: 0.65rem; letter-spacing: 4px; color: #bfa15f; text-transform: uppercase;">02 / Signature</span>
-                    <h3 style="font-family: 'Playfair Display'; font-size: 2.5rem; margin: 15px 0; color: white;">Enhanced <br>Care</h3>
-                    <p style="color: #94a3b8; line-height: 1.8; margin-bottom: 35px; font-size: 0.95rem;">Our most requested level of stewardship, featuring specialized daily clinical routines.</p>
-                    <div class="price-text" style="font-size: 2.5rem; font-family: 'Inter'; font-weight: 300; color: #bfa15f;">
-                        $220.79 <span class="daily-label" style="font-size: 0.8rem; letter-spacing: 2px; color: #64748b;">DAILY</span>
-                    </div>
-                    <button style="margin-top: 35px; width: 100%; padding: 20px; background: #bfa15f; border: none; color: #0f172a; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; cursor: pointer; font-size: 0.75rem;">Secure Suite</button>
-                </div>
-            </div>
-
-            <div class="reveal-up stagger-3">
-                <div class="tier-v3" style="padding: 40px 30px; height: 100%; border: 1px solid #f1f5f9; transition: 0.4s ease;">
-                    <span style="font-family: 'Inter'; font-size: 0.65rem; letter-spacing: 4px; color: #bfa15f; text-transform: uppercase;">03 / Elite</span>
-                    <h3 style="font-family: 'Playfair Display'; font-size: 2.2rem; margin: 15px 0; color: #0f172a;">Total <br>Assurance</h3>
-                    <p style="line-height: 1.8; margin-bottom: 25px; min-height: 80px; color: #64748b; font-size: 0.95rem;">Comprehensive assistance for residents with complex clinical or cognitive requirements.</p>
-                    <div class="price-text" style="font-size: 2rem; font-family: 'Inter'; font-weight: 300; color: #0f172a;">
-                        $238.08 <span class="daily-label" style="font-size: 0.8rem; letter-spacing: 2px; color: #94a3b8;">DAILY</span>
+                <div class="reveal-up stagger-2">
+                    <div class="tier-v3 featured tier-compact">
+                        <div class="featured-badge">Signature</div>
+                        <span class="tier-label">02 / Signature</span>
+                        <h3 class="tier-title">Enhanced <br>Care</h3>
+                        <p class="tier-desc">Our most requested level of stewardship, featuring specialized daily clinical routines.</p>
+                        <div class="price-text">$220.79 <span>DAILY</span></div>
+                        <button class="tier-btn">Secure Suite</button>
                     </div>
                 </div>
-            </div>
 
+                <div class="reveal-up stagger-3">
+                    <div class="tier-v3 tier-compact">
+                        <span class="tier-label">03 / Elite</span>
+                        <h3 class="tier-title">Total <br>Assurance</h3>
+                        <p class="tier-desc">Comprehensive assistance for residents with complex clinical or cognitive requirements.</p>
+                        <div class="price-text">$238.08 <span>DAILY</span></div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 </section>
 
+<style>
+/* --- SHARED STYLES --- */
+.tier-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding-top: 30px;
+    align-items: stretch;
+}
+
+.tier-v3 {
+    padding: 40px 30px;
+    height: 100%;
+    border: 1px solid #f1f5f9;
+    background: #fff;
+    transition: 0.4s ease;
+}
+
+.tier-v3.featured {
+    background: #0f172a;
+    color: white;
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+    padding: 60px 40px;
+}
+
+.tier-label { font-family: 'Inter'; font-size: 0.65rem; letter-spacing: 4px; color: #bfa15f; text-transform: uppercase; }
+.tier-title { font-family: 'Playfair Display'; font-size: 2.2rem; margin: 15px 0; color: #0f172a; }
+.featured .tier-title { color: white; font-size: 2.5rem; }
+.tier-desc { line-height: 1.8; margin-bottom: 25px; min-height: 80px; color: #64748b; font-size: 0.95rem; }
+.featured .tier-desc { color: #94a3b8; }
+.price-text { font-size: 2rem; font-family: 'Inter'; font-weight: 300; color: #0f172a; }
+.featured .price-text { color: #bfa15f; font-size: 2.5rem; }
+.price-text span { font-size: 0.8rem; letter-spacing: 2px; color: #94a3b8; }
+.featured-badge { position: absolute; top: 0; right: 40px; background: #bfa15f; padding: 8px 12px; font-size: 0.6rem; color: #0f172a; letter-spacing: 2px; font-weight: 800; text-transform: uppercase; }
+.tier-btn { margin-top: 35px; width: 100%; padding: 20px; background: #bfa15f; border: none; color: #0f172a; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; cursor: pointer; font-size: 0.75rem; }
+
+/* --- MOBILE COMPACT HORIZONTAL ROW --- */
+@media (max-width: 768px) {
+    .tier-scroll-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -5%; /* Pulls it to screen edges */
+        padding: 0 5% 40px;
+        scrollbar-width: none; /* Hides scrollbar Firefox */
+    }
+    .tier-scroll-container::-webkit-scrollbar { display: none; } /* Hides scrollbar Chrome */
+
+    .tier-grid {
+        display: flex; /* Switch grid to flex for horizontal row */
+        width: max-content; /* Allows row to expand past screen width */
+        gap: 20px;
+    }
+
+    .reveal-up {
+        width: 290px; /* Compact width for each mobile card */
+        flex-shrink: 0;
+    }
+
+    .tier-v3.featured {
+        transform: none; /* Flatten featured card for alignment on mobile */
+    }
+    
+    .tier-title { font-size: 1.8rem; }
+    .featured .tier-title { font-size: 2rem; }
+}
+</style>
 
 
 
