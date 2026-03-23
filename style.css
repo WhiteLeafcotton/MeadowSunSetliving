@@ -2449,119 +2449,117 @@ body {
 
 
 
+/* Magazine Layout Essentials */
+.magazine-editorial {
+    position: relative;
+    padding: 100px 5%;
+    overflow: hidden;
+}
 
+.editorial-row {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 8rem;
+}
+
+/* Creating the "Staggered" Look */
+.top-row { justify-content: flex-start; }
+.bottom-row { justify-content: flex-end; }
+
+.photo-frame img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    filter: grayscale(10%) contrast(105%); /* High-end photography feel */
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.photo-frame:hover img {
+    transform: scale(1.03);
+}
+
+/* Glassmorphism for the Video Toggle */
+.mute-toggle-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    letter-spacing: 2px;
+    font-size: 0.7rem;
+    cursor: pointer;
+}
 
 
 @media (max-width: 768px) {
     /* 1. Hero Adjustments */
     .hero-about h1 {
-        font-size: 2.2rem;
+        font-size: 2.2rem; /* Smaller for mobile headers */
         line-height: 1.2;
     }
 
-    /* 2. Magazine Editorial Layout - Clear the Grid for Floating */
+    /* 2. Magazine Editorial Layout */
     .editorial-wrapper {
-        display: block !important;
-        padding: 0 15px;
+        padding: 0 15px; /* Tighter padding for small screens */
     }
 
     .editorial-row {
-        display: block !important; /* Required for the photo to float next to text */
-        margin-bottom: 40px;
-        clear: both;
+        flex-direction: column; /* Stack vertically */
+        gap: 3rem;
+        margin-bottom: 5rem;
     }
 
-    /* 3. The "Fashion News" Float Logic */
+    /* 3. The "Compact" Staggered Look */
     .vision-box {
-        width: 100% !important;
-        text-align: left;
+        width: 100%;
+        text-align: center;
+        padding: 0 10px;
     }
 
-    .magazine-para {
-        font-size: 1rem;
-        line-height: 1.6;
-        display: block !important;
+    .profile-box {
+        width: 100%;
+        max-width: 100%; /* Ensure it doesn't overflow */
     }
 
-    /* The Administrator (Eleanor) Tucked Right */
-    .profile-box.eleanor {
-        float: right !important;
-        width: 140px !important; /* Narrow 'Verbal Rectangle' */
-        margin-left: 15px;
-        margin-bottom: 10px;
-        position: relative !important;
+    /* Offset the images slightly to keep the "Editorial" vibe */
+    .julianne {
+        padding-left: 10%; /* Pushes image slightly right */
     }
 
-    /* Remove the nurse (Julianne) from mobile view */
-    .profile-box.julianne {
-        display: none !important;
-    }
-
-    .photo-frame {
-        width: 100% !important;
-        height: 200px !important; /* Vertical 'Magazine' Portrait */
-        border: none !important;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        border-radius: 4px;
+    .eleanor {
+        padding-right: 10%; /* Pushes image slightly left */
     }
 
     .photo-frame img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
+        height: 400px; /* Shorter height for mobile comfort */
+        border-radius: 4px; /* Subtle high-end touch */
     }
 
-    .label-stack {
-        text-align: right;
-        margin-top: 8px;
-    }
-
-    .name-label {
-        font-size: 0.9rem !important;
-        font-weight: 800;
-        text-transform: uppercase;
-    }
-
-    /* 4. Directory (Blue Scroller) - Full Width */
+    /* 4. Directory (The Scroller) */
     .dir-track {
-        display: flex !important;
         gap: 15px;
         padding-bottom: 20px;
-        overflow-x: auto;
-        clear: both; /* Prevents the float from affecting the blue section */
     }
 
     .dir-item {
-        min-width: 280px; 
+        min-width: 260px; /* Standardizes size for swiping */
         padding: 20px;
     }
 
-    /* 5. Admissions Journey & Video Stack */
+    /* 5. Admissions Journey */
     .split-view-container {
-        display: flex !important;
-        flex-direction: column !important;
-    }
-
-    .step-card {
-        width: 100% !important;
-        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column; /* Video goes below text on mobile */
     }
 
     .step-number-large {
-        font-size: 2.2rem;
+        font-size: 2.5rem; /* Scale down the giant numbers */
     }
     
-    /* YouTube Video - Full Width Under Directory */
     .video-card-container {
-        width: 100% !important;
-        height: auto !important;
-        aspect-ratio: 16 / 9; /* Perfect video shape */
+        height: 300px; /* Prevents the video from taking too much vertical space */
         margin-top: 2rem;
-        display: block !important;
-    }
-
-    .video-card-container iframe {
-        width: 100% !important;
-        height: 100% !important;
     }
 }
