@@ -2990,23 +2990,30 @@ body {
 
 
 /* --- ARCHITECTURAL ACCENT --- */
+/* --- TOP RIGHT ARCHITECTURAL ACCENT --- */
+.financial-section-wrapper {
+    position: relative; /* This is the "anchor" for the line */
+    overflow: hidden;
+}
+
 .top-right-accent {
     position: absolute;
     top: 0;
     right: 0;
-    width: 35%; /* Adjust this to make the line longer or shorter */
-    height: 1px;
-    background: #0f172a; /* Match your Dark Blue */
-    opacity: 0.2; /* Subtle, so it doesn't distract from the text */
+    width: 30%;         /* How far left the line stretches */
+    height: 1px;        /* Ultra thin for a premium look */
+    background: #0f172a; 
+    opacity: 0.15;      /* Subtle so it feels like a blueprint line */
+    z-index: 1;
 }
 
-/* Optional: Add a small vertical tick at the end for a "blueprints" look */
+/* The vertical "tick" at the very edge */
 .top-right-accent::after {
     content: '';
     position: absolute;
     right: 0;
     top: 0;
     width: 1px;
-    height: 40px;
+    height: 60px;
     background: #0f172a;
 }
