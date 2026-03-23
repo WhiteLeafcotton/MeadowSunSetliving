@@ -2449,7 +2449,7 @@ body {
 
 
 @media (max-width: 768px) {
-    /* 1. Hero & Base Layout (Forced Cleanup) */
+    /* 1. Hero & Base Layout */
     .hero-about h1 {
         font-size: 1.8rem;
     }
@@ -2465,58 +2465,56 @@ body {
         gap: 0;
     }
 
-    /* 2. FORCE Vision Text Large & Regular - Comes FIRST */
+    /* 2. VISION TEXT: Large, readable, and full width */
     .vision-box {
-        grid-row: 1; /* Puts it at the top of the grid */
+        grid-row: 1; /* Ensures text is always at the top */
         width: 100% !important;
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
         text-align: left;
     }
 
     .magazine-para {
-        font-size: 1.1rem !important; /* Regular, readable size */
+        font-size: 1.15rem !important; /* Prominent size for clarity */
         line-height: 1.7;
         color: #333;
     }
 
-    /* 3. The Vertical (Verbal) Staggered Photos - Comes AFTER text */
+    /* 3. STAGGERED PHOTOS: Vertical rectangles appearing after text */
     .editorial-row {
-        grid-row: 2; /* Puts photos below the text */
+        grid-row: 2; /* Photos drop below the vision box */
         display: grid !important;
-        grid-template-columns: 1fr 1fr; /* Two columns for staggering */
-        gap: 20px;
+        grid-template-columns: 1fr 1fr; /* Two-column stagger */
+        gap: 15px;
         align-items: flex-start;
-        height: auto !important; /* Reset from previous absolute attempts */
+        height: auto !important;
         margin-bottom: 4rem;
+        padding-top: 10px;
     }
 
     .profile-box {
-        position: relative !important; /* Reset from absolute */
+        position: relative !important;
         width: 100% !important;
-        top: 0 !important;
-        left: 0 !important;
         display: flex !important;
         flex-direction: column;
         align-items: center;
     }
 
-    /* Julianne: Top Column, Left side */
+    /* Julianne: Left Column */
     .julianne {
         grid-column: 1;
-        margin-top: 0;
     }
 
-    /* Eleanor: Staggered Downward, Right side */
+    /* Eleanor: Right Column + Staggered Downward */
     .eleanor {
         grid-column: 2;
-        margin-top: 60px; /* This creates the staggered overlap look */
+        margin-top: 70px !important; /* Increased offset for that diagonal feel */
     }
 
     .photo-frame {
-        width: 130px !important; /* Very small footprint */
-        height: 190px !important; /* Forces the "verbal" vertical rectangle */
+        width: 125px !important; /* Narrower width */
+        height: 200px !important; /* Taller height for 'Verbal Rectangle' look */
         border: 4px solid #fff;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.12);
         overflow: hidden;
         border-radius: 2px;
     }
@@ -2527,30 +2525,31 @@ body {
         object-fit: cover !important;
     }
 
-    /* 4. Compact Labels (Next to/Below diagonal photos) */
+    /* 4. Labels */
     .label-stack {
         text-align: center;
-        margin-top: 10px;
+        margin-top: 12px;
         width: 100%;
-        max-width: 130px;
     }
 
     .name-label {
-        font-size: 1rem !important;
-        line-height: 1.1;
+        font-size: 0.95rem !important;
+        line-height: 1.2;
+        font-weight: 600;
     }
 
     .mini-bio {
-        display: none; /* Keep the diagonal look clean on mobile */
+        display: none; /* Keeps mobile layout clean and focused on the photos */
     }
 
-    /* 5. UI Cleanup */
+    /* 5. Functional Cleanup */
     .dir-track {
         gap: 15px;
+        padding-bottom: 20px;
     }
 
     .dir-item {
-        min-width: 200px;
+        min-width: 220px;
         padding: 15px;
     }
 
