@@ -2448,180 +2448,112 @@ body {
 
 
 @media (max-width: 768px) {
-    /* 1. Hero Adjustments */
+    /* 1. Hero & Vision (Readable & Full Width) */
     .hero-about h1 {
-        font-size: 2.2rem; /* Smaller for mobile headers */
+        font-size: 2.2rem;
         line-height: 1.2;
     }
 
-    /* 2. Magazine Editorial Layout */
-    .editorial-wrapper {
-        padding: 0 15px; /* Tighter padding for small screens */
+    .magazine-editorial {
+        padding: 40px 20px;
     }
 
-    .editorial-row {
-        flex-direction: column; /* Stack vertically */
-        gap: 3rem;
-        margin-bottom: 5rem;
-    }
-
-    /* 3. The "Compact" Staggered Look */
     .vision-box {
-        width: 100%;
-        text-align: center;
-        padding: 0 10px;
+        width: 100% !important;
+        text-align: left;
+        margin-bottom: 3rem;
     }
 
+    .magazine-para {
+        font-size: 1rem !important; /* Kept regular for older eyes */
+        line-height: 1.6;
+    }
+
+    /* 2. Profile Boxes - The Magazine Wrap Effect */
     .profile-box {
-        width: 100%;
-        max-width: 100%; /* Ensure it doesn't overflow */
+        display: block !important; /* Switched from flex to allow float wrap */
+        width: 100% !important;
+        margin-bottom: 4rem;
+        clear: both;
     }
 
-    /* Offset the images slightly to keep the "Editorial" vibe */
-    .julianne {
-        padding-left: 10%; /* Pushes image slightly right */
+    .photo-frame {
+        width: 130px !important; /* Small, elegant size */
+        height: 170px !important;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 10px;
     }
 
-    .eleanor {
-        padding-right: 10%; /* Pushes image slightly left */
+    /* Julianne wraps right, Eleanor wraps left */
+    .julianne .photo-frame {
+        float: right;
+        margin-left: 15px;
+    }
+
+    .eleanor .photo-frame {
+        float: left;
+        margin-right: 15px;
     }
 
     .photo-frame img {
-        height: 400px; /* Shorter height for mobile comfort */
-        border-radius: 4px; /* Subtle high-end touch */
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
     }
 
-    /* 4. Directory (The Scroller) */
+    /* 3. Text Flow Adjustments */
+    .label-stack {
+        text-align: left !important;
+        display: block !important;
+    }
+
+    .name-label {
+        font-size: 1.2rem !important;
+        margin-top: 0;
+    }
+
+    .bio-col {
+        border: none !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+        border-top: 1px solid rgba(0,0,0,0.05) !important;
+        margin-top: 8px;
+        padding-top: 8px !important;
+    }
+
+    .mini-bio {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+
+    /* 4. Functional UI Sections */
     .dir-track {
         gap: 15px;
         padding-bottom: 20px;
     }
 
     .dir-item {
-        min-width: 260px; /* Standardizes size for swiping */
+        min-width: 260px;
         padding: 20px;
     }
 
-    /* 5. Admissions Journey */
     .split-view-container {
         display: flex;
-        flex-direction: column; /* Video goes below text on mobile */
+        flex-direction: column;
     }
 
     .step-number-large {
-        font-size: 2.5rem; /* Scale down the giant numbers */
+        font-size: 2.5rem;
     }
     
     .video-card-container {
-        height: 300px; /* Prevents the video from taking too much vertical space */
+        height: 300px;
         margin-top: 2rem;
     }
-}
 
-/* ==========================================
-   MOBILE COMPACT & BALANCE (ADD THIS)
-   ============================================= */
-@media (max-width: 768px) {
-    
-    /* 1. Reset Spacing for Compact Flow */
-    .magazine-editorial {
-        padding: 60px 20px; /* Reduced vertical padding */
-    }
-
-    .editorial-wrapper {
-        gap: 40px; /* Tighter gap between rows */
-    }
-
-    .editorial-row {
-        margin-bottom: 40px; /* Less space between sections */
-    }
-
-    /* 2. Compact Text Styling */
-    .gold-eyebrow {
-        font-size: 0.65rem; /* Smaller, precise label */
-        letter-spacing: 3px;
-    }
-
-    .magazine-title {
-        font-size: 1.8rem; /* Balanced header size */
-        line-height: 1.2;
-        margin-bottom: 15px;
-    }
-
-    .magazine-para {
-        font-size: 0.9rem; /* Readable but compact text */
-        line-height: 1.6;
-        max-width: 100%; /* Use full width */
-    }
-
-    /* 3. Balanced Profile Boxes */
-    /* 3. Balanced Profile Boxes - FORCED RESET */
-    .profile-box {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: center; 
-        text-align: center;
-        padding: 0 !important; /* Removes side padding that might be squishing it */
-        width: 100% !important;
-    }
-
-    .photo-frame {
-        /* Force the container to be smaller */
-        width: 85% !important; /* Takes up 85% of the phone screen width */
-        max-width: 280px !important; /* Caps it so it stays 'compact' */
-        margin: 0 auto !important; /* Centers it */
-        height: auto !important; 
-        aspect-ratio: 4 / 5;
-        overflow: hidden;
-    }
-
-    .photo-frame img {
-        /* Force the image to fill that new smaller container */
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-    }
-
-    .label-stack {
-        width: 100%;
-        padding: 0;
-        align-items: center; /* Center text stack */
-    }
-
-    /* Reset desktop alignments */
-    .right-align, .left-align {
-        text-align: center;
-        align-items: center;
-    }
-
-    .name-label {
-        font-size: 1.4rem;
-        line-height: 1.2;
-        margin-bottom: 10px;
-    }
-
-    .name-label.hero-size {
-        font-size: 1.6rem; /* Slightly larger for Eleanor but not huge */
-    }
-
-    /* 4. Tighter Bio Columns */
-    .bio-col {
-        padding: 15px 0 0 0;
-        border: none !important; /* Remove desktop side borders */
-        border-top: 1px solid rgba(0,0,0,0.1) !important; /* Add top border for definition */
-        width: 100%;
-        max-width: 280px; /* Keep text narrow for elegance */
-    }
-
-    .mini-bio {
-        font-size: 0.8rem;
-        line-height: 1.5;
-    }
-
-    /* 5. Keep the Fox Subtle */
     .fox-bg img {
-        width: 150px; /* Smaller watermark */
-        opacity: 0.03; /* Barely visible */
+        width: 120px;
+        opacity: 0.03;
     }
 }
