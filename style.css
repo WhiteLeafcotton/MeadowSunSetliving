@@ -2449,3 +2449,67 @@ body {
 
 
 
+/* --- ABOUT US MOBILE REFINEMENTS --- */
+@media (max-width: 768px) {
+    /* Hides profile photos on mobile only */
+    /* Note: Replace '.profile-photo' with your actual class name if it differs */
+    .profile-photo, 
+    .team-member img,
+    .leadership-image { 
+        display: none !important; 
+    }
+
+    /* Adjusting the About Page Hero for better mobile fit */
+    .hero.hero-about {
+        height: 40vh; /* Shorter hero so content is easier to reach */
+        position: relative; /* Disables sticky slide-over for smoother mobile scrolling */
+        z-index: 1;
+    }
+
+    /* Ensuring the content below the hero doesn't overlap weirdly */
+    .hero.hero-about ~ section {
+        margin-top: 0;
+    }
+}
+
+
+
+/* --- ADMISSIONS MOBILE REORGANIZATION --- */
+@media (max-width: 768px) {
+    /* 1. FLIP THE LAYOUT: Moves Right Card (Video) above Left Card (Text) */
+    .split-view-container, 
+    .admissions-journey {
+        display: flex !important;
+        flex-direction: column-reverse !important; 
+        gap: 20px;
+        padding: 40px 5% !important;
+    }
+
+    /* 2. MAKE VIDEO HORIZONTAL: Forces the video container to adapt */
+    .video-card-container,
+    .right-card {
+        width: 100% !important;
+        height: 250px !important; /* Set a horizontal height (adjust as needed) */
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    /* 3. ENSURE VIDEO FILLS THE SPACE */
+    .video-card-container video,
+    .video-card-container iframe {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover; /* Prevents "black bars" on the sides */
+    }
+
+    /* 4. ADMISSIONS CARD ADJUSTMENT */
+    .left-card,
+    .step-card-editorial {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-top: 10px;
+    }
+}
+
+
+
