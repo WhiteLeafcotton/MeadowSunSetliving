@@ -186,21 +186,20 @@
 
 
 
-
-
 <section class="insurance-brand-strip reveal-up" id="community-care-section">
-    
-    <div class="cc-watermark-web cc-desktop-only">SM // LIAISON</div>
+    <img src="path/to/your-watermark-logo.svg" alt="SM Liaison Watermark" class="cc-watermark-web cc-desktop-only">
     
     <div class="cc-swipe-container">
         
         <div class="cc-branding-slide">
-            <div class="cc-image-wrapper">
-                <img src="YOUR-COMMUNITY-CARE-IMAGE.jpg" alt="Community Care Stewardship" class="cc-hero-image">
+            <div class="cc-content-limiter">
+                <span class="cc-eyebrow">Certified Partner</span>
+                <h1 class="cc-main-title">Community <br> <span class="italic-gold">Care.</span></h1>
+                
+                <div class="cc-swipe-hint">Details <i class="fa-solid fa-arrow-right"></i></div>
             </div>
             
-            <div class="cc-watermark-mobile cc-mobile-only">SM // LIAISON</div>
-            <div class="cc-swipe-hint cc-mobile-only">Details <i class="fa-solid fa-arrow-right"></i></div>
+            <img src="path/to/your-watermark-logo.svg" alt="SM Liaison Watermark" class="cc-watermark-mobile cc-mobile-only">
         </div>
 
         <div class="cc-card-slide">
@@ -220,28 +219,24 @@
 </section>
 
 <style>
-/* --- 1. DESKTOP VIEW (White background to make card/image pop) --- */
+/* --- 1. WEB VIEW (LOCKED DIMENSIONS - PERFECT) --- */
 #community-care-section {
-    padding: 80px 5%; /* UNTOUCHED THICKNESS */
-    background: #ffffff; /* Changed to white for better image presentation */
-    color: #0f172a; /* Dark text for the section, card has its own color */
+    padding: 80px 5%; /* NO CHANGES TO THICKNESS */
+    background: #0f172a;
+    color: white;
     position: relative;
     overflow: hidden;
 }
 
-/* Web Watermark (Top Left) */
+/* Web Watermark Image (Top Left) */
 .cc-watermark-web {
     position: absolute;
     top: 30px;
     left: 40px;
-    font-family: 'Inter';
-    font-size: 0.6rem;
-    font-weight: 700;
-    color: #bfa15f;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    opacity: 0.4; /* Slightly more opaque on white bg */
-    pointer-events: none;
+    height: 12px; /* Set height to maintain aspect ratio, adjust as needed */
+    width: auto; /* Maintains proportion */
+    opacity: 0.3; /* Subtle transparency */
+    pointer-events: none; /* User cannot interact with it */
     z-index: 10;
 }
 
@@ -250,58 +245,26 @@
     margin: 0 auto;
     display: flex; 
     align-items: center;
-    gap: 0; /* Tightened gap for seamless look */
+    gap: 40px;
     position: relative;
     z-index: 5;
 }
+.cc-branding-slide { flex: 1.2; position: relative; } /* position needed for absolute children */
+.cc-card-slide { flex: 1; }
 
-/* DESKTOP SPLIT: Image takes ~45%, Card takes ~55% */
-.cc-branding-slide { flex: 0.8; height: 100%; }
-.cc-card-slide { flex: 1.2; padding-left: 60px; box-sizing: border-box; }
+.cc-eyebrow { color: #bfa15f; letter-spacing: 12px; text-transform: uppercase; font-size: 0.8rem; font-family: 'Inter'; font-weight: 800; display: block; }
+.cc-main-title { font-family: 'Playfair Display'; font-size: 7rem; line-height: 0.75; margin: 20px 0; color: #fff; letter-spacing: -4px; }
+.italic-gold { font-style: italic; font-weight: 400; color: #bfa15f; }
 
-/* Image Wrapper and Handling */
-.cc-image-wrapper {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-}
-.cc-hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Perfectly scales and centers the image within the space */
-    object-position: center;
-}
-
-/* Frosted Card - Locked styles on Blue Background */
 .cc-frosted-card {
-    background: #0f172a; /* Card now carries the dark blue background */
+    background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 60px;
-    color: white; /* Dark card has white text */
 }
-
-.cc-quote { 
-    font-family: 'Cormorant Garamond'; 
-    font-style: italic; 
-    font-size: 2rem; 
-    color: #fff; 
-    transition: opacity 0.4s ease-in-out; 
-    margin: 0;
-}
-.quote-wrapper { min-height: 80px; display: flex; align-items: center; }
-
-.cc-details { 
-    font-family: 'Inter'; 
-    font-size: 0.9rem; 
-    line-height: 1.8; 
-    color: #94a3b8; 
-    margin-top: 30px; 
-    border-top: 1px solid rgba(255,255,255,0.1); 
-    padding-top: 30px;
-}
+.cc-quote { font-family: 'Cormorant Garamond'; font-style: italic; font-size: 2rem; color: #fff; transition: opacity 0.4s ease-in-out; }
+.cc-details { font-family: 'Inter'; font-size: 0.9rem; line-height: 1.8; color: #94a3b8; margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;}
 .cc-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 40px; }
 .cc-link { color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; border-bottom: 1px solid #bfa15f; padding-bottom: 5px; }
 .cc-id { font-size: 0.65rem; color: #475569; text-transform: uppercase; }
@@ -309,12 +272,13 @@
 /* Desktop-only/Mobile-only utility classes */
 .cc-desktop-only { display: block; }
 .cc-mobile-only { display: none; }
+.cc-swipe-hint { display: none; } 
 
-/* --- 2. MOBILE VIEW (LOCKED 260px ULTRA-THIN RIBBON SWIPE) --- */
+/* --- 2. MOBILE VIEW (LOCKED 260px ULTRA-THIN RIBBON) --- */
 @media (max-width: 768px) {
     #community-care-section {
         padding: 0 !important; 
-        height: 260px !important; /* UNTOUCHED THICKNESS - DO NOT CHANGE */
+        height: 260px !important; /* NO CHANGES TO THICKNESS */
     }
 
     /* Toggle visibility classes */
@@ -331,15 +295,16 @@
     }
     .cc-swipe-container::-webkit-scrollbar { display: none; }
     
-    /* SLIDE 1 (The Image Slide) */
     .cc-branding-slide {
         min-width: 100vw !important;
         height: 100%;
-        position: relative; /* For watermark/hint placement */
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        scroll-snap-align: center;
         flex: none !important;
-        padding: 0;
+        position: relative; /* CRITICAL for placing watermark on BLUE CARD */
     }
-    /* SLIDE 2 (The Frosted Card Slide) */
     .cc-card-slide {
         min-width: 100vw !important;
         height: 100%;
@@ -348,63 +313,53 @@
         justify-content: center;
         scroll-snap-align: center;
         flex: none !important;
-        padding: 0 30px; /* Some padding for the card in its slide */
-        background: #0f172a; /* Card slide keeps the blue background for the swipe reveal */
     }
 
-    /* Handling the Image on the 260px strip */
-    .cc-image-wrapper { height: 100%; }
-    .cc-hero-image { height: 100%; width: 100%; }
+    .cc-content-limiter { padding: 0 30px; }
 
-    /* The Hint Over the Image */
-    .cc-swipe-hint {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        display: block; 
-        font-size: 0.55rem; 
-        color: #bfa15f; 
-        text-transform: uppercase; 
-        letter-spacing: 3px;
-        background: rgba(15, 23, 42, 0.7); /* Subtle backdrop over image */
-        padding: 8px 12px;
+    /* Scaling huge text to fill the 260px strip vertically */
+    .cc-main-title { 
+        font-size: 3.4rem !important; 
+        margin: 5px 0 !important; 
+        letter-spacing: -2px !important;
+        line-height: 0.8 !important;
+    }
+    .cc-eyebrow { 
+        font-size: 0.55rem !important; 
+        letter-spacing: 6px !important; 
     }
 
-    /* Mobile Watermark (Bottom Right of IMAGE SLIDE) */
-    .cc-watermark-mobile {
-        position: absolute;
-        bottom: 15px;
-        right: 15px;
-        font-family: 'Inter';
-        font-size: 0.5rem;
-        font-weight: 700;
-        color: #bfa15f;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        opacity: 0.3; /* Faint over the image */
-        pointer-events: none;
-    }
-
-    /* COMPACT MOBILE CARD DIMENSIONS (Fitted inside the 260px strip) */
     .cc-frosted-card {
-        padding: 15px 20px !important; /* Compact padding */
+        padding: 15px 20px !important; /* Untouched compact padding */
         width: 85% !important; 
-        height: 80% !important; /* Fills 80% of the 260px strip height */
+        height: 80% !important; /* Perfectly sized inside the 260px strip */
         display: flex;
         flex-direction: column;
         justify-content: center;
-        backdrop-filter: blur(15px); /* Slightly reduced blur for mobile speed */
     }
     .quote-wrapper { min-height: 40px !important; }
-    .cc-quote { font-size: 1rem !important; margin: 0; line-height: 1.2; }
-    .cc-details { font-size: 0.65rem !important; margin-top: 5px !important; padding-top: 5px !important; }
+    .cc-quote { font-size: 1rem !important; }
+    .cc-details { font-size: 0.65rem !important; margin-top: 5px !important; padding-top: 5px !important; border-top: 1px solid rgba(255,255,255,0.1); }
     .cc-footer { margin-top: 10px !important; }
+    
+    .cc-swipe-hint { display: block; margin-top: 10px; font-size: 0.5rem; color: #bfa15f; }
+
+    /* Mobile Watermark Image (Bottom Right of BLUE CARD) */
+    .cc-watermark-mobile {
+        position: absolute;
+        bottom: 10px;
+        right: 15px;
+        height: 10px; /* Slightly smaller for mobile ribbon, adjust as needed */
+        width: auto;
+        opacity: 0.2; /* Fainter transparency on mobile */
+        pointer-events: none;
+        z-index: 10;
+    }
 }
 </style>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Javascript to rotate quotes within the card (Web and Mobile)
         const quotes = [
             `"We navigate coverage, so you focus on the moments."`,
             `"Clinical stewardship meets insurance excellence."`,
@@ -424,6 +379,12 @@
     });
 </script>
 
+
+
+
+
+
+        
 
 
 
