@@ -191,16 +191,16 @@
             <div class="cc-content-limiter">
                 <span class="cc-eyebrow">Certified Partner</span>
                 <h2 class="cc-main-title">Community <br> <span class="italic-gold">Care.</span></h2>
-                <div class="cc-swipe-hint">Swipe for details <i class="fa-solid fa-arrow-right"></i></div>
+                <div class="cc-swipe-hint">Details <i class="fa-solid fa-arrow-right"></i></div>
             </div>
         </div>
 
         <div class="cc-card-slide">
             <div class="cc-frosted-card">
-                <p class="cc-quote">"We navigate the complexities of coverage, so you can focus on the moments that matter."</p>
-                <p class="cc-details">Authorized Community Care provider with direct-liaison service. Our clinical directors work directly with insurance coordinators.</p>
+                <p class="cc-quote">"We navigate coverage, so you focus on the moments."</p>
+                <p class="cc-details">Authorized provider with direct-liaison service. We work directly with insurance coordinators.</p>
                 <div class="cc-footer">
-                    <a href="tel:YOUR-NUMBER" class="cc-link">Check Eligibility</a>
+                    <a href="tel:YOUR-NUMBER" class="cc-link">Eligibility</a>
                     <span class="cc-id">CC-8829-X</span>
                 </div>
             </div>
@@ -210,10 +210,10 @@
 </section>
 
 <style>
-/* --- 1. BASE / DESKTOP STYLES (Your Original View) --- */
-.insurance-brand-strip {
+/* --- 1. DESKTOP / WEB VIEW (UNTOUCHED BRANDING) --- */
+#community-care-section {
     padding: 80px 5%;
-    background: #0f172a;
+    background: #0f172a; /* This ensures the blue background on Web */
     color: white;
     position: relative;
     overflow: hidden;
@@ -248,14 +248,11 @@
 .cc-link { color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; border-bottom: 1px solid #bfa15f; padding-bottom: 5px; }
 .cc-id { font-size: 0.7rem; color: #475569; text-transform: uppercase; }
 
-/* Hide mobile hint on desktop */
-.cc-swipe-hint { display: none; }
-
-/* --- 2. MOBILE "HORIZONTAL STRIP" OVERRIDES --- */
+/* --- 2. MOBILE REFINEMENTS (THINNER & COMPACT) --- */
 @media (max-width: 768px) {
-    .insurance-brand-strip {
-        padding: 0 !important; /* Forces the "Strip" look by removing vertical padding */
-        height: 450px; /* Fixed height for the blue ribbon */
+    #community-care-section {
+        padding: 0 !important; 
+        height: 380px; /* Thinner horizontal strip */
     }
 
     .cc-swipe-container {
@@ -266,6 +263,7 @@
         gap: 0 !important;
         height: 100%;
         max-width: none;
+        scrollbar-width: none;
     }
     .cc-swipe-container::-webkit-scrollbar { display: none; }
 
@@ -276,41 +274,43 @@
         align-items: center;
         scroll-snap-align: center;
         flex: none !important;
-        background: #0f172a; /* Ensures no white gaps */
+        background: #0f172a;
+        box-sizing: border-box;
     }
 
-    .cc-content-limiter { padding: 0 40px; }
+    .cc-content-limiter { padding: 0 35px; }
 
-    .cc-main-title { font-size: 3.5rem !important; }
+    /* Balanced Mobile Titles */
+    .cc-main-title { font-size: 3.2rem !important; margin: 15px 0 !important; }
+    .cc-eyebrow { font-size: 0.6rem !important; letter-spacing: 6px !important; }
 
+    /* Compact Frosted Card */
     .cc-frosted-card {
-        padding: 30px !important;
-        margin: 0 20px;
-        background: rgba(255, 255, 255, 0.05);
+        padding: 25px !important;
+        margin: 0 15px;
+        background: rgba(255, 255, 255, 0.06) !important;
     }
 
-    .cc-quote { font-size: 1.3rem !important; }
-    .cc-details { font-size: 0.8rem !important; line-height: 1.5; }
-
+    .cc-quote { font-size: 1.2rem !important; margin-bottom: 12px !important; line-height: 1.3 !important; }
+    .cc-details { font-size: 0.75rem !important; line-height: 1.4 !important; margin-bottom: 15px !important; }
+    .cc-footer { gap: 20px !important; }
+    
     .cc-swipe-hint {
         display: block;
-        margin-top: 25px;
-        font-size: 0.6rem;
-        color: #bfa15f;
+        margin-top: 15px;
+        font-size: 0.55rem;
         text-transform: uppercase;
-        letter-spacing: 2px;
+        letter-spacing: 3px;
+        color: #bfa15f;
         animation: ccPulse 2s infinite;
     }
 }
 
 @keyframes ccPulse {
-    0% { opacity: 0.3; transform: translateX(0); }
-    50% { opacity: 1; transform: translateX(8px); }
-    100% { opacity: 0.3; transform: translateX(0); }
+    0%, 100% { opacity: 0.3; transform: translateX(0); }
+    50% { opacity: 1; transform: translateX(5px); }
 }
 </style>
-
-
 
 
 
