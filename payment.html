@@ -469,21 +469,44 @@
 <style>
 /* --- GLOBAL & DESKTOP --- */
 /* --- GLOBAL & DESKTOP --- */
+<style>
+/* --- GLOBAL & DESKTOP --- */
 #flex-pay-section {
-    /* Top: 40px (Just a little space), Sides: 5%, Bottom: 0px (Flushed to footer) */
-    padding: 40px 5% 0 5% !important; 
+    padding: 0 !important; /* Changed to 0 so the photo strip can go edge-to-edge */
     background: #ffffff;
     font-family: 'Inter', sans-serif;
-    margin-bottom: 0 !important; /* Ensures no ghost margin at bottom */
+    margin-bottom: 0 !important;
 }
 
+/* THE PHOTO STRIP: This wraps just the title area */
 .flex-container {
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 100% !important; /* Full width for the photo */
+    position: relative;
+    background-image: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2023.jpeg?raw=true');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 5% !important; /* Restores the visual "space" inside the strip */
+    margin-bottom: 60px; /* Space between the photo strip and the grid */
+}
+
+/* THE TINT: Makes the text readable against the photo */
+.flex-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.4); /* Elegant dark overlay */
+    z-index: 1;
+}
+
+/* Forces title content above the tint and makes it white */
+.flex-eyebrow, .flex-main-title {
+    position: relative;
+    z-index: 2;
+    color: #ffffff !important; 
 }
 
 .flex-eyebrow {
-    color: #bfa15f;
+    color: #bfa15f !important; /* Keeps the gold color pop */
     letter-spacing: 10px;
     text-transform: uppercase;
     font-size: 0.65rem;
@@ -495,120 +518,56 @@
 .flex-main-title {
     font-family: 'Playfair Display';
     font-size: 6rem;
-    color: #0f172a;
-    margin: 0 0 60px;
+    margin: 0;
     letter-spacing: -2px;
 }
 
-/* THE "PAY" FIX: Bigger, elegant, distinct font */
 .italic-pay {
-    font-family: 'Cormorant Garamond', serif; /* Higher-end serif */
+    font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 400;
-    color: #bfa15f;
-    font-size: 7.5rem; /* 20% bigger than "Flex" */
+    color: #bfa15f !important; /* Gold Pay */
+    font-size: 7.5rem;
     margin-left: -10px;
 }
 
+/* THE GRID: Centered below the photo strip */
 .flex-pay-grid {
+    max-width: 1400px;
+    margin: 0 auto 100px;
     display: grid;
     grid-template-columns: 1fr 1fr 1.2fr;
     border: 1px solid #e2e8f0;
+    background: #fff; /* Keeps cards on white */
 }
 
-.flex-card-compact {
-    padding: 60px 50px;
-    border-right: 1px solid #e2e8f0;
-    display: flex;
-    flex-direction: column;
-}
-
-.card-title {
-    font-family: 'Playfair Display';
-    font-size: 1.8rem;
-    color: #0f172a;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.card-text {
-    font-size: 0.95rem;
-    color: #64748b;
-    line-height: 1.8;
-}
-
-.flex-card-cta {
-    padding: 60px 50px;
-    background: #f8fafc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.cta-sub {
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #94a3b8;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.flex-btn {
-    display: block;
-    padding: 22px 40px;
-    background: #0f172a;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    transition: all 0.3s ease;
-}
-
-.flex-btn:hover {
-    background: #bfa15f;
-}
+/* ... (Your existing .flex-card-compact, .card-title, .flex-btn styles remain exactly the same) ... */
 
 /* --- MOBILE "ELITE" VERSION --- */
 @media (max-width: 768px) {
-    #flex-pay-section {
-        padding: 60px 25px !important;
+    .flex-container {
+        padding: 60px 25px !important; /* Thinner strip for mobile */
+        margin-bottom: 40px;
     }
 
     .flex-main-title {
         font-size: 3.8rem !important;
-        margin-bottom: 40px !important;
     }
 
     .italic-pay {
-        font-size: 4.8rem !important; /* Scaled for mobile */
+        font-size: 4.8rem !important;
     }
 
     .flex-pay-grid {
-        grid-template-columns: 1fr !important; /* Stacked */
-        border: none !important; /* Remove outer border */
+        grid-template-columns: 1fr !important;
+        border: none !important;
+        margin-bottom: 60px;
     }
 
     .flex-card-compact {
-        padding: 40px 0 !important; /* Clean vertical stack */
+        padding: 40px 25px !important;
         border-right: none !important;
-        border-bottom: 1px solid #e2e8f0 !important; /* Separator lines */
-    }
-
-    .flex-card-cta {
-        padding: 50px 0 !important;
-        background: transparent !important; /* Magazine white look */
-    }
-
-    .card-title {
-        font-size: 1.5rem !important;
-    }
-
-    .card-text {
-        font-size: 0.85rem !important;
-        max-width: 90%;
+        border-bottom: 1px solid #e2e8f0 !important;
     }
 }
 </style>
