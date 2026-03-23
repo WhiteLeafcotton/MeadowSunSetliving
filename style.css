@@ -2476,21 +2476,22 @@ body {
 
 /* --- ADMISSIONS MOBILE REORGANIZATION --- */
 /* --- ABSOLUTE MOBILE PHOTO HIDE --- */
+/* --- FULL MOBILE LEADERSHIP HIDE --- */
 @media (max-width: 768px) {
-    /* Target images specifically within the about/leadership sections */
-    .about-section img, 
-    .leadership-section img, 
-    .team-member img,
-    .profile-photo,
-    [class*="profile"] img { 
+    /* Target the entire card/container, not just the img */
+    .leadership-card, 
+    .team-member-card, 
+    .profile-card,
+    .team-grid > div { 
         display: none !important; 
-        visibility: hidden !important;
-        height: 0 !important;
-        width: 0 !important;
-        opacity: 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
     }
+
+    /* If you have a specific heading for the team section, hide that too */
+    .leadership-section h2, 
+    .leadership-intro {
+        display: none !important;
+    }
+
 
 
     /* 2. MAKE VIDEO HORIZONTAL: Forces the video container to adapt */
