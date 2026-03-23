@@ -272,7 +272,11 @@
                 <p class="header-subtext">A seamless, dignified transition into our community, designed to provide peace of mind for families and residents alike.</p>
             </div>
 
-            <div class="steps-container editorial-spacing scrollable-steps">
+            <div class="mobile-process-btn" onclick="toggleMobileSteps()">
+                View the 5-Step Process
+            </div>
+
+            <div class="steps-container editorial-spacing scrollable-steps journey-steps-container">
                 <div class="step-card-editorial">
                     <div class="step-aside">
                         <span class="step-number-large">01</span>
@@ -338,12 +342,22 @@
             </div>
 
             <div class="iframe-viewport">
-                <iframe 
-                    id="journeyVideo"
-                    src="https://www.youtube.com/embed/jUxY2QqMDX0?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=jUxY2QqMDX0&controls=0&modestbranding=1&rel=0" 
-                    allow="autoplay; encrypted-media" 
-                    allowfullscreen>
-                </iframe>
+                <div class="desktop-only-video">
+                    <iframe 
+                        id="journeyVideo"
+                        src="https://www.youtube.com/embed/jUxY2QqMDX0?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=jUxY2QqMDX0&controls=0&modestbranding=1&rel=0" 
+                        allow="autoplay; encrypted-media" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="mobile-only-video">
+                    <iframe 
+                        src="https://www.youtube.com/embed/YOUR_MOBILE_VIDEO_ID?autoplay=1&mute=1&loop=1&playlist=YOUR_MOBILE_VIDEO_ID&controls=0" 
+                        allow="autoplay; encrypted-media" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
             </div>
         </div>
 
@@ -402,6 +416,15 @@
 
 
 
+
+
+
+
+
+
+    
+
+
     <div id="bookingModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -429,6 +452,25 @@
 
 
 
+// new thang
+
+function toggleMobileSteps() {
+    const container = document.querySelector('.journey-steps-container');
+    container.classList.toggle('mobile-active');
+    
+    // Update button text based on state
+    const btn = document.querySelector('.mobile-process-btn');
+    if (container.classList.contains('mobile-active')) {
+        btn.innerText = "Hide Steps";
+    } else {
+        btn.innerText = "View the 5-Step Process";
+    }
+}
+
+
+
+
+        
 
 
 var tag = document.createElement('script');
