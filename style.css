@@ -2448,52 +2448,53 @@ body {
 
 
 @media (max-width: 768px) {
-    /* 1. Hero & Vision (Readable & Full Width) */
-    .hero-about h1 {
-        font-size: 2.2rem;
-        line-height: 1.2;
-    }
-
-    .magazine-editorial {
-        padding: 40px 20px;
-    }
-
+    /* 1. FORCE Vision Text to be Large & Readable */
     .vision-box {
         width: 100% !important;
-        text-align: left;
-        margin-bottom: 3rem;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 2; /* Keeps text above the fox */
     }
 
     .magazine-para {
-        font-size: 1rem !important; /* Kept regular for older eyes */
+        font-size: 1.15rem !important; /* Larger than before for impact */
         line-height: 1.6;
+        color: #333;
     }
 
-    /* 2. Profile Boxes - The Magazine Wrap Effect */
+    /* 2. The Diagonal Photo Layout */
+    .editorial-row {
+        position: relative;
+        height: 280px; /* Gives the photos a "container" to float in */
+        margin-bottom: 2rem;
+        display: block !important;
+    }
+
     .profile-box {
-        display: block !important; /* Switched from flex to allow float wrap */
-        width: 100% !important;
-        margin-bottom: 4rem;
-        clear: both;
+        position: absolute !important; /* Allows diagonal positioning */
+        width: 140px !important; /* Very small footprint */
+    }
+
+    /* Julianne: Top Right */
+    .julianne {
+        top: 0;
+        right: 0;
+        z-index: 2;
+    }
+
+    /* Eleanor: Bottom Left (Overlapping vertically but offset horizontally) */
+    .eleanor {
+        top: 100px; /* Offset downward */
+        left: 0;   /* Offset to the other side */
+        z-index: 1;
     }
 
     .photo-frame {
-        width: 130px !important; /* Small, elegant size */
-        height: 170px !important;
-        border-radius: 4px;
+        width: 100% !important;
+        height: 160px !important;
+        border: 4px solid #fff; /* White border creates the 'layered' magazine look */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         overflow: hidden;
-        margin-bottom: 10px;
-    }
-
-    /* Julianne wraps right, Eleanor wraps left */
-    .julianne .photo-frame {
-        float: right;
-        margin-left: 15px;
-    }
-
-    .eleanor .photo-frame {
-        float: left;
-        margin-right: 15px;
     }
 
     .photo-frame img {
@@ -2502,58 +2503,35 @@ body {
         object-fit: cover !important;
     }
 
-    /* 3. Text Flow Adjustments */
+    /* 3. Compact Labels (Next to/Below diagonal photos) */
     .label-stack {
-        text-align: left !important;
-        display: block !important;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 5px;
+        position: absolute;
+        bottom: -30px;
+        width: 120px;
     }
 
     .name-label {
-        font-size: 1.2rem !important;
-        margin-top: 0;
-    }
-
-    .bio-col {
-        border: none !important;
-        padding: 0 !important;
-        max-width: 100% !important;
-        border-top: 1px solid rgba(0,0,0,0.05) !important;
-        margin-top: 8px;
-        padding-top: 8px !important;
+        font-size: 0.9rem !important;
+        line-height: 1.1;
     }
 
     .mini-bio {
-        font-size: 0.85rem;
-        line-height: 1.4;
+        display: none; /* Hide bio on mobile to keep the 'diagonal' look clean */
     }
 
-    /* 4. Functional UI Sections */
-    .dir-track {
-        gap: 15px;
-        padding-bottom: 20px;
-    }
-
+    /* 4. Directory & Journey Tweak */
     .dir-item {
-        min-width: 260px;
-        padding: 20px;
+        min-width: 220px;
+        padding: 15px;
     }
 
-    .split-view-container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .step-number-large {
-        font-size: 2.5rem;
-    }
-    
     .video-card-container {
-        height: 300px;
-        margin-top: 2rem;
+        height: 250px;
     }
 
-    .fox-bg img {
-        width: 120px;
-        opacity: 0.03;
+    .hero-about h1 {
+        font-size: 1.8rem;
     }
 }
