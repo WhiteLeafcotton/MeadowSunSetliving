@@ -148,8 +148,8 @@
         <div class="tier-scroll-container">
             <div class="tier-grid">
                 
-                <div class="reveal-up stagger-1">
-                    <div class="tier-v3 tier-compact">
+                <div class="tier-card-snap reveal-up stagger-1">
+                    <div class="tier-v3">
                         <span class="tier-label">01 / Essential</span>
                         <h3 class="tier-title">Wellness <br>Base</h3>
                         <p class="tier-desc">An intimate setting for those who value independence with the security of 24/7 oversight.</p>
@@ -157,8 +157,8 @@
                     </div>
                 </div>
 
-                <div class="reveal-up stagger-2">
-                    <div class="tier-v3 featured tier-compact">
+                <div class="tier-card-snap reveal-up stagger-2">
+                    <div class="tier-v3 featured">
                         <div class="featured-badge">Signature</div>
                         <span class="tier-label">02 / Signature</span>
                         <h3 class="tier-title">Enhanced <br>Care</h3>
@@ -168,8 +168,8 @@
                     </div>
                 </div>
 
-                <div class="reveal-up stagger-3">
-                    <div class="tier-v3 tier-compact">
+                <div class="tier-card-snap reveal-up stagger-3">
+                    <div class="tier-v3">
                         <span class="tier-label">03 / Elite</span>
                         <h3 class="tier-title">Total <br>Assurance</h3>
                         <p class="tier-desc">Comprehensive assistance for residents with complex clinical or cognitive requirements.</p>
@@ -183,7 +183,7 @@
 </section>
 
 <style>
-/* --- SHARED STYLES --- */
+/* --- BASE DESKTOP STYLES --- */
 .tier-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -197,60 +197,85 @@
     height: 100%;
     border: 1px solid #f1f5f9;
     background: #fff;
-    transition: 0.4s ease;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
 
-.tier-v3.featured {
-    background: #0f172a;
-    color: white;
+/* Featured / Active State */
+.tier-v3.featured, .tier-v3.active-mobile {
+    background: #0f172a !important;
+    color: white !important;
     transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.12);
-    padding: 60px 40px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+    border-color: #0f172a;
 }
 
 .tier-label { font-family: 'Inter'; font-size: 0.65rem; letter-spacing: 4px; color: #bfa15f; text-transform: uppercase; }
-.tier-title { font-family: 'Playfair Display'; font-size: 2.2rem; margin: 15px 0; color: #0f172a; }
-.featured .tier-title { color: white; font-size: 2.5rem; }
-.tier-desc { line-height: 1.8; margin-bottom: 25px; min-height: 80px; color: #64748b; font-size: 0.95rem; }
-.featured .tier-desc { color: #94a3b8; }
+.tier-title { font-family: 'Playfair Display'; font-size: 2.2rem; margin: 15px 0; color: #0f172a; transition: color 0.4s; }
+.featured .tier-title, .active-mobile .tier-title { color: white !important; }
+.tier-desc { line-height: 1.8; margin-bottom: 25px; color: #64748b; font-size: 0.95rem; }
+.featured .tier-desc, .active-mobile .tier-desc { color: #94a3b8 !important; }
 .price-text { font-size: 2rem; font-family: 'Inter'; font-weight: 300; color: #0f172a; }
-.featured .price-text { color: #bfa15f; font-size: 2.5rem; }
-.price-text span { font-size: 0.8rem; letter-spacing: 2px; color: #94a3b8; }
+.featured .price-text, .active-mobile .price-text { color: #bfa15f !important; }
 .featured-badge { position: absolute; top: 0; right: 40px; background: #bfa15f; padding: 8px 12px; font-size: 0.6rem; color: #0f172a; letter-spacing: 2px; font-weight: 800; text-transform: uppercase; }
-.tier-btn { margin-top: 35px; width: 100%; padding: 20px; background: #bfa15f; border: none; color: #0f172a; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; cursor: pointer; font-size: 0.75rem; }
+.tier-btn { margin-top: 35px; width: 100%; padding: 20px; background: #bfa15f; border: none; color: #0f172a; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; cursor: pointer; }
 
-/* --- MOBILE COMPACT HORIZONTAL ROW --- */
+/* --- MOBILE ANIMATED SWIPE --- */
 @media (max-width: 768px) {
     .tier-scroll-container {
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        margin: 0 -5%; /* Pulls it to screen edges */
-        padding: 0 5% 40px;
-        scrollbar-width: none; /* Hides scrollbar Firefox */
+        scroll-snap-type: x mandatory; /* Forces card to stop in center */
+        margin: 0 -5%;
+        padding: 40px 10% 60px; /* Padding helps center the "active" card */
+        scrollbar-width: none;
     }
-    .tier-scroll-container::-webkit-scrollbar { display: none; } /* Hides scrollbar Chrome */
+    .tier-scroll-container::-webkit-scrollbar { display: none; }
 
     .tier-grid {
-        display: flex; /* Switch grid to flex for horizontal row */
-        width: max-content; /* Allows row to expand past screen width */
+        display: flex;
+        width: max-content;
         gap: 20px;
     }
 
-    .reveal-up {
-        width: 290px; /* Compact width for each mobile card */
-        flex-shrink: 0;
+    .tier-card-snap {
+        width: 300px;
+        scroll-snap-align: center; /* Crucial for the "snap" effect */
+        perspective: 1000px;
     }
 
-    .tier-v3.featured {
-        transform: none; /* Flatten featured card for alignment on mobile */
+    /* Shrink the non-active cards slightly for emphasis */
+    .tier-v3:not(.active-mobile):not(.featured) {
+        opacity: 0.6;
+        transform: scale(0.9);
     }
-    
-    .tier-title { font-size: 1.8rem; }
-    .featured .tier-title { font-size: 2rem; }
 }
 </style>
 
+<script>
+// THIS SCRIPT DETECTS WHICH CARD IS IN THE CENTER AND "LIGHTS IT UP"
+const observerOptions = {
+    root: document.querySelector('.tier-scroll-container'),
+    threshold: 0.7 // Trigger when 70% of the card is visible
+};
 
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        const card = entry.target.querySelector('.tier-v3');
+        if (entry.isIntersecting) {
+            card.classList.add('active-mobile');
+        } else {
+            card.classList.remove('active-mobile');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.tier-card-snap').forEach(card => {
+    observer.observe(card);
+});
+</script>
+
+
+        
 
 
 
