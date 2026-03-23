@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Solutions | Meadow Sunset Assisted Living</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header" id="navbar">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <div class="logo-type">
+                    <span class="brand-name">Meadow Sunset</span>
+                    <span class="brand-sub">Assisted Living</span>
+                </div>
+            </a>
+            
+            <div class="nav-wrapper">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-item">Home</a></li>
+                    <li><a href="about.html" class="nav-item">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-item">Care & Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Memory Care</a></li>
+                            <li><a href="#">Respite Care</a></li>
+                            <li><a href="payment.html">Payment Solutions</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <a href="javascript:void(0)" onclick="openBookingForm()" class="nav-cta">Book a Tour</a>
+            </div>
+
+            <div class="menu-button" onclick="openNav()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="mySidenav" class="side-menu">
+        <span class="close-btn" onclick="closeNav()">&times;</span>
+        <div class="mobile-nav-content">
+            <a href="index.html" class="main-link">Home</a>
+            <a href="about.html" class="main-link">About Us</a>
+            
+            <div class="mobile-group">
+                <span class="group-title">Financial & Care</span>
+                <a href="payment.html">Payment Solutions</a>
+                <a href="#">Our Services</a>
+            </div>
+            
+            <a href="javascript:void(0)" onclick="closeNav(); openBookingForm()" class="nav-cta">Book a Tour</a>
+        </div>
+    </div>
+
+    <main class="main-content-wrapper">
+        
+        <section class="hero hero-about">
+            <div class="hero-light-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <div class="badge-line"></div>
+                    <span class="badge-text">Secure & Simple</span>
+                </div>
+                <h1>Payment <span class="italic-serif">Solutions</span></h1>
+                <p>Transparent, flexible, and high-tech options designed to provide absolute financial peace of mind for your family.</p>
+            </div>
+        </section>
+
+        <section class="payment-grid-section" style="background: white; padding: 100px 5%; position: relative; z-index: 10;">
+            <div class="payment-container" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px;">
+                
+                <div class="payment-editorial">
+                    <span class="sub-label" style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.7rem; color: #64748b;">Financial Clarity</span>
+                    <h2 style="font-family: 'Playfair Display', serif; font-size: 3.5rem; color: #0f172a; line-height: 1.1; margin: 20px 0;">Tailored for your <br><span class="italic-serif">convenience.</span></h2>
+                    <div class="accent-line" style="width: 40px; height: 2px; background: #0f172a; margin-bottom: 25px;"></div>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #334155;">We understand that financial planning is a priority. Our digital-first approach ensures every transaction is safe, encrypted, and seamless.</p>
+                    
+                    <div class="payment-info-box" style="margin-top: 40px; padding: 30px; background: #f8fafc; border-left: 3px solid #0f172a; display: flex; gap: 20px;">
+                        <i class="fas fa-shield-alt" style="font-size: 1.5rem; color: #0f172a;"></i>
+                        <div>
+                            <h4 style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 5px;">Secure Processing</h4>
+                            <p style="font-size: 0.85rem; color: #64748b;">Industry-standard 256-bit encryption for all digital transfers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-methods" style="display: flex; flex-direction: column; gap: 20px;">
+                    <div class="payment-card reveal-card" style="display: flex; align-items: center; padding: 30px; border: 1px solid #e2e8f0; transition: 0.4s;">
+                        <div class="card-icon" style="width: 60px; height: 60px; background: #0f172a; color: white; display: flex; align-items: center; justify-content: center; margin-right: 25px;">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="card-details">
+                            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #0f172a;">Credit & Debit</h3>
+                            <p style="font-size: 0.9rem; color: #64748b;">All major cards accepted via our secure resident portal.</p>
+                        </div>
+                    </div>
+
+                    <div class="payment-card reveal-card" style="display: flex; align-items: center; padding: 30px; border: 1px solid #e2e8f0; transition: 0.4s;">
+                        <div class="card-icon" style="width: 60px; height: 60px; background: #0f172a; color: white; display: flex; align-items: center; justify-content: center; margin-right: 25px;">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="card-details">
+                            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #0f172a;">ACH Direct Transfer</h3>
+                            <p style="font-size: 0.9rem; color: #64748b;">Link your bank account for automated, hassle-free monthly billing.</p>
+                        </div>
+                    </div>
+
+                    <div class="payment-card reveal-card" style="display: flex; align-items: center; padding: 30px; border: 1px solid #e2e8f0; transition: 0.4s;">
+                        <div class="card-icon" style="width: 60px; height: 60px; background: #0f172a; color: white; display: flex; align-items: center; justify-content: center; margin-right: 25px;">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <div class="card-details">
+                            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #0f172a;">Long-Term Care Insurance</h3>
+                            <p style="font-size: 0.9rem; color: #64748b;">We assist with coordination and billing directly to your provider.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="services-section">
+        <div class="services-overlay"></div>
+        <div class="services-container">
+            <div class="services-sidebar">
+                <span class="sub-label">Experience Luxury</span>
+                <h2>Meadow Sunset</h2>
+                <div class="accent-line"></div>
+                <p>123 Signature Way<br>Heritage Valley, 90210</p>
+                <div class="services-actions">
+                    <a href="javascript:void(0)" onclick="openBookingForm()" class="btn-main">Schedule a Visit</a>
+                </div>
+            </div>
+            
+            <div class="services-grid-thin">
+                <div class="glass-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Call Us</h3>
+                    <p>(555) 012-3456</p>
+                </div>
+                <div class="glass-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>View Directions</p>
+                </div>
+                <div class="glass-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Availability</h3>
+                    <p>Open 24/7</p>
+                </div>
+                <div class="glass-card">
+                    <i class="fas fa-shield-heart"></i>
+                    <h3>Care</h3>
+                    <p>Assisted Living</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Logic
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "100%";
+        }
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        // TRIGGER YOUR BOOKING FORM MODEL
+        function openBookingForm() {
+            // This links to your existing form model code
+            const modal = document.getElementById("bookingModal"); 
+            if(modal) {
+                modal.style.display = "flex";
+                document.body.style.overflow = "hidden";
+            } else {
+                alert("Booking Form Coming Soon!");
+            }
+        }
+    </script>
+
+</body>
+</html>
