@@ -11,37 +11,58 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        /* --- HIGH-END ANIMATION ENGINE --- */
-        .reveal-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-40px);
-            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .is-visible {
-            opacity: 1 !important;
-            transform: translate(0, 0) !important;
-        }
-
-        /* Stagger Delays */
+        /* --- ANIMATION ENGINE --- */
+        .reveal-up { opacity: 0; transform: translateY(30px); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal-left { opacity: 0; transform: translateX(-40px); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+        .is-visible { opacity: 1 !important; transform: translate(0, 0) !important; }
         .stagger-1 { transition-delay: 0.1s; }
         .stagger-2 { transition-delay: 0.3s; }
         .stagger-3 { transition-delay: 0.5s; }
 
-        /* Subtle Hover for Tiers */
-        .tier-v3 { transition: transform 0.4s ease, box-shadow 0.4s ease; }
-        .tier-v3:hover { transform: translateY(-10px); }
+        /* --- PRICING SECTION --- */
+        .tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding-top: 30px; align-items: stretch; }
+        .tier-v3 { padding: 40px 30px; height: 100%; border: 1px solid #f1f5f9; background: #fff; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); position: relative; }
+        .tier-v3.featured, .tier-v3.active-mobile { background: #0f172a !important; color: white !important; transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.15); border-color: #0f172a; }
+        .tier-label { font-family: 'Inter'; font-size: 0.65rem; letter-spacing: 4px; color: #bfa15f; text-transform: uppercase; }
+        .tier-title { font-family: 'Playfair Display'; font-size: 2.2rem; margin: 15px 0; color: #0f172a; transition: color 0.4s; }
+        .tier-v3.featured .tier-title, .tier-v3.active-mobile .tier-title { color: white !important; }
+        .tier-desc { line-height: 1.8; margin-bottom: 25px; color: #64748b; font-size: 0.95rem; min-height: 80px;}
+        .tier-v3.featured .tier-desc, .tier-v3.active-mobile .tier-desc { color: #94a3b8 !important; }
+        .price-text { font-size: 2rem; font-family: 'Inter'; font-weight: 300; color: #0f172a; }
+        .tier-v3.featured .price-text, .tier-v3.active-mobile .price-text { color: #bfa15f !important; }
+        .featured-badge { position: absolute; top: 0; right: 40px; background: #bfa15f; padding: 8px 12px; font-size: 0.6rem; color: #0f172a; letter-spacing: 2px; font-weight: 800; text-transform: uppercase; }
+        .tier-btn { margin-top: 35px; width: 100%; padding: 20px; background: #bfa15f; border: none; color: #0f172a; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; cursor: pointer; }
+
+        /* --- MOBILE REFINEMENTS --- */
+        @media (max-width: 768px) {
+            /* 1. Pricing Swipe */
+            .tier-scroll-container { overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 -5%; padding: 20px 10% 40px; scrollbar-width: none; }
+            .tier-scroll-container::-webkit-scrollbar { display: none; }
+            .tier-grid { display: flex; width: max-content; gap: 20px; }
+            .tier-card-snap { width: 280px; scroll-snap-align: center; }
+            .tier-v3:not(.active-mobile):not(.featured) { opacity: 0.4; transform: scale(0.9); }
+
+            /* 2. Community Care Compact Strip */
+            .cc-mobile-wrapper { flex-direction: column !important; gap: 20px !important; }
+            .cc-mobile-title { font-size: 2.5rem !important; }
+            .cc-compact-box { padding: 25px !important; }
+
+            /* 3. Flex Pay Compact Cards */
+            .flex-pay-grid { 
+                display: grid !important; 
+                grid-template-columns: repeat(3, 1fr) !important; 
+                width: 100%;
+                overflow-x: auto;
+                gap: 10px !important;
+            }
+            .flex-card-compact { padding: 20px !important; min-width: 120px; text-align: center; }
+            .flex-card-compact h4 { font-size: 1rem !important; margin-bottom: 10px !important; }
+            .flex-card-compact p { font-size: 0.75rem !important; line-height: 1.4 !important; }
+        }
     </style>
 </head>
 
 <body>
-
     <header class="main-header">
         <nav class="navbar">
             <a href="index.html" class="logo">
@@ -50,66 +71,18 @@
                     <span class="brand-sub">Assisted Living</span>
                 </div>
             </a>
-
             <div class="nav-wrapper">
                 <ul class="nav-links">
-                    <li class="dropdown">
-                        <a href="#" class="nav-item">Resident Experience <i class="fa-solid fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Events</a></li>
-                            <li><a href="#">THE TABLE</a></li>
-                            <li><a href="#">Car Service</a></li>
-                            <li><a href="#">Life Enrichment</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="about.html" class="nav-item">About Us <i class="fa-solid fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Leadership Team</a></li>
-                            <li><a href="#">Mission & Vision</a></li>
-                            <li><a href="#">Who We Serve</a></li>
-                            <li><a href="#">Admission Process</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="about.html" class="nav-item">About Us</a></li>
                     <li><a href="payment.html" class="nav-item">Payment Solutions</a></li>
-                    <li><a href="#" class="nav-item">Suites</a></li>
                 </ul>
                 <a href="tel:YOURNUMBER" class="nav-cta">Contact</a>
             </div>
-
             <div class="menu-button" onclick="toggleMenu()">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
             </div>
         </nav>
     </header>
-
-    <div id="sideMenu" class="side-menu">
-        <span class="close-btn" onclick="toggleMenu()">&times;</span>
-        <div class="mobile-nav-content">
-            <div class="mobile-dropdown">
-                <a href="#" class="main-link">Resident Experience <i class="fa-solid fa-chevron-down"></i></a>
-                <div class="sub-links">
-                    <a href="#">Events</a>
-                    <a href="#">The Table</a>
-                    <a href="#">Car Service</a>
-                    <a href="#">Life Enrichment</a>
-                </div>
-            </div>
-            <div class="mobile-dropdown">
-                <a href="#" class="main-link">About Us <i class="fa-solid fa-chevron-down"></i></a>
-                <div class="sub-links">
-                    <a href="#">Leadership Team</a>
-                    <a href="#">Mission & Vision</a>
-                    <a href="#">Admission Process</a>
-                </div>
-            </div>
-            <a href="payment.html" class="main-link">Payment Solutions</a>
-            <a href="#" class="main-link">Suites</a>
-            <a href="tel:YOURNUMBER" class="nav-cta">Contact Us</a>
-        </div>
-    </div>
 
     <main>
         <section class="hero hero-about">
@@ -120,337 +93,107 @@
                     <span class="badge-text">Secure & Simple</span>
                 </div>
                 <h1 class="reveal-up stagger-1">Payment <span class="italic-serif">Solutions</span></h1>
-                <p class="reveal-up stagger-2">Transparent, flexible, and high-tech options designed to provide absolute financial peace of mind for your family.</p>
+                <p class="reveal-up stagger-2">Transparent, flexible, and high-tech options for absolute peace of mind.</p>
             </div>
         </section>
 
-
-
-
-
-
-
-     <section class="pricing-tiers" style="padding: 20px 5% 80px; background: #fff; position: relative; overflow: hidden;">
-    
-    <div class="top-right-accent" style="position: absolute; top: 40px; right: 0; width: 70%; height: 1px; background: #0f172a; opacity: 0.15; z-index: 1;">
-        <div style="position: absolute; right: 0; top: 0; width: 1px; height: 60px; background: #0f172a;"></div>
-    </div>
-
-    <div style="max-width: 1400px; margin: 0 auto; position: relative; z-index: 2;">
-        
-        <div class="section-header reveal-up" style="margin-bottom: 20px;">
-            <span style="color: #bfa15f; letter-spacing: 6px; text-transform: uppercase; font-size: 0.7rem; display: block; margin-bottom: 10px; font-family: 'Inter'; font-weight: 600;">Financial Options</span>
-            <h2 style="font-family: 'Playfair Display'; font-size: 4.5rem; line-height: 0.9; color: #0f172a; margin: 0;">
-                Private <br> <span style="font-style: italic; font-weight: 400; color: #bfa15f;">Investment.</span>
-            </h2>
-        </div>
-
-        <div class="tier-scroll-container">
-            <div class="tier-grid">
-                
-                <div class="tier-card-snap reveal-up stagger-1">
-                    <div class="tier-v3">
-                        <span class="tier-label">01 / Essential</span>
-                        <h3 class="tier-title">Wellness <br>Base</h3>
-                        <p class="tier-desc">An intimate setting for those who value independence with the security of 24/7 oversight.</p>
-                        <div class="price-text">$203.50 <span>DAILY</span></div>
-                    </div>
+        <section class="pricing-tiers" style="padding: 40px 5% 80px; background: #fff; position: relative; overflow: hidden;">
+            <div class="top-right-accent" style="position: absolute; top: 40px; right: 0; width: 70%; height: 1px; background: #0f172a; opacity: 0.15;"></div>
+            <div style="max-width: 1400px; margin: 0 auto; position: relative; z-index: 2;">
+                <div class="section-header reveal-up">
+                    <span style="color: #bfa15f; letter-spacing: 6px; text-transform: uppercase; font-size: 0.7rem; display: block; margin-bottom: 10px;">Financial Options</span>
+                    <h2 style="font-family: 'Playfair Display'; font-size: 4rem; line-height: 0.9; color: #0f172a; margin: 0;">Private <br><span style="font-style: italic; font-weight: 400; color: #bfa15f;">Investment.</span></h2>
                 </div>
 
-                <div class="tier-card-snap reveal-up stagger-2">
-                    <div class="tier-v3 featured">
-                        <div class="featured-badge">Signature</div>
-                        <span class="tier-label">02 / Signature</span>
-                        <h3 class="tier-title">Enhanced <br>Care</h3>
-                        <p class="tier-desc">Our most requested level of stewardship, featuring specialized daily clinical routines.</p>
-                        <div class="price-text">$220.79 <span>DAILY</span></div>
-                        <button class="tier-btn">Secure Suite</button>
-                    </div>
-                </div>
-
-                <div class="tier-card-snap reveal-up stagger-3">
-                    <div class="tier-v3">
-                        <span class="tier-label">03 / Elite</span>
-                        <h3 class="tier-title">Total <br>Assurance</h3>
-                        <p class="tier-desc">Comprehensive assistance for residents with complex clinical or cognitive requirements.</p>
-                        <div class="price-text">$238.08 <span>DAILY</span></div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
-/* --- BASE DESKTOP STYLES --- */
-.tier-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    padding-top: 30px;
-    align-items: stretch;
-}
-
-.tier-v3 {
-    padding: 40px 30px;
-    height: 100%;
-    border: 1px solid #f1f5f9;
-    background: #fff;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-}
-
-/* Featured / Active State */
-.tier-v3.featured, .tier-v3.active-mobile {
-    background: #0f172a !important;
-    color: white !important;
-    transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
-    border-color: #0f172a;
-}
-
-.tier-label { font-family: 'Inter'; font-size: 0.65rem; letter-spacing: 4px; color: #bfa15f; text-transform: uppercase; }
-.tier-title { font-family: 'Playfair Display'; font-size: 2.2rem; margin: 15px 0; color: #0f172a; transition: color 0.4s; }
-.featured .tier-title, .active-mobile .tier-title { color: white !important; }
-.tier-desc { line-height: 1.8; margin-bottom: 25px; color: #64748b; font-size: 0.95rem; }
-.featured .tier-desc, .active-mobile .tier-desc { color: #94a3b8 !important; }
-.price-text { font-size: 2rem; font-family: 'Inter'; font-weight: 300; color: #0f172a; }
-.featured .price-text, .active-mobile .price-text { color: #bfa15f !important; }
-.featured-badge { position: absolute; top: 0; right: 40px; background: #bfa15f; padding: 8px 12px; font-size: 0.6rem; color: #0f172a; letter-spacing: 2px; font-weight: 800; text-transform: uppercase; }
-.tier-btn { margin-top: 35px; width: 100%; padding: 20px; background: #bfa15f; border: none; color: #0f172a; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; cursor: pointer; }
-
-/* --- MOBILE ANIMATED SWIPE --- */
-@media (max-width: 768px) {
-    .tier-scroll-container {
-        overflow-x: auto;
-        scroll-snap-type: x mandatory; /* Forces card to stop in center */
-        margin: 0 -5%;
-        padding: 40px 10% 60px; /* Padding helps center the "active" card */
-        scrollbar-width: none;
-    }
-    .tier-scroll-container::-webkit-scrollbar { display: none; }
-
-    .tier-grid {
-        display: flex;
-        width: max-content;
-        gap: 20px;
-    }
-
-    .tier-card-snap {
-        width: 300px;
-        scroll-snap-align: center; /* Crucial for the "snap" effect */
-        perspective: 1000px;
-    }
-
-    /* Shrink the non-active cards slightly for emphasis */
-    .tier-v3:not(.active-mobile):not(.featured) {
-        opacity: 0.6;
-        transform: scale(0.9);
-    }
-}
-</style>
-
-<script>
-// THIS SCRIPT DETECTS WHICH CARD IS IN THE CENTER AND "LIGHTS IT UP"
-const observerOptions = {
-    root: document.querySelector('.tier-scroll-container'),
-    threshold: 0.7 // Trigger when 70% of the card is visible
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        const card = entry.target.querySelector('.tier-v3');
-        if (entry.isIntersecting) {
-            card.classList.add('active-mobile');
-        } else {
-            card.classList.remove('active-mobile');
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.tier-card-snap').forEach(card => {
-    observer.observe(card);
-});
-</script>
-
-
-        
-
-
-
-
-        
-
-       <section class="insurance-brand-strip reveal-up" style="padding: 40px 5%; background: #0f172a; color: white; position: relative; overflow: hidden;">
-            
-            <div style="position: absolute; top: 0; left: 0; margin: 0; z-index: 2;">
-                <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2018.jpeg?raw=true" 
-                     alt="Community Care Logo" 
-                     style="width: 150px; filter: grayscale(1) brightness(2);">
-            </div>
-
-            <div style="max-width: 1400px; margin: 0 auto; display: flex; align-items: center; gap: 60px; position: relative; z-index: 1;">
-                
-                <div style="flex: 1;" class="reveal-left stagger-1">
-                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                        <div style="width: 40px; height: 1px; background: #bfa15f;"></div>
-                        <span style="color: #bfa15f; letter-spacing: 8px; text-transform: uppercase; font-size: 0.7rem; font-family: 'Inter'; font-weight: 800;">Certified Partner</span>
-                    </div>
-                    <h2 style="font-family: 'Playfair Display'; font-size: 5rem; line-height: 0.8; margin: 0; color: #fff;">
-                        Community <br> <span style="font-style: italic; font-weight: 400; color: #bfa15f; font-size: 4.5rem; margin-left: 20px;">Care.</span>
-                    </h2>
-                </div>
-
-                <div style="flex: 1.2;" class="reveal-up stagger-2">
-                    <div style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); padding: 40px 50px; position: relative;">
-                        <div style="position: absolute; top: 0; right: 0; width: 30px; height: 30px; border-top: 2px solid #bfa15f; border-right: 2px solid #bfa15f;"></div>
-                        
-                        <p style="font-family: 'Cormorant Garamond'; font-style: italic; font-size: 1.6rem; line-height: 1.4; color: #fff; margin-bottom: 20px;">
-                            "We navigate the complexities of coverage, so you can focus on the moments that matter."
-                        </p>
-                        
-                        <p style="font-family: 'Inter'; font-size: 0.95rem; line-height: 1.8; color: #94a3b8; margin-bottom: 25px;">
-                            As an authorized Community Care provider, we offer a **direct-liaison service**. This means our clinical directors work directly with the insurance coordinators.
-                        </p>
-                        
-                        <div style="display: flex; align-items: center; gap: 40px;">
-                            <a href="tel:YOUR-NUMBER" style="color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; font-weight: 700; text-transform: uppercase; border-bottom: 1px solid #bfa15f; padding-bottom: 5px;">Check Eligibility</a>
-                            <span style="font-size: 0.7rem; color: #475569; letter-spacing: 1px; text-transform: uppercase;">Contract No: CC-8829-X</span>
+                <div class="tier-scroll-container">
+                    <div class="tier-grid">
+                        <div class="tier-card-snap reveal-up stagger-1">
+                            <div class="tier-v3">
+                                <span class="tier-label">01 / Essential</span>
+                                <h3 class="tier-title">Wellness <br>Base</h3>
+                                <p class="tier-desc">Independence with the security of 24/7 oversight.</p>
+                                <div class="price-text">$203.50 <span>DAILY</span></div>
+                            </div>
+                        </div>
+                        <div class="tier-card-snap reveal-up stagger-2">
+                            <div class="tier-v3 featured">
+                                <div class="featured-badge">Signature</div>
+                                <span class="tier-label">02 / Signature</span>
+                                <h3 class="tier-title">Enhanced <br>Care</h3>
+                                <p class="tier-desc">Specialized clinical routines and stewardship.</p>
+                                <div class="price-text">$220.79 <span>DAILY</span></div>
+                                <button class="tier-btn">Secure Suite</button>
+                            </div>
+                        </div>
+                        <div class="tier-card-snap reveal-up stagger-3">
+                            <div class="tier-v3">
+                                <span class="tier-label">03 / Elite</span>
+                                <h3 class="tier-title">Total <br>Assurance</h3>
+                                <p class="tier-desc">Comprehensive assistance for complex requirements.</p>
+                                <div class="price-text">$238.08 <span>DAILY</span></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="flex-pay-frosted reveal-up" style="padding: 100px 0; background: #ffffff; position: relative; overflow: hidden;">
-            <div style="position: absolute; top: 120px; left: 0; width: 100%; height: 180px; z-index: 0; overflow: hidden;">
-                <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2020.jpeg?raw=true" alt="Residence Background" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.8) grayscale(0.2);">
-                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid rgba(191, 161, 95, 0.2); border-bottom: 1px solid rgba(191, 161, 95, 0.2);"></div>
-            </div>
-
-            <div style="max-width: 1400px; margin: 0 auto; position: relative; z-index: 1; padding: 0 5%;">
-                <div style="margin-bottom: 100px; padding-top: 40px;" class="reveal-left">
-                    <span style="color: #bfa15f; letter-spacing: 10px; text-transform: uppercase; font-size: 0.65rem; font-family: 'Inter'; font-weight: 800; display: block; margin-bottom: 20px;">Financial Agility</span>
-                    <h2 style="font-family: 'Playfair Display'; font-size: 6rem; line-height: 0.85; color: #0f172a; margin: 0;">
-                        Flex <span style="font-style: italic; font-weight: 400; color: #bfa15f;">Pay.</span>
-                    </h2>
+        <section class="insurance-brand-strip reveal-up" style="padding: 60px 5%; background: #0f172a; color: white; position: relative;">
+            <div class="cc-mobile-wrapper" style="max-width: 1400px; margin: 0 auto; display: flex; align-items: center; gap: 40px; position: relative; z-index: 1;">
+                <div style="flex: 1;" class="reveal-left stagger-1">
+                    <h2 class="cc-mobile-title" style="font-family: 'Playfair Display'; font-size: 4rem; line-height: 0.8; margin: 0; color: #fff;">Community <br><span style="font-style: italic; font-weight: 400; color: #bfa15f;">Care.</span></h2>
                 </div>
+                <div style="flex: 1.2;" class="reveal-up stagger-2">
+                    <div class="cc-compact-box" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); padding: 30px;">
+                        <p style="font-family: 'Cormorant Garamond'; font-style: italic; font-size: 1.4rem; color: #fff; margin-bottom: 15px;">"We navigate coverage, so you focus on moments."</p>
+                        <a href="tel:YOUR-NUMBER" style="color: #fff; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; border-bottom: 1px solid #bfa15f; padding-bottom: 5px;">Check Eligibility</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 0; border: 1px solid #e2e8f0; background: #fff;">
-                    <div style="padding: 60px 50px; border-right: 1px solid #e2e8f0; position: relative;" class="reveal-up stagger-1">
-                        <span style="font-family: 'Inter'; font-size: 0.6rem; color: #bfa15f; letter-spacing: 3px; font-weight: 800; position: absolute; top: 25px; left: 25px;">03-A</span>
-                        <h4 style="font-family: 'Playfair Display'; font-size: 1.8rem; margin-bottom: 25px; color: #0f172a;">Respite <br>Recovery</h4>
-                        <p style="font-family: 'Inter'; font-size: 0.95rem; line-height: 1.8; color: #64748b;">Premium stewardship for those transitioning from clinical settings.</p>
+        <section class="flex-pay-frosted reveal-up" style="padding: 80px 5%; background: #ffffff;">
+            <div style="max-width: 1400px; margin: 0 auto;">
+                <h2 style="font-family: 'Playfair Display'; font-size: 4rem; color: #0f172a; margin-bottom: 40px;">Flex <span style="font-style: italic; color: #bfa15f;">Pay.</span></h2>
+                <div class="flex-pay-grid" style="display: grid; grid-template-columns: 1fr 1fr 1.2fr; border: 1px solid #e2e8f0;">
+                    <div class="flex-card-compact" style="padding: 40px; border-right: 1px solid #e2e8f0;">
+                        <h4 style="font-family: 'Playfair Display'; font-size: 1.5rem; color: #0f172a;">Respite <br>Recovery</h4>
+                        <p style="font-size: 0.9rem; color: #64748b;">Premium clinical transitions.</p>
                     </div>
-                    <div style="padding: 60px 50px; border-right: 1px solid #e2e8f0; position: relative;" class="reveal-up stagger-2">
-                        <span style="font-family: 'Inter'; font-size: 0.6rem; color: #bfa15f; letter-spacing: 3px; font-weight: 800; position: absolute; top: 25px; left: 25px;">03-B</span>
-                        <h4 style="font-family: 'Playfair Display'; font-size: 1.8rem; margin-bottom: 25px; color: #0f172a;">Custom <br>Scheduling</h4>
-                        <p style="font-family: 'Inter'; font-size: 0.95rem; line-height: 1.8; color: #64748b;">Non-traditional entry points curated for our two private suites.</p>
+                    <div class="flex-card-compact" style="padding: 40px; border-right: 1px solid #e2e8f0;">
+                        <h4 style="font-family: 'Playfair Display'; font-size: 1.5rem; color: #0f172a;">Custom <br>Scheduling</h4>
+                        <p style="font-size: 0.9rem; color: #64748b;">Non-traditional entry points.</p>
                     </div>
-                    <div style="padding: 50px; background: #f8fafc; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;" class="reveal-up stagger-3">
-                        <p style="font-family: 'Inter'; font-size: 0.85rem; line-height: 1.6; color: #64748b; margin-bottom: 30px; max-width: 280px;">Experience our two-suite residence on a schedule that fits your family's needs.</p>
-                        <a href="suites.html" style="display: inline-block; padding: 22px 40px; background: #0f172a; color: #fff; text-decoration: none; text-transform: uppercase; letter-spacing: 4px; font-size: 0.75rem; font-family: 'Inter'; font-weight: 700; position: relative; width: 100%;">
-                            The Private Suites
-                            <div style="position: absolute; border: 1px solid #bfa15f; top: -6px; right: -6px; width: 20px; height: 20px; border-bottom: none; border-left: none;"></div>
-                            <div style="position: absolute; border: 1px solid #bfa15f; bottom: -6px; left: -6px; width: 20px; height: 20px; border-top: none; border-right: none;"></div>
-                        </a>
+                    <div class="flex-card-compact" style="padding: 40px; background: #f8fafc; text-align: center;">
+                        <h4 style="font-family: 'Playfair Display'; font-size: 1.5rem; color: #0f172a;">The <br>Suites</h4>
+                        <a href="suites.html" style="font-size: 0.7rem; color: #bfa15f; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; font-weight: 700;">View Private Suites</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="video-footer reveal-up">
-        <video autoplay muted loop playsinline class="footer-video-bg">
-            <source src="timelapse-of-noctilucent-clouds-and-a-vibrant-sunrise.mp4" type="video/mp4">
-        </video>
-        <div class="footer-tint"></div>
-        <div class="footer-fox">
-            <img src="fox.svg" alt="Fox Logo">
-        </div>
-        <div class="footer-content">
-            <div class="footer-actions">
-                <button class="btn-gold" onclick="openModal()">Schedule a Tour</button>
-                <a href="tel:0000000000" class="btn-phone">Call Now</a>
-            </div>
-            <div class="footer-grid">
-                <div class="grid-col community-col">
-                    <h4>Our Community</h4>
-                    <p>Refined living with personalized care in a calm environment.</p>
-                </div>
-                <div class="grid-col">
-                    <h4>Explore</h4>
-                    <div class="footer-links">
-                        <a href="#">Care Options</a>
-                        <a href="payment.html">Pricing</a>
-                        <a href="#">Amenities</a>
-                    </div>
-                </div>
-                <div class="grid-col">
-                    <h4>Contact</h4>
-                    <p>Your Location Address</p>
-                    <p>info@email.com</p>
-                    <p>(000) 000-0000</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-
-  <script>
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('.main-header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
-</script>
-    
-
-    <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Schedule a Private Tour</h2>
-            <form action="https://formsubmit.co/sunsetmeadowlivingllc@gmail.com" method="POST">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="tel" name="phone" placeholder="Phone Number" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="date" name="date" required>
-                <select name="service">
-                    <option>Private Pay</option>
-                    <option>Flex Pay</option>
-                    <option>Insurance</option>
-                </select>
-                <textarea name="notes" placeholder="Additional notes"></textarea>
-                <button type="submit" class="btn-gold">Submit Request</button>
-            </form>
-        </div>
-    </div>
-
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById("sideMenu");
-            menu.classList.toggle("active");
-            document.body.style.overflow = menu.classList.contains("active") ? "hidden" : "auto";
-        }
-
-        window.openModal = function(){ document.getElementById("bookingModal").style.display = "block"; }
-        window.closeModal = function(){ document.getElementById("bookingModal").style.display = "none"; }
-
-        // --- ANIMATION LOGIC ---
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
+                    // Mobile specific snap activation
+                    if (entry.target.classList.contains('tier-card-snap') && window.innerWidth <= 768) {
+                        entry.target.querySelector('.tier-v3').classList.add('active-mobile');
+                    }
+                } else if (entry.target.classList.contains('tier-card-snap')) {
+                    entry.target.querySelector('.tier-v3').classList.remove('active-mobile');
                 }
             });
-        }, { threshold: 0.1 }); // Lower threshold so footer shows sooner
+        }, { threshold: 0.6 });
 
-        document.querySelectorAll('.reveal-up, .reveal-left').forEach(el => observer.observe(el));
+        document.querySelectorAll('.reveal-up, .reveal-left, .tier-card-snap').forEach(el => observer.observe(el));
+
+        function toggleMenu() {
+            const menu = document.getElementById("sideMenu");
+            menu.classList.toggle("active");
+        }
     </script>
 </body>
 </html>
