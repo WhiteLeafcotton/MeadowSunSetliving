@@ -2449,94 +2449,85 @@ body {
 
 
 @media (max-width: 768px) {
-    /* 1. The Container (The Magazine Page) */
+    /* 1. Header Cleanup */
+    .hero-about h1 {
+        font-size: 1.8rem;
+    }
+
     .magazine-editorial {
         padding: 40px 15px;
-        background-color: #fff;
     }
 
-    .editorial-wrapper {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 40px;
-    }
-
-    /* 2. The Interlocking Row (60/40 Split) */
+    /* 2. Wider Text, Smaller Photo Interlock */
     .editorial-row {
         display: grid !important;
-        grid-template-columns: 1.2fr 0.8fr; /* Text gets slightly more room */
+        /* Text gets 70% width, Photo gets 30% for a better balance */
+        grid-template-columns: 1.3fr 0.7fr; 
         gap: 15px;
         align-items: start;
-        border-bottom: 1px solid #eee; /* Light divider like a newspaper */
-        padding-bottom: 30px;
+        margin-bottom: 50px;
     }
 
-    /* Reverse the second row (Eleanor) to match the screenshot pattern */
+    /* Keep Julianne on right, Eleanor on left */
     .editorial-row:nth-child(even) {
-        grid-template-columns: 0.8fr 1.2fr;
-    }
-    
-    .editorial-row:nth-child(even) .vision-box,
-    .editorial-row:nth-child(even) .label-stack {
-        grid-column: 2;
-    }
-    
-    .editorial-row:nth-child(even) .profile-box {
-        grid-column: 1;
-        grid-row: 1;
+        grid-template-columns: 0.7fr 1.3fr;
     }
 
-    /* 3. Text Styling (Tight & Professional) */
+    /* 3. Typography: Stop the 'Pinching' */
     .vision-box {
-        text-align: left;
+        width: 100%;
+    }
+
+    .gold-eyebrow {
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        display: block;
+        margin-bottom: 8px;
     }
 
     .magazine-title {
-        font-size: 1.4rem !important;
+        font-size: 1.6rem !important; /* Slightly smaller to fit better */
         line-height: 1.1;
-        margin-bottom: 10px;
-        text-transform: uppercase; /* For that 'Fashion News' header feel */
-        letter-spacing: -0.5px;
+        margin-bottom: 12px;
     }
 
     .magazine-para {
-        font-size: 0.85rem !important; /* Smaller, dense editorial font */
-        line-height: 1.5;
-        margin: 0;
+        font-size: 0.95rem !important; /* Larger for better reading */
+        line-height: 1.6;
+        text-align: left;
     }
 
-    /* 4. The Photos (The Vertical Rectangles) */
+    /* 4. The Photos: Sharp 'Verbal' Rectangles */
     .profile-box {
         width: 100% !important;
+        margin-top: 10px; /* Aligns photo with the start of the paragraph */
     }
 
     .photo-frame {
         width: 100% !important;
-        height: 180px !important; /* Verbal Rectangle shape */
-        border: none !important; /* Cleaner, modern look like the screenshot */
-        box-shadow: none !important;
-        filter: grayscale(100%); /* Optional: for that B&W fashion look in the shot */
+        height: 160px !important; /* Keeps that vertical portrait shape */
+        border: none !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Very subtle shadow */
+        border-radius: 0; /* Sharp corners for a more 'Canva' look */
     }
 
-    .photo-frame img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-    }
-
-    /* 5. Labels (Small & Minimal) */
+    /* 5. Labels: Tight & Bold */
     .label-stack {
-        margin-top: 8px;
+        margin-top: 10px;
     }
 
     .name-label {
-        font-size: 0.75rem !important;
+        font-size: 0.8rem !important;
+        letter-spacing: 0.5px;
+        line-height: 1.1;
+        font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: bold;
     }
 
-    .mini-bio {
-        display: none; /* Keeps it minimal */
+    .medical-excellence {
+        font-size: 0.6rem;
+        color: #B8860B; /* Gold accent color */
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
 }
