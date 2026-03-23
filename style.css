@@ -2446,86 +2446,88 @@ body {
 
 
 
+
+
+
+
+
+
 @media (max-width: 768px) {
-    /* 1. Header Cleanup */
-    .hero-about h1 {
-        font-size: 1.8rem;
+    /* 1. Reset the wrapper to allow text to fill the screen */
+    .editorial-wrapper {
+        display: block !important; 
+        width: 100% !important;
+        padding: 0 10px !important;
     }
 
-    .magazine-editorial {
-        padding: 40px 15px;
-    }
-
-    /* 2. Wider Text, Smaller Photo Interlock */
     .editorial-row {
-        display: grid !important;
-        /* Text gets 70% width, Photo gets 30% for a better balance */
-        grid-template-columns: 1.3fr 0.7fr; 
-        gap: 15px;
-        align-items: start;
-        margin-bottom: 50px;
+        display: block !important; /* Forces it out of Grid/Flex */
+        width: 100% !important;
+        margin-bottom: 40px !important;
+        clear: both !important; /* Prevents portraits from overlapping each other */
     }
 
-    /* Keep Julianne on right, Eleanor on left */
-    .editorial-row:nth-child(even) {
-        grid-template-columns: 0.7fr 1.3fr;
-    }
-
-    /* 3. Typography: Stop the 'Pinching' */
+    /* 2. Make the Vision Text WIDE and READABLE */
     .vision-box {
-        width: 100%;
-    }
-
-    .gold-eyebrow {
-        font-size: 0.7rem;
-        letter-spacing: 2px;
-        display: block;
-        margin-bottom: 8px;
+        display: block !important;
+        width: 100% !important;
     }
 
     .magazine-title {
-        font-size: 1.6rem !important; /* Slightly smaller to fit better */
-        line-height: 1.1;
-        margin-bottom: 12px;
+        font-size: 1.6rem !important;
+        line-height: 1.1 !important;
+        margin-bottom: 10px !important;
+        text-transform: uppercase !important;
     }
 
     .magazine-para {
-        font-size: 0.95rem !important; /* Larger for better reading */
-        line-height: 1.6;
-        text-align: left;
+        display: inline !important; /* This allows the text to wrap UP around the photo */
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
     }
 
-    /* 4. The Photos: Sharp 'Verbal' Rectangles */
+    /* 3. The "Portrait" Photo Wrap */
     .profile-box {
-        width: 100% !important;
-        margin-top: 10px; /* Aligns photo with the start of the paragraph */
+        width: 135px !important; /* Small enough for text to fit beside it */
+        height: auto !important;
+    }
+
+    /* Julianne wraps on the RIGHT */
+    .julianne {
+        float: right !important;
+        margin-left: 15px !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* Eleanor wraps on the LEFT */
+    .eleanor {
+        float: left !important;
+        margin-right: 15px !important;
+        margin-bottom: 10px !important;
     }
 
     .photo-frame {
         width: 100% !important;
-        height: 160px !important; /* Keeps that vertical portrait shape */
+        height: 190px !important; /* Forces the 'Verbal Rectangle' shape */
         border: none !important;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Very subtle shadow */
-        border-radius: 0; /* Sharp corners for a more 'Canva' look */
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
     }
 
-    /* 5. Labels: Tight & Bold */
+    .photo-frame img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    /* 4. Labels */
     .label-stack {
-        margin-top: 10px;
+        text-align: inherit !important;
+        margin-top: 5px !important;
     }
 
     .name-label {
         font-size: 0.8rem !important;
-        letter-spacing: 0.5px;
-        line-height: 1.1;
-        font-weight: 700;
-        text-transform: uppercase;
-    }
-
-    .medical-excellence {
-        font-size: 0.6rem;
-        color: #B8860B; /* Gold accent color */
-        text-transform: uppercase;
-        letter-spacing: 1px;
+        font-weight: 900 !important;
+        text-transform: uppercase !important;
     }
 }
