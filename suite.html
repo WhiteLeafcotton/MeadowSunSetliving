@@ -128,14 +128,7 @@
 
 
 
-        window.addEventListener('scroll', function() {
-    const header = document.querySelector('.main-header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
+    
     </style>
 </head>
 
@@ -368,5 +361,21 @@
     <script>window.chatbaseConfig = { chatbotId: "PhPwg7-iLonUCo-_uKjPY" }</script>
     <script src="https://www.chatbase.co/embed.min.js" id="PhPwg7-iLonUCo-_uKjPY" defer></script>
 
+
+
+
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
 </body>
 </html>
