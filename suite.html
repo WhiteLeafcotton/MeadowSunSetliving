@@ -1,171 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suites | Sunset Meadow Living</title>
-
+    <title>The Suites | Sunset Meadow Living</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Inter:wght@300;400;600&family=Cormorant+Garamond:ital,wght@1,300;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        /* CONSISTENT HERO BASE (Matching About PageBASE) */
+        /* --- 4D DEPTH ENGINE --- */
+        :root {
+            --glass: rgba(255, 255, 255, 0.65);
+            --gold: #bfa37e;
+            --deep: #1a1a1a;
+        }
+
+        /* Matches About Hero exactly but adds Perspective */
         .hero-suites {
-            height: 50vh !important; 
+            height: 50vh !important;
             min-height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
+            perspective: 1000px;
             overflow: hidden;
-            background: #1a1a1a; /* Base color before image loads */
+            background: var(--deep);
         }
 
-        /* METAMORPHISM SECTION - THE "CRAZY" PART */
-        .meta-suite-experience {
+        .experience-stage {
             position: relative;
-            padding: 120px 5%;
-            background: #fdfdfd;
-            overflow: hidden;
-            background-image: radial-gradient(circle at 0% 0%, rgba(191, 163, 126, 0.08) 0%, transparent 50%);
+            padding: 180px 5%;
+            background: #f9f8f5;
+            overflow: visible; /* Allows elements to bleed out of bounds */
         }
 
-        .meta-container {
+        /* Floating Background Geometry */
+        .geo-blur {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(191,163,126,0.15) 0%, transparent 70%);
+            filter: blur(80px);
+            z-index: 1;
+            pointer-events: none;
+        }
+        .geo-1 { top: -10%; right: -5%; }
+        .geo-2 { bottom: -10%; left: -5%; }
+
+        .depth-grid {
             max-width: 1400px;
             margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .meta-grid {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        /* Glassmorphism Content Card */
-        .glass-inner {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.9);
-            padding: 60px;
-            border-radius: 4px;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.03);
-        }
-
-        .meta-eyebrow {
-            font-family: 'Inter', sans-serif;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            font-size: 0.7rem;
-            color: #bfa37e;
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        .meta-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.8rem;
-            line-height: 1.1;
-            color: #1a1a1a;
-            margin-bottom: 20px;
-        }
-
-        .meta-description {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 40px;
-            font-size: 1.05rem;
-        }
-
-        /* Feature Grid - Luxury Specs */
-        .meta-feature-grid {
-            display: flex;
+            grid-template-columns: 1fr 1.3fr;
             gap: 40px;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-            padding: 25px 0;
-            margin-bottom: 40px;
-        }
-
-        .feature-label {
-            display: block;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #999;
-            margin-bottom: 5px;
-        }
-
-        .feature-value {
-            display: block;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: #1a1a1a;
-        }
-
-        /* Multi-Dimensional Visual Stack */
-        .meta-visual-stack {
+            align-items: center;
             position: relative;
+            z-index: 5;
         }
 
-        .meta-img-main {
+        /* LEFT: THE GLASS CONTROL PANEL */
+        .glass-panel {
+            background: var(--glass);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            padding: 80px 60px;
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 4px;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.08);
+            transform: translateZ(50px); /* 4D Lift */
+        }
+
+        .meta-num {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 5px;
+            font-size: 0.8rem;
+            display: block;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .display-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            line-height: 0.95;
+            color: var(--deep);
+            margin-bottom: 30px;
+        }
+
+        .display-title span {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 300;
+            margin-left: 20px;
+        }
+
+        /* RIGHT: THE IMAGE STACK (4D DEPTH) */
+        .image-stack {
+            position: relative;
+            height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Main Image Container */
+        .stack-main {
+            width: 85%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: 20px 40px 80px rgba(0,0,0,0.15);
+            transform: rotateY(-5deg) rotateX(5deg); /* Perspective tilt */
+            transition: 0.6s ease;
+        }
+
+        .stack-main img {
             width: 100%;
-            height: 750px;
+            height: 100%;
             object-fit: cover;
-            border-radius: 2px;
-            box-shadow: 0 50px 100px rgba(0,0,0,0.1);
+            filter: contrast(1.05) brightness(0.9);
         }
 
-        /* Neomorphic Floating Elements */
-        .meta-overlay-box {
+        /* Floating Neomorphic Overlays */
+        .floating-card {
             position: absolute;
             background: white;
-            padding: 12px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+            padding: 15px;
             border-radius: 4px;
-            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-            z-index: 3;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            z-index: 10;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .meta-overlay-box img {
-            width: 180px;
-            height: 120px;
+        .card-top {
+            top: 10%;
+            right: -5%;
+            width: 280px;
+            transform: translateZ(120px); /* Highest layer */
+        }
+
+        .card-bottom {
+            bottom: 5%;
+            left: -10%;
+            width: 240px;
+            transform: translateZ(80px); /* Middle layer */
+        }
+
+        .floating-card img {
+            width: 100%;
+            height: 160px;
             object-fit: cover;
-            display: block;
-            margin-bottom: 10px;
+            border-radius: 2px;
+            margin-bottom: 12px;
         }
 
-        .meta-overlay-box span {
+        .card-label {
             font-family: 'Inter', sans-serif;
-            font-size: 0.65rem;
-            letter-spacing: 1px;
             text-transform: uppercase;
-            color: #bfa37e;
-            display: block;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            color: var(--gold);
+            font-weight: 600;
             text-align: center;
+            display: block;
         }
 
-        .detail-1 { bottom: 8%; left: -12%; }
-        .detail-2 { top: 12%; right: -8%; }
+        /* Hover Interaction */
+        .image-stack:hover .stack-main { transform: rotateY(0) rotateX(0); }
+        .image-stack:hover .card-top { transform: translate(20px, -20px) translateZ(150px); }
+        .image-stack:hover .card-bottom { transform: translate(-20px, 20px) translateZ(100px); }
 
-        .meta-overlay-box:hover {
-            transform: scale(1.05) translateY(-15px);
-            box-shadow: 0 45px 80px rgba(0,0,0,0.18);
-        }
-
-        @media (max-width: 1100px) {
-            .meta-grid { grid-template-columns: 1fr; }
-            .meta-img-main { height: 500px; }
-            .detail-1, .detail-2 { position: static; display: inline-block; margin: 15px 15px 0 0; }
-            .glass-inner { padding: 40px; }
-            .meta-title { font-size: 2.8rem; }
+        /* Mobile Optimization */
+        @media (max-width: 1024px) {
+            .depth-grid { grid-template-columns: 1fr; }
+            .image-stack { height: 500px; margin-top: 60px; }
+            .floating-card { width: 180px; }
+            .glass-panel { padding: 40px 30px; }
         }
     </style>
 </head>
@@ -180,7 +195,6 @@
                     <span class="brand-sub">Assisted Living</span>
                 </div>
             </a>
-
             <div class="nav-wrapper">
                 <ul class="nav-links">
                     <li class="dropdown">
@@ -202,14 +216,12 @@
                         </ul>
                     </li>
                     <li><a href="payment.html" class="nav-item">Payment Solutions</a></li>
-                    <li><a href="#" class="nav-item">Suites</a></li>
+                    <li><a href="#" class="nav-item active">Suites</a></li>
                 </ul>
                 <a href="tel:YOURNUMBER" class="nav-cta">Contact</a>
             </div>
-
             <div class="menu-button" onclick="toggleMenu()">
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <span class="bar"></span><span class="bar"></span>
             </div>
         </nav>
     </header>
@@ -217,23 +229,8 @@
     <div id="sideMenu" class="side-menu">
         <span class="close-btn" onclick="toggleMenu()">&times;</span>
         <div class="mobile-nav-content">
-            <div class="mobile-dropdown">
-                <a href="#" class="main-link">Resident Experience <i class="fa-solid fa-chevron-down"></i></a>
-                <div class="sub-links">
-                    <a href="#">Events</a>
-                    <a href="#">The Table</a>
-                    <a href="#">Car Service</a>
-                    <a href="#">Life Enrichment</a>
-                </div>
-            </div>
-            <div class="mobile-dropdown">
-                <a href="about.html" class="main-link">About Us <i class="fa-solid fa-chevron-down"></i></a>
-                <div class="sub-links">
-                    <a href="#">Leadership Team</a>
-                    <a href="#">Mission & Vision</a>
-                    <a href="#">Admission Process</a>
-                </div>
-            </div>
+            <a href="index.html" class="main-link">Home</a>
+            <a href="about.html" class="main-link">About Us</a>
             <a href="payment.html" class="main-link">Payment Solutions</a>
             <a href="#" class="main-link">Suites</a>
             <a href="tel:YOURNUMBER" class="nav-cta">Contact Us</a>
@@ -246,57 +243,53 @@
             <div class="hero-content">
                 <div class="hero-badge">
                     <span class="badge-line"></span>
-                    <span class="badge-text">Private Sanctuary</span>
+                    <span class="badge-text">Luxury Redefined</span>
                 </div>
-                <h1>The Residences <br><span class="italic-serif">Sunset Meadow</span></h1>
-                <p>Curated living spaces that redefine the architecture of senior care.</p>
+                <h1>Private Suites<br><span class="italic-serif">Architectural Calm</span></h1>
             </div>
         </section>
 
-        <section class="meta-suite-experience">
-            <div class="meta-container">
-                <div class="meta-grid">
+        <section class="experience-stage">
+            <div class="geo-blur geo-1"></div>
+            <div class="geo-blur geo-2"></div>
+
+            <div class="depth-grid">
+                <div class="glass-panel animate-on-scroll">
+                    <span class="meta-num">COLLECTION 2026</span>
+                    <h2 class="display-title">The Grand<br><span>Sanctuary</span></h2>
                     
-                    <div class="meta-content-card animate-on-scroll">
-                        <div class="glass-inner">
-                            <span class="meta-eyebrow">Exquisite Detail</span>
-                            <h2 class="meta-title">The Master <br><span class="italic-serif">En-Suite</span></h2>
-                            
-                            <p class="meta-description">
-                                A harmonious blend of clinical preparedness and boutique hotel aesthetic. Every suite at Sunset Meadow is a private retreat designed to foster independence while providing silent, 24/7 security.
-                            </p>
-
-                            <div class="meta-feature-grid">
-                                <div class="meta-feature-item">
-                                    <span class="feature-label">Atmosphere</span>
-                                    <span class="feature-value">Bespoke Luxe</span>
-                                </div>
-                                <div class="meta-feature-item">
-                                    <span class="feature-label">Occupancy</span>
-                                    <span class="feature-value">Private Only</span>
-                                </div>
-                            </div>
-
-                            <div class="meta-actions">
-                                <button class="btn-gold" onclick="openModal()">Check Availability</button>
-                            </div>
+                    <div class="meta-feature-grid" style="display: flex; gap: 30px; margin: 30px 0; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
+                        <div>
+                            <small style="text-transform: uppercase; font-size: 10px; color: #999; letter-spacing: 1px;">Square Footage</small>
+                            <p style="font-family: 'Playfair Display'; font-size: 1.2rem;">1,250 SQ. FT.</p>
+                        </div>
+                        <div>
+                            <small style="text-transform: uppercase; font-size: 10px; color: #999; letter-spacing: 1px;">Occupancy</small>
+                            <p style="font-family: 'Playfair Display'; font-size: 1.2rem;">Private En-Suite</p>
                         </div>
                     </div>
 
-                    <div class="meta-visual-stack animate-on-scroll">
-                        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=2000" alt="Main Suite View" class="meta-img-main">
-                        
-                        <div class="meta-overlay-box detail-1">
-                            <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=400" alt="Bedroom Detail">
-                            <span>The Sanctuary</span>
-                        </div>
-                        
-                        <div class="meta-overlay-box detail-2">
-                            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=400" alt="Bath Detail">
-                            <span>Spa Elements</span>
-                        </div>
+                    <p style="font-family: 'Inter'; color: #666; line-height: 1.8; margin-bottom: 40px;">
+                        Designed with an uncompromising eye for detail, our suites represent the intersection of high-end boutique aesthetics and clinical safety. Every room is a sun-drenched private home.
+                    </p>
+
+                    <button class="btn-gold" onclick="openModal()">Check Availability</button>
+                </div>
+
+                <div class="image-stack animate-on-scroll">
+                    <div class="stack-main">
+                        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=2000" alt="Main Suite">
+                    </div>
+                    
+                    <div class="floating-card card-top">
+                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800" alt="Lounge">
+                        <span class="card-label">The Lounge Area</span>
                     </div>
 
+                    <div class="floating-card card-bottom">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800" alt="Bath">
+                        <span class="card-label">Therapeutic Bath</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -307,32 +300,11 @@
             <source src="timelapse-of-noctilucent-clouds-and-a-vibrant-sunrise.mp4" type="video/mp4">
         </video>
         <div class="footer-tint"></div>
-        <div class="footer-fox">
-            <img src="fox.svg" alt="Fox Logo">
-        </div>
+        <div class="footer-fox"><img src="fox.svg" alt="Fox"></div>
         <div class="footer-content">
             <div class="footer-actions">
                 <button class="btn-gold" onclick="openModal()">Schedule a Tour</button>
-                <a href="tel:YOURNUMBER" class="btn-phone">Call Now</a>
-            </div>
-            <div class="footer-grid">
-                <div class="grid-col community-col">
-                    <h4>Our Community</h4>
-                    <p>Refined living with personalized care in a calm environment.</p>
-                </div>
-                <div class="grid-col">
-                    <h4>Explore</h4>
-                    <div class="footer-links">
-                        <a href="#">Care Options</a>
-                        <a href="#">Pricing</a>
-                        <a href="#">Amenities</a>
-                    </div>
-                </div>
-                <div class="grid-col">
-                    <h4>Contact</h4>
-                    <p>Your Location Address</p>
-                    <p>info@email.com</p>
-                </div>
+                <a href="tel:0000000000" class="btn-phone">Call Now</a>
             </div>
         </div>
     </footer>
@@ -340,12 +312,11 @@
     <div id="bookingModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Schedule a Private Tour</h2>
+            <h2>Book a Tour</h2>
             <form action="https://formsubmit.co/sunsetmeadowlivingllc@gmail.com" method="POST">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="tel" name="phone" placeholder="Phone Number" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <button type="submit" class="btn-gold">Submit Request</button>
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="tel" name="phone" placeholder="Phone" required>
+                <button type="submit" class="btn-gold">Submit</button>
             </form>
         </div>
     </div>
@@ -354,24 +325,15 @@
         function toggleMenu() {
             const menu = document.getElementById("sideMenu");
             menu.classList.toggle("active");
-            document.body.style.overflow = menu.classList.contains("active") ? "hidden" : "auto";
         }
-
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.main-header');
-            if (window.scrollY > 50) header.classList.add('scrolled');
-            else header.classList.remove('scrolled');
-        });
-
         window.openModal = function(){ document.getElementById("bookingModal").style.display = "block"; }
         window.closeModal = function(){ document.getElementById("bookingModal").style.display = "none"; }
-
+        
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('show');
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
     </script>
 </body>
