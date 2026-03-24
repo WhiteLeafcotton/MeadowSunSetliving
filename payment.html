@@ -435,33 +435,35 @@
 
 
 <section class="flex-pay-frosted reveal-up" id="flex-pay-section">
-    <div class="title-strip-bg-wrapper"> 
-    <div class="flex-container title-strip-bg">
-        <span class="flex-eyebrow eyebrow-match">Financial Agility</span>
-        <h2 class="flex-main-title title-match">Flex <span class="italic-pay italic-match">Pay.</span></h2>
+    <div class="title-strip-bg-wrapper">
+        <div class="flex-container">
+            <span class="flex-eyebrow eyebrow-match">Financial Agility</span>
+            <h2 class="flex-main-title title-match">Flex <span class="italic-pay italic-match">Pay.</span></h2>
+        </div>
     </div>
-</div>
 
-    <div class="flex-cards-container">
-        <div class="flex-pay-grid grid-match">
-            <div class="flex-card-compact card-match">
-                <div class="card-inner">
-                    <h4 class="card-title title-match">Respite <br>Recovery</h4>
-                    <p class="card-text text-match">Premium stewardship for those transitioning from clinical settings.</p>
+    <div class="flex-container">
+        <div class="flex-cards-container">
+            <div class="flex-pay-grid grid-match">
+                <div class="flex-card-compact card-match">
+                    <div class="card-inner">
+                        <h4 class="card-title title-match">Respite <br>Recovery</h4>
+                        <p class="card-text text-match">Premium stewardship for those transitioning from clinical settings.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="flex-card-compact card-match">
-                <div class="card-inner">
-                    <h4 class="card-title title-match">Custom <br>Scheduling</h4>
-                    <p class="card-text text-match">Non-traditional entry points curated for our two private suites.</p>
+                <div class="flex-card-compact card-match">
+                    <div class="card-inner">
+                        <h4 class="card-title title-match">Custom <br>Scheduling</h4>
+                        <p class="card-text text-match">Non-traditional entry points curated for our two private suites.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="flex-card-cta cta-match">
-                <div class="card-inner">
-                    <p class="cta-sub sub-match">Available for Private Suites</p>
-                    <a href="suites.html" class="flex-btn btn-match">The Private Suites</a>
+                <div class="flex-card-cta cta-match">
+                    <div class="card-inner">
+                        <p class="cta-sub sub-match">Available for Private Suites</p>
+                        <a href="suites.html" class="flex-btn btn-match">The Private Suites</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -469,33 +471,31 @@
 </section>
 
 <style>
-/* --- GLOBAL & DESKTOP --- */
-/* --- GLOBAL & DESKTOP --- */
-/* --- UPDATED FLEX PAY CSS WITH PHOTO STRIP --- */
-
+/* --- RESTORED ORIGINAL STYLING --- */
 #flex-pay-section {
-    padding: 40px 0 0 0 !important; /* Changed side padding to 0 for full-width strip */
+    padding: 80px 0 0 0 !important;
     background: #ffffff;
     font-family: 'Inter', sans-serif;
     margin-bottom: 0 !important;
-    overflow: hidden;
-}
-
-/* THE PHOTO STRIP WRAPPER */
-.title-strip-bg-wrapper {
-    width: 100vw; /* Forces full viewport width */
-    background-color: red; /* DELETE THIS ONCE PHOTO SHOWS UP */
-    background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), 
-                      url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000'); 
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 60px;
-    padding: 60px 5%; /* Adds the 5% margin back inside for the text */
 }
 
 .flex-container {
     max-width: 1400px;
     margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* THE STRIP: Calculated to hit the top of the 'F' */
+.title-strip-bg-wrapper {
+    width: 100%;
+    position: relative;
+    /* This creates the strip effect behind the text only */
+    background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), 
+                      url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2023.jpeg?raw=true'); 
+    background-size: cover;
+    background-position: center;
+    padding: 40px 0; /* Controls the vertical thickness around the 'F' */
+    margin-bottom: 60px;
 }
 
 .flex-eyebrow {
@@ -514,6 +514,7 @@
     color: #0f172a;
     margin: 0;
     letter-spacing: -2px;
+    line-height: 1;
 }
 
 .italic-pay {
@@ -525,25 +526,68 @@
     margin-left: -10px;
 }
 
-.flex-cards-container {
-    padding: 0 5%; /* Keeps cards aligned with the 5% layout */
-}
-
+/* --- GRID & CARDS --- */
 .flex-pay-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1.2fr;
     border: 1px solid #e2e8f0;
 }
 
-/* MOBILE FIX */
+.flex-card-compact {
+    padding: 60px 50px;
+    border-right: 1px solid #e2e8f0;
+}
+
+.card-title {
+    font-family: 'Playfair Display';
+    font-size: 1.8rem;
+    color: #0f172a;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.8;
+}
+
+.flex-card-cta {
+    padding: 60px 50px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-btn {
+    display: block;
+    padding: 22px 40px;
+    background: #0f172a;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+/* --- MOBILE REFINEMENTS --- */
 @media (max-width: 768px) {
     .title-strip-bg-wrapper {
-        padding: 40px 25px !important;
+        padding: 30px 0;
     }
     .flex-main-title { font-size: 3.8rem !important; }
     .italic-pay { font-size: 4.8rem !important; }
-    .flex-pay-grid { grid-template-columns: 1fr !important; border: none !important; }
+    .flex-pay-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        overflow-x: auto;
+    }
+    .flex-card-compact p { display: none; }
 }
+
+        
 /* --- MOBILE "ELITE" VERSION --- */
 @media (max-width: 768px) {
     #flex-pay-section {
