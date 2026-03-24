@@ -55,19 +55,31 @@
 
 
         /* --- BALANCED VERTICAL TEXT --- */
+/* --- BALANCED LEFT CARD --- */
 .narrative-aside { 
-    padding: 0 10%; 
+    padding: 0 8%; 
     border-right: 1px solid #f0f0f0; 
     display: flex;
-    align-items: center; /* Vertically centers the content */
-    justify-content: center;
-    min-height: 100vh; /* Ensures it has space to center within */
+    flex-direction: column;
+    justify-content: center; /* This pulls everything to the vertical center */
+    height: 100vh;           /* Fixes the height to the viewport */
+    position: sticky;        /* Keeps the entire left column locked while you scroll the right */
+    top: 0;
 }
 
 .aside-sticky { 
-    position: sticky; 
-    top: 0; /* Let the flex-center do the heavy lifting */
+    /* We remove the 'top' and 'transform' here because the parent (narrative-aside) 
+       is now doing the centering work perfectly. */
     width: 100%;
+    text-align: left;
+}
+
+.display-serif { 
+    font-family: 'Playfair Display'; 
+    font-size: 3.5rem; 
+    line-height: 1.1; 
+    margin: 20px 0; 
+    color: var(--black);
 }
 
         .hero-light-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 1; }
