@@ -265,16 +265,24 @@
 
   <section class="blueprint-portal">
     <div class="narrative-aside">
-        <div class="aside-sticky">
-            <span class="gold-tag">Residential Suite</span>
-            <h2 class="display-serif">The Blueprint <br><em>of Comfort.</em></h2>
-            <div class="luxe-divider"></div>
-            <p class="narrative-text">
-                Every square inch of Sunset Meadow is a calculated masterpiece. Swipe to inspect the engineering that defines our care.
-            </p>
-            
-            <div class="swipe-action">
-                <div class="swipe-line"></div>
+    <div class="aside-sticky">
+        <span class="gold-tag">Private Residence / Est. 2026</span>
+        <h2 class="display-serif">The Blueprint <br><em>of Peace.</em></h2>
+        <div class="luxe-divider"></div>
+        <p class="narrative-text">
+            <span class="drop-cap">A</span>t Sunset Meadow, luxury isn't an afterthought—it’s the foundation. We’ve engineered every suite to balance clinical-grade safety with the warmth of a private estate. From acoustic integrity to artisanal finishes, this is where sophisticated design meets dedicated care.
+        </p>
+        
+        <div class="swipe-action">
+            <div class="swipe-line"></div>
+            <span>Scroll to Inspect Details</span>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Add these refinements to your existing <style> */
+
                 <span>Explore the Details</span>
             </div>
         </div>
@@ -372,6 +380,59 @@
 .luxe-divider { width: 40px; height: 1px; background: var(--gold); margin-bottom: 30px; }
 .narrative-text { font-family: 'Inter'; color: var(--gray); line-height: 1.9; max-width: 300px; font-size: 0.95rem; }
 
+
+
+
+
+
+.drop-cap {
+    float: left;
+    font-family: 'Playfair Display';
+    font-size: 3.5rem;
+    line-height: 0.8;
+    padding-top: 4px;
+    padding-right: 8px;
+    color: var(--gold);
+}
+
+.swipe-action {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    opacity: 0.6;
+}
+
+.swipe-line {
+    width: 40px;
+    height: 1px;
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+}
+
+.swipe-line::after {
+    content: '';
+    position: absolute;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gold);
+    animation: swipe-move 2s infinite;
+}
+
+@keyframes swipe-move {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.swipe-action span {
+    font-family: 'Inter';
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+</style>    
 /* THE VIEWPORT WITH VERTICAL BUFFER */
 .blueprint-stage {
     display: flex;
