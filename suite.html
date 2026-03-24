@@ -285,7 +285,7 @@
         <div class="blueprint-card-wrapper">
             <div class="internal-stage">
                 <div class="photo-frame">
-                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200" alt="The Sanctuary">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1400" alt="The Sanctuary">
                     
                     <div class="l-sprout t-l">
                         <div class="origin-dot"></div>
@@ -317,7 +317,7 @@
         <div class="blueprint-card-wrapper">
             <div class="internal-stage">
                 <div class="photo-frame">
-                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200" alt="The Bath">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1400" alt="The Bath">
                     
                     <div class="l-sprout t-r">
                         <div class="origin-dot"></div>
@@ -345,12 +345,11 @@
                 </div>
             </div>
         </div>
-
     </div>
 </section>
 
 <style>
-/* --- 4D BLUEPRINT CORE --- */
+/* --- THE FIX: NO CLIPPING --- */
 :root {
     --luxe-gold: #bfa37e;
     --luxe-dark: #121212;
@@ -359,26 +358,20 @@
 
 .master-blueprint {
     display: grid;
-    grid-template-columns: 35% 65%; /* Constrains narrative, opens gallery */
+    grid-template-columns: 30% 70%; /* Adjusted for larger photos */
     background: #fff;
-    height: 100vh;
-    min-height: 800px;
-    overflow: hidden;
+    padding: 100px 0; /* Natural padding instead of fixed height */
+    overflow: visible; /* Ensure nothing is cut off */
 }
 
-/* LEFT PANEL */
+/* LEFT PANEL (STAYS FIXED) */
 .narrative-panel {
-    padding: 10% 8%;
-    border-right: 1px solid #f0f0f0;
-    display: flex;
-    flex-direction: column;
+    padding: 0 10%;
 }
-.panel-sticky { position: sticky; top: 0; }
-.gold-tag { color: var(--luxe-gold); font-family: 'Inter'; letter-spacing: 5px; font-size: 0.7rem; text-transform: uppercase; font-weight: 700; }
-.display-serif { font-family: 'Playfair Display'; font-size: 4rem; line-height: 1; margin: 25px 0; color: var(--luxe-dark); }
-.display-serif em { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 300; }
-.ornament { width: 60px; height: 1px; background: var(--luxe-gold); margin-bottom: 30px; }
-.narrative-copy { font-family: 'Inter'; color: var(--luxe-gray); line-height: 2; font-size: 1rem; max-width: 320px; }
+.panel-sticky { 
+    position: sticky; 
+    top: 150px; 
+}
 
 /* RIGHT GALLERY (THE VIEWPORT) */
 .blueprint-view-port {
@@ -386,38 +379,38 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
-    padding-right: 10vw; /* End of gallery buffer */
+    padding-bottom: 50px; /* Space for bottom annotations */
+    padding-top: 50px;    /* Space for top annotations */
 }
 .blueprint-view-port::-webkit-scrollbar { display: none; }
 
 .blueprint-card-wrapper {
-    min-width: 100%; /* Centers one photo per view */
-    height: 100%;
+    min-width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     scroll-snap-align: center;
+    overflow: visible; /* ALLOWS ANNOTATIONS TO SPROUT BEYOND WRAPPER */
 }
 
-/* THE INTERNAL STAGE (Safe Zone) */
+/* THE INTERNAL STAGE (Wide & Flexible) */
 .internal-stage {
-    width: 800px; /* Locked width to keep annotations on screen */
-    height: 500px;
+    width: 1100px; /* Increased to allow photo + cards on screen */
     position: relative;
+    overflow: visible; 
 }
 
 .photo-frame {
-    width: 600px; /* Smaller photo = more room for annotations */
-    height: 400px;
-    margin: 50px auto;
+    width: 850px; /* LARGER PHOTO AS REQUESTED */
+    height: 550px;
+    margin: 0 auto;
     position: relative;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.08);
 }
 .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
 
-/* L-SPROUT ANNOTATIONS */
-.l-sprout { position: absolute; z-index: 100; }
-.origin-dot { width: 6px; height: 6px; background: var(--luxe-gold); border-radius: 50%; opacity: 0; transform: scale(0); transition: 0.4s ease; }
+/* ANNOTATIONS (THE SPROUT) */
+.l-sprout { position: absolute; z-index: 100; overflow: visible; }
 
 .l-line-svg {
     position: absolute;
@@ -426,55 +419,47 @@
     overflow: visible;
     pointer-events: none;
 }
-.draw-path {
-    fill: none;
-    stroke: var(--luxe-gold);
-    stroke-width: 1;
-    stroke-dasharray: 600;
-    stroke-dashoffset: 600;
-    transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
-}
+
+/* Sequence: Dot -> Path -> Card */
+.origin-dot { width: 8px; height: 8px; background: var(--luxe-gold); border-radius: 50%; opacity: 0; transform: scale(0); transition: 0.4s ease; }
+.draw-path { fill: none; stroke: var(--luxe-gold); stroke-width: 1.5; stroke-dasharray: 600; stroke-dashoffset: 600; transition: stroke-dashoffset 1s ease 0.4s; }
 
 .annotation-card {
     position: absolute;
-    width: 200px;
+    width: 250px;
     opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.6s ease 1.6s;
+    transform: translateY(15px);
+    transition: all 0.6s ease 1.4s;
 }
 
-/* EXACT PLACEMENT (Outside Photo, Inside Internal-Stage) */
-.t-l { top: 10%; left: 10%; }
-.t-l .l-line-svg { left: 0; top: -190px; }
-.t-l .annotation-card { left: 280px; top: -190px; }
+/* POSITIONING: SPROUTING OUTSIDE PHOTO FRAME */
+.t-l { top: 5%; left: 5%; }
+.t-l .l-line-svg { left: 0; top: -180px; }
+.t-l .annotation-card { left: 280px; top: -180px; }
 
-.b-r { bottom: 10%; right: 10%; }
+.b-r { bottom: 5%; right: 5%; }
 .b-r .l-line-svg { right: 0; bottom: -180px; }
 .b-r .annotation-card { right: 290px; bottom: -180px; text-align: right; }
 
-.t-r { top: 15%; right: 10%; }
-.t-r .l-line-svg { right: 0; top: -190px; }
-.t-r .annotation-card { right: 290px; top: -190px; text-align: right; }
+.t-r { top: 5%; right: 5%; }
+.t-r .l-line-svg { right: 0; top: -180px; }
+.t-r .annotation-card { right: 290px; top: -180px; text-align: right; }
 
-.b-l { bottom: 15%; left: 10%; }
+.b-l { bottom: 5%; left: 5%; }
 .b-l .l-line-svg { left: 0; bottom: -180px; }
 .b-l .annotation-card { left: 280px; bottom: -180px; }
 
-.label-meta { font-family: 'Inter'; font-size: 0.65rem; color: var(--luxe-gold); letter-spacing: 3px; font-weight: 700; display: block; margin-bottom: 8px; }
-.annotation-card h4 { font-family: 'Playfair Display'; font-size: 1.2rem; color: var(--luxe-dark); margin-bottom: 10px; }
-.annotation-card p { font-family: 'Inter'; font-size: 0.8rem; color: var(--luxe-gray); line-height: 1.5; }
-
-/* ANIMATION TRIGGER */
+/* ACTIVE STATE */
 .blueprint-card-wrapper.is-active .origin-dot { opacity: 1; transform: scale(1); }
 .blueprint-card-wrapper.is-active .draw-path { stroke-dashoffset: 0; }
 .blueprint-card-wrapper.is-active .annotation-card { opacity: 1; transform: translateY(0); }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
     .master-blueprint { grid-template-columns: 1fr; }
-    .internal-stage { width: 100%; height: auto; padding: 20px; }
-    .photo-frame { width: 90%; height: 300px; }
-    .annotation-card { position: relative !important; left: 0 !important; top: 0 !important; width: 100% !important; text-align: left !important; padding: 20px 0; }
+    .internal-stage { width: 100%; }
+    .photo-frame { width: 90%; height: auto; min-height: 300px; }
     .l-line-svg { display: none; }
+    .annotation-card { position: relative !important; left: 0 !important; top: 0 !important; width: 100% !important; padding: 20px; opacity: 1; transform: none; }
 }
 </style>
 
@@ -488,8 +473,6 @@
 
     document.querySelectorAll('.blueprint-card-wrapper').forEach(card => galleryObserver.observe(card));
 </script>
-
-
         
 
 
