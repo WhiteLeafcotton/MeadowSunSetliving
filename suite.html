@@ -20,6 +20,23 @@
         }
 
         /* --- HERO & NAV --- */
+        /* --- THIS IS THE CSS PART --- */
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: transparent; /* Clear at first */
+    transition: all 0.4s ease;
+}
+
+.main-header.scrolled {
+    background: rgba(255, 255, 255, 0.7); /* The white tint */
+    backdrop-filter: blur(15px);        /* THE FROST EFFECT */
+    -webkit-backdrop-filter: blur(15px); /* For Safari */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 0; /* Shrinks slightly for a premium feel */
+}
         .hero-suites {
             position: relative;
             height: 80vh;
@@ -249,6 +266,10 @@
             </div>
         </div>
     </footer>
+
+
+
+
 
     <div id="bookingModal" class="modal">
         <div class="modal-content">
