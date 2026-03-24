@@ -354,28 +354,11 @@
         // Blueprint Observer
        // --- UPDATED BLUEPRINT OBSERVER ---
 // --- REFRESHING BLUEPRINT OBSERVER ---
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // Trigger the "sprout" animation
-            entry.target.classList.add('is-active');
-            
-            // Desktop Only: Change background color based on slide
-            if (window.innerWidth > 1100) {
-                document.body.className = `is-slide-${entry.target.getAttribute('data-slide')}`;
-            }
-        } else {
-            // This "resets" the animation so it sprouts again when you scroll back
-            entry.target.classList.remove('is-active');
-        }
-    });
-}, { 
-    threshold: 0.15, // Triggers earlier so the dot is connected when you see it
-    rootMargin: '0px 0px -50px 0px' 
-});
-
-document.querySelectorAll('.slide-container').forEach(slide => observer.observe(slide));
-
+ const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // This triggers the gold lines and text sprouts
+            entry.target.classList.add('is-active');
 
 
 
