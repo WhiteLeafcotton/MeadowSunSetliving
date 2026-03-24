@@ -639,19 +639,21 @@
         padding: 60px 25px !important;
     }
 
+    /* 1. Reduce the gap under the "Flex Pay" strip */
     .flex-main-title {
-        font-size: 3.8rem !important;
-        margin-bottom: 40px !important;
+        margin-bottom: 15px !important; /* Changed from 40px */
+    }
+
+    /* 2. Remove the extra gap above the first card */
+    .flex-pay-grid {
+        margin-top: 0 !important; /* Changed from 20px */
     }
 
     .italic-pay {
         font-size: 4.8rem !important; /* Scaled for mobile */
     }
 
-    .flex-pay-grid {
-        grid-template-columns: 1fr !important; /* Stacked */
-        border: none !important; /* Remove outer border */
-    }
+
 
     .flex-card-compact {
         padding: 40px 0 !important; /* Clean vertical stack */
