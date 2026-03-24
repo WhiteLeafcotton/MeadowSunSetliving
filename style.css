@@ -3411,6 +3411,7 @@ body {
 /* --- FULL VERTICAL STACK MOBILE VIEW --- */
 /* --- CLEAN VERTICAL MOBILE VIEW (FIXED PHOTO SIZE) --- */
 /* --- REFINED SMALLER PHOTO MOBILE VIEW --- */
+/* --- REFINED VERTICAL MOBILE VIEW --- */
 @media (max-width: 1100px) {
     .blueprint-portal { 
         display: block !important; 
@@ -3418,31 +3419,29 @@ body {
         background: #fff;
     }
 
+    /* Hide the sidebar sticky text */
     .narrative-aside { 
         display: none !important; 
     }
 
     .blueprint-stage {
-        display: flex !important;
-        flex-direction: column; 
+        display: block !important; /* Stack photos vertically */
         padding: 0;
-        overflow: visible; 
     }
 
     .slide-container {
         display: block !important;
         width: 100%;
-        min-width: 100% !important;
-        /* Increase vertical padding to 180px to prevent "stacking" look */
-        padding: 180px 0 !important; 
+        /* 160px padding gives the "L" sprouts plenty of room above and below */
+        padding: 160px 0 !important; 
         box-sizing: border-box;
     }
 
     .photo-anchor {
-        /* CONSTRAIN SIZE HERE */
-        width: 280px !important;  /* Force a small, elegant width */
-        height: 180px !important; /* Force a matching height */
-        margin: 0 auto !important; /* Center it */
+        /* This matches the refined width of your mobile card info */
+        width: 280px !important; 
+        height: 180px !important;
+        margin: 0 auto !important; /* Centers the photo */
         position: relative;
     }
 
@@ -3450,33 +3449,34 @@ body {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 2px; /* Subtle premium edge */
+        box-shadow: 0 20px 50px rgba(0,0,0,0.1);
     }
 
-    /* --- L-ANNOTATION POSITIONING --- */
+    /* --- L-ANNOTATIONS --- */
     .pos-bottom-left { 
         display: none !important; 
     }
 
     .l-annotation { 
         display: block !important; 
-        transform: scale(0.65); /* Shrink the lines to match small photo */
+        transform: scale(0.65); /* Scale to match the smaller photo */
         top: -45px !important; 
-        left: -10px !important;
+        left: -15px !important;
     }
 
     .blueprint-svg {
-        width: 140px;
-        height: 70px;
+        width: 160px;
+        height: 80px;
     }
 
     .data-card {
-        width: 160px;
+        width: 170px;
         background: white;
-        padding: 10px;
-        left: 125px !important; 
-        top: -45px !important;
+        padding: 12px;
+        left: 140px !important; 
+        top: -50px !important;
         box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        border-left: 2px solid var(--gold);
     }
 
     .mobile-narrative-card {
@@ -3484,5 +3484,6 @@ body {
         padding: 60px 10%;
         text-align: center;
         background: #fff;
+        border-top: 1px solid #f0f0f0;
     }
 }
