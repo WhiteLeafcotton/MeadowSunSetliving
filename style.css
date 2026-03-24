@@ -3458,22 +3458,28 @@ body {
     }
 
     /* --- SPROUT 02: DOWN THEN RIGHT --- */
+    /* --- SPROUT 02: DOWN THEN RIGHT (FIXED) --- */
     .pos-bottom-left { 
         display: block !important;
         bottom: 20px !important; /* Pinned to bottom-left of image */
-        left: 20px !important;
+        left: 20px !important; 
         right: auto !important;
         top: auto !important;
-        transform: scale(0.65);
+        /* FLIPS the original 'up' path to point 'down' */
+        transform: scale(0.65) scaleY(-1); 
     }
     .pos-bottom-left .blueprint-svg {
-        bottom: -150px !important; 
+        /* Pushes the flipped line below the image */
+        bottom: -160px !important; 
         left: 0 !important;
     }
     .pos-bottom-left .data-card {
-        bottom: -175px !important;
-        left: 210px !important; /* Lands at the end of the RIGHT turn */
+        /* Positions text at the end of the right-hand turn */
+        bottom: -185px !important;
+        left: 215px !important; 
         text-align: left;
+        /* UN-FLIPS the text so it isn't upside down */
+        transform: scaleY(-1); 
     }
 
     /* --- CLEAN GHOST LOOK --- */
