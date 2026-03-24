@@ -263,249 +263,201 @@
 
 
 
-    <section class="cinematic-gallery-wrapper">
-    <div class="gallery-container" id="mainGallery">
-        
-        <div class="gallery-slide">
-            <div class="video-mask">
-                <video autoplay muted loop playsinline class="bg-video">
-                    <source src="https://player.vimeo.com/external/494252666.hd.mp4?s=2f5c4a7946468e59074d20739c946f041d8e1363&profile_id=175" type="video/mp4">
-                </video>
-                <div class="vignette-overlay"></div>
-                
-                <div class="hotspot" style="top: 30%; left: 25%;">
-                    <div class="pulsar"></div>
-                    <div class="hotspot-note">
-                        <span class="note-cat">Architecture</span>
-                        <h4>Floor-to-Ceiling Panes</h4>
-                        <p>Natural circadian lighting to enhance mood and wellness.</p>
-                    </div>
-                </div>
-
-                <div class="slide-caption">
-                    <span class="slide-num">01</span>
-                    <h3>The Great Room</h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="gallery-slide">
-            <div class="photo-mask">
-                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070" alt="Dining">
-                
-                <div class="hotspot" style="top: 50%; left: 60%;">
-                    <div class="pulsar"></div>
-                    <div class="hotspot-note">
-                        <span class="note-cat">Culinary</span>
-                        <h4>Private Chef Table</h4>
-                        <p>Custom nutrition plans served in a social, high-end setting.</p>
-                    </div>
-                </div>
-
-                <div class="slide-caption">
-                    <span class="slide-num">02</span>
-                    <h3>The Table</h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="gallery-slide">
-            <div class="video-mask">
-                <video autoplay muted loop playsinline class="bg-video">
-                    <source src="https://player.vimeo.com/external/371433846.hd.mp4?s=2315163c7f99915846187654f5904d9c0f99480b&profile_id=175" type="video/mp4">
-                </video>
-                <div class="hotspot" style="top: 40%; left: 45%;">
-                    <div class="pulsar"></div>
-                    <div class="hotspot-note">
-                        <span class="note-cat">Comfort</span>
-                        <h4>Hospitality-Grade Linens</h4>
-                        <p>Plush acoustics and 600-thread count serenity.</p>
-                    </div>
-                </div>
-                <div class="slide-caption">
-                    <span class="slide-num">03</span>
-                    <h3>Private Sanctuary</h3>
-                </div>
+    <section class="blueprint-section">
+    <div class="blueprint-narrative">
+        <div class="narrative-sticky">
+            <span class="eyebrow">The Residence</span>
+            <h2 class="display-serif">Signature <br><em>Amenities.</em></h2>
+            <p class="body-text">
+                Explore the intentional details of Sunset Meadow. Every element is selected to provide a seamless transition into luxury living.
+            </p>
+            <div class="gallery-nav-hint">
+                <span class="scroll-line"></span>
+                <span class="scroll-text">Swipe to Explore</span>
             </div>
         </div>
     </div>
 
-    <div class="gallery-controls">
-        <button class="ctrl-btn" onclick="scrollGallery(-1)"><i class="fa-solid fa-arrow-left-long"></i></button>
-        <div class="progress-bar"><div class="progress-fill" id="fill"></div></div>
-        <button class="ctrl-btn" onclick="scrollGallery(1)"><i class="fa-solid fa-arrow-right-long"></i></button>
-    </div>
-</section>
-
-<section class="estate-map-section">
-    <div class="map-grid">
-        <div class="map-text">
-            <span class="eyebrow">The Neighborhood</span>
-            <h2 class="display-serif">Perfectly <em>Positioned.</em></h2>
-            <p>Situated in the heart of serene residential luxury, Sunset Meadow offers the peace of the countryside with the security of proximity.</p>
-            
-            <ul class="location-list">
-                <li><strong>Medical Center</strong> <span>4.2 Miles</span></li>
-                <li><strong>City Park</strong> <span>1.1 Miles</span></li>
-                <li><strong>The Village Shops</strong> <span>0.8 Miles</span></li>
-            </ul>
-        </div>
+    <div class="blueprint-gallery" id="annotatedGallery">
         
-        <div class="map-visual-container">
-            <div class="map-mask">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.142293733028!2d-73.98731968459377!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480293%3A0x5119f4441dd5e3a2!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1647834526511!5m2!1sen!2sus" width="600" height="450" style="border:0; filter: grayscale(1) invert(1) contrast(1.2);" allowfullscreen="" loading="lazy"></iframe>
-                <div class="map-overlay-glow"></div>
+        <div class="blueprint-slide" data-active="false">
+            <div class="landscape-frame">
+                <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200" alt="The Suite">
+                
+                <div class="annotation a1" style="top: 20%; left: 30%;">
+                    <svg class="line-svg"><line x1="0" y1="0" x2="60" y2="-40" /></svg>
+                    <div class="feature-label">
+                        <strong>Circadian Glass</strong>
+                        <span>Auto-tinting for sleep cycles.</span>
+                    </div>
+                </div>
+
+                <div class="annotation a2" style="bottom: 25%; left: 60%;">
+                    <svg class="line-svg"><line x1="0" y1="0" x2="-40" y2="50" /></svg>
+                    <div class="feature-label">
+                        <strong>Italian Oak</strong>
+                        <span>Medical-grade, non-slip finish.</span>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <div class="blueprint-slide" data-active="false">
+            <div class="landscape-frame">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200" alt="The Spa">
+                
+                <div class="annotation a1" style="top: 35%; right: 20%;">
+                    <svg class="line-svg"><line x1="0" y1="0" x2="-60" y2="-40" /></svg>
+                    <div class="feature-label">
+                        <strong>Hydro-Therapy</strong>
+                        <span>Custom temperature presets.</span>
+                    </div>
+                </div>
+
+                <div class="annotation a2" style="bottom: 20%; left: 40%;">
+                    <svg class="line-svg"><line x1="0" y1="0" x2="40" y2="40" /></svg>
+                    <div class="feature-label">
+                        <strong>Silent-Air</strong>
+                        <span>HEPA-filtered climate control.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 
 <style>
-/* --- CINEMATIC GALLERY CORE --- */
-.cinematic-gallery-wrapper {
-    background: #0d0d0d;
+/* --- THE BLUEPRINT ENGINE --- */
+.blueprint-section {
+    display: grid;
+    grid-template-columns: 400px 1fr; /* Fixed left, scrolling right */
+    background: #fff;
+    min-height: 80vh;
     padding: 100px 0;
     overflow: hidden;
 }
 
-.gallery-container {
+.blueprint-narrative {
+    padding-left: 10%;
+    position: relative;
+    z-index: 10;
+}
+
+.narrative-sticky { position: sticky; top: 150px; }
+
+/* Horizontal Gallery Layout */
+.blueprint-gallery {
     display: flex;
-    gap: 40px;
-    padding: 0 10%;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    scrollbar-width: none; /* Hide scrollbar Firefox */
+    gap: 80px;
+    padding-left: 50px;
+    padding-right: 15vw;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
 }
-.gallery-container::-webkit-scrollbar { display: none; }
+.blueprint-gallery::-webkit-scrollbar { display: none; }
 
-.gallery-slide {
-    min-width: 80vw;
-    height: 70vh;
+.blueprint-slide {
+    min-width: 750px; /* Tight Landscape Size */
+    scroll-snap-align: center;
     position: relative;
-    flex-shrink: 0;
-    border-radius: 4px;
-    overflow: hidden;
-    transform: scale(0.95);
-    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    padding: 60px 0;
 }
 
-.gallery-slide:hover { transform: scale(1); }
-
-.video-mask, .photo-mask {
+.landscape-frame {
     width: 100%;
-    height: 100%;
+    height: 450px; /* Controlled Landscape Height */
     position: relative;
+    border-radius: 2px;
+    overflow: visible; /* Allows annotations to sprout out */
 }
 
-.bg-video, .photo-mask img {
+.landscape-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: brightness(0.9);
 }
 
-/* HOTSPOT SYSTEM */
-.hotspot {
+/* --- ANNOTATION SPROUTING --- */
+.annotation {
     position: absolute;
-    z-index: 100;
+    z-index: 20;
 }
 
-.pulsar {
-    width: 20px;
-    height: 20px;
-    background: #fff;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 0 0 rgba(255,255,255, 0.4);
-    animation: pulse-white 2s infinite;
-}
-
-@keyframes pulse-white {
-    0% { box-shadow: 0 0 0 0 rgba(255,255,255, 0.7); }
-    70% { box-shadow: 0 0 0 20px rgba(255,255,255, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(255,255,255, 0); }
-}
-
-.hotspot-note {
+.line-svg {
     position: absolute;
-    left: 40px;
-    top: -20px;
-    width: 250px;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    border-radius: 4px;
+    width: 100px;
+    height: 100px;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.line-svg line {
+    stroke: #bfa37e;
+    stroke-width: 1;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200; /* Hidden by default */
+    transition: stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-label {
+    position: absolute;
+    width: 200px;
     opacity: 0;
-    transform: translateX(20px);
-    transition: all 0.4s ease;
-    pointer-events: none;
+    transform: translateY(10px);
+    transition: all 0.6s ease 0.4s; /* Delays text until line is drawn */
 }
 
-.hotspot:hover .hotspot-note { opacity: 1; transform: translateX(0); }
+/* Positioning the labels based on the line direction */
+.a1 .feature-label { left: 70px; top: -60px; }
+.a2 .feature-label { left: -210px; bottom: -60px; text-align: right; }
 
-.note-cat { font-family: 'Inter'; text-transform: uppercase; font-size: 0.6rem; color: #bfa37e; letter-spacing: 2px; }
-.hotspot-note h4 { font-family: 'Playfair Display'; margin: 5px 0; color: #1a1a1a; }
-.hotspot-note p { font-family: 'Inter'; font-size: 0.8rem; color: #666; line-height: 1.4; }
-
-/* MAP SECTION */
-.estate-map-section {
-    padding: 140px 10%;
-    background: #fff;
+.feature-label strong {
+    display: block;
+    font-family: 'Playfair Display';
+    font-size: 1.1rem;
+    color: #1a1a1a;
 }
 
-.map-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 100px;
-    align-items: center;
-}
-
-.map-mask {
-    position: relative;
-    height: 600px;
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 0 50px 100px rgba(0,0,0,0.1);
-}
-
-.map-mask iframe {
-    width: 100%;
-    height: 100%;
-    filter: grayscale(1) contrast(1.1) brightness(0.9);
-}
-
-.map-overlay-glow {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    box-shadow: inset 0 0 150px rgba(0,0,0,0.1);
-    pointer-events: none;
-}
-
-.location-list { list-style: none; padding: 0; margin-top: 40px; }
-.location-list li {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
+.feature-label span {
     font-family: 'Inter';
-    font-size: 0.9rem;
+    font-size: 0.75rem;
+    color: #888;
+    letter-spacing: 0.5px;
 }
-.location-list li span { color: #bfa37e; font-weight: 600; }
+
+/* --- THE TRIGGER MECHANISM --- */
+/* When the slide is "active" (centered), trigger the sprout */
+.blueprint-slide.is-active .line-svg line { stroke-dashoffset: 0; }
+.blueprint-slide.is-active .feature-label { opacity: 1; transform: translateY(0); }
+
+/* Decorative Scroll Hint */
+.scroll-line { display: block; width: 40px; height: 1px; background: #bfa37e; margin: 20px 0 10px; }
+.scroll-text { font-family: 'Inter'; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 2px; color: #999; }
+
+@media (max-width: 1024px) {
+    .blueprint-section { grid-template-columns: 1fr; }
+    .blueprint-gallery { padding-left: 5%; }
+    .blueprint-slide { min-width: 90vw; }
+}
 </style>
 
 <script>
-    function scrollGallery(direction) {
-        const gallery = document.getElementById('mainGallery');
-        const scrollAmount = window.innerWidth * 0.85;
-        gallery.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-    }
+    // Intersection Observer to trigger "Sprouting" lines when photo is viewed
+    const galleryObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-active');
+            } else {
+                entry.target.classList.remove('is-active');
+            }
+        });
+    }, { threshold: 0.6 }); // Triggers when 60% of the photo is visible
 
-    // Progress Bar Logic
-    const gallery = document.getElementById('mainGallery');
-    const fill = document.getElementById('fill');
-    gallery.addEventListener('scroll', () => {
-        const max = gallery.scrollWidth - gallery.clientWidth;
-        const percent = (gallery.scrollLeft / max) * 100;
-        fill.style.width = percent + '%';
+    document.querySelectorAll('.blueprint-slide').forEach(slide => {
+        galleryObserver.observe(slide);
     });
 </script>
 
