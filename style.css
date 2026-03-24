@@ -3112,13 +3112,17 @@ body {
 
 .title-strip-bg-wrapper {
     width: 100%;
-    /* This points to your image. Adjust the path as needed */
-    background-image: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2020.jpeg?raw=true'); 
+    min-height: 200px; /* Temporary height to force it to show */
+    background-color: red; /* TEST COLOR: If you see red, the layout is correct */
+    background-image: url('your-photo-name.jpg'); /* CHANGE THIS to your exact filename */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin-left: -5.25%; /* Offsets the 5% padding of the parent section to go full bleed */
-    width: calc(100% + 10.5%); 
+    margin-left: -5.25%; 
+    width: calc(100% + 10.5%);
+    display: block;
+    position: relative;
+    z-index: 1;
 }
 
 .title-strip-bg {
