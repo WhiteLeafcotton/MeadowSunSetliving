@@ -287,10 +287,10 @@
                 <div class="main-photo">
                     <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200" alt="The Sanctuary">
                     
-                    <div class="l-annotation tl">
+                    <div class="l-annotation tr-target" style="top: 15%; right: 10%;">
                         <div class="pulse-dot"></div>
-                        <svg class="blueprint-svg" viewBox="0 0 400 150">
-                            <path class="l-path" d="M 5,145 V 105 H -350" />
+                        <svg class="blueprint-svg" viewBox="0 0 450 150">
+                            <path class="l-path" d="M 5,145 V 105 H 350" />
                         </svg>
                         <div class="data-card">
                             <span class="card-id">01 / ARCHITECTURE</span>
@@ -299,10 +299,10 @@
                         </div>
                     </div>
 
-                    <div class="l-annotation br">
+                    <div class="l-annotation bl-target" style="bottom: 15%; left: 10%;">
                         <div class="pulse-dot"></div>
-                        <svg class="blueprint-svg" viewBox="0 0 400 150">
-                            <path class="l-path" d="M 395,5 V 45 H 750" />
+                        <svg class="blueprint-svg" viewBox="0 0 450 150">
+                            <path class="l-path" d="M 445,5 V 45 H 100" />
                         </svg>
                         <div class="data-card">
                             <span class="card-id">02 / INTERIORS</span>
@@ -319,10 +319,10 @@
                 <div class="main-photo">
                     <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200" alt="The Bath">
                     
-                    <div class="l-annotation tr">
+                    <div class="l-annotation tr-target" style="top: 20%; right: 15%;">
                         <div class="pulse-dot"></div>
-                        <svg class="blueprint-svg" viewBox="0 0 400 150">
-                            <path class="l-path" d="M 395,145 V 105 H 750" />
+                        <svg class="blueprint-svg" viewBox="0 0 450 150">
+                            <path class="l-path" d="M 5,145 V 105 H 350" />
                         </svg>
                         <div class="data-card">
                             <span class="card-id">03 / WELLNESS</span>
@@ -331,10 +331,10 @@
                         </div>
                     </div>
 
-                    <div class="l-annotation bl">
+                    <div class="l-annotation bl-target" style="bottom: 20%; left: 15%;">
                         <div class="pulse-dot"></div>
-                        <svg class="blueprint-svg" viewBox="0 0 400 150">
-                            <path class="l-path" d="M 5,5 V 45 H -350" />
+                        <svg class="blueprint-svg" viewBox="0 0 450 150">
+                            <path class="l-path" d="M 445,5 V 45 H 100" />
                         </svg>
                         <div class="data-card">
                             <span class="card-id">04 / AIR QUALITY</span>
@@ -349,7 +349,7 @@
 </section>
 
 <style>
-/* --- THE SNAP-BREAK ARCHITECTURE --- */
+/* --- THE STAGGERED BLUEPRINT CSS --- */
 :root {
     --gold: #bfa37e;
     --black: #111;
@@ -360,7 +360,6 @@
     display: grid;
     grid-template-columns: 400px 1fr;
     background: #fff;
-    position: relative;
     padding: 120px 0;
     overflow: hidden;
 }
@@ -380,9 +379,9 @@
     overflow-y: visible;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
-    padding: 180px 0; /* Vertical Safe Zone for Sprouts */
-    margin-top: -180px;
-    margin-bottom: -180px;
+    padding: 220px 0; 
+    margin-top: -220px;
+    margin-bottom: -220px;
 }
 .blueprint-stage::-webkit-scrollbar { display: none; }
 
@@ -397,8 +396,8 @@
 
 .photo-anchor {
     position: relative;
-    width: 800px; /* LOCKED SIZE */
-    height: 450px; /* LOCKED SIZE */
+    width: 800px;
+    height: 450px;
     overflow: visible;
 }
 
@@ -411,7 +410,7 @@
 }
 .main-photo img { width: 100%; height: 100%; object-fit: cover; }
 
-/* --- THE L-SHAPED SPROUT --- */
+/* --- THE STAGGERED L-SPROUTS --- */
 .l-annotation {
     position: absolute;
     z-index: 100;
@@ -430,7 +429,7 @@
 
 .blueprint-svg {
     position: absolute;
-    width: 400px;
+    width: 450px;
     height: 150px;
     overflow: visible;
     pointer-events: none;
@@ -447,32 +446,23 @@
 
 .data-card {
     position: absolute;
-    width: 260px;
+    width: 280px;
     opacity: 0;
     transform: translateY(15px);
-    transition: all 0.7s ease 1.5s; /* Fires after snap-break line */
+    transition: all 0.7s ease 1.5s;
 }
 
-/* POSITIONING: STEM IS NOW ONLY 40PX */
-.tl { top: 15%; left: 8%; }
-.tl .blueprint-svg { left: 0; bottom: 0; }
-.tl .data-card { left: -360px; top: 75px; text-align: right; } /* Adjust text to sit after L-break */
+/* LANDING: TOP RIGHT */
+.tr-target .blueprint-svg { left: 0; bottom: 0; }
+.tr-target .data-card { left: 360px; top: -110px; text-align: left; }
 
-.br { bottom: 15%; right: 8%; }
-.br .blueprint-svg { right: 0; top: 0; }
-.br .data-card { left: 760px; bottom: 75px; text-align: left; }
-
-.tr { top: 15%; right: 8%; }
-.tr .blueprint-svg { right: 0; bottom: 0; }
-.tr .data-card { left: 760px; top: 75px; text-align: left; }
-
-.bl { bottom: 15%; left: 8%; }
-.bl .blueprint-svg { left: 0; top: 0; }
-.bl .data-card { left: -360px; bottom: 75px; text-align: right; }
+/* LANDING: BOTTOM LEFT */
+.bl-target .blueprint-svg { right: 0; top: 0; }
+.bl-target .data-card { right: 360px; bottom: -110px; text-align: right; }
 
 /* TYPOGRAPHY */
 .card-id { font-family: 'Inter'; font-size: 0.6rem; color: var(--gold); letter-spacing: 3px; font-weight: 700; display: block; margin-bottom: 5px; }
-.data-card h4 { font-family: 'Playfair Display'; font-size: 1.2rem; color: var(--black); margin-bottom: 8px; }
+.data-card h4 { font-family: 'Playfair Display'; font-size: 1.25rem; color: var(--black); margin-bottom: 8px; }
 .data-card p { font-family: 'Inter'; font-size: 0.8rem; color: var(--gray); line-height: 1.5; }
 
 /* ANIMATION TRIGGER */
@@ -484,7 +474,7 @@
     .blueprint-portal { grid-template-columns: 1fr; }
     .blueprint-stage { padding: 40px 0; margin: 0; }
     .photo-anchor { width: 90%; height: auto; }
-    .l-annotation { display: none; } /* Mobile cleanup */
+    .l-annotation { display: none; }
 }
 </style>
 
