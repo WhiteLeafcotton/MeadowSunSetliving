@@ -3412,6 +3412,7 @@ body {
 /* --- CLEAN VERTICAL MOBILE VIEW (FIXED PHOTO SIZE) --- */
 /* --- REFINED SMALLER PHOTO MOBILE VIEW --- */
 /* --- REFINED VERTICAL MOBILE VIEW --- */
+/* --- REFINED "GHOST" ANNOTATION MOBILE VIEW --- */
 @media (max-width: 1100px) {
     .blueprint-portal { 
         display: block !important; 
@@ -3419,47 +3420,37 @@ body {
         background: #fff;
     }
 
-    /* Hide the sidebar sticky text */
     .narrative-aside { 
         display: none !important; 
     }
 
     .blueprint-stage {
-        display: block !important; /* Stack photos vertically */
+        display: block !important;
         padding: 0;
     }
 
     .slide-container {
         display: block !important;
         width: 100%;
-        /* 160px padding gives the "L" sprouts plenty of room above and below */
-        padding: 160px 0 !important; 
+        padding: 120px 0 !important; /* Slightly tighter spacing since bubbles are gone */
         box-sizing: border-box;
     }
 
     .photo-anchor {
-        /* This matches the refined width of your mobile card info */
         width: 280px !important; 
         height: 180px !important;
-        margin: 0 auto !important; /* Centers the photo */
+        margin: 0 auto !important;
         position: relative;
     }
 
-    .main-photo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-    }
-
-    /* --- L-ANNOTATIONS --- */
+    /* --- CLEAN "GHOST" ANNOTATIONS --- */
     .pos-bottom-left { 
         display: none !important; 
     }
 
     .l-annotation { 
         display: block !important; 
-        transform: scale(0.65); /* Scale to match the smaller photo */
+        transform: scale(0.65);
         top: -45px !important; 
         left: -15px !important;
     }
@@ -3470,13 +3461,36 @@ body {
     }
 
     .data-card {
-        width: 170px;
-        background: white;
-        padding: 12px;
+        width: 180px;
+        background: transparent !important; /* REMOVED WHITE BOX */
+        padding: 0 !important;              /* REMOVED PADDING */
+        box-shadow: none !important;       /* REMOVED SHADOW */
         left: 140px !important; 
         top: -50px !important;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-        border-left: 2px solid var(--gold);
+        text-align: left;
+    }
+
+    /* REFINED TEXT STYLING FOR MOBILE SPROUTS */
+    .card-id { 
+        font-size: 0.6rem !important; 
+        letter-spacing: 2px; 
+        color: var(--gold); 
+        display: block; 
+        margin-bottom: 5px;
+    }
+
+    .data-card h4 { 
+        font-size: 0.85rem !important; 
+        margin: 0 0 5px 0; 
+        color: var(--deep); 
+        font-family: 'Playfair Display';
+    }
+
+    .data-card p { 
+        font-size: 0.7rem !important; 
+        line-height: 1.4; 
+        color: var(--gray);
+        margin: 0;
     }
 
     .mobile-narrative-card {
