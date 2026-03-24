@@ -3108,7 +3108,41 @@ body {
 
 
 
+/* ADD THESE RULES - DO NOT REMOVE EXISTING ONES */
 
+.title-strip-bg-wrapper {
+    width: 100%;
+    /* This points to your image. Adjust the path as needed */
+    background-image: url('your-photo-strip-url.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: -5.25%; /* Offsets the 5% padding of the parent section to go full bleed */
+    width: calc(100% + 10.5%); 
+}
+
+.title-strip-bg {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 20px; /* Aligns eyebrow within the strip */
+    padding-bottom: 1px; /* Prevents margin collapse */
+}
+
+/* Ensure the title color pops against the photo */
+.flex-main-title {
+    position: relative;
+    z-index: 2;
+    /* Keeping your exact margins */
+    margin: 0 0 60px; 
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .title-strip-bg-wrapper {
+        margin-left: -25px; /* Matches your mobile padding */
+        width: calc(100% + 50px);
+    }
+}
 
 
 
