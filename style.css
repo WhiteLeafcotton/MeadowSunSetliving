@@ -3406,85 +3406,57 @@ body {
 
 
 
-/* --- NEIGHBORHOOD / MAP SECTION --- */
-.neighborhood-portal {
-    display: grid;
-    grid-template-columns: 450px 1fr;
-    background: #fff;
-    border-top: 1px solid #f0f0f0;
+/* --- ENHANCED MOBILE VIEW --- */
+@media (max-width: 1100px) {
+    .blueprint-portal { 
+        grid-template-columns: 1fr; 
+        padding-top: 50px;
+    }
+
+    /* Hide the sticky left card on mobile because we move it to a vertical card below */
+    .narrative-aside { 
+        display: none; 
+    }
+
+    .blueprint-stage {
+        padding: 100px 0 50px 0;
+        margin-top: 0;
+    }
+
+    .photo-anchor {
+        width: 90vw; /* Scale photo to screen width */
+        height: 50vh;
+    }
+
+    /* SCALE THE ANIMATIONS FOR MOBILE */
+    .blueprint-svg {
+        width: 200px; /* Shorter lines so they don't overlap */
+        height: 100px;
+    }
+
+    .data-card {
+        width: 180px;
+        padding: 10px;
+    }
+
+    .data-card h4 { font-size: 0.9rem; }
+    .data-card p { font-size: 0.7rem; }
+
+    /* Reposition annotations so they stay on screen */
+    .pos-top-right .data-card { left: 40px; top: -80px; }
+    .pos-bottom-left .data-card { right: 40px; bottom: -80px; }
+
+    /* NEW: THE VERTICAL INFO CARD (Appears below slideshow) */
+    .mobile-narrative-card {
+        display: block;
+        padding: 60px 10%;
+        background: #fff;
+        text-align: center;
+        border-top: 1px solid #f0f0f0;
+    }
 }
 
-.neighborhood-aside {
-    padding: 0 12%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-    position: sticky;
-    top: 0;
-    border-right: 1px solid #f0f0f0;
-}
-
-.neighborhood-stage {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none; /* Hides scrollbar for clean look */
-    padding: 100px 50px;
-    gap: 30px;
-    background: #fafafa;
-}
-
-.neighborhood-stage::-webkit-scrollbar { display: none; }
-
-.n-card {
-    min-width: 80%; /* Shows a peek of the next card */
-    height: 600px;
-    scroll-snap-align: center;
-    background: #fff;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.05);
-    border-radius: 2px;
-    overflow: hidden;
-    position: relative;
-}
-
-/* The First Info Card */
-.n-info-card {
-    padding: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.n-info-card ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 30px;
-}
-
-.n-info-card li {
-    font-family: 'Inter';
-    font-size: 0.95rem;
-    color: var(--gray);
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.n-info-card li i { color: var(--gold); font-size: 0.8rem; }
-
-/* Photo Cards */
-.n-photo-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Map Section Below Gallery */
-.full-map-wrap {
-    width: 100%;
-    height: 500px;
-    filter: grayscale(1) contrast(1.1);
-    border-top: 1px solid #f0f0f0;
+/* Hide mobile card on desktop */
+@media (min-width: 1101px) {
+    .mobile-narrative-card { display: none; }
 }
