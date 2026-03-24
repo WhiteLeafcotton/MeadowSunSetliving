@@ -3407,11 +3407,12 @@ body {
 
 
 /* --- FIXED MOBILE VIEW --- */
+/* --- CLEAN VERTICAL MOBILE VIEW --- */
 @media (max-width: 1100px) {
     .blueprint-portal { 
-        display: block !important; /* Force layout to show */
+        display: block !important; 
         padding: 0;
-        overflow-x: hidden;
+        background: #fff;
     }
 
     .narrative-aside { 
@@ -3419,50 +3420,55 @@ body {
     }
 
     .blueprint-stage {
-        display: flex !important; /* Ensure the gallery row is active */
-        padding: 60px 0;
-        margin: 0;
-        gap: 0;
+        display: flex !important;
+        flex-direction: column; /* Stack photos vertically */
+        padding: 40px 0;
+        overflow: visible; /* Allows animations to sprout outside the box */
     }
 
     .slide-container {
-        min-width: 100vw;
-        padding: 0 5vw;
+        min-width: 100%;
+        padding: 80px 5vw; /* Extra vertical padding so sprouts don't overlap next photo */
         box-sizing: border-box;
     }
 
     .photo-anchor {
         width: 100%;
-        height: 350px; /* Specific height for mobile */
+        height: 300px; 
+        margin: 0 auto;
     }
 
-    /* KEEP L-ANIMATIONS VISIBLE BUT SMALLER */
+    /* ONLY SHOW THE TOP-RIGHT ANNOTATION ON MOBILE */
+    .pos-bottom-left { 
+        display: none !important; 
+    }
+
     .l-annotation { 
         display: block !important; 
-        transform: scale(0.7); /* Shrink everything to fit mobile */
+        transform: scale(0.8);
+        top: -20px !important; /* Position it slightly above the photo */
+        left: 10% !important;
     }
 
     .blueprint-svg {
-        width: 150px;
-        height: 80px;
+        width: 180px;
+        height: 90px;
     }
 
     .data-card {
-        width: 160px;
-        background: rgba(255,255,255,0.95);
-        padding: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        width: 200px;
+        background: white;
+        padding: 12px;
+        left: 160px !important; /* Pushes text away from the line */
+        top: -60px !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
-
-    /* Adjust positions so they don't fly off the phone screen */
-    .pos-top-right .data-card { left: 50px; top: -60px; }
-    .pos-bottom-left .data-card { right: 50px; bottom: -60px; }
 
     .mobile-narrative-card {
         display: block;
-        padding: 50px 10%;
-        background: #fff;
+        padding: 40px 10%;
         text-align: center;
+        background: #fff;
         border-top: 1px solid #f0f0f0;
     }
 }
