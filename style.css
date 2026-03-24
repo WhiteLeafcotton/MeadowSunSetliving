@@ -3421,68 +3421,62 @@ body {
 /* --- STEPPED SPROUTS: DOWN/RIGHT & UP/LEFT --- */
 /* --- EXACT STEPPED SPROUTS: MOBILE --- */
 @media (max-width: 1100px) {
-    .blueprint-portal { display: block !important; background: #fff; }
+    .blueprint-portal { display: block !important; padding: 0; }
+    .narrative-aside { display: none !important; }
     .blueprint-stage { display: block !important; padding: 0; }
 
     .slide-container {
         display: block !important;
         width: 100%;
-        /* 220px padding creates the "white gallery" space between suites */
-        padding: 220px 0 !important; 
-        box-sizing: border-box;
+        padding: 240px 0 !important; /* Huge space for the vertical sprouts */
     }
 
     .photo-anchor {
-        width: 90vw !important; 
-        max-width: 480px; 
-        aspect-ratio: 16 / 9;
+        width: 90vw !important; /* Larger photo as requested */
+        max-width: 500px;
+        aspect-ratio: 16/9;
         margin: 0 auto !important;
         position: relative;
-        overflow: visible; 
+        overflow: visible;
     }
 
     /* --- SPROUT 01: UP THEN RIGHT --- */
     .pos-top-right { 
         display: block !important;
-        top: 20px !important; /* Pinned near the top left corner */
-        left: 20px !important; 
-        right: auto !important;
-        transform: scale(0.7);
+        top: 20px !important; /* Pinned to top-left of image */
+        left: 20px !important;
+        transform: scale(0.65);
     }
     .pos-top-right .blueprint-svg {
-        /* This creates the "Up and Over" look */
-        top: -100px !important; 
-        left: 0 !important; 
-        transform: rotate(90deg); /* Rotates the L to point UP and RIGHT */
+        top: -195px !important; 
+        left: 0 !important;
     }
     .pos-top-right .data-card {
-        top: -125px !important;
-        left: 110px !important;
+        top: -175px !important;
+        left: 210px !important; /* Lands at the end of the RIGHT turn */
         text-align: left;
     }
 
     /* --- SPROUT 02: DOWN THEN RIGHT --- */
     .pos-bottom-left { 
         display: block !important;
-        bottom: 20px !important; /* Pinned near the bottom right corner */
-        right: 20px !important; 
-        left: auto !important;
+        bottom: 20px !important; /* Pinned to bottom-left of image */
+        left: 20px !important;
+        right: auto !important;
         top: auto !important;
-        transform: scale(0.7);
+        transform: scale(0.65);
     }
     .pos-bottom-left .blueprint-svg {
-        /* This creates the "Down and Over" look */
-        bottom: -100px !important; 
-        right: 0 !important;
-        /* No rotation needed if L is default, or adjust based on your SVG path */
+        bottom: -150px !important; 
+        left: 0 !important;
     }
     .pos-bottom-left .data-card {
-        bottom: -125px !important;
-        right: -180px !important; 
+        bottom: -175px !important;
+        left: 210px !important; /* Lands at the end of the RIGHT turn */
         text-align: left;
     }
 
-    /* --- GHOST STYLE (No Boxes) --- */
+    /* --- CLEAN GHOST LOOK --- */
     .data-card {
         background: transparent !important;
         box-shadow: none !important;
@@ -3492,20 +3486,9 @@ body {
         position: absolute !important;
     }
 
-    .data-card h4 { 
-        font-size: 0.95rem !important; 
-        color: #000; 
-        margin: 2px 0; 
-        font-family: 'Playfair Display', serif;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-    
-    .data-card p { 
-        font-size: 0.75rem !important; 
-        color: #666; 
-        line-height: 1.4; 
-    }
+    .data-card h4 { font-size: 0.95rem !important; color: #000; margin: 2px 0; font-family: 'Playfair Display', serif; text-transform: uppercase; }
+    .data-card p { font-size: 0.75rem !important; color: #666; line-height: 1.4; }
+    .card-id { font-family: 'Inter'; font-size: 0.7rem; color: #999; letter-spacing: 1px; }
 
-    .pulse-dot { background: var(--gold); border: 2px solid #fff; }
+    .pulse-dot { opacity: 1 !important; transform: scale(1) !important; }
 }
