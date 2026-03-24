@@ -3505,6 +3505,7 @@ body {
     /* --- SPROUT 02: DOWN THEN RIGHT (EXACT ALIGN) --- */
     /* --- SPROUT 02: LOCKED TO PHOTO + DOWN/RIGHT --- */
     /* --- SPROUT 02: MIRROR OF SPROUT 01 --- */
+    /* --- SPROUT 02: MIRROR OF SPROUT 01 --- */
     .pos-bottom-left { 
         display: block !important;
         /* Pinned to the same 'left' as your perfect top sprout */
