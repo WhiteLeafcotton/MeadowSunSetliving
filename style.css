@@ -3409,6 +3409,7 @@ body {
 /* --- FIXED MOBILE VIEW --- */
 /* --- CLEAN VERTICAL MOBILE VIEW --- */
 /* --- FULL VERTICAL STACK MOBILE VIEW --- */
+/* --- CLEAN VERTICAL MOBILE VIEW (FIXED PHOTO SIZE) --- */
 @media (max-width: 1100px) {
     .blueprint-portal { 
         display: block !important; 
@@ -3421,52 +3422,52 @@ body {
     }
 
     .blueprint-stage {
-        display: block !important; /* Switch from flex to block for vertical stacking */
-        padding: 40px 0;
+        display: flex !important;
+        flex-direction: column; 
+        padding: 20px 0;
         overflow: visible; 
     }
 
     .slide-container {
-        display: block !important;
-        width: 100%;
-        min-height: auto;
-        /* Vertical spacing (120px) gives the L-annotations room to "breathe" */
-        padding: 120px 5vw; 
+        min-width: 100%;
+        /* 140px vertical padding gives the L-sprouts plenty of room */
+        padding: 140px 0; 
         box-sizing: border-box;
-        scroll-snap-align: start;
     }
 
     .photo-anchor {
-        width: 100%;
-        height: 350px; 
-        margin: 0 auto;
+        width: 85%;      /* Puts the "breathing room" back on the sides */
+        max-width: 500px; /* Prevents it from getting too big on tablets */
+        height: auto;     /* Let aspect ratio handle height */
+        aspect-ratio: 16 / 9; 
+        margin: 0 auto;   /* Centers the photo */
         position: relative;
     }
 
-    /* Keep only ONE L-annotation per photo on mobile for clarity */
+    /* Keep it one annotation per photo for that high-end look */
     .pos-bottom-left { 
         display: none !important; 
     }
 
     .l-annotation { 
         display: block !important; 
-        transform: scale(0.75); /* Scaled down for mobile screens */
-        top: -40px !important;  /* Positioned above the photo */
-        left: 5% !important;
+        transform: scale(0.7); /* Slightly smaller for the smaller photo */
+        top: -30px !important; 
+        left: 0% !important;
     }
 
     .blueprint-svg {
-        width: 180px;
-        height: 90px;
+        width: 160px;
+        height: 80px;
     }
 
     .data-card {
-        width: 200px;
-        background: rgba(255, 255, 255, 0.98);
-        padding: 15px;
-        left: 170px !important; 
-        top: -70px !important;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        width: 180px;
+        background: white;
+        padding: 12px;
+        left: 145px !important; 
+        top: -55px !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         border-left: 2px solid var(--gold);
     }
 
@@ -3475,6 +3476,5 @@ body {
         padding: 60px 10%;
         text-align: center;
         background: #fff;
-        border-top: 1px solid #f0f0f0;
     }
 }
