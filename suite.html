@@ -352,15 +352,25 @@
         window.closeModal = function(){ document.getElementById("bookingModal").style.display = "none"; }
         
         // Blueprint Observer
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-active');
-                    document.body.className = `is-slide-${entry.target.getAttribute('data-slide')}`;
-                }
-            });
-        }, { threshold: 0.6 });
-        document.querySelectorAll('.slide-container').forEach(slide => observer.observe(slide));
+       // --- UPDATED BLUEPRINT OBSERVER ---
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // This triggers the gold lines and text sprouts
+            entry.target.classList.add('is-active');
+            
+            // Desktop Only: Change background color based on slide
+            if (window.innerWidth > 1100) {
+                document.body.className = `is-slide-${entry.target.getAttribute('data-slide')}`;
+            }
+        }
+    });
+}, { 
+    threshold: 0.2,            /* Triggers much faster (at 20% visibility) */
+    rootMargin: '0px 0px -50px 0px' /* Adds a tiny buffer for smoother scrolling */
+});
+
+document.querySelectorAll('.slide-container').forEach(slide => observer.observe(slide));
 
         // Footer Reveal
         const footerObserver = new IntersectionObserver((entries) => {
