@@ -21,21 +21,24 @@
 
         /* --- HERO & NAV --- */
         /* --- THIS IS THE CSS PART --- */
+/* --- FROSTED NAV ON SCROLL --- */
 .main-header {
     position: fixed;
-    top: 0;
-    width: 100%;
+    top: 0; 
+    width: 100%; 
     z-index: 1000;
-    background: transparent; /* Clear at first */
-    transition: all 0.4s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    padding: 20px 0;
 }
 
 .main-header.scrolled {
-    background: rgba(255, 255, 255, 0.7); /* The white tint */
-    backdrop-filter: blur(15px);        /* THE FROST EFFECT */
-    -webkit-backdrop-filter: blur(15px); /* For Safari */
+    padding: 12px 0;
+    background: rgba(255, 255, 255, 0.75); /* Soft white tint */
+    backdrop-filter: blur(15px); /* THE FROSTED EFFECT */
+    -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 12px 0; /* Shrinks slightly for a premium feel */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }
         .hero-suites {
             position: relative;
