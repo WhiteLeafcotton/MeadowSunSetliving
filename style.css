@@ -3504,43 +3504,42 @@ body {
     /* --- SPROUT 02: DOWN THEN RIGHT (MANUAL ALIGN) --- */
     /* --- SPROUT 02: DOWN THEN RIGHT (EXACT ALIGN) --- */
     /* --- SPROUT 02: LOCKED TO PHOTO + DOWN/RIGHT --- */
+    /* --- SPROUT 02: MIRROR OF SPROUT 01 --- */
     .pos-bottom-left { 
         display: block !important;
-        /* Pinned to the bottom-right area of the photo itself */
+        /* Pinned to the same 'left' as your perfect top sprout */
+        bottom: 20px !important; 
+        left: 20px !important; 
+        right: auto !important;
         top: auto !important;
-        bottom: 40px !important; 
-        right: 15% !important; 
-        left: auto !important;
-        transform: scale(0.7);
+        transform: scale(0.65);
         position: absolute;
     }
 
     .pos-bottom-left .blueprint-svg {
-        /* This places the 'elbow' of the L below the dot */
         top: 0 !important; 
         left: 0 !important;
-        /* Flips the desktop path to sprout DOWN and RIGHT */
+        /* This mirrors the top sprout perfectly to go DOWN */
         transform: scaleY(-1); 
-        transform-origin: top;
+        transform-origin: top left;
         overflow: visible;
     }
 
     .pos-bottom-left .data-card {
-        /* This pushes the text into the white space below the photo */
-        top: 140px !important; 
-        left: 120px !important; 
+        /* Pushes text down into the white space */
+        top: 180px !important; 
+        left: 210px !important; 
         text-align: left;
-        /* Flips the text back so it is readable */
+        /* Un-flips the text so it's readable */
         transform: scaleY(-1); 
-        width: 220px !important;
+        width: 250px !important;
     }
 
+    /* Keeps the dot locked to the 'start' of the line */
     .pos-bottom-left .pulse-dot {
-        /* Ensures the dot stays exactly on the 'start' of the line */
         position: absolute;
         top: -5px;
         left: -5px;
-        z-index: 10;
         opacity: 1 !important;
         transform: scale(1) !important;
     }
