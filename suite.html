@@ -9,14 +9,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        /* --- 4D DEPTH ENGINE R--- */
         :root {
             --glass: rgba(255, 255, 255, 0.65);
             --gold: #bfa37e;
             --deep: #1a1a1a;
+            --black: #111;
+            --gray: #666;
         }
 
-        /* Matches About Hero exactly but adds Perspective */
+        /* --- HERO SECTION --- */
         .hero-suites {
             height: 50vh !important;
             min-height: 400px;
@@ -29,164 +30,126 @@
             background: var(--deep);
         }
 
-        .experience-stage {
-            position: relative;
-            padding: 180px 5%;
-            background: #f9f8f5;
-            overflow: visible; /* Allows elements to bleed out of bounds */
-        }
-
-        /* Floating Background Geometry */
-        .geo-blur {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(191,163,126,0.15) 0%, transparent 70%);
-            filter: blur(80px);
-            z-index: 1;
-            pointer-events: none;
-        }
-        .geo-1 { top: -10%; right: -5%; }
-        .geo-2 { bottom: -10%; left: -5%; }
-
-        .depth-grid {
-            max-width: 1400px;
-            margin: 0 auto;
+        /* --- BLUEPRINT PORTAL ENGINE --- */
+        .blueprint-portal {
             display: grid;
-            grid-template-columns: 1fr 1.3fr;
-            gap: 40px;
-            align-items: center;
+            grid-template-columns: 400px 1fr;
+            background: #fff;
+            padding: 150px 0;
+            overflow: hidden;
             position: relative;
-            z-index: 5;
         }
 
-        /* LEFT: THE GLASS CONTROL PANEL */
-        .glass-panel {
-            background: var(--glass);
-            backdrop-filter: blur(25px) saturate(180%);
-            -webkit-backdrop-filter: blur(25px) saturate(180%);
-            padding: 80px 60px;
-            border: 1px solid rgba(255,255,255,0.4);
-            border-radius: 4px;
-            box-shadow: 0 50px 100px rgba(0,0,0,0.08);
-            transform: translateZ(50px); /* 4D Lift */
-        }
-
-        .meta-num {
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
+        /* LEFT NARRATIVE */
+        .narrative-aside { padding-left: 10%; border-right: 1px solid #f0f0f0; }
+        .aside-sticky { position: sticky; top: 150px; z-index: 10; }
+        .gold-tag { font-family: 'Inter'; color: var(--gold); letter-spacing: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+        .display-serif { font-family: 'Playfair Display'; font-size: 3.5rem; line-height: 1.1; color: var(--black); margin: 20px 0; }
+        .display-serif em { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 300; }
+        .luxe-divider { width: 40px; height: 1px; background: var(--gold); margin-bottom: 30px; }
+        
+        /* THE DROP CAP */
+        .drop-cap {
+            float: left;
+            font-family: 'Playfair Display';
+            font-size: 3.5rem;
+            line-height: 0.8;
+            padding-top: 4px;
+            padding-right: 12px;
             color: var(--gold);
-            letter-spacing: 5px;
-            font-size: 0.8rem;
-            display: block;
-            margin-bottom: 20px;
-            opacity: 0.8;
         }
 
-        .display-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 4.2rem);
-            line-height: 0.95;
-            color: var(--deep);
-            margin-bottom: 30px;
-        }
+        .narrative-text { font-family: 'Inter'; color: var(--gray); line-height: 1.9; max-width: 300px; font-size: 0.95rem; }
 
-        .display-title span {
-            display: block;
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-weight: 300;
-            margin-left: 20px;
+        /* SWIPE ANIMATION */
+        .swipe-action { margin-top: 40px; display: flex; align-items: center; gap: 15px; opacity: 0.6; }
+        .swipe-line { width: 40px; height: 1px; background: var(--black); position: relative; overflow: hidden; }
+        .swipe-line::after {
+            content: ''; position: absolute; left: -100%; width: 100%; height: 100%;
+            background: var(--gold); animation: swipe-move 2s infinite;
         }
+        @keyframes swipe-move { 0% { left: -100%; } 100% { left: 100%; } }
+        .swipe-action span { font-family: 'Inter'; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; }
 
-        /* RIGHT: THE IMAGE STACK (4D DEPTH) */
-        .image-stack {
-            position: relative;
-            height: 700px;
+        /* RIGHT SIDE GALLERY */
+        .blueprint-stage {
+            display: flex;
+            overflow-x: auto;
+            overflow-y: visible;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            padding: 250px 0; 
+            margin-top: -250px;
+            margin-bottom: -250px;
+        }
+        .blueprint-stage::-webkit-scrollbar { display: none; }
+
+        .slide-container {
+            min-width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
+            scroll-snap-align: center;
+            overflow: visible;
         }
 
-        /* Main Image Container */
-        .stack-main {
-            width: 85%;
-            height: 100%;
-            overflow: hidden;
-            border-radius: 4px;
-            box-shadow: 20px 40px 80px rgba(0,0,0,0.15);
-            transform: rotateY(-5deg) rotateX(5deg); /* Perspective tilt */
-            transition: 0.6s ease;
+        .photo-anchor {
+            position: relative;
+            width: 800px;
+            height: 450px;
+            overflow: visible;
         }
 
-        .stack-main img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: contrast(1.05) brightness(0.9);
+        .main-photo {
+            width: 100%; height: 100%;
+            position: relative;
+            box-shadow: 0 40px 90px rgba(0,0,0,0.07);
+            z-index: 5;
+        }
+        .main-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* THE L-SPROUTS */
+        .l-annotation { position: absolute; z-index: 100; overflow: visible; }
+        .pulse-dot {
+            width: 10px; height: 10px; background: var(--gold); border-radius: 50%;
+            opacity: 0; transform: scale(0);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .blueprint-svg { position: absolute; width: 400px; height: 200px; overflow: visible; pointer-events: none; }
+        .l-path {
+            fill: none; stroke: var(--gold); stroke-width: 1.2;
+            stroke-dasharray: 1000; stroke-dashoffset: 1000;
+            transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+        }
+        .data-card {
+            position: absolute; width: 280px; opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.7s ease 1.5s;
         }
 
-        /* Floating Neomorphic Overlays */
-        .floating-card {
-            position: absolute;
-            background: white;
-            padding: 15px;
-            border-radius: 4px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-            z-index: 10;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
+        /* CARD PLACEMENT */
+        .pos-top-right .blueprint-svg { left: 0; bottom: 0; }
+        .pos-top-right .data-card { left: 260px; top: -140px; text-align: left; }
+        .pos-bottom-left .blueprint-svg { right: 0; top: 0; }
+        .pos-bottom-left .data-card { right: 260px; bottom: -140px; text-align: right; }
+        .pos-top-left .blueprint-svg { right: 0; bottom: 0; }
+        .pos-top-left .data-card { right: 260px; top: -140px; text-align: right; }
+        .pos-bottom-right .blueprint-svg { left: 0; top: 0; }
+        .pos-bottom-right .data-card { left: 260px; bottom: -140px; text-align: left; }
 
-        .card-top {
-            top: 10%;
-            right: -5%;
-            width: 280px;
-            transform: translateZ(120px); /* Highest layer */
-        }
+        /* ANIMATION TRIGGERS */
+        .slide-container.is-active .pulse-dot { opacity: 1; transform: scale(1); }
+        .slide-container.is-active .l-path { stroke-dashoffset: 0; }
+        .slide-container.is-active .data-card { opacity: 1; transform: translateY(0); }
 
-        .card-bottom {
-            bottom: 5%;
-            left: -10%;
-            width: 240px;
-            transform: translateZ(80px); /* Middle layer */
-        }
-
-        .floating-card img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 2px;
-            margin-bottom: 12px;
-        }
-
-        .card-label {
-            font-family: 'Inter', sans-serif;
-            text-transform: uppercase;
-            font-size: 0.65rem;
-            letter-spacing: 2px;
-            color: var(--gold);
-            font-weight: 600;
-            text-align: center;
-            display: block;
-        }
-
-        /* Hover Interaction */
-        .image-stack:hover .stack-main { transform: rotateY(0) rotateX(0); }
-        .image-stack:hover .card-top { transform: translate(20px, -20px) translateZ(150px); }
-        .image-stack:hover .card-bottom { transform: translate(-20px, 20px) translateZ(100px); }
-
-        /* Mobile Optimization */
-        @media (max-width: 1024px) {
-            .depth-grid { grid-template-columns: 1fr; }
-            .image-stack { height: 500px; margin-top: 60px; }
-            .floating-card { width: 180px; }
-            .glass-panel { padding: 40px 30px; }
+        @media (max-width: 1200px) {
+            .blueprint-portal { grid-template-columns: 1fr; }
+            .l-annotation { display: none; }
         }
     </style>
 </head>
 
 <body>
-
     <header class="main-header">
         <nav class="navbar">
             <a href="index.html" class="logo">
@@ -197,49 +160,17 @@
             </a>
             <div class="nav-wrapper">
                 <ul class="nav-links">
-                    <li class="dropdown">
-                        <a href="#" class="nav-item">Resident Experience <i class="fa-solid fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Events</a></li>
-                            <li><a href="#">THE TABLE</a></li>
-                            <li><a href="#">Car Service</a></li>
-                            <li><a href="#">Life Enrichment</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="about.html" class="nav-item">About Us <i class="fa-solid fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Leadership Team</a></li>
-                            <li><a href="#">Mission & Vision</a></li>
-                            <li><a href="#">Who We Serve</a></li>
-                            <li><a href="#">Admission Process</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="about.html" class="nav-item">About Us</a></li>
                     <li><a href="payment.html" class="nav-item">Payment Solutions</a></li>
                     <li><a href="#" class="nav-item active">Suites</a></li>
                 </ul>
                 <a href="tel:YOURNUMBER" class="nav-cta">Contact</a>
             </div>
-            <div class="menu-button" onclick="toggleMenu()">
-                <span class="bar"></span><span class="bar"></span>
-            </div>
         </nav>
     </header>
 
-    <div id="sideMenu" class="side-menu">
-        <span class="close-btn" onclick="toggleMenu()">&times;</span>
-        <div class="mobile-nav-content">
-            <a href="index.html" class="main-link">Home</a>
-            <a href="about.html" class="main-link">About Us</a>
-            <a href="payment.html" class="main-link">Payment Solutions</a>
-            <a href="#" class="main-link">Suites</a>
-            <a href="tel:YOURNUMBER" class="nav-cta">Contact Us</a>
-        </div>
-    </div>
-
     <main>
         <section class="hero hero-suites">
-            <div class="hero-light-overlay"></div>
             <div class="hero-content">
                 <div class="hero-badge">
                     <span class="badge-line"></span>
@@ -249,320 +180,67 @@
             </div>
         </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <section class="blueprint-portal">
-    <div class="narrative-aside">
-    <div class="aside-sticky">
-        <span class="gold-tag">Private Residence / Est. 2026</span>
-        <h2 class="display-serif">The Blueprint <br><em>of Peace.</em></h2>
-        <div class="luxe-divider"></div>
-        <p class="narrative-text">
-            <span class="drop-cap">A</span>t Sunset Meadow, luxury isn't an afterthought—it’s the foundation. We’ve engineered every suite to balance clinical-grade safety with the warmth of a private estate. From acoustic integrity to artisanal finishes, this is where sophisticated design meets dedicated care.
-        </p>
-        
-        <div class="swipe-action">
-            <div class="swipe-line"></div>
-            <span>Scroll to Inspect Details</span>
-        </div>
-    </div>
-</div>
-
-<style>
-/* Add these refinements to your existing <style> */
-
-                <span>Explore the Details</span>
+        <section class="blueprint-portal">
+            <div class="narrative-aside">
+                <div class="aside-sticky">
+                    <span class="gold-tag">Private Residence / Est. 2026</span>
+                    <h2 class="display-serif">The Blueprint <br><em>of Peace.</em></h2>
+                    <div class="luxe-divider"></div>
+                    <p class="narrative-text">
+                        <span class="drop-cap">A</span>t Sunset Meadow, luxury isn't an afterthought—it’s the foundation. We’ve engineered every suite to balance clinical-grade safety with the warmth of a private estate.
+                    </p>
+                    <div class="swipe-action">
+                        <div class="swipe-line"></div>
+                        <span>Scroll to Inspect</span>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="blueprint-stage" id="scrollStage">
-        
-        <div class="slide-container">
-            <div class="photo-anchor">
-                <div class="main-photo">
-                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200" alt="The Sanctuary">
-                    
-                    <div class="l-annotation pos-top-right" style="top: 10%; left: 20%;">
-                        <div class="pulse-dot"></div>
-                        <svg class="blueprint-svg" viewBox="0 0 400 200">
-                            <path class="l-path" d="M 5,195 V 75 H 250" />
-                        </svg>
-                        <div class="data-card">
-                            <span class="card-id">01 / ARCHITECTURE</span>
-                            <h4>Silent-Core Integrity</h4>
-                            <p>Triple-insulated structural framing ensures total privacy.</p>
+            <div class="blueprint-stage" id="scrollStage">
+                <div class="slide-container">
+                    <div class="photo-anchor">
+                        <div class="main-photo">
+                            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200" alt="Room 1">
+                            <div class="l-annotation pos-top-right" style="top: 10%; left: 20%;">
+                                <div class="pulse-dot"></div>
+                                <svg class="blueprint-svg" viewBox="0 0 400 200"><path class="l-path" d="M 5,195 V 75 H 250" /></svg>
+                                <div class="data-card">
+                                    <span class="card-id">01 / ARCHITECTURE</span>
+                                    <h4>Silent-Core Integrity</h4>
+                                    <p>Triple-insulated structural framing ensures total privacy.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="l-annotation pos-bottom-left" style="bottom: 10%; right: 20%;">
-                        <div class="pulse-dot"></div>
-                        <svg class="blueprint-svg" viewBox="0 0 400 200">
-                            <path class="l-path" d="M 395,5 V 125 H 145" />
-                        </svg>
-                        <div class="data-card">
-                            <span class="card-id">02 / INTERIORS</span>
-                            <h4>Medical-Grade Oak</h4>
-                            <p>Bespoke Italian flooring with integrated friction-grip.</p>
+                </div>
+                <div class="slide-container">
+                    <div class="photo-anchor">
+                        <div class="main-photo">
+                            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200" alt="Room 2">
+                            <div class="l-annotation pos-bottom-left" style="bottom: 10%; right: 20%;">
+                                <div class="pulse-dot"></div>
+                                <svg class="blueprint-svg" viewBox="0 0 400 200"><path class="l-path" d="M 395,5 V 125 H 145" /></svg>
+                                <div class="data-card">
+                                    <span class="card-id">02 / WELLNESS</span>
+                                    <h4>Hydro-Precision</h4>
+                                    <p>Bespoke therapeutic environments for every resident.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="slide-container">
-            <div class="photo-anchor">
-                <div class="main-photo">
-                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200" alt="The Bath">
-                    
-                    <div class="l-annotation pos-top-left" style="top: 15%; right: 25%;">
-                        <div class="pulse-dot"></div>
-                        <svg class="blueprint-svg" viewBox="0 0 400 200">
-                            <path class="l-path" d="M 395,195 V 75 H 145" />
-                        </svg>
-                        <div class="data-card">
-                            <span class="card-id">03 / WELLNESS</span>
-                            <h4>Hydro-Precision</h4>
-                            <p>Digital temperature governors maintain therapeutic levels.</p>
-                        </div>
-                    </div>
-
-                    <div class="l-annotation pos-bottom-right" style="bottom: 15%; left: 25%;">
-                        <div class="pulse-dot"></div>
-                        <svg class="blueprint-svg" viewBox="0 0 400 200">
-                            <path class="l-path" d="M 5,5 V 125 H 250" />
-                        </svg>
-                        <div class="data-card">
-                            <span class="card-id">04 / AIR QUALITY</span>
-                            <h4>HEPA-Stealth Flow</h4>
-                            <p>A hidden convection system cycling fresh air.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
-/* --- THE VERTICAL-FIRST BLUEPRINT --- */
-:root {
-    --gold: #bfa37e;
-    --black: #111;
-    --gray: #666;
-}
-
-.blueprint-portal {
-    display: grid;
-    grid-template-columns: 400px 1fr;
-    background: #fff;
-    padding: 150px 0;
-    overflow: hidden;
-}
-
-.narrative-aside { padding-left: 10%; border-right: 1px solid #f0f0f0; }
-.aside-sticky { position: sticky; top: 200px; z-index: 10; }
-.gold-tag { font-family: 'Inter'; color: var(--gold); letter-spacing: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
-.display-serif { font-family: 'Playfair Display'; font-size: 3.5rem; line-height: 1.1; color: var(--black); margin: 20px 0; }
-.display-serif em { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 300; }
-.luxe-divider { width: 40px; height: 1px; background: var(--gold); margin-bottom: 30px; }
-.narrative-text { font-family: 'Inter'; color: var(--gray); line-height: 1.9; max-width: 300px; font-size: 0.95rem; }
-
-
-
-
-
-
-  
-/* THE VIEWPORT WITH VERTICAL BUFFER */
-.blueprint-stage {
-    display: flex;
-    overflow-x: auto;
-    overflow-y: visible;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    padding: 250px 0; 
-    margin-top: -250px;
-    margin-bottom: -250px;
-}
-.blueprint-stage::-webkit-scrollbar { display: none; }
-
-.slide-container {
-    min-width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    scroll-snap-align: center;
-    overflow: visible;
-}
-
-.photo-anchor {
-    position: relative;
-    width: 800px;
-    height: 450px;
-    overflow: visible;
-}
-
-.main-photo {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    box-shadow: 0 40px 90px rgba(0,0,0,0.07);
-    z-index: 5;
-}
-.main-photo img { width: 100%; height: 100%; object-fit: cover; }
-
-/* --- THE L-SPROUTS (Vertical First) --- */
-.l-annotation {
-    position: absolute;
-    z-index: 100;
-    overflow: visible;
-}
-
-.pulse-dot {
-    width: 10px;
-    height: 10px;
-    background: var(--gold);
-    border-radius: 50%;
-    opacity: 0;
-    transform: scale(0);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.blueprint-svg {
-    position: absolute;
-    width: 400px;
-    height: 200px;
-    overflow: visible;
-    pointer-events: none;
-}
-
-.l-path {
-    fill: none;
-    stroke: var(--gold);
-    stroke-width: 1.2;
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
-}
-
-.data-card {
-    position: absolute;
-    width: 280px;
-    opacity: 0;
-    transform: translateY(15px);
-    transition: all 0.7s ease 1.5s;
-}
-
-/* LANDING POSITIONS: ABOVE/BELOW PHOTO */
-.pos-top-right .blueprint-svg { left: 0; bottom: 0; }
-.pos-top-right .data-card { left: 260px; top: -140px; text-align: left; }
-
-.pos-bottom-left .blueprint-svg { right: 0; top: 0; }
-.pos-bottom-left .data-card { right: 260px; bottom: -140px; text-align: right; }
-
-.pos-top-left .blueprint-svg { right: 0; bottom: 0; }
-.pos-top-left .data-card { right: 260px; top: -140px; text-align: right; }
-
-.pos-bottom-right .blueprint-svg { left: 0; top: 0; }
-.pos-bottom-right .data-card { left: 260px; bottom: -140px; text-align: left; }
-
-/* TYPOGRAPHY */
-.card-id { font-family: 'Inter'; font-size: 0.6rem; color: var(--gold); letter-spacing: 3px; font-weight: 700; display: block; margin-bottom: 5px; }
-.data-card h4 { font-family: 'Playfair Display'; font-size: 1.25rem; color: var(--black); margin-bottom: 8px; }
-.data-card p { font-family: 'Inter'; font-size: 0.8rem; color: var(--gray); line-height: 1.5; }
-
-/* ANIMATION TRIGGER */
-.slide-container.is-active .pulse-dot { opacity: 1; transform: scale(1); }
-.slide-container.is-active .l-path { stroke-dashoffset: 0; }
-.slide-container.is-active .data-card { opacity: 1; transform: translateY(0); }
-
-@media (max-width: 1200px) {
-    .blueprint-portal { grid-template-columns: 1fr; }
-    .blueprint-stage { padding: 40px 0; margin: 0; }
-    .l-annotation { display: none; }
-}
-</style>
-
-<script>
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('is-active');
-            else entry.target.classList.remove('is-active');
-        });
-    }, { threshold: 0.6 });
-
-    document.querySelectorAll('.slide-container').forEach(slide => observer.observe(slide));
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
+        </section>
     </main>
 
-    <footer class="video-footer animate-on-scroll">
-        <video autoplay muted loop playsinline class="footer-video-bg">
-            <source src="timelapse-of-noctilucent-clouds-and-a-vibrant-sunrise.mp4" type="video/mp4">
-        </video>
-        <div class="footer-tint"></div>
-        <div class="footer-fox"><img src="fox.svg" alt="Fox"></div>
-        <div class="footer-content">
-            <div class="footer-actions">
-                <button class="btn-gold" onclick="openModal()">Schedule a Tour</button>
-                <a href="tel:0000000000" class="btn-phone">Call Now</a>
-            </div>
-        </div>
-    </footer>
-
-    <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Book a Tour</h2>
-            <form action="https://formsubmit.co/sunsetmeadowlivingllc@gmail.com" method="POST">
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="tel" name="phone" placeholder="Phone" required>
-                <button type="submit" class="btn-gold">Submit</button>
-            </form>
-        </div>
-    </div>
-
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById("sideMenu");
-            menu.classList.toggle("active");
-        }
-        window.openModal = function(){ document.getElementById("bookingModal").style.display = "block"; }
-        window.closeModal = function(){ document.getElementById("bookingModal").style.display = "none"; }
-        
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('show');
+                if (entry.isIntersecting) entry.target.classList.add('is-active');
             });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+        }, { threshold: 0.6 });
+
+        document.querySelectorAll('.slide-container').forEach(slide => observer.observe(slide));
     </script>
 </body>
 </html>
