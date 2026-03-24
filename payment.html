@@ -471,12 +471,26 @@
 <style>
 /* --- GLOBAL & DESKTOP --- */
 /* --- GLOBAL & DESKTOP --- */
+/* --- UPDATED FLEX PAY CSS WITH PHOTO STRIP --- */
+
 #flex-pay-section {
-    /* Top: 40px (Just a little space), Sides: 5%, Bottom: 0px (Flushed to footer) */
-    padding: 40px 5% 0 5% !important; 
+    padding: 40px 0 0 0 !important; /* Changed side padding to 0 for full-width strip */
     background: #ffffff;
     font-family: 'Inter', sans-serif;
-    margin-bottom: 0 !important; /* Ensures no ghost margin at bottom */
+    margin-bottom: 0 !important;
+    overflow: hidden;
+}
+
+/* THE PHOTO STRIP WRAPPER */
+.title-strip-bg-wrapper {
+    width: 100vw; /* Forces full viewport width */
+    background-color: red; /* DELETE THIS ONCE PHOTO SHOWS UP */
+    background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), 
+                      url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000'); 
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 60px;
+    padding: 60px 5%; /* Adds the 5% margin back inside for the text */
 }
 
 .flex-container {
@@ -498,18 +512,21 @@
     font-family: 'Playfair Display';
     font-size: 6rem;
     color: #0f172a;
-    margin: 0 0 60px;
+    margin: 0;
     letter-spacing: -2px;
 }
 
-/* THE "PAY" FIX: Bigger, elegant, distinct font */
 .italic-pay {
-    font-family: 'Cormorant Garamond', serif; /* Higher-end serif */
+    font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 400;
     color: #bfa15f;
-    font-size: 7.5rem; /* 20% bigger than "Flex" */
+    font-size: 7.5rem;
     margin-left: -10px;
+}
+
+.flex-cards-container {
+    padding: 0 5%; /* Keeps cards aligned with the 5% layout */
 }
 
 .flex-pay-grid {
@@ -518,61 +535,15 @@
     border: 1px solid #e2e8f0;
 }
 
-.flex-card-compact {
-    padding: 60px 50px;
-    border-right: 1px solid #e2e8f0;
-    display: flex;
-    flex-direction: column;
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .title-strip-bg-wrapper {
+        padding: 40px 25px !important;
+    }
+    .flex-main-title { font-size: 3.8rem !important; }
+    .italic-pay { font-size: 4.8rem !important; }
+    .flex-pay-grid { grid-template-columns: 1fr !important; border: none !important; }
 }
-
-.card-title {
-    font-family: 'Playfair Display';
-    font-size: 1.8rem;
-    color: #0f172a;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.card-text {
-    font-size: 0.95rem;
-    color: #64748b;
-    line-height: 1.8;
-}
-
-.flex-card-cta {
-    padding: 60px 50px;
-    background: #f8fafc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.cta-sub {
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #94a3b8;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.flex-btn {
-    display: block;
-    padding: 22px 40px;
-    background: #0f172a;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    transition: all 0.3s ease;
-}
-
-.flex-btn:hover {
-    background: #bfa15f;
-}
-
 /* --- MOBILE "ELITE" VERSION --- */
 @media (max-width: 768px) {
     #flex-pay-section {
