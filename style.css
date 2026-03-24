@@ -3428,11 +3428,11 @@ body {
     .slide-container {
         display: block !important;
         width: 100%;
-        padding: 340px 0 !important; /* Space for the downward text */
+        padding: 340px 0 !important; 
     }
 
     .photo-anchor {
-        width: 95vw !important; /* Full width for mobile impact */
+        width: 95vw !important;
         max-width: 500px;
         aspect-ratio: 16/9;
         margin: 0 auto !important;
@@ -3440,7 +3440,7 @@ body {
         overflow: visible;
     }
 
-    /* --- SPROUT 01: TOP LEFT (LOCKED) --- */
+    /* --- SPROUT 01: TOP LEFT --- */
     .pos-top-right { 
         display: block !important;
         top: 20px !important; 
@@ -3452,12 +3452,11 @@ body {
     .pos-top-right .blueprint-svg { top: -195px !important; left: 0 !important; }
     .pos-top-right .data-card { top: -175px !important; left: 210px !important; text-align: left; }
 
-    /* --- SPROUT 02: PINNED TO BOTTOM EDGE & FLIPPED --- */
+    /* --- SPROUT 02: LOCKED TO BOTTOM RIGHT CORNER --- */
     .pos-bottom-left { 
         display: block !important;
-        /* Pinned exactly to the bottom edge and right-aligned */
         bottom: 0px !important; 
-        right: 40px !important; 
+        right: 20px !important; /* Pinned to right side of photo */
         left: auto !important; 
         top: auto !important;
         transform: scale(0.65);
@@ -3469,21 +3468,20 @@ body {
         top: 0 !important;
         right: 0 !important;
         left: auto !important;
-        /* scaleY(-1) flips the 'Up' path to go 'Down' into the white space */
-        transform: scaleY(-1); 
+        /* scaleY(-1) flips down, scaleX(-1) mirrors it so it angles LEFT from the right side */
+        transform: scaleY(-1) scaleX(-1); 
         transform-origin: top right;
         overflow: visible;
     }
 
     .pos-bottom-left .data-card {
         position: absolute !important;
-        /* Pushes text into the white space below the photo anchor */
         top: 155px !important; 
-        right: 255px !important; 
+        right: 210px !important; /* Text sits to the left of the corner dot */
         left: auto !important;
         text-align: right;
-        width: 250px !important;
-        /* Un-flips the text container so characters aren't upside down */
+        width: 280px !important;
+        /* Un-flips vertical only, keeps horizontal alignment */
         transform: scaleY(-1); 
     }
 
