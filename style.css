@@ -3111,18 +3111,28 @@ body {
 /* ADD THESE RULES - DO NOT REMOVE EXISTING ONES */
 
 .title-strip-bg-wrapper {
-    width: 100%;
-    min-height: 200px; /* Temporary height to force it to show */
-    background-color: red; /* TEST COLOR: If you see red, the layout is correct */
-    background-image: url('your-photo-name.jpg'); /* CHANGE THIS to your exact filename */
+    display: block !important;
+    width: 100% !important;
+    background-color: red !important; /* This MUST show up now */
+    background-image: url('your-photo.jpg'); /* Replace with your image name */
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    margin-left: -5.25%; 
-    width: calc(100% + 10.5%);
-    display: block;
-    position: relative;
-    z-index: 1;
+    
+    /* This makes the strip go full-width */
+    margin-left: -5.5% !important; 
+    padding-left: 5.5% !important;
+    padding-right: 5.5% !important;
+    width: 111% !important; 
+    
+    /* This locks the height to your title */
+    padding-top: 40px;
+    margin-bottom: 60px;
+}
+
+/* Ensure the title stays visible on top of the red/photo */
+.flex-main-title {
+    margin-bottom: 0 !important; 
+    padding-bottom: 20px;
 }
 
 .title-strip-bg {
@@ -3132,13 +3142,7 @@ body {
     padding-bottom: 1px; /* Prevents margin collapse */
 }
 
-/* Ensure the title color pops against the photo */
-.flex-main-title {
-    position: relative;
-    z-index: 2;
-    /* Keeping your exact margins */
-    margin: 0 0 60px; 
-}
+
 
 /* MOBILE FIX */
 @media (max-width: 768px) {
