@@ -3459,27 +3459,30 @@ body {
 
     /* --- SPROUT 02: DOWN THEN RIGHT --- */
     /* --- SPROUT 02: DOWN THEN RIGHT (FIXED) --- */
+    /* --- SPROUT 02: DOWN THEN RIGHT (MANUAL ALIGN) --- */
     .pos-bottom-left { 
         display: block !important;
-        bottom: 20px !important; /* Pinned to bottom-left of image */
+        bottom: 20px !important; /* Pinned to bottom-left of photo */
         left: 20px !important; 
         right: auto !important;
         top: auto !important;
-        /* FLIPS the original 'up' path to point 'down' */
-        transform: scale(0.65) scaleY(-1); 
+        transform: scale(0.65);
     }
+
     .pos-bottom-left .blueprint-svg {
-        /* Pushes the flipped line below the image */
-        bottom: -160px !important; 
+        /* This pushes the SVG below the photo anchor */
+        top: 5px !important; 
         left: 0 !important;
+        /* Rotates the 'L' so it points DOWN and RIGHT */
+        transform: rotate(270deg) translateX(-100%) translateY(-100%);
+        transform-origin: top left;
     }
+
     .pos-bottom-left .data-card {
-        /* Positions text at the end of the right-hand turn */
-        bottom: -185px !important;
-        left: 215px !important; 
+        /* Positions the text precisely at the end of the turn */
+        top: 130px !important; 
+        left: 115px !important;
         text-align: left;
-        /* UN-FLIPS the text so it isn't upside down */
-        transform: scaleY(-1); 
     }
 
     /* --- CLEAN GHOST LOOK --- */
