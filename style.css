@@ -3419,15 +3419,16 @@ body {
 /* --- EDITORIAL MOBILE SCALE (FINAL) --- */
 /* --- CENTER-EDGE SPROUTS (FINAL ALIGNMENT) --- */
 /* --- STEPPED SPROUTS: DOWN/RIGHT & UP/LEFT --- */
+/* --- EXACT STEPPED SPROUTS: MOBILE --- */
 @media (max-width: 1100px) {
-    .blueprint-portal { display: block !important; padding: 0; background: #fff; }
-    .narrative-aside { display: none !important; }
+    .blueprint-portal { display: block !important; background: #fff; }
     .blueprint-stage { display: block !important; padding: 0; }
 
     .slide-container {
         display: block !important;
         width: 100%;
-        padding: 260px 0 !important; /* Extra room for vertical "Down/Up" travel */
+        /* 220px padding creates the "white gallery" space between suites */
+        padding: 220px 0 !important; 
         box-sizing: border-box;
     }
 
@@ -3440,68 +3441,71 @@ body {
         overflow: visible; 
     }
 
-    /* --- SPROUT 1: LEFT-CENTER -> UP -> LEFT --- */
+    /* --- SPROUT 01: UP THEN RIGHT --- */
     .pos-top-right { 
         display: block !important;
-        top: 50% !important; 
-        left: 0 !important; 
+        top: 20px !important; /* Pinned near the top left corner */
+        left: 20px !important; 
         right: auto !important;
-        transform: translateY(-50%) scale(0.65); 
+        transform: scale(0.7);
     }
     .pos-top-right .blueprint-svg {
-        /* This forces the line to go UP first, then LEFT */
-        top: -110px !important; 
-        left: -160px !important; 
-        transform: rotate(0deg); 
+        /* This creates the "Up and Over" look */
+        top: -100px !important; 
+        left: 0 !important; 
+        transform: rotate(90deg); /* Rotates the L to point UP and RIGHT */
     }
     .pos-top-right .data-card {
-        top: -160px !important; /* Aligned with the end of the LEFT turn */
-        left: -180px !important;
-        text-align: right; /* Text flows toward the line */
+        top: -125px !important;
+        left: 110px !important;
+        text-align: left;
     }
 
-    /* --- SPROUT 2: RIGHT-CENTER -> DOWN -> RIGHT --- */
+    /* --- SPROUT 02: DOWN THEN RIGHT --- */
     .pos-bottom-left { 
         display: block !important;
-        top: 50% !important; 
-        right: 0 !important; 
+        bottom: 20px !important; /* Pinned near the bottom right corner */
+        right: 20px !important; 
         left: auto !important;
-        transform: translateY(-50%) scale(0.65); 
+        top: auto !important;
+        transform: scale(0.7);
     }
     .pos-bottom-left .blueprint-svg {
-        /* This forces the line to go DOWN first, then RIGHT */
-        bottom: -110px !important; 
-        right: -160px !important; 
-        transform: rotate(180deg); 
+        /* This creates the "Down and Over" look */
+        bottom: -100px !important; 
+        right: 0 !important;
+        /* No rotation needed if L is default, or adjust based on your SVG path */
     }
     .pos-bottom-left .data-card {
-        bottom: -160px !important; /* Aligned with the end of the RIGHT turn */
-        right: -180px !important;
-        text-align: left; /* Text flows toward the line */
+        bottom: -125px !important;
+        right: -180px !important; 
+        text-align: left;
     }
 
-    /* --- CLEAN GHOST STYLE --- */
+    /* --- GHOST STYLE (No Boxes) --- */
     .data-card {
         background: transparent !important;
         box-shadow: none !important;
         border: none !important;
         padding: 0 !important;
-        width: 220px !important;
+        width: 240px !important;
         position: absolute !important;
     }
 
     .data-card h4 { 
         font-size: 0.95rem !important; 
-        color: #1a1a1a; 
+        color: #000; 
+        margin: 2px 0; 
         font-family: 'Playfair Display', serif;
-        margin-bottom: 4px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
+    
     .data-card p { 
         font-size: 0.75rem !important; 
-        color: #777; 
-        line-height: 1.3;
-        font-family: 'Inter', sans-serif;
+        color: #666; 
+        line-height: 1.4; 
     }
 
-    .pulse-dot { top: -5px; left: -5px; background: var(--gold); }
+    .pulse-dot { background: var(--gold); border: 2px solid #fff; }
 }
