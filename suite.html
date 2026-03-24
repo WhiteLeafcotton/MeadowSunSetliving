@@ -354,13 +354,20 @@
         // Blueprint Observer
        // --- UPDATED BLUEPRINT OBSERVER ---
 // --- REFRESHING BLUEPRINT OBSERVER ---
- const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // This triggers the gold lines and text sprouts
-            entry.target.classList.add('is-active');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-active');
+            if (window.innerWidth > 1100) {
+                document.body.className = `is-slide-${entry.target.getAttribute('data-slide')}`;
+            }
+        }
+    });
+}, { 
+    threshold: 0.2 
+});
 
-
+document.querySelectorAll('.slide-container').forEach(slide => observer.observe(slide));
 
 
 
