@@ -468,104 +468,107 @@
 
 <style>
 /* --- GLOBAL & DESKTOP --- */
-/* --- GLOBAL & DESKTOP --- */
-<style>
-/* --- GLOBAL & DESKTOP --- */
 #flex-pay-section {
-    padding: 0 !important; /* Changed to 0 so the photo strip can go edge-to-edge */
+    padding: 0 !important; 
     background: #ffffff;
     font-family: 'Inter', sans-serif;
     margin-bottom: 0 !important;
 }
 
-/* THE PHOTO STRIP: This wraps just the title area */
+/* THE THIN PHOTO STRIP */
 .flex-container {
-    max-width: 100% !important; /* Full width for the photo */
+    max-width: 100% !important; 
     position: relative;
     background-image: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2023.jpeg?raw=true');
     background-size: cover;
     background-position: center;
-    padding: 80px 5% !important; /* Restores the visual "space" inside the strip */
-    margin-bottom: 60px; /* Space between the photo strip and the grid */
+    /* REDUCED PADDING: This makes the strip thin and tight to the title */
+    padding: 40px 5% !important; 
+    margin-bottom: 40px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the title inside the strip */
+    text-align: center;
 }
 
-/* THE TINT: Makes the text readable against the photo */
 .flex-container::before {
     content: '';
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(15, 23, 42, 0.4); /* Elegant dark overlay */
+    background: rgba(15, 23, 42, 0.5); /* Slightly darker for better contrast */
     z-index: 1;
 }
 
-/* Forces title content above the tint and makes it white */
 .flex-eyebrow, .flex-main-title {
     position: relative;
     z-index: 2;
-    color: #ffffff !important; 
 }
 
 .flex-eyebrow {
-    color: #bfa15f !important; /* Keeps the gold color pop */
+    color: #bfa15f !important;
     letter-spacing: 10px;
     text-transform: uppercase;
     font-size: 0.65rem;
     font-weight: 800;
-    display: block;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .flex-main-title {
     font-family: 'Playfair Display';
-    font-size: 6rem;
+    font-size: 5.5rem; /* Slightly scaled for the thinner strip */
+    color: #ffffff !important;
     margin: 0;
     letter-spacing: -2px;
+    line-height: 1;
 }
 
 .italic-pay {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 400;
-    color: #bfa15f !important; /* Gold Pay */
-    font-size: 7.5rem;
-    margin-left: -10px;
+    color: #bfa15f !important;
+    font-size: 7rem;
+    margin-left: 5px;
 }
 
-/* THE GRID: Centered below the photo strip */
+/* THE GRID */
 .flex-pay-grid {
     max-width: 1400px;
-    margin: 0 auto 100px;
+    margin: 0 auto 80px;
     display: grid;
     grid-template-columns: 1fr 1fr 1.2fr;
     border: 1px solid #e2e8f0;
-    background: #fff; /* Keeps cards on white */
+    background: #fff;
 }
 
-/* ... (Your existing .flex-card-compact, .card-title, .flex-btn styles remain exactly the same) ... */
+.flex-card-compact {
+    padding: 50px;
+    border-right: 1px solid #e2e8f0;
+}
 
 /* --- MOBILE "ELITE" VERSION --- */
 @media (max-width: 768px) {
     .flex-container {
-        padding: 60px 25px !important; /* Thinner strip for mobile */
-        margin-bottom: 40px;
+        padding: 30px 20px !important; /* Even thinner on mobile */
+        margin-bottom: 30px;
     }
 
     .flex-main-title {
-        font-size: 3.8rem !important;
+        font-size: 3rem !important;
     }
 
     .italic-pay {
-        font-size: 4.8rem !important;
+        font-size: 3.8rem !important;
     }
 
     .flex-pay-grid {
         grid-template-columns: 1fr !important;
         border: none !important;
-        margin-bottom: 60px;
+        padding: 0 20px;
     }
 
     .flex-card-compact {
-        padding: 40px 25px !important;
+        padding: 30px 0 !important;
         border-right: none !important;
         border-bottom: 1px solid #e2e8f0 !important;
     }
