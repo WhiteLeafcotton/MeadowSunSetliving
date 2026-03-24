@@ -438,7 +438,9 @@
     <div class="title-strip-bg-wrapper">
         <div class="flex-container">
             <span class="flex-eyebrow eyebrow-match">Financial Agility</span>
-            <h2 class="flex-main-title title-match">Flex <span class="italic-pay italic-match">Pay.</span></h2>
+            <h2 class="flex-main-title title-match">
+                Flex <span class="italic-pay italic-match">Pay.</span>
+            </h2>
         </div>
     </div>
 
@@ -471,12 +473,11 @@
 </section>
 
 <style>
-/* --- RESTORED ORIGINAL STYLING --- */
+/* --- CORE LAYOUT --- */
 #flex-pay-section {
-    padding: 80px 0 0 0 !important;
+    padding: 80px 0 !important;
     background: #ffffff;
     font-family: 'Inter', sans-serif;
-    margin-bottom: 0 !important;
 }
 
 .flex-container {
@@ -485,16 +486,38 @@
     padding: 0 5%;
 }
 
-/* THE STRIP: Calculated to hit the top of the 'F' */
-.title-strip-bg-wrapper {
-    width: 100%;
+/* THE STRIP FIX: 
+   We apply the background to the H2 but make it span the full width of the screen. 
+*/
+.flex-main-title {
+    font-family: 'Playfair Display';
+    font-size: 6rem;
+    color: #0f172a;
+    margin: 0;
+    letter-spacing: -2px;
+    line-height: 1.1; /* This controls the height of the strip */
     position: relative;
-    /* This creates the strip effect behind the text only */
-    background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), 
-                      url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2023.jpeg?raw=true'); 
+    display: block;
+    width: 100%;
+}
+
+/* This pseudo-element creates the strip precisely behind the text */
+.flex-main-title::before {
+    content: "";
+    position: absolute;
+    left: -100%; /* Extends to the left edge of the screen */
+    right: -100%; /* Extends to the right edge of the screen */
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), 
+                      url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2023.jpeg?raw=true');
     background-size: cover;
     background-position: center;
-    padding: 40px 0; /* Controls the vertical thickness around the 'F' */
+}
+
+.title-strip-bg-wrapper {
+    overflow: hidden; /* Clips the background so it doesn't cause horizontal scrolling */
     margin-bottom: 60px;
 }
 
@@ -508,15 +531,6 @@
     margin-bottom: 20px;
 }
 
-.flex-main-title {
-    font-family: 'Playfair Display';
-    font-size: 6rem;
-    color: #0f172a;
-    margin: 0;
-    letter-spacing: -2px;
-    line-height: 1;
-}
-
 .italic-pay {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
@@ -524,9 +538,10 @@
     color: #bfa15f;
     font-size: 7.5rem;
     margin-left: -10px;
+    vertical-align: middle;
 }
 
-/* --- GRID & CARDS --- */
+/* --- GRID & CARDS (Restored Original Style) --- */
 .flex-pay-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1.2fr;
@@ -543,7 +558,6 @@
     font-size: 1.8rem;
     color: #0f172a;
     margin-bottom: 20px;
-    line-height: 1.2;
 }
 
 .card-text {
@@ -555,13 +569,11 @@
 .flex-card-cta {
     padding: 60px 50px;
     background: #f8fafc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
 }
 
 .flex-btn {
-    display: block;
+    display: inline-block;
     padding: 22px 40px;
     background: #0f172a;
     color: #fff;
@@ -570,22 +582,16 @@
     letter-spacing: 4px;
     font-size: 0.75rem;
     font-weight: 700;
-    transition: all 0.3s ease;
 }
 
-/* --- MOBILE REFINEMENTS --- */
+/* --- MOBILE --- */
 @media (max-width: 768px) {
-    .title-strip-bg-wrapper {
-        padding: 30px 0;
-    }
     .flex-main-title { font-size: 3.8rem !important; }
     .italic-pay { font-size: 4.8rem !important; }
-    .flex-pay-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-        overflow-x: auto;
-    }
-    .flex-card-compact p { display: none; }
+    .flex-pay-grid { grid-template-columns: 1fr !important; }
+    .flex-card-compact { border-right: none; border-bottom: 1px solid #e2e8f0; }
 }
+
 
         
 /* --- MOBILE "ELITE" VERSION --- */
