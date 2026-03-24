@@ -22,24 +22,7 @@
         /* --- HERO & NAV --- */
         /* --- THIS IS THE CSS PART --- */
 /* --- FROSTED NAV ON SCROLL --- */
-.main-header {
-    position: fixed;
-    top: 0; 
-    width: 100%; 
-    z-index: 1000;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    background: transparent;
-    padding: 20px 0;
-}
 
-.main-header.scrolled {
-    padding: 12px 0;
-    background: rgba(255, 255, 255, 0.75); /* Soft white tint */
-    backdrop-filter: blur(15px); /* THE FROSTED EFFECT */
-    -webkit-backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-}
         .hero-suites {
             position: relative;
             height: 80vh;
@@ -126,7 +109,24 @@
     text-align: left;
     /* No 'top' or 'transform' needed; Flexbox handles it now */
 }
+.main-header {
+    position: fixed;
+    top: 0; 
+    width: 100%; 
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    padding: 20px 0;
+}
 
+.main-header.scrolled {
+    padding: 12px 0;
+    background: rgba(255, 255, 255, 0.75); /* Soft white tint */
+    backdrop-filter: blur(15px); /* THE FROSTED EFFECT */
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
     
     </style>
 </head>
@@ -374,7 +374,17 @@
             }
         });
     </script>
+
+
+
+
+
 </body>
+
+
+
+
+  
 </html>
 </body>
 </html>
