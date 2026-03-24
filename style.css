@@ -3421,7 +3421,6 @@ body {
 /* --- STEPPED SPROUTS: DOWN/RIGHT & UP/LEFT --- */
 /* --- EXACT STEPPED SPROUTS: MOBILE --- */
 @media (max-width: 1100px) {
-    /* 1. LAYOUT RESET */
     .blueprint-portal { display: block !important; padding: 0; }
     .narrative-aside { display: none !important; }
     .blueprint-stage { display: block !important; padding: 0; }
@@ -3441,27 +3440,27 @@ body {
         overflow: visible;
     }
 
-    /* 2. SPROUT 01: TOP LEFT (LOCKED) */
+    /* --- SPROUT 01: TOP LEFT (LOCKED) --- */
     .pos-top-right { 
         display: block !important;
         top: 20px !important; 
         left: 20px !important;
         right: auto !important;
-        transform: scale(0.65);
+        transform: scale(0.6);
         position: absolute;
     }
     .pos-top-right .blueprint-svg { top: -195px !important; left: 0 !important; }
     .pos-top-right .data-card { top: -175px !important; left: 210px !important; text-align: left; }
 
-    /* 3. SPROUT 02: BOTTOM RIGHT (FIXED & OVERRIDDEN) */
+    /* --- SPROUT 02: BOTTOM RIGHT (THE FIX) --- */
     .pos-bottom-left { 
         display: block !important;
-        /* These 'important' tags override the style="bottom: 10%; right: 20%;" in your HTML */
+        /* OVERRIDING YOUR INLINE HTML STYLES */
         bottom: 20px !important; 
         right: 20px !important; 
         left: auto !important; 
         top: auto !important;
-        transform: scale(0.65);
+        transform: scale(0.6);
         position: absolute;
     }
 
@@ -3470,53 +3469,33 @@ body {
         top: 0 !important;
         right: 0 !important;
         left: auto !important;
-        /* This flips the SVG path so it starts at the corner and grows DOWN/LEFT */
-        transform: scaleY(-1); 
+        /* Path 395,5 is the top-right. We flip X so the 'Left' turn becomes a 'Right' turn */
+        transform: scaleX(-1); 
         transform-origin: top right;
         overflow: visible;
     }
 
     .pos-bottom-left .data-card {
         position: absolute !important;
-        /* Positions text in the white space below the photo */
-        top: 180px !important; 
-        right: 240px !important; 
+        /* This places the text exactly in the white space below the photo */
+        top: 135px !important; 
+        right: 260px !important; 
         left: auto !important;
         text-align: right;
         width: 250px !important;
-        /* Flips the text back so it is readable */
-        transform: scaleY(-1); 
     }
 
-    /* 4. SHARED STYLING */
-    .data-card {
-        background: transparent !important;
-        box-shadow: none !important;
-        border: none !important;
-        padding: 0 !important;
-    }
-
-    .data-card h4 { 
-        font-family: 'Playfair Display', serif; 
-        text-transform: uppercase; 
-        font-size: 0.95rem !important; 
-        color: #000; 
-        margin: 2px 0; 
-    }
+    /* --- SHARED STYLES --- */
+    .data-card { background: transparent !important; box-shadow: none !important; border: none !important; padding: 0 !important; position: absolute !important; }
+    .data-card h4 { font-family: 'Playfair Display', serif; text-transform: uppercase; font-size: 0.95rem !important; color: #000; margin: 2px 0; }
+    .data-card p { font-size: 0.75rem !important; color: #666; line-height: 1.4; }
     
-    .data-card p { 
-        font-size: 0.75rem !important; 
-        color: #666; 
-        line-height: 1.4; 
-    }
-
     .pulse-dot { 
         opacity: 1 !important; 
         transform: scale(1) !important; 
         position: absolute;
         top: -5px;
-        right: -5px; /* Aligns dot to the right corner */
+        right: -5px; /* Locks dot to the right corner */
         left: auto !important;
-        z-index: 10;
     }
 }
