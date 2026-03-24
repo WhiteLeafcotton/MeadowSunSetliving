@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Grand Residence | Sunset Meadow Living</title>
+    <title>Suites | Sunset Meadow Living</title>
 
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -11,168 +12,164 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        /* Immersive Suite StylingP */
-        .hero-sub {
-            height: 50vh !important; /* Forces the 50% height you requested */
+        /* CONSISTENT HERO BASE (Matching About Page) */
+        .hero-suites {
+            height: 50vh !important; 
             min-height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            background: #1a1a1a; /* Fallback */
             position: relative;
+            overflow: hidden;
+            background: #1a1a1a; /* Base color before image loads */
         }
 
-        .suite-showcase {
-            padding: 100px 5%;
-            background-color: #fcfbf7;
+        /* METAMORPHISM SECTION - THE "CRAZY" PART */
+        .meta-suite-experience {
+            position: relative;
+            padding: 120px 5%;
+            background: #fdfdfd;
+            overflow: hidden;
+            background-image: radial-gradient(circle at 0% 0%, rgba(191, 163, 126, 0.08) 0%, transparent 50%);
         }
 
-        .container-wide {
-            max-width: 1300px;
+        .meta-container {
+            max-width: 1400px;
             margin: 0 auto;
-        }
-
-        .suite-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Balanced 50/50 split */
-            gap: 60px;
-            align-items: center;
-        }
-
-        .suite-subtitle {
-            font-family: 'Inter', sans-serif;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            color: #bfa37e;
-            display: block;
-            margin-bottom: 20px;
-        }
-
-        .suite-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            line-height: 1.1;
-            color: #1a1a1a;
-            margin-bottom: 30px;
-        }
-
-        .amp {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-weight: 300;
-        }
-
-        .suite-description p {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 30px;
-        }
-
-        .suite-features {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 40px;
-        }
-
-        .suite-features li {
-            margin-bottom: 15px;
-            font-family: 'Inter', sans-serif;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            color: #333;
-        }
-
-        .suite-features i {
-            color: #bfa37e;
-            width: 20px;
-        }
-
-        .suite-cta-group {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .floorplan-link {
-            text-decoration: none;
-            color: #1a1a1a;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 0.9rem;
-            border-bottom: 1px solid #bfa37e;
-            padding-bottom: 2px;
-            transition: 0.3s;
-        }
-
-        .floorplan-link:hover {
-            color: #bfa37e;
-        }
-
-        /* Immersive Visuals */
-        .suite-visuals {
             position: relative;
-        }
-
-        .main-image-wrapper {
-            position: relative;
-            z-index: 1;
-        }
-
-        .main-suite-img {
-            width: 100%;
-            height: 600px;
-            object-fit: cover;
-            border-radius: 2px;
-            box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
-        }
-
-        .floating-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: white;
-            padding: 12px 20px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .secondary-images {
-            display: flex;
-            gap: 20px;
-            position: absolute;
-            bottom: -40px;
-            left: -40px;
             z-index: 2;
         }
 
-        .img-small {
+        .meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        /* Glassmorphism Content Card */
+        .glass-inner {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            padding: 60px;
+            border-radius: 4px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.03);
+        }
+
+        .meta-eyebrow {
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            color: #bfa37e;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .meta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            line-height: 1.1;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .meta-description {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 40px;
+            font-size: 1.05rem;
+        }
+
+        /* Feature Grid - Luxury Specs */
+        .meta-feature-grid {
+            display: flex;
+            gap: 40px;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            padding: 25px 0;
+            margin-bottom: 40px;
+        }
+
+        .feature-label {
+            display: block;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #999;
+            margin-bottom: 5px;
+        }
+
+        .feature-value {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #1a1a1a;
+        }
+
+        /* Multi-Dimensional Visual Stack */
+        .meta-visual-stack {
+            position: relative;
+        }
+
+        .meta-img-main {
+            width: 100%;
+            height: 750px;
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.1);
+        }
+
+        /* Neomorphic Floating Elements */
+        .meta-overlay-box {
+            position: absolute;
+            background: white;
+            padding: 12px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+            border-radius: 4px;
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            z-index: 3;
+        }
+
+        .meta-overlay-box img {
             width: 180px;
             height: 120px;
-            border: 6px solid #fff;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-
-        .img-small img {
-            width: 100%;
-            height: 100%;
             object-fit: cover;
+            display: block;
+            margin-bottom: 10px;
         }
 
-        @media (max-width: 992px) {
-            .suite-grid { grid-template-columns: 1fr; }
-            .secondary-images { position: static; margin-top: 20px; }
-            .hero-sub { height: 40vh !important; }
+        .meta-overlay-box span {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #bfa37e;
+            display: block;
+            text-align: center;
+        }
+
+        .detail-1 { bottom: 8%; left: -12%; }
+        .detail-2 { top: 12%; right: -8%; }
+
+        .meta-overlay-box:hover {
+            transform: scale(1.05) translateY(-15px);
+            box-shadow: 0 45px 80px rgba(0,0,0,0.18);
+        }
+
+        @media (max-width: 1100px) {
+            .meta-grid { grid-template-columns: 1fr; }
+            .meta-img-main { height: 500px; }
+            .detail-1, .detail-2 { position: static; display: inline-block; margin: 15px 15px 0 0; }
+            .glass-inner { padding: 40px; }
+            .meta-title { font-size: 2.8rem; }
         }
     </style>
 </head>
+
 <body>
 
     <header class="main-header">
@@ -213,7 +210,6 @@
             <div class="menu-button" onclick="toggleMenu()">
                 <span class="bar"></span>
                 <span class="bar"></span>
-                <span class="bar"></span>
             </div>
         </nav>
     </header>
@@ -221,8 +217,23 @@
     <div id="sideMenu" class="side-menu">
         <span class="close-btn" onclick="toggleMenu()">&times;</span>
         <div class="mobile-nav-content">
-            <a href="#" class="main-link">Resident Experience</a>
-            <a href="about.html" class="main-link">About Us</a>
+            <div class="mobile-dropdown">
+                <a href="#" class="main-link">Resident Experience <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="sub-links">
+                    <a href="#">Events</a>
+                    <a href="#">The Table</a>
+                    <a href="#">Car Service</a>
+                    <a href="#">Life Enrichment</a>
+                </div>
+            </div>
+            <div class="mobile-dropdown">
+                <a href="about.html" class="main-link">About Us <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="sub-links">
+                    <a href="#">Leadership Team</a>
+                    <a href="#">Mission & Vision</a>
+                    <a href="#">Admission Process</a>
+                </div>
+            </div>
             <a href="payment.html" class="main-link">Payment Solutions</a>
             <a href="#" class="main-link">Suites</a>
             <a href="tel:YOURNUMBER" class="nav-cta">Contact Us</a>
@@ -230,49 +241,59 @@
     </div>
 
     <main>
-        <section class="hero hero-sub">
+        <section class="hero hero-suites">
             <div class="hero-light-overlay"></div>
-            <div class="hero-content animate-on-scroll">
+            <div class="hero-content">
                 <div class="hero-badge">
                     <span class="badge-line"></span>
-                    <span class="badge-text">Sunset Meadow Living</span>
+                    <span class="badge-text">Private Sanctuary</span>
                 </div>
-                <h1>The Suites <br><span class="italic-serif">Luxury Living</span></h1>
+                <h1>The Residences <br><span class="italic-serif">Sunset Meadow</span></h1>
+                <p>Curated living spaces that redefine the architecture of senior care.</p>
             </div>
         </section>
 
-        <section class="suite-showcase">
-            <div class="container-wide">
-                <div class="suite-grid">
+        <section class="meta-suite-experience">
+            <div class="meta-container">
+                <div class="meta-grid">
                     
-                    <div class="suite-details animate-on-scroll">
-                        <span class="suite-subtitle">The Grand Residence</span>
-                        <h2 class="suite-title">Two Bedroom <br><span class="amp">&</span> Two Bath</h2>
-                        <div class="suite-description">
-                            <p>Designed for those who refuse to compromise on space or sophistication. Our flagship suites offer a seamless blend of private sanctuary and open-concept living, featuring floor-to-ceiling vistas and bespoke finishes.</p>
-                        </div>
-                        
-                        <ul class="suite-features">
-                            <li><i class="fa-solid fa-expand"></i> 1,250 Square Feet of Curated Living Space</li>
-                            <li><i class="fa-solid fa-couch"></i> Sun-Drenched Master Suite with Walk-in Wardrobe</li>
-                            <li><i class="fa-solid fa-utensils"></i> Gourmet Kitchenette with Quartz Countertops</li>
-                            <li><i class="fa-solid fa-shield-heart"></i> Discrete 24/7 Integrated Medical Response</li>
-                        </ul>
+                    <div class="meta-content-card animate-on-scroll">
+                        <div class="glass-inner">
+                            <span class="meta-eyebrow">Exquisite Detail</span>
+                            <h2 class="meta-title">The Master <br><span class="italic-serif">En-Suite</span></h2>
+                            
+                            <p class="meta-description">
+                                A harmonious blend of clinical preparedness and boutique hotel aesthetic. Every suite at Sunset Meadow is a private retreat designed to foster independence while providing silent, 24/7 security.
+                            </p>
 
-                        <div class="suite-cta-group">
-                            <button class="btn-gold" onclick="openModal()">Check Availability</button>
-                            <a href="#" class="floorplan-link"><i class="fa-solid fa-download"></i> View Floorplan PDF</a>
+                            <div class="meta-feature-grid">
+                                <div class="meta-feature-item">
+                                    <span class="feature-label">Atmosphere</span>
+                                    <span class="feature-value">Bespoke Luxe</span>
+                                </div>
+                                <div class="meta-feature-item">
+                                    <span class="feature-label">Occupancy</span>
+                                    <span class="feature-value">Private Only</span>
+                                </div>
+                            </div>
+
+                            <div class="meta-actions">
+                                <button class="btn-gold" onclick="openModal()">Check Availability</button>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="suite-visuals animate-on-scroll">
-                        <div class="main-image-wrapper">
-                            <img src="living-room.jpg" alt="Luxury Living Room" class="main-suite-img">
-                            <div class="floating-badge">Signature Series</div>
+                    <div class="meta-visual-stack animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=2000" alt="Main Suite View" class="meta-img-main">
+                        
+                        <div class="meta-overlay-box detail-1">
+                            <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=400" alt="Bedroom Detail">
+                            <span>The Sanctuary</span>
                         </div>
-                        <div class="secondary-images">
-                            <div class="img-small"><img src="bedroom.jpg" alt="Master Bedroom"></div>
-                            <div class="img-small"><img src="bathroom.jpg" alt="En-suite Bathroom"></div>
+                        
+                        <div class="meta-overlay-box detail-2">
+                            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=400" alt="Bath Detail">
+                            <span>Spa Elements</span>
                         </div>
                     </div>
 
@@ -292,7 +313,7 @@
         <div class="footer-content">
             <div class="footer-actions">
                 <button class="btn-gold" onclick="openModal()">Schedule a Tour</button>
-                <a href="tel:0000000000" class="btn-phone">Call Now</a>
+                <a href="tel:YOURNUMBER" class="btn-phone">Call Now</a>
             </div>
             <div class="footer-grid">
                 <div class="grid-col community-col">
@@ -311,28 +332,47 @@
                     <h4>Contact</h4>
                     <p>Your Location Address</p>
                     <p>info@email.com</p>
-                    <p>(000) 000-0000</p>
                 </div>
             </div>
         </div>
     </footer>
 
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Schedule a Private Tour</h2>
+            <form action="https://formsubmit.co/sunsetmeadowlivingllc@gmail.com" method="POST">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <button type="submit" class="btn-gold">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
     <script>
         function toggleMenu() {
             const menu = document.getElementById("sideMenu");
             menu.classList.toggle("active");
+            document.body.style.overflow = menu.classList.contains("active") ? "hidden" : "auto";
         }
+
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.main-header');
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
 
         window.openModal = function(){ document.getElementById("bookingModal").style.display = "block"; }
         window.closeModal = function(){ document.getElementById("bookingModal").style.display = "none"; }
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('is-visible', 'show');
+                if (entry.isIntersecting) entry.target.classList.add('show');
             });
         }, { threshold: 0.1 });
+
         document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
     </script>
-
 </body>
 </html>
