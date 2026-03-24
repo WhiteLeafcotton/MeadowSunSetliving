@@ -117,6 +117,35 @@
         </nav>
     </header>
 
+
+<div id="sideMenu" class="side-menu">
+    <span class="close-btn" onclick="toggleMenu()">&times;</span>
+    <div class="mobile-nav-content">
+        <div class="mobile-dropdown">
+            <a href="#" class="main-link">Resident Experience <i class="fa-solid fa-chevron-down"></i></a>
+            <div class="sub-links">
+                <a href="#">Events</a>
+                <a href="#">The Table</a>
+                <a href="#">Car Service</a>
+                <a href="#">Life Enrichment</a>
+            </div>
+        </div>
+        <div class="mobile-dropdown">
+            <a href="about.html" class="main-link">About Us <i class="fa-solid fa-chevron-down"></i></a>
+            <div class="sub-links">
+                <a href="#">Leadership Team</a>
+                <a href="#">Mission & Vision</a>
+                <a href="#">Admission Process</a>
+            </div>
+        </div>
+        <a href="payment.html" class="main-link">Payment Solutions</a>
+        <a href="#" class="main-link">Suites</a>
+        <a href="tel:YOURNUMBER" class="nav-cta">Contact Us</a>
+    </div>
+</div>
+
+    
+
     <main>
         <section class="hero hero-about" style="background-image: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2023.jpeg?raw=true'); background-size: cover; background-position: center; position: relative;">
             <div class="hero-light-overlay"></div>
@@ -721,5 +750,46 @@
             menu.classList.toggle("active");
         }
     </script>
+
+
+
+        <script>
+    // Toggle Mobile Menu Open/Close
+    function toggleMenu() {
+        const menu = document.getElementById("sideMenu");
+        menu.classList.toggle("active");
+        
+        // Prevent background scrolling when menu is open
+        document.body.style.overflow = menu.classList.contains("active") ? "hidden" : "auto";
+    }
+
+    // Handle Mobile Dropdown Clicks (Chevron Rotation)
+    document.querySelectorAll('.mobile-dropdown .main-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const subMenu = this.nextElementSibling;
+            
+            if (subMenu && subMenu.classList.contains('sub-links')) {
+                e.preventDefault(); // Stop link from firing if it has a dropdown
+                
+                const isVisible = subMenu.style.display === 'block';
+                subMenu.style.display = isVisible ? 'none' : 'block';
+                
+                // Rotate the Chevron Icon
+                const icon = this.querySelector('i');
+                if(icon) {
+                    icon.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)';
+                    icon.style.transition = '0.3s ease';
+                }
+            }
+        });
+    });
+
+    // Close menu if a user clicks a direct link (Optional but recommended)
+    document.querySelectorAll('.side-menu a:not(.main-link)').forEach(link => {
+        link.addEventListener('click', () => {
+            toggleMenu();
+        });
+    });
+</script>
 </body>
 </html>
