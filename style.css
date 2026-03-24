@@ -3428,11 +3428,11 @@ body {
     .slide-container {
         display: block !important;
         width: 100%;
-        padding: 300px 0 !important; 
+        padding: 340px 0 !important; /* Space for the downward text */
     }
 
     .photo-anchor {
-        width: 90vw !important;
+        width: 95vw !important; /* Full width for mobile impact */
         max-width: 500px;
         aspect-ratio: 16/9;
         margin: 0 auto !important;
@@ -3452,12 +3452,12 @@ body {
     .pos-top-right .blueprint-svg { top: -195px !important; left: 0 !important; }
     .pos-top-right .data-card { top: -175px !important; left: 210px !important; text-align: left; }
 
-    /* --- SPROUT 02: BOTTOM RIGHT -> ANGLES LEFT (FIXED) --- */
+    /* --- SPROUT 02: PINNED TO BOTTOM EDGE & FLIPPED --- */
     .pos-bottom-left { 
         display: block !important;
-        /* Moving the dot higher (25% up) and keeping it in the right quadrant */
-        bottom: 25% !important; 
-        right: 20% !important; 
+        /* Pinned exactly to the bottom edge and right-aligned */
+        bottom: 0px !important; 
+        right: 40px !important; 
         left: auto !important; 
         top: auto !important;
         transform: scale(0.65);
@@ -3467,10 +3467,9 @@ body {
     .pos-bottom-left .blueprint-svg {
         position: absolute !important;
         top: 0 !important;
-        /* 'Right: 0' ensures the line starts AT the dot */
-        right: 0 !important; 
+        right: 0 !important;
         left: auto !important;
-        /* scaleY(-1) makes it go DOWN. scaleX(1) keeps it turning LEFT */
+        /* scaleY(-1) flips the 'Up' path to go 'Down' into the white space */
         transform: scaleY(-1); 
         transform-origin: top right;
         overflow: visible;
@@ -3478,18 +3477,17 @@ body {
 
     .pos-bottom-left .data-card {
         position: absolute !important;
-        /* Positions 'MEDICAL-GRADE OAK' in the white space below the photo */
+        /* Pushes text into the white space below the photo anchor */
         top: 155px !important; 
-        /* Negative right pulls it further left of the vertical line */
         right: 255px !important; 
         left: auto !important;
         text-align: right;
         width: 250px !important;
-        /* Un-flips text so it stays readable */
+        /* Un-flips the text container so characters aren't upside down */
         transform: scaleY(-1); 
     }
 
-    /* --- GLOBAL MOBILE STYLING --- */
+    /* --- GLOBAL MOBILE UI --- */
     .data-card {
         background: transparent !important;
         box-shadow: none !important;
@@ -3498,9 +3496,20 @@ body {
         position: absolute !important;
     }
 
-    .data-card h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem !important; color: #000; margin: 2px 0; text-transform: uppercase; }
-    .data-card p { font-size: 0.75rem !important; color: #666; line-height: 1.4; }
+    .data-card h4 { 
+        font-family: 'Playfair Display', serif; 
+        font-size: 0.95rem !important; 
+        color: #000; 
+        margin: 2px 0; 
+        text-transform: uppercase; 
+    }
     
+    .data-card p { 
+        font-size: 0.75rem !important; 
+        color: #666; 
+        line-height: 1.4; 
+    }
+
     .pulse-dot { 
         opacity: 1 !important; 
         transform: scale(1) !important; 
