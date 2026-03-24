@@ -646,33 +646,47 @@
 
     /* 2. Remove the extra gap above the first card */
     .flex-pay-grid {
-        margin-top: 0 !important; /* Changed from 20px */
+        margin-top: -10px !important; /* Negative margin pulls cards UP toward the title */
+        border: none !important;      /* REMOVES THE SQUARE OUTLINE */
+        box-shadow: none !important;  /* REMOVES ANY GHOST SHADOWS */
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* CARDS: Clean, borderless magazine stack */
+    .flex-card-compact {
+        padding: 25px 0 !important;   /* Tighter vertical spacing */
+        border: none !important;      /* Removes side/top borders */
+        border-bottom: 1px solid #f1f5f9 !important; /* Keep only the thin separator line */
     }
 
     .italic-pay {
         font-size: 4.8rem !important; /* Scaled for mobile */
     }
-
-
-
-    .flex-card-compact {
-        padding: 40px 0 !important; /* Clean vertical stack */
-        border-right: none !important;
-        border-bottom: 1px solid #e2e8f0 !important; /* Separator lines */
-    }
-
-    .flex-card-cta {
-        padding: 50px 0 !important;
-        background: transparent !important; /* Magazine white look */
-    }
+    
 
     .card-title {
         font-size: 1.5rem !important;
+
+        .flex-card-cta {
+        padding: 40px 0 !important;
+        background: transparent !important;
+        border: none !important;
     }
 
+    /* SUBTEXT: Ensure it stays visible and tight */
     .card-text {
-        font-size: 0.85rem !important;
-        max-width: 90%;
+        display: block !important;
+        margin-bottom: 5px !important;
+    }
+
+    .mobile-special-subtext {
+        display: block !important;
+        margin-top: 5px !important;
+        padding-top: 5px !important;
+    
+
+   
     }
 }
 
