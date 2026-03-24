@@ -3461,32 +3461,46 @@ body {
     /* --- SPROUT 02: DOWN THEN RIGHT (FIXED) --- */
     /* --- SPROUT 02: DOWN THEN RIGHT (MANUAL ALIGN) --- */
     /* --- SPROUT 02: DOWN THEN RIGHT (EXACT ALIGN) --- */
+    /* --- SPROUT 02: LOCKED TO PHOTO + DOWN/RIGHT --- */
     .pos-bottom-left { 
         display: block !important;
-        /* Pinned exactly 20px from the bottom and left edges of the photo */
-        bottom: 20px !important; 
-        left: 20px !important; 
-        right: auto !important;
+        /* Pinned to the bottom-right area of the photo itself */
         top: auto !important;
-        transform: scale(0.65);
+        bottom: 40px !important; 
+        right: 15% !important; 
+        left: auto !important;
+        transform: scale(0.7);
+        position: absolute;
     }
 
     .pos-bottom-left .blueprint-svg {
         /* This places the 'elbow' of the L below the dot */
         top: 0 !important; 
         left: 0 !important;
-        /* Flips the desktop 'Up' line to point 'Down' */
+        /* Flips the desktop path to sprout DOWN and RIGHT */
         transform: scaleY(-1); 
         transform-origin: top;
+        overflow: visible;
     }
 
     .pos-bottom-left .data-card {
-        /* Positions text below the photo at the end of the line */
+        /* This pushes the text into the white space below the photo */
         top: 140px !important; 
-        left: 210px !important;
+        left: 120px !important; 
         text-align: left;
         /* Flips the text back so it is readable */
         transform: scaleY(-1); 
+        width: 220px !important;
+    }
+
+    .pos-bottom-left .pulse-dot {
+        /* Ensures the dot stays exactly on the 'start' of the line */
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        z-index: 10;
+        opacity: 1 !important;
+        transform: scale(1) !important;
     }
 
     /* --- CLEAN GHOST LOOK --- */
