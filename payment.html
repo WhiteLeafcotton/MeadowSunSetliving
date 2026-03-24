@@ -591,57 +591,69 @@
     font-weight: 700;
 }
 
-/* --- MOBILE --- */
-@media (max-width: 768px) {
-    .flex-main-title { font-size: 3.8rem !important; }
-    .italic-pay { font-size: 4.8rem !important; }
-    .flex-pay-grid { grid-template-columns: 1fr !important; }
-    .flex-card-compact { border-right: none; border-bottom: 1px solid #e2e8f0; }
-}
-
-
-        
-/* --- MOBILE "ELITE" VERSION --- */
+/* --- TIGHTENED MOBILE "ELITE" VIEW --- */
 @media (max-width: 768px) {
     #flex-pay-section {
-        padding: 60px 25px !important;
+        padding: 40px 0 !important; /* Tightens vertical space */
     }
 
+    /* THE STRIP: Locked to the "F" height on mobile */
     .flex-main-title {
-        font-size: 3.8rem !important;
-        margin-bottom: 40px !important;
+        font-size: 3.2rem !important; 
+        line-height: 0.8 !important; /* Keeps strip precisely behind the letters */
+        letter-spacing: -1px !important;
+        margin: 0 !important;
     }
 
     .italic-pay {
-        font-size: 4.8rem !important; /* Scaled for mobile */
+        font-size: 4.2rem !important;
+        margin-left: -5px !important;
     }
 
+    .flex-eyebrow {
+        letter-spacing: 6px !important;
+        margin-bottom: 12px !important;
+        font-size: 0.6rem !important;
+    }
+
+    /* CARD GRID: Stacked & Clean */
     .flex-pay-grid {
-        grid-template-columns: 1fr !important; /* Stacked */
-        border: none !important; /* Remove outer border */
+        grid-template-columns: 1fr !important;
+        border: none !important; /* Removes heavy desktop borders */
     }
 
     .flex-card-compact {
-        padding: 40px 0 !important; /* Clean vertical stack */
+        padding: 35px 0 !important; /* Tight vertical padding */
         border-right: none !important;
-        border-bottom: 1px solid #e2e8f0 !important; /* Separator lines */
-    }
-
-    .flex-card-cta {
-        padding: 50px 0 !important;
-        background: transparent !important; /* Magazine white look */
+        border-bottom: 1px solid #f1f5f9 !important; /* Subtle separator line */
     }
 
     .card-title {
         font-size: 1.5rem !important;
+        margin-bottom: 8px !important;
     }
 
+    /* SUBTEXT: Restored & Optimized */
     .card-text {
-        font-size: 0.85rem !important;
-        max-width: 90%;
+        display: block !important; 
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        color: #64748b !important;
+        max-width: 100% !important;
+    }
+
+    /* CTA SECTION */
+    .flex-card-cta {
+        padding: 45px 0 !important;
+        background: transparent !important; /* Maintains the clean magazine look */
+    }
+    
+    .flex-btn {
+        width: 100%; /* Full width button for easier thumb-tapping */
+        text-align: center;
+        padding: 18px 0 !important;
     }
 }
-</style>
 
 
 
