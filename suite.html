@@ -3,12 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Page | Sunset Meadow Living</title>
+    <title>The Grand Residence | Sunset Meadow Living</title>
 
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Immersive Suite Styling */
+        .hero-sub {
+            height: 50vh !important; /* Forces the 50% height you requested */
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: #1a1a1a; /* Fallback */
+            position: relative;
+        }
+
+        .suite-showcase {
+            padding: 100px 5%;
+            background-color: #fcfbf7;
+        }
+
+        .container-wide {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .suite-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Balanced 50/50 split */
+            gap: 60px;
+            align-items: center;
+        }
+
+        .suite-subtitle {
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            color: #bfa37e;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .suite-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            line-height: 1.1;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+        }
+
+        .amp {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .suite-description p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .suite-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 40px;
+        }
+
+        .suite-features li {
+            margin-bottom: 15px;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #333;
+        }
+
+        .suite-features i {
+            color: #bfa37e;
+            width: 20px;
+        }
+
+        .suite-cta-group {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .floorplan-link {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #bfa37e;
+            padding-bottom: 2px;
+            transition: 0.3s;
+        }
+
+        .floorplan-link:hover {
+            color: #bfa37e;
+        }
+
+        /* Immersive Visuals */
+        .suite-visuals {
+            position: relative;
+        }
+
+        .main-image-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        .main-suite-img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .floating-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 12px 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .secondary-images {
+            display: flex;
+            gap: 20px;
+            position: absolute;
+            bottom: -40px;
+            left: -40px;
+            z-index: 2;
+        }
+
+        .img-small {
+            width: 180px;
+            height: 120px;
+            border: 6px solid #fff;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .img-small img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 992px) {
+            .suite-grid { grid-template-columns: 1fr; }
+            .secondary-images { position: static; margin-top: 20px; }
+            .hero-sub { height: 40vh !important; }
+        }
+    </style>
 </head>
 <body>
 
@@ -58,126 +221,65 @@
     <div id="sideMenu" class="side-menu">
         <span class="close-btn" onclick="toggleMenu()">&times;</span>
         <div class="mobile-nav-content">
-            <div class="mobile-dropdown">
-                <a href="#" class="main-link">Resident Experience <i class="fa-solid fa-chevron-down"></i></a>
-                <div class="sub-links">
-                    <a href="#">Events</a>
-                    <a href="#">The Table</a>
-                    <a href="#">Car Service</a>
-                    <a href="#">Life Enrichment</a>
-                </div>
-            </div>
-            <div class="mobile-dropdown">
-                <a href="about.html" class="main-link">About Us <i class="fa-solid fa-chevron-down"></i></a>
-                <div class="sub-links">
-                    <a href="#">Leadership Team</a>
-                    <a href="#">Mission & Vision</a>
-                    <a href="#">Admission Process</a>
-                </div>
-            </div>
+            <a href="#" class="main-link">Resident Experience</a>
+            <a href="about.html" class="main-link">About Us</a>
             <a href="payment.html" class="main-link">Payment Solutions</a>
             <a href="#" class="main-link">Suites</a>
             <a href="tel:YOURNUMBER" class="nav-cta">Contact Us</a>
         </div>
     </div>
 
-    <main style="min-height: 80vh; padding-top: 100px;">
+    <main>
         <section class="hero hero-sub">
-    <div class="hero-light-overlay"></div>
-    <div class="hero-content animate-on-scroll">
-        <div class="hero-badge">
-            <span class="badge-line"></span>
-            <span class="badge-text">Sunset Meadow Living</span>
-        </div>
-        <h1>Refined Excellence <br><span class="italic-serif">In Every Detail</span></h1>
-        <p>Experience a sanctuary designed for dignity, comfort, and professional care.</p>
-    </div>
-</section>
-
-
-
-
-
-
-<section class="suite-showcase">
-    <div class="container-wide">
-        <div class="suite-grid">
-            
-            <div class="suite-details animate-on-scroll">
-                <span class="suite-subtitle">The Grand Residence</span>
-                <h2 class="suite-title">Two Bedroom <span class="amp">&</span> Two Bath</h2>
-                <div class="suite-description">
-                    <p>Designed for those who refuse to compromise on space or sophistication. Our flagship suites offer a seamless blend of private sanctuary and open-concept living, featuring floor-to-ceiling vistas and bespoke finishes.</p>
+            <div class="hero-light-overlay"></div>
+            <div class="hero-content animate-on-scroll">
+                <div class="hero-badge">
+                    <span class="badge-line"></span>
+                    <span class="badge-text">Sunset Meadow Living</span>
                 </div>
-                
-                <ul class="suite-features">
-                    <li><i class="fa-solid fa-expand"></i> 1,250 Square Feet of Curated Living Space</li>
-                    <li><i class="fa-solid fa-couch"></i> Sun-Drenched Master Suite with Walk-in Wardrobe</li>
-                    <li><i class="fa-solid fa-utensils"></i> Gourmet Kitchenette with Quartz Countertops</li>
-                    <li><i class="fa-solid fa-shield-heart"></i> Discrete 24/7 Integrated Medical Response</li>
-                </ul>
+                <h1>The Suites <br><span class="italic-serif">Luxury Living</span></h1>
+            </div>
+        </section>
 
-                <div class="suite-cta-group">
-                    <button class="btn-gold" onclick="openModal()">Check Availability</button>
-                    <a href="#" class="floorplan-link"><i class="fa-solid fa-download"></i> View Floorplan PDF</a>
+        <section class="suite-showcase">
+            <div class="container-wide">
+                <div class="suite-grid">
+                    
+                    <div class="suite-details animate-on-scroll">
+                        <span class="suite-subtitle">The Grand Residence</span>
+                        <h2 class="suite-title">Two Bedroom <br><span class="amp">&</span> Two Bath</h2>
+                        <div class="suite-description">
+                            <p>Designed for those who refuse to compromise on space or sophistication. Our flagship suites offer a seamless blend of private sanctuary and open-concept living, featuring floor-to-ceiling vistas and bespoke finishes.</p>
+                        </div>
+                        
+                        <ul class="suite-features">
+                            <li><i class="fa-solid fa-expand"></i> 1,250 Square Feet of Curated Living Space</li>
+                            <li><i class="fa-solid fa-couch"></i> Sun-Drenched Master Suite with Walk-in Wardrobe</li>
+                            <li><i class="fa-solid fa-utensils"></i> Gourmet Kitchenette with Quartz Countertops</li>
+                            <li><i class="fa-solid fa-shield-heart"></i> Discrete 24/7 Integrated Medical Response</li>
+                        </ul>
+
+                        <div class="suite-cta-group">
+                            <button class="btn-gold" onclick="openModal()">Check Availability</button>
+                            <a href="#" class="floorplan-link"><i class="fa-solid fa-download"></i> View Floorplan PDF</a>
+                        </div>
+                    </div>
+
+                    <div class="suite-visuals animate-on-scroll">
+                        <div class="main-image-wrapper">
+                            <img src="living-room.jpg" alt="Luxury Living Room" class="main-suite-img">
+                            <div class="floating-badge">Signature Series</div>
+                        </div>
+                        <div class="secondary-images">
+                            <div class="img-small"><img src="bedroom.jpg" alt="Master Bedroom"></div>
+                            <div class="img-small"><img src="bathroom.jpg" alt="En-suite Bathroom"></div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
-            <div class="suite-visuals animate-on-scroll">
-                <div class="main-image-wrapper">
-                    <img src="living-room.jpg" alt="Luxury Living Room" class="main-suite-img">
-                    <div class="floating-badge">Signature Series</div>
-                </div>
-                <div class="secondary-images">
-                    <div class="img-small"><img src="bedroom.jpg" alt="Master Bedroom"></div>
-                    <div class="img-small"><img src="bathroom.jpg" alt="En-suite Bathroom"></div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-
-
-
-        
-        </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+        </section>
+    </main>
 
     <footer class="video-footer animate-on-scroll">
         <video autoplay muted loop playsinline class="footer-video-bg">
@@ -212,89 +314,25 @@
                     <p>(000) 000-0000</p>
                 </div>
             </div>
-            <div class="footer-socials">
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            </div>
         </div>
     </footer>
 
-    <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Schedule a Private Tour</h2>
-            <form action="https://formsubmit.co/sunsetmeadowlivingllc@gmail.com" method="POST">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="tel" name="phone" placeholder="Phone Number" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="date" name="date" required>
-                <select name="service">
-                    <option>Private Pay</option>
-                    <option>Flex Pay</option>
-                    <option>Insurance</option>
-                </select>
-                <textarea name="notes" placeholder="Additional notes"></textarea>
-                <input type="hidden" name="_subject" value="New Tour Booking Request">
-                <input type="hidden" name="_captcha" value="false">
-                <button type="submit" class="btn-gold">Submit Request</button>
-            </form>
-        </div>
-    </div>
-
     <script>
-        // Toggle Mobile Menu
         function toggleMenu() {
             const menu = document.getElementById("sideMenu");
             menu.classList.toggle("active");
-            document.body.style.overflow = menu.classList.contains("active") ? "hidden" : "auto";
         }
 
-        // Header Scroll Transition
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.main-header');
-            if (window.scrollY > 50) { header.classList.add('scrolled'); } 
-            else { header.classList.remove('scrolled'); }
-        });
-
-        // Mobile Dropdown Logic
-        document.querySelectorAll('.mobile-dropdown .main-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                const subMenu = this.nextElementSibling;
-                if (subMenu && subMenu.classList.contains('sub-links')) {
-                    e.preventDefault();
-                    const isVisible = subMenu.style.display === 'block';
-                    subMenu.style.display = isVisible ? 'none' : 'block';
-                    const icon = this.querySelector('i');
-                    if(icon) { icon.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)'; }
-                }
-            });
-        });
-
-        // Modal Controls (Schedule Tour)
         window.openModal = function(){ document.getElementById("bookingModal").style.display = "block"; }
         window.closeModal = function(){ document.getElementById("bookingModal").style.display = "none"; }
-        window.onclick = function(event){
-            const modal = document.getElementById("bookingModal");
-            if(event.target === modal){ modal.style.display = "none"; }
-        }
 
-        // Scroll Reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible', 'show');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('is-visible', 'show');
             });
         }, { threshold: 0.1 });
-        document.querySelectorAll('.animate-on-scroll, .video-footer').forEach(el => observer.observe(el));
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
     </script>
-
-    <script>
-        window.chatbaseConfig = { chatbotId: "PhPwg7-iLonUCo-_uKjPY" }
-    </script>
-    <script src="https://www.chatbase.co/embed.min.js" id="PhPwg7-iLonUCo-_uKjPY" defer></script>
 
 </body>
 </html>
