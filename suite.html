@@ -56,33 +56,32 @@
 
         /* --- BALANCED VERTICAL TEXT --- */
 /* --- BALANCED LEFT CARD --- */
+
+/* --- FIXED & BALANCED BLUEPRINT SECTION --- */
+.blueprint-portal { 
+    display: grid; 
+    grid-template-columns: 450px 1fr; 
+    background: #fff; 
+    padding: 0; /* Removed the 150px that pushed everything down */
+    overflow: hidden; 
+}
+
 .narrative-aside { 
-    padding: 0 8%; 
+    padding: 0 10%; 
     border-right: 1px solid #f0f0f0; 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* This pulls everything to the vertical center */
-    height: 100vh;           /* Fixes the height to the viewport */
-    position: sticky;        /* Keeps the entire left column locked while you scroll the right */
+    justify-content: center; /* This forces the text to the vertical center */
+    height: 100vh;           /* Takes up the full screen height */
+    position: sticky;        
     top: 0;
 }
 
 .aside-sticky { 
-    /* We remove the 'top' and 'transform' here because the parent (narrative-aside) 
-       is now doing the centering work perfectly. */
     width: 100%;
     text-align: left;
-}
-
-.display-serif { 
-    font-family: 'Playfair Display'; 
-    font-size: 3.5rem; 
-    line-height: 1.1; 
-    margin: 20px 0; 
-    color: var(--black);
-}
-
-        .hero-light-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 1; }
+    /* No 'top' or 'transform' needed; Flexbox handles it now */
+}        .hero-light-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 1; }
         .hero-content { position: relative; z-index: 2; max-width: 900px; padding: 0 20px; }
         .hero-badge { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 30px; }
         .badge-line { width: 40px; height: 1px; background: var(--gold); }
