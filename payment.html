@@ -468,109 +468,147 @@
 
 <style>
 /* --- GLOBAL & DESKTOP --- */
+/* --- GLOBAL & DESKTOP --- */
 #flex-pay-section {
-    padding: 0 !important; 
+    /* Top: 40px (Just a little space), Sides: 5%, Bottom: 0px (Flushed to footer) */
+    padding: 40px 5% 0 5% !important; 
     background: #ffffff;
     font-family: 'Inter', sans-serif;
-    margin-bottom: 0 !important;
+    margin-bottom: 0 !important; /* Ensures no ghost margin at bottom */
 }
 
-/* THE THIN PHOTO STRIP */
 .flex-container {
-    max-width: 100% !important; 
-    position: relative;
-    background-image: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2023.jpeg?raw=true');
-    background-size: cover;
-    background-position: center;
-    /* REDUCED PADDING: This makes the strip thin and tight to the title */
-    padding: 40px 5% !important; 
-    margin-bottom: 40px; 
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centers the title inside the strip */
-    text-align: center;
-}
-
-.flex-container::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(15, 23, 42, 0.5); /* Slightly darker for better contrast */
-    z-index: 1;
-}
-
-.flex-eyebrow, .flex-main-title {
-    position: relative;
-    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .flex-eyebrow {
-    color: #bfa15f !important;
+    color: #bfa15f;
     letter-spacing: 10px;
     text-transform: uppercase;
     font-size: 0.65rem;
     font-weight: 800;
-    margin-bottom: 10px;
+    display: block;
+    margin-bottom: 20px;
 }
 
 .flex-main-title {
     font-family: 'Playfair Display';
-    font-size: 5.5rem; /* Slightly scaled for the thinner strip */
-    color: #ffffff !important;
-    margin: 0;
+    font-size: 6rem;
+    color: #0f172a;
+    margin: 0 0 60px;
     letter-spacing: -2px;
-    line-height: 1;
 }
 
+/* THE "PAY" FIX: Bigger, elegant, distinct font */
 .italic-pay {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cormorant Garamond', serif; /* Higher-end serif */
     font-style: italic;
     font-weight: 400;
-    color: #bfa15f !important;
-    font-size: 7rem;
-    margin-left: 5px;
+    color: #bfa15f;
+    font-size: 7.5rem; /* 20% bigger than "Flex" */
+    margin-left: -10px;
 }
 
-/* THE GRID */
 .flex-pay-grid {
-    max-width: 1400px;
-    margin: 0 auto 80px;
     display: grid;
     grid-template-columns: 1fr 1fr 1.2fr;
     border: 1px solid #e2e8f0;
-    background: #fff;
 }
 
 .flex-card-compact {
-    padding: 50px;
+    padding: 60px 50px;
     border-right: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-family: 'Playfair Display';
+    font-size: 1.8rem;
+    color: #0f172a;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.8;
+}
+
+.flex-card-cta {
+    padding: 60px 50px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-sub {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #94a3b8;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.flex-btn {
+    display: block;
+    padding: 22px 40px;
+    background: #0f172a;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.flex-btn:hover {
+    background: #bfa15f;
 }
 
 /* --- MOBILE "ELITE" VERSION --- */
 @media (max-width: 768px) {
-    .flex-container {
-        padding: 30px 20px !important; /* Even thinner on mobile */
-        margin-bottom: 30px;
+    #flex-pay-section {
+        padding: 60px 25px !important;
     }
 
     .flex-main-title {
-        font-size: 3rem !important;
+        font-size: 3.8rem !important;
+        margin-bottom: 40px !important;
     }
 
     .italic-pay {
-        font-size: 3.8rem !important;
+        font-size: 4.8rem !important; /* Scaled for mobile */
     }
 
     .flex-pay-grid {
-        grid-template-columns: 1fr !important;
-        border: none !important;
-        padding: 0 20px;
+        grid-template-columns: 1fr !important; /* Stacked */
+        border: none !important; /* Remove outer border */
     }
 
     .flex-card-compact {
-        padding: 30px 0 !important;
+        padding: 40px 0 !important; /* Clean vertical stack */
         border-right: none !important;
-        border-bottom: 1px solid #e2e8f0 !important;
+        border-bottom: 1px solid #e2e8f0 !important; /* Separator lines */
+    }
+
+    .flex-card-cta {
+        padding: 50px 0 !important;
+        background: transparent !important; /* Magazine white look */
+    }
+
+    .card-title {
+        font-size: 1.5rem !important;
+    }
+
+    .card-text {
+        font-size: 0.85rem !important;
+        max-width: 90%;
     }
 }
 </style>
