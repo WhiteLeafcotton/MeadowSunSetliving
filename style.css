@@ -3174,232 +3174,96 @@ body {
 
 
 
-/* Meta-Experience Section StylingDELETEGLASS */
-.meta-suite-experience {
-    position: relative;
-    padding: 150px 5%;
-    background: #fdfdfd;
-    overflow: hidden;
-    background-image: radial-gradient(circle at 0% 0%, rgba(191, 163, 126, 0.05) 0%, transparent 50%);
-}
 
-.meta-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-}
 
-.meta-grid {
+
+
+
+
+
+
+
+
+
+/* --- NEIGHBORHOOD / MAP SECTION --- */
+.neighborhood-portal {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 80px;
-    align-items: center;
+    grid-template-columns: 450px 1fr;
+    background: #fff;
+    border-top: 1px solid #f0f0f0;
 }
 
-/* Glassmorphism Card */
-.glass-inner {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    padding: 60px;
-    border-radius: 4px;
-    box-shadow: 0 40px 100px rgba(0,0,0,0.05);
-}
-
-.meta-eyebrow {
-    font-family: 'Inter', sans-serif;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    color: #bfa37e;
-    display: block;
-    margin-bottom: 15px;
-}
-
-.meta-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 4rem;
-    line-height: 1;
-    color: #1a1a1a;
-}
-
-.accent-separator {
-    width: 60px;
-    height: 2px;
-    background: #bfa37e;
-    margin: 30px 0;
-}
-
-.meta-description {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.8;
-    color: #666;
-    margin-bottom: 40px;
-}
-
-/* Feature Grid */
-.meta-feature-grid {
+.neighborhood-aside {
+    padding: 0 12%;
     display: flex;
-    gap: 40px;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    padding: 20px 0;
-    margin-bottom: 30px;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    border-right: 1px solid #f0f0f0;
 }
 
-.feature-label {
-    display: block;
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #999;
+.neighborhood-stage {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Hides scrollbar for clean look */
+    padding: 100px 50px;
+    gap: 30px;
+    background: #fafafa;
 }
 
-.feature-value {
-    display: block;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    color: #1a1a1a;
-}
+.neighborhood-stage::-webkit-scrollbar { display: none; }
 
-/* Actions */
-.glass-btn-gold {
-    background: #1a1a1a;
-    color: white;
-    padding: 18px 40px;
-    border: none;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.glass-btn-gold:hover {
-    background: #bfa37e;
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(191, 163, 126, 0.3);
-}
-
-/* Multi-Dimensional Visual Stack */
-.meta-visual-stack {
+.n-card {
+    min-width: 80%; /* Shows a peek of the next card */
+    height: 600px;
+    scroll-snap-align: center;
+    background: #fff;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+    border-radius: 2px;
+    overflow: hidden;
     position: relative;
 }
 
-.meta-img-main {
-    width: 100%;
-    height: 700px;
-    object-fit: cover;
-    border-radius: 2px;
-    filter: brightness(0.95);
+/* The First Info Card */
+.n-info-card {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.meta-overlay-box {
-    position: absolute;
-    background: white;
-    padding: 10px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
-    border-radius: 2px;
-    transition: transform 0.6s ease;
+.n-info-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
 }
 
-.meta-overlay-box img {
-    width: 150px;
-    height: 100px;
-    object-fit: cover;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.meta-overlay-box span {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.6rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #bfa37e;
-    text-align: center;
-    display: block;
-}
-
-.detail-1 { bottom: 10%; left: -10%; }
-.detail-2 { top: 10%; right: -5%; }
-
-.meta-overlay-box:hover {
-    transform: scale(1.05) translateY(-10px);
-}
-
-/* Mobile Adjustments */
-@media (max-width: 1024px) {
-    .meta-grid { grid-template-columns: 1fr; }
-    .meta-img-main { height: 400px; }
-    .detail-1, .detail-2 { position: static; display: inline-block; margin: 10px; }
-    .glass-inner { padding: 30px; }
-}
-
-/* --- NARRATIVE PANEL REFINEMENTS --- */
-
-.drop-cap {
-    float: left;
-    font-family: 'Playfair Display', serif; /* Matching your luxury headers */
-    font-size: 3.5rem;
-    line-height: 0.8;
-    padding-top: 4px;
-    padding-right: 12px;
-    color: var(--gold);
-    font-weight: 400;
-}
-
-.narrative-text {
-    font-family: 'Inter', sans-serif;
+.n-info-card li {
+    font-family: 'Inter';
+    font-size: 0.95rem;
     color: var(--gray);
-    line-height: 1.8;
-    font-size: 1rem;
-    clear: both; /* Ensures it wraps correctly around the drop cap */
-}
-
-
-/* --- SWIPE ANIMATION --- */
-
-.swipe-action {
-    margin-top: 50px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     gap: 15px;
-    opacity: 0.8;
 }
 
-.swipe-line {
-    width: 60px;
-    height: 1px;
-    background: #e0e0e0; /* Faint background line */
-    position: relative;
-    overflow: hidden;
-}
+.n-info-card li i { color: var(--gold); font-size: 0.8rem; }
 
-.swipe-line::after {
-    content: '';
-    position: absolute;
-    left: -100%;
+/* Photo Cards */
+.n-photo-card img {
     width: 100%;
     height: 100%;
-    background: var(--gold); /* The gold "moving" part */
-    animation: swipe-move 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    object-fit: cover;
 }
 
-@keyframes swipe-move {
-    0% { left: -100%; }
-    100% { left: 100%; }
+/* Map Section Below Gallery */
+.full-map-wrap {
+    width: 100%;
+    height: 500px;
+    filter: grayscale(1) contrast(1.1);
+    border-top: 1px solid #f0f0f0;
 }
-
-.swipe-action span {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--black);
-    font-weight: 600;
-}
-
