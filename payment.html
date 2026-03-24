@@ -489,24 +489,29 @@
 /* THE STRIP FIX: 
    We apply the background to the H2 but make it span the full width of the screen. 
 */
+/* THE STRIP FIX: Controlled by line-height */
 .flex-main-title {
     font-family: 'Playfair Display';
     font-size: 6rem;
     color: #0f172a;
     margin: 0;
     letter-spacing: -2px;
-    line-height: 1.1; /* This controls the height of the strip */
+    
+    /* REDUCE THIS NUMBER TO MAKE THE STRIP THINNER */
+    line-height: 0.8; 
+    
     position: relative;
     display: block;
     width: 100%;
+    z-index: 1;
 }
 
-/* This pseudo-element creates the strip precisely behind the text */
+/* This creates the actual background "ribbon" */
 .flex-main-title::before {
     content: "";
     position: absolute;
-    left: -100%; /* Extends to the left edge of the screen */
-    right: -100%; /* Extends to the right edge of the screen */
+    left: -100vw; 
+    right: -100vw; 
     top: 0;
     bottom: 0;
     z-index: -1;
@@ -516,9 +521,11 @@
     background-position: center;
 }
 
+/* Ensure the wrapper doesn't show horizontal scrollbars */
 .title-strip-bg-wrapper {
-    overflow: hidden; /* Clips the background so it doesn't cause horizontal scrolling */
+    overflow: hidden; 
     margin-bottom: 60px;
+    padding: 20px 0; /* Adds a tiny bit of air above/below the thin strip */
 }
 
 .flex-eyebrow {
