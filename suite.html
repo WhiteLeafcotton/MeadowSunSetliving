@@ -263,7 +263,7 @@
 
 
 
-    <section class="blueprint-section">
+  <section class="blueprint-section">
     <div class="blueprint-narrative">
         <div class="narrative-sticky">
             <span class="eyebrow">The Residence</span>
@@ -284,16 +284,34 @@
             <div class="landscape-frame">
                 <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200" alt="The Suite">
                 
-                <div class="annotation a1" style="top: 20%; left: 30%;">
-                    <svg class="line-svg"><line x1="0" y1="0" x2="60" y2="-40" /></svg>
+                <div class="annotation a1" style="top: 15%; left: 25%;">
+                    <svg class="line-svg" viewBox="0 0 150 150">
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#bfa37e;stop-opacity:0" />
+                                <stop offset="100%" style="stop-color:#bfa37e;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle class="sprout-dot" cx="10" cy="10" r="4" fill="#bfa37e"/>
+                        <path class="sprout-line" d="M10,10 L140,140" stroke="url(#grad1)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    </svg>
                     <div class="feature-label">
                         <strong>Circadian Glass</strong>
                         <span>Auto-tinting for sleep cycles.</span>
                     </div>
                 </div>
 
-                <div class="annotation a2" style="bottom: 25%; left: 60%;">
-                    <svg class="line-svg"><line x1="0" y1="0" x2="-40" y2="50" /></svg>
+                <div class="annotation a2" style="bottom: 10%; right: 20%;">
+                    <svg class="line-svg" viewBox="0 0 200 150">
+                         <defs>
+                            <linearGradient id="grad2" x1="100%" y1="100%" x2="0%" y2="0%">
+                                <stop offset="0%" style="stop-color:#bfa37e;stop-opacity:0" />
+                                <stop offset="100%" style="stop-color:#bfa37e;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle class="sprout-dot" cx="190" cy="140" r="4" fill="#bfa37e"/>
+                        <path class="sprout-line" d="M190,140 L10,10" stroke="url(#grad2)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    </svg>
                     <div class="feature-label">
                         <strong>Italian Oak</strong>
                         <span>Medical-grade, non-slip finish.</span>
@@ -306,16 +324,34 @@
             <div class="landscape-frame">
                 <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200" alt="The Spa">
                 
-                <div class="annotation a1" style="top: 35%; right: 20%;">
-                    <svg class="line-svg"><line x1="0" y1="0" x2="-60" y2="-40" /></svg>
+                <div class="annotation a1" style="top: 25%; right: 15%;">
+                    <svg class="line-svg" viewBox="0 0 150 150">
+                         <defs>
+                            <linearGradient id="grad3" x1="100%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#bfa37e;stop-opacity:0" />
+                                <stop offset="100%" style="stop-color:#bfa37e;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle class="sprout-dot" cx="140" cy="10" r="4" fill="#bfa37e"/>
+                        <path class="sprout-line" d="M140,10 L10,140" stroke="url(#grad3)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    </svg>
                     <div class="feature-label">
                         <strong>Hydro-Therapy</strong>
                         <span>Custom temperature presets.</span>
                     </div>
                 </div>
 
-                <div class="annotation a2" style="bottom: 20%; left: 40%;">
-                    <svg class="line-svg"><line x1="0" y1="0" x2="40" y2="40" /></svg>
+                <div class="annotation a2" style="bottom: 15%; left: 30%;">
+                    <svg class="line-svg" viewBox="0 0 200 150">
+                         <defs>
+                            <linearGradient id="grad4" x1="0%" y1="100%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#bfa37e;stop-opacity:0" />
+                                <stop offset="100%" style="stop-color:#bfa37e;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle class="sprout-dot" cx="10" cy="140" r="4" fill="#bfa37e"/>
+                        <path class="sprout-line" d="M10,140 L190,10" stroke="url(#grad4)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    </svg>
                     <div class="feature-label">
                         <strong>Silent-Air</strong>
                         <span>HEPA-filtered climate control.</span>
@@ -328,7 +364,7 @@
 </section>
 
 <style>
-/* --- THE BLUEPRINT ENGINE --- */
+/* --- THE 4D BLUEPRINT ENGINE --- */
 .blueprint-section {
     display: grid;
     grid-template-columns: 400px 1fr; /* Fixed left, scrolling right */
@@ -336,6 +372,7 @@
     min-height: 80vh;
     padding: 100px 0;
     overflow: hidden;
+    perspective: 1000px; /* Crucial for 4D depth on text reveal */
 }
 
 .blueprint-narrative {
@@ -349,7 +386,7 @@
 /* Horizontal Gallery Layout */
 .blueprint-gallery {
     display: flex;
-    gap: 80px;
+    gap: 120px; /* Increased gap for longer lines */
     padding-left: 50px;
     padding-right: 15vw;
     overflow-x: auto;
@@ -362,12 +399,13 @@
     min-width: 750px; /* Tight Landscape Size */
     scroll-snap-align: center;
     position: relative;
-    padding: 60px 0;
+    padding: 80px 0;
+    transform-style: preserve-3d;
 }
 
 .landscape-frame {
     width: 100%;
-    height: 450px; /* Controlled Landscape Height */
+    height: 480px; /* Controlled Landscape Height */
     position: relative;
     border-radius: 2px;
     overflow: visible; /* Allows annotations to sprout out */
@@ -380,58 +418,74 @@
     filter: brightness(0.9);
 }
 
-/* --- ANNOTATION SPROUTING --- */
+/* --- THE SEQUENCED SPROUTING SYSTEM --- */
 .annotation {
     position: absolute;
     z-index: 20;
+    transform-style: preserve-3d;
 }
 
 .line-svg {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 250px; /* Increased width for longer lines */
+    height: 200px; /* Increased height */
     overflow: visible;
     pointer-events: none;
 }
 
-.line-svg line {
-    stroke: #bfa37e;
-    stroke-width: 1;
-    stroke-dasharray: 200;
-    stroke-dashoffset: 200; /* Hidden by default */
-    transition: stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1);
+/* 1. The Sprout Dot (First sequence) */
+.sprout-dot {
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: center;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+/* 2. The Sprout Line (Second sequence) */
+.sprout-line {
+    stroke-dasharray: 400; /* Increased length */
+    stroke-dashoffset: 400; /* Hidden by default */
+    transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.5s; /* Delayed until dot is ready */
+}
+
+/* 3. The Feature Label (Third sequence) */
 .feature-label {
     position: absolute;
-    width: 200px;
+    width: 230px;
     opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.6s ease 0.4s; /* Delays text until line is drawn */
+    transform: translateZ(-20px) translateY(10px); /* 4D depth position */
+    transition: all 0.8s ease 1.6s; /* Delayed until line is drawn */
+    backface-visibility: hidden;
 }
 
-/* Positioning the labels based on the line direction */
-.a1 .feature-label { left: 70px; top: -60px; }
-.a2 .feature-label { left: -210px; bottom: -60px; text-align: right; }
+/* Positioning the labels based on the line direction (Choreographed placement) */
+.a1 .feature-label { left: 240px; top: 120px; }
+.a1 .line-svg { left: 0; top: 0; }
+
+.a2 .feature-label { right: 260px; top: -140px; text-align: right; }
+.a2 .line-svg { right: 0; bottom: 0; }
 
 .feature-label strong {
     display: block;
     font-family: 'Playfair Display';
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #1a1a1a;
+    margin-bottom: 5px;
 }
 
 .feature-label span {
     font-family: 'Inter';
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: #888;
     letter-spacing: 0.5px;
+    line-height: 1.5;
 }
 
-/* --- THE TRIGGER MECHANISM --- */
-/* When the slide is "active" (centered), trigger the sprout */
-.blueprint-slide.is-active .line-svg line { stroke-dashoffset: 0; }
-.blueprint-slide.is-active .feature-label { opacity: 1; transform: translateY(0); }
+/* --- THE TRIGGER MECHANISM (Sequence activation) --- */
+/* When the slide is "is-active" (centered), trigger the choreographed sequence */
+.blueprint-slide.is-active .sprout-dot { opacity: 1; transform: scale(1); }
+.blueprint-slide.is-active .sprout-line { stroke-dashoffset: 0; }
+.blueprint-slide.is-active .feature-label { opacity: 1; transform: translateZ(20px) translateY(0); }
 
 /* Decorative Scroll Hint */
 .scroll-line { display: block; width: 40px; height: 1px; background: #bfa37e; margin: 20px 0 10px; }
@@ -439,8 +493,9 @@
 
 @media (max-width: 1024px) {
     .blueprint-section { grid-template-columns: 1fr; }
-    .blueprint-gallery { padding-left: 5%; }
+    .blueprint-gallery { padding-left: 5%; gap: 50px; }
     .blueprint-slide { min-width: 90vw; }
+    .feature-label { display: none; } /* Simplify for mobile */
 }
 </style>
 
@@ -454,13 +509,12 @@
                 entry.target.classList.remove('is-active');
             }
         });
-    }, { threshold: 0.6 }); // Triggers when 60% of the photo is visible
+    }, { threshold: 0.7 }); // Triggers when 70% of the photo is visible
 
     document.querySelectorAll('.blueprint-slide').forEach(slide => {
         galleryObserver.observe(slide);
     });
 </script>
-
 
 
 
