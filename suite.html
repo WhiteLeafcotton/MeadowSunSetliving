@@ -289,8 +289,8 @@
                     
                     <div class="l-annotation tl">
                         <div class="pulse-dot"></div>
-                        <svg class="blueprint-svg" viewBox="0 0 400 300">
-                            <path class="l-path" d="M 10,290 V 20 H 380" />
+                        <svg class="blueprint-svg" viewBox="0 0 400 150">
+                            <path class="l-path" d="M 5,145 V 105 H -350" />
                         </svg>
                         <div class="data-card">
                             <span class="card-id">01 / ARCHITECTURE</span>
@@ -301,8 +301,8 @@
 
                     <div class="l-annotation br">
                         <div class="pulse-dot"></div>
-                        <svg class="blueprint-svg" viewBox="0 0 400 300">
-                            <path class="l-path" d="M 390,10 V 280 H 20" />
+                        <svg class="blueprint-svg" viewBox="0 0 400 150">
+                            <path class="l-path" d="M 395,5 V 45 H 750" />
                         </svg>
                         <div class="data-card">
                             <span class="card-id">02 / INTERIORS</span>
@@ -321,8 +321,8 @@
                     
                     <div class="l-annotation tr">
                         <div class="pulse-dot"></div>
-                        <svg class="blueprint-svg" viewBox="0 0 400 300">
-                            <path class="l-path" d="M 390,290 V 20 H 20" />
+                        <svg class="blueprint-svg" viewBox="0 0 400 150">
+                            <path class="l-path" d="M 395,145 V 105 H 750" />
                         </svg>
                         <div class="data-card">
                             <span class="card-id">03 / WELLNESS</span>
@@ -333,8 +333,8 @@
 
                     <div class="l-annotation bl">
                         <div class="pulse-dot"></div>
-                        <svg class="blueprint-svg" viewBox="0 0 400 300">
-                            <path class="l-path" d="M 10,10 V 280 H 380" />
+                        <svg class="blueprint-svg" viewBox="0 0 400 150">
+                            <path class="l-path" d="M 5,5 V 45 H -350" />
                         </svg>
                         <div class="data-card">
                             <span class="card-id">04 / AIR QUALITY</span>
@@ -349,7 +349,7 @@
 </section>
 
 <style>
-/* --- THE NO-CLIP ARCHITECTURE --- */
+/* --- THE SNAP-BREAK ARCHITECTURE --- */
 :root {
     --gold: #bfa37e;
     --black: #111;
@@ -360,14 +360,13 @@
     display: grid;
     grid-template-columns: 400px 1fr;
     background: #fff;
-    overflow: hidden; /* Only hide the main section's overflow */
     position: relative;
-    padding: 100px 0;
+    padding: 120px 0;
+    overflow: hidden;
 }
 
-/* LEFT SIDE NARRATIVE */
 .narrative-aside { padding-left: 10%; border-right: 1px solid #f0f0f0; }
-.aside-sticky { position: sticky; top: 150px; z-index: 10; }
+.aside-sticky { position: sticky; top: 180px; z-index: 10; }
 .gold-tag { font-family: 'Inter'; color: var(--gold); letter-spacing: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
 .display-serif { font-family: 'Playfair Display'; font-size: 3.5rem; line-height: 1.1; color: var(--black); margin: 20px 0; }
 .display-serif em { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 300; }
@@ -378,12 +377,12 @@
 .blueprint-stage {
     display: flex;
     overflow-x: auto;
-    overflow-y: visible; /* ALLOWS SPROUTS TO GO UP/DOWN */
+    overflow-y: visible;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
-    padding: 250px 0; /* THE MAGIC FIX: Create a 250px "Sprout Zone" buffer */
-    margin-top: -250px; /* Offset the padding to keep layout tight */
-    margin-bottom: -250px;
+    padding: 180px 0; /* Vertical Safe Zone for Sprouts */
+    margin-top: -180px;
+    margin-bottom: -180px;
 }
 .blueprint-stage::-webkit-scrollbar { display: none; }
 
@@ -398,8 +397,8 @@
 
 .photo-anchor {
     position: relative;
-    width: 800px;
-    height: 450px;
+    width: 800px; /* LOCKED SIZE */
+    height: 450px; /* LOCKED SIZE */
     overflow: visible;
 }
 
@@ -407,12 +406,12 @@
     width: 100%;
     height: 100%;
     position: relative;
-    box-shadow: 0 50px 100px rgba(0,0,0,0.08);
+    box-shadow: 0 40px 90px rgba(0,0,0,0.07);
     z-index: 5;
 }
 .main-photo img { width: 100%; height: 100%; object-fit: cover; }
 
-/* --- THE L-SHAPED BLUEPRINT ANIMATION --- */
+/* --- THE L-SHAPED SPROUT --- */
 .l-annotation {
     position: absolute;
     z-index: 100;
@@ -420,19 +419,19 @@
 }
 
 .pulse-dot {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     background: var(--gold);
     border-radius: 50%;
     opacity: 0;
     transform: scale(0);
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .blueprint-svg {
     position: absolute;
     width: 400px;
-    height: 300px;
+    height: 150px;
     overflow: visible;
     pointer-events: none;
 }
@@ -440,41 +439,41 @@
 .l-path {
     fill: none;
     stroke: var(--gold);
-    stroke-width: 1.5;
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
+    stroke-width: 1.2;
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+    transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
 }
 
 .data-card {
     position: absolute;
-    width: 280px;
+    width: 260px;
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.8s ease 1.8s;
+    transform: translateY(15px);
+    transition: all 0.7s ease 1.5s; /* Fires after snap-break line */
 }
 
-/* PRECISE OUTSIDE POSITIONS */
-.tl { top: 15%; left: 10%; }
-.tl .blueprint-svg { left: 0; bottom: 0; } /* Vertical first from dot */
-.tl .data-card { left: 350px; top: -280px; }
+/* POSITIONING: STEM IS NOW ONLY 40PX */
+.tl { top: 15%; left: 8%; }
+.tl .blueprint-svg { left: 0; bottom: 0; }
+.tl .data-card { left: -360px; top: 75px; text-align: right; } /* Adjust text to sit after L-break */
 
-.br { bottom: 15%; right: 10%; }
+.br { bottom: 15%; right: 8%; }
 .br .blueprint-svg { right: 0; top: 0; }
-.br .data-card { right: 350px; bottom: -280px; text-align: right; }
+.br .data-card { left: 760px; bottom: 75px; text-align: left; }
 
-.tr { top: 15%; right: 10%; }
+.tr { top: 15%; right: 8%; }
 .tr .blueprint-svg { right: 0; bottom: 0; }
-.tr .data-card { right: 350px; top: -280px; text-align: right; }
+.tr .data-card { left: 760px; top: 75px; text-align: left; }
 
-.bl { bottom: 15%; left: 10%; }
+.bl { bottom: 15%; left: 8%; }
 .bl .blueprint-svg { left: 0; top: 0; }
-.bl .data-card { left: 350px; bottom: -280px; }
+.bl .data-card { left: -360px; bottom: 75px; text-align: right; }
 
 /* TYPOGRAPHY */
-.card-id { font-family: 'Inter'; font-size: 0.65rem; color: var(--gold); letter-spacing: 3px; font-weight: 700; display: block; margin-bottom: 10px; }
-.data-card h4 { font-family: 'Playfair Display'; font-size: 1.4rem; color: var(--black); margin-bottom: 10px; }
-.data-card p { font-family: 'Inter'; font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
+.card-id { font-family: 'Inter'; font-size: 0.6rem; color: var(--gold); letter-spacing: 3px; font-weight: 700; display: block; margin-bottom: 5px; }
+.data-card h4 { font-family: 'Playfair Display'; font-size: 1.2rem; color: var(--black); margin-bottom: 8px; }
+.data-card p { font-family: 'Inter'; font-size: 0.8rem; color: var(--gray); line-height: 1.5; }
 
 /* ANIMATION TRIGGER */
 .slide-container.is-active .pulse-dot { opacity: 1; transform: scale(1); }
@@ -483,7 +482,7 @@
 
 @media (max-width: 1200px) {
     .blueprint-portal { grid-template-columns: 1fr; }
-    .blueprint-stage { padding: 50px 0; margin: 0; }
+    .blueprint-stage { padding: 40px 0; margin: 0; }
     .photo-anchor { width: 90%; height: auto; }
     .l-annotation { display: none; } /* Mobile cleanup */
 }
