@@ -270,7 +270,7 @@
             <h2 class="display-serif">The Blueprint <br><em>of Comfort.</em></h2>
             <div class="luxe-divider"></div>
             <p class="narrative-text">
-                Every square inch of Sunset Meadow is a calculated masterpiece of hospitality and health. Swipe to inspect the invisible engineering that defines our care.
+                Every square inch of Sunset Meadow is a calculated masterpiece. Swipe to inspect the engineering that defines our care.
             </p>
             
             <div class="swipe-action">
@@ -287,27 +287,27 @@
                 <div class="main-photo">
                     <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200" alt="The Sanctuary">
                     
-                    <div class="l-annotation tr-target" style="top: 15%; right: 10%;">
+                    <div class="l-annotation pos-top-right" style="top: 10%; left: 20%;">
                         <div class="pulse-dot"></div>
-                        <svg class="blueprint-svg" viewBox="0 0 450 150">
-                            <path class="l-path" d="M 5,145 V 105 H 350" />
+                        <svg class="blueprint-svg" viewBox="0 0 400 200">
+                            <path class="l-path" d="M 5,195 V 75 H 250" />
                         </svg>
                         <div class="data-card">
                             <span class="card-id">01 / ARCHITECTURE</span>
                             <h4>Silent-Core Integrity</h4>
-                            <p>Triple-insulated structural framing ensures 0db acoustic leakage between private suites.</p>
+                            <p>Triple-insulated structural framing ensures total privacy.</p>
                         </div>
                     </div>
 
-                    <div class="l-annotation bl-target" style="bottom: 15%; left: 10%;">
+                    <div class="l-annotation pos-bottom-left" style="bottom: 10%; right: 20%;">
                         <div class="pulse-dot"></div>
-                        <svg class="blueprint-svg" viewBox="0 0 450 150">
-                            <path class="l-path" d="M 445,5 V 45 H 100" />
+                        <svg class="blueprint-svg" viewBox="0 0 400 200">
+                            <path class="l-path" d="M 395,5 V 125 H 145" />
                         </svg>
                         <div class="data-card">
                             <span class="card-id">02 / INTERIORS</span>
                             <h4>Medical-Grade Oak</h4>
-                            <p>Bespoke Italian flooring with integrated friction-grip technology for fall prevention.</p>
+                            <p>Bespoke Italian flooring with integrated friction-grip.</p>
                         </div>
                     </div>
                 </div>
@@ -319,27 +319,27 @@
                 <div class="main-photo">
                     <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200" alt="The Bath">
                     
-                    <div class="l-annotation tr-target" style="top: 20%; right: 15%;">
+                    <div class="l-annotation pos-top-left" style="top: 15%; right: 25%;">
                         <div class="pulse-dot"></div>
-                        <svg class="blueprint-svg" viewBox="0 0 450 150">
-                            <path class="l-path" d="M 5,145 V 105 H 350" />
+                        <svg class="blueprint-svg" viewBox="0 0 400 200">
+                            <path class="l-path" d="M 395,195 V 75 H 145" />
                         </svg>
                         <div class="data-card">
                             <span class="card-id">03 / WELLNESS</span>
                             <h4>Hydro-Precision</h4>
-                            <p>Digital temperature governors maintain therapeutic water levels within 0.1 degree.</p>
+                            <p>Digital temperature governors maintain therapeutic levels.</p>
                         </div>
                     </div>
 
-                    <div class="l-annotation bl-target" style="bottom: 20%; left: 15%;">
+                    <div class="l-annotation pos-bottom-right" style="bottom: 15%; left: 25%;">
                         <div class="pulse-dot"></div>
-                        <svg class="blueprint-svg" viewBox="0 0 450 150">
-                            <path class="l-path" d="M 445,5 V 45 H 100" />
+                        <svg class="blueprint-svg" viewBox="0 0 400 200">
+                            <path class="l-path" d="M 5,5 V 125 H 250" />
                         </svg>
                         <div class="data-card">
                             <span class="card-id">04 / AIR QUALITY</span>
                             <h4>HEPA-Stealth Flow</h4>
-                            <p>A hidden convection system cycling fresh, filtered air every twelve minutes.</p>
+                            <p>A hidden convection system cycling fresh air.</p>
                         </div>
                     </div>
                 </div>
@@ -349,7 +349,7 @@
 </section>
 
 <style>
-/* --- THE STAGGERED BLUEPRINT CSS --- */
+/* --- THE VERTICAL-FIRST BLUEPRINT --- */
 :root {
     --gold: #bfa37e;
     --black: #111;
@@ -360,28 +360,28 @@
     display: grid;
     grid-template-columns: 400px 1fr;
     background: #fff;
-    padding: 120px 0;
+    padding: 150px 0;
     overflow: hidden;
 }
 
 .narrative-aside { padding-left: 10%; border-right: 1px solid #f0f0f0; }
-.aside-sticky { position: sticky; top: 180px; z-index: 10; }
+.aside-sticky { position: sticky; top: 200px; z-index: 10; }
 .gold-tag { font-family: 'Inter'; color: var(--gold); letter-spacing: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
 .display-serif { font-family: 'Playfair Display'; font-size: 3.5rem; line-height: 1.1; color: var(--black); margin: 20px 0; }
 .display-serif em { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 300; }
 .luxe-divider { width: 40px; height: 1px; background: var(--gold); margin-bottom: 30px; }
 .narrative-text { font-family: 'Inter'; color: var(--gray); line-height: 1.9; max-width: 300px; font-size: 0.95rem; }
 
-/* THE GALLERY VIEWPORT */
+/* THE VIEWPORT WITH VERTICAL BUFFER */
 .blueprint-stage {
     display: flex;
     overflow-x: auto;
     overflow-y: visible;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
-    padding: 220px 0; 
-    margin-top: -220px;
-    margin-bottom: -220px;
+    padding: 250px 0; 
+    margin-top: -250px;
+    margin-bottom: -250px;
 }
 .blueprint-stage::-webkit-scrollbar { display: none; }
 
@@ -410,7 +410,7 @@
 }
 .main-photo img { width: 100%; height: 100%; object-fit: cover; }
 
-/* --- THE STAGGERED L-SPROUTS --- */
+/* --- THE L-SPROUTS (Vertical First) --- */
 .l-annotation {
     position: absolute;
     z-index: 100;
@@ -429,8 +429,8 @@
 
 .blueprint-svg {
     position: absolute;
-    width: 450px;
-    height: 150px;
+    width: 400px;
+    height: 200px;
     overflow: visible;
     pointer-events: none;
 }
@@ -439,8 +439,8 @@
     fill: none;
     stroke: var(--gold);
     stroke-width: 1.2;
-    stroke-dasharray: 800;
-    stroke-dashoffset: 800;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
     transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
 }
 
@@ -452,13 +452,18 @@
     transition: all 0.7s ease 1.5s;
 }
 
-/* LANDING: TOP RIGHT */
-.tr-target .blueprint-svg { left: 0; bottom: 0; }
-.tr-target .data-card { left: 360px; top: -110px; text-align: left; }
+/* LANDING POSITIONS: ABOVE/BELOW PHOTO */
+.pos-top-right .blueprint-svg { left: 0; bottom: 0; }
+.pos-top-right .data-card { left: 260px; top: -140px; text-align: left; }
 
-/* LANDING: BOTTOM LEFT */
-.bl-target .blueprint-svg { right: 0; top: 0; }
-.bl-target .data-card { right: 360px; bottom: -110px; text-align: right; }
+.pos-bottom-left .blueprint-svg { right: 0; top: 0; }
+.pos-bottom-left .data-card { right: 260px; bottom: -140px; text-align: right; }
+
+.pos-top-left .blueprint-svg { right: 0; bottom: 0; }
+.pos-top-left .data-card { right: 260px; top: -140px; text-align: right; }
+
+.pos-bottom-right .blueprint-svg { left: 0; top: 0; }
+.pos-bottom-right .data-card { left: 260px; bottom: -140px; text-align: left; }
 
 /* TYPOGRAPHY */
 .card-id { font-family: 'Inter'; font-size: 0.6rem; color: var(--gold); letter-spacing: 3px; font-weight: 700; display: block; margin-bottom: 5px; }
@@ -473,7 +478,6 @@
 @media (max-width: 1200px) {
     .blueprint-portal { grid-template-columns: 1fr; }
     .blueprint-stage { padding: 40px 0; margin: 0; }
-    .photo-anchor { width: 90%; height: auto; }
     .l-annotation { display: none; }
 }
 </style>
@@ -488,7 +492,6 @@
 
     document.querySelectorAll('.slide-container').forEach(slide => observer.observe(slide));
 </script>
-
 
 
 
