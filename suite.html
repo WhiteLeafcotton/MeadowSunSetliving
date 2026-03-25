@@ -133,10 +133,17 @@
             overflow: visible !important;
         }
 
+        /* 3. CLEAN UP THE SECTION BELOW */
         .slide-container {
             display: block !important;
             width: 100% !important;
-            padding: 40px 0 !important;
+            padding: 40px 0 !important; /* Keep original top/bottom padding */
+            margin-bottom: 80px; /* This creates the "gap" between them */
+        }
+
+        /* This ensures the very last photo doesn't have extra white space at the bottom */
+        .slide-container:last-child {
+            margin-bottom: 0;
         }
 
         .photo-anchor {
