@@ -3425,96 +3425,69 @@ body {
 /* --- MOBILE REFINEMENTS --- */
 /* --- MOBILE ONLY: VERTICAL STACK & SPROUT ACTIVATION --- */
 /* --- MOBILE REFINEMENTS: FORCE VERTICAL STACK --- */
-@media (max-width: 1100px) {
-    /* 1. Stack the photos and text */
-    .blueprint-stage {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 80px !important; /* Space between each photo-text block */
-        padding: 20px !important;
-        overflow-x: hidden !important;
+<style>
+    /* --- SHARED ROOTS --- */
+    :root {
+        --gold: #bfa37e; --deep: #1a1a1a; --black: #111; --gray: #666; --white: #ffffff;
     }
 
-    .slide-container {
-        display: flex !important;
-        flex-direction: column !important; /* Stack Photo then Text */
-        align-items: center;
-        min-width: 100% !important;
+    /* --- WEB VIEW: 100% UNTOUCHED --- */
+    /* This section only runs on screens WIDER than 1100px */
+    @media (min-width: 1101px) {
+        .blueprint-portal { display: grid; grid-template-columns: 450px 1fr; background: #fff; padding: 0; overflow: hidden; }
+        .narrative-aside { padding: 0 10%; border-right: 1px solid #f0f0f0; display: flex; flex-direction: column; justify-content: center; height: 100vh; position: sticky; top: 0; }
+        .blueprint-stage { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 400px 0; margin-top: -300px; }
+        .slide-container { min-width: 100%; display: flex; align-items: center; justify-content: center; scroll-snap-align: center; }
+        .photo-anchor { position: relative; width: 800px; height: 450px; }
+        .main-photo img { width: 100%; height: 100%; object-fit: cover; box-shadow: 0 40px 90px rgba(0,0,0,0.1); }
+        .mobile-narrative-card { display: none; } /* Hide the mobile text on web */
     }
 
-    /* 2. Hide the floating lines and dots on mobile */
-    .l-annotation {
-        display: none !important;
+    /* --- MOBILE VIEW: THE FIX --- */
+    /* This section only runs on screens SMALLER than 1100px */
+    @media (max-width: 1100px) {
+        /* Hide the sticky left-side text so it doesn't overlap the photos */
+        .narrative-aside { display: none !important; }
+
+        .blueprint-portal { display: block !important; padding: 20px 0; }
+
+        .blueprint-stage {
+            display: block !important;
+            overflow-x: visible !important;
+            scroll-snap-type: none !important;
+            padding: 0 !important;
+            margin-top: 0 !important;
+        }
+
+        .slide-container {
+            display: block !important;
+            width: 100% !important;
+            margin-bottom: 60px !important;
+            padding: 0 15px !important;
+        }
+
+        .photo-anchor {
+            width: 100% !important;
+            height: auto !important;
+            aspect-ratio: 16 / 9;
+        }
+
+        /* Show the text card (Blueprint of Comfort) above the photos on mobile */
+        .mobile-narrative-card {
+            display: block !important;
+            text-align: center;
+            padding: 40px 20px;
+            background: #fff;
+        }
+
+        /* Hide the gold lines/sprouts on mobile */
+        .l-annotation { display: none !important; }
     }
 
-    /* 3. Style the cards to look premium under the photo */
-    .mobile-info-stack {
-        display: block !important; /* Only shows on mobile */
-        width: 100%;
-        margin-top: 25px;
-        text-align: left;
-    }
-
-    .mobile-info-item {
-        margin-bottom: 25px;
-        padding-left: 15px;
-        border-left: 2px solid var(--gold);
-    }
-
-    .mobile-info-item h4 {
-        font-family: 'Playfair Display';
-        font-size: 1.2rem;
-        color: var(--deep);
-        margin: 5px 0;
-    }
-
-    .mobile-info-item p {
-        font-size: 0.9rem;
-        color: var(--gray);
-        line-height: 1.5;
-    }
-
-    .card-id-mini {
-        font-size: 0.65rem;
-        letter-spacing: 2px;
-        color: var(--gold);
-        text-transform: uppercase;
-    }
-}
-
-/* Hide the mobile stack on Desktop */
-.mobile-info-stack {
-    display: none;
-}
-/* --- MOBILE OVERRIDE: TARGETS ONLY PHONES --- */
-@media (max-width: 1100px) {
-    
-    /* 1. Turn off horizontal swipe and stacking */
-    .blueprint-stage {
-        display: block !important;       /* Changes 'row' to 'stack' */
-        overflow-x: visible !important;  /* Stops the side-swipe */
-        scroll-snap-type: none !important; /* Kills the 'snapping' effect */
-        padding: 0 !important;           /* Removes the huge web gaps */
-        margin-top: 50px !important;     /* Adds clean spacing at the top */
-    }
-
-    /* 2. Make each slide take up its own vertical space */
-    .slide-container {
-        display: block !important;
-        min-width: 100% !important;
-        margin-bottom: 100px !important; /* Space between Photo 1 and Photo 2 */
-        padding: 0 20px !important;
-    }
-
-    /* 3. Resize the photo for a vertical phone screen */
-    .photo-anchor {
-        width: 100% !important;
-        height: auto !important;
-        aspect-ratio: 16 / 9;
-    }
-
-    /* 4. Hide the lines/dots that only work on wide screens */
-    .l-annotation {
-        display: none !important;
-    }
-}
+    /* --- GLOBAL CLASSES (Used by both) --- */
+    .hero-suites { position: relative; height: 80vh; display: flex; align-items: center; justify-content: center; background: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1600') center/cover no-repeat; background-attachment: fixed; color: var(--white); text-align: center; }
+    .hero-light-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 1; }
+    .hero-content { position: relative; z-index: 2; max-width: 900px; padding: 0 20px; }
+    .display-serif { font-family: 'Playfair Display'; font-size: 3.5rem; line-height: 1.1; margin: 20px 0; }
+    .luxe-divider { width: 40px; height: 1px; background: var(--gold); margin: 0 auto 30px; }
+</style>
