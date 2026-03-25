@@ -3420,128 +3420,75 @@ body {
 /* --- CENTER-EDGE SPROUTS (FINAL ALIGNMENT) --- */
 /* --- STEPPED SPROUTS: DOWN/RIGHT & UP/LEFT --- */
 /* --- EXACT STEPPED SPROUTS: MOBILE --- */
-/* --- FIXED & MIRRORED SPROUTS: MOBILE --- */
-/* --- MOBILE RESPONSIVE OVERRIDES --- */
-/* --- MOBILE REFINEMENTS --- */
-/* --- MOBILE ONLY: VERTICAL STACK & SPROUT ACTIVATION --- */
-/* --- MOBILE REFINEMENTS: FORCE VERTICAL STACK --- */
-<style>
-        :root {
-            --gold: #bfa37e;
-            --deep: #1a1a1a;
-            --black: #111;
-            --gray: #666;
-            --white: #ffffff;
-        }
+@media (max-width: 1100px) {
+    .blueprint-portal { display: block !important; padding: 0; }
+    .narrative-aside { display: none !important; }
+    .blueprint-stage { display: block !important; padding: 0; }
 
-        /* --- HERO & NAV --- */
-        .hero-suites {
-            position: relative;
-            height: 80vh;
-            min-height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1600') center/cover no-repeat;
-            background-attachment: fixed;
-            color: var(--white);
-            text-align: center;
-        }
+    .slide-container {
+        display: block !important;
+        width: 100%;
+        padding: 240px 0 !important; /* Huge space for the vertical sprouts */
+    }
 
-        .hero-light-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 1; }
-        .hero-content { position: relative; z-index: 2; max-width: 900px; padding: 0 20px; }
-        .hero-badge { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 30px; }
-        .badge-line { width: 40px; height: 1px; background: var(--gold); }
-        .badge-text { font-family: 'Inter'; text-transform: uppercase; letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); }
-        .hero-content h1 { font-family: 'Playfair Display'; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 25px; }
-        .italic-serif { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 300; }
+    .photo-anchor {
+        width: 90vw !important; /* Larger photo as requested */
+        max-width: 500px;
+        aspect-ratio: 16/9;
+        margin: 0 auto !important;
+        position: relative;
+        overflow: visible;
+    }
 
-        /* --- BLUEPRINT SECTION (DESKTOP) --- */
-        .blueprint-portal { display: grid; grid-template-columns: 450px 1fr; background: #fff; padding: 0; overflow: hidden; }
-        .narrative-aside { 
-            padding: 0 10%; 
-            border-right: 1px solid #f0f0f0; 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 100vh;           
-            position: sticky;        
-            top: 0;
-        }
-        .aside-sticky { width: 100%; text-align: left; }
-        .display-serif { font-family: 'Playfair Display'; font-size: 3.5rem; line-height: 1.1; margin: 20px 0; }
-        .luxe-divider { width: 40px; height: 1px; background: var(--gold); margin-bottom: 30px; }
+    /* --- SPROUT 01: UP THEN RIGHT --- */
+    .pos-top-right { 
+        display: block !important;
+        top: 20px !important; /* Pinned to top-left of image */
+        left: 20px !important;
+        transform: scale(0.65);
+    }
+    .pos-top-right .blueprint-svg {
+        top: -195px !important; 
+        left: 0 !important;
+    }
+    .pos-top-right .data-card {
+        top: -175px !important;
+        left: 210px !important; /* Lands at the end of the RIGHT turn */
+        text-align: left;
+    }
 
-        .swipe-action { margin-top: 30px; display: none; align-items: center; gap: 10px; }
-        .is-slide-1 .swipe-action { display: flex; }
-        .amenity-list { margin-top: 25px; list-style: none; padding: 0; display: none; }
-        .is-slide-2 .amenity-list { display: block; }
-        .amenity-list li { font-family: 'Inter'; font-size: 0.85rem; color: var(--gray); margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+    /* --- SPROUT 02: DOWN THEN RIGHT --- */
+    .pos-bottom-left { 
+        display: block !important;
+        bottom: 20px !important; /* Pinned to bottom-left of image */
+        left: 20px !important;
+        right: auto !important;
+        top: auto !important;
+        transform: scale(0.65);
+    }
+    .pos-bottom-left .blueprint-svg {
+        bottom: -150px !important; 
+        left: 0 !important;
+    }
+    .pos-bottom-left .data-card {
+        bottom: -175px !important;
+        left: 210px !important; /* Lands at the end of the RIGHT turn */
+        text-align: left;
+    }
 
-        .blueprint-stage { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 400px 0; margin-top: -300px; }
-        .slide-container { min-width: 100%; display: flex; align-items: center; justify-content: center; scroll-snap-align: center; }
-        .photo-anchor { position: relative; width: 800px; height: 450px; }
-        .main-photo img { width: 100%; height: 100%; object-fit: cover; box-shadow: 0 40px 90px rgba(0,0,0,0.1); }
+    /* --- CLEAN GHOST LOOK --- */
+    .data-card {
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        width: 240px !important;
+        position: absolute !important;
+    }
 
-        /* --- SPROUTS (The Original Functionality) --- */
-        .l-annotation { position: absolute; z-index: 100; pointer-events: none; }
-        .pulse-dot { width: 10px; height: 10px; background: var(--gold); border-radius: 50%; opacity: 0; transform: scale(0); transition: 0.4s; }
-        .blueprint-svg { position: absolute; width: 400px; height: 200px; pointer-events: none; }
-        .l-path { fill: none; stroke: var(--gold); stroke-width: 1.2; stroke-dasharray: 1000; stroke-dashoffset: 1000; transition: stroke-dashoffset 1.2s ease 0.4s; }
-        .data-card { position: absolute; width: 280px; opacity: 0; transform: translateY(15px); transition: 0.7s ease 1.5s; }
+    .data-card h4 { font-size: 0.95rem !important; color: #000; margin: 2px 0; font-family: 'Playfair Display', serif; text-transform: uppercase; }
+    .data-card p { font-size: 0.75rem !important; color: #666; line-height: 1.4; }
+    .card-id { font-family: 'Inter'; font-size: 0.7rem; color: #999; letter-spacing: 1px; }
 
-        .slide-container.is-active .pulse-dot { opacity: 1; transform: scale(1); }
-        .slide-container.is-active .l-path { stroke-dashoffset: 0; }
-        .slide-container.is-active .data-card { opacity: 1; transform: translateY(0); }
-
-        .pos-top-right .blueprint-svg { left: 0; bottom: 0; }
-        .pos-top-right .data-card { left: 260px; top: -140px; text-align: left; }
-        .pos-bottom-left .blueprint-svg { right: 0; top: 0; }
-        .pos-bottom-left .data-card { right: 260px; bottom: -140px; text-align: right; }
-
-        /* --- MOBILE VIEW OVERRIDES --- */
-        @media (max-width: 1100px) {
-            .blueprint-portal { grid-template-columns: 1fr; display: block; }
-            .narrative-aside { display: none !important; } /* Hide sticky text on mobile */
-            
-            .blueprint-stage { 
-                display: block; 
-                padding: 40px 0; 
-                margin-top: 0; 
-                overflow-x: hidden;
-            }
-            .slide-container { 
-                width: 100%; 
-                margin-bottom: 100px; 
-                padding: 0 15px;
-                display: block;
-            }
-            .photo-anchor { 
-                width: 100%; 
-                height: auto; 
-                aspect-ratio: 16 / 9; 
-            }
-
-            /* Enable & Scale Sprouts for Mobile */
-            .l-annotation { 
-                display: block !important; 
-                transform: scale(0.5); /* Shrinks lines to fit phone screen */
-                transform-origin: center;
-            }
-            .pos-top-right .data-card { left: 80px; width: 180px; }
-            .pos-bottom-left .data-card { right: 80px; width: 180px; }
-            
-            .mobile-narrative-card { display: block; }
-        }
-
-        /* --- HEADER --- */
-        .main-header {
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            transition: all 0.4s; background: transparent; padding: 20px 0;
-        }
-        .main-header.scrolled {
-            padding: 12px 0; background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .mobile-narrative-card { display: none; text-align: center; padding: 60px 20px; background: #fff; }
-    </style>
+    .pulse-dot { opacity: 1 !important; transform: scale(1) !important; }
+}
