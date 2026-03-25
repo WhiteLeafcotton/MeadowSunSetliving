@@ -138,9 +138,16 @@
   transform-origin:left center;
 }
 .mobile-narrative-card {
-        display: block;
+        display: block !important; /* Brings it back to life for phones */
+        visibility: visible;
+        padding: 60px 24px 20px 24px;
         text-align: center;
-        padding: 40px 20px;
+        background: #fff; /* Ensures it has a clean background */
+    }
+
+    /* Hide the desktop sidebar so you don't have double text */
+    .narrative-aside {
+        display: none !important;
     }
 /* =========================
    TOP SPROUT
