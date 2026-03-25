@@ -93,7 +93,7 @@
   /* layout becomes vertical */
   .blueprint-portal{
     display:block;
-    padding:40px 0;
+    padding:60px 0;
   }
 
   /* hide desktop sidebar */
@@ -108,11 +108,11 @@
     margin:0;
   }
 
-   .slide-container {
-        padding-top: 120px; /* keep top padding if needed */
-        padding-bottom: 20px; /* reduce bottom space */
-    }
-}  
+  .slide-container{
+    display:block;
+    width:100%;
+    padding:120px 0; /* space for sprouts */
+  }
 
   .photo-anchor{
     width:92%;
@@ -123,14 +123,12 @@
     overflow:visible;
   }
 
-  .main-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 16px;
-    display: block;        /* Add this */
-    vertical-align: bottom; /* Add this */
-}
+  .main-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:16px;
+  }
 
   /* =========================
      SPROUT SYSTEM (CLEAN)
@@ -161,19 +159,22 @@
   }
 
   /* BOTTOM SPROUT */
-   /* BOTTOM SPROUT - SNAPPED TO EDGE */
-  .pos-bottom-left {
-      bottom: 0 !important;   /* Snaps the dot to the very bottom */
-      right: 15px /* Adjust horizontal as needed */
+  .pos-bottom-left{
+    bottom:10px !important;
+    left:10px !important;
+    right:auto !important;
   }
 
-  .pos-bottom-left .blueprint-svg {
-      bottom: 0;             /* Lines start exactly at the bottom */
-      right: 0;
-  }
+  .pos-bottom-left .blueprint-svg{
+  bottom:-90px;   /* was -140px */
+  left:0;
+}
 
-  .pos-bottom-left .data-card {
-      bottom: -70px;         /* Keeps the text card readable below the photo */
+  .pos-bottom-left .data-card{
+    bottom:-160px;
+    left:200px;
+    width:200px;
+    text-align:left;
   }
 
   /* clean luxury text look */
@@ -202,12 +203,7 @@
     letter-spacing:1px;
   }
 
-.sprout-2, .sprout-4 {
-    position: absolute;
-    bottom: 0;         /* This forces it to the very bottom edge */
-    margin-bottom: 0;  /* Removes any ghost spacing */
-    display: block;    /* Ensures it doesn't behave like text */
-}
+
 
         
   /* always visible on mobile */
