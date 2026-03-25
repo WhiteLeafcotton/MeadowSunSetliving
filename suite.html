@@ -124,12 +124,14 @@
     overflow:visible;
   }
 
-  .main-photo img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    border-radius:16px;
-  }
+  .main-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;        /* Add this */
+    vertical-align: bottom; /* Add this */
+}
 
   /* =========================
      SPROUT SYSTEM (CLEAN)
@@ -160,17 +162,18 @@
   }
 
   /* BOTTOM SPROUT */
-  .pos-bottom-left {
-      bottom: 0 !important; /* container hugs bottom of photo */
+   .pos-bottom-left {
+      bottom: 5px !important; /* slightly higher than before */
   }
 
   .pos-bottom-left .blueprint-svg {
-      bottom: 0px; /* line almost touches the photo */
+      bottom: -50px; /* move the line up closer to the photo */
   }
 
   .pos-bottom-left .data-card {
-      bottom: -60px; /* info card stays connected but closer */
+      bottom: -80px; /* optional: move card up so it stays connected */
   }
+}
 
   /* clean luxury text look */
   .data-card{
