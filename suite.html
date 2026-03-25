@@ -163,23 +163,18 @@
   /* BOTTOM SPROUT */
    /* BOTTOM SPROUT - SNAPPED TO EDGE */
   .pos-bottom-left {
-      bottom: 0 !important;   /* Forces the sprout to the bottom edge */
-      right: 0 !important;    /* Forces the sprout to the right edge */
-      left: auto !important;  /* Clears any left positioning */
+      bottom: 0 !important;   /* Snaps the dot to the very bottom */
+      right: 15px !important; /* Adjust horizontal as needed */
   }
 
   .pos-bottom-left .blueprint-svg {
-      bottom: -10px;          /* Compensates for internal SVG padding */
-      right: -5px;            /* Snaps the gold line to the corner */
-      height: 140px;          /* Slightly shorter to look more balanced on mobile */
+      bottom: 0;             /* Lines start exactly at the bottom */
+      right: 0;
   }
 
   .pos-bottom-left .data-card {
-      bottom: -40px;          /* Moves text closer to the photo */
-      right: 130px;           /* Prevents text from hitting the screen edge */
-      width: 180px;
+      bottom: -70px;         /* Keeps the text card readable below the photo */
   }
-}
 
   /* clean luxury text look */
   .data-card{
