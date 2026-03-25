@@ -3426,80 +3426,67 @@ body {
 /* --- MOBILE ONLY: VERTICAL STACK & SPROUT ACTIVATION --- */
 /* --- MOBILE REFINEMENTS: FORCE VERTICAL STACK --- */
 <style>
-    /* --- SHARED ROOTS --- */
     :root {
-        --gold: #bfa37e; --deep: #1a1a1a; --black: #111; --gray: #666; --white: #ffffff;
+        --gold: #bfa37e; --white: #ffffff;
     }
 
-    /* --- WEB VIEW: 100% UNTOUCHED --- */
-    /* This section only runs on screens WIDER than 1100px */
-    @media (min-width: 1101px) {
-        .blueprint-portal { display: grid; grid-template-columns: 450px 1fr; background: #fff; padding: 0; overflow: hidden; }
-        .narrative-aside { padding: 0 10%; border-right: 1px solid #f0f0f0; display: flex; flex-direction: column; justify-content: center; height: 100vh; position: sticky; top: 0; }
-        .blueprint-stage { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 400px 0; margin-top: -300px; }
-        .slide-container { min-width: 100%; display: flex; align-items: center; justify-content: center; scroll-snap-align: center; }
-        .photo-anchor { position: relative; width: 800px; height: 450px; }
-        .main-photo img { width: 100%; height: 100%; object-fit: cover; box-shadow: 0 40px 90px rgba(0,0,0,0.1); }
-        .mobile-narrative-card { display: none; } /* Hide the mobile text on web */
-    }
-
-    /* --- MOBILE VIEW: THE FIX --- */
-    /* This section only runs on screens SMALLER than 1100px */
-    <style>
-    :root {
-        --gold: #bfa37e; --deep: #1a1a1a; --black: #111; --gray: #666; --white: #ffffff;
-    }
-
-    /* --- 1. SPROUT CORE LOGIC (Available to both Desktop & Mobile) --- */
-    .l-annotation { position: absolute; z-index: 100; transition: opacity 0.5s; }
+    /* --- GLOBAL SPROUT LOGIC (Same as your original) --- */
+    .l-annotation { position: absolute; z-index: 100; pointer-events: none; }
     .pulse-dot { 
         width: 10px; height: 10px; background: var(--gold); border-radius: 50%; 
-        transform: scale(0); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+        transform: scale(0); transition: 0.4s; 
     }
     .blueprint-svg { position: absolute; width: 400px; height: 200px; pointer-events: none; }
     .l-path { 
         fill: none; stroke: var(--gold); stroke-width: 1.2; 
         stroke-dasharray: 1000; stroke-dashoffset: 1000; 
-        transition: stroke-dashoffset 1.5s ease 0.4s; 
+        transition: stroke-dashoffset 1.2s ease 0.4s; 
     }
     .data-card { 
         position: absolute; width: 280px; opacity: 0; 
-        transform: translateY(15px); transition: 0.8s ease 1.2s; 
-        font-family: 'Inter', sans-serif;
+        transform: translateY(15px); transition: 0.7s ease 1.5s; 
     }
 
-    /* --- THE ACTIVATION TRIGGER --- */
-    /* When JavaScript adds 'is-active', these turn on */
+    /* --- THE TRIGGER --- */
     .slide-container.is-active .pulse-dot { transform: scale(1); opacity: 1; }
     .slide-container.is-active .l-path { stroke-dashoffset: 0; }
     .slide-container.is-active .data-card { opacity: 1; transform: translateY(0); }
 
-    /* --- 2. DESKTOP VIEW (Min-width 1101px) --- */
+    /* --- POSITIONING --- */
+    .pos-top-right .blueprint-svg { left: 0; bottom: 0; }
+    .pos-top-right .data-card { left: 260px; top: -140px; text-align: left; }
+    .pos-bottom-left .blueprint-svg { right: 0; top: 0; }
+    .pos-bottom-left .data-card { right: 260px; bottom: -140px; text-align: right; }
+
+    /* --- DESKTOP VIEW --- */
     @media (min-width: 1101px) {
-        .blueprint-portal { display: grid; grid-template-columns: 450px 1fr; background: #fff; overflow: hidden; }
+        .blueprint-portal { display: grid; grid-template-columns: 450px 1fr; background: #fff; }
         .narrative-aside { padding: 0 10%; border-right: 1px solid #f0f0f0; display: flex; flex-direction: column; justify-content: center; height: 100vh; position: sticky; top: 0; }
-        .blueprint-stage { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 400px 0; margin-top: -300px; }
-        .slide-container { min-width: 100%; display: flex; align-items: center; justify-content: center; scroll-snap-align: center; height: 100vh; }
+        .blueprint-stage { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding: 400px 0; margin-top: -300px; }
+        .slide-container { min-width: 100%; display: flex; align-items: center; justify-content: center; scroll-snap-align: center; }
         .photo-anchor { position: relative; width: 800px; height: 450px; }
-        .main-photo img { width: 100%; height: 100%; object-fit: cover; box-shadow: 0 40px 90px rgba(0,0,0,0.1); }
+        .main-photo img { width: 100%; height: 100%; object-fit: cover; }
         .mobile-narrative-card { display: none; }
-        
-        /* Sprout Positions for Desktop */
-        .pos-top-right .blueprint-svg { left: 0; bottom: 0; }
-        .pos-top-right .data-card { left: 260px; top: -140px; text-align: left; }
-        .pos-bottom-left .blueprint-svg { right: 0; top: 0; }
-        .pos-bottom-left .data-card { right: 260px; bottom: -140px; text-align: right; }
     }
 
-    /* --- 3. MOBILE VIEW (Max-width 1100px) --- */
+    /* --- MOBILE VIEW (The "Shrink" Fix) --- */
     @media (max-width: 1100px) {
         .narrative-aside { display: none !important; }
-        .blueprint-portal { display: block; }
+        .blueprint-portal { display: block; padding: 0; }
         .blueprint-stage { display: block; padding: 0; margin-top: 0; }
-        .slide-container { width: 100%; margin-bottom: 80px; padding: 0 20px; }
-        .photo-anchor { width: 100%; height: auto; aspect-ratio: 16/9; }
-        /* We hide sprouts on mobile because the lines fly off the small screen */
-        .l-annotation { display: none !important; } 
-        .mobile-narrative-card { display: block; text-align: center; padding: 60px 20px; }
+        .slide-container { width: 100%; margin-bottom: 120px; padding: 0 10px; }
+        .photo-anchor { width: 100%; height: auto; aspect-ratio: 16/9; position: relative; }
+        
+        /* THIS SHRINKS THE SPROUTS FOR MOBILE SCREENS */
+        .l-annotation { 
+            transform: scale(0.6); /* Shrinks the lines/text by 40% */
+            transform-origin: center;
+        }
+
+        /* Adjusting text cards so they don't overlap edges on small screens */
+        .pos-top-right .data-card { left: 100px; width: 200px; }
+        .pos-bottom-left .data-card { right: 100px; width: 200px; }
+        
+        .mobile-narrative-card { display: block; text-align: center; padding: 40px 20px; }
     }
 </style>
