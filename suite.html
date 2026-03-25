@@ -103,21 +103,24 @@
 
   /* 1. Kill the horizontal sliding behavior */
   .blueprint-stage {
-    display: block !important; 
-    overflow-x: visible !important; 
-    padding: 0 !important;
-    margin-top: 0 !important;
-    scroll-snap-type: none !important; /* Disables the "snapping" feel */
+    display: block !important;
+    /* Kill the massive desktop gaps */
+    padding: 0 !important; 
+    margin-top: 0 !important; 
+    height: auto !important;
+    overflow: visible !important;
   }
 
-  /* 2. Make slides stack vertically */
   .slide-container {
     display: block !important;
     width: 100% !important;
-    min-width: 100% !important;
-    padding: 80px 0 !important; /* Gap between stacked photos */
-    scroll-snap-align: none !important;
+    /* This creates a small, clean gap between the two photo sections */
+    padding: 40px 0 !important; 
+    min-height: auto !important;
   }
+
+ 
+
 
   .photo-anchor {
     width: 92%;
