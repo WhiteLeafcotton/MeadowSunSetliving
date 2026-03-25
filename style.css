@@ -3420,6 +3420,12 @@ body {
 /* --- CENTER-EDGE SPROUTS (FINAL ALIGNMENT) --- */
 /* --- STEPPED SPROUTS: DOWN/RIGHT & UP/LEFT --- */
 /* --- EXACT STEPPED SPROUTS: MOBILE --- */
+
 .mobile-narrative-card {
-    display: none;
+    display: none !important;
+}
+
+/* This keeps your desktop text on the left exactly as it is */
+.narrative-aside {
+    display: block;
 }
