@@ -3422,10 +3422,6 @@ body {
 /* --- EXACT STEPPED SPROUTS: MOBILE --- */
 
 .mobile-narrative-card {
-    display: none !important;
-}
-
-/* This keeps your desktop text on the left exactly as it is */
-.narrative-aside {
-    display: block;
+    display: none !important; /* Forces it to stay hidden on computers */
+    visibility: hidden;
 }
