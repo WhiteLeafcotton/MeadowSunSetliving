@@ -102,79 +102,141 @@
     .pos-bottom-left .data-card { right: 100px; width: 220px; }
 }
         
-@media (max-width: 1100px) {
-    .blueprint-portal { display: block !important; padding: 0; }
-    .narrative-aside { display: none !important; }
-    .blueprint-stage { display: block !important; padding: 0; }
+/* =========================
+   CLEAN MOBILE STACK (FINAL)
+========================= */
+@media (max-width: 768px){
 
-    .slide-container {
-        display: block !important;
-        width: 100%;
-        padding: 240px 0 !important; /* Huge space for the vertical sprouts */
-    }
+  /* layout becomes vertical */
+  .blueprint-portal{
+    display:block;
+    padding:60px 0;
+  }
 
-    .photo-anchor {
-        width: 90vw !important; /* Larger photo as requested */
-        max-width: 500px;
-        aspect-ratio: 16/9;
-        margin: 0 auto !important;
-        position: relative;
-        overflow: visible;
-    }
+  /* hide desktop sidebar */
+  .narrative-aside{
+    display:none;
+  }
 
-    /* --- SPROUT 01: UP THEN RIGHT --- */
-    .pos-top-right { 
-        display: block !important;
-        top: 20px !important; /* Pinned to top-left of image */
-        left: 20px !important;
-        transform: scale(0.65);
-    }
-    .pos-top-right .blueprint-svg {
-        top: -195px !important; 
-        left: 0 !important;
-    }
-    .pos-top-right .data-card {
-        top: -175px !important;
-        left: 210px !important; /* Lands at the end of the RIGHT turn */
-        text-align: left;
-    }
+  /* stacked images */
+  .blueprint-stage{
+    display:block;
+    padding:0;
+    margin:0;
+  }
 
-    /* --- SPROUT 02: DOWN THEN RIGHT --- */
-    .pos-bottom-left { 
-        display: block !important;
-        bottom: 20px !important; /* Pinned to bottom-left of image */
-        left: 20px !important;
-        right: auto !important;
-        top: auto !important;
-        transform: scale(0.65);
-    }
-    .pos-bottom-left .blueprint-svg {
-        bottom: -150px !important; 
-        left: 0 !important;
-    }
-    .pos-bottom-left .data-card {
-        bottom: -175px !important;
-        left: 210px !important; /* Lands at the end of the RIGHT turn */
-        text-align: left;
-    }
+  .slide-container{
+    display:block;
+    width:100%;
+    padding:120px 0; /* space for sprouts */
+  }
 
-    /* --- CLEAN GHOST LOOK --- */
-    .data-card {
-        background: transparent !important;
-        box-shadow: none !important;
-        border: none !important;
-        padding: 0 !important;
-        width: 240px !important;
-        position: absolute !important;
-    }
+  .photo-anchor{
+    width:92%;
+    max-width:500px;
+    margin:0 auto;
+    aspect-ratio:16/9;
+    position:relative;
+    overflow:visible;
+  }
 
-    .data-card h4 { font-size: 0.95rem !important; color: #000; margin: 2px 0; font-family: 'Playfair Display', serif; text-transform: uppercase; }
-    .data-card p { font-size: 0.75rem !important; color: #666; line-height: 1.4; }
-    .card-id { font-family: 'Inter'; font-size: 0.7rem; color: #999; letter-spacing: 1px; }
+  .main-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:16px;
+  }
 
-    .pulse-dot { opacity: 1 !important; transform: scale(1) !important; }
+  /* =========================
+     SPROUT SYSTEM (CLEAN)
+  ========================= */
+
+  .l-annotation{
+    display:block;
+    transform:scale(0.6);
+    transform-origin:left center;
+  }
+
+  /* TOP SPROUT */
+  .pos-top-right{
+    top:10px !important;
+    left:10px !important;
+  }
+
+  .pos-top-right .blueprint-svg{
+    top:-170px;
+    left:0;
+  }
+
+  .pos-top-right .data-card{
+    top:-150px;
+    left:200px;
+    width:200px;
+    text-align:left;
+  }
+
+  /* BOTTOM SPROUT */
+  .pos-bottom-left{
+    bottom:10px !important;
+    left:10px !important;
+    right:auto !important;
+  }
+
+  .pos-bottom-left .blueprint-svg{
+    bottom:-140px;
+    left:0;
+  }
+
+  .pos-bottom-left .data-card{
+    bottom:-160px;
+    left:200px;
+    width:200px;
+    text-align:left;
+  }
+
+  /* clean luxury text look */
+  .data-card{
+    background:transparent;
+    box-shadow:none;
+    border:none;
+    padding:0;
+  }
+
+  .data-card h4{
+    font-size:0.9rem;
+    color:#000;
+    font-family:'Playfair Display', serif;
+    text-transform:uppercase;
+  }
+
+  .data-card p{
+    font-size:0.75rem;
+    color:#666;
+  }
+
+  .card-id{
+    font-size:0.65rem;
+    color:#999;
+    letter-spacing:1px;
+  }
+
+  /* always visible on mobile */
+  .pulse-dot{
+    opacity:1;
+    transform:scale(1);
+  }
+
+  .l-path{
+    stroke-dashoffset:0;
+  }
+
+  /* remove huge desktop spacing */
+  .blueprint-stage{
+    padding:0;
+    margin:0;
+  }
+
 }
-
     
  
 </head>
