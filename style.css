@@ -3423,80 +3423,57 @@ body {
 /* --- FIXED & MIRRORED SPROUTS: MOBILE --- */
 /* --- MOBILE RESPONSIVE OVERRIDES --- */
 /* --- MOBILE REFINEMENTS --- */
+/* --- MOBILE ONLY: VERTICAL STACK & SPROUT ACTIVATION --- */
 @media (max-width: 1100px) {
-    /* Stack the Blueprint Portal */
-    .blueprint-portal {
-        display: flex;
-        flex-direction: column;
-        padding: 60px 0;
-    }
-
-    /* Keep text content centered and padded */
-    .narrative-aside {
-        height: auto;
-        position: relative;
-        padding: 0 30px 40px;
-        border-right: none;
-        text-align: center;
-    }
-
-    .aside-sticky {
-        position: relative;
-        top: 0;
-    }
-
-    .luxe-divider {
-        margin: 20px auto 30px;
-    }
-
-    /* Change horizontal scroll to vertical stack */
+    /* 1. Force the stage to stack vertically instead of scroll horizontally */
     .blueprint-stage {
         display: flex;
         flex-direction: column;
-        overflow-x: visible;
-        margin-top: 0;
+        overflow-x: hidden; /* Disable horizontal swipe */
         padding: 0;
-        gap: 120px; /* Space between the two photos */
+        margin-top: 50px;
+        gap: 150px; /* Space between the two photos */
     }
 
+    /* 2. Make containers full width and visible */
     .slide-container {
         min-width: 100%;
+        opacity: 1; /* Ensure they aren't hidden */
         padding: 20px;
     }
 
-    /* Resize the photo container for mobile screens */
+    /* 3. Scale the photo for mobile screens */
     .photo-anchor {
-        width: 100%;
-        height: auto;
+        width: 100% !important;
+        height: auto !important;
         aspect-ratio: 16 / 9;
     }
 
-    /* RE-ENABLE SPROUTS FOR MOBILE */
+    /* 4. FORCE SPROUTS TO SHOW (Overriding your previous display:none) */
     .l-annotation {
-        display: block !important; /* Overriding your previous display:none */
-        transform: scale(0.7); /* Slightly smaller for mobile screens */
+        display: block !important;
+        transform: scale(0.6); /* Scale down lines so they fit the phone screen */
+        pointer-events: none;  /* Prevents the cards from blocking scrolls */
     }
 
-    /* Adjust Annotation positions so they don't bleed off screen */
+    /* 5. Adjust Sprout positions so they stay on screen */
     .pos-top-right .data-card {
-        left: 40px;
-        top: -110px;
-        width: 200px;
+        left: 20px;
+        top: -100px;
+        width: 180px;
+        text-align: left;
     }
 
     .pos-bottom-left .data-card {
-        right: 40px;
-        bottom: -110px;
-        width: 200px;
+        right: 20px;
+        bottom: -100px;
+        width: 180px;
+        text-align: right;
     }
 
+    /* Adjust the SVG lines to be shorter for mobile */
     .blueprint-svg {
-        width: 150px; /* Shorter lines for mobile */
-    }
-
-    /* Hide the desktop-specific mobile card you had at the bottom 
-       since the main content now handles mobile view */
-    .mobile-narrative-card {
-        display: none;
+        width: 150px;
+        height: 100px;
     }
 }
