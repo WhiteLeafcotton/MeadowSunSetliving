@@ -3486,3 +3486,35 @@ body {
 .mobile-info-stack {
     display: none;
 }
+/* --- MOBILE OVERRIDE: TARGETS ONLY PHONES --- */
+@media (max-width: 1100px) {
+    
+    /* 1. Turn off horizontal swipe and stacking */
+    .blueprint-stage {
+        display: block !important;       /* Changes 'row' to 'stack' */
+        overflow-x: visible !important;  /* Stops the side-swipe */
+        scroll-snap-type: none !important; /* Kills the 'snapping' effect */
+        padding: 0 !important;           /* Removes the huge web gaps */
+        margin-top: 50px !important;     /* Adds clean spacing at the top */
+    }
+
+    /* 2. Make each slide take up its own vertical space */
+    .slide-container {
+        display: block !important;
+        min-width: 100% !important;
+        margin-bottom: 100px !important; /* Space between Photo 1 and Photo 2 */
+        padding: 0 20px !important;
+    }
+
+    /* 3. Resize the photo for a vertical phone screen */
+    .photo-anchor {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 9;
+    }
+
+    /* 4. Hide the lines/dots that only work on wide screens */
+    .l-annotation {
+        display: none !important;
+    }
+}
