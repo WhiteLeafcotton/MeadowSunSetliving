@@ -3426,67 +3426,63 @@ body {
 /* --- MOBILE ONLY: VERTICAL STACK & SPROUT ACTIVATION --- */
 /* --- MOBILE REFINEMENTS: FORCE VERTICAL STACK --- */
 @media (max-width: 1100px) {
-    /* 1. Reset the stage for a clean vertical flow */
+    /* 1. Stack the photos and text */
     .blueprint-stage {
         display: flex !important;
         flex-direction: column !important;
-        height: auto !important;
-        padding: 40px 0 !important;
-        margin: 0 !important;
+        gap: 80px !important; /* Space between each photo-text block */
+        padding: 20px !important;
         overflow-x: hidden !important;
     }
 
     .slide-container {
-        display: block !important;
+        display: flex !important;
+        flex-direction: column !important; /* Stack Photo then Text */
+        align-items: center;
         min-width: 100% !important;
-        margin-bottom: 200px !important; /* Huge gap so sprouts don't overlap */
-        padding: 0 20px !important;
     }
 
-    /* 2. Make the photo fit the phone width */
-    .photo-anchor {
-        width: 100% !important;
-        height: auto !important;
-        aspect-ratio: 16 / 9;
-        margin: 0 auto;
-    }
-
-    /* 3. RE-POSITION SPROUTS FOR VERTICAL SCREENS */
+    /* 2. Hide the floating lines and dots on mobile */
     .l-annotation {
-        display: block !important;
-        transform: scale(0.8) !important;
-    }
-
-    /* TOP SPROUT: Move card ABOVE the photo */
-    .pos-top-right .data-card {
-        left: 0 !important;
-        top: -140px !important; /* Moves it above the image */
-        width: 250px !important;
-        text-align: left;
-    }
-
-    /* BOTTOM SPROUT: Move card BELOW the photo */
-    .pos-bottom-left .data-card {
-        right: 0 !important;
-        bottom: -140px !important; /* Moves it below the image */
-        width: 250px !important;
-        text-align: right;
-    }
-
-    /* 4. Flatten the gold lines so they don't stick out sideways */
-    .blueprint-svg {
-        width: 100px !important;
-        height: 100px !important;
-    }
-
-    /* Hide the 'Swipe' hint since we're scrolling now */
-    .swipe-action {
         display: none !important;
     }
 
-    /* Ensure the text descriptions are visible */
-    .data-card p {
-        font-size: 0.8rem;
-        line-height: 1.3;
+    /* 3. Style the cards to look premium under the photo */
+    .mobile-info-stack {
+        display: block !important; /* Only shows on mobile */
+        width: 100%;
+        margin-top: 25px;
+        text-align: left;
     }
+
+    .mobile-info-item {
+        margin-bottom: 25px;
+        padding-left: 15px;
+        border-left: 2px solid var(--gold);
+    }
+
+    .mobile-info-item h4 {
+        font-family: 'Playfair Display';
+        font-size: 1.2rem;
+        color: var(--deep);
+        margin: 5px 0;
+    }
+
+    .mobile-info-item p {
+        font-size: 0.9rem;
+        color: var(--gray);
+        line-height: 1.5;
+    }
+
+    .card-id-mini {
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+        color: var(--gold);
+        text-transform: uppercase;
+    }
+}
+
+/* Hide the mobile stack on Desktop */
+.mobile-info-stack {
+    display: none;
 }
