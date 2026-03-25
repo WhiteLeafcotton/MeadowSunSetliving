@@ -162,23 +162,29 @@
    ✅ BOTTOM SPROUT (BACK)
 ========================= */
 
+/* =========================
+   BOTTOM SPROUT (BOTTOM-RIGHT)
+========================= */
+
 .pos-bottom-left{
   display:block !important;
   bottom:0 !important;
-  left:8px !important;
-  right:auto !important;
+  right:8px !important;   /* move it to the right */
+  left:auto !important;   /* reset left */
 }
 
 .pos-bottom-left .blueprint-svg{
-  bottom:-70px;  /* 🔥 key: not too far down */
-  left:0;
+  bottom:-70px;  /* keeps sprout slightly below photo */
+  right:0;       /* align SVG to right */
+  left:auto;
 }
 
 .pos-bottom-left .data-card{
-  bottom:-95px;  /* tighter than before */
-  left:150px;
+  bottom:-95px;  /* tight positioning */
+  right:150px;   /* same offset from right as top sprout is from left */
+  left:auto;
   width:170px;
-  text-align:left;
+  text-align:right;  /* mirror top-left style */
 }
 
   /* =========================
