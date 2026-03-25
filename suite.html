@@ -84,51 +84,9 @@
 
         
 
-/* --- FIXED & BALANCED BLUEPRINT SECTION --- */
-.blueprint-portal { 
-    display: grid; 
-    grid-template-columns: 450px 1fr; 
-    background: #fff; 
-    padding: 0; /* Removed the 150px that pushed everything down */
-    overflow: hidden; 
-}
 
-.narrative-aside { 
-    padding: 0 10%; 
-    border-right: 1px solid #f0f0f0; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* This forces the text to the vertical center */
-    height: 100vh;           /* Takes up the full screen height */
-    position: sticky;        
-    top: 0;
-}
-
-.aside-sticky { 
-    width: 100%;
-    text-align: left;
-    /* No 'top' or 'transform' needed; Flexbox handles it now */
-}
-.main-header {
-    position: fixed;
-    top: 0; 
-    width: 100%; 
-    z-index: 1000;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    background: transparent;
-    padding: 20px 0;
-}
-
-.main-header.scrolled {
-    padding: 12px 0;
-    background: rgba(255, 255, 255, 0.75); /* Soft white tint */
-    backdrop-filter: blur(15px); /* THE FROSTED EFFECT */
-    -webkit-backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-}
     
-    </style>
+ 
 </head>
 
 <body class="is-slide-1">
