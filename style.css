@@ -3421,101 +3421,66 @@ body {
 /* --- STEPPED SPROUTS: DOWN/RIGHT & UP/LEFT --- */
 /* --- EXACT STEPPED SPROUTS: MOBILE --- */
 /* --- FIXED & MIRRORED SPROUTS: MOBILE --- */
+/* --- MOBILE RESPONSIVE OVERRIDES --- */
 @media (max-width: 1100px) {
-    .blueprint-portal { display: block !important; padding: 0; }
-    .narrative-aside { display: none !important; }
-    .blueprint-stage { display: block !important; padding: 0; }
+    .blueprint-portal {
+        display: block; /* Stack vertically */
+        padding: 60px 0;
+    }
+
+    .narrative-aside {
+        height: auto;
+        position: relative;
+        border-right: none;
+        padding: 0 20px 40px;
+        text-align: center;
+    }
+
+    .aside-sticky {
+        position: relative;
+        top: 0;
+    }
+
+    .blueprint-stage {
+        display: block; /* Remove horizontal scroll */
+        padding: 0;
+        margin-top: 0;
+        overflow-x: hidden;
+    }
 
     .slide-container {
-        display: block !important;
+        padding: 80px 10px; /* Space between photos */
         width: 100%;
-        padding: 360px 0 !important; 
+        min-height: auto;
     }
 
     .photo-anchor {
-        width: 90vw !important;
-        max-width: 500px;
-        aspect-ratio: 16/9;
-        margin: 0 auto !important;
-        position: relative;
-        overflow: visible;
+        width: 100%; /* Make photo fit screen width */
+        max-width: 100vw;
+        height: 60vh; /* Controlled height for mobile */
     }
 
-    /* --- SPROUT 01: TOP LEFT (LOCKED) --- */
-    .pos-top-right { 
-        display: block !important;
-        top: 20px !important; 
-        left: 20px !important;
-        right: auto !important;
-        transform: scale(0.65);
-        position: absolute;
-    }
-    .pos-top-right .blueprint-svg { top: -195px !important; left: 0 !important; }
-    .pos-top-right .data-card { top: -175px !important; left: 210px !important; text-align: left; }
-
-    /* --- SPROUT 02: BOTTOM RIGHT CORNER (FLIPPED & MIRRORED) --- */
-    .pos-bottom-left { 
-        display: block !important;
-        bottom: 0px !important; 
-        right: 20px !important; 
-        left: auto !important;
-        top: auto !important;
-        transform: scale(0.65);
-        position: absolute;
+    /* Adjusting the "Sprouts" for Mobile */
+    .l-annotation {
+        display: block !important; /* Force show them */
+        transform: scale(0.7); /* Shrink slightly to fit mobile screens */
     }
 
-    .pos-bottom-left .blueprint-svg {
-        position: absolute !important;
-        top: 0 !important;
-        right: 0 !important;
-        left: auto !important;
-        /* scaleY(-1) flips it DOWN, scaleX(-1) mirrors it to turn RIGHT */
-        transform: scaleY(-1) scaleX(-1); 
-        transform-origin: top right;
-        overflow: visible;
-    }
+    /* Position adjustments for mobile sprouts so they don't clip off screen */
+    .pos-top-right { left: 5% !important; top: 15% !important; }
+    .pos-bottom-left { right: 5% !important; bottom: 15% !important; }
 
-    .pos-bottom-left .data-card {
-        position: absolute !important;
-        top: 155px !important; 
-        /* Negative value pulls the text to the RIGHT of the vertical line */
-        right: -310px !important; 
-        left: auto !important;
-        text-align: left; /* Text remains left-aligned for a clean look */
-        width: 280px !important;
-        transform: scaleY(-1); 
-    }
-
-    /* --- SHARED MOBILE UI --- */
     .data-card {
-        background: transparent !important;
-        box-shadow: none !important;
-        border: none !important;
-        padding: 0 !important;
-        position: absolute !important;
-    }
-
-    .data-card h4 { 
-        font-family: 'Playfair Display', serif; 
-        font-size: 0.95rem !important; 
-        color: #000; 
-        margin: 2px 0; 
-        text-transform: uppercase; 
+        width: 200px; /* Slimmer cards */
+        background: rgba(255,255,255,0.9);
+        padding: 10px;
+        backdrop-filter: blur(5px);
     }
     
-    .data-card p { 
-        font-size: 0.75rem !important; 
-        color: #666; 
-        line-height: 1.4; 
-    }
+    .pos-top-right .data-card { left: 40px; top: -60px; }
+    .pos-bottom-left .data-card { right: 40px; bottom: -60px; }
 
-    .pulse-dot { 
-        opacity: 1 !important; 
-        transform: scale(1) !important; 
-        position: absolute;
-        top: -5px;
-        right: -5px; 
-        left: auto !important;
-        z-index: 10;
+    .blueprint-svg {
+        width: 150px; /* Shorter lines for mobile */
     }
 }
