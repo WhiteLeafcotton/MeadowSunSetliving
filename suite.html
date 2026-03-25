@@ -111,7 +111,7 @@
   .slide-container {
     display: block;
     width: 100%;
-    padding: 10px 0;    /* This controls the gap between the two photos */
+    padding: 25px 0;    /* This controls the gap between the two photos */
     min-width: auto;     /* Overrides the desktop min-width */
   }
 
@@ -128,44 +128,58 @@
     border-radius:16px;
   }
 
-  /* =========================
-     SPROUT SYSTEM (CLEAN)
-  ========================= */
+/* =========================
+   SPROUT SYSTEM (CLEAN)
+========================= */
 
-  .l-annotation{
-    display:block;
-    transform:scale(0.55); /* slightly smaller = cleaner */
-    transform-origin:left center;
-  }
+.l-annotation{
+  display:block;
+  transform:scale(0.55);
+  transform-origin:left center;
+}
 
-  /* =========================
-     TOP SPROUT (TIGHTENED)
-  ========================= */
+/* =========================
+   TOP SPROUT
+========================= */
 
-  .pos-top-right{
-    top:0 !important;
-    left:8px !important;
-  }
+.pos-top-right{
+  top:0 !important;
+  left:8px !important;
+}
 
-  .pos-top-right .blueprint-svg{
-    top:-140px; /* pulled closer */
-    left:0;
-  }
+.pos-top-right .blueprint-svg{
+  top:-130px;  /* slightly tighter */
+  left:0;
+}
 
-  .pos-top-right .data-card{
-    top:-120px; /* tighter to line */
-    left:160px;
-    width:180px;
-    text-align:left;
-  }
+.pos-top-right .data-card{
+  top:-110px;
+  left:150px;
+  width:170px;
+}
 
-  /* =========================
-     ❌ REMOVE BOTTOM SPROUT
-  ========================= */
+/* =========================
+   ✅ BOTTOM SPROUT (BACK)
+========================= */
 
-  .pos-bottom-left{
-    display:none !important;
-  }
+.pos-bottom-left{
+  display:block !important;
+  bottom:0 !important;
+  left:8px !important;
+  right:auto !important;
+}
+
+.pos-bottom-left .blueprint-svg{
+  bottom:-70px;  /* 🔥 key: not too far down */
+  left:0;
+}
+
+.pos-bottom-left .data-card{
+  bottom:-95px;  /* tighter than before */
+  left:150px;
+  width:170px;
+  text-align:left;
+}
 
   /* =========================
      TEXT CLEANUP
