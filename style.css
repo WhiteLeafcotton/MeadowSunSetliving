@@ -3426,58 +3426,67 @@ body {
 /* --- MOBILE ONLY: VERTICAL STACK & SPROUT ACTIVATION --- */
 /* --- MOBILE REFINEMENTS: FORCE VERTICAL STACK --- */
 @media (max-width: 1100px) {
-    
-    /* 1. Kill the horizontal scroll & snap */
+    /* 1. Reset the stage for a clean vertical flow */
     .blueprint-stage {
-        display: block !important;    /* Overrides 'flex' which causes the row */
-        overflow-x: visible !important; 
-        scroll-snap-type: none !important; 
-        padding: 0 !important;
-        margin-top: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 40px 0 !important;
+        margin: 0 !important;
+        overflow-x: hidden !important;
     }
 
-    /* 2. Make slides stack naturally */
     .slide-container {
         display: block !important;
         min-width: 100% !important;
-        width: 100%;
-        margin-bottom: 250px; /* Space between the two photos */
-        padding: 0 20px;
-        scroll-snap-align: none !important;
+        margin-bottom: 200px !important; /* Huge gap so sprouts don't overlap */
+        padding: 0 20px !important;
     }
 
-    /* 3. Ensure the photo anchor handles the sprouts */
+    /* 2. Make the photo fit the phone width */
     .photo-anchor {
         width: 100% !important;
-        max-width: 600px;
         height: auto !important;
         aspect-ratio: 16 / 9;
         margin: 0 auto;
-        position: relative;
     }
 
-    /* 4. Restore and scale the sprouts */
+    /* 3. RE-POSITION SPROUTS FOR VERTICAL SCREENS */
     .l-annotation {
         display: block !important;
-        transform: scale(0.5); /* Scale down further for phones */
-        transform-origin: center;
+        transform: scale(0.8) !important;
     }
 
-    /* 5. Adjust text cards so they don't go off-screen */
+    /* TOP SPROUT: Move card ABOVE the photo */
     .pos-top-right .data-card {
-        left: 20px;
-        top: -90px;
-        width: 160px;
+        left: 0 !important;
+        top: -140px !important; /* Moves it above the image */
+        width: 250px !important;
+        text-align: left;
     }
 
+    /* BOTTOM SPROUT: Move card BELOW the photo */
     .pos-bottom-left .data-card {
-        right: 20px;
-        bottom: -90px;
-        width: 160px;
+        right: 0 !important;
+        bottom: -140px !important; /* Moves it below the image */
+        width: 250px !important;
+        text-align: right;
     }
 
-    /* Hide the "Swipe to Inspect" since it's now a vertical scroll */
-    .is-slide-1 .swipe-action {
+    /* 4. Flatten the gold lines so they don't stick out sideways */
+    .blueprint-svg {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    /* Hide the 'Swipe' hint since we're scrolling now */
+    .swipe-action {
         display: none !important;
+    }
+
+    /* Ensure the text descriptions are visible */
+    .data-card p {
+        font-size: 0.8rem;
+        line-height: 1.3;
     }
 }
