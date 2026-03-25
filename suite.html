@@ -19,7 +19,10 @@
             --white: #ffffff;
         }
 
-        /* --- GLOBAL & HERO --- */
+        /* --- HERO & theoneNAV p--- */
+        /* --- THIS IS THE CSS PART --- */
+/* --- FROSTED NAV ON SCROLL --- */
+
         .hero-suites {
             position: relative;
             height: 80vh;
@@ -32,105 +35,175 @@
             color: var(--white);
             text-align: center;
         }
-        .hero-light-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 1; }
+
+
+        /* --- BALANCED VERTICAL TEXT --- */
+/* --- BALANCED LEFT CARD --- */
+
+       .hero-light-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 1; }
         .hero-content { position: relative; z-index: 2; max-width: 900px; padding: 0 20px; }
+        .hero-badge { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 30px; }
+        .badge-line { width: 40px; height: 1px; background: var(--gold); }
+        .badge-text { font-family: 'Inter'; text-transform: uppercase; letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); }
         .hero-content h1 { font-family: 'Playfair Display'; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 25px; }
         .italic-serif { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 300; }
 
-        /* --- NAV STYLING --- */
-        .main-header { position: fixed; top: 0; width: 100%; z-index: 1000; transition: all 0.4s; background: transparent; padding: 20px 0; }
-        .main-header.scrolled { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(15px); padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        /* --- BLUEPRINT SECTION --- */
+        .blueprint-portal { display: grid; grid-template-columns: 400px 1fr; background: #fff; padding: 150px 0; overflow: hidden; }
+        .narrative-aside { padding-left: 10%; border-right: 1px solid #f0f0f0; }
+        .aside-sticky { position: sticky; top: 150px; z-index: 10; }
+        .display-serif { font-family: 'Playfair Display'; font-size: 3.5rem; line-height: 1.1; margin: 20px 0; }
+        .luxe-divider { width: 40px; height: 1px; background: var(--gold); margin-bottom: 30px; }
 
-        /* --- DESKTOP BLUEPRINT RULES (Wider than 1100px) --- */
-        @media (min-width: 1101px) {
-            .blueprint-portal { display: grid; grid-template-columns: 450px 1fr; background: #fff; overflow: hidden; }
-            .narrative-aside { 
-                padding: 0 10%; 
-                border-right: 1px solid #f0f0f0; 
-                display: flex; 
-                flex-direction: column; 
-                justify-content: center; 
-                height: 100vh; 
-                position: sticky; 
-                top: 0; 
-            }
-            .blueprint-stage { 
-                display: flex; 
-                overflow-x: auto; 
-                scroll-snap-type: x mandatory; 
-                scrollbar-width: none; 
-                padding: 400px 0; 
-                margin-top: -300px; 
-            }
-            .slide-container { min-width: 100%; display: flex; align-items: center; justify-content: center; scroll-snap-align: center; }
-            .photo-anchor { position: relative; width: 800px; height: 450px; }
-            .main-photo img { width: 100%; height: 100%; object-fit: cover; box-shadow: 0 40px 90px rgba(0,0,0,0.1); }
-            .mobile-narrative-card { display: none; } /* Hide mobile text on desktop */
-        }
+        .swipe-action { margin-top: 30px; display: none; align-items: center; gap: 10px; }
+        .is-slide-1 .swipe-action { display: flex; }
+        .amenity-list { margin-top: 25px; list-style: none; padding: 0; display: none; }
+        .is-slide-2 .amenity-list { display: block; }
+        .amenity-list li { font-family: 'Inter'; font-size: 0.85rem; color: var(--gray); margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
 
-        /* --- MOBILE BLUEPRINT RULES (Smaller than 1100px) --- */
-        @media (max-width: 1100px) {
-            .narrative-aside { display: none !important; } /* Hide desktop side-text */
-            .blueprint-portal { display: block; padding: 0; }
-            .blueprint-stage { display: block; padding: 0; margin-top: 0; }
-            .slide-container { width: 100%; margin-bottom: 50px; padding: 0 20px; }
-            .photo-anchor { width: 100%; height: auto; aspect-ratio: 16/9; }
-            .main-photo img { width: 100%; height: auto; }
-            .l-annotation { display: none !important; } /* Hide sprouts on mobile */
-            .mobile-narrative-card { display: block; text-align: center; padding: 60px 20px; background: #fff; }
-        }
+        .blueprint-stage { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 400px 0; margin-top: -300px; }
+        .slide-container { min-width: 100%; display: flex; align-items: center; justify-content: center; scroll-snap-align: center; }
+        .photo-anchor { position: relative; width: 800px; height: 450px; }
+        .main-photo img { width: 100%; height: 100%; object-fit: cover; box-shadow: 0 40px 90px rgba(0,0,0,0.1); }
 
-        /* --- SPROUTS & ANNOTATIONS (Common) --- */
+        /* SPROUTS (L-Annotations) */
         .l-annotation { position: absolute; z-index: 100; }
-        .pulse-dot { width: 10px; height: 10px; background: var(--gold); border-radius: 50%; }
+        .pulse-dot { width: 10px; height: 10px; background: var(--gold); border-radius: 50%; opacity: 0; transform: scale(0); transition: 0.4s; }
         .blueprint-svg { position: absolute; width: 400px; height: 200px; pointer-events: none; }
         .l-path { fill: none; stroke: var(--gold); stroke-width: 1.2; stroke-dasharray: 1000; stroke-dashoffset: 1000; transition: stroke-dashoffset 1.2s ease 0.4s; }
         .data-card { position: absolute; width: 280px; opacity: 0; transform: translateY(15px); transition: 0.7s ease 1.5s; }
+
+        .slide-container.is-active .pulse-dot { opacity: 1; transform: scale(1); }
         .slide-container.is-active .l-path { stroke-dashoffset: 0; }
         .slide-container.is-active .data-card { opacity: 1; transform: translateY(0); }
-        .display-serif { font-family: 'Playfair Display'; font-size: 3rem; }
-        .luxe-divider { width: 40px; height: 1px; background: var(--gold); margin: 20px 0; }
-        .gold-tag { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; }
+
+        .pos-top-right .blueprint-svg { left: 0; bottom: 0; }
+        .pos-top-right .data-card { left: 260px; top: -140px; text-align: left; }
+        .pos-bottom-left .blueprint-svg { right: 0; top: 0; }
+        .pos-bottom-left .data-card { right: 260px; bottom: -140px; text-align: right; }
+
+        @media (max-width: 1100px) { .blueprint-portal { grid-template-columns: 1fr; } .l-annotation { display: none; } }
+
+/* --- FIXED & BALANCED BLUEPRINT SECTION --- */
+.blueprint-portal { 
+    display: grid; 
+    grid-template-columns: 450px 1fr; 
+    background: #fff; 
+    padding: 0; /* Removed the 150px that pushed everything down */
+    overflow: hidden; 
+}
+
+.narrative-aside { 
+    padding: 0 10%; 
+    border-right: 1px solid #f0f0f0; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* This forces the text to the vertical center */
+    height: 100vh;           /* Takes up the full screen height */
+    position: sticky;        
+    top: 0;
+}
+
+.aside-sticky { 
+    width: 100%;
+    text-align: left;
+    /* No 'top' or 'transform' needed; Flexbox handles it now */
+}
+.main-header {
+    position: fixed;
+    top: 0; 
+    width: 100%; 
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    padding: 20px 0;
+}
+
+.main-header.scrolled {
+    padding: 12px 0;
+    background: rgba(255, 255, 255, 0.75); /* Soft white tint */
+    backdrop-filter: blur(15px); /* THE FROSTED EFFECT */
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+    
     </style>
 </head>
 
-<body>
+<body class="is-slide-1">
 
     <header class="main-header">
         <nav class="navbar">
             <a href="index.html" class="logo">
                 <div class="logo-type">
                     <span class="brand-name">Sunset Meadow</span>
+                    <span class="brand-sub">Assisted Living</span>
                 </div>
             </a>
-            <ul class="nav-links">
-                <li><a href="payment.html">Payment</a></li>
-                <li><a href="#" class="active">Suites</a></li>
-            </ul>
+            <div class="nav-wrapper">
+                <ul class="nav-links">
+                    <li class="dropdown">
+                        <a href="#" class="nav-item">Resident Experience <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">THE TABLE</a></li>
+                            <li><a href="#">Car Service</a></li>
+                            <li><a href="#">Life Enrichment</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="about.html" class="nav-item">About Us <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Leadership Team</a></li>
+                            <li><a href="#">Mission & Vision</a></li>
+                            <li><a href="#">Admission Process</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="payment.html" class="nav-item">Payment Solutions</a></li>
+                    <li><a href="#" class="nav-item active">Suites</a></li>
+                </ul>
+                <a href="tel:YOURNUMBER" class="nav-cta">Contact</a>
+            </div>
+            <div class="menu-button" onclick="toggleMenu()">
+                <span class="bar"></span><span class="bar"></span>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero-suites">
+        <section class="hero hero-suites">
             <div class="hero-light-overlay"></div>
             <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-line"></span>
+                    <span class="badge-text">Architectural Calm</span>
+                </div>
                 <h1>Private Sanctuaries <br><span class="italic-serif">Sunset Meadow</span></h1>
+                <p>Bridging the gap between high-end professional assistance and the intimate comfort of a private residence.</p>
             </div>
         </section>
 
-        <div class="mobile-narrative-card">
-            <span class="gold-tag">Residential Suite</span>
-            <h2 class="display-serif">The Blueprint <br><em>of Comfort.</em></h2>
-            <div class="luxe-divider" style="margin: 20px auto;"></div>
-            <p>Every square inch is a masterpiece of calculated comfort.</p>
-        </div>
-
         <section class="blueprint-portal">
             <div class="narrative-aside">
-                <span class="gold-tag">Residential Suite</span>
-                <h2 class="display-serif">The Blueprint <br><em>of Comfort.</em></h2>
-                <div class="luxe-divider"></div>
-                <p>Every square inch of Sunset Meadow is a calculated masterpiece.</p>
+                <div class="aside-sticky">
+                    <span class="gold-tag">Residential Suite</span>
+                    <h2 class="display-serif">The Blueprint <br><em>of Comfort.</em></h2>
+                    <div class="luxe-divider"></div>
+                    <p class="narrative-text">Every square inch of Sunset Meadow is a calculated masterpiece.</p>
+                    
+                    <div class="swipe-action">
+                        <div class="swipe-line"></div>
+                        <span>Swipe to Inspect</span>
+                    </div>
+
+                    <ul class="amenity-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Private Bathroom & Shower</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Individual Climate Control</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Emergency Call System</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Bespoke Oak Finishes</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="blueprint-stage" id="scrollStage">
@@ -138,12 +211,22 @@
                     <div class="photo-anchor">
                         <div class="main-photo">
                             <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200" alt="Suite Architecture">
-                            <div class="l-annotation" style="top: 10%; left: 20%;">
+                            <div class="l-annotation pos-top-right" style="top: 10%; left: 20%;">
                                 <div class="pulse-dot"></div>
                                 <svg class="blueprint-svg" viewBox="0 0 400 200"><path class="l-path" d="M 5,195 V 75 H 250" /></svg>
                                 <div class="data-card">
+                                    <span class="card-id">01 / ARCHITECTURE</span>
                                     <h4>Silent-Core Integrity</h4>
                                     <p>Triple-insulated structural framing ensures total privacy.</p>
+                                </div>
+                            </div>
+                            <div class="l-annotation pos-bottom-left" style="bottom: 10%; right: 20%;">
+                                <div class="pulse-dot"></div>
+                                <svg class="blueprint-svg" viewBox="0 0 400 200"><path class="l-path" d="M 395,5 V 125 H 145" /></svg>
+                                <div class="data-card">
+                                    <span class="card-id">02 / INTERIORS</span>
+                                    <h4>Medical-Grade Oak</h4>
+                                    <p>Bespoke Italian flooring with integrated friction-grip.</p>
                                 </div>
                             </div>
                         </div>
@@ -154,10 +237,20 @@
                     <div class="photo-anchor">
                         <div class="main-photo">
                             <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200" alt="Suite Wellness">
-                            <div class="l-annotation" style="top: 10%; left: 20%;">
+                            <div class="l-annotation pos-top-right" style="top: 10%; left: 20%;">
                                 <div class="pulse-dot"></div>
                                 <svg class="blueprint-svg" viewBox="0 0 400 200"><path class="l-path" d="M 5,195 V 75 H 250" /></svg>
                                 <div class="data-card">
+                                    <span class="card-id">03 / WELLNESS</span>
+                                    <h4>Hydro-Precision</h4>
+                                    <p>Digital temperature governors maintain therapeutic levels.</p>
+                                </div>
+                            </div>
+                            <div class="l-annotation pos-bottom-left" style="bottom: 10%; right: 20%;">
+                                <div class="pulse-dot"></div>
+                                <svg class="blueprint-svg" viewBox="0 0 400 200"><path class="l-path" d="M 395,5 V 125 H 145" /></svg>
+                                <div class="data-card">
+                                    <span class="card-id">04 / AIR QUALITY</span>
                                     <h4>HEPA-Stealth Flow</h4>
                                     <p>A hidden convection system cycling fresh air.</p>
                                 </div>
@@ -169,26 +262,152 @@
         </section>
     </main>
 
+
+<div class="mobile-narrative-card">
+    <span class="gold-tag">Residential Suite</span>
+    <h2 class="display-serif" style="font-size: 2.5rem;">The Blueprint <br><em>of Comfort.</em></h2>
+    <div class="luxe-divider" style="margin: 20px auto;"></div>
+    <p class="narrative-text">Every square inch of Sunset Meadow is a calculated masterpiece, bridging the gap between professional assistance and intimate home comfort.</p>
+    
+    <ul class="amenity-list" style="display: block; text-align: left; margin-top: 40px;">
+        <li style="margin-bottom: 15px;"><i class="fa-solid fa-circle-check" style="color:var(--gold);"></i> Private Bathroom & Shower</li>
+        <li style="margin-bottom: 15px;"><i class="fa-solid fa-circle-check" style="color:var(--gold);"></i> Individual Climate Control</li>
+        <li style="margin-bottom: 15px;"><i class="fa-solid fa-circle-check" style="color:var(--gold);"></i> Emergency Call System</li>
+        <li style="margin-bottom: 15px;"><i class="fa-solid fa-circle-check" style="color:var(--gold);"></i> Bespoke Oak Finishes</li>
+    </ul>
+</div>
+
+
+    <footer class="video-footer animate-on-scroll">
+        <video autoplay muted loop playsinline class="footer-video-bg">
+            <source src="timelapse-of-noctilucent-clouds-and-a-vibrant-sunrise.mp4" type="video/mp4">
+        </video>
+        <div class="footer-tint"></div>
+        <div class="footer-fox"><img src="fox.svg" alt="Fox Logo"></div>
+        <div class="footer-content">
+            <div class="footer-actions">
+                <button class="btn-gold" onclick="openModal()">Schedule a Tour</button>
+                <a href="tel:0000000000" class="btn-phone">Call Now</a>
+            </div>
+            <div class="footer-grid">
+                <div class="grid-col community-col">
+                    <h4>Our Community</h4>
+                    <p>Refined living with personalized care in a calm environment.</p>
+                </div>
+                <div class="grid-col">
+                    <h4>Explore</h4>
+                    <div class="footer-links">
+                        <a href="#">Care Options</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Amenities</a>
+                    </div>
+                </div>
+                <div class="grid-col">
+                    <h4>Contact</h4>
+                    <p>Your Location Address</p>
+                    <p>info@email.com</p>
+                    <p>(000) 000-0000</p>
+                </div>
+            </div>
+            <div class="footer-socials">
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Schedule a Private Tour</h2>
+            <form action="https://formsubmit.co/sunsetmeadowlivingllc@gmail.com" method="POST">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="date" name="date" required>
+                <select name="service">
+                    <option>Private Pay</option>
+                    <option>Flex Pay</option>
+                    <option>Insurance</option>
+                </select>
+                <textarea name="notes" placeholder="Additional notes"></textarea>
+                <input type="hidden" name="_subject" value="New Tour Booking Request">
+                <input type="hidden" name="_captcha" value="false">
+                <button type="submit" class="btn-gold">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+ 
+
     <script>
-        // Fix header on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.main-header');
-            header.classList.toggle('scrolled', window.scrollY > 50);
-        });
+        function toggleMenu() { document.getElementById("sideMenu").classList.toggle("active"); }
+        window.openModal = function(){ document.getElementById("bookingModal").style.display = "block"; }
+        window.closeModal = function(){ document.getElementById("bookingModal").style.display = "none"; }
+        
+        // Blueprint Observer
+       // --- UPDATED BLUEPRINT OBSERVER ---
+   const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // This triggers the gold lines and text sprouts
+            entry.target.classList.add('is-active');
 
-        // Trigger animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-active');
-                    if (window.innerWidth > 1100) {
-                        document.body.className = `is-slide-${entry.target.getAttribute('data-slide')}`;
-                    }
-                }
-            });
-        }, { threshold: 0.3 });
 
-        document.querySelectorAll('.slide-container').forEach(s => observer.observe(s));
+        
+            
+            // Desktop Only: Change background color based on slide
+            if (window.innerWidth > 1100) {
+                document.body.className = `is-slide-${entry.target.getAttribute('data-slide')}`;
+            }
+        }
+    });
+}, { 
+    threshold: 0.2,            /* Triggers much faster (at 20% visibility) */
+    rootMargin: '0px 0px -50px 0px' /* Adds a tiny buffer for smoother scrolling */
+});
+
+document.querySelectorAll('.slide-container').forEach(slide => observer.observe(slide));
+
+        // Footer Reveal
+        const footerObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.video-footer').forEach(el => footerObserver.observe(el));
     </script>
+
+    <script>window.chatbaseConfig = { chatbotId: "PhPwg7-iLonUCo-_uKjPY" }</script>
+    <script src="https://www.chatbase.co/embed.min.js" id="PhPwg7-iLonUCo-_uKjPY" defer></script>
+
+
+
+
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+  
+</html>
 </body>
 </html>
