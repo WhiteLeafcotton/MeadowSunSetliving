@@ -3422,55 +3422,81 @@ body {
 /* --- EXACT STEPPED SPROUTS: MOBILE --- */
 /* --- FIXED & MIRRORED SPROUTS: MOBILE --- */
 /* --- MOBILE RESPONSIVE OVERRIDES --- */
+/* --- MOBILE REFINEMENTS --- */
 @media (max-width: 1100px) {
-    /* 1. Unstack the layout */
-    .blueprint-portal { 
+    /* Stack the Blueprint Portal */
+    .blueprint-portal {
         display: flex;
         flex-direction: column;
-        padding: 50px 0;
+        padding: 60px 0;
     }
 
-    /* 2. Fix the text sidebar so it doesn't stay 'sticky' and cover the photos */
-    .narrative-aside { 
-        border-right: none; 
-        height: auto; 
+    /* Keep text content centered and padded */
+    .narrative-aside {
+        height: auto;
         position: relative;
-        padding: 40px 20px;
+        padding: 0 30px 40px;
+        border-right: none;
         text-align: center;
     }
 
-    /* 3. Make the photo stage scrollable vertically */
+    .aside-sticky {
+        position: relative;
+        top: 0;
+    }
+
+    .luxe-divider {
+        margin: 20px auto 30px;
+    }
+
+    /* Change horizontal scroll to vertical stack */
     .blueprint-stage {
-        display: block;
-        padding: 0;
+        display: flex;
+        flex-direction: column;
+        overflow-x: visible;
         margin-top: 0;
+        padding: 0;
+        gap: 120px; /* Space between the two photos */
     }
 
     .slide-container {
-        width: 100%;
-        padding: 40px 0;
+        min-width: 100%;
+        padding: 20px;
     }
 
+    /* Resize the photo container for mobile screens */
     .photo-anchor {
-        width: 90%; /* Leaves a little breathing room on the sides */
-        height: 300px; /* Set a fixed height for mobile */
-        margin: 0 auto;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
     }
 
-    /* 4. REVEAL THE SPROUTS */
-    .l-annotation { 
-        display: block !important; 
-        transform: scale(0.6); /* Shrink them so they fit on a phone */
+    /* RE-ENABLE SPROUTS FOR MOBILE */
+    .l-annotation {
+        display: block !important; /* Overriding your previous display:none */
+        transform: scale(0.7); /* Slightly smaller for mobile screens */
     }
 
-    /* Adjust sprout positions so they stay on the image */
-    .pos-top-right { top: 5% !important; left: 0% !important; }
-    .pos-bottom-left { bottom: 5% !important; right: 0% !important; }
+    /* Adjust Annotation positions so they don't bleed off screen */
+    .pos-top-right .data-card {
+        left: 40px;
+        top: -110px;
+        width: 200px;
+    }
 
-    .data-card {
-        width: 180px;
-        background: rgba(255,255,255,0.9);
-        padding: 10px;
-        border-radius: 4px;
+    .pos-bottom-left .data-card {
+        right: 40px;
+        bottom: -110px;
+        width: 200px;
+    }
+
+    .blueprint-svg {
+        width: 150px; /* Shorter lines for mobile */
+    }
+
+    /* Hide the desktop-specific mobile card you had at the bottom 
+       since the main content now handles mobile view */
+    .mobile-narrative-card {
+        display: none;
     }
 }
