@@ -203,7 +203,12 @@
     letter-spacing:1px;
   }
 
-
+.sprout-2, .sprout-4 {
+    position: absolute;
+    bottom: 0;         /* This forces it to the very bottom edge */
+    margin-bottom: 0;  /* Removes any ghost spacing */
+    display: block;    /* Ensures it doesn't behave like text */
+}
 
         
   /* always visible on mobile */
