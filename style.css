@@ -3420,6 +3420,7 @@ body {
 /* --- CENTER-EDGE SPROUTS (FINAL ALIGNMENT) --- */
 /* --- STEPPED SPROUTS: DOWN/RIGHT & UP/LEFT --- */
 /* --- EXACT STEPPED SPROUTS: MOBILE --- */
+/* --- FIXED & MIRRORED SPROUTS: MOBILE --- */
 @media (max-width: 1100px) {
     .blueprint-portal { display: block !important; padding: 0; }
     .narrative-aside { display: none !important; }
@@ -3428,11 +3429,11 @@ body {
     .slide-container {
         display: block !important;
         width: 100%;
-        padding: 340px 0 !important; 
+        padding: 360px 0 !important; 
     }
 
     .photo-anchor {
-        width: 95vw !important;
+        width: 90vw !important;
         max-width: 500px;
         aspect-ratio: 16/9;
         margin: 0 auto !important;
@@ -3452,13 +3453,12 @@ body {
     .pos-top-right .blueprint-svg { top: -195px !important; left: 0 !important; }
     .pos-top-right .data-card { top: -175px !important; left: 210px !important; text-align: left; }
 
-    /* --- SPROUT 02: RESTORED TO LEFT & VERTICALLY FLIPPED --- */
+    /* --- SPROUT 02: BOTTOM RIGHT CORNER (FLIPPED & MIRRORED) --- */
     .pos-bottom-left { 
         display: block !important;
-        /* RESTORED: Dot back to the left side where you liked it */
         bottom: 0px !important; 
-        left: 20px !important; 
-        right: auto !important;
+        right: 20px !important; 
+        left: auto !important;
         top: auto !important;
         transform: scale(0.65);
         position: absolute;
@@ -3467,21 +3467,22 @@ body {
     .pos-bottom-left .blueprint-svg {
         position: absolute !important;
         top: 0 !important;
-        left: 0 !important;
-        /* FLIPPED: Only vertical flip to sprout DOWN */
-        transform: scaleY(-1); 
-        transform-origin: top left;
+        right: 0 !important;
+        left: auto !important;
+        /* scaleY(-1) flips it DOWN, scaleX(-1) mirrors it to turn RIGHT */
+        transform: scaleY(-1) scaleX(-1); 
+        transform-origin: top right;
         overflow: visible;
     }
 
     .pos-bottom-left .data-card {
         position: absolute !important;
-        /* Pushes text into the white space below the photo */
         top: 155px !important; 
-        left: 210px !important; 
-        text-align: left;
+        /* Negative value pulls the text to the RIGHT of the vertical line */
+        right: -310px !important; 
+        left: auto !important;
+        text-align: left; /* Text remains left-aligned for a clean look */
         width: 280px !important;
-        /* Un-flips text so it stays readable */
         transform: scaleY(-1); 
     }
 
@@ -3513,7 +3514,8 @@ body {
         transform: scale(1) !important; 
         position: absolute;
         top: -5px;
-        left: -5px; /* Aligned with the left-side anchor */
+        right: -5px; 
+        left: auto !important;
         z-index: 10;
     }
 }
