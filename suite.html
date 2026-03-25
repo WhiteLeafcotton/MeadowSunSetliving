@@ -467,8 +467,8 @@
         }
     });
 }, { 
-    threshold: 0.2,            /* Triggers much faster (at 20% visibility) */
-    rootMargin: '0px 0px -50px 0px' /* Adds a tiny buffer for smoother scrolling */
+    threshold: 0.1, 
+    rootMargin: '0px 0px -100px 0px' 
 });
 
 document.querySelectorAll('.slide-container').forEach(slide => observer.observe(slide));
