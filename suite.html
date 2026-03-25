@@ -93,7 +93,7 @@
   /* layout becomes vertical */
   .blueprint-portal{
     display:block;
-    padding:40px 0;
+    padding:20px 0; /* tighter */
   }
 
   /* hide desktop sidebar */
@@ -111,7 +111,7 @@
   .slide-container{
     display:block;
     width:100%;
-    padding: -10px 0; /* space for sprouts */
+    padding:0; /* FIX: negative padding is invalid */
   }
 
   .photo-anchor{
@@ -136,48 +136,43 @@
 
   .l-annotation{
     display:block;
-    transform:scale(0.6);
+    transform:scale(0.55); /* slightly smaller = cleaner */
     transform-origin:left center;
   }
 
-  /* TOP SPROUT */
+  /* =========================
+     TOP SPROUT (TIGHTENED)
+  ========================= */
+
   .pos-top-right{
-    top:10px !important;
-    left:10px !important;
+    top:0 !important;
+    left:8px !important;
   }
 
   .pos-top-right .blueprint-svg{
-    top:-170px;
+    top:-140px; /* pulled closer */
     left:0;
   }
 
   .pos-top-right .data-card{
-    top:-150px;
-    left:200px;
-    width:200px;
+    top:-120px; /* tighter to line */
+    left:160px;
+    width:180px;
     text-align:left;
   }
 
-  /* BOTTOM SPROUT */
+  /* =========================
+     ❌ REMOVE BOTTOM SPROUT
+  ========================= */
+
   .pos-bottom-left{
-    bottom:10px !important;
-    left:10px !important;
-    right:auto !important;
+    display:none !important;
   }
 
-  .pos-bottom-left .blueprint-svg{
-  bottom:-90px;   /* was -140px */
-  left:0;
-}
+  /* =========================
+     TEXT CLEANUP
+  ========================= */
 
-  .pos-bottom-left .data-card{
-    bottom:-160px;
-    left:200px;
-    width:200px;
-    text-align:left;
-  }
-
-  /* clean luxury text look */
   .data-card{
     background:transparent;
     box-shadow:none;
@@ -186,26 +181,25 @@
   }
 
   .data-card h4{
-    font-size:0.9rem;
+    font-size:0.85rem;
     color:#000;
     font-family:'Playfair Display', serif;
     text-transform:uppercase;
+    margin-bottom:4px;
   }
 
   .data-card p{
-    font-size:0.75rem;
+    font-size:0.7rem;
     color:#666;
+    line-height:1.4;
   }
 
   .card-id{
-    font-size:0.65rem;
+    font-size:0.6rem;
     color:#999;
     letter-spacing:1px;
   }
 
-
-
-        
   /* always visible on mobile */
   .pulse-dot{
     opacity:1;
@@ -216,19 +210,12 @@
     stroke-dashoffset:0;
   }
 
-  /* remove huge desktop spacing */
-  .blueprint-stage{
-    padding:0;
-    margin:0;
-  }
-
-}
-        }
-
-</style>
+}   
+ </style>
 </head>
+
+
     
- 
 </head>
 
 <body class="is-slide-1">
