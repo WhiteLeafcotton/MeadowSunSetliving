@@ -103,16 +103,20 @@
 
   /* stacked images */
   .blueprint-stage{
-    display:block;
-    padding:0;
-    margin:0;
-  }
+  display:block;
+
+  padding:0 !important;
+  margin:0 !important;
+
+  overflow:visible;
+}
 
   .slide-container{
-    display:block;
-    width:100%;
-    padding:0; /* FIX: negative padding is invalid */
-  }
+  display:block;
+  width:100%;
+  min-width:unset !important; /* 🔥 IMPORTANT */
+  margin-bottom:30px; /* controls spacing between photos */
+}
 
   .photo-anchor{
     width:92%;
