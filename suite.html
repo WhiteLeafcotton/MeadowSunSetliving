@@ -143,7 +143,7 @@
 
         /* This ensures the very last photo doesn't have extra white space at the bottom */
         .slide-container:last-child {
-            margin-bottom: 3;
+            margin-bottom: 0;
         }
         /* Add this inside your @media (max-width: 768px) block */
 .slide-container:first-child {
@@ -271,6 +271,7 @@
 
 
        /* --- SOPHISTICATED NEIGHBORHOOD REDESIGN --- */
+/* --- UPDATED SOPHISTICATED NEIGHBORHOOD REDESIGN (VIDEO VERSION) --- */
 .neighborhood-section {
     padding: 160px 0;
     background: #ffffff;
@@ -304,31 +305,40 @@
     padding: 0 5%;
 }
 
-/* The "Portrait" Frame */
+/* Updated for Horizontal Video */
+/* Updated for Rounded Corners to match Blueprint Photos */
 .neighborhood-visual {
-    flex: 1;
+    flex: 1.2;
     position: relative;
+    /* This ensures the video follows the border-radius */
+    border-radius: 12px; 
 }
 
-.neighborhood-visual img {
+.neighborhood-visual video {
     width: 100%;
-    height: 700px;
+    height: auto;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
-    filter: contrast(1.05) brightness(0.95);
-    /* No border-radius for a sharper, architectural look */
+    display: block;
+    /* Matches your Blueprint slide image radius */
+    border-radius: 12px; 
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
 
-/* Decorative Gold Frame Offset */
+/* Decorative Gold Frame - Now Rounded to match */
 .neighborhood-visual::after {
     content: '';
     position: absolute;
-    top: 30px;
-    left: -30px;
+    top: 20px;
+    left: -20px;
     width: 100%;
     height: 100%;
     border: 1px solid var(--gold);
+    border-radius: 12px; /* Matches the video corners */
     z-index: -1;
 }
+
+
 
 /* Clean Typography Column */
 .neighborhood-content {
@@ -390,15 +400,56 @@
 }
 
 /* Mobile Adaptation */
+/* --- UPDATED MOBILE NEIGHBORHOOD SECTION --- */
 @media (max-width: 991px) {
-    .neighborhood-section { padding: 80px 0; }
-    .neighborhood-container { flex-direction: column; gap: 60px; }
-    .neighborhood-visual::after { left: 15px; top: 15px; } /* Smaller offset on mobile */
-    .neighborhood-visual img { height: 450px; }
-    .neighborhood-content { padding-right: 0; text-align: center; }
-    .neighborhood-content h2 { font-size: 2.8rem; }
-    .neighborhood-content p { margin: 0 auto 40px; }
-    .map-link { justify-content: center; }
+    .neighborhood-section { 
+        padding: 80px 0; 
+    }
+    
+    .neighborhood-container { 
+        flex-direction: column-reverse; /* Headline -> Video -> Map Link */
+        gap: 40px; 
+    }
+    
+    .neighborhood-visual { 
+        width: 100%; 
+        border-radius: 12px; /* Container radius */
+    }
+    
+    .neighborhood-visual video { 
+        height: auto; 
+        aspect-ratio: 16 / 9; 
+        border-radius: 12px; /* Match the Blueprint photo curves */
+        display: block;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Matches slide shadow */
+    }
+
+    /* Decorative Gold Frame - Now Rounded */
+    .neighborhood-visual::after { 
+        left: -15px; 
+        top: 15px; 
+        border-radius: 12px; /* Match the video curves */
+        border-width: 1px;
+    }
+
+    .neighborhood-content { 
+        padding-right: 0; 
+        text-align: center; 
+    }
+    
+    .neighborhood-content h2 { 
+        font-size: 2.5rem; /* Slightly tighter for mobile headlines */
+        line-height: 1.2;
+    }
+    
+    .neighborhood-content p { 
+        margin: 0 auto 30px; 
+        font-size: 0.95rem; /* Matches your narrative-text size */
+    }
+    
+    .map-link { 
+        justify-content: center; 
+    }
 }
     </style> 
 </head>
@@ -577,7 +628,9 @@
     <div class="neighborhood-container">
         
         <div class="neighborhood-visual">
-            <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2030.jpeg?raw=true" alt="Local Setting">
+            <video autoplay muted loop playsinline class="neighborhood-video">
+                <source src="https://youtu.be/LXFDI8Tnayw?si=1AozEVHScnzjkxir" type="video/mp4">
+            </video>
         </div>
 
         <div class="neighborhood-content">
@@ -591,7 +644,6 @@
                 Explore the Vicinity
             </a>
         </div>
-
     </div>
 </section>
 
