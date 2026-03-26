@@ -434,49 +434,7 @@
 
 
 
-/* --- HERO SUITES SPECIFIC --- */
-.hero-suites {
-    position: relative;
-    height: 85vh; /* Taller hero for impact */
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* Using your Unsplash room image or replace with your own facility photo */
-    background: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1600') center/cover no-repeat;
-    background-attachment: fixed;
-    color: var(--white);
-    text-align: center;
-}
 
-/* Header Active Link Styling */
-.nav-item.active {
-    color: var(--gold) !important;
-}
-
-.nav-item.active::after {
-    width: 100% !important;
-}
-
-/* Ensure Side Menu is hidden by default */
-.side-menu {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Hidden off-screen */
-    width: 100%;
-    height: 100%;
-    background: var(--white);
-    z-index: 2000;
-    transition: 0.5s ease;
-    display: flex;
-    flex-direction: column;
-    padding: 100px 40px;
-}
-
-.side-menu.active {
-    right: 0; /* Slides in */
-}
-</style>
 <header class="main-header">
     <nav class="navbar">
         <a href="index.html" class="logo">
