@@ -306,32 +306,39 @@
 }
 
 /* Updated for Horizontal Video */
+/* Updated for Rounded Corners to match Blueprint Photos */
 .neighborhood-visual {
-    flex: 1.2; /* Slightly wider to accommodate horizontal ratio */
+    flex: 1.2;
     position: relative;
+    /* This ensures the video follows the border-radius */
+    border-radius: 12px; 
 }
 
 .neighborhood-visual video {
     width: 100%;
     height: auto;
-    aspect-ratio: 16 / 9; /* Matches your Blueprint suite photo shape */
+    aspect-ratio: 16 / 9;
     object-fit: cover;
-    filter: contrast(1.02) brightness(0.98);
     display: block;
+    /* Matches your Blueprint slide image radius */
+    border-radius: 12px; 
     box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
 
-/* Decorative Gold Frame Offset - Adjusted for Horizontal */
+/* Decorative Gold Frame - Now Rounded to match */
 .neighborhood-visual::after {
     content: '';
     position: absolute;
-    top: 20px;   /* Tighter top offset for horizontal */
-    left: -20px; /* Tighter left offset for horizontal */
+    top: 20px;
+    left: -20px;
     width: 100%;
     height: 100%;
     border: 1px solid var(--gold);
+    border-radius: 12px; /* Matches the video corners */
     z-index: -1;
 }
+
+
 
 /* Clean Typography Column */
 .neighborhood-content {
@@ -393,22 +400,56 @@
 }
 
 /* Mobile Adaptation */
+/* --- UPDATED MOBILE NEIGHBORHOOD SECTION --- */
 @media (max-width: 991px) {
-    .neighborhood-section { padding: 80px 0; }
-    .neighborhood-container { flex-direction: column-reverse; gap: 40px; } /* Reversed so text stays under 'Quiet Luxury' */
+    .neighborhood-section { 
+        padding: 80px 0; 
+    }
     
-    .neighborhood-visual { width: 100%; }
-    .neighborhood-visual::after { left: -10px; top: 10px; } 
+    .neighborhood-container { 
+        flex-direction: column-reverse; /* Headline -> Video -> Map Link */
+        gap: 40px; 
+    }
+    
+    .neighborhood-visual { 
+        width: 100%; 
+        border-radius: 12px; /* Container radius */
+    }
     
     .neighborhood-visual video { 
         height: auto; 
         aspect-ratio: 16 / 9; 
+        border-radius: 12px; /* Match the Blueprint photo curves */
+        display: block;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Matches slide shadow */
     }
 
-    .neighborhood-content { padding-right: 0; text-align: center; }
-    .neighborhood-content h2 { font-size: 2.8rem; }
-    .neighborhood-content p { margin: 0 auto 40px; }
-    .map-link { justify-content: center; }
+    /* Decorative Gold Frame - Now Rounded */
+    .neighborhood-visual::after { 
+        left: -15px; 
+        top: 15px; 
+        border-radius: 12px; /* Match the video curves */
+        border-width: 1px;
+    }
+
+    .neighborhood-content { 
+        padding-right: 0; 
+        text-align: center; 
+    }
+    
+    .neighborhood-content h2 { 
+        font-size: 2.5rem; /* Slightly tighter for mobile headlines */
+        line-height: 1.2;
+    }
+    
+    .neighborhood-content p { 
+        margin: 0 auto 30px; 
+        font-size: 0.95rem; /* Matches your narrative-text size */
+    }
+    
+    .map-link { 
+        justify-content: center; 
+    }
 }
     </style> 
 </head>
