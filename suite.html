@@ -223,19 +223,27 @@
     left: auto; 
 }
 
+/* --- SINK THE BOTTOM DETAIL CARD --- */
 .pos-bottom-left .data-card { 
-    /* 1. Use -20px to physically pull the box DOWN closer to the gold line */
-    bottom: -20px !important; 
+    /* CHANGED: Moving from negative to positive pulls the box DOWN */
+    /* If 10px is still too high, try 0px or -5px */
+    bottom: 5px !important; 
+    
     right: 125px;  
     left: auto; 
     width: 150px; 
     text-align: right; 
     z-index: 101;
     
-    /* 2. Overriding the generic transform so it stays at the lower position */
+    /* 2. Kill the upward animation entirely so it stays put */
     transform: translateY(0) !important; 
-    opacity: 0;
-    transition: opacity 0.8s ease 1.2s; 
+}
+
+/* 3. Match the title to the baseline */
+.pos-bottom-left .data-card h4 {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0.8 !important; /* This drops the text onto the gold line */
 }
 
 /* 3. Ensure when active, it doesn't move back up */
@@ -244,12 +252,7 @@
     transform: translateY(0) !important;
 }
 
-/* 4. Remove any extra space under the title */
-.pos-bottom-left .data-card h4 {
-    margin: 0 !important;
-    padding: 0 !important;
-    line-height: 0.9; /* Forces the text to 'sit' on the baseline */
-}
+
 
 
 
