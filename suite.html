@@ -208,126 +208,135 @@
 
 
 
-        /* --- PREMIUM OVERLAP NEIGHBORHOOD --- */
+       /* --- SOPHISTICATED NEIGHBORHOOD REDESIGN --- */
 .neighborhood-section {
-    padding: 120px 5%;
-    background: #fff;
+    padding: 160px 0;
+    background: #ffffff;
+    position: relative;
     overflow: hidden;
 }
 
-.neighborhood-container {
-    max-width: 1300px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    align-items: center;
+/* Subtle Watermark Background */
+.neighborhood-section::before {
+    content: 'LOCATION';
+    position: absolute;
+    top: 50%;
+    right: -5%;
+    transform: translateY(-50%) rotate(-90deg);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10vw;
+    font-weight: 900;
+    color: #f9f9f9;
+    z-index: 0;
+    letter-spacing: 20px;
 }
 
-/* Image Column */
-.neighborhood-visual {
-    grid-column: 1 / 8;
+.neighborhood-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 80px;
     position: relative;
     z-index: 1;
+    padding: 0 5%;
+}
+
+/* The "Portrait" Frame */
+.neighborhood-visual {
+    flex: 1;
+    position: relative;
 }
 
 .neighborhood-visual img {
     width: 100%;
-    height: 600px;
+    height: 700px;
     object-fit: cover;
-    border-radius: 4px; /* Subtle radius for premium feel */
-    box-shadow: 0 40px 100px rgba(0,0,0,0.08);
+    filter: contrast(1.05) brightness(0.95);
+    /* No border-radius for a sharper, architectural look */
 }
 
-/* Floating Text Card */
-.neighborhood-card {
-    grid-column: 7 / 13; /* Overlaps the image */
-    background: var(--white);
-    padding: 80px 60px;
-    z-index: 2;
-    box-shadow: 20px 20px 60px rgba(0,0,0,0.05);
-    border-top: 4px solid var(--gold);
+/* Decorative Gold Frame Offset */
+.neighborhood-visual::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: -30px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--gold);
+    z-index: -1;
 }
 
-.neighborhood-card .badge-text {
-    margin-bottom: 20px;
+/* Clean Typography Column */
+.neighborhood-content {
+    flex: 1;
+    padding-right: 50px;
+}
+
+.neighborhood-content .badge-text {
+    letter-spacing: 6px;
+    font-size: 0.7rem;
+    margin-bottom: 30px;
     display: block;
 }
 
-.neighborhood-card h2 {
-    font-size: 3rem;
-    margin-bottom: 25px;
+.neighborhood-content h2 {
+    font-size: 3.8rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
 }
 
-.neighborhood-card p {
+.neighborhood-content p {
     font-family: 'Inter';
+    font-weight: 300;
     color: var(--gray);
-    line-height: 1.8;
-    margin-bottom: 40px;
+    line-height: 2;
+    margin-bottom: 50px;
+    max-width: 450px;
 }
 
-/* Luxury Map Link */
-.map-link-container {
-    display: flex;
+/* Minimalist Map Link */
+.map-link {
+    display: inline-flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
     text-decoration: none;
     color: var(--deep);
-    transition: 0.3s;
-}
-
-.map-circle-btn {
-    width: 60px;
-    height: 60px;
-    border: 1px solid var(--gold);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gold);
-    transition: 0.4s;
-}
-
-.map-link-container:hover .map-circle-btn {
-    background: var(--gold);
-    color: white;
-}
-
-.map-text h5 {
     font-family: 'Montserrat';
-    font-weight: 400;
-    letter-spacing: 2px;
-    margin: 0;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 8px;
 }
 
-.map-text span {
-    font-family: 'Inter';
-    font-size: 0.8rem;
-    color: var(--gold);
+.map-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+    transition: width 0.4s ease;
 }
 
-/* Mobile Fixes */
+.map-link:hover::after {
+    width: 100%;
+}
+
+/* Mobile Adaptation */
 @media (max-width: 991px) {
-    .neighborhood-container {
-        display: flex;
-        flex-direction: column;
-    }
-    .neighborhood-visual, .neighborhood-card {
-        grid-column: auto;
-        width: 100%;
-    }
-    .neighborhood-visual img {
-        height: 400px;
-    }
-    .neighborhood-card {
-        margin-top: -60px; /* Pull card up onto photo */
-        padding: 40px 30px;
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .neighborhood-card h2 {
-        font-size: 2.2rem;
-    }
+    .neighborhood-section { padding: 80px 0; }
+    .neighborhood-container { flex-direction: column; gap: 60px; }
+    .neighborhood-visual::after { left: 15px; top: 15px; } /* Smaller offset on mobile */
+    .neighborhood-visual img { height: 450px; }
+    .neighborhood-content { padding-right: 0; text-align: center; }
+    .neighborhood-content h2 { font-size: 2.8rem; }
+    .neighborhood-content p { margin: 0 auto 40px; }
+    .map-link { justify-content: center; }
 }
     </style> 
 </head>
@@ -497,22 +506,18 @@
     <div class="neighborhood-container">
         
         <div class="neighborhood-visual">
-            <img src="https://images.unsplash.com/photo-1449156003053-930cce580ddd?q=80&w=1200" alt="The Neighborhood">
+            <img src="https://images.unsplash.com/photo-1449156003053-930cce580ddd?q=80&w=1200" alt="Local Setting">
         </div>
 
-        <div class="neighborhood-card">
-            <span class="badge-text">The Location</span>
-            <h2 class="display-serif">At the heart of <br><span class="italic-serif">Everything.</span></h2>
-            <p>Perfectly positioned where serene residential living meets the convenience of the city's finest amenities. From quiet morning walks in Greenway Park to afternoon coffee at local artisan cafés, life at Sunset Meadow keeps you connected to what matters most.</p>
+        <div class="neighborhood-content">
+            <span class="badge-text">04 / THE SETTING</span>
+            <h2 class="display-serif">Quiet Luxury. <br><span class="italic-serif">Connected Living.</span></h2>
             
-            <a href="https://maps.google.com" target="_blank" class="map-link-container">
-                <div class="map-circle-btn">
-                    <i class="fa-solid fa-location-dot"></i>
-                </div>
-                <div class="map-text">
-                    <h5>OPEN IN MAPS</h5>
-                    <span>Explore the surroundings</span>
-                </div>
+            <p>Situated in a secluded residential pocket, Sunset Meadow offers the rare balance of profound stillness and immediate access. Whether it is a curated morning at local gardens or the reassurance of world-class medical proximity, every convenience is an extension of your home.</p>
+            
+            <a href="https://maps.google.com" target="_blank" class="map-link">
+                <i class="fa-solid fa-arrow-right-long" style="margin-right: 10px; color: var(--gold);"></i>
+                Explore the Vicinity
             </a>
         </div>
 
