@@ -224,10 +224,11 @@
 }
 
 /* --- SINK THE BOTTOM DETAIL CARD --- */
+/* --- FORCE BOTTOM DETAIL DOWN --- */
 .pos-bottom-left .data-card { 
-    /* CHANGED: Moving from negative to positive pulls the box DOWN */
-    /* If 10px is still too high, try 0px or -5px */
-    bottom: 5px !important; 
+    /* A larger negative number moves it DOWN toward the line */
+    /* If this is still too high, try -120px */
+    bottom: -110px !important; 
     
     right: 125px;  
     left: auto; 
@@ -235,16 +236,18 @@
     text-align: right; 
     z-index: 101;
     
-    /* 2. Kill the upward animation entirely so it stays put */
+    /* This stops the 'upward' jump during the fade-in */
     transform: translateY(0) !important; 
 }
 
-/* 3. Match the title to the baseline */
+/* This aligns the text baseline to sit ON the line */
 .pos-bottom-left .data-card h4 {
     margin: 0 !important;
     padding: 0 !important;
-    line-height: 0.8 !important; /* This drops the text onto the gold line */
+    line-height: 0.8 !important; 
 }
+
+
 
 /* 3. Ensure when active, it doesn't move back up */
 .slide-container.is-active .pos-bottom-left .data-card {
