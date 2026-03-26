@@ -208,110 +208,125 @@
 
 
 
-        /* --- NEIGHBORHOOD SECTION --- */
+        /* --- PREMIUM OVERLAP NEIGHBORHOOD --- */
 .neighborhood-section {
-    padding: 100px 5%;
-    background: #fdfdfd;
+    padding: 120px 5%;
+    background: #fff;
+    overflow: hidden;
 }
 
-.neighborhood-header {
-    max-width: 600px;
-    margin-bottom: 60px;
-}
-
-.neighborhood-grid {
+.neighborhood-container {
+    max-width: 1300px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 50px;
+    grid-template-columns: repeat(12, 1fr);
     align-items: center;
 }
 
-/* Map Styling */
-.map-wrapper {
+/* Image Column */
+.neighborhood-visual {
+    grid-column: 1 / 8;
     position: relative;
-    height: 500px;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+    z-index: 1;
 }
 
-.map-placeholder { height: 100%; width: 100%; background: #eee; position: relative; }
+.neighborhood-visual img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 4px; /* Subtle radius for premium feel */
+    box-shadow: 0 40px 100px rgba(0,0,0,0.08);
+}
 
-.map-overlay-tag {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* Floating Text Card */
+.neighborhood-card {
+    grid-column: 7 / 13; /* Overlaps the image */
+    background: var(--white);
+    padding: 80px 60px;
+    z-index: 2;
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--gold);
+}
+
+.neighborhood-card .badge-text {
+    margin-bottom: 20px;
+    display: block;
+}
+
+.neighborhood-card h2 {
+    font-size: 3rem;
+    margin-bottom: 25px;
+}
+
+.neighborhood-card p {
+    font-family: 'Inter';
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* Luxury Map Link */
+.map-link-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: var(--deep);
+    transition: 0.3s;
+}
+
+.map-circle-btn {
+    width: 60px;
+    height: 60px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    transition: 0.4s;
+}
+
+.map-link-container:hover .map-circle-btn {
     background: var(--gold);
     color: white;
-    padding: 10px 20px;
+}
+
+.map-text h5 {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.map-text span {
     font-family: 'Inter';
     font-size: 0.8rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border-radius: 4px;
-    pointer-events: none;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* Attraction Cards */
-.attractions-list {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.attraction-card {
-    display: flex;
-    gap: 20px;
-    padding: 25px;
-    background: #fff;
-    border-radius: 15px;
-    transition: 0.4s ease;
-    border: 1px solid #f0f0f0;
-}
-
-.attraction-card:hover {
-    transform: translateX(10px);
-    border-color: var(--gold);
-}
-
-.attr-icon {
-    font-size: 1.5rem;
     color: var(--gold);
-    margin-top: 5px;
 }
 
-.attr-info h4 {
-    font-family: 'Playfair Display';
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-}
-
-.attr-info p {
-    font-family: 'Inter';
-    font-size: 0.9rem;
-    color: var(--gray);
-}
-
-/* Mobile View for Neighborhood */
-@media (max-width: 768px) {
-    .neighborhood-grid {
-        grid-template-columns: 1fr; /* Stack map on top of text */
+/* Mobile Fixes */
+@media (max-width: 991px) {
+    .neighborhood-container {
+        display: flex;
+        flex-direction: column;
     }
-    
-    .map-wrapper {
-        height: 350px;
-        order: 2; /* Move map below the list for better flow */
+    .neighborhood-visual, .neighborhood-card {
+        grid-column: auto;
+        width: 100%;
     }
-
-    .neighborhood-header {
-        text-align: center;
+    .neighborhood-visual img {
+        height: 400px;
     }
-
-    .attractions-list {
-        order: 1;
-        margin-bottom: 40px;
+    .neighborhood-card {
+        margin-top: -60px; /* Pull card up onto photo */
+        padding: 40px 30px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .neighborhood-card h2 {
+        font-size: 2.2rem;
     }
 }
     </style> 
@@ -480,47 +495,27 @@
 
 <section class="neighborhood-section">
     <div class="neighborhood-container">
-        <div class="neighborhood-header">
+        
+        <div class="neighborhood-visual">
+            <img src="https://images.unsplash.com/photo-1449156003053-930cce580ddd?q=80&w=1200" alt="The Neighborhood">
+        </div>
+
+        <div class="neighborhood-card">
             <span class="badge-text">The Location</span>
-            <h2 class="display-serif">Welcome to the <br><span class="italic-serif">Neighborhood.</span></h2>
-            <p>Perfectly positioned where serene residential living meets the convenience of the city's finest amenities.</p>
+            <h2 class="display-serif">At the heart of <br><span class="italic-serif">Everything.</span></h2>
+            <p>Perfectly positioned where serene residential living meets the convenience of the city's finest amenities. From quiet morning walks in Greenway Park to afternoon coffee at local artisan cafés, life at Sunset Meadow keeps you connected to what matters most.</p>
+            
+            <a href="https://maps.google.com" target="_blank" class="map-link-container">
+                <div class="map-circle-btn">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="map-text">
+                    <h5>OPEN IN MAPS</h5>
+                    <span>Explore the surroundings</span>
+                </div>
+            </a>
         </div>
 
-        <div class="neighborhood-grid">
-            <div class="map-wrapper">
-                <div class="map-placeholder">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215707164965!2d-73.98784412402487!3d40.75798633483984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1710345678901!5m2!1sen!2sus" 
-                        width="100%" height="100%" style="border:0; filter: grayscale(1) invert(1) contrast(1.2);" allowfullscreen="" loading="lazy">
-                    </iframe>
-                    <div class="map-overlay-tag">Sunset Meadow</div>
-                </div>
-            </div>
-
-            <div class="attractions-list">
-                <div class="attraction-card">
-                    <div class="attr-icon"><i class="fa-solid fa-leaf"></i></div>
-                    <div class="attr-info">
-                        <h4>Greenway Parks</h4>
-                        <p>Walking trails and manicured gardens just a block away.</p>
-                    </div>
-                </div>
-                <div class="attraction-card">
-                    <div class="attr-icon"><i class="fa-solid fa-mug-hot"></i></div>
-                    <div class="attr-info">
-                        <h4>Artisan Cafés</h4>
-                        <p>Quiet mornings at local favorites like The Daily Grind.</p>
-                    </div>
-                </div>
-                <div class="attraction-card">
-                    <div class="attr-icon"><i class="fa-solid fa-Stethoscope"></i></div>
-                    <div class="attr-info">
-                        <h4>Medical Excellence</h4>
-                        <p>Top-tier healthcare facilities within a 5-minute drive.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 
