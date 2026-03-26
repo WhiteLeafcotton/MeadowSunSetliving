@@ -271,7 +271,7 @@
 
 
        /* --- SOPHISTICATED NEIGHBORHOOD REDESIGN --- */
-/* --- UPDATED SOPHISTICATED NEIGHBORHOOD REDESIGN (VIDEO VERSION) --- */
+/* --- UPDATED NEIGHBORHOOD REDESIGN (YOUTUBE IFRAME VERSION) --- */
 .neighborhood-section {
     padding: 160px 0;
     background: #ffffff;
@@ -305,27 +305,25 @@
     padding: 0 5%;
 }
 
-/* Updated for Horizontal Video */
-/* Updated for Rounded Corners to match Blueprint Photos */
+/* Targeted for YouTube Iframe */
 .neighborhood-visual {
     flex: 1.2;
     position: relative;
-    /* This ensures the video follows the border-radius */
     border-radius: 12px; 
+    /* This clips the sharp corners of the YouTube player to match your 12px curve */
+    overflow: hidden; 
 }
 
-.neighborhood-visual video {
+.neighborhood-visual iframe {
     width: 100%;
-    height: auto;
     aspect-ratio: 16 / 9;
-    object-fit: cover;
     display: block;
-    /* Matches your Blueprint slide image radius */
-    border-radius: 12px; 
+    border: none;
+    border-radius: 12px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
 
-/* Decorative Gold Frame - Now Rounded to match */
+/* Decorative Gold Frame Offset */
 .neighborhood-visual::after {
     content: '';
     position: absolute;
@@ -334,11 +332,9 @@
     width: 100%;
     height: 100%;
     border: 1px solid var(--gold);
-    border-radius: 12px; /* Matches the video corners */
+    border-radius: 12px;
     z-index: -1;
 }
-
-
 
 /* Clean Typography Column */
 .neighborhood-content {
@@ -399,60 +395,38 @@
     width: 100%;
 }
 
-/* Mobile Adaptation */
 /* --- UPDATED MOBILE NEIGHBORHOOD SECTION --- */
 @media (max-width: 991px) {
-    .neighborhood-section { 
-        padding: 80px 0; 
-    }
+    .neighborhood-section { padding: 80px 0; }
     
     .neighborhood-container { 
-        flex-direction: column-reverse; /* Headline -> Video -> Map Link */
+        flex-direction: column-reverse; 
         gap: 40px; 
     }
     
     .neighborhood-visual { 
         width: 100%; 
-        border-radius: 12px; /* Container radius */
+        border-radius: 12px;
     }
     
-    .neighborhood-visual video { 
+    .neighborhood-visual iframe { 
         height: auto; 
         aspect-ratio: 16 / 9; 
-        border-radius: 12px; /* Match the Blueprint photo curves */
-        display: block;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Matches slide shadow */
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
     }
 
-    /* Decorative Gold Frame - Now Rounded */
     .neighborhood-visual::after { 
         left: -15px; 
         top: 15px; 
-        border-radius: 12px; /* Match the video curves */
-        border-width: 1px;
+        border-radius: 12px;
     }
 
-    .neighborhood-content { 
-        padding-right: 0; 
-        text-align: center; 
-    }
-    
-    .neighborhood-content h2 { 
-        font-size: 2.5rem; /* Slightly tighter for mobile headlines */
-        line-height: 1.2;
-    }
-    
-    .neighborhood-content p { 
-        margin: 0 auto 30px; 
-        font-size: 0.95rem; /* Matches your narrative-text size */
-    }
-    
-    .map-link { 
-        justify-content: center; 
-    }
+    .neighborhood-content { padding-right: 0; text-align: center; }
+    .neighborhood-content h2 { font-size: 2.5rem; line-height: 1.2; }
+    .neighborhood-content p { margin: 0 auto 30px; font-size: 0.95rem; }
+    .map-link { justify-content: center; }
 }
-    </style> 
-</head>
 
 <body class="is-slide-1">
 
@@ -627,11 +601,15 @@
 <section class="neighborhood-section">
     <div class="neighborhood-container">
         
-        <div class="neighborhood-visual">
-            <video autoplay muted loop playsinline class="neighborhood-video">
-                <source src="https://www.youtube.com/watch?v=LXFDI8Tnayw" type="video/mp4">
-            </video>
-        </div>
+       <div class="neighborhood-visual">
+    <iframe 
+        class="neighborhood-video"
+        src="https://www.youtube.com/embed/LXFDI8Tnayw?autoplay=1&mute=1&loop=1&playlist=LXFDI8Tnayw&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3" 
+        frameborder="0" 
+        allow="autoplay; encrypted-media" 
+        allowfullscreen>
+    </iframe>
+</div>
 
         <div class="neighborhood-content">
             <span class="badge-text">04 / THE SETTING</span>
