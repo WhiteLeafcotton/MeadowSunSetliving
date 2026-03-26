@@ -265,17 +265,16 @@
 /* Minimalist Map Concierge */
 .map-concierge {
     position: relative;
-    height: 600px; /* matched to portrait */
+    height: 600px; 
+    min-height: 400px; /* Ensures it never collapses to 0 */
+    background: #f9f9f9; /* Temporary background so you can see the box while loading */
 }
 
-.map-window {
-    height: 100%;
+/* Ensure the iframe fills the container */
+.map-window iframe {
+    display: block;
     width: 100%;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 40px 100px rgba(0,0,0,0.1);
-    /* Subtle warm overlay on the map */
-    position: relative;
+    height: 100%;
 }
 
 .map-window::after {
