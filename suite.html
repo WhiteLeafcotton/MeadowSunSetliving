@@ -188,11 +188,12 @@
     transform: translateY(0);
 }
 
-/* --- BALANCED MOBILE POSITIONING --- */
+/* --- BALANCED MOBILE POSITIONING (MOVE UP VERSION) --- */
 .pos-top-right { 
-    top: -10px !important;  
+    /* Changed from -10px to -40px to pull the TOP sprout UP */
+    top: -40px !important;  
     left: 10px !important; 
-    transform-origin: left center; /* Top sprout grows from the left */
+    transform-origin: left center;
 }
 
 .pos-top-right .blueprint-svg { 
@@ -209,10 +210,11 @@
 
 .pos-bottom-left {
     display: block !important;
-    bottom: -10px !important; 
+    /* Changed from -10px to 30px to push the BOTTOM sprout UP */
+    bottom: 30px !important; 
     right: 10px !important;
     left: auto !important;
-    transform-origin: right center; /* Bottom sprout grows from the right */
+    transform-origin: right center;
 }
 
 .pos-bottom-left .blueprint-svg { 
