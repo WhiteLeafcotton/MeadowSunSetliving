@@ -90,7 +90,7 @@
             display: block !important;
             visibility: visible !important;
             opacity: 1 !important;
-            padding: 70px 24px 20px 24px !important;
+            padding: 40px 24px 20px 24px !important;
             text-align: center;
             background: #ffffff !important;
             position: relative;
@@ -133,10 +133,17 @@
             overflow: visible !important;
         }
 
+        /* 3. CLEAN UP THE SECTION BELOW */
         .slide-container {
             display: block !important;
             width: 100% !important;
-            padding: 40px 0 !important;
+            padding: 40px 0 !important; /* Keep original top/bottom padding */
+            margin-bottom: 70px; /* This creates the "gap" between them */
+        }
+
+        /* This ensures the very last photo doesn't have extra white space at the bottom */
+        .slide-container:last-child {
+            margin-bottom: 0;
         }
 
         .photo-anchor {
@@ -195,6 +202,118 @@
 
         .pos-bottom-left .blueprint-svg { bottom: -60px; right: 0; left: auto; }
         .pos-bottom-left .data-card { bottom: -80px; right: 140px; left: auto; width: 160px; text-align: right; }
+
+
+}
+
+
+
+        /* --- NEIGHBORHOOD SECTION --- */
+.neighborhood-section {
+    padding: 100px 5%;
+    background: #fdfdfd;
+}
+
+.neighborhood-header {
+    max-width: 600px;
+    margin-bottom: 60px;
+}
+
+.neighborhood-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* Map Styling */
+.map-wrapper {
+    position: relative;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+}
+
+.map-placeholder { height: 100%; width: 100%; background: #eee; position: relative; }
+
+.map-overlay-tag {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--gold);
+    color: white;
+    padding: 10px 20px;
+    font-family: 'Inter';
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    pointer-events: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Attraction Cards */
+.attractions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.attraction-card {
+    display: flex;
+    gap: 20px;
+    padding: 25px;
+    background: #fff;
+    border-radius: 15px;
+    transition: 0.4s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.attraction-card:hover {
+    transform: translateX(10px);
+    border-color: var(--gold);
+}
+
+.attr-icon {
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin-top: 5px;
+}
+
+.attr-info h4 {
+    font-family: 'Playfair Display';
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.attr-info p {
+    font-family: 'Inter';
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+/* Mobile View for Neighborhood */
+@media (max-width: 768px) {
+    .neighborhood-grid {
+        grid-template-columns: 1fr; /* Stack map on top of text */
+    }
+    
+    .map-wrapper {
+        height: 350px;
+        order: 2; /* Move map below the list for better flow */
+    }
+
+    .neighborhood-header {
+        text-align: center;
+    }
+
+    .attractions-list {
+        order: 1;
+        margin-bottom: 40px;
+    }
+}
     </style> 
 </head>
 
@@ -346,6 +465,75 @@
     </div>
 </section>
     </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="neighborhood-section">
+    <div class="neighborhood-container">
+        <div class="neighborhood-header">
+            <span class="badge-text">The Location</span>
+            <h2 class="display-serif">Welcome to the <br><span class="italic-serif">Neighborhood.</span></h2>
+            <p>Perfectly positioned where serene residential living meets the convenience of the city's finest amenities.</p>
+        </div>
+
+        <div class="neighborhood-grid">
+            <div class="map-wrapper">
+                <div class="map-placeholder">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215707164965!2d-73.98784412402487!3d40.75798633483984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1710345678901!5m2!1sen!2sus" 
+                        width="100%" height="100%" style="border:0; filter: grayscale(1) invert(1) contrast(1.2);" allowfullscreen="" loading="lazy">
+                    </iframe>
+                    <div class="map-overlay-tag">Sunset Meadow</div>
+                </div>
+            </div>
+
+            <div class="attractions-list">
+                <div class="attraction-card">
+                    <div class="attr-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <div class="attr-info">
+                        <h4>Greenway Parks</h4>
+                        <p>Walking trails and manicured gardens just a block away.</p>
+                    </div>
+                </div>
+                <div class="attraction-card">
+                    <div class="attr-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                    <div class="attr-info">
+                        <h4>Artisan Cafés</h4>
+                        <p>Quiet mornings at local favorites like The Daily Grind.</p>
+                    </div>
+                </div>
+                <div class="attraction-card">
+                    <div class="attr-icon"><i class="fa-solid fa-Stethoscope"></i></div>
+                    <div class="attr-info">
+                        <h4>Medical Excellence</h4>
+                        <p>Top-tier healthcare facilities within a 5-minute drive.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+    
+
+    
 
 
 
