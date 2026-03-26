@@ -116,22 +116,29 @@
 
         /* 3. CLEAN UP THE SECTION BELOW */
         .blueprint-portal {
-            display: block !important;
-            padding: 0 !important;
-            background: #fff;
-        }
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    background: #fff;
+    padding: 80px 0; /* Reduced from 150px */
+    overflow: hidden;
+}
+
+/* 2. Fix the "Gap" in the Stage */
+.blueprint-stage {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    /* Reduced padding and removed the heavy negative margin */
+    padding: 100px 0; 
+    margin-top: 0; 
+}
 
         .narrative-aside {
             display: none !important;
         }
 
-        .blueprint-stage {
-            display: block !important;
-            padding: 0 !important;
-            margin-top: 0 !important;
-            height: auto !important;
-            overflow: visible !important;
-        }
+        
 
         /* 3. CLEAN UP THE SECTION BELOW */
         .slide-container {
