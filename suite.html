@@ -208,9 +208,9 @@
     text-align: left; 
 }
 
+/* --- FINAL RE-BALANCED BOTTOM DETAIL --- */
 .pos-bottom-left {
     display: block !important;
-    /* Changed from -10px to 30px to push the BOTTOM sprout UP */
     bottom: 30px !important; 
     right: 10px !important;
     left: auto !important;
@@ -223,14 +223,21 @@
     left: auto; 
 }
 
-/* Update this inside your @media (max-width: 768px) block */
 .pos-bottom-left .data-card { 
-    /* Changed from -75px or -68px to -58px to bring it DOWN onto the line */
-    bottom: -58px; 
+    /* CHANGED: Moving from -58px to -38px DROPS the text onto the line */
+    bottom: -38px !important; 
     right: 125px;  
     left: auto; 
     width: 150px; 
     text-align: right; 
+    z-index: 101; /* Ensures text stays in front of the line */
+}
+
+/* This removes the hidden "cushion" under the bold text */
+.pos-bottom-left .data-card h4 {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1; /* Tightens the "rest" on the gold line */
 }
 
 
