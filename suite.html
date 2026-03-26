@@ -224,20 +224,31 @@
 }
 
 .pos-bottom-left .data-card { 
-    /* CHANGED: Moving from -58px to -38px DROPS the text onto the line */
-    bottom: -38px !important; 
+    /* 1. Use -20px to physically pull the box DOWN closer to the gold line */
+    bottom: -20px !important; 
     right: 125px;  
     left: auto; 
     width: 150px; 
     text-align: right; 
-    z-index: 101; /* Ensures text stays in front of the line */
+    z-index: 101;
+    
+    /* 2. Overriding the generic transform so it stays at the lower position */
+    transform: translateY(0) !important; 
+    opacity: 0;
+    transition: opacity 0.8s ease 1.2s; 
 }
 
-/* This removes the hidden "cushion" under the bold text */
+/* 3. Ensure when active, it doesn't move back up */
+.slide-container.is-active .pos-bottom-left .data-card {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* 4. Remove any extra space under the title */
 .pos-bottom-left .data-card h4 {
     margin: 0 !important;
     padding: 0 !important;
-    line-height: 1; /* Tightens the "rest" on the gold line */
+    line-height: 0.9; /* Forces the text to 'sit' on the baseline */
 }
 
 
