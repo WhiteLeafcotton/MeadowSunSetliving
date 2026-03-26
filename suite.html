@@ -158,54 +158,84 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
-       /* 4. MOBILE SPROUTS (WITH STAGED REVEAL) */
-        .l-annotation {
-            transform: scale(0.6);
-            transform-origin: left center;
-        }
-
-        /* The Gold Line - Draws first */
-        .l-path {
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-            transition: stroke-dashoffset 1.2s ease 0.2s; /* Short 0.2s delay */
-        }
-
-        /* The Data Card - Fades in after line */
-        .data-card {
-            opacity: 0 !important; /* Start hidden */
-            transform: translateY(10px);
-            transition: opacity 0.8s ease 1.2s, transform 0.8s ease 1.2s; /* 1.2s delay matches line finish */
-        }
-
-        /* Trigger when the slide is active/scrolled to */
-        .slide-container.is-active .l-path {
-            stroke-dashoffset: 0;
-        }
-
-        .slide-container.is-active .data-card {
-            opacity: 1 !important;
-            transform: translateY(0);
-        }
-
-        /* Positioning Fixes */
-        .pos-top-right { top: 5 !important; left: 10px !important; }
-        .pos-top-right .blueprint-svg { top: -110px; left: 0; }
-        .pos-top-right .data-card { top: -90px; left: 140px; width: 160px; text-align: left; }
-
-        .pos-bottom-left {
-            display: block !important;
-            bottom: 0 !important;
-            right: 10px !important;
-            left: auto !important;
-        }
-
-        .pos-bottom-left .blueprint-svg { bottom: -40px; right: 0; left: auto; }
-        .pos-bottom-left .data-card { bottom: -80px; right: 140px; left: auto; width: 160px; text-align: right; }
-
-
+ /* 4. MOBILE SPROUTS (WITH STAGED REVEAL) */
+.l-annotation {
+    transform: scale(0.6);
+    /* Removed fixed 'left' origin to allow individual sprouts to set their own */
 }
 
+/* The Gold Line - Draws first */
+.l-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transition: stroke-dashoffset 1.2s ease 0.2s; 
+}
+
+/* The Data Card - Fades in after line */
+.data-card {
+    opacity: 0 !important; 
+    transform: translateY(10px);
+    transition: opacity 0.8s ease 1.2s, transform 0.8s ease 1.2s; 
+}
+
+/* Trigger when the slide is active/scrolled to */
+.slide-container.is-active .l-path {
+    stroke-dashoffset: 0;
+}
+
+.slide-container.is-active .data-card {
+    opacity: 1 !important;
+    transform: translateY(0);
+}
+
+/* --- BALANCED MOBILE POSITIONING --- */
+.pos-top-right { 
+    top: -10px !important;  
+    left: 10px !important; 
+    transform-origin: left center; /* Top sprout grows from the left */
+}
+
+.pos-top-right .blueprint-svg { 
+    top: -100px; 
+    left: 0; 
+}
+
+.pos-top-right .data-card { 
+    top: -75px;   
+    left: 125px;  
+    width: 150px; 
+    text-align: left; 
+}
+
+.pos-bottom-left {
+    display: block !important;
+    bottom: -10px !important; 
+    right: 10px !important;
+    left: auto !important;
+    transform-origin: right center; /* Bottom sprout grows from the right */
+}
+
+.pos-bottom-left .blueprint-svg { 
+    bottom: -100px; 
+    right: 0; 
+    left: auto; 
+}
+
+.pos-bottom-left .data-card { 
+    bottom: -75px; 
+    right: 125px;  
+    left: auto; 
+    width: 150px; 
+    text-align: right; 
+}
+
+
+
+
+
+
+
+        
 
 
        /* --- SOPHISTICATED NEIGHBORHOOD REDESIGN --- */
