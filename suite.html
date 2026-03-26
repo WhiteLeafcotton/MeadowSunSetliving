@@ -137,7 +137,7 @@
         .slide-container {
             display: block !important;
             width: 100% !important;
-            padding: 70px 0 !important; /* Keep original top/bottom padding */
+            padding: 60px 0 !important; /* Keep original top/bottom padding */
             margin-bottom: 70px; /* This creates the "gap" between them */
         }
 
@@ -145,6 +145,10 @@
         .slide-container:last-child {
             margin-bottom: 3;
         }
+        /* Add this inside your @media (max-width: 768px) block */
+.slide-container:first-child {
+    padding-top: 80px !important; /* Increased from 40px to 100px */
+}
 
         .photo-anchor {
             width: 90%;
