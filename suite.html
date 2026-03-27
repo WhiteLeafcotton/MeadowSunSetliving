@@ -33,7 +33,7 @@
     .is-slide-2 .amenity-list { display: block; }
     .amenity-list li { font-family: 'Inter'; font-size: 0.85rem; color: var(--gray); margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
 
-    .blueprint-stage { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 400px 0; margin-top: -300px; }
+    
     .slide-container { min-width: 100%; display: flex; align-items: center; justify-content: center; scroll-snap-align: center; }
     .photo-anchor { position: relative; width: 800px; height: 450px; }
     .main-photo img { width: 100%; height: 100%; object-fit: cover; box-shadow: 0 40px 90px rgba(0,0,0,0.1); }
@@ -252,7 +252,7 @@
        /* --- SOPHISTICATED NEIGHBORHOOD REDESIGN --- */
 /* --- UPDATED SOPHISTICATED NEIGHBORHOOD REDESIGN (VIDEO VERSION) --- */
 .neighborhood-section {
-    padding: 160px 0;
+    padding: 50px 0;
     background: #ffffff;
     position: relative;
     overflow: hidden;
@@ -371,6 +371,26 @@
     width: 100%;
 }
 
+/* --- Desktop Only Adjustments --- */
+@media (min-width: 769px) {
+    .blueprint-stage { 
+        display: flex; 
+        overflow-x: auto; 
+        scroll-snap-type: x mandatory; 
+        scrollbar-width: none; 
+        /* Adjusted for a tighter desktop fit */
+        padding: 120px 0; 
+        margin-top: -100px; 
+    }
+
+    .neighborhood-section {
+        /* Reduced from 160px to close the gap on web */
+        padding: 80px 0; 
+    }
+
+
+
+        
 /* Mobile Adaptation */
 @media (max-width: 991px) {
     .neighborhood-section { padding: 80px 0; }
