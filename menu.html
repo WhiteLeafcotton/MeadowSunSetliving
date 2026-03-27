@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Table | 30-Day Epicurean Calendar</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        /* Base Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            /* Using a high-end food background with a fixed position */
+            background: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+        }
+
+        /* The Frosted Glass Overlay */
+        .frosted-wrapper {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            min-height: 100vh;
+            padding: 60px 0;
+        }
+
+        /* Navigation */
+        .menu-nav {
+            max-width: 1400px;
+            margin: 0 auto 80px;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 50px;
+            align-items: center;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #222;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover { color: #c5a059; }
+
+        .logo-mark {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            letter-spacing: 8px;
+            font-weight: 400;
+        }
+
+        /* Header Section */
+        .header-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 100px;
+        }
+
+        .gold-eyebrow {
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            font-size: 0.8rem;
+            color: #c5a059;
+            margin-bottom: 20px;
+        }
+
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .italic-serif { font-style: italic; font-weight: 400; }
+        .text-gold { color: #c5a059; }
+
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 30-Day Grid */
+        .calendar-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 0 50px;
+        }
+
+        .day-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(197, 160, 89, 0.25);
+            padding: 45px;
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .day-card:hover {
+            background: #ffffff;
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            border-color: #c5a059;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .day-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #c5a059;
+            font-style: italic;
+            line-height: 1;
+        }
+
+        .day-theme {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            color: #999;
+        }
+
+        /* Meals */
+        .meal-section { margin-bottom: 25px; }
+
+        .meal-type {
+            text-transform: uppercase;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            color: #c5a059;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meal-desc {
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .libations {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px dashed #ddd;
+        }
+
+        .libations h6 {
+            text-transform: uppercase;
+            font-size: 0.65rem;
+            color: #999;
+            margin-bottom: 8px;
+        }
+
+        .libations p {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #555;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Footer */
+        .dietary-footer {
+            text-align: center;
+            margin-top: 120px;
+            padding-bottom: 60px;
+        }
+
+        .dietary-keys {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            font-size: 0.8rem;
+            color: #c5a059;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .dietary-keys span i { margin-right: 8px; }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .main-title { font-size: 2.8rem; }
+            .calendar-grid { grid-template-columns: 1fr; padding: 0 25px; }
+            .menu-nav { padding: 0 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="frosted-wrapper">
+        
+        <nav class="menu-nav">
+            <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Return Home</a>
+            <div class="logo-mark">THE TABLE</div>
+        </nav>
+
+        <header class="header-content">
+            <span class="gold-eyebrow">Resident Dining Experience</span>
+            <h1 class="main-title">March <span class="italic-serif text-gold">Gastronomy</span></h1>
+            <p class="intro-text">A rotating 30-day journey of seasonal textures and local harvests, prepared with artisanal care.</p>
+        </header>
+
+        <main class="calendar-grid">
+            
+            <article class="day-card">
+                <div class="card-header">
+                    <span class="day-num">01</span>
+                    <span class="day-theme">Awakening</span>
+                </div>
+                
+                <div class="meal-section">
+                    <div class="meal-type">Breakfast</div>
+                    <p class="meal-desc">Steel-cut oats with wild honeycomb, organic berries, and toasted pepitas.</p>
+                </div>
+
+                <div class="meal-section">
+                    <div class="meal-type">Luncheon</div>
+                    <p class="meal-desc">Heirloom tomato tart with micro-basil and a 12-year balsamic reduction.</p>
+                </div>
+
+                <div class="meal-section">
+                    <div class="meal-type">Supper</div>
+                    <p class="meal-desc">Pan-seared sea bass over lemon-dill risotto and charred garden asparagus.</p>
+                </div>
+
+                <div class="libations">
+                    <h6>Daily Libations</h6>
+                    <p>Estate Chardonnay / Chilled Hibiscus & Mint Infusion</p>
+                </div>
+            </article>
+
+            <article class="day-card">
+                <div class="card-header">
+                    <span class="day-num">02</span>
+                    <span class="day-theme">The Harvest</span>
+                </div>
+                
+                <div class="meal-section">
+                    <div class="meal-type">Breakfast</div>
+                    <p class="meal-desc">Avocado sourdough with a soft-poached quail egg and smoked sea salt.</p>
+                </div>
+
+                <div class="meal-section">
+                    <div class="meal-type">Luncheon</div>
+                    <p class="meal-desc">Roasted butternut squash bisque with sage-infused crème fraîche and croutons.</p>
+                </div>
+
+                <div class="meal-section">
+                    <div class="meal-type">Supper</div>
+                    <p class="meal-desc">Slow-braised short rib with parsnip purée and a rich red wine reduction.</p>
+                </div>
+
+                <div class="libations">
+                    <h6>Daily Libations</h6>
+                    <p>Bordeaux Blend / Spiced Pear & Ginger Infusion</p>
+                </div>
+            </article>
+
+            </main>
+
+        <footer class="dietary-footer">
+            <div class="dietary-keys">
+                <span><i class="fa-solid fa-leaf"></i> Plant Based</span>
+                <span><i class="fa-solid fa-heart"></i> Heart Healthy</span>
+                <span><i class="fa-solid fa-wheat-awn-circle-exclamation"></i> Gluten Free</span>
+            </div>
+            <p style="font-size: 0.7rem; color: #999; letter-spacing: 2px; text-transform: uppercase;">
+                &copy; 2026 Sunset Meadow Assisted Living | Epicurean Division
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html>
