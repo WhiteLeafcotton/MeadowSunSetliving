@@ -42,6 +42,68 @@
             gap: 25px;
             margin-top: 50px;
         }
+
+
+
+        /* Luxe Card Styling event section */
+.luxe-card {
+    min-width: 350px;
+    background: #fff;
+    border: 1px solid rgba(197, 160, 89, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.luxe-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.event-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.luxe-card:hover .event-image img {
+    transform: scale(1.1);
+}
+
+.event-date {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #c5a059;
+    color: white;
+    padding: 8px 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.event-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+/* Horizontal Scrollbar Styling */
+.dir-scroller-wrap::-webkit-scrollbar {
+    height: 4px;
+}
+.dir-scroller-wrap::-webkit-scrollbar-thumb {
+    background: #c5a059;
+    border-radius: 10px;
+}
     </style>
 </head>
 
@@ -165,35 +227,67 @@
         </div>
     </section>
 
-    <section class="admissions-journey animate-on-scroll" id="events" style="padding: 80px 0;">
-        <div class="luxe-container">
-            <span class="gold-eyebrow">Social Calendar</span>
+
+
+
+
+
+
+
+
+    
+
+   <section id="events" class="admissions-journey animate-on-scroll" style="padding: 100px 0;">
+    <div class="luxe-container">
+        <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+            <span class="gold-eyebrow">The Social Calendar</span>
             <h2 class="magazine-title">Curated <span class="italic-serif">Engagements</span></h2>
-            
-            <div class="dir-scroller-wrap" style="margin-top: 40px;">
-                <div class="dir-track">
-                    <div class="dir-item" style="min-width: 300px;">
-                        <div class="dir-meta">
-                            <h4 class="client-type">Summer Gala</h4>
-                            <span class="client-status">June 15th • Evening Attire</span>
-                        </div>
+            <p class="magazine-para" style="max-width: 600px; margin: 20px auto;">A choreography of culture, wellness, and celebration, tailored to the refined tastes of our residents.</p>
+        </div>
+
+        <div class="dir-scroller-wrap">
+            <div class="dir-track">
+                
+                <div class="dir-item luxe-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&q=80" alt="Summer Gala">
+                        <div class="event-date">June 15</div>
                     </div>
-                    <div class="dir-item" style="min-width: 300px;">
-                        <div class="dir-meta">
-                            <h4 class="client-type">Chamber Music</h4>
-                            <span class="client-status">Weekly • Garden Terrace</span>
-                        </div>
-                    </div>
-                    <div class="dir-item" style="min-width: 300px;">
-                        <div class="dir-meta">
-                            <h4 class="client-type">Guest Lectures</h4>
-                            <span class="client-status">Monthly • Library Series</span>
-                        </div>
+                    <div class="dir-meta">
+                        <h4 class="client-type">Summer Solstice Gala</h4>
+                        <span class="client-status">Evening Attire • Garden Estate</span>
+                        <p class="event-desc">An orchestral evening under the stars with seasonal hors d'oeuvres and fine pairings.</p>
                     </div>
                 </div>
+
+                <div class="dir-item luxe-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&q=80" alt="Chamber Music">
+                        <div class="event-date">Weekly</div>
+                    </div>
+                    <div class="dir-meta">
+                        <h4 class="client-type">Chamber Music Series</h4>
+                        <span class="client-status">Friday Afternoons • The Conservatory</span>
+                        <p class="event-desc">Local virtuosos perform classical masterpieces in an intimate, sun-drenched setting.</p>
+                    </div>
+                </div>
+
+                <div class="dir-item luxe-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&q=80" alt="Lectures">
+                        <div class="event-date">Monthly</div>
+                    </div>
+                    <div class="dir-meta">
+                        <h4 class="client-type">The Library Series</h4>
+                        <span class="client-status">Guest Lectures • Private Library</span>
+                        <p class="event-desc">Engaging discussions featuring local historians, authors, and thought leaders.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section class="magazine-editorial animate-on-scroll" id="car" style="background: #fdfdfd; padding-bottom: 100px;">
         <div class="editorial-wrapper">
