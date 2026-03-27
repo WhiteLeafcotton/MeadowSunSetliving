@@ -104,17 +104,13 @@
             display: none !important;
         }
 
-        /* --- Update this section in your CSS --- */
-.blueprint-stage { 
-    display: flex; 
-    overflow-x: auto; 
-    scroll-snap-type: x mandatory; 
-    scrollbar-width: none; 
-    /* Reduced from 400px to 100px */
-    padding: 100px 0; 
-    /* Removed margin-top: -300px */
-    margin-top: 0; 
-}
+        .blueprint-stage {
+            display: block !important;
+            padding: 0 !important;
+            margin-top: 0 !important;
+            height: auto !important;
+            overflow: visible !important;
+        }
 
         /* 3. CLEAN UP THE SECTION BELOW */
         .slide-container {
@@ -256,7 +252,7 @@
        /* --- SOPHISTICATED NEIGHBORHOOD REDESIGN --- */
 /* --- UPDATED SOPHISTICATED NEIGHBORHOOD REDESIGN (VIDEO VERSION) --- */
 .neighborhood-section {
-    padding: 100px 0; /* Reduced from 160px */
+    padding: 160px 0;
     background: #ffffff;
     position: relative;
     overflow: hidden;
