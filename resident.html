@@ -118,61 +118,30 @@
 /* Cinematic Split Layout */
 /* Cinematic Slim & Thin Layout */
 /* Thin Duo-View Cinematic Logic */
+/* Hide the scrollbar but keep the scrolling functionality */
+.enrichment-cinematic-slim {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+.enrichment-cinematic-slim::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
 .filmstrip-card-slim {
     display: flex;
-    align-items: center; /* Keeps text on the right */
+    align-items: center;
     gap: 30px;
-    margin-bottom: 120px; /* Increased margin to ensure only 2 are visible at once */
-    position: relative;
-    transition: opacity 0.5s ease;
+    margin-bottom: 100px; /* Forces only 2 to be seen in the 500px window */
 }
 
 .image-box-slim {
-    width: 280px; /* Slimmer width */
-    height: 120px; /* ULTRA THIN landscape height */
+    width: 280px;
+    height: 120px;
     overflow: hidden;
     border: 1px solid rgba(197, 160, 89, 0.2);
     flex-shrink: 0;
 }
-
-.image-box-slim img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.6;
-    filter: saturate(0.5); /* Higher-end aesthetic */
-    transition: all 0.6s ease;
-}
-
-.filmstrip-card-slim:hover img {
-    opacity: 1;
-    filter: saturate(1);
-    transform: scale(1.05);
-}
-
-.card-count-slim {
-    font-family: 'Playfair Display', serif;
-    font-size: 0.8rem;
-    color: #c5a059;
-    font-style: italic;
-}
-
-.text-box-slim h3 {
-    color: white;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    margin: 5px 0;
-    font-weight: 400;
-}
-
-.text-box-slim p {
-    color: rgba(255,255,255,0.4);
-    font-size: 0.75rem;
-    line-height: 1.5;
-    max-width: 220px;
-}
-
-.text-gold { color: #c5a059; }
         
     </style>
 </head>
@@ -271,10 +240,11 @@
 
 
 
-<section id="enrichment" class="enrichment-cinematic-slim" style="background: #080c16; padding: 40px 0; overflow: visible; height: auto;">
+<section id="enrichment" class="enrichment-cinematic-slim" style="background: #080c16; height: 500px; overflow-y: scroll; padding: 40px 0; position: relative;">
+    
     <div class="luxe-container cinematic-flex" style="max-width: 1000px; margin: 0 auto; display: flex; gap: 60px;">
         
-        <div class="cinematic-sticky" style="position: sticky; top: 150px; flex: 0.4; height: fit-content;">
+        <div class="cinematic-sticky" style="position: sticky; top: 20px; flex: 0.4; height: fit-content;">
             <span class="gold-eyebrow" style="font-size: 0.6rem; letter-spacing: 4px;">The Collection</span>
             <h2 class="magazine-title" style="color: white; font-size: 1.6rem; margin-top: 10px;">Life <span class="italic-serif text-gold">Enrichment</span></h2>
             <div style="width: 25px; height: 1px; background: #c5a059; margin: 20px 0;"></div>
@@ -283,67 +253,36 @@
             </p>
         </div>
 
-        <div class="cinematic-track" style="flex: 1.6;">
+        <div class="cinematic-track" style="flex: 1.6; padding-bottom: 40px;">
             
             <div class="filmstrip-card-slim">
-                <div class="image-box-slim">
-                    <img src="https://images.unsplash.com/photo-1516534775068-ba3e84529519?auto=format&fit=crop&q=80" alt="Cognitive">
-                </div>
-                <div class="text-box-slim">
-                    <span class="card-count-slim">01</span>
-                    <h3>Cognitive <span class="italic">Architecture</span></h3>
-                    <p>Neuro-plasticity training and guest lectures.</p>
-                </div>
+                <div class="image-box-slim"><img src="https://images.unsplash.com/photo-1516534775068-ba3e84529519?auto=format&fit=crop&q=80" alt="Cognitive"></div>
+                <div class="text-box-slim"><span class="card-count-slim">01</span><h3>Cognitive <span class="italic">Architecture</span></h3><p>Neuro-plasticity training and lectures.</p></div>
             </div>
 
             <div class="filmstrip-card-slim">
-                <div class="image-box-slim">
-                    <img src="https://images.unsplash.com/photo-1460661419201-fd4ce186860d?auto=format&fit=crop&q=80" alt="Art">
-                </div>
-                <div class="text-box-slim">
-                    <span class="card-count-slim">02</span>
-                    <h3>The Artisanal <span class="italic">Studio</span></h3>
-                    <p>Private masterclasses in fine arts and sculpture.</p>
-                </div>
+                <div class="image-box-slim"><img src="https://images.unsplash.com/photo-1460661419201-fd4ce186860d?auto=format&fit=crop&q=80" alt="Art"></div>
+                <div class="text-box-slim"><span class="card-count-slim">02</span><h3>The Artisanal <span class="italic">Studio</span></h3><p>Private masterclasses in fine arts.</p></div>
             </div>
 
             <div class="filmstrip-card-slim">
-                <div class="image-box-slim">
-                    <img src="https://images.unsplash.com/photo-1557431177-36141475c676?auto=format&fit=crop&q=80" alt="Garden">
-                </div>
-                <div class="text-box-slim">
-                    <span class="card-count-slim">03</span>
-                    <h3>Botanical <span class="italic">Stewardship</span></h3>
-                    <p>Horticultural therapy and Zen meditation.</p>
-                </div>
+                <div class="image-box-slim"><img src="https://images.unsplash.com/photo-1557431177-36141475c676?auto=format&fit=crop&q=80" alt="Garden"></div>
+                <div class="text-box-slim"><span class="card-count-slim">03</span><h3>Botanical <span class="italic">Stewardship</span></h3><p>Horticultural therapy and Zen meditation.</p></div>
             </div>
 
             <div class="filmstrip-card-slim">
-                <div class="image-box-slim">
-                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80" alt="Culinary">
-                </div>
-                <div class="text-box-slim">
-                    <span class="card-count-slim">04</span>
-                    <h3>Epicurean <span class="italic">Mastery</span></h3>
-                    <p>Chef-led kitchen takeovers and wine pairings.</p>
-                </div>
+                <div class="image-box-slim"><img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80" alt="Culinary"></div>
+                <div class="text-box-slim"><span class="card-count-slim">04</span><h3>Epicurean <span class="italic">Mastery</span></h3><p>Chef-led kitchen takeovers.</p></div>
             </div>
 
             <div class="filmstrip-card-slim" style="margin-bottom: 0;">
-                <div class="image-box-slim">
-                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80" alt="Yoga">
-                </div>
-                <div class="text-box-slim">
-                    <span class="card-count-slim">05</span>
-                    <h3>Movement & <span class="italic">Vitality</span></h3>
-                    <p>Somatic movement and restorative yoga tracks.</p>
-                </div>
+                <div class="image-box-slim"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80" alt="Yoga"></div>
+                <div class="text-box-slim"><span class="card-count-slim">05</span><h3>Movement & <span class="italic">Vitality</span></h3><p>Somatic movement and restorative tracks.</p></div>
             </div>
 
         </div>
     </div>
 </section>
-
 
 
 
