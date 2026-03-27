@@ -419,6 +419,23 @@
 /* Mobile Adaptation */
 @media (max-width: 991px) {
     .neighborhood-section { padding: 80px 0; }
+    .neighborhood-section::before {
+    content: 'LOCATION';
+    position: absolute;
+    top: 50%;
+    right: 2%; /* Tucked closer to the screen edge */
+    transform: translateY(-50%) rotate(-90deg);
+    font-family: 'Montserrat', sans-serif;
+    
+    /* --- BOLD BUT COMPACT --- */
+    font-size: 5vw;           /* Reduced from 10vw to 5vw */
+    font-weight: 900;         /* Kept the thick, heavy weight you like */
+    color: #f6f6f6;           /* Very subtle off-white */
+    letter-spacing: 10px;     /* Tighter spacing for the smaller size */
+    
+    z-index: 0;
+    pointer-events: none;     /* Ensures it doesn't interfere with the map link */
+}
     .neighborhood-container { flex-direction: column-reverse; gap: 40px; } /* Reversed so text stays under 'Quiet Luxury' */
     
 
