@@ -69,64 +69,60 @@
     padding: 0;
 }
 
-/* --- RESTORE NEIGHBORHOOD TO EXACT ORIGINAL LOOK --- */
-.neighborhood-section {
-    padding: 100px 0; /* Original spacious padding */
-    background: #ffffff;
-    position: relative;
-    z-index: 5;
-    margin-top: 0 !important; /* Flush against blueprint */
-}
-
 
 
 /* --- MATCHING VIDEO TO PHOTO SIZE --- */
-.neighborhood-visual {
-    flex: 1.2;
+/* --- MATCHING VIDEO TO PHOTO SIZE EXACTLY --- */
+.neighborhood-section {
+    padding: 100px 0;
+    background: #ffffff;
     position: relative;
-    display: flex;
-    justify-content: center; /* Centers the video like the slides */
+    z-index: 5;
+    margin-top: 0 !important;
 }
 
-.neighborhood-visual video {
-    /* Exact matches from your .photo-anchor and .main-photo img */
-    width: 800px; /* Matching your Desktop photo-anchor width */
-    max-width: 100%; /* Safety for smaller desktop screens */
-    height: 450px; /* Matching your Desktop photo-anchor height */
-    object-fit: cover;
-    
-    /* Matching the premium "Magazine" shadow from your photos */
-    box-shadow: 0 40px 90px rgba(0,0,0,0.1); 
-    filter: contrast(1.02) brightness(0.98);
-    display: block;
-}
-
-/* Updated Gold Frame Offset to match the 800x450 size */
-.neighborhood-visual::after {
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: -20px;
-    width: 800px; /* Matches video width */
-    max-width: 100%;
-    height: 450px; /* Matches video height */
-    border: 1px solid var(--gold);
-    z-index: -1;
-}
-
-/* Ensure the container allows for the 800px width + 80px gap + text */
 .neighborhood-container {
-    max-width: 1400px; 
+    max-width: 1600px; /* Increased to match the 'Blueprint Stage' width */
     margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: 80px;
+    gap: 100px; /* Slightly more gap to feel premium */
     position: relative;
     z-index: 1;
     padding: 0 5%;
 }
 
+.neighborhood-visual {
+    flex: 1.5; /* Give the video side more weight to match the blueprint stage */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.neighborhood-visual video {
+    /* These dimensions match your .photo-anchor exactly */
+    width: 800px; 
+    height: 450px;
+    object-fit: cover;
+    display: block;
+    
+    /* Using the exact shadow from your suite photos */
+    box-shadow: 0 40px 90px rgba(0,0,0,0.1); 
+    filter: contrast(1.02) brightness(0.98);
+}
+
+/* Matching the Gold Frame offset from the suite photos */
+.neighborhood-visual::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: calc(50% - 420px); /* Centers it behind the 800px video with a -20px offset */
+    width: 800px;
+    height: 450px;
+    border: 1px solid var(--gold);
+    z-index: -1;
+}
 
 .neighborhood-content {
     flex: 1;
