@@ -25,22 +25,59 @@
 /* --- KILL THE GAP BETWEEN SECTIONS --- */
 .blueprint-portal { 
     display: grid; 
-    grid-template-columns: 400px 1fr; 
+    grid-template-columns: 400px 1fr; /* Narrative left, Stage right */
     background: #fff; 
     padding: 0; 
-    margin-bottom: 0 !important; /* Force no bottom margin */
+    margin-bottom: 0 !important; /* Force zero gap to next section */
     overflow: hidden; 
+    min-height: 100vh; /* Keeps it full screen while scrolling slides */
 }
 
+/* Narrative Side (Left) */
+.narrative-aside { 
+    padding-left: 10%; 
+    border-right: 1px solid #f0f0f0; 
+    background: #fff;
+    z-index: 10;
+}
+
+.aside-sticky { 
+    position: sticky; 
+    top: 150px; 
+}
+
+/* Sliding Stage (Right) */
+.blueprint-stage {
+    display: flex;
+    flex-direction: row; /* Force horizontal alignment */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Hide scrollbar */
+    -ms-overflow-style: none;
+    align-items: center;
+    background: #fff;
+}
+
+.blueprint-stage::-webkit-scrollbar { display: none; }
+
+.slide-container { 
+    min-width: 100%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    scroll-snap-align: center; 
+    padding: 0;
+}
+
+/* --- RESTORE NEIGHBORHOOD TO EXACT ORIGINAL LOOK --- */
 .neighborhood-section {
-    padding: 0 0 60px 0; /* Removed top padding entirely to touch the blueprint */
+    padding: 100px 0; /* Original spacious padding */
     background: #ffffff;
     position: relative;
     z-index: 5;
-    margin-top: 0 !important; /* Set to 0 so it sits flush */
+    margin-top: 0 !important; /* Flush against blueprint */
 }
 
-/* --- RESTORE YOUR ORIGINAL DESIGN EXACTLY --- */
 .neighborhood-container {
     max-width: 1200px;
     margin: 0 auto;
