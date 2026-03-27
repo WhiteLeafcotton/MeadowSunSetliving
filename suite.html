@@ -104,13 +104,7 @@
             display: none !important;
         }
 
-        .blueprint-stage {
-            display: block !important;
-            padding: 0 !important;
-            margin-top: 0 !important;
-            height: auto !important;
-            overflow: visible !important;
-        }
+        
 
         /* 3. CLEAN UP THE SECTION BELOW */
         .slide-container {
@@ -389,6 +383,31 @@
     .neighborhood-content p { margin: 0 auto 40px; }
     .map-link { justify-content: center; }
 }
+
+
+/* --- Desktop Only Adjustments --- */
+@media (min-width: 769px) {
+    .blueprint-stage { 
+        display: flex; 
+        overflow-x: auto; 
+        scroll-snap-type: x mandatory; 
+        scrollbar-width: none; 
+        /* Adjusted for a tighter desktop fit */
+        padding: 120px 0; 
+        margin-top: -100px; 
+    }
+
+    .neighborhood-section {
+        /* Reduced from 160px to close the gap on web */
+        padding: 80px 0; 
+    }
+}
+
+
+
+
+
+        
     </style> 
 </head>
 
