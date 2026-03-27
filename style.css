@@ -432,21 +432,24 @@
 
 /* Specific override for Resident Page Hero */
 .hero.hero-resident {
-    height: 60vh; /* Slightly taller than About/Suites for a "Experience" feel */
+    height: 50vh; /* Matches Suites and About height */
     background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat;
     background-attachment: scroll;
     position: sticky; 
     top: 0;
-    z-index: -1; /* Pushes it back for the slide-over effect */
+    z-index: -1; /* Enables the slide-over effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Ensure Resident content slides over the sticky hero */
+/* Ensure the Resident content slides over the sticky hero */
 .hero.hero-resident ~ section,
 .hero.hero-resident ~ .admissions-journey,
 .hero.hero-resident ~ .magazine-editorial {
     position: relative;
     z-index: 10;
-    background: #ffffff; /* Must have a solid background to cover the hero while scrolling */
+    background: #ffffff; /* This covers the hero as you scroll */
 }
 /* --- THE REST IS YOUR ORIGINAL DESIGN CODE --- */
 
