@@ -114,99 +114,97 @@
 
 
 /* Enrichment Mosaic life enrichmeLayout */
-.mosaic-grid {
+/* High-End Editorial Grid */
+.enrichment-staggered-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 300px);
-    gap: 30px;
-    margin-top: 60px;
+    gap: 60px 40px;
+    position: relative;
 }
 
-.mosaic-item {
+.enrichment-card {
+    position: relative;
+    background: transparent;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card-image-wrap {
     position: relative;
     overflow: hidden;
-    border-radius: 2px; /* Keeps it sharp and high-end */
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    padding: 15px; /* Creates the "framed" look */
 }
 
-.mosaic-item.tall {
-    grid-row: span 2;
-}
-
-.mosaic-item img {
+.card-image-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+    filter: saturate(0.8);
+    transition: all 0.8s ease;
 }
 
-.mosaic-item:hover img {
-    transform: scale(1.08);
-}
-
-/* Glass-morphism Overlay */
-.mosaic-overlay {
+.card-number {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 10%, transparent 60%);
-    display: flex;
-    align-items: flex-end;
-    padding: 40px;
-    opacity: 0.9;
-    transition: opacity 0.4s ease;
+    top: 30px;
+    right: 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.1);
+    font-style: italic;
 }
 
-.mosaic-content {
-    color: white;
-    transform: translateY(20px);
-    transition: transform 0.5s ease;
+/* Typography Inside Cards */
+.card-body {
+    padding: 30px 0;
 }
 
-.mosaic-item:hover .mosaic-content {
-    transform: translateY(0);
-}
-
-.content-tag {
+.body-tag {
     display: block;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.65rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
     color: #c5a059;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
     margin-bottom: 10px;
 }
 
-.mosaic-content h3 {
+.card-body h3 {
+    color: white;
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin-bottom: 15px;
 }
 
-.mosaic-content p {
+.card-body p {
+    color: rgba(255,255,255,0.6);
     font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.7);
-    max-width: 320px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 90%;
 }
 
-.text-link {
-    display: inline-block;
-    margin-top: 20px;
-    color: #c5a059;
-    text-decoration: none;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+/* Card Variations for Staggering */
+.card-tall .card-image-wrap { height: 500px; }
+.card-short .card-image-wrap { height: 350px; }
+.card-wide { grid-column: span 2; }
+.card-wide .card-image-wrap { height: 400px; }
+
+/* Hover Effects */
+.enrichment-card:hover .card-image-wrap img {
+    transform: scale(1.05);
+    filter: saturate(1);
 }
 
-/* Mobile Responsiveness */
+.enrichment-card:hover .card-number {
+    color: rgba(197, 160, 89, 0.3);
+}
+
+.text-gold { color: #c5a059; }
+
 @media (max-width: 768px) {
-    .mosaic-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
-    .mosaic-item.tall { grid-row: span 1; height: 400px; }
-    .mosaic-item { height: 350px; }
+    .enrichment-staggered-grid { grid-template-columns: 1fr; }
+    .card-short, .card-tall { margin-top: 0 !important; }
+    .card-wide { grid-column: span 1; }
 }
 
         
@@ -308,55 +306,80 @@
 
 
 
-<section id="enrichment" class="enrichment-mosaic animate-on-scroll" style="background: #0f172a; padding: 120px 0;">
+<section id="enrichment" class="enrichment-editorial animate-on-scroll" style="background: #0b1121; padding: 140px 0; overflow: hidden;">
     <div class="luxe-container">
-        <div class="mosaic-header">
-            <span class="gold-eyebrow">Holistic Wellness</span>
-            <h2 class="magazine-title" style="color: white;">Life <span class="italic-serif">Enrichment</span></h2>
-            <p class="magazine-para" style="color: rgba(255,255,255,0.7); max-width: 500px; margin-top: 20px;">
-                Nurturing the mind, body, and spirit through curated experiences that inspire lifelong growth and tranquility.
-            </p>
+        
+        <div class="editorial-header" style="margin-bottom: 80px; position: relative; z-index: 5;">
+            <span class="gold-eyebrow" style="letter-spacing: 5px;">The Signature Pillars</span>
+            <h2 class="magazine-title" style="color: white; font-size: clamp(2.5rem, 5vw, 4rem);">Living <span class="italic-serif text-gold">Artfully</span></h2>
+            <div class="header-accent-line"></div>
         </div>
 
-        <div class="mosaic-grid">
-            <div class="mosaic-item tall">
-                <img src="https://images.unsplash.com/photo-1516534775068-ba3e84529519?auto=format&fit=crop&q=80" alt="Cognitive Play">
-                <div class="mosaic-overlay">
-                    <div class="mosaic-content">
-                        <span class="content-tag">The Mind</span>
-                        <h3>Cognitive <span class="italic">Play</span></h3>
-                        <p>Scientific neuro-plasticity exercises designed to sharpen focus and enhance mental agility in a social setting.</p>
-                        <a href="#" class="text-link">Explore Method <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
+        <div class="enrichment-staggered-grid">
+            
+            <div class="enrichment-card card-tall">
+                <div class="card-image-wrap">
+                    <img src="https://images.unsplash.com/photo-1516534775068-ba3e84529519?auto=format&fit=crop&q=80" alt="Cognitive">
+                    <div class="card-number">01</div>
+                </div>
+                <div class="card-body">
+                    <span class="body-tag">The Intellect</span>
+                    <h3>Cognitive <span class="italic">Architecture</span></h3>
+                    <p>Beyond "brain games"—we offer neuro-plasticity training led by specialists to preserve and sharpen cognitive processing.</p>
                 </div>
             </div>
 
-            <div class="mosaic-item">
-                <img src="https://images.unsplash.com/photo-1460661419201-fd4ce186860d?auto=format&fit=crop&q=80" alt="Artisanal Studio">
-                <div class="mosaic-overlay">
-                    <div class="mosaic-content">
-                        <span class="content-tag">The Spirit</span>
-                        <h3>Artisanal <span class="italic">Studio</span></h3>
-                        <p>A sanctuary for creative expression, from fine oil painting to master-led pottery workshops.</p>
-                    </div>
+            <div class="enrichment-card card-short" style="margin-top: 100px;">
+                <div class="card-image-wrap">
+                    <img src="https://images.unsplash.com/photo-1460661419201-fd4ce186860d?auto=format&fit=crop&q=80" alt="Art">
+                    <div class="card-number">02</div>
+                </div>
+                <div class="card-body">
+                    <span class="body-tag">The Soul</span>
+                    <h3>The Artisanal <span class="italic">Studio</span></h3>
+                    <p>Master-led workshops in oil painting, sculpture, and textile arts within a sun-drenched, professional-grade studio.</p>
                 </div>
             </div>
 
-            <div class="mosaic-item">
-                <img src="https://images.unsplash.com/photo-1557431177-36141475c676?auto=format&fit=crop&q=80" alt="Zen Garden">
-                <div class="mosaic-overlay">
-                    <div class="mosaic-content">
-                        <span class="content-tag">The Body</span>
-                        <h3>Zen <span class="italic">Garden</span></h3>
-                        <p>Guided meditation and gentle movement amidst the therapeutic beauty of our private botanical grounds.</p>
-                    </div>
+            <div class="enrichment-card card-tall">
+                <div class="card-image-wrap">
+                    <img src="https://images.unsplash.com/photo-1557431177-36141475c676?auto=format&fit=crop&q=80" alt="Garden">
+                    <div class="card-number">03</div>
+                </div>
+                <div class="card-body">
+                    <span class="body-tag">The Earth</span>
+                    <h3>Botanical <span class="italic">Stewardship</span></h3>
+                    <p>Horticultural therapy in our private Zen Garden, featuring rare species and meditative pathways designed for serenity.</p>
                 </div>
             </div>
+
+            <div class="enrichment-card card-short" style="margin-top: -50px;">
+                <div class="card-image-wrap">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80" alt="Culinary">
+                    <div class="card-number">04</div>
+                </div>
+                <div class="card-body">
+                    <span class="body-tag">The Palate</span>
+                    <h3>The Culinary <span class="italic">Academy</span></h3>
+                    <p>Private tasting sessions and interactive "Table Talks" with our executive chefs exploring global flavors and nutrition.</p>
+                </div>
+            </div>
+
+            <div class="enrichment-card card-wide">
+                <div class="card-image-wrap">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80" alt="Yoga">
+                    <div class="card-number">05</div>
+                </div>
+                <div class="card-body">
+                    <span class="body-tag">The Body</span>
+                    <h3>Movement & <span class="italic">Vitality</span></h3>
+                    <p>Somatic movement, restorative yoga, and personalized physical wellness tracks focused on longevity and grace.</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
-
-
 
 
 
