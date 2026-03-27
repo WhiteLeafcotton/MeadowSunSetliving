@@ -104,13 +104,17 @@
             display: none !important;
         }
 
-        .blueprint-stage {
-            display: block !important;
-            padding: 0 !important;
-            margin-top: 0 !important;
-            height: auto !important;
-            overflow: visible !important;
-        }
+        /* --- Update this section in your CSS --- */
+.blueprint-stage { 
+    display: flex; 
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    scrollbar-width: none; 
+    /* Reduced from 400px to 100px */
+    padding: 100px 0; 
+    /* Removed margin-top: -300px */
+    margin-top: 0; 
+}
 
         /* 3. CLEAN UP THE SECTION BELOW */
         .slide-container {
