@@ -259,7 +259,36 @@
     .table-col { border: none !important; padding: 0 !important; }
 }
 
+/* ADD THIS: Styling the Clickable Menu Area */
+.menu-link-trigger {
+    text-decoration: none; /* Removes the ugly blue underline */
+    display: block;
+    color: inherit; /* Keeps your black/dark grey text colors */
+    transition: transform 0.3s ease; /* Smooth lift effect */
+}
 
+.menu-link-trigger:hover {
+    transform: translateY(-5px); /* Makes it feel interactive */
+}
+
+/* ADD THIS: Specific styling for that "View Calendar" text */
+.view-calendar-btn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #c5a059;
+    display: inline-block;
+    margin-top: 5px;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+    padding-bottom: 3px;
+    transition: all 0.3s ease;
+}
+
+.menu-link-trigger:hover .view-calendar-btn {
+    border-bottom: 1px solid #c5a059; /* Brightens the line on hover */
+    letter-spacing: 3px; /* Subtle expansion for a premium feel */
+}
 
 
         
