@@ -42,15 +42,6 @@
             gap: 25px;
             margin-top: 50px;
         }
-        
-        /* Smooth Scroll for Anchors */
-        html { scroll-behavior: smooth; }
-        
-        /* Mobile adjustment for Car Service reverse layout */
-        @media (max-width: 768px) {
-            .editorial-row { flex-direction: column !important; }
-            .image-frame-editorial { min-height: 250px; margin-top: 20px; }
-        }
     </style>
 </head>
 
@@ -70,10 +61,10 @@
                     <li class="dropdown">
                         <a href="resident.html" class="nav-item">Resident Experience <i class="fa-solid fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="resident.html">Events</a></li>
-                            <li><a href="resident.html">THE TABLE</a></li>
-                            <li><a href="resident.html">Car Service</a></li>
-                            <li><a href="resident.html">Life Enrichment</a></li>
+                            <li><a href="#events">Events</a></li>
+                            <li><a href="#table">THE TABLE</a></li>
+                            <li><a href="#car">Car Service</a></li>
+                            <li><a href="#enrichment">Life Enrichment</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -101,18 +92,15 @@
     <div id="sideMenu" class="side-menu">
         <span class="close-btn" onclick="toggleMenu()">&times;</span>
         <div class="mobile-nav-content">
-            <a href="#events" onclick="toggleMenu()">Events</a>
-            <a href="#table" onclick="toggleMenu()">The Table</a>
-            <a href="#car" onclick="toggleMenu()">Car Service</a>
-            <a href="#enrichment" onclick="toggleMenu()">Life Enrichment</a>
-            <hr style="border: 0.5px solid rgba(255,255,255,0.1); margin: 20px 0;">
-            <a href="about.html">About Us</a>
-            <a href="payment.html">Payment Solutions</a>
-            <a href="suite.html">Suites</a>
+            <a href="resident.html" class="main-link">Resident Experience</a>
+            <a href="about.html" class="main-link">About Us</a>
+            <a href="payment.html" class="main-link">Payment Solutions</a>
+            <a href="suite.html" class="main-link">Suites</a>
+            <a href="tel:YOURNUMBER" class="nav-cta">Contact Us</a>
         </div>
     </div>
 
-    <section class="hero hero-resident">
+    <section class="hero hero-about">
         <div class="hero-light-overlay"></div>
         <div class="hero-content">
             <div class="hero-badge">
@@ -124,43 +112,14 @@
         </div>
     </section>
 
-    <section id="events" class="admissions-journey animate-on-scroll" style="padding: 100px 0 60px;">
-        <div class="luxe-container">
-            <span class="gold-eyebrow">Social Calendar</span>
-            <h2 class="magazine-title">Curated <span class="italic-serif">Engagements</span></h2>
-            <div class="dir-scroller-wrap" style="margin-top: 40px;">
-                <div class="dir-track">
-                    <div class="dir-item" style="min-width: 300px;">
-                        <div class="dir-meta">
-                            <h4 class="client-type">Summer Gala</h4>
-                            <span class="client-status">June 15th • Evening Attire</span>
-                        </div>
-                    </div>
-                    <div class="dir-item" style="min-width: 300px;">
-                        <div class="dir-meta">
-                            <h4 class="client-type">Chamber Music</h4>
-                            <span class="client-status">Weekly • Garden Terrace</span>
-                        </div>
-                    </div>
-                    <div class="dir-item" style="min-width: 300px;">
-                        <div class="dir-meta">
-                            <h4 class="client-type">Guest Lectures</h4>
-                            <span class="client-status">Monthly • Library Series</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="table" class="magazine-editorial dining-section animate-on-scroll">
+    <section class="magazine-editorial animate-on-scroll" id="table">
         <div class="editorial-wrapper">
-            <div class="editorial-row">
+            <div class="editorial-row top-row">
                 <div class="vision-box">
                     <span class="gold-eyebrow">Culinary Artistry</span>
-                    <h2 class="magazine-title">The <span class="italic-serif">Table</span></h2>
+                    <h2 class="magazine-title">The <span class="italic">Table</span></h2>
                     <p class="magazine-para">
-                        Dining at Sunset Meadow is a choreographed experience. Our seasonal menus are crafted by private chefs, focusing on <span class="bold">farm-to-table freshness</span> and nutritional precision.
+                        Dining at Sunset Meadow is a choreographed experience. Our seasonal menus are crafted by private chefs, focusing on <span class="bold">farm-to-table freshness</span> and clinical nutritional precision, served in an atmosphere of quiet elegance.
                     </p>
                     <div class="feature-list">
                         <span><i class="fa-solid fa-utensils"></i> Bespoke Menu Planning</span>
@@ -174,7 +133,7 @@
         </div>
     </section>
 
-    <section id="enrichment" class="stewardship-directory brand-bg-blue animate-on-scroll" style="padding: 100px 0;">
+    <section class="stewardship-directory brand-bg-blue animate-on-scroll" id="enrichment" style="padding: 100px 0;">
         <div class="luxe-container">
             <div class="directory-header">
                 <span class="gold-eyebrow">Holistic Wellness</span>
@@ -206,21 +165,51 @@
         </div>
     </section>
 
-    <section id="car" class="magazine-editorial animate-on-scroll" style="background: #fdfdfd; padding: 100px 0;">
+    <section class="admissions-journey animate-on-scroll" id="events" style="padding: 80px 0;">
+        <div class="luxe-container">
+            <span class="gold-eyebrow">Social Calendar</span>
+            <h2 class="magazine-title">Curated <span class="italic-serif">Engagements</span></h2>
+            
+            <div class="dir-scroller-wrap" style="margin-top: 40px;">
+                <div class="dir-track">
+                    <div class="dir-item" style="min-width: 300px;">
+                        <div class="dir-meta">
+                            <h4 class="client-type">Summer Gala</h4>
+                            <span class="client-status">June 15th • Evening Attire</span>
+                        </div>
+                    </div>
+                    <div class="dir-item" style="min-width: 300px;">
+                        <div class="dir-meta">
+                            <h4 class="client-type">Chamber Music</h4>
+                            <span class="client-status">Weekly • Garden Terrace</span>
+                        </div>
+                    </div>
+                    <div class="dir-item" style="min-width: 300px;">
+                        <div class="dir-meta">
+                            <h4 class="client-type">Guest Lectures</h4>
+                            <span class="client-status">Monthly • Library Series</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="magazine-editorial animate-on-scroll" id="car" style="background: #fdfdfd; padding-bottom: 100px;">
         <div class="editorial-wrapper">
-            <div class="editorial-row" style="flex-direction: row-reverse;">
-                <div class="vision-box">
+            <div class="editorial-row" style="flex-direction: row-reverse; display: flex; align-items: center; gap: 50px;">
+                <div class="vision-box" style="flex: 1;">
                     <span class="gold-eyebrow">Seamless Mobility</span>
                     <h2 class="magazine-title">Private <span class="italic">Chauffeur</span></h2>
                     <p class="magazine-para">
-                        Independence is preserved through our white-glove transportation service. Whether for medical appointments or social outings, we ensure every journey is safe and dignified.
+                        Independence is preserved through our white-glove transportation service. Whether for medical appointments or social outings, our private car service ensures every journey is safe, punctual, and dignified.
                     </p>
                     <div class="feature-list">
                         <span><i class="fa-solid fa-car-side"></i> Luxury Sedan Transfers</span>
                         <span><i class="fa-solid fa-clock"></i> On-Demand Scheduling</span>
                     </div>
                 </div>
-                <div class="image-frame-editorial">
+                <div class="image-frame-editorial" style="flex: 1;">
                     <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80" alt="Car Service">
                 </div>
             </div>
@@ -229,7 +218,7 @@
 
     <footer class="video-footer animate-on-scroll">
         <video autoplay muted loop playsinline class="footer-video-bg">
-            <source src="timelapse-of-noctilucent-clouds-and-vibrant-sunrise.mp4" type="video/mp4">
+            <source src="timelapse-of-noctilucent-clouds-and-a-vibrant-sunrise.mp4" type="video/mp4">
         </video>
         <div class="footer-tint"></div>
         <div class="footer-content">
@@ -239,7 +228,7 @@
             <div class="footer-grid">
                 <div class="grid-col community-col">
                     <h4>Sunset Meadow</h4>
-                    <p>High-end care in the comfort of a private residence.</p>
+                    <p>High-end professional assistance with the comfort of a private residence.</p>
                 </div>
                 <div class="grid-col">
                     <h4>Explore</h4>
@@ -259,24 +248,48 @@
     </footer>
 
     <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Schedule a Private Tour</h2>
+            <form action="https://formsubmit.co/sunsetmeadowlivingllc@gmail.com" method="POST">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="date" name="date" required>
+                <select name="service">
+                    <option>Private Pay</option>
+                    <option>Flex Pay</option>
+                    <option>Insurance</option>
+                </select>
+                <textarea name="notes" placeholder="Additional notes"></textarea>
+                <button type="submit" class="btn-gold">Submit Request</button>
+            </form>
         </div>
+    </div>
 
     <script>
         function toggleMenu() {
             const menu = document.getElementById("sideMenu");
             menu.classList.toggle("active");
         }
+
         window.openModal = function(){ document.getElementById("bookingModal").style.display = "block"; }
         window.closeModal = function(){ document.getElementById("bookingModal").style.display = "none"; }
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
                     entry.target.classList.add('show');
                 }
             });
         }, { threshold: 0.1 });
+
         document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
     </script>
+
+    <script>window.chatbaseConfig = { chatbotId: "PhPwg7-iLonUCo-_uKjPY" }</script>
+    <script src="https://www.chatbase.co/embed.min.js" id="PhPwg7-iLonUCo-_uKjPY" defer></script>
+
 </body>
 </html>
