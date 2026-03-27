@@ -121,67 +121,60 @@
 /* Hide the scrollbar but keep the scrolling functionality */
 /* Lock the window height and hide the bar */
 /* Hide scrollbars */
-.enrichment-locked-window {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-.enrichment-locked-window::-webkit-scrollbar {
-    display: none;
-}
-
-/* Cinematic Ultra-Wide Card */
+/* Cinematic Ultra-Wide & Full-Frame Card */
 .filmstrip-card-ultra {
     display: flex;
     align-items: center;
-    gap: 40px;
-    margin-bottom: 150px; /* Large gap for that 'one-at-a-time' scroll feel */
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    gap: 35px;
+    margin-bottom: 70px; /* REDUCED: Creates a tighter, fuller scroll */
+    transition: all 0.6s ease;
 }
 
 .image-box-ultra {
-    width: 480px; /* INCREASED: Fills the right side width */
-    height: 200px; /* INCREASED: Fills the vertical window better */
+    width: 520px; /* INCREASED: Dominates the horizontal space */
+    height: 240px; /* INCREASED: Fills the vertical 500px window much more */
     overflow: hidden;
     border: 1px solid rgba(197, 160, 89, 0.4);
     flex-shrink: 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 15px 45px rgba(0,0,0,0.6);
 }
 
 .image-box-ultra img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.8;
-    transition: 1s ease;
+    opacity: 0.85;
+    transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .filmstrip-card-ultra:hover img {
     opacity: 1;
-    transform: scale(1.1);
-}
-
-.card-count-ultra {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    color: #c5a059;
-    font-style: italic;
-    opacity: 0.5;
+    transform: scale(1.08);
 }
 
 .text-box-ultra h3 {
     color: white;
     font-family: 'Playfair Display', serif;
-    font-size: 2.2rem; /* BOLDER: Matches the left-side scale */
-    margin: 10px 0;
-    line-height: 1.2;
+    font-size: 2rem; /* Balanced with the larger photos */
+    margin: 5px 0;
+    line-height: 1.1;
 }
 
-.text-box-ultra p {
-    color: rgba(255,255,255,0.5);
+/* REDUCED DESCRIPTION TEXT */
+.slim-desc {
+    color: rgba(255,255,255,0.4);
+    font-size: 0.85rem; /* SHRUNK: Makes the photo look larger by comparison */
+    line-height: 1.5;
+    max-width: 240px;
+    margin-top: 10px;
+}
+
+.card-count-ultra {
+    font-family: 'Playfair Display', serif;
     font-size: 1rem;
-    line-height: 1.6;
-    max-width: 300px;
-}     
+    color: #c5a059;
+    opacity: 0.6;
+}    
     </style>
 </head>
 
@@ -279,20 +272,20 @@
 
 
 
-<section id="enrichment" class="enrichment-locked-window" style="background: #080c16; height: 500px; overflow-y: scroll; padding: 50px 0; position: relative; scroll-behavior: smooth;">
+<section id="enrichment" class="enrichment-locked-window" style="background: #080c16; height: 500px; overflow-y: scroll; padding: 40px 0; position: relative; scroll-behavior: smooth;">
     
     <div class="luxe-container" style="max-width: 1400px; margin: 0 auto; display: flex; gap: 40px; align-items: flex-start; padding: 0 40px;">
         
-        <div class="cinematic-sticky" style="position: sticky; top: 20px; flex: 0.8; height: fit-content;">
+        <div class="cinematic-sticky" style="position: sticky; top: 20px; flex: 0.7; height: fit-content;">
             <span class="gold-eyebrow" style="font-size: 0.8rem; letter-spacing: 6px; color: #c5a059;">The Collection</span>
             <h2 class="magazine-title" style="color: white; font-size: 3.5rem; margin: 20px 0; line-height: 1.0; letter-spacing: -1px;">Life <br><span class="italic-serif text-gold" style="color: #c5a059;">Enrichment</span></h2>
             <div style="width: 60px; height: 2px; background: #c5a059; margin: 30px 0;"></div>
-            <p style="color: rgba(255,255,255,0.6); font-size: 1.1rem; line-height: 1.8; max-width: 320px; font-family: 'Inter', sans-serif;">
-                A master-curated sequence of intellectual and spiritual engagements for the modern lifestyle.
+            <p style="color: rgba(255,255,255,0.6); font-size: 1rem; line-height: 1.8; max-width: 280px;">
+                A master-curated sequence of spiritual and intellectual engagements.
             </p>
         </div>
 
-        <div class="cinematic-track" style="flex: 2; padding-bottom: 80px;">
+        <div class="cinematic-track" style="flex: 2.3; padding-bottom: 60px;">
             
             <div class="filmstrip-card-ultra">
                 <div class="image-box-ultra">
@@ -301,7 +294,7 @@
                 <div class="text-box-ultra">
                     <span class="card-count-ultra">01</span>
                     <h3>Cognitive <span class="italic">Architecture</span></h3>
-                    <p>Neuro-plasticity training and guest lectures.</p>
+                    <p class="slim-desc">Specialist-led neuro-plasticity training and guest lectures.</p>
                 </div>
             </div>
 
@@ -312,7 +305,7 @@
                 <div class="text-box-ultra">
                     <span class="card-count-ultra">02</span>
                     <h3>The Artisanal <span class="italic">Studio</span></h3>
-                    <p>Private masterclasses in fine arts and sculpture.</p>
+                    <p class="slim-desc">Private masterclasses in fine arts and sculpture.</p>
                 </div>
             </div>
 
@@ -323,7 +316,7 @@
                 <div class="text-box-ultra">
                     <span class="card-count-ultra">03</span>
                     <h3>Botanical <span class="italic">Stewardship</span></h3>
-                    <p>Horticultural therapy and Zen meditation.</p>
+                    <p class="slim-desc">Horticultural therapy and Zen meditation.</p>
                 </div>
             </div>
 
@@ -334,7 +327,7 @@
                 <div class="text-box-ultra">
                     <span class="card-count-ultra">04</span>
                     <h3>Epicurean <span class="italic">Mastery</span></h3>
-                    <p>Chef-led kitchen takeovers and wine pairings.</p>
+                    <p class="slim-desc">Chef-led kitchen takeovers and wine pairings.</p>
                 </div>
             </div>
 
@@ -345,7 +338,7 @@
                 <div class="text-box-ultra">
                     <span class="card-count-ultra">05</span>
                     <h3>Movement & <span class="italic">Vitality</span></h3>
-                    <p>Somatic movement and restorative yoga tracks.</p>
+                    <p class="slim-desc">Somatic movement and restorative yoga tracks.</p>
                 </div>
             </div>
 
