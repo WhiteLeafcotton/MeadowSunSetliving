@@ -376,35 +376,58 @@
 /* 1. BASE HERO DEFAULTS */
 /* --- 1. THE MAIN INDEX HERO (Full Height) --- */
 /* --- FULL-WIDTH LIGHT LUXURY HERO (RESTORED ORIGINAL) --- */
-/* 1. THE BASE HERO (Shared by all pages) */
 .hero {
     height: 100vh;
     width: 100%;
+    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat;
     display: flex;
     align-items: center;
     padding: 0 10%;
     position: relative;
     overflow: hidden;
-    background-attachment: fixed; 
+    background-attachment: fixed; /* Your original parallax effect */
     z-index: 5;
 }
 
-/* 2. ABOUT PAGE OVERRIDE */
+/* Specific override for About Page Hero */
 .hero.hero-about {
     height: 50vh; 
     background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat;
     background-attachment: scroll;
-    position: sticky; 
+    position: sticky; /* This enables the slide-over */
     top: 0;
-    z-index: -1; 
+    z-index: -1; /* Pushes it back ONLY on the about page */
 }
 
-/* 3. SUITES PAGE OVERRIDE (Add this now) */
+/* THE SLIDE-OVER TRIGGER (ABOUT PAGE ONLY) */
+/* This ensures other sections slide over the sticky About hero */
+.hero.hero-about ~ section,
+.hero.hero-about ~ .main-content-wrapper {
+    position: relative;
+    z-index: 10;
+    background: #ffffff;
+}
+/* Specific override for Suites Page Hero */
 .hero.hero-suites {
     height: 50vh; 
-    background: url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1600") center/cover no-repeat;
-    background-attachment: fixed; /* Keeps that premium parallax feel */
-    position: relative; /* Normal flow, or change to sticky if you want the slide-over here
+    background: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1600') center/cover no-repeat;
+    background-attachment: scroll;
+    position: sticky; 
+    top: 0;
+    z-index: -1; /* Enables the slide-over effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure the Suites content slides over the sticky hero */
+.hero.hero-suites ~ section,
+.hero.hero-suites ~ .blueprint-portal,
+.hero.hero-suites ~ .mobile-narrative-card {
+    position: relative;
+    z-index: 10;
+    background: #ffffff;
+}
 
 /* --- THE REST IS YOUR ORIGINAL DESIGN CODE --- */
 
