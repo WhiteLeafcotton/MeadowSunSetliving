@@ -422,11 +422,25 @@
     .neighborhood-container { flex-direction: column-reverse; gap: 40px; } /* Reversed so text stays under 'Quiet Luxury' */
     
 
-    .neighborhood-visual video,
-    .neighborhood-visual::after {
+    .neighborhood-visual {
         width: 100%;
-        height: auto;
+        display: block; /* Switch from flex to block for easier mobile stacking */
+    }
+
+    .neighborhood-visual video {
+        width: 100% !important; /* Force video to fit phone screen */
+        height: auto !important;
         aspect-ratio: 16 / 9;
+        margin: 0 auto;
+    }
+
+    .neighborhood-visual::after {
+        /* Reset the desktop math for mobile */
+        left: -15px !important; 
+        top: 15px !important;
+        width: 100% !important;
+        height: 100% !important;
+        transform: none !important;
     }
 
     
