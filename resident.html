@@ -115,96 +115,105 @@
 
 /* Enrichment Mosaic life enrichmeLayout */
 /* High-End Editorial Grid */
-.enrichment-staggered-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 60px 40px;
-    position: relative;
+/* Cinematic Split Layout */
+.cinematic-flex {
+    display: flex;
+    gap: 100px;
+    align-items: flex-start;
 }
 
-.enrichment-card {
-    position: relative;
-    background: transparent;
-    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+.cinematic-sticky {
+    flex: 1;
+    position: sticky;
+    top: 150px; /* Adjust based on your header height */
 }
 
-.card-image-wrap {
+.cinematic-track {
+    flex: 1.5;
+}
+
+/* Filmstrip Card Design */
+.filmstrip-card {
     position: relative;
+    margin-bottom: 150px; /* Large gap between pillars for focus */
+    transition: all 0.6s ease;
+}
+
+.card-count {
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem;
+    color: rgba(197, 160, 89, 0.05);
+    position: absolute;
+    top: -60px;
+    left: -40px;
+    z-index: 1;
+}
+
+.image-box {
+    width: 100%;
+    height: 450px;
     overflow: hidden;
+    position: relative;
+    z-index: 2;
     border: 1px solid rgba(197, 160, 89, 0.2);
-    padding: 15px; /* Creates the "framed" look */
 }
 
-.card-image-wrap img {
+.image-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: saturate(0.8);
-    transition: all 0.8s ease;
+    transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.card-number {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    color: rgba(255, 255, 255, 0.1);
-    font-style: italic;
+.filmstrip-card:hover img {
+    transform: scale(1.1);
 }
 
-/* Typography Inside Cards */
-.card-body {
-    padding: 30px 0;
+.text-box {
+    padding-top: 30px;
+    position: relative;
+    z-index: 3;
 }
 
-.body-tag {
-    display: block;
-    color: #c5a059;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-.card-body h3 {
+.text-box h3 {
     color: white;
     font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
+    font-size: 2.2rem;
     margin-bottom: 15px;
 }
 
-.card-body p {
-    color: rgba(255,255,255,0.6);
+.text-box p {
+    color: rgba(255,255,255,0.5);
     font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    line-height: 1.7;
-    max-width: 90%;
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 400px;
 }
 
-/* Card Variations for Staggering */
-.card-tall .card-image-wrap { height: 500px; }
-.card-short .card-image-wrap { height: 350px; }
-.card-wide { grid-column: span 2; }
-.card-wide .card-image-wrap { height: 400px; }
-
-/* Hover Effects */
-.enrichment-card:hover .card-image-wrap img {
-    transform: scale(1.05);
-    filter: saturate(1);
+/* Decorative Accents */
+.curator-line {
+    width: 60px;
+    height: 2px;
+    background: #c5a059;
+    margin: 40px 0;
 }
 
-.enrichment-card:hover .card-number {
-    color: rgba(197, 160, 89, 0.3);
+.scroll-hint {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #c5a059;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
 }
 
-.text-gold { color: #c5a059; }
-
-@media (max-width: 768px) {
-    .enrichment-staggered-grid { grid-template-columns: 1fr; }
-    .card-short, .card-tall { margin-top: 0 !important; }
-    .card-wide { grid-column: span 1; }
+/* Mobile Fix */
+@media (max-width: 992px) {
+    .cinematic-flex { flex-direction: column; gap: 60px; }
+    .cinematic-sticky { position: static; }
+    .filmstrip-card { margin-bottom: 80px; }
+    .image-box { height: 300px; }
 }
 
         
@@ -306,74 +315,65 @@
 
 
 
-<section id="enrichment" class="enrichment-editorial animate-on-scroll" style="background: #0b1121; padding: 140px 0; overflow: hidden;">
-    <div class="luxe-container">
+<section id="enrichment" class="enrichment-cinematic animate-on-scroll" style="background: #080c16; padding: 120px 0;">
+    <div class="luxe-container cinematic-flex">
         
-        <div class="editorial-header" style="margin-bottom: 80px; position: relative; z-index: 5;">
-            <span class="gold-eyebrow" style="letter-spacing: 5px;">The Signature Pillars</span>
-            <h2 class="magazine-title" style="color: white; font-size: clamp(2.5rem, 5vw, 4rem);">Living <span class="italic-serif text-gold">Artfully</span></h2>
-            <div class="header-accent-line"></div>
+        <div class="cinematic-sticky">
+            <span class="gold-eyebrow">The Enrichment Collection</span>
+            <h2 class="magazine-title" style="color: white;">A Life of <br><span class="italic-serif text-gold">Curation</span></h2>
+            <p class="magazine-para" style="color: rgba(255,255,255,0.6); margin-top: 30px; font-size: 1.1rem;">
+                At Sunset Meadow, we don't just provide activities; we curate moments of intellectual and spiritual significance. 
+            </p>
+            <div class="curator-line"></div>
+            <div class="scroll-hint">
+                <span class="scroll-dot"></span>
+                <span>Scroll to explore the pillars</span>
+            </div>
         </div>
 
-        <div class="enrichment-staggered-grid">
+        <div class="cinematic-track">
             
-            <div class="enrichment-card card-tall">
-                <div class="card-image-wrap">
+            <div class="filmstrip-card">
+                <div class="card-count">01</div>
+                <div class="image-box">
                     <img src="https://images.unsplash.com/photo-1516534775068-ba3e84529519?auto=format&fit=crop&q=80" alt="Cognitive">
-                    <div class="card-number">01</div>
                 </div>
-                <div class="card-body">
-                    <span class="body-tag">The Intellect</span>
+                <div class="text-box">
                     <h3>Cognitive <span class="italic">Architecture</span></h3>
-                    <p>Beyond "brain games"—we offer neuro-plasticity training led by specialists to preserve and sharpen cognitive processing.</p>
+                    <p>University-level lectures and neuro-plasticity training designed for the modern mind.</p>
                 </div>
             </div>
 
-            <div class="enrichment-card card-short" style="margin-top: 100px;">
-                <div class="card-image-wrap">
+            <div class="filmstrip-card">
+                <div class="card-count">02</div>
+                <div class="image-box">
                     <img src="https://images.unsplash.com/photo-1460661419201-fd4ce186860d?auto=format&fit=crop&q=80" alt="Art">
-                    <div class="card-number">02</div>
                 </div>
-                <div class="card-body">
-                    <span class="body-tag">The Soul</span>
+                <div class="text-box">
                     <h3>The Artisanal <span class="italic">Studio</span></h3>
-                    <p>Master-led workshops in oil painting, sculpture, and textile arts within a sun-drenched, professional-grade studio.</p>
+                    <p>Private masterclasses in fine arts, pottery, and sculpture within a professional sanctuary.</p>
                 </div>
             </div>
 
-            <div class="enrichment-card card-tall">
-                <div class="card-image-wrap">
+            <div class="filmstrip-card">
+                <div class="card-count">03</div>
+                <div class="image-box">
                     <img src="https://images.unsplash.com/photo-1557431177-36141475c676?auto=format&fit=crop&q=80" alt="Garden">
-                    <div class="card-number">03</div>
                 </div>
-                <div class="card-body">
-                    <span class="body-tag">The Earth</span>
+                <div class="text-box">
                     <h3>Botanical <span class="italic">Stewardship</span></h3>
-                    <p>Horticultural therapy in our private Zen Garden, featuring rare species and meditative pathways designed for serenity.</p>
+                    <p>Horticultural therapy and Zen meditation guided by our lead landscape architect.</p>
                 </div>
             </div>
 
-            <div class="enrichment-card card-short" style="margin-top: -50px;">
-                <div class="card-image-wrap">
+            <div class="filmstrip-card">
+                <div class="card-count">04</div>
+                <div class="image-box">
                     <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80" alt="Culinary">
-                    <div class="card-number">04</div>
                 </div>
-                <div class="card-body">
-                    <span class="body-tag">The Palate</span>
-                    <h3>The Culinary <span class="italic">Academy</span></h3>
-                    <p>Private tasting sessions and interactive "Table Talks" with our executive chefs exploring global flavors and nutrition.</p>
-                </div>
-            </div>
-
-            <div class="enrichment-card card-wide">
-                <div class="card-image-wrap">
-                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80" alt="Yoga">
-                    <div class="card-number">05</div>
-                </div>
-                <div class="card-body">
-                    <span class="body-tag">The Body</span>
-                    <h3>Movement & <span class="italic">Vitality</span></h3>
-                    <p>Somatic movement, restorative yoga, and personalized physical wellness tracks focused on longevity and grace.</p>
+                <div class="text-box">
+                    <h3>Epicurean <span class="italic">Mastery</span></h3>
+                    <p>Chef-led kitchen takeovers and interactive wine pairings for the refined palate.</p>
                 </div>
             </div>
 
