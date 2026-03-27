@@ -116,87 +116,104 @@
 /* Enrichment Mosaic life enrichmeLayout */
 /* High-End Editorial Grid */
 /* Cinematic Split Layout */
-/* Cinematic Slim Layout */
 .cinematic-flex {
     display: flex;
-    gap: 60px; /* Reduced gap from 100px */
+    gap: 100px;
     align-items: flex-start;
-    padding: 0 5%;
 }
 
 .cinematic-sticky {
-    flex: 0.8; /* Thinner left side */
+    flex: 1;
     position: sticky;
-    top: 180px;
+    top: 150px; /* Adjust based on your header height */
 }
 
 .cinematic-track {
-    flex: 1.2; /* Thinner right side track */
+    flex: 1.5;
 }
 
-/* Slim Filmstrip Card */
-.filmstrip-card-slim {
+/* Filmstrip Card Design */
+.filmstrip-card {
     position: relative;
-    margin-bottom: 100px; /* Tighter gap between items */
+    margin-bottom: 150px; /* Large gap between pillars for focus */
+    transition: all 0.6s ease;
 }
 
-.card-count-slim {
+.card-count {
     font-family: 'Playfair Display', serif;
-    font-size: 4rem; /* Reduced from 8rem */
-    color: rgba(197, 160, 89, 0.1);
+    font-size: 8rem;
+    color: rgba(197, 160, 89, 0.05);
     position: absolute;
-    top: -30px;
-    left: -20px;
+    top: -60px;
+    left: -40px;
     z-index: 1;
 }
 
-.image-box-slim {
+.image-box {
     width: 100%;
-    height: 380px; /* Reduced height for a thinner look */
+    height: 450px;
     overflow: hidden;
     position: relative;
     z-index: 2;
-    border: 1px solid rgba(197, 160, 89, 0.15);
+    border: 1px solid rgba(197, 160, 89, 0.2);
 }
 
-.image-box-slim img {
+.image-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(0.2); /* Adds a subtle high-end mood */
+    transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.text-box-slim {
-    padding-top: 20px;
+.filmstrip-card:hover img {
+    transform: scale(1.1);
 }
 
-.text-box-slim h3 {
+.text-box {
+    padding-top: 30px;
+    position: relative;
+    z-index: 3;
+}
+
+.text-box h3 {
     color: white;
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem; /* More understated size */
-    margin-bottom: 10px;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
 }
 
-.text-box-slim p {
-    color: rgba(255,255,255,0.4);
+.text-box p {
+    color: rgba(255,255,255,0.5);
     font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
-    line-height: 1.6;
-    max-width: 300px;
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 400px;
 }
 
+/* Decorative Accents */
 .curator-line {
-    width: 40px;
-    height: 1px;
+    width: 60px;
+    height: 2px;
     background: #c5a059;
-    margin: 25px 0;
+    margin: 40px 0;
 }
 
-/* Mobile Fix for Slim Layout */
-@media (max-width: 768px) {
-    .cinematic-flex { flex-direction: column; gap: 40px; }
+.scroll-hint {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #c5a059;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+/* Mobile Fix */
+@media (max-width: 992px) {
+    .cinematic-flex { flex-direction: column; gap: 60px; }
     .cinematic-sticky { position: static; }
-    .image-box-slim { height: 300px; }
+    .filmstrip-card { margin-bottom: 80px; }
+    .image-box { height: 300px; }
 }
 
         
@@ -298,67 +315,72 @@
 
 
 
-<section id="enrichment" class="enrichment-cinematic-slim animate-on-scroll" style="background: #080c16; padding: 100px 0;">
-    <div class="luxe-container cinematic-flex" style="max-width: 1100px; margin: 0 auto;">
+<section id="enrichment" class="enrichment-cinematic animate-on-scroll" style="background: #080c16; padding: 120px 0;">
+    <div class="luxe-container cinematic-flex">
         
         <div class="cinematic-sticky">
-            <span class="gold-eyebrow" style="font-size: 0.65rem;">The Collection</span>
-            <h2 class="magazine-title" style="color: white; font-size: 2.2rem; line-height: 1.2;">Life <br><span class="italic-serif text-gold">Enrichment</span></h2>
-            <div class="curator-line"></div>
-            <p class="magazine-para" style="color: rgba(255,255,255,0.5); font-size: 0.85rem; line-height: 1.8;">
-                A curated sequence of intellectual and spiritual engagements.
+            <span class="gold-eyebrow">The Enrichment Collection</span>
+            <h2 class="magazine-title" style="color: white;">A Life of <br><span class="italic-serif text-gold">Curation</span></h2>
+            <p class="magazine-para" style="color: rgba(255,255,255,0.6); margin-top: 30px; font-size: 1.1rem;">
+                At Sunset Meadow, we don't just provide activities; we curate moments of intellectual and spiritual significance. 
             </p>
+            <div class="curator-line"></div>
+            <div class="scroll-hint">
+                <span class="scroll-dot"></span>
+                <span>Scroll to explore the pillars</span>
+            </div>
         </div>
 
         <div class="cinematic-track">
             
-            <div class="filmstrip-card-slim">
-                <div class="card-count-slim">01</div>
-                <div class="image-box-slim">
+            <div class="filmstrip-card">
+                <div class="card-count">01</div>
+                <div class="image-box">
                     <img src="https://images.unsplash.com/photo-1516534775068-ba3e84529519?auto=format&fit=crop&q=80" alt="Cognitive">
                 </div>
-                <div class="text-box-slim">
+                <div class="text-box">
                     <h3>Cognitive <span class="italic">Architecture</span></h3>
-                    <p>Neuro-plasticity training and guest lectures designed for the modern mind.</p>
+                    <p>University-level lectures and neuro-plasticity training designed for the modern mind.</p>
                 </div>
             </div>
 
-            <div class="filmstrip-card-slim">
-                <div class="card-count-slim">02</div>
-                <div class="image-box-slim">
+            <div class="filmstrip-card">
+                <div class="card-count">02</div>
+                <div class="image-box">
                     <img src="https://images.unsplash.com/photo-1460661419201-fd4ce186860d?auto=format&fit=crop&q=80" alt="Art">
                 </div>
-                <div class="text-box-slim">
+                <div class="text-box">
                     <h3>The Artisanal <span class="italic">Studio</span></h3>
-                    <p>Private masterclasses in fine arts, pottery, and sculpture.</p>
+                    <p>Private masterclasses in fine arts, pottery, and sculpture within a professional sanctuary.</p>
                 </div>
             </div>
 
-            <div class="filmstrip-card-slim">
-                <div class="card-count-slim">03</div>
-                <div class="image-box-slim">
+            <div class="filmstrip-card">
+                <div class="card-count">03</div>
+                <div class="image-box">
                     <img src="https://images.unsplash.com/photo-1557431177-36141475c676?auto=format&fit=crop&q=80" alt="Garden">
                 </div>
-                <div class="text-box-slim">
+                <div class="text-box">
                     <h3>Botanical <span class="italic">Stewardship</span></h3>
-                    <p>Horticultural therapy guided by our lead landscape architect.</p>
+                    <p>Horticultural therapy and Zen meditation guided by our lead landscape architect.</p>
                 </div>
             </div>
 
-            <div class="filmstrip-card-slim">
-                <div class="card-count-slim">04</div>
-                <div class="image-box-slim">
+            <div class="filmstrip-card">
+                <div class="card-count">04</div>
+                <div class="image-box">
                     <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80" alt="Culinary">
                 </div>
-                <div class="text-box-slim">
+                <div class="text-box">
                     <h3>Epicurean <span class="italic">Mastery</span></h3>
-                    <p>Chef-led kitchen takeovers and interactive wine pairings.</p>
+                    <p>Chef-led kitchen takeovers and interactive wine pairings for the refined palate.</p>
                 </div>
             </div>
 
         </div>
     </div>
 </section>
+
 
 
 
