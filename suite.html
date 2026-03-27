@@ -19,28 +19,7 @@
         --white: #ffffff;
     }
 
-    /* --- HEoROh --- */
-    .hero-suites {
-        position: relative;
-        height: 80vh;
-        min-height: 600px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1600') center/cover no-repeat;
-        background-attachment: fixed;
-        color: var(--white);
-        text-align: center;
-    }
-
-    .hero-light-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 1; }
-    .hero-content { position: relative; z-index: 2; max-width: 900px; padding: 0 20px; }
-    .hero-badge { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 30px; }
-    .badge-line { width: 40px; height: 1px; background: var(--gold); }
-    .badge-text { font-family: 'Inter'; text-transform: uppercase; letter-spacing: 4px; font-size: 0.75rem; color: var(--gold); }
-    .hero-content h1 { font-family: 'Playfair Display'; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 25px; }
-    .italic-serif { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 300; }
-
+   
     /* --- BLUEPRINT SECTION (DESKTOP DEFAULT) --- */
     .blueprint-portal { display: grid; grid-template-columns: 400px 1fr; background: #fff; padding: 0px 0; overflow: hidden; }
     .narrative-aside { padding-left: 10%; border-right: 1px solid #f0f0f0; }
@@ -454,31 +433,24 @@
     </header>
 
     <main>
-        <section class="hero hero-suites">
-            <div class="hero-light-overlay"></div>
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="badge-line"></span>
-                    <span class="badge-text">Architectural Calm</span>
-                </div>
-                <h1>Private Sanctuaries <br><span class="italic-serif">Sunset Meadow</span></h1>
-                <p>Bridging the gap between high-end professional assistance and the intimate comfort of a private residence.</p>
+       <section class="hero-suites">
+        <div class="hero-light-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <div class="badge-line"></div>
+                <span class="badge-text">Private Residential</span>
+                <div class="badge-line"></div>
             </div>
-
-
-
-
-
-
-
-
+            <h1>The <span class="italic-serif">Suites</span></h1>
+        </div>
+    </section>
 
 
 
 
 
             
-        </section>
+       
 
        <div class="mobile-narrative-card">
     <span class="gold-tag">Residential Suite</span>
