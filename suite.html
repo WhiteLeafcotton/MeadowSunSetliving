@@ -560,23 +560,43 @@
 
 <section class="neighborhood-section">
     <div class="neighborhood-container">
-        
         <div class="neighborhood-visual">
-            <video autoplay muted loop playsinline class="neighborhood-video">
-                <source src="YOUR_VIDEO_URL_HERE.mp4" type="video/mp4">
-            </video>
+            <div class="video-container" style="height: 100%; position: relative;">
+                <iframe 
+                    src="https://www.youtube.com/embed/LXFDI8Tnayw?autoplay=1&mute=1&loop=1&playlist=LXFDI8Tnayw&controls=0&showinfo=0&rel=0&modestbranding=1" 
+                    frameborder="0" 
+                    style="width: 100%; height: 700px; object-fit: cover;"
+                    allow="autoplay; encrypted-media">
+                </iframe>
+                <div class="video-overlay" style="background: rgba(0,0,0,0.2);"></div>
+            </div>
         </div>
 
         <div class="neighborhood-content">
             <span class="badge-text">04 / THE SETTING</span>
             <h2 class="display-serif">Quiet Luxury. <br><span class="italic-serif">Connected Living.</span></h2>
-            
-            <p>Situated in a secluded residential pocket, Sunset Meadow offers the rare balance of profound stillness and immediate access. Whether it is a curated morning at local gardens or the reassurance of world-class medical proximity, every convenience is an extension of your home.</p>
-            
+            <p>Situated in a secluded residential pocket, Sunset Meadow offers the rare balance of profound stillness and immediate access...</p>
             <a href="https://maps.google.com" target="_blank" class="map-link">
                 <i class="fa-solid fa-arrow-right-long" style="margin-right: 10px; color: var(--gold);"></i>
                 Explore the Vicinity
             </a>
+        </div>
+    </div>
+</section>
+
+
+
+    <section class="video-feature" style="padding: 100px 0; background: #f9f9f9;">
+    <div class="video-wrapper" style="max-width: 1000px; margin: 0 auto; text-align: center;">
+        <a href="https://www.youtube.com/watch?v=LXFDI8Tnayw" target="_blank" class="play-trigger" style="position: relative; display: block;">
+            <img src="https://i.ytimg.com/vi/LXFDI8Tnayw/maxresdefault.jpg" alt="The Experience" style="width: 100%; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+            <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                <i class="fa-solid fa-play" style="color: var(--white); font-size: 3rem; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); padding: 30px; border-radius: 50%;"></i>
+            </div>
+        </a>
+        <div class="video-caption" style="margin-top: 30px;">
+            <span class="badge-text">05 / The Experience</span>
+            <h3 class="display-serif" style="font-size: 2.5rem;">A Glimpse Into <br><em>Daily Life.</em></h3>
         </div>
     </div>
 </section>
