@@ -436,202 +436,200 @@
 ========================================= */
 
 /* The Full-Page Modal Wrapper (keeps background viewable) */
+dont change anything!!!!!!/* =========================================
+   MOBILITY MODAL: TOTAL GLASS RESTYLE
+========================================= */
+
+/* The Full-Page Modal Wrapper (keeps background viewable) */
 .ultra-glass-mobility.modal {
-    background: rgba(0, 0, 0, 0.5);
-    /* --- ADDED ONLY THESE 2 LINES TO FIX CUTOFF --- */
-    overflow-y: auto; 
-    display: flex; /* Helps with centering when scrolling is active */
-    /* ---------------------------------------------- */
+    background: rgba(0, 0, 0, 0.5); /* Slight tint so the blurred background pops */
 }
 
 /* The Modal Content: Identical to the Transportation Page Card */
 .mobility-glass-card.modal-content {
-    background: rgba(255, 255, 255, 0.08); 
-    backdrop-filter: blur(20px); 
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1); 
-    box-shadow: 0 40px 100px rgba(0,0,0,0.5); 
-    
-    /* Dimensions & Spacing */
-    max-width: 600px;
-    padding: 80px;
-    color: white; 
-    
-    /* ADDED THIS TO ENSURE IT CENTERS IN THE SCROLLABLE WRAPPER */
-    margin: auto; 
-    
-    /* Animation for appearance */
-    animation: mobilityFadeIn 0.5s ease forwards;
+    background: rgba(255, 255, 255, 0.08); /* Frosted, semi-transparent base */
+    backdrop-filter: blur(20px); /* THE ESSENTIAL FROST EFFECT */
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white outline */
+    box-shadow: 0 40px 100px rgba(0,0,0,0.5); /* Deep shadow for depth */
+    
+    /* Dimensions & Spacing */
+    max-width: 600px;
+    padding: 80px;
+    color: white; /* All text is white/gold */
+    
+    /* Animation for appearance */
+    animation: mobilityFadeIn 0.5s ease forwards;
 }
 
 @keyframes mobilityFadeIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Header & Titles within the Modal */
 .mobility-glass-card h2.magazine-title {
-    font-size: 3rem; 
-    color: white;
-    margin-bottom: 40px;
-    line-height: 1.1;
+    font-size: 3rem; /* Bold editorial look */
+    color: white;
+    margin-bottom: 40px;
+    line-height: 1.1;
 }
 
 .mobility-glass-card .gold-eyebrow {
-    color: #c5a059;
-    letter-spacing: 6px;
-    display: block;
-    margin-bottom: 15px;
-    font-size: 0.8rem;
-    text-transform: uppercase;
+    color: #c5a059;
+    letter-spacing: 6px;
+    display: block;
+    margin-bottom: 15px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
 }
 
 /* Restyling ALL inputs for the glass look */
-.mobility-glass-card input[type], 
+.mobility-glass-card input[type], 
 .mobility-glass-card textarea {
-    background: rgba(255, 255, 255, 0.05); 
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
-    padding: 18px;
-    font-size: 0.95rem;
-    font-family: 'Inter', sans-serif;
-    border-radius: 0; 
-    width: 100%;
-    margin-bottom: 20px;
-    transition: 0.3s;
+    background: rgba(255, 255, 255, 0.05); /* Very light, transparent input */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 18px;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    border-radius: 0; /* Premium, angular look */
+    width: 100%;
+    margin-bottom: 20px;
+    transition: 0.3s;
 }
 
 .mobility-glass-card input::placeholder { color: rgba(255,255,255,0.4); }
 
-.mobility-glass-card input:focus, 
+.mobility-glass-card input:focus, 
 .mobility-glass-card textarea:focus {
-    outline: none;
-    border-color: #c5a059; 
-    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+    border-color: #c5a059; /* Gold focus border */
+    background: rgba(255, 255, 255, 0.1);
 }
 
 /* Form Grid */
 .form-row-split {
-    display: flex;
-    gap: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 /* =========================================
-    DROPDOWN (SELECT) RESTYLING: The Fix
+   DROPDOWN (SELECT) RESTYLING: The Fix
 ========================================= */
 
 /* The wrapper that holds the dropdown and the new icon */
 .custom-select-wrapper {
-    position: relative;
-    width: 100%;
-    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 /* Restyling the actual SELECT element */
 .luxe-select {
-    appearance: none; 
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    
-    /* Matching the other inputs */
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255,255,255,0.8); 
-    padding: 18px;
-    padding-right: 50px; 
-    font-size: 0.95rem;
-    font-family: 'Inter', sans-serif;
-    border-radius: 0;
-    width: 100%;
-    cursor: pointer;
-    transition: 0.3s;
+    appearance: none; /* REMOVES DEFAULT BROWSER STYLING (Ugly arrows, etc.) */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    /* Matching the other inputs */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255,255,255,0.8); /* Placeholder-like color for the unselected state */
+    padding: 18px;
+    padding-right: 50px; /* Space for the new icon */
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    border-radius: 0;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .luxe-select:focus {
-    outline: none;
-    border-color: #c5a059;
-    color: white; 
+    outline: none;
+    border-color: #c5a059;
+    color: white; /* Selected text is full white */
 }
 
 /* Creating a new, elegant gold chevron icon */
 .select-icon {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    color: #c5a059; 
-    font-size: 0.9rem;
-    pointer-events: none; 
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #c5a059; /* Gold icon */
+    font-size: 0.9rem;
+    pointer-events: none; /* User clicks 'through' the icon to the select */
 }
 
 /* Restyling the actual 'options' inside the dropdown (Browser limited) */
 .luxe-select option {
-    background-color: #080c16; 
-    color: white;
-    padding: 10px;
+    background-color: #080c16; /* Dark background so text is readable */
+    color: white;
+    padding: 10px;
 }
 
 .luxe-select option[disabled] {
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.4);
 }
 
 /* =========================================
-    BUTTONS & MISC (Mobility Theme)
+   BUTTONS & MISC (Mobility Theme)
 ========================================= */
 
 /* The Close Button for the Glass Modal */
 .close-glass {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    color: white;
-    font-size: 2.5rem;
-    cursor: pointer;
-    opacity: 0.5;
-    transition: 0.3s;
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.3s;
 }
 
 .close-glass:hover { opacity: 1; color: #c5a059; }
 
 /* The Pulse Dot ( carried from the card design) */
 .live-status-container {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
 }
 
 .pulse-dot {
-    width: 10px;
-    height: 10px;
-    background: #c5a059;
-    border-radius: 50%;
-    box-shadow: 0 0 15px #c5a059;
-    animation: pulse-gold-mobility 2s infinite;
+    width: 10px;
+    height: 10px;
+    background: #c5a059;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #c5a059;
+    animation: pulse-gold-mobility 2s infinite;
 }
 
 .status-text {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    color: #c5a059;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #c5a059;
 }
 
 @keyframes pulse-gold-mobility {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(197, 160, 89, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(197, 160, 89, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
 }
 
 /* Mobile Adjustments for the Glass Modal */
 @media (max-width: 768px) {
-    .mobility-glass-card.modal-content {
-        padding: 40px 25px;
-        margin: 0 20px;
-        max-width: calc(100% - 40px);
-    }
-    .mobility-glass-card h2.magazine-title { font-size: 2.2rem; }
-    .form-row-split { flex-direction: column; gap: 0; }
+    .mobility-glass-card.modal-content {
+        padding: 40px 25px;
+        margin: 0 20px;
+        max-width: calc(100% - 40px);
+    }
+    .mobility-glass-card h2.magazine-title { font-size: 2.2rem; }
+    .form-row-split { flex-direction: column; gap: 0; }
 }
 
  </style>       
