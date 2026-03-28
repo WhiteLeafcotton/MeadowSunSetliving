@@ -383,7 +383,77 @@
     }
     .main-title { font-size: 2.5rem; }
 }
-        
+
+
+
+
+
+
+
+
+
+
+        /* Mobility Modal book a chofur button Specific Styling */
+.mobility-modal-style .modal-content.glass-effect {
+    background: rgba(8, 12, 22, 0.95); /* Matches your dark transportation vibe */
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    color: white;
+    max-width: 550px;
+    padding: 60px;
+}
+
+.mobility-modal-style .gold-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    color: #c5a059;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.mobility-modal-style h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+}
+
+/* Inputs for the dark theme */
+.mobility-modal-style input, 
+.mobility-modal-style select, 
+.mobility-modal-style textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+}
+
+.mobility-modal-style input::placeholder { color: rgba(255,255,255,0.4); }
+
+.form-row { display: flex; gap: 15px; }
+
+.luxe-ride-btn-submit {
+    background: #c5a059;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.luxe-ride-btn-submit:hover {
+    background: white;
+    color: #080c16;
+}
     </style>
 </head>
 
@@ -749,7 +819,7 @@
                 </div>
             </div>
 
-            <a href="javascript:void(0)" class="luxe-ride-btn">Schedule Your Chauffeur</a>
+            <a href="javascript:void(0)" class="luxe-ride-btn" onclick="openRideModal()">Schedule Your Chauffeur</a>
         </div>
     </div>
 </section>
@@ -824,6 +894,45 @@
         </div>
     </div>
 
+
+
+
+
+    <div id="rideModal" class="modal mobility-modal-style">
+    <div class="modal-content glass-effect">
+        <span class="close" onclick="closeRideModal()">&times;</span>
+        <span class="gold-eyebrow">Concierge Mobility</span>
+        <h2>Reserve Your <span class="italic-serif text-gold">Chauffeur</span></h2>
+        
+        <form action="https://formsubmit.co/sunsetmeadowlivingllc@gmail.com" method="POST">
+            <div class="form-row">
+                <input type="text" name="name" placeholder="Resident Name" required>
+                <input type="tel" name="phone" placeholder="Contact Number" required>
+            </div>
+            
+            <input type="text" name="destination" placeholder="Destination (e.g., The Metropolitan Club)" required>
+            
+            <div class="form-row">
+                <input type="date" name="date" required title="Pickup Date">
+                <input type="time" name="time" required title="Pickup Time">
+            </div>
+
+            <select name="escort_needs">
+                <option value="standard">Standard Chauffeur Service</option>
+                <option value="white-glove">White-Glove Door-to-Door Escort</option>
+                <option value="round-trip">Round Trip / Wait & Return</option>
+            </select>
+
+            <textarea name="notes" placeholder="Special requirements or medical equipment needs..."></textarea>
+            
+            <input type="hidden" name="_subject" value="URGENT: New Car Service Request - Love Moore and Care">
+            <input type="hidden" name="_captcha" value="false">
+            
+            <button type="submit" class="luxe-ride-btn-submit">Confirm Reservation</button>
+        </form>
+    </div>
+</div>
+
     <script>
         // Modal Logic
         window.openModal = function(){ document.getElementById("bookingModal").style.display = "block"; }
@@ -858,6 +967,24 @@
                 }
             }
         });
+
+
+        // Mobility Modal Logic
+window.openRideModal = function(){ 
+    document.getElementById("rideModal").style.display = "block"; 
+}
+
+window.closeRideModal = function(){ 
+    document.getElementById("rideModal").style.display = "none"; 
+}
+
+// Update your existing window.onclick to close BOTH modals
+window.onclick = function(event) {
+    let tourModal = document.getElementById("bookingModal");
+    let rideModal = document.getElementById("rideModal");
+    if (event.target == tourModal) { tourModal.style.display = "none"; }
+    if (event.target == rideModal) { rideModal.style.display = "none"; }
+}
     </script>
 
     <script>
