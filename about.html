@@ -105,10 +105,7 @@
 
 
 
-
-
-   <section class="magazine-editorial">
-    
+<section class="magazine-editorial">
     <div class="fox-watermark">
         <img src="fox.svg" alt="">
     </div>
@@ -117,12 +114,22 @@
         
         <div class="editorial-row top-row">
             <div class="vision-box">
-                <span class="gold-eyebrow">Our Vision</span>
-                <h2 class="magazine-title">A Legacy of <br><span class="italic">Refined Care</span></h2>
-                <div class="vision-content">
-                    <p class="magazine-para">
-                        Born from a quiet commitment to exceptional senior care, <span class="bold">Sunset Meadow</span> was envisioned as more than just a residence—it was designed as a sanctuary. For over twenty years, our founding principles have been rooted in the belief that aging should be met with grace, dignity, and the restorative power of a refined environment.
-                    </p>
+                <span class="gold-eyebrow">The Foundation</span>
+                <h2 class="magazine-title">A Sanctuary of <br><span class="italic">Dignity & Grace</span></h2>
+                
+                <p class="magazine-para">
+                    Sunset Meadow was established to bridge the gap between high-end luxury and the warmth of a true family home. We believe that aging is a season of life that deserves to be met with beauty and uncompromising clinical excellence.
+                </p>
+
+                <div class="info-pillars">
+                    <div class="pillar">
+                        <span class="pillar-title">Clinical Precision</span>
+                        <p>24/7 Registered Nurse oversight ensuring medical safety is never secondary to comfort.</p>
+                    </div>
+                    <div class="pillar">
+                        <span class="pillar-title">Curated Living</span>
+                        <p>From fine dining to high-tech suites, every detail is designed for the modern senior.</p>
+                    </div>
                 </div>
             </div>
 
@@ -131,10 +138,10 @@
                     <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true" alt="Julianne Vance, RN">
                 </div>
                 <div class="label-stack right-align">
+                    <span class="role-tag">Medical Excellence</span>
                     <h3 class="name-label">Julianne <br><span class="italic">Vance, RN</span></h3>
                     <div class="bio-col border-accent">
-                        <span class="role-tag">Medical Excellence</span>
-                        <p class="mini-bio">Bridging the gap between clinical precision and the warmth of a true home.</p>
+                        <p class="mini-bio">"Care is not just a checklist; it’s a commitment to the person behind the diagnosis."</p>
                     </div>
                 </div>
             </div>
@@ -144,7 +151,10 @@
             <blockquote class="editorial-quote">
                 "We aren't just managing health; we are stewarding a season of life that deserves to be beautiful."
             </blockquote>
-            <cite class="quote-author">— The Sunset Meadow Promise</cite>
+            <div class="signature-line">
+                <div class="line"></div>
+                <cite class="quote-author">The Sunset Meadow Promise</cite>
+            </div>
         </div>
 
         <div class="editorial-row bottom-row">
@@ -153,12 +163,17 @@
                     <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2015.jpeg?raw=true" alt="Eleanor Sterling">
                 </div>
                 <div class="label-stack left-align">
-                    <h3 class="name-label hero-size">Eleanor <br><span class="italic">Sterling</span></h3>
+                    <span class="role-tag">Executive Director</span>
+                    <h3 class="name-label">Eleanor <br><span class="italic">Sterling</span></h3>
                     <div class="bio-col border-accent">
-                        <span class="role-tag">Executive Director</span>
-                        <p class="mini-bio">Curating the atmosphere of Sunset Meadow with an uncompromising eye for detail. Eleanor believes luxury lies in the invisible details.</p>
+                        <p class="mini-bio">With an eye for invisible details, Eleanor ensures that Sunset Meadow feels less like a facility and more like an estate.</p>
                     </div>
                 </div>
+            </div>
+            
+            <div class="culture-box">
+                <h4 class="small-title">The Atmosphere</h4>
+                <p>Our culture is rooted in <strong>Baby Boomer nostalgia</strong> mixed with modern innovation. We celebrate the legacy of our residents every day.</p>
             </div>
         </div>
 
@@ -166,28 +181,29 @@
 </section>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;700&display=swap');
 
     .magazine-editorial {
         position: relative;
-        padding: 140px 0;
+        padding: 120px 0;
         background: #fffcf8; 
         color: #1a1a1a;
         overflow: hidden;
         font-family: 'Playfair Display', serif;
     }
 
-    /* THE WATERMARK: Fixed so it doesn't move weirdly */
+    /* THE WATERMARK: Fixed background, very subtle */
     .fox-watermark {
-        position: fixed; /* Stays stuck to the screen background */
-        top: 50%;
+        position: absolute;
+        top: 20%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        width: 50vw; /* Responsive width based on screen */
-        opacity: 0.03; 
+        transform: translateX(-50%);
+        width: 60%;
+        opacity: 0.025; 
         z-index: 0;
         pointer-events: none;
     }
+    .fox-watermark img { width: 100%; height: auto; }
 
     .editorial-wrapper {
         max-width: 1200px;
@@ -197,57 +213,89 @@
         z-index: 2; 
     }
 
-    /* TYPOGRAPHY */
-    .magazine-title { font-size: 4rem; line-height: 1; margin-bottom: 40px; }
-    .magazine-title .italic { font-style: italic; color: #c5a059; display: block; padding-left: 50px; }
-    .magazine-para { font-size: 1.2rem; line-height: 1.9; color: #444; border-left: 2px solid #c5a059; padding-left: 30px; }
+    /* VISION SECTION */
+    .vision-box { max-width: 500px; }
+    .gold-eyebrow { 
+        font-family: 'Inter', sans-serif;
+        font-size: 0.75rem; 
+        text-transform: uppercase; 
+        letter-spacing: 4px; 
+        color: #c5a059; 
+        font-weight: 700;
+        display: block;
+        margin-bottom: 15px;
+    }
+    .magazine-title { font-size: 3.5rem; line-height: 1.1; margin-bottom: 30px; }
+    .magazine-title .italic { font-style: italic; color: #c5a059; }
+    .magazine-para { font-size: 1.15rem; line-height: 1.8; color: #444; margin-bottom: 40px; }
 
-    /* LAYOUT ROWS */
-    .editorial-row { display: flex; align-items: center; margin-bottom: 180px; gap: 80px; }
+    /* PILLARS (Informative Add) */
+    .info-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
+    .pillar-title { 
+        font-family: 'Inter', sans-serif;
+        font-size: 0.8rem; 
+        font-weight: 700; 
+        display: block; 
+        margin-bottom: 10px; 
+        text-transform: uppercase;
+        color: #1a1a1a;
+    }
+    .pillar p { font-size: 0.9rem; line-height: 1.6; color: #666; font-family: 'Inter', sans-serif; }
+
+    /* PROFILE BOXES */
+    .editorial-row { display: flex; align-items: flex-start; margin-bottom: 150px; gap: 80px; }
     .top-row { justify-content: space-between; }
-    .bottom-row { justify-content: flex-start; padding-left: 8%; }
+    .bottom-row { justify-content: flex-start; align-items: flex-end; }
 
-    /* PHOTO FRAMES */
+    .profile-box { position: relative; }
     .photo-frame { 
         background: #fff; 
-        box-shadow: 40px 40px 0px rgba(197, 160, 89, 0.03); 
+        box-shadow: 30px 30px 0px rgba(197, 160, 89, 0.05); 
         overflow: hidden;
     }
-    .julianne .photo-frame { width: 380px; height: 520px; }
-    .eleanor .photo-frame { width: 550px; height: 400px; }
+    .julianne .photo-frame { width: 350px; height: 480px; }
+    .eleanor .photo-frame { width: 420px; height: 320px; }
     .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
 
     /* LABELS */
     .label-stack {
         position: absolute;
         background: #fff;
-        padding: 40px;
-        width: 340px;
-        box-shadow: 20px 20px 70px rgba(0,0,0,0.07);
+        padding: 35px;
+        width: 300px;
+        box-shadow: 15px 15px 50px rgba(0,0,0,0.05);
     }
-    .right-align { bottom: -60px; right: -90px; }
-    .left-align { top: -70px; left: -110px; }
+    .right-align { bottom: -50px; right: -60px; }
+    .left-align { top: -50px; left: -80px; }
 
-    .name-label { font-size: 2.2rem; line-height: 1; margin-bottom: 20px; }
-    .border-accent { border-top: 3px solid #c5a059; padding-top: 20px; }
-    .role-tag { font-family: sans-serif; font-size: 0.7rem; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; color: #c5a059; display: block; margin-bottom: 10px; }
-    .mini-bio { font-size: 0.95rem; color: #666; line-height: 1.6; }
+    .name-label { font-size: 1.8rem; line-height: 1.1; margin-bottom: 15px; }
+    .role-tag { font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #c5a059; margin-bottom: 10px; display: block; }
+    .border-accent { border-top: 2px solid #c5a059; padding-top: 15px; }
+    .mini-bio { font-size: 0.9rem; color: #666; line-height: 1.5; font-style: italic; }
 
     /* PULL QUOTE */
-    .pull-quote-wrapper { text-align: center; max-width: 800px; margin: 150px auto; }
-    .editorial-quote { font-size: 2.5rem; font-style: italic; margin-bottom: 25px; }
-    .quote-author { font-family: sans-serif; font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; color: #c5a059; }
+    .pull-quote-wrapper { text-align: center; max-width: 800px; margin: 100px auto; }
+    .editorial-quote { font-size: 2.2rem; font-style: italic; margin-bottom: 25px; line-height: 1.3; }
+    .signature-line { display: flex; align-items: center; justify-content: center; gap: 20px; }
+    .signature-line .line { width: 50px; height: 1px; background: #c5a059; }
+    .quote-author { font-family: 'Inter', sans-serif; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: #c5a059; }
 
+    /* CULTURE BOX */
+    .culture-box { max-width: 300px; padding-bottom: 40px; }
+    .small-title { font-family: 'Inter', sans-serif; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; }
+    .culture-box p { font-size: 0.95rem; line-height: 1.7; color: #555; }
+
+    /* MOBILE VIEW */
     @media (max-width: 1024px) {
-        .editorial-row { flex-direction: column; text-align: center; }
-        .bottom-row { padding-left: 0; }
+        .editorial-row { flex-direction: column; gap: 60px; }
+        .info-pillars { grid-template-columns: 1fr; }
         .photo-frame { width: 100% !important; height: 400px !important; }
-        .label-stack { position: static !important; width: 100% !important; padding: 40px 0; background: transparent; box-shadow: none; text-align: left; }
-        .magazine-title { font-size: 3rem; }
+        .label-stack { position: relative !important; width: 100% !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; box-shadow: none; padding: 20px 0; }
+        .magazine-title { font-size: 2.5rem; }
+        .pull-quote-wrapper { margin: 60px 0; }
+        .editorial-quote { font-size: 1.6rem; }
     }
 </style>
-
-
 
 
 
