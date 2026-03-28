@@ -397,16 +397,16 @@
 <style>
     /* --- RIBBON CORE STYLES --- */
     .stewardship-ribbon {
-        background-color: #0f172a; /* Deep Navy to match brand-blue */
-        padding: 40px 0;
-        border-top: 1px solid rgba(197, 160, 89, 0.15);
-        border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+        background-color: #0c1833; /* Deep Navy brand-blue */
+        padding: 60px 0; /* INCREASED HEIGHT */
+        border-top: 1px solid rgba(197, 160, 89, 0.2);
+        border-bottom: 1px solid rgba(197, 160, 89, 0.2);
         overflow: hidden;
     }
 
     .ribbon-brow {
         padding: 0 8%;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
 
     .gold-eyebrow {
@@ -416,14 +416,13 @@
         font-size: 0.65rem;
         font-weight: 800;
         color: #c5a059;
-        opacity: 0.9;
+        opacity: 1;
     }
 
     /* --- THE INFINITE TICKER ENGINE --- */
     .dir-slider-viewport {
         width: 100%;
         display: flex;
-        /* Glass Fade at edges */
         mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
         -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
     }
@@ -433,25 +432,25 @@
         gap: 20px;
         width: max-content;
         animation: tickerScroll 40s linear infinite;
-        padding: 10px 0;
+        padding: 15px 0;
     }
 
     @keyframes tickerScroll {
         0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); } /* Moves through exactly one set */
+        100% { transform: translateX(-50%); }
     }
 
     .dir-track:hover {
         animation-play-state: paused;
     }
 
-    /* --- THE BOUTIQUE CARD DESIGN --- */
+    /* --- THE UPDATED DARK BLUE CARD DESIGN --- */
     .dir-item {
-        flex: 0 0 260px;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        padding: 15px 22px;
-        min-height: 95px;
+        flex: 0 0 280px;
+        background: #0f1c3d; /* Darker Blue Card Fill */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px 25px;
+        min-height: 110px; /* Taller Card */
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -460,13 +459,13 @@
     }
 
     .dir-item:hover {
-        background: rgba(255, 255, 255, 0.06);
+        background: #15254d;
         border-color: #c5a059;
-        transform: translateY(-3px);
-        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
     }
 
-    /* --- MICRO TYPOGRAPHY --- */
+    /* --- TYPOGRAPHY UPDATES --- */
     .acuity-tag {
         font-size: 0.5rem;
         color: #c5a059;
@@ -474,46 +473,46 @@
         text-transform: uppercase;
         font-weight: 900;
         display: block;
-        margin-bottom: 5px;
-        opacity: 0.7;
+        margin-bottom: 6px;
     }
 
     .client-type {
         font-family: 'Playfair Display', serif;
-        font-size: 1.05rem;
+        font-size: 1.15rem; /* White Text */
         color: #ffffff;
-        line-height: 1.1;
+        line-height: 1.2;
         margin: 0;
     }
 
     .client-status {
-        font-size: 0.58rem;
+        font-size: 0.6rem;
         text-transform: uppercase;
         letter-spacing: 1.5px;
-        color: rgba(255, 255, 255, 0.45);
-        margin-top: 3px;
+        color: rgba(255, 255, 255, 0.6); /* Muted White */
+        margin-top: 5px;
         display: block;
     }
 
+    /* --- ICON UPDATES --- */
     .dir-icon i {
-        font-size: 1.1rem;
-        color: #c5a059;
-        opacity: 0.35;
+        font-size: 1.2rem;
+        color: #64748b; /* Stone Grayish Icon Color */
+        opacity: 0.8;
     }
 
     /* --- INDEX/TOTAL CARD --- */
     .index-card {
-        background: rgba(197, 160, 89, 0.08);
-        border: 1px solid rgba(197, 160, 89, 0.4);
+        background: rgba(197, 160, 89, 0.1);
+        border: 1px solid #c5a059;
         justify-content: center;
         gap: 15px;
     }
 
     .index-digit {
         font-family: 'Playfair Display', serif;
-        font-size: 2.2rem;
+        font-size: 2.5rem;
         font-weight: 700;
-        color: #c5a059;
+        color: #ffffff; /* White Digit */
         line-height: 1;
     }
 
@@ -521,10 +520,8 @@
         color: #c5a059;
         font-weight: 800;
         max-width: 60px;
-        line-height: 1.2;
     }
 </style>
-
 
 
 
