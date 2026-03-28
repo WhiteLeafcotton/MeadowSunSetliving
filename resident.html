@@ -404,6 +404,7 @@
 ========================================= */
 
 /* The Modal Wrapper: Tinted background that allows scrolling */
+/* The Full-Page Modal Wrapper: LIGHTER TINT */
 .ultra-glass-mobility.modal {
     display: none; 
     position: fixed;
@@ -412,59 +413,48 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); 
+    /* Switched from black (0,0,0) to white (255,255,255) with 40% tint */
+    background: rgba(255, 255, 255, 0.4); 
     backdrop-filter: blur(8px);
     overflow-y: auto; 
     padding: 40px 0;
 }
 
-/* THE FROSTED CARD: Identical to your Transport Section */
+/* THE FROSTED CARD: WHITE GLASS */
 .mobility-glass-card.modal-content {
-    background: rgba(255, 255, 255, 0.08); /* Frosted Base */
-    backdrop-filter: blur(30px); /* DEEP FROST EFFECT */
+    /* Switched to a brighter white glass base */
+    background: rgba(255, 255, 255, 0.75); 
+    backdrop-filter: blur(30px); 
     -webkit-backdrop-filter: blur(30px);
-    border: 1px solid rgba(255, 255, 255, 0.15); 
-    box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255, 255, 255, 0.4); 
+    /* Softer, lighter shadow */
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
     
     margin: auto;
     width: 90%;
-    max-width: 520px; /* Slimmer for an elite look */
-    padding: 45px; /* Balanced padding to prevent cutoff */
-    color: white; 
+    max-width: 520px;
+    padding: 45px;
+    /* CHANGED TEXT TO DARK FOR READABILITY ON LIGHT BG */
+    color: #333; 
     position: relative;
-    border-radius: 2px;
+    border-radius: 4px;
 }
 
-/* Header & Titles */
+/* Update title and text to be dark so they show up */
 .mobility-glass-card h2.magazine-title {
-    font-size: 2.2rem; 
-    color: white;
-    margin-bottom: 25px;
-    line-height: 1.1;
-    font-family: 'Playfair Display', serif;
+    color: #1a1a1a; 
 }
 
-.mobility-glass-card .gold-eyebrow {
-    color: #c5a059;
-    letter-spacing: 6px;
-    display: block;
-    margin-bottom: 8px;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-}
-
-/* Glass Inputs */
+/* Make inputs slightly more visible on light background */
 .mobility-glass-card input[type], 
-.mobility-glass-card textarea {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
-    padding: 14px;
-    font-size: 0.9rem;
-    margin-bottom: 12px;
-    width: 100%;
-    transition: 0.3s;
+.mobility-glass-card textarea,
+.luxe-select {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #333;
 }
+
+
 
 .mobility-glass-card input:focus, 
 .mobility-glass-card textarea:focus {
