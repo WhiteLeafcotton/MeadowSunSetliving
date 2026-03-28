@@ -631,6 +631,99 @@
     .form-row-split { flex-direction: column; gap: 0; }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   MOBILE-ONLY OVERRIDES (Does not affect Web)
+========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. Reset huge desktop paddings and font sizes */
+    section { padding: 60px 0 !important; }
+    .magazine-title { font-size: 2.5rem !important; }
+    .luxe-container { padding: 0 20px !important; }
+
+    /* 2. Fix "The Table" Grid - Stack columns vertically */
+    .table-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 40px !important;
+    }
+    
+    .table-col.menu-panel {
+        border-left: none !important;
+        border-right: none !important;
+        padding: 40px 0 !important;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* 3. Fix "Life Enrichment" Locked Window */
+    /* On mobile, we disable the fixed height so users don't get "stuck" scrolling inside a small box */
+    #enrichment.enrichment-locked-window {
+        height: auto !important;
+        overflow: visible !important;
+        padding: 40px 20px !important;
+    }
+
+    #enrichment .luxe-container {
+        flex-direction: column !important;
+    }
+
+    #enrichment .cinematic-sticky {
+        position: relative !important;
+        top: 0 !important;
+        margin-bottom: 40px;
+    }
+
+    .filmstrip-card-ultra {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+        margin-bottom: 30px !important;
+    }
+
+    .image-box-ultra {
+        width: 100% !important;
+        height: 200px !important;
+    }
+
+    .text-box-ultra {
+        width: 100% !important;
+    }
+
+    /* 4. Fix Transportation Glass Card */
+    .mobility-glass-card {
+        padding: 40px 20px !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+    }
+
+    /* 5. Fix Hero Section for Mobile */
+    .hero-content h1 {
+        font-size: 2.8rem !important;
+        line-height: 1.2 !important;
+    }
+}
+
+
+
+
+
+
+
+        
  </style>       
 </head>
 
