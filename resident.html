@@ -331,6 +331,58 @@
     .destination-float { position: static; width: 100%; margin-top: 20px; }
 }
 
+
+
+
+
+
+
+
+
+        /* Mobility Full car Bleed */
+.mobility-full-bleed {
+    overflow: hidden;
+}
+
+.luxe-ride-btn {
+    display: inline-block;
+    background: #c5a059;
+    color: #fff;
+    padding: 20px 45px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    border: 1px solid #c5a059;
+}
+
+.luxe-ride-btn:hover {
+    background: transparent;
+    color: #c5a059;
+    transform: scale(1.05);
+}
+
+/* For that pulsing dot effect */
+@keyframes pulse-gold {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(197, 160, 89, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
+}
+
+.mobility-glass-card span[style*="border-radius: 50%"] {
+    animation: pulse-gold 2s infinite;
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+    .mobility-glass-card {
+        padding: 40px 25px;
+        margin: 0 20px;
+    }
+    .main-title { font-size: 2.5rem; }
+}
         
     </style>
 </head>
@@ -644,58 +696,63 @@
     </div>
 </section>
 
-   <section id="transportation" class="mobility-suite" style="background: #080c16; padding: 120px 0; color: white;">
-    <div class="luxe-container" style="max-width: 1400px; margin: 0 auto; padding: 0 40px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="transportation" class="mobility-full-bleed" style="position: relative; padding: 160px 0; background: url('https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?auto=format&fit=crop&q=80') no-repeat center center fixed; background-size: cover;">
+    
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 1;"></div>
+
+    <div class="luxe-container" style="max-width: 1400px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2;">
         
-        <div class="mobility-grid" style="display: flex; gap: 80px; align-items: center;">
+        <div class="mobility-glass-card" style="max-width: 600px; background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 80px; border: 1px solid rgba(255,255,255,0.1); color: white;">
             
-            <div class="mobility-text" style="flex: 1;">
-                <span class="gold-eyebrow" style="letter-spacing: 6px; color: #c5a059; text-transform: uppercase; font-size: 0.8rem;">Exclusive Mobility</span>
-                <h2 class="magazine-title" style="font-size: 3.5rem; margin: 20px 0; line-height: 1.1;">Beyond the <br><span class="italic-serif text-gold" style="color: #c5a059; font-style: italic;">Threshold</span></h2>
-                <p style="color: rgba(255,255,255,0.6); font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px; max-width: 480px;">
-                    In partnership with <strong style="color: white;">Love Moore and Care</strong>, we provide a seamless extension of your home. Whether it’s a clinical visit or a night at the club, your journey is defined by punctuality and grace.
-                </p>
-
-                <div class="mobility-features">
-                    <div class="feature-item" style="display: flex; gap: 20px; margin-bottom: 30px;">
-                        <i class="fa-solid fa-user-tie" style="color: #c5a059; font-size: 1.2rem; margin-top: 5px;"></i>
-                        <div>
-                            <h5 style="font-size: 1.1rem; margin-bottom: 5px;">Chauffeur Escort</h5>
-                            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.4);">More than a driver—a companion who ensures you are settled comfortably at your destination.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item" style="display: flex; gap: 20px; margin-bottom: 30px;">
-                        <i class="fa-solid fa-calendar-check" style="color: #c5a059; font-size: 1.2rem; margin-top: 5px;"></i>
-                        <div>
-                            <h5 style="font-size: 1.1rem; margin-bottom: 5px;">Real-Time Coordination</h5>
-                            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.4);">Families receive a notification when the resident departs and arrives safely.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="#schedule" class="gold-btn-outline">Request Concierge Ride</a>
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 30px;">
+                <span style="width: 8px; height: 8px; background: #c5a059; border-radius: 50%; display: inline-block; box-shadow: 0 0 10px #c5a059;"></span>
+                <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px; color: #c5a059;">On-Demand Concierge Active</span>
             </div>
 
-            <div class="mobility-visual" style="flex: 1.2; position: relative;">
-                <div class="main-car-frame" style="width: 100%; height: 500px; overflow: hidden; border: 1px solid rgba(197, 160, 89, 0.3);">
-                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80" alt="Luxury Car" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+            <span class="gold-eyebrow" style="letter-spacing: 8px; color: #c5a059; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 20px;">Seamless Transit</span>
+            <h2 class="magazine-title" style="font-size: 3.5rem; margin-bottom: 25px; line-height: 1.1;">Life in <span class="italic-serif" style="font-style: italic; font-weight: 400;">Motion</span></h2>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.8); margin-bottom: 40px;">
+                Our exclusive partnership with <strong style="color: #fff;">Love Moore and Care</strong> ensures that your social calendar remains as vibrant as ever. From the private club to the family estate, travel with the dignity and comfort you deserve.
+            </p>
+
+            <div class="destinations-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 50px;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <i class="fa-solid fa-champagne-glasses" style="color: #c5a059;"></i>
+                    <span style="font-size: 0.8rem; letter-spacing: 1px;">The Social Club</span>
                 </div>
-                
-                <div class="destination-float" style="position: absolute; bottom: -30px; left: -30px; background: #fff; color: #222; padding: 30px; width: 280px; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
-                    <h6 style="text-transform: uppercase; font-size: 0.6rem; letter-spacing: 3px; color: #c5a059; margin-bottom: 15px;">The Social Circuit</h6>
-                    <ul style="list-style: none; padding: 0; font-size: 0.85rem; line-height: 2;">
-                        <li><i class="fa-solid fa-location-dot" style="margin-right: 10px; color: #eee;"></i> The Metropolitan Club</li>
-                        <li><i class="fa-solid fa-location-dot" style="margin-right: 10px; color: #eee;"></i> Lakeside Gardens</li>
-                        <li><i class="fa-solid fa-location-dot" style="margin-right: 10px; color: #eee;"></i> Family Private Estates</li>
-                    </ul>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <i class="fa-solid fa-house-chimney-heart" style="color: #c5a059;"></i>
+                    <span style="font-size: 0.8rem; letter-spacing: 1px;">Family Gatherings</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <i class="fa-solid fa-stethoscope" style="color: #c5a059;"></i>
+                    <span style="font-size: 0.8rem; letter-spacing: 1px;">Wellness Visits</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <i class="fa-solid fa-leaf" style="color: #c5a059;"></i>
+                    <span style="font-size: 0.8rem; letter-spacing: 1px;">Garden Escapes</span>
                 </div>
             </div>
 
+            <a href="javascript:void(0)" class="luxe-ride-btn">Schedule Your Chauffeur</a>
         </div>
     </div>
 </section>
-
-
 
 
 
