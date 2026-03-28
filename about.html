@@ -105,63 +105,54 @@
 
 
 
-<section class="premium-about-dossier">
+<section class="boutique-gallery-section">
     
-    <div class="portrait-canvas">
-        <div class="active-portrait" style="background-image: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true');"></div>
-        <div class="portrait-overlay"></div>
-    </div>
+    <aside class="glass-authority-sidebar">
+        <div class="sidebar-label">CREDENTIALS</div>
+        <div class="ribbon-icon">🛡️</div>
+        <div class="ribbon-icon">⚖️</div>
+        <div class="ribbon-icon">🩺</div>
+        <div class="sidebar-footer">EST. 2006</div>
+    </aside>
 
-    <div class="content-scroll">
+    <div class="gallery-container">
         
-        <div class="glass-ribbon">
-            <div class="ribbon-icon" title="Board Certified RN">🛡️</div>
-            <div class="ribbon-icon" title="Executive Excellence">⚖️</div>
-            <div class="ribbon-icon" title="Clinical Oversight">🩺</div>
-        </div>
+        <header class="gallery-header">
+            <span class="gold-eyebrow">A HIGHER STANDARD</span>
+            <h2 class="main-title">A Legacy of <br><span class="italic">Refined Care</span></h2>
+            <p class="mission-statement">
+                Sunset Meadow is a sanctuary where clinical precision meets the restorative power of a refined environment. We lead with a "Dignity First" mandate.
+            </p>
+        </header>
 
-        <div class="scroll-inner">
-            <div class="dossier-section" id="mission">
-                <span class="gold-eyebrow">ESTABLISHED 2006</span>
-                <h2 class="dossier-title">The <span class="italic">Covenant</span> of Care</h2>
-                <p class="mission-text">
-                    Sunset Meadow was envisioned as a sanctuary where clinical precision meets the restorative power of a refined environment. We lead with a "Dignity First" mandate, ensuring every resident is celebrated within a framework of uncompromising medical safety.
-                </p>
-            </div>
-
-            <hr class="divider">
-
-            <div class="dossier-section" id="leadership">
-                <div class="bio-entry active">
-                    <span class="role-label">Medical Excellence</span>
+        <div class="staff-showcase">
+            
+            <div class="staff-row">
+                <div class="staff-photo-wrapper">
+                    <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true" alt="Julianne Vance" class="low-key-img">
+                    <div class="photo-accent"></div>
+                </div>
+                <div class="staff-info">
+                    <span class="role-tag">Medical Excellence</span>
                     <h3 class="staff-name">Julianne <span class="italic">Vance</span>, RN</h3>
-                    <p class="bio-body">
-                        Specializing in 24/7 clinical oversight, Julianne bridges the gap between hospital-grade safety and the warmth of a true home. Her philosophy focuses on zero-deficiency standards and the implementation of on-site restorative therapy.
-                    </p>
-                    <div class="signature-box">
-                        <svg class="anim-sig" viewBox="0 0 200 60">
-                            <text x="0" y="45" font-family="'Monsieur La Doulaise'" font-size="40">Julianne Vance</text>
-                        </svg>
-                    </div>
+                    <p class="staff-bio">Bridging hospital-grade safety with the warmth of a true home. Specialized in 24/7 clinical oversight and restorative therapy protocols.</p>
+                    <div class="signature-display">Julianne Vance</div>
                 </div>
+            </div>
 
-                <div class="bio-entry">
-                    <span class="role-label">Executive Management</span>
+            <div class="staff-row reverse">
+                <div class="staff-info">
+                    <span class="role-tag">Executive Management</span>
                     <h3 class="staff-name">Eleanor <span class="italic">Sterling</span></h3>
-                    <p class="bio-body">
-                        As Executive Director, Eleanor curates the Sunset Meadow atmosphere with an uncompromising eye for detail. Her leadership ensures that the "Boutique" experience is felt in every interaction, from concierge services to facility design.
-                    </p>
+                    <p class="staff-bio">Curating the Sunset Meadow atmosphere with an eye for detail. Eleanor ensures the "Boutique" experience is felt in every resident interaction.</p>
+                    <div class="signature-display">Eleanor Sterling</div>
+                </div>
+                <div class="staff-photo-wrapper">
+                    <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2015.jpeg?raw=true" alt="Eleanor Sterling" class="low-key-img">
+                    <div class="photo-accent"></div>
                 </div>
             </div>
 
-            <div class="credentials-footer">
-                <span class="gold-eyebrow">Affiliations</span>
-                <div class="badge-grid">
-                    <span>WISCONSIN OWNED</span>
-                    <span>DIRECT RN ACCESS</span>
-                    <span>THERAPY PARTNERS</span>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -171,166 +162,164 @@
 
     :root {
         --gold: #c5a059;
-        --dark-bg: #111111;
-        --glass: rgba(255, 255, 255, 0.05);
+        --dark-text: #1a1a1a;
+        --light-bg: #fdfdfd;
+        --sidebar-bg: rgba(255, 255, 255, 0.4);
     }
 
-    .premium-about-dossier {
-        display: flex;
-        background: var(--dark-bg);
-        color: #fff;
-        font-family: 'Inter', sans-serif;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    /* LEFT CANVAS (60%) */
-    .portrait-canvas {
-        width: 60%;
-        height: 100vh;
+    .boutique-gallery-section {
+        background: var(--light-bg);
+        padding: 120px 0;
         position: relative;
         overflow: hidden;
-        background: #000;
+        color: var(--dark-text);
     }
 
-    .active-portrait {
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        filter: contrast(1.1) brightness(0.7); /* Low-Key Effect */
-        transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
-    }
-
-    /* The "100k Detail": Canvas Masking Overlay */
-    .portrait-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent 70%, var(--dark-bg) 100%);
-    }
-
-    /* RIGHT SCROLL (40%) */
-    .content-scroll {
-        width: 40%;
-        height: 100vh;
-        overflow-y: auto;
-        position: relative;
-        background: var(--dark-bg);
-        scrollbar-width: none; /* Hide scrollbar for ultra-clean look */
-    }
-
-    /* GLASSMORPHISM RIBBON */
-    .glass-ribbon {
+    /* THE VERTICAL SIDEBAR - THE PART YOU LOVED */
+    .glass-authority-sidebar {
         position: fixed;
-        right: 40px;
+        right: 30px;
         top: 50%;
         transform: translateY(-50%);
-        width: 60px;
-        background: var(--glass);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 100px;
+        width: 70px;
+        height: 60vh;
+        background: var(--sidebar-bg);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(0,0,0,0.05);
+        border-radius: 40px;
+        z-index: 100;
         display: flex;
         flex-direction: column;
+        justify-content: space-around;
         align-items: center;
-        padding: 30px 0;
-        gap: 40px;
-        z-index: 10;
+        padding: 40px 0;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.05);
     }
 
-    .ribbon-icon {
-        font-size: 1.2rem;
-        filter: grayscale(1) brightness(2);
+    .sidebar-label {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        font-size: 10px;
+        letter-spacing: 3px;
+        color: var(--gold);
+        font-weight: 700;
         opacity: 0.6;
-        cursor: help;
-        transition: 0.3s;
-    }
-    .ribbon-icon:hover { opacity: 1; filter: grayscale(0); }
-
-    /* CONTENT STYLING */
-    .scroll-inner {
-        padding: 15vh 15% 15vh 10%;
     }
 
-    .dossier-section { margin-bottom: 120px; }
+    .ribbon-icon { font-size: 1.4rem; opacity: 0.7; transition: 0.3s; cursor: pointer; }
+    .ribbon-icon:hover { opacity: 1; transform: scale(1.1); }
+
+    /* LAYOUT CONTAINER */
+    .gallery-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 100px 0 40px;
+    }
+
+    .gallery-header {
+        text-align: center;
+        margin-bottom: 120px;
+    }
 
     .gold-eyebrow {
-        color: var(--gold);
+        font-family: 'Inter', sans-serif;
+        font-size: 11px;
         letter-spacing: 5px;
-        font-size: 10px;
-        font-weight: 600;
+        color: var(--gold);
         display: block;
         margin-bottom: 20px;
     }
 
-    .dossier-title {
+    .main-title {
         font-family: 'Playfair Display', serif;
-        font-size: 3.5rem;
-        line-height: 1.1;
-        margin-bottom: 30px;
+        font-size: 4.5rem;
+        line-height: 1;
+        margin-bottom: 40px;
     }
 
-    .italic { font-style: italic; font-weight: 400; color: var(--gold); }
+    .italic { font-style: italic; color: var(--gold); font-weight: 400; }
 
-    .mission-text, .bio-body {
-        font-weight: 200;
+    .mission-statement {
+        max-width: 600px;
+        margin: 0 auto;
+        font-family: 'Inter', sans-serif;
+        font-weight: 300;
         line-height: 1.8;
-        color: rgba(255,255,255,0.7);
-        font-size: 1.05rem;
+        font-size: 1.1rem;
+        color: #555;
+    }
+
+    /* STAFF ROWS */
+    .staff-row {
+        display: flex;
+        align-items: center;
+        gap: 80px;
+        margin-bottom: 150px;
+    }
+
+    .staff-row.reverse { flex-direction: row; }
+
+    .staff-photo-wrapper {
+        flex: 1;
+        position: relative;
+    }
+
+    .low-key-img {
+        width: 100%;
+        height: 550px;
+        object-fit: cover;
+        filter: grayscale(0.2) contrast(1.1);
+        display: block;
+    }
+
+    /* Architectural Accent behind photo */
+    .photo-accent {
+        position: absolute;
+        top: 20px;
+        left: -20px;
+        width: 100%;
+        height: 100%;
+        border: 1px solid var(--gold);
+        z-index: -1;
+    }
+
+    .staff-info { flex: 1; }
+
+    .role-tag {
+        color: var(--gold);
+        text-transform: uppercase;
+        font-size: 10px;
+        letter-spacing: 3px;
+        font-weight: 700;
     }
 
     .staff-name {
         font-family: 'Playfair Display', serif;
-        font-size: 2.2rem;
-        margin-bottom: 15px;
+        font-size: 2.8rem;
+        margin: 15px 0 25px;
     }
 
-    .role-label {
-        color: var(--gold);
-        text-transform: uppercase;
-        font-size: 11px;
-        letter-spacing: 2px;
+    .staff-bio {
+        font-family: 'Inter', sans-serif;
+        font-weight: 300;
+        line-height: 1.8;
+        color: #666;
+        margin-bottom: 30px;
     }
 
-    .divider {
-        border: 0;
-        height: 1px;
-        background: linear-gradient(90deg, var(--gold), transparent);
-        margin: 80px 0;
-        opacity: 0.3;
-    }
-
-    /* SIGNATURE ANIMATION */
-    .signature-box {
-        margin-top: 30px;
-        opacity: 0.8;
-    }
-    
-    .anim-sig text {
-        fill: #fff;
+    .signature-display {
+        font-family: 'Monsieur La Doulaise', cursive;
+        font-size: 3rem;
+        color: var(--dark-text);
         opacity: 0.8;
     }
 
-    .badge-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 20px;
-        font-size: 0.8rem;
-        letter-spacing: 1px;
-        color: rgba(255,255,255,0.4);
-    }
-
-    @media (max-width: 1100px) {
-        .premium-about-dossier { flex-direction: column; height: auto; }
-        .portrait-canvas { width: 100%; height: 60vh; position: sticky; top: 0; }
-        .content-scroll { width: 100%; height: auto; overflow: visible; }
-        .glass-ribbon { display: none; }
-        .scroll-inner { padding: 60px 40px; }
+    @media (max-width: 900px) {
+        .gallery-container { padding: 0 20px; }
+        .glass-authority-sidebar { display: none; }
+        .staff-row, .staff-row.reverse { flex-direction: column; text-align: center; gap: 40px; }
+        .main-title { font-size: 3rem; }
     }
 </style>
 
