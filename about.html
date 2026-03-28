@@ -100,169 +100,178 @@
 
 
 
-
-<section class="luminous-gallery-section">
+<section class="nano-gallery-wrapper">
     
-    <aside class="profile-scroll-rail">
+    <aside class="compact-rail">
         <div class="rail-header">
-            <span class="gold-eyebrow">The Collective</span>
+            <span class="gold-eyebrow">Expertise</span>
         </div>
         
-        <div class="scroll-wrapper">
-            <article class="dossier-compact">
-                <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true" alt="Julianne Vance" class="mini-orbit float-left">
-                <div class="dossier-content">
-                    <h3 class="dossier-name">Julianne <span class="gold-italic">Vance</span></h3>
-                    <p class="dossier-text">
-                        Bridging hospital-grade safety with residential warmth. Julianne implements bespoke protocols and zero-deficiency standards that mirror elite research. Precision care delivered with grace.
-                    </p>
+        <div class="nano-scroll-area">
+            <article class="nano-dossier-card">
+                <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true" alt="Julianne Vance" class="micro-orbit float-left">
+                <div class="card-body">
+                    <h3 class="nano-name">Julianne <span class="gold-italic">Vance</span></h3>
+                    <p class="nano-text">Bridging hospital-grade safety with residential warmth. Julianne implements bespoke protocols mirroring elite research facilities. Precision care with grace.</p>
                 </div>
             </article>
 
-            <article class="dossier-compact">
-                <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2015.jpeg?raw=true" alt="Eleanor Sterling" class="mini-orbit float-right">
-                <div class="dossier-content">
-                    <h3 class="dossier-name">Eleanor <span class="gold-italic">Sterling</span></h3>
-                    <p class="dossier-text">
-                        Curating the Sunset Meadow atmosphere with an eye for detail. Eleanor ensures the "Boutique" experience is felt in every interaction, redefining luxury restorative environments.
-                    </p>
+            <article class="nano-dossier-card">
+                <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2015.jpeg?raw=true" alt="Eleanor Sterling" class="micro-orbit float-right">
+                <div class="card-body">
+                    <h3 class="nano-name">Eleanor <span class="gold-italic">Sterling</span></h3>
+                    <p class="nano-text">Curating the Sunset Meadow atmosphere with an eye for detail. Eleanor ensures a boutique experience in every interaction, redefining luxury living.</p>
                 </div>
             </article>
         </div>
-        <div class="rail-footer">↕ Scroll to Explore</div>
     </aside>
 
-    <main class="fresh-dashboard">
-        <div class="dashboard-layout">
-            
-            <div class="light-module primary-module">
-                <span class="gold-eyebrow">01 / Concept</span>
-                <h2 class="light-title">A <span class="gold-italic">Boutique</span> Sanctuary</h2>
-                <p class="light-body">
-                    Sunset Meadow is a premium residency built on three pillars: **Restorative Geometry**, **Clinical Rigor**, and **Human Dignity**. We dissolve the boundaries between medical necessity and residential luxury.
-                </p>
-                <div class="metric-row">
-                    <div class="metric"><strong>24/7</strong> <small>RN Oversight</small></div>
-                    <div class="metric"><strong>0</strong> <small>Deficiency Target</small></div>
-                </div>
-            </div>
+    <div class="glass-badge-column">
+        <div class="glass-badge">
+            <span class="badge-icon">🛡️</span>
+            <small>HIPAA<br>Secure</small>
+        </div>
+        <div class="glass-badge">
+            <span class="badge-icon">⚖️</span>
+            <small>Legal<br>Steward</small>
+        </div>
+        <div class="glass-badge gold-tint">
+            <span class="badge-icon">✨</span>
+            <small>Premium<br>Class</small>
+        </div>
+    </div>
 
-            <div class="light-module accent-module">
-                <span class="gold-eyebrow">02 / Features</span>
-                <ul class="clean-list">
-                    <li>Medication Tech</li>
-                    <li>Therapy Suites</li>
-                    <li>Culinary Art</li>
-                </ul>
+    <main class="minimalist-hub">
+        <div class="hub-content">
+            <span class="gold-eyebrow">01 / The Mandate</span>
+            <h2 class="nano-title">A <span class="gold-italic">Boutique</span> Sanctuary</h2>
+            <p class="hub-body">
+                Sunset Meadow is a premium residency built on **Clinical Rigor** and **Human Dignity**. We dissolve the boundaries between medical necessity and residential luxury.
+            </p>
+            <div class="nano-metrics">
+                <div class="metric"><strong>24/7</strong> <small>Oversight</small></div>
+                <div class="metric"><strong>0</strong> <small>Deficiencies</small></div>
             </div>
-
         </div>
     </main>
+
 </section>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;600&display=swap');
 
-    .luminous-gallery-section {
+    .nano-gallery-wrapper {
         display: flex;
-        height: 600px; /* COMPACT HEIGHT */
+        height: 480px; /* ULTRA-COMPACT HEIGHT */
         background: #ffffff;
         color: #1a1a1a;
         font-family: 'Inter', sans-serif;
-        border: 1px solid #f0f0f0;
         overflow: hidden;
+        border-top: 1px solid #f0f0f0;
+        border-bottom: 1px solid #f0f0f0;
     }
 
-    /* LEFT 25%: LIGHT RAIL */
-    .profile-scroll-rail {
-        flex: 0 0 25%;
-        background: #fafafa;
+    /* LEFT RAIL */
+    .compact-rail {
+        flex: 0 0 28%;
+        background: #fbfbfb;
         border-right: 1px solid #eee;
         display: flex;
         flex-direction: column;
     }
 
-    .rail-header { padding: 25px; border-bottom: 1px solid #eee; }
-    .rail-footer { padding: 15px; font-size: 8px; text-align: center; color: #aaa; letter-spacing: 2px; text-transform: uppercase; }
-
-    .scroll-wrapper {
+    .rail-header { padding: 15px 20px; border-bottom: 1px solid #eee; }
+    
+    .nano-scroll-area {
         flex: 1;
         overflow-y: auto;
         padding: 15px;
-        -ms-overflow-style: none;  /* Hide scrollbar IE/Edge */
-        scrollbar-width: none;  /* Hide scrollbar Firefox */
+        scrollbar-width: none;
     }
-    .scroll-wrapper::-webkit-scrollbar { display: none; } /* Hide scrollbar Chrome/Safari */
+    .nano-scroll-area::-webkit-scrollbar { display: none; }
 
-    .dossier-compact {
+    .nano-dossier-card {
         background: #fff;
-        padding: 20px;
-        margin-bottom: 15px;
-        border: 1px solid #efefef;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        padding: 15px;
+        margin-bottom: 12px;
+        border: 1px solid #f0f0f0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.02);
     }
 
-    .mini-orbit {
-        width: 70px;
-        height: 70px;
+    .micro-orbit {
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
         object-fit: cover;
         shape-outside: circle(50%);
-        shape-margin: 10px;
-        border: 1px solid #f0f0f0;
+        shape-margin: 8px;
+        border: 1px solid #eee;
     }
 
     .float-left { float: left; margin-right: 10px; }
     .float-right { float: right; margin-left: 10px; }
 
-    .dossier-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin: 0 0 5px; }
+    .nano-name { font-family: 'Playfair Display', serif; font-size: 1rem; margin: 0 0 4px; line-height: 1; }
     .gold-italic { color: #c5a059; font-style: italic; font-weight: 400; }
-    .dossier-text { font-size: 0.7rem; line-height: 1.5; color: #666; text-align: justify; margin: 0; }
+    .nano-text { font-size: 0.68rem; line-height: 1.4; color: #666; text-align: justify; margin: 0; }
 
-    /* RIGHT 75%: FRESH DASHBOARD */
-    .fresh-dashboard {
-        flex: 0 0 75%;
-        padding: 50px;
+    /* CENTER GLASS BADGES */
+    .glass-badge-column {
+        flex: 0 0 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        background: #fff;
+        border-right: 1px solid #f9f9f9;
+        z-index: 10;
+    }
+
+    .glass-badge {
+        width: 65px;
+        height: 65px;
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(0,0,0,0.05);
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+
+    .gold-tint { border-color: rgba(197, 160, 89, 0.3); background: rgba(197, 160, 89, 0.05); }
+
+    .badge-icon { font-size: 1.2rem; margin-bottom: 3px; }
+    .glass-badge small { font-size: 7px; line-height: 1; text-transform: uppercase; letter-spacing: 1px; color: #888; font-weight: 700; }
+
+    /* RIGHT HUB */
+    .minimalist-hub {
+        flex: 1;
+        padding: 40px;
         display: flex;
         align-items: center;
-        background: linear-gradient(135deg, #fff 0%, #f9f9f9 100%);
+        background: linear-gradient(to right, #fff, #fafafa);
     }
 
-    .dashboard-layout {
-        display: grid;
-        grid-template-columns: 1.6fr 1fr;
-        gap: 30px;
-        width: 100%;
-    }
+    .gold-eyebrow { color: #c5a059; text-transform: uppercase; font-size: 7px; letter-spacing: 3px; display: block; margin-bottom: 10px; font-weight: 700; }
+    .nano-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; line-height: 1; margin-bottom: 15px; font-weight: 400; }
+    .hub-body { font-size: 0.85rem; line-height: 1.6; color: #555; font-weight: 300; max-width: 450px; }
 
-    .light-module {
-        background: rgba(255, 255, 255, 0.8);
-        border: 1px solid #eee;
-        padding: 40px;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.03);
-    }
-
-    .gold-eyebrow { color: #c5a059; text-transform: uppercase; font-size: 8px; letter-spacing: 3px; display: block; margin-bottom: 15px; font-weight: 700; }
-    .light-title { font-family: 'Playfair Display', serif; font-size: 2.8rem; line-height: 1.1; margin-bottom: 20px; font-weight: 400; }
-    .light-body { font-size: 0.95rem; line-height: 1.7; color: #555; font-weight: 300; }
-
-    .metric-row { display: flex; gap: 30px; margin-top: 30px; }
-    .metric { font-family: 'Playfair Display', serif; font-size: 1.5rem; }
-    .metric small { display: block; font-family: 'Inter'; font-size: 8px; color: #c5a059; text-transform: uppercase; letter-spacing: 2px; margin-top: 5px; }
-
-    .clean-list { list-style: none; padding: 0; }
-    .clean-list li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.8rem; color: #444; font-weight: 600; }
+    .nano-metrics { display: flex; gap: 30px; margin-top: 25px; }
+    .metric { font-family: 'Playfair Display', serif; font-size: 1.2rem; }
+    .metric small { display: block; font-family: 'Inter'; font-size: 7px; color: #c5a059; text-transform: uppercase; letter-spacing: 2px; margin-top: 4px; }
 
     @media (max-width: 900px) {
-        .luminous-gallery-section { height: auto; flex-direction: column; }
-        .profile-scroll-rail { width: 100%; height: 350px; }
-        .fresh-dashboard { width: 100%; padding: 30px; }
-        .dashboard-layout { grid-template-columns: 1fr; }
+        .nano-gallery-wrapper { height: auto; flex-direction: column; }
+        .compact-rail, .glass-badge-column, .minimalist-hub { width: 100%; flex: none; }
+        .glass-badge-column { flex-direction: row; padding: 20px 0; border-bottom: 1px solid #eee; }
     }
 </style>
-
-
-
 
 
 
