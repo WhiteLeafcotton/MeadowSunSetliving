@@ -648,87 +648,95 @@
    CONSOLIDATED MOBILE VIEW (MAX-WIDTH: 768px)
 ========================================= */
 @media (max-width: 768px) {
-    /* 1. LOCK THE SIDEWAYS SLIDE */
-    html, body {
-        overflow-x: hidden !important;
-        position: relative;
+    
+    /* 1. Global Resets */
+    section { padding: 60px 0 !important; }
+    .magazine-title { font-size: 2.5rem !important; }
+    .luxe-container { padding: 0 20px !important; }
+    .hero-content h1 { font-size: 2.8rem !important; line-height: 1.2 !important; }
+
+    /* 2. The Table (Stacked Layout) */
+    .table-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 40px !important;
+    }
+    .table-col.menu-panel {
+        border-left: none !important;
+        border-right: none !important;
+        padding: 40px 0 !important;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
     }
 
-    /* 2. SHORTEN TITLE (To keep it on one line) */
-    .magazine-title { 
-        font-size: 1.8rem !important; 
-        letter-spacing: 2px !important;
-        text-transform: uppercase;
-        margin-bottom: 20px !important;
-    }
-
-    /* 3. THE VERTICAL WINDOW (Fixed Height) */
+    /* 3. Life Enrichment (Fixed Window + Large Photos + Vertical Scroll) */
     #enrichment.enrichment-locked-window {
-        height: 550px !important; /* Fixed height container */
+        height: 500px !important;
         overflow-y: auto !important;
-        overflow-x: hidden !important; /* Block sideways sliding */
+        padding: 40px 0 !important;
         background: #080c16 !important;
-        padding: 20px 0 !important;
-        display: block !important;
+        position: relative !important;
         -webkit-overflow-scrolling: touch;
-        position: relative;
     }
 
-    /* 4. THE PHOTO TRACK */
+    /* Create the "Solid Fade" at the bottom to hide hero bleed */
+    #enrichment::after {
+        content: "";
+        position: sticky; /* Sticky keeps it at the bottom of the window while scrolling */
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: linear-gradient(to bottom, transparent, #080c16);
+        pointer-events: none;
+        z-index: 10;
+        display: block;
+    }
+
     .cinematic-track {
         display: flex !important;
         flex-direction: column !important;
-        gap: 25px !important;
-        padding: 0 15px 120px 15px !important; /* Side padding included in width */
-        width: 100% !important;
-        box-sizing: border-box !important; /* Crucial: padding won't push it off-screen */
+        gap: 40px !important;
+        padding: 0 20px 100px 20px !important; /* Bottom padding so last item clears the fade */
     }
 
-    /* 5. LARGE PHOTOS (No Stretching) */
     .filmstrip-card-ultra {
-        width: 100% !important;
         display: block !important;
+        width: 100% !important;
     }
 
     .image-box-ultra {
         width: 100% !important;
-        height: 280px !important; /* Large and tall */
-        border: 1px solid rgba(197, 160, 89, 0.4);
-        margin-bottom: 10px;
-        overflow: hidden;
+        height: 250px !important;
+        margin-bottom: 15px;
+        border: 1px solid rgba(197, 160, 89, 0.3);
     }
 
     .image-box-ultra img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important; /* Perfect fit */
-    }
-
-    /* 6. DARK BOTTOM FADE (Stays at the bottom of the window) */
-    #enrichment::after {
-        content: "";
-        position: sticky;
-        bottom: 0;
-        left: 0;
         width: 100%;
-        height: 80px;
-        background: linear-gradient(to bottom, transparent, #080c16);
-        pointer-events: none;
-        z-index: 5;
+        height: 100%;
+        object-fit: cover;
+        display: block;
     }
 
-    /* 7. TEXT STYLING */
     .text-box-ultra h3 {
-        font-size: 1.1rem !important;
-        color: #c5a059 !important;
-        margin-bottom: 4px !important;
+        font-size: 1.2rem !important;
+        color: #fff !important;
+        margin: 0 0 5px 0 !important;
     }
 
     .slim-desc {
-        font-size: 0.8rem !important;
-        line-height: 1.4 !important;
-        color: rgba(255,255,255,0.7) !important;
+        font-size: 0.85rem !important;
+        color: rgba(255,255,255,0.6) !important;
     }
+
+    /* 4. Transportation Glass Card */
+    .mobility-glass-card {
+        padding: 40px 20px !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+    }
+
 
 
 
