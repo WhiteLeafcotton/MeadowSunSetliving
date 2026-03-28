@@ -83,6 +83,204 @@
         </div>
     </div>
 
+
+    <style>
+    /* --- MAGAZINE EDITORIAL SECTION --- */
+    .magazine-editorial {
+        position: relative;
+        padding: 100px 0;
+        background: #fffcf8; /* Warm paper-like background */
+        overflow: hidden;
+        font-family: 'Playfair Display', serif; /* Classic editorial font */
+    }
+
+    /* 1. Subtle Fox Watermark */
+    .fox-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        opacity: 0.04; 
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .editorial-wrapper {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 40px;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* 2. Layout Rows */
+    .editorial-row {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 120px;
+        gap: 80px;
+    }
+
+    .top-row { justify-content: flex-start; }
+    .bottom-row { justify-content: flex-end; margin-bottom: 0; }
+
+    /* 3. The Vision Box */
+    .vision-box {
+        max-width: 450px;
+        padding-top: 40px;
+    }
+
+    .gold-eyebrow {
+        display: block;
+        color: #c5a059;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        font-family: sans-serif;
+    }
+
+    .magazine-title {
+        font-size: 3rem;
+        line-height: 1;
+        color: #1a1a1a;
+        margin-bottom: 30px;
+    }
+
+    .magazine-title .italic {
+        font-family: 'Playfair Display', italic;
+        font-style: italic;
+        color: #c5a059;
+    }
+
+    .magazine-para {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: #555;
+    }
+
+    /* 4. Photo Frames & Profiles */
+    .profile-box {
+        position: relative;
+        display: inline-block;
+    }
+
+    .photo-frame {
+        background: #f4f4f4;
+        border: 1px solid rgba(0,0,0,0.05);
+        overflow: hidden;
+        box-shadow: 30px 30px 80px rgba(0,0,0,0.05);
+    }
+
+    /* Julianne's Frame (Vertical) */
+    .julianne .photo-frame {
+        width: 350px;
+        height: 500px;
+    }
+
+    /* Eleanor's Frame (Wider/Landscape) */
+    .eleanor .photo-frame {
+        width: 500px;
+        height: 380px;
+    }
+
+    .photo-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* 5. The Label Stacks (Overlays) */
+    .label-stack {
+        position: absolute;
+        background: #fff;
+        padding: 35px;
+        width: 300px;
+        box-shadow: 15px 15px 50px rgba(0,0,0,0.1);
+        z-index: 5;
+    }
+
+    .right-align {
+        bottom: -50px;
+        right: -80px;
+    }
+
+    .left-align {
+        bottom: -50px;
+        left: -80px;
+    }
+
+    .name-label {
+        font-size: 1.8rem;
+        line-height: 1.1;
+        margin-bottom: 15px;
+        color: #1a1a1a;
+    }
+
+    .name-label .italic {
+        font-size: 1.2rem;
+        display: block;
+        margin-top: 5px;
+        color: #666;
+    }
+
+    .bio-col {
+        padding: 10px 0 0 0;
+    }
+
+    .border-right { border-top: 2px solid #c5a059; padding-top: 20px; }
+    .border-left { border-top: 2px solid #c5a059; padding-top: 20px; }
+
+    .role-tag {
+        font-family: sans-serif;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        color: #c5a059;
+        font-weight: 800;
+        letter-spacing: 2px;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .mini-bio {
+        font-size: 0.9rem;
+        color: #777;
+        line-height: 1.6;
+    }
+
+    /* --- MOBILE STYLES --- */
+    @media (max-width: 992px) {
+        .editorial-row {
+            flex-direction: column;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .bottom-row { align-items: flex-start; }
+
+        .photo-frame, .julianne .photo-frame, .eleanor .photo-frame {
+            width: 100%;
+            height: 400px;
+        }
+
+        .label-stack {
+            position: relative;
+            width: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            box-shadow: none;
+            padding: 25px 0;
+            background: transparent;
+        }
+        
+        .magazine-title { font-size: 2.2rem; }
+    }
+</style>
+
     <section class="hero hero-about">
     <div class="hero-light-overlay"></div>
     <div class="hero-content">
