@@ -283,9 +283,14 @@
 
 
 <section class="stewardship-ribbon" id="client-directory">
-    <div class="ribbon-brow animate-on-scroll">
-        <span class="gold-eyebrow">The Scope of Our Stewardship</span>
-    </div>
+    
+    <header class="ribbon-header-box animate-on-scroll">
+        <span class="gold-eyebrow">The 2026 Clinical Index</span>
+        <h2 class="ribbon-title">A Continuum of <span class="gold-italic">Specialized</span> Care</h2>
+        <p class="ribbon-subtext">
+            From high-acuity behavioral support to restorative geriatric wellness, our stewardship spans the full spectrum of human dignity and clinical precision.
+        </p>
+    </header>
 
     <div class="dir-slider-viewport">
         <div class="dir-track">
@@ -395,18 +400,20 @@
 </section>
 
 <style>
-    /* --- RIBBON CORE STYLES --- */
+    /* --- SECTION CONTAINER --- */
     .stewardship-ribbon {
-        background-color: #0c1833; /* Deep Navy brand-blue */
-        padding: 60px 0; /* INCREASED HEIGHT */
+        background-color: #0c1833; /* Brand Blue */
+        padding: 80px 0 60px 0; /* Taller Container */
         border-top: 1px solid rgba(197, 160, 89, 0.2);
         border-bottom: 1px solid rgba(197, 160, 89, 0.2);
         overflow: hidden;
     }
 
-    .ribbon-brow {
+    /* --- MODERN BROW & TITLE STYLING --- */
+    .ribbon-header-box {
         padding: 0 8%;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
+        max-width: 900px;
     }
 
     .gold-eyebrow {
@@ -416,10 +423,33 @@
         font-size: 0.65rem;
         font-weight: 800;
         color: #c5a059;
-        opacity: 1;
+        margin-bottom: 12px;
     }
 
-    /* --- THE INFINITE TICKER ENGINE --- */
+    .ribbon-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.8rem;
+        color: #ffffff;
+        line-height: 1.1;
+        margin-bottom: 15px;
+        font-weight: 400;
+    }
+
+    .gold-italic {
+        color: #c5a059;
+        font-style: italic;
+    }
+
+    .ribbon-subtext {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.6;
+        max-width: 600px;
+        font-weight: 300;
+    }
+
+    /* --- TICKER ENGINE --- */
     .dir-slider-viewport {
         width: 100%;
         display: flex;
@@ -431,7 +461,7 @@
         display: flex;
         gap: 20px;
         width: max-content;
-        animation: tickerScroll 40s linear infinite;
+        animation: tickerScroll 45s linear infinite; /* Paced for luxury */
         padding: 15px 0;
     }
 
@@ -440,47 +470,41 @@
         100% { transform: translateX(-50%); }
     }
 
-    .dir-track:hover {
-        animation-play-state: paused;
-    }
+    .dir-track:hover { animation-play-state: paused; }
 
-    /* --- THE UPDATED DARK BLUE CARD DESIGN --- */
+    /* --- DARK BLUE CARDS (LOCKED) --- */
     .dir-item {
         flex: 0 0 280px;
-        background: #0f1c3d; /* Darker Blue Card Fill */
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 20px 25px;
-        min-height: 110px; /* Taller Card */
+        background: #0f1c3d; /* Dark Blue Card Fill */
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 22px 28px;
+        min-height: 115px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-        position: relative;
+        transition: all 0.5s ease;
     }
 
     .dir-item:hover {
         background: #15254d;
         border-color: #c5a059;
         transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
     }
 
-    /* --- TYPOGRAPHY UPDATES --- */
     .acuity-tag {
         font-size: 0.5rem;
         color: #c5a059;
         letter-spacing: 2px;
         text-transform: uppercase;
         font-weight: 900;
-        display: block;
         margin-bottom: 6px;
+        display: block;
     }
 
     .client-type {
         font-family: 'Playfair Display', serif;
-        font-size: 1.15rem; /* White Text */
-        color: #ffffff;
-        line-height: 1.2;
+        font-size: 1.1rem;
+        color: #ffffff; /* White Text */
         margin: 0;
     }
 
@@ -488,19 +512,19 @@
         font-size: 0.6rem;
         text-transform: uppercase;
         letter-spacing: 1.5px;
-        color: rgba(255, 255, 255, 0.6); /* Muted White */
-        margin-top: 5px;
+        color: rgba(255, 255, 255, 0.5);
+        margin-top: 4px;
         display: block;
     }
 
-    /* --- ICON UPDATES --- */
+    /* --- GRAY ICON --- */
     .dir-icon i {
         font-size: 1.2rem;
-        color: #64748b; /* Stone Grayish Icon Color */
-        opacity: 0.8;
+        color: #94a3b8; /* Grayish Icon */
+        opacity: 0.6;
     }
 
-    /* --- INDEX/TOTAL CARD --- */
+    /* --- INDEX CARD --- */
     .index-card {
         background: rgba(197, 160, 89, 0.1);
         border: 1px solid #c5a059;
@@ -511,15 +535,8 @@
     .index-digit {
         font-family: 'Playfair Display', serif;
         font-size: 2.5rem;
+        color: #ffffff;
         font-weight: 700;
-        color: #ffffff; /* White Digit */
-        line-height: 1;
-    }
-
-    .index-card .client-status {
-        color: #c5a059;
-        font-weight: 800;
-        max-width: 60px;
     }
 </style>
 
