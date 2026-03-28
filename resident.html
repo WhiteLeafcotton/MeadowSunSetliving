@@ -645,22 +645,22 @@
 
 
 /* =========================================
-   MOBILE-ONLY OVERRIDES (Does not affect Web)
+   CONSOLIDATED MOBILE VIEW (MAX-WIDTH: 768px)
 ========================================= */
 @media (max-width: 768px) {
     
-    /* 1. Reset huge desktop paddings and font sizes */
+    /* 1. Global Resets */
     section { padding: 60px 0 !important; }
     .magazine-title { font-size: 2.5rem !important; }
     .luxe-container { padding: 0 20px !important; }
+    .hero-content h1 { font-size: 2.8rem !important; line-height: 1.2 !important; }
 
-    /* 2. Fix "The Table" Grid - Stack columns vertically */
+    /* 2. The Table (Stacked Layout) */
     .table-grid {
         display: flex !important;
         flex-direction: column !important;
         gap: 40px !important;
     }
-    
     .table-col.menu-panel {
         border-left: none !important;
         border-right: none !important;
@@ -669,146 +669,73 @@
         border-bottom: 1px solid #eee;
     }
 
-    /* 3. Fix "Life Enrichment" Locked Window */
-    /* On mobile, we disable the fixed height so users don't get "stuck" scrolling inside a small box */
+    /* 3. Life Enrichment (Fixed Window + Large Photos + Vertical Scroll) */
     #enrichment.enrichment-locked-window {
-        height: auto !important;
-        overflow: visible !important;
-        padding: 40px 20px !important;
-    }
-
-    #enrichment .luxe-container {
-        flex-direction: column !important;
-    }
-
-    #enrichment .cinematic-sticky {
+        height: 500px !important;
+        overflow-y: auto !important;
+        padding: 40px 0 !important;
+        background: #080c16 !important;
         position: relative !important;
-        top: 0 !important;
-        margin-bottom: 40px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Create the "Solid Fade" at the bottom to hide hero bleed */
+    #enrichment::after {
+        content: "";
+        position: sticky; /* Sticky keeps it at the bottom of the window while scrolling */
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: linear-gradient(to bottom, transparent, #080c16);
+        pointer-events: none;
+        z-index: 10;
+        display: block;
+    }
+
+    .cinematic-track {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 40px !important;
+        padding: 0 20px 100px 20px !important; /* Bottom padding so last item clears the fade */
     }
 
     .filmstrip-card-ultra {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 10px !important;
-        margin-bottom: 30px !important;
+        display: block !important;
+        width: 100% !important;
     }
 
     .image-box-ultra {
         width: 100% !important;
-        height: 200px !important;
+        height: 250px !important;
+        margin-bottom: 15px;
+        border: 1px solid rgba(197, 160, 89, 0.3);
     }
 
-    .text-box-ultra {
-        width: 100% !important;
+    .image-box-ultra img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
     }
 
-    /* 4. Fix Transportation Glass Card */
+    .text-box-ultra h3 {
+        font-size: 1.2rem !important;
+        color: #fff !important;
+        margin: 0 0 5px 0 !important;
+    }
+
+    .slim-desc {
+        font-size: 0.85rem !important;
+        color: rgba(255,255,255,0.6) !important;
+    }
+
+    /* 4. Transportation Glass Card */
     .mobility-glass-card {
         padding: 40px 20px !important;
         margin: 0 !important;
         max-width: 100% !important;
     }
-
-    /* 5. Fix Hero Section for Mobile */
-    .hero-content h1 {
-        font-size: 2.8rem !important;
-        line-height: 1.2 !important;
-    }
-
-
-@media (max-width: 768px) {
-    /* 1. The "Window" - Fixed height, allows vertical scrolling INSIDE */
-    #enrichment.enrichment-locked-window {
-        height: 500px !important; 
-        padding: 30px 0 !important;
-        overflow-y: auto !important; /* Forces the vertical scroll */
-        -webkit-overflow-scrolling: touch;
-    }
-
-    /* 2. Layout - Stack Header then Photos */
-    #enrichment .luxe-container {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        padding: 0 30px !important;
-        display: block !important; /* Allows natural vertical flow */
-    }
-
-    /* 3. The Header - Keeps it at the top of the scroll */
-    #enrichment .cinematic-sticky {
-        position: relative !important;
-        margin-bottom: 40px !important;
-    }
-
-    /* 4. The Photo Track - Vertical stacking */
-    .cinematic-track {
-        display: flex !important;
-        flex-direction: column !important; 
-        gap: 20px !important;
-    }
-
-    /* 5. The Cards - Make them compact but vertical */
-    .filmstrip-card-ultra {
-        display: flex !important;
-        flex-direction: row !important; /* Image on left, text on right */
-        align-items: center !important;
-        gap: 15px !important;
-        width: 100% !important;
-    }
-
-    .image-box-ultra {
-        flex: 0 0 100px !important; /* Small square-ish preview */
-        height: 100px !important;
-        border-radius: 2px;
-    }
-
-    .text-box-ultra {
-        flex: 1 !important;
-    }
-
-    .text-box-ultra h3 {
-        font-size: 0.95rem !important;
-        margin: 0 !important;
-    }
-
-    .slim-desc {
-        font-size: 0.7rem !important;
-        line-height: 1.2 !important;
-    }
-/* Add this INSIDE your @media (max-width: 768px) block */
-
-
-
-
-
-
-
-
-
-
-
-
-    #enrichment.enrichment-locked-window {
-        background: #080c16 !important; 
-        position: relative !important;
-        height: 500px !important;
-        overflow-y: auto !important;
-        /* Remove the mask-image lines if you added them */
-    }
-
-    /* 2. Create the "Solid Fade" at the bottom */
-    #enrichment::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100px; /* How tall the fade-to-black area is */
-        background: linear-gradient(to bottom, transparent, #080c16);
-        pointer-events: none; /* Allows you to scroll "through" the fade */
-        z-index: 10;
-    }
-
 
 
 
