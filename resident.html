@@ -718,68 +718,89 @@
 
 
 @media (max-width: 768px) {
-    /* 1. Make the section a fixed, compact height */
+    /* 1. The "Window" - Fixed height, allows vertical scrolling INSIDE */
     #enrichment.enrichment-locked-window {
-        height: 480px !important; 
+        height: 500px !important; 
         padding: 30px 0 !important;
-        overflow-x: hidden !important; /* Hide vertical overflow */
-    }
-
-    /* 2. Stack the header on top and turn the track into a horizontal scroller */
-    #enrichment .luxe-container {
-        flex-direction: column !important;
-        gap: 20px !important;
-        padding: 0 0 0 20px !important; /* Padding only on left for "peek" effect */
-    }
-
-    #enrichment .cinematic-sticky {
-        position: relative !important;
-        flex: none !important;
-        margin-bottom: 10px;
-    }
-
-    /* 3. THE HORIZONTAL SCROLLER */
-    .cinematic-track {
-        display: flex !important;
-        flex-direction: row !important; /* Force side-by-side */
-        overflow-x: auto !important;    /* Enable swiping */
-        scroll-snap-type: x mandatory;   /* Snaps cards into place */
-        gap: 15px !important;
-        padding-right: 20px !important;  /* Space at the end of scroll */
+        overflow-y: auto !important; /* Forces the vertical scroll */
         -webkit-overflow-scrolling: touch;
     }
 
-    /* Hide scrollbar for that clean look */
-    .cinematic-track::-webkit-scrollbar {
-        display: none;
+    /* 2. Layout - Stack Header then Photos */
+    #enrichment .luxe-container {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 0 30px !important;
+        display: block !important; /* Allows natural vertical flow */
     }
 
-    /* 4. Adjust the Cards for the horizontal view */
+    /* 3. The Header - Keeps it at the top of the scroll */
+    #enrichment .cinematic-sticky {
+        position: relative !important;
+        margin-bottom: 40px !important;
+    }
+
+    /* 4. The Photo Track - Vertical stacking */
+    .cinematic-track {
+        display: flex !important;
+        flex-direction: column !important; 
+        gap: 20px !important;
+    }
+
+    /* 5. The Cards - Make them compact but vertical */
     .filmstrip-card-ultra {
-        flex: 0 0 280px !important;      /* Lock width of each card */
-        flex-direction: column !important;
-        scroll-snap-align: start;
-        margin-bottom: 0 !important;
+        display: flex !important;
+        flex-direction: row !important; /* Image on left, text on right */
+        align-items: center !important;
+        gap: 15px !important;
+        width: 100% !important;
     }
 
     .image-box-ultra {
-        width: 100% !important;
-        height: 220px !important;        /* Large photos in the scroller */
+        flex: 0 0 100px !important; /* Small square-ish preview */
+        height: 100px !important;
+        border-radius: 2px;
     }
 
     .text-box-ultra {
-        width: 100% !important;
-        padding-top: 10px;
+        flex: 1 !important;
     }
 
     .text-box-ultra h3 {
-        font-size: 1rem !important;
-        margin-top: 5px !important;
+        font-size: 0.95rem !important;
+        margin: 0 !important;
     }
-    
+
+    .slim-desc {
+        font-size: 0.7rem !important;
+        line-height: 1.2 !important;
+    }
+/* Add this INSIDE your @media (max-width: 768px) block */
+
+#enrichment.enrichment-locked-window {
+    position: relative; /* Essential for the fade to stay in place */
+    mask-image: linear-gradient(to bottom, 
+        black 0%, 
+        black 85%, 
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(to bottom, 
+        black 0%, 
+        black 85%, 
+        transparent 100%
+    );
 }
 
-        
+/* Optional: Add a subtle gold scrollbar so users see their progress */
+#enrichment.enrichment-locked-window::-webkit-scrollbar {
+    display: block !important;
+    width: 3px !important;
+}
+
+#enrichment.enrichment-locked-window::-webkit-scrollbar-thumb {
+    background: #c5a059 !important;
+    border-radius: 10px;
+}       
 
 
 
