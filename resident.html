@@ -777,30 +777,37 @@
     }
 /* Add this INSIDE your @media (max-width: 768px) block */
 
-#enrichment.enrichment-locked-window {
-    position: relative; /* Essential for the fade to stay in place */
-    mask-image: linear-gradient(to bottom, 
-        black 0%, 
-        black 85%, 
-        transparent 100%
-    );
-    -webkit-mask-image: linear-gradient(to bottom, 
-        black 0%, 
-        black 85%, 
-        transparent 100%
-    );
-}
 
-/* Optional: Add a subtle gold scrollbar so users see their progress */
-#enrichment.enrichment-locked-window::-webkit-scrollbar {
-    display: block !important;
-    width: 3px !important;
-}
 
-#enrichment.enrichment-locked-window::-webkit-scrollbar-thumb {
-    background: #c5a059 !important;
-    border-radius: 10px;
-}       
+
+
+
+
+
+
+
+
+
+    #enrichment.enrichment-locked-window {
+        background: #080c16 !important; 
+        position: relative !important;
+        height: 500px !important;
+        overflow-y: auto !important;
+        /* Remove the mask-image lines if you added them */
+    }
+
+    /* 2. Create the "Solid Fade" at the bottom */
+    #enrichment::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px; /* How tall the fade-to-black area is */
+        background: linear-gradient(to bottom, transparent, #080c16);
+        pointer-events: none; /* Allows you to scroll "through" the fade */
+        z-index: 10;
+    }
 
 
 
