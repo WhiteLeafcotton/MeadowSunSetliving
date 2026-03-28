@@ -86,199 +86,179 @@
 
     <style>
     /* --- MAGAZINE EDITORIAL SECTION --- */
-    .magazine-editorial {
-        position: relative;
-        padding: 100px 0;
-        background: #fffcf8; /* Warm paper-like background */
-        overflow: hidden;
-        font-family: 'Playfair Display', serif; /* Classic editorial font */
+    <style>
+    :root {
+        --gold: #c5a059;
+        --dark: #1a1a1a;
+        --paper: #fffcf8;
     }
 
-    /* 1. Subtle Fox Watermark */
+    .magazine-editorial {
+        background-color: var(--paper);
+        padding: 160px 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* 1. THE DRAMATIC WATERMARK */
     .fox-bg {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 50%;
-        opacity: 0.04; 
+        right: -5%;
+        top: 10%;
+        width: 40%;
+        opacity: 0.03;
         z-index: 1;
         pointer-events: none;
+        transform: rotate(-10deg);
     }
 
-    .editorial-wrapper {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 40px;
-        position: relative;
-        z-index: 2;
-    }
-
-    /* 2. Layout Rows */
-    .editorial-row {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 120px;
-        gap: 80px;
-    }
-
-    .top-row { justify-content: flex-start; }
-    .bottom-row { justify-content: flex-end; margin-bottom: 0; }
-
-    /* 3. The Vision Box */
+    /* 2. THE VISION SECTION (The "Big Letter" Look) */
     .vision-box {
-        max-width: 450px;
-        padding-top: 40px;
+        position: relative;
+        max-width: 600px;
+        margin-bottom: 150px;
+        z-index: 5;
     }
 
-    .gold-eyebrow {
-        display: block;
-        color: #c5a059;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        font-size: 0.75rem;
-        font-weight: 700;
-        margin-bottom: 20px;
-        font-family: sans-serif;
+    /* Transparent "S" for Sunset Meadow behind the text */
+    .vision-box::before {
+        content: "S";
+        position: absolute;
+        top: -80px;
+        left: -40px;
+        font-size: 20rem;
+        font-family: 'Playfair Display', serif;
+        color: var(--gold);
+        opacity: 0.07;
+        z-index: -1;
+        line-height: 1;
     }
 
     .magazine-title {
-        font-size: 3rem;
-        line-height: 1;
-        color: #1a1a1a;
-        margin-bottom: 30px;
+        font-family: 'Playfair Display', serif;
+        font-size: 4rem;
+        font-weight: 400;
+        line-height: 1.1;
+        color: var(--dark);
+        margin-bottom: 40px;
     }
 
     .magazine-title .italic {
-        font-family: 'Playfair Display', italic;
         font-style: italic;
-        color: #c5a059;
+        display: block;
+        padding-left: 50px;
+        color: var(--gold);
     }
 
     .magazine-para {
-        font-size: 1.05rem;
-        line-height: 1.8;
-        color: #555;
+        font-family: 'Playfair Display', serif;
+        font-size: 1.25rem;
+        line-height: 1.9;
+        color: #444;
+        border-left: 1px solid var(--gold);
+        padding-left: 30px;
     }
 
-    /* 4. Photo Frames & Profiles */
-    .profile-box {
+    /* 3. THE LAYERED PORTRAITS */
+    .editorial-row {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        align-items: center;
+        margin-bottom: 200px;
+    }
+
+    /* Julianne Layout */
+    .profile-box.julianne {
+        grid-column: 6 / 13;
         position: relative;
-        display: inline-block;
+    }
+
+    /* Eleanor Layout */
+    .profile-box.eleanor {
+        grid-column: 1 / 8;
+        position: relative;
     }
 
     .photo-frame {
-        background: #f4f4f4;
-        border: 1px solid rgba(0,0,0,0.05);
-        overflow: hidden;
-        box-shadow: 30px 30px 80px rgba(0,0,0,0.05);
-    }
-
-    /* Julianne's Frame (Vertical) */
-    .julianne .photo-frame {
-        width: 350px;
-        height: 500px;
-    }
-
-    /* Eleanor's Frame (Wider/Landscape) */
-    .eleanor .photo-frame {
-        width: 500px;
-        height: 380px;
+        position: relative;
+        z-index: 2;
+        box-shadow: 40px 40px 0px rgba(197, 160, 89, 0.05); /* The "Ghost" Frame */
     }
 
     .photo-frame img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        display: block;
+        filter: sepia(20%) contrast(110%); /* High-end film look */
     }
 
-    /* 5. The Label Stacks (Overlays) */
+    /* 4. FLOATING LABELS (The Magazine Look) */
     .label-stack {
         position: absolute;
+        z-index: 10;
         background: #fff;
-        padding: 35px;
-        width: 300px;
-        box-shadow: 15px 15px 50px rgba(0,0,0,0.1);
-        z-index: 5;
+        padding: 50px;
+        border: 1px solid #f0f0f0;
     }
 
-    .right-align {
-        bottom: -50px;
-        right: -80px;
+    /* Julianne's label hangs off the left side */
+    .julianne .label-stack {
+        left: -15%;
+        bottom: 10%;
+        width: 350px;
     }
 
-    .left-align {
-        bottom: -50px;
-        left: -80px;
+    /* Eleanor's label hangs off the right side */
+    .eleanor .label-stack {
+        right: -15%;
+        top: 10%;
+        width: 380px;
     }
 
     .name-label {
-        font-size: 1.8rem;
-        line-height: 1.1;
-        margin-bottom: 15px;
-        color: #1a1a1a;
+        font-family: 'Playfair Display', serif;
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        line-height: 1;
     }
 
     .name-label .italic {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: var(--gold);
         display: block;
-        margin-top: 5px;
-        color: #666;
+        margin-top: 10px;
     }
-
-    .bio-col {
-        padding: 10px 0 0 0;
-    }
-
-    .border-right { border-top: 2px solid #c5a059; padding-top: 20px; }
-    .border-left { border-top: 2px solid #c5a059; padding-top: 20px; }
 
     .role-tag {
         font-family: sans-serif;
         font-size: 0.7rem;
+        font-weight: 900;
+        letter-spacing: 4px;
         text-transform: uppercase;
-        color: #c5a059;
-        font-weight: 800;
-        letter-spacing: 2px;
-        display: block;
-        margin-bottom: 10px;
+        display: inline-block;
+        background: var(--dark);
+        color: #fff;
+        padding: 5px 15px;
+        margin-bottom: 20px;
     }
 
     .mini-bio {
-        font-size: 0.9rem;
-        color: #777;
-        line-height: 1.6;
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.7;
+        font-family: 'Playfair Display', serif;
     }
 
-    /* --- MOBILE STYLES --- */
+    /* --- MOBILE: Keep it Clean --- */
     @media (max-width: 992px) {
-        .editorial-row {
-            flex-direction: column;
-            gap: 40px;
-            margin-bottom: 80px;
-        }
-
-        .bottom-row { align-items: flex-start; }
-
-        .photo-frame, .julianne .photo-frame, .eleanor .photo-frame {
-            width: 100%;
-            height: 400px;
-        }
-
-        .label-stack {
-            position: relative;
-            width: 100%;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            box-shadow: none;
-            padding: 25px 0;
-            background: transparent;
-        }
-        
-        .magazine-title { font-size: 2.2rem; }
+        .editorial-row { display: block; margin-bottom: 100px; }
+        .vision-box::before { font-size: 12rem; top: -40px; }
+        .magazine-title { font-size: 2.8rem; }
+        .label-stack { position: static; width: 100% !important; padding: 40px 0; }
+        .photo-frame { box-shadow: none; }
     }
+
 </style>
 
     <section class="hero hero-about">
