@@ -122,60 +122,60 @@
 /* Lock the window height and hide the bar */
 /* Hide scrollbars */
 /* Cinematic Ultra-Wide & Full-Frame Card */
+/* Update the Card to maximize photo size and reduce gaps */
 .filmstrip-card-ultra {
     display: flex;
     align-items: center;
-    gap: 35px;
-    margin-bottom: 70px; /* REDUCED: Creates a tighter, fuller scroll */
-    transition: all 0.6s ease;
+    gap: 20px;
+    margin-bottom: 5px; /* ALMOST ZERO SPACE between cards */
+    transition: all 0.4s ease;
 }
 
 .image-box-ultra {
-    width: 520px; /* INCREASED: Dominates the horizontal space */
-    height: 240px; /* INCREASED: Fills the vertical 500px window much more */
+    flex: 1; /* Allows image to stretch */
+    height: 280px; /* Taller photos to fill the 500px window quickly */
     overflow: hidden;
-    border: 1px solid rgba(197, 160, 89, 0.4);
-    flex-shrink: 0;
-    box-shadow: 0 15px 45px rgba(0,0,0,0.6);
+    border: 1px solid rgba(197, 160, 89, 0.2);
 }
 
 .image-box-ultra img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.85;
-    transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+    opacity: 0.8;
 }
 
-.filmstrip-card-ultra:hover img {
-    opacity: 1;
-    transform: scale(1.08);
+.text-box-ultra {
+    width: 200px; /* Lock text width so it doesn't push the photo out */
 }
 
 .text-box-ultra h3 {
     color: white;
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem; /* Balanced with the larger photos */
+    font-size: 1.1rem; /* Smaller title to keep focus on photo */
     margin: 5px 0;
-    line-height: 1.1;
+    font-family: 'Playfair Display', serif;
 }
 
-/* REDUCED DESCRIPTION TEXT */
 .slim-desc {
+    font-size: 0.75rem; /* SHRUNK DESCRIPTION */
     color: rgba(255,255,255,0.4);
-    font-size: 0.85rem; /* SHRUNK: Makes the photo look larger by comparison */
-    line-height: 1.5;
-    max-width: 240px;
-    margin-top: 10px;
+    margin: 0;
 }
 
 .card-count-ultra {
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
+    font-size: 0.7rem;
     color: #c5a059;
-    opacity: 0.6;
-}    
+    opacity: 0.5;
+}
 
+/* Hide Scrollbar for that clean look */
+.enrichment-locked-window::-webkit-scrollbar {
+    display: none;
+}
+.enrichment-locked-window {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 
 
 
@@ -555,20 +555,20 @@
 
 
 
-<section id="enrichment" class="enrichment-locked-window" style="background: #080c16; height: 500px; overflow-y: scroll; padding: 40px 0; position: relative; scroll-behavior: smooth;">
+<section id="enrichment" class="enrichment-locked-window" style="background: #080c16; height: 500px; overflow-y: scroll; padding: 20px 0; position: relative; scroll-behavior: smooth;">
     
-    <div class="luxe-container" style="max-width: 1400px; margin: 0 auto; display: flex; gap: 40px; align-items: flex-start; padding: 0 40px;">
+    <div class="luxe-container" style="max-width: 1400px; margin: 0 auto; display: flex; gap: 20px; align-items: flex-start; padding: 0 40px;">
         
-        <div class="cinematic-sticky" style="position: sticky; top: 20px; flex: 0.7; height: fit-content;">
-            <span class="gold-eyebrow" style="font-size: 0.8rem; letter-spacing: 6px; color: #c5a059;">The Collection</span>
-            <h2 class="magazine-title" style="color: white; font-size: 3.5rem; margin: 20px 0; line-height: 1.0; letter-spacing: -1px;">Life <br><span class="italic-serif text-gold" style="color: #c5a059;">Enrichment</span></h2>
-            <div style="width: 60px; height: 2px; background: #c5a059; margin: 30px 0;"></div>
-            <p style="color: rgba(255,255,255,0.6); font-size: 1rem; line-height: 1.8; max-width: 280px;">
-                A master-curated sequence of spiritual and intellectual engagements.
+        <div class="cinematic-sticky" style="position: sticky; top: 20px; flex: 0.5; height: fit-content;">
+            <span class="gold-eyebrow" style="font-size: 0.7rem; letter-spacing: 5px; color: #c5a059;">The Collection</span>
+            <h2 class="magazine-title" style="color: white; font-size: 2.8rem; margin: 15px 0; line-height: 1.0; letter-spacing: -1px;">Life <br><span class="italic-serif text-gold" style="color: #c5a059;">Enrichment</span></h2>
+            <div style="width: 40px; height: 1px; background: #c5a059; margin: 20px 0;"></div>
+            <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem; line-height: 1.6; max-width: 180px;">
+                A master-curated sequence of spiritual engagements.
             </p>
         </div>
 
-        <div class="cinematic-track" style="flex: 2.3; padding-bottom: 60px;">
+        <div class="cinematic-track" style="flex: 3; padding-bottom: 20px;">
             
             <div class="filmstrip-card-ultra">
                 <div class="image-box-ultra">
@@ -576,8 +576,8 @@
                 </div>
                 <div class="text-box-ultra">
                     <span class="card-count-ultra">01</span>
-                    <h3>Cognitive <span class="italic">Architecture</span></h3>
-                    <p class="slim-desc">Specialist-led neuro-plasticity training and guest lectures.</p>
+                    <h3>Cognitive Architecture</h3>
+                    <p class="slim-desc">Neuro-plasticity training.</p>
                 </div>
             </div>
 
@@ -587,8 +587,8 @@
                 </div>
                 <div class="text-box-ultra">
                     <span class="card-count-ultra">02</span>
-                    <h3>The Artisanal <span class="italic">Studio</span></h3>
-                    <p class="slim-desc">Private masterclasses in fine arts and sculpture.</p>
+                    <h3>The Artisanal Studio</h3>
+                    <p class="slim-desc">Fine arts masterclasses.</p>
                 </div>
             </div>
 
@@ -598,8 +598,8 @@
                 </div>
                 <div class="text-box-ultra">
                     <span class="card-count-ultra">03</span>
-                    <h3>Botanical <span class="italic">Stewardship</span></h3>
-                    <p class="slim-desc">Horticultural therapy and Zen meditation.</p>
+                    <h3>Botanical Stewardship</h3>
+                    <p class="slim-desc">Horticultural therapy.</p>
                 </div>
             </div>
 
@@ -609,8 +609,8 @@
                 </div>
                 <div class="text-box-ultra">
                     <span class="card-count-ultra">04</span>
-                    <h3>Epicurean <span class="italic">Mastery</span></h3>
-                    <p class="slim-desc">Chef-led kitchen takeovers and wine pairings.</p>
+                    <h3>Epicurean Mastery</h3>
+                    <p class="slim-desc">Chef-led takeovers.</p>
                 </div>
             </div>
 
@@ -620,8 +620,8 @@
                 </div>
                 <div class="text-box-ultra">
                     <span class="card-count-ultra">05</span>
-                    <h3>Movement & <span class="italic">Vitality</span></h3>
-                    <p class="slim-desc">Somatic movement and restorative yoga tracks.</p>
+                    <h3>Movement & Vitality</h3>
+                    <p class="slim-desc">Somatic movement tracks.</p>
                 </div>
             </div>
 
