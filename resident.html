@@ -394,65 +394,200 @@
 
 
         /* Mobility Modal book a chofur button Specific Styling */
-.mobility-modal-style .modal-content.glass-effect {
-    background: rgba(8, 12, 22, 0.95); /* Matches your dark transportation vibe */
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(197, 160, 89, 0.3);
+/* =========================================
+   MOBILITY MODAL: TOTAL GLASS RESTYLE
+========================================= */
+
+/* The Full-Page Modal Wrapper (keeps background viewable) */
+.ultra-glass-mobility.modal {
+    background: rgba(0, 0, 0, 0.5); /* Slight tint so the blurred background pops */
+}
+
+/* The Modal Content: Identical to the Transportation Page Card */
+.mobility-glass-card.modal-content {
+    background: rgba(255, 255, 255, 0.08); /* Frosted, semi-transparent base */
+    backdrop-filter: blur(20px); /* THE ESSENTIAL FROST EFFECT */
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white outline */
+    box-shadow: 0 40px 100px rgba(0,0,0,0.5); /* Deep shadow for depth */
+    
+    /* Dimensions & Spacing */
+    max-width: 600px;
+    padding: 80px;
+    color: white; /* All text is white/gold */
+    
+    /* Animation for appearance */
+    animation: mobilityFadeIn 0.5s ease forwards;
+}
+
+@keyframes mobilityFadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header & Titles within the Modal */
+.mobility-glass-card h2.magazine-title {
+    font-size: 3rem; /* Bold editorial look */
     color: white;
-    max-width: 550px;
-    padding: 60px;
+    margin-bottom: 40px;
+    line-height: 1.1;
 }
 
-.mobility-modal-style .gold-eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 4px;
+.mobility-glass-card .gold-eyebrow {
     color: #c5a059;
-    text-transform: uppercase;
+    letter-spacing: 6px;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
 }
 
-.mobility-modal-style h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
+/* Restyling ALL inputs for the glass look */
+.mobility-glass-card input[type], 
+.mobility-glass-card textarea {
+    background: rgba(255, 255, 255, 0.05); /* Very light, transparent input */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 18px;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    border-radius: 0; /* Premium, angular look */
+    width: 100%;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.mobility-glass-card input::placeholder { color: rgba(255,255,255,0.4); }
+
+.mobility-glass-card input:focus, 
+.mobility-glass-card textarea:focus {
+    outline: none;
+    border-color: #c5a059; /* Gold focus border */
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Form Grid */
+.form-row-split {
+    display: flex;
+    gap: 20px;
+}
+
+/* =========================================
+   DROPDOWN (SELECT) RESTYLING: The Fix
+========================================= */
+
+/* The wrapper that holds the dropdown and the new icon */
+.custom-select-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Restyling the actual SELECT element */
+.luxe-select {
+    appearance: none; /* REMOVES DEFAULT BROWSER STYLING (Ugly arrows, etc.) */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    /* Matching the other inputs */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255,255,255,0.8); /* Placeholder-like color for the unselected state */
+    padding: 18px;
+    padding-right: 50px; /* Space for the new icon */
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    border-radius: 0;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.luxe-select:focus {
+    outline: none;
+    border-color: #c5a059;
+    color: white; /* Selected text is full white */
+}
+
+/* Creating a new, elegant gold chevron icon */
+.select-icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #c5a059; /* Gold icon */
+    font-size: 0.9rem;
+    pointer-events: none; /* User clicks 'through' the icon to the select */
+}
+
+/* Restyling the actual 'options' inside the dropdown (Browser limited) */
+.luxe-select option {
+    background-color: #080c16; /* Dark background so text is readable */
+    color: white;
+    padding: 10px;
+}
+
+.luxe-select option[disabled] {
+    color: rgba(255,255,255,0.4);
+}
+
+/* =========================================
+   BUTTONS & MISC (Mobility Theme)
+========================================= */
+
+/* The Close Button for the Glass Modal */
+.close-glass {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.close-glass:hover { opacity: 1; color: #c5a059; }
+
+/* The Pulse Dot ( carried from the card design) */
+.live-status-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     margin-bottom: 30px;
 }
 
-/* Inputs for the dark theme */
-.mobility-modal-style input, 
-.mobility-modal-style select, 
-.mobility-modal-style textarea {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
-    padding: 15px;
-    margin-bottom: 15px;
-    width: 100%;
-    font-family: 'Inter', sans-serif;
-}
-
-.mobility-modal-style input::placeholder { color: rgba(255,255,255,0.4); }
-
-.form-row { display: flex; gap: 15px; }
-
-.luxe-ride-btn-submit {
+.pulse-dot {
+    width: 10px;
+    height: 10px;
     background: #c5a059;
-    color: white;
-    width: 100%;
-    padding: 20px;
-    border: none;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #c5a059;
+    animation: pulse-gold-mobility 2s infinite;
 }
 
-.luxe-ride-btn-submit:hover {
-    background: white;
-    color: #080c16;
+.status-text {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #c5a059;
+}
+
+@keyframes pulse-gold-mobility {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(197, 160, 89, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
+}
+
+/* Mobile Adjustments for the Glass Modal */
+@media (max-width: 768px) {
+    .mobility-glass-card.modal-content {
+        padding: 40px 25px;
+        margin: 0 20px;
+        max-width: calc(100% - 40px);
+    }
+    .mobility-glass-card h2.magazine-title { font-size: 2.2rem; }
+    .form-row-split { flex-direction: column; gap: 0; }
 }
     </style>
 </head>
@@ -897,31 +1032,40 @@
 
 
 
+<div id="rideModal" class="modal ultra-glass-mobility">
+    <div class="modal-content mobility-glass-card">
+        <span class="close-glass" onclick="closeRideModal()">&times;</span>
+        
+        <div class="live-status-container">
+            <span class="pulse-dot"></span>
+            <span class="status-text">On-Demand Concierge Active</span>
+        </div>
 
-    <div id="rideModal" class="modal mobility-modal-style">
-    <div class="modal-content glass-effect">
-        <span class="close" onclick="closeRideModal()">&times;</span>
         <span class="gold-eyebrow">Concierge Mobility</span>
-        <h2>Reserve Your <span class="italic-serif text-gold">Chauffeur</span></h2>
+        <h2 class="magazine-title">Reserve Your <span class="italic-serif text-gold">Chauffeur</span></h2>
         
         <form action="https://formsubmit.co/sunsetmeadowlivingllc@gmail.com" method="POST">
-            <div class="form-row">
+            <div class="form-row-split">
                 <input type="text" name="name" placeholder="Resident Name" required>
                 <input type="tel" name="phone" placeholder="Contact Number" required>
             </div>
             
             <input type="text" name="destination" placeholder="Destination (e.g., The Metropolitan Club)" required>
             
-            <div class="form-row">
+            <div class="form-row-split">
                 <input type="date" name="date" required title="Pickup Date">
                 <input type="time" name="time" required title="Pickup Time">
             </div>
 
-            <select name="escort_needs">
-                <option value="standard">Standard Chauffeur Service</option>
-                <option value="white-glove">White-Glove Door-to-Door Escort</option>
-                <option value="round-trip">Round Trip / Wait & Return</option>
-            </select>
+            <div class="custom-select-wrapper">
+                <select name="escort_needs" class="luxe-select">
+                    <option value="" disabled selected>Service Level Needed...</option>
+                    <option value="standard">Standard Chauffeur Service</option>
+                    <option value="white-glove">White-Glove Door-to-Door Escort</option>
+                    <option value="round-trip">Round Trip / Wait & Return</option>
+                </select>
+                <i class="fa-solid fa-chevron-down select-icon"></i>
+            </div>
 
             <textarea name="notes" placeholder="Special requirements or medical equipment needs..."></textarea>
             
@@ -932,6 +1076,12 @@
         </form>
     </div>
 </div>
+
+
+
+
+
+    
 
     <script>
         // Modal Logic
