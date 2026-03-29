@@ -475,86 +475,101 @@
    SUNSET MEADOW: MOBILE REFINEMENTS
    ========================================== */
 
+/* ==========================================
+   SUNSET MEADOW: MOBILE SPECIFIC REFINEMENTS
+   ========================================== */
+
 @media (max-width: 768px) {
-    /* --- 1. PROFILES: NO CARDS (GHOST STYLE) --- */
-    .profile-rail-tall {
-        background: transparent !important;
-        border: none !important;
+    
+    /* 1. FIXING THE GLOBAL SCROLL ISSUE */
+    /* We ensure only the specific containers scroll, not the whole page/body */
+    .hero-about, .locked-mission-console, .stewardship-ribbon {
+        width: 100%;
+        overflow-x: hidden; /* Prevents side-scrolling on the main page */
     }
-    .dossier-card-tall {
+
+    /* 2. PROFILES: NO CARDS / GHOST STYLE */
+    .hero-about .dossier-card-tall {
         background: transparent !important;
         border: none !important;
         box-shadow: none !important;
-        flex: 0 0 100% !important; /* One profile per view */
-        padding: 10px 0 !important;
-    }
-    .mini-profile-photo {
-        width: 100px !important; /* Larger for impact */
-        height: 100px !important;
-        margin-bottom: 20px !important;
-    }
-    .nano-text {
-        font-size: 0.85rem !important; /* More readable on mobile */
-        color: #444 !important;
-        padding: 0 15px;
-    }
-
-    /* --- 2. CONTINUUM SECTION: LIGHT & FRESH --- */
-    .stewardship-ribbon {
-        background: #f8fafc !important; /* Fresh Off-White/Light Slate */
-        padding: 50px 0 !important;
-    }
-    .glass-photo-base, .frost-layer {
-        display: none !important; /* Remove heavy dark backgrounds */
-    }
-    .ribbon-title {
-        color: #0c1833 !important; /* Dark text for contrast on light bg */
-    }
-    .dir-item {
-        background: #ffffff !important; /* Crisp white cards */
-        border: 1px solid #e2e8f0 !important;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
-    }
-    .client-type { color: #0c1833 !important; }
-    .client-status { color: #64748b !important; }
-
-    /* --- 3. ADMISSIONS: FULL SIZE VIDEO --- */
-    .split-view-container {
-        display: flex;
-        flex-direction: column !important; /* Stack vertically */
-    }
-    .journey-card-outline.video-card-container {
-        order: -1; /* Move video to TOP of section */
-        height: auto !important;
-        border: none !important;
+        flex: 0 0 100% !important;
         padding: 0 !important;
-    }
-    .iframe-viewport {
-        height: 70vh !important; /* Tall, immersive mobile video */
-        width: 100vw !important;
-        margin-left: calc(-50vw + 50%); /* Center full-width */
+        margin: 0 0 40px 0 !important;
     }
 
-    /* --- 4. ADMISSIONS: SWAPPABLE STEPS --- */
+    /* 3. CONTINUUM: LIGHT & FRESH (ONLY ON THIS SECTION) */
+    #client-directory.stewardship-ribbon {
+        background: #f8fafc !important; /* Fresh Off-White */
+        background-image: none !important; /* Kills the photo background */
+        padding: 60px 0 !important;
+    }
+    #client-directory .glass-photo-base, 
+    #client-directory .frost-layer {
+        display: none !important;
+    }
+    #client-directory .ribbon-title { color: #0c1833 !important; }
+    
+    /* Ticker Cards - Light Mode */
+    #client-directory .dir-item {
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.03) !important;
+    }
+    #client-directory .client-type { color: #0c1833 !important; }
+    #client-directory .acuity-tag { color: #94a3b8 !important; }
+
+    /* 4. ADMISSIONS: VERTICAL FULL-SIZE VIDEO */
+    .admissions-journey .split-view-container {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    .admissions-journey .video-card-container {
+        order: -1; /* Video first */
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .admissions-journey .iframe-viewport {
+        position: relative;
+        width: 100vw !important;
+        margin-left: calc(-50vw + 50%); /* Forces true edge-to-edge */
+        aspect-ratio: 9/16 !important; /* FORCES VERTICAL FORMAT */
+        height: auto !important;
+        overflow: hidden;
+    }
+
+    .admissions-journey iframe {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover; /* Ensures video fills the vertical space */
+    }
+
+    /* 5. SWAPPABLE ADMISSIONS CARDS */
     .journey-steps-container {
         display: flex !important;
         overflow-x: auto !important;
         scroll-snap-type: x mandatory;
-        gap: 20px;
+        gap: 15px;
         padding: 20px !important;
-        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
     }
-    .journey-steps-container::-webkit-scrollbar { display: none; }
     
-    .step-card-editorial {
-        flex: 0 0 85% !important; /* Show part of next card to hint at swipe */
+    .journey-steps-container .step-card-editorial {
+        flex: 0 0 85% !important; /* Shows peek of next card */
         scroll-snap-align: center;
-        background: #fff;
-        border: 1px solid #eee;
-        padding: 30px 20px !important;
-        height: auto !important;
+        background: #fff !important;
+        border: 1px solid #eee !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        padding: 30px !important;
     }
-    .vertical-connector-blue { display: none; } /* Clean up connector for cards */
+    
+    /* Remove the vertical line on mobile to keep it clean */
+    .vertical-connector-blue { display: none !important; }
 }
 </style>
 
