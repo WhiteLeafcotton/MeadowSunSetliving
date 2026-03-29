@@ -394,20 +394,54 @@
     height: 50vh; 
     background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat;
     background-attachment: scroll;
-    position: sticky; /* This enables the slide-over */
+    position: sticky; 
     top: 0;
-    z-index: -1; /* Pushes it back ONLY on the about page */
+    z-index: -1;
+
+    /* REPOSITION TO BOTTOM LEFT */
+    display: flex;
+    align-items: flex-end;      /* Vertical: Bottom */
+    justify-content: flex-start; /* Horizontal: Left */
+    padding: 60px;              /* Matches Suites padding */
+}
+
+/* MATCHING THE H1 FONT SIZE & COLOR */
+.hero.hero-about h1 {
+    margin-bottom: 0 !important;
+    font-size: 2.4rem !important; /* Matches Suites size */
+    text-align: left;
+    color: #1a1a1a;               /* Clean dark text */
+    letter-spacing: -0.5px;
+}
+
+/* UNIFYING "SUNSET MEADOW" STYLING */
+.hero.hero-about .italic-serif {
+    font-family: 'Inter', sans-serif !important; 
+    font-style: normal !important;               
+    font-weight: inherit;                        
+    color: inherit;                              
+    font-size: 1em;                              
+}
+
+/* MOBILE ADJUSTMENTS: Scale down for smaller screens */
+@media (max-width: 768px) {
+    .hero.hero-about {
+        padding: 40px 25px;       
+        height: 40vh;             
+    }
+    .hero.hero-about h1 {
+        font-size: 1.8rem !important;
+    }
 }
 
 /* THE SLIDE-OVER TRIGGER (ABOUT PAGE ONLY) */
-/* This ensures other sections slide over the sticky About hero */
 .hero.hero-about ~ section,
-.hero.hero-about ~ .main-content-wrapper {
+.hero.hero-about ~ .main-content-wrapper,
+.hero.hero-about ~ .locked-mission-console { /* Added Mission Console to ensure it slides over */
     position: relative;
     z-index: 10;
     background: #ffffff;
 }
-
 /* Specific override for Suites Page Hero */
 /* Specific override for Suites Page Hero */
 /* Specific override for Suites Page Hero */
