@@ -563,49 +563,63 @@
 /* Specific override for Payment Page Hero */
 /* Specific override for Payment Page Hero */
 /* --- 1. HERO FIX: EXACT SUITES REPLICA --- */
-        .hero.hero-payment {
-            height: 50vh !important; 
-            width: 100% !important;
-            /* IMAGE FIX: Using scroll + sticky combo for visibility */
-            background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2015.jpeg?raw=true) center/cover no-repeat !important;
-            background-attachment: scroll !important; 
-            
-            position: sticky !important; 
-            top: 0;
-            z-index: -1; 
-            
-            display: flex !important;
-            align-items: flex-end !important;
-            justify-content: flex-start !important;
-            padding: 60px !important;
-            overflow: visible !important;
-        }
+        /* --- 1. HERO FIX: EXACT SUITES REPLICA --- */
+.hero.hero-payment {
+    height: 50vh !important; 
+    width: 100% !important;
+    /* FIXED: Added missing quote after Image 15.jpeg */
+    background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2015.jpeg?raw=true') center/cover no-repeat !important;
+    background-attachment: scroll !important; 
+    
+    position: sticky !important; 
+    top: 0;
+    z-index: -1; 
+    
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: flex-start !important;
+    padding: 60px !important;
+    overflow: visible !important;
+}
 
-        /* Typography Sync */
-        .hero.hero-payment h1 {
-            margin-bottom: 0 !important;
-            font-size: 2.4rem !important;
-            color: #1a1a1a !important;
-            text-align: left !important;
-            letter-spacing: -0.5px !important;
-            font-family: 'Playfair Display', serif;
-        }
+/* Typography Sync */
+.hero.hero-payment h1 {
+    margin-bottom: 0 !important;
+    font-size: 2.4rem !important;
+    color: #1a1a1a !important;
+    text-align: left !important;
+    letter-spacing: -0.5px !important;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    z-index: 5; /* Keeps text above the overlay */
+}
 
-        .hero.hero-payment .italic-serif {
-            font-family: 'Inter', sans-serif !important;
-            font-style: normal !important;
-            font-weight: inherit;
-            color: inherit;
-            font-size: 1em;
-        }
+.hero.hero-payment .italic-serif {
+    font-family: 'Inter', sans-serif !important;
+    font-style: normal !important;
+    font-weight: inherit;
+    color: inherit;
+    font-size: 1em;
+}
 
-        /* Slide-Over Logic: Ensures the next section covers the hero image */
-        .hero.hero-payment ~ section {
-            position: relative;
-            z-index: 10;
-            background: #ffffff; 
-        }
-  }
+/* Slide-Over Logic: Ensures the next section covers the hero image */
+.hero.hero-payment ~ section {
+    position: relative;
+    z-index: 10;
+    background: #ffffff; 
+}
+
+/* Overlay Styling */
+.hero-light-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to right, 
+        rgba(255, 255, 255, 0.7) 0%, 
+        rgba(255, 255, 255, 0.3) 50%, 
+        transparent 100%);
+    z-index: 1;
+}
 /* --- THE REST IS YOUR ORIGINAL DESIGN CODE --- */
 
 .hero-light-overlay {
