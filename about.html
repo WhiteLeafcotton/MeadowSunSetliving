@@ -294,6 +294,7 @@
 
         <div class="dir-slider-viewport">
             <div class="dir-track">
+                
                 <div class="dir-item">
                     <div class="dir-meta">
                         <span class="acuity-tag">Acuity 01</span>
@@ -312,9 +313,13 @@
                     <div class="dir-icon"><i class="fa-solid fa-hourglass-start"></i></div>
                 </div>
 
-                <div class="dir-item index-card">
-                    <div class="index-digit">11</div>
-                    <span class="client-status">Programs Served</span>
+                <div class="dir-item">
+                    <div class="dir-meta">
+                        <span class="acuity-tag">Acuity 03</span>
+                        <h4 class="client-type">Developmental</h4>
+                        <span class="client-status">Habilitation & Growth</span>
+                    </div>
+                    <div class="dir-icon"><i class="fa-solid fa-seedling"></i></div>
                 </div>
 
                 <div class="dir-item">
@@ -335,10 +340,15 @@
                     <div class="dir-icon"><i class="fa-solid fa-hourglass-start"></i></div>
                 </div>
 
-                <div class="dir-item index-card">
-                    <div class="index-digit">11</div>
-                    <span class="client-status">Programs Served</span>
+                <div class="dir-item">
+                    <div class="dir-meta">
+                        <span class="acuity-tag">Acuity 03</span>
+                        <h4 class="client-type">Developmental</h4>
+                        <span class="client-status">Habilitation & Growth</span>
+                    </div>
+                    <div class="dir-icon"><i class="fa-solid fa-seedling"></i></div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -348,7 +358,7 @@
     /* --- THE ENGINE: PHOTO-BACKED FROST --- */
     .stewardship-ribbon {
         position: relative;
-        padding: 50px 0 40px 0; /* SHORTER CONTAINER */
+        padding: 50px 0 40px 0;
         overflow: hidden;
         background: #fff;
     }
@@ -379,7 +389,7 @@
         z-index: 3;
     }
 
-    /* --- TYPOGRAPHY (LOCKED DARK BLUE + NEW ACCENT) --- */
+    /* --- TYPOGRAPHY (LOCKED DARK BLUE + ROYAL PURPLE ACCENT) --- */
     .ribbon-header-box { padding: 0 8%; margin-bottom: 30px; max-width: 600px; }
     
     .accent-eyebrow { 
@@ -388,7 +398,7 @@
         letter-spacing: 5px; 
         font-size: 0.65rem; 
         font-weight: 800; 
-        color: #b91c1c; /* VIBRANT CRIMSON */
+        color: #6366f1; /* ROYAL PURPLE (Indigo shade to match Blue) */
         margin-bottom: 10px; 
     }
 
@@ -397,12 +407,11 @@
         font-size: 2.4rem; 
         color: #0c1833; 
         line-height: 1.1; 
-        margin-bottom: 0; 
         font-weight: 700; 
     }
 
     .accent-italic { 
-        color: #b91c1c; /* VIBRANT CRIMSON */
+        color: #6366f1; /* ROYAL PURPLE */
         font-style: italic; 
         font-weight: 400; 
     }
@@ -429,11 +438,11 @@
         align-items: center;
         transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1);
     }
-    .dir-item:hover { transform: translateY(-5px); border-color: #b91c1c; }
+    .dir-item:hover { transform: translateY(-5px); border-color: #6366f1; }
 
     .acuity-tag { 
         font-size: 0.5rem; 
-        color: #b91c1c; /* VIBRANT CRIMSON */
+        color: #6366f1; /* ROYAL PURPLE */
         letter-spacing: 2px; 
         text-transform: uppercase; 
         font-weight: 900; 
@@ -444,11 +453,6 @@
     .client-type { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #ffffff; }
     .client-status { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255, 255, 255, 0.5); display: block; }
     .dir-icon i { font-size: 1.2rem; color: #94a3b8; opacity: 0.6; }
-
-    /* --- INDEX CARD --- */
-    .index-card { background: #b91c1c; border: none; justify-content: center; gap: 15px; }
-    .index-digit { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #ffffff; font-weight: 800; }
-    .index-card .client-status { color: #ffffff; font-weight: 900; opacity: 0.9; }
 </style>
 
 
