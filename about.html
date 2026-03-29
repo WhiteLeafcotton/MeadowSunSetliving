@@ -358,9 +358,9 @@
     /* --- THE ENGINE: PHOTO-BACKED FROST --- */
     .stewardship-ribbon {
         position: relative;
-        padding: 50px 0 40px 0;
+        padding: 60px 0 50px 0;
         overflow: hidden;
-        background: #fff;
+        background: #0c1833; /* Dark baseline */
     }
 
     .glass-photo-base {
@@ -377,20 +377,21 @@
         position: absolute;
         top: 0; left: 0; width: 100%; height: 100%;
         z-index: 2;
-        background: rgba(255, 255, 255, 0.45); 
-        backdrop-filter: blur(25px) saturate(120%);
-        -webkit-backdrop-filter: blur(25px) saturate(120%);
-        border-top: 1px solid rgba(255, 255, 255, 0.6);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+        /* Adjusted frost to be a darker slate-tinted glass */
+        background: rgba(12, 24, 51, 0.4); 
+        backdrop-filter: blur(20px) saturate(100%);
+        -webkit-backdrop-filter: blur(20px) saturate(100%);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .ribbon-content-wrap {
         position: relative;
-        z-index: 3;
+        z-index: 3; /* Cards and Text stay clean on top of the frost */
     }
 
-    /* --- TYPOGRAPHY (LOCKED DARK BLUE + ROYAL PURPLE ACCENT) --- */
-    .ribbon-header-box { padding: 0 8%; margin-bottom: 30px; max-width: 600px; }
+    /* --- TYPOGRAPHY (HERO SLATE BLUE ACCENTS) --- */
+    .ribbon-header-box { padding: 0 8%; margin-bottom: 35px; max-width: 600px; }
     
     .accent-eyebrow { 
         display: block; 
@@ -398,20 +399,20 @@
         letter-spacing: 5px; 
         font-size: 0.65rem; 
         font-weight: 800; 
-        color: #6366f1; /* ROYAL PURPLE (Indigo shade to match Blue) */
+        color: #94a3b8; /* HERO GRAY-BLUE SLATE */
         margin-bottom: 10px; 
     }
 
     .ribbon-title { 
         font-family: 'Playfair Display', serif; 
-        font-size: 2.4rem; 
-        color: #0c1833; 
+        font-size: 2.5rem; 
+        color: #ffffff; /* Swapped to White for better legibility on Dark Frost */
         line-height: 1.1; 
         font-weight: 700; 
     }
 
     .accent-italic { 
-        color: #6366f1; /* ROYAL PURPLE */
+        color: #94a3b8; /* HERO GRAY-BLUE SLATE */
         font-style: italic; 
         font-weight: 400; 
     }
@@ -426,11 +427,11 @@
     .dir-track { display: flex; gap: 20px; width: max-content; animation: tickerScroll 40s linear infinite; padding: 15px 0; }
     @keyframes tickerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-    /* --- THE DEEP BLUE CARDS (LOCKED) --- */
+    /* --- THE DEEP BLUE CARDS (CLEAR & PUNCHY) --- */
     .dir-item {
         flex: 0 0 280px;
         background: #0c1833;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(148, 163, 184, 0.2); /* Slate border */
         padding: 22px 28px;
         min-height: 110px;
         display: flex;
@@ -438,11 +439,11 @@
         align-items: center;
         transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1);
     }
-    .dir-item:hover { transform: translateY(-5px); border-color: #6366f1; }
+    .dir-item:hover { transform: translateY(-5px); border-color: #94a3b8; }
 
     .acuity-tag { 
         font-size: 0.5rem; 
-        color: #6366f1; /* ROYAL PURPLE */
+        color: #94a3b8; /* HERO SLATE */
         letter-spacing: 2px; 
         text-transform: uppercase; 
         font-weight: 900; 
