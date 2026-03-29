@@ -563,18 +563,16 @@
 /* Specific override for Payment Page Hero */
 /* Specific override for Payment Page Hero */
 .hero.hero-payment {
+    /* Add 'auto' and remove 'scroll' to test if the position:sticky is fighting the background */
+    background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2011.jpeg?raw=true') center/cover no-repeat !important;
     height: 50vh; 
-    background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2011.jpeg?raw=true') center/cover no-repeat;
-    background-attachment: scroll;
     position: sticky; 
     top: 0;
     z-index: -1;
-    
-    /* REPOSITION TO BOTTOM LEFT - Exact Match */
     display: flex;
-    align-items: flex-end;      /* Vertical: Bottom */
-    justify-content: flex-start; /* Horizontal: Left */
-    padding: 60px;               /* Precise breathing room */
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 60px;
 }
 
 /* ADJUSTING THE H1 FONT SIZE & COLOR - Exact Match */
