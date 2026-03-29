@@ -564,72 +564,56 @@
 /* Specific override for Payment Page Hero */
 /* Specific override for Payment Page Hero */
 /* --- PAYMENT HERO: EXACT SUITES REPLICA --- */
+        }
+
+
+        /* --- FIXED PAYMENT HERO --- */
 .hero.hero-payment {
-    height: 50vh; 
-    /* The core fix: ensuring the image is called correctly with scroll attachment */
+    height: 50vh !important; 
+    /* We use !important here to ensure it overrides any conflicting general .hero styles */
     background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true') center/cover no-repeat !important;
     background-attachment: scroll !important; 
     
-    /* Sticky Logic: Pushes image behind content as you scroll */
-    position: sticky; 
+    position: sticky !important; 
     top: 0;
     z-index: -1; 
     
-    /* Alignment: Matches Suites (Bottom Left) */
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    padding: 60px;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: flex-start !important;
+    padding: 60px !important;
+    overflow: visible !important;
 }
 
-/* Force the Overlay to be invisible on this subpage so the image is crisp */
-.hero.hero-payment .hero-light-overlay {
-    display: none !important;
-}
-
-/* Hide the Badge to match the clean look of the Suites page */
-.hero.hero-payment .hero-badge {
-    display: none !important;
-}
-
-/* MATCHING TYPOGRAPHY: Exact match to Suites H1 */
-.hero.hero-payment h1 {
-    margin-bottom: 0 !important;
-    font-size: 2.4rem !important;
+/* Ensure the content inside the hero is visible */
+.hero.hero-payment .hero-content {
+    position: relative;
+    z-index: 2;
     text-align: left;
-    color: #1a1a1a;
-    letter-spacing: -0.5px;
-    line-height: 1;
+    width: 100%;
 }
 
-/* REMOVE SLANT: Matches your "High-Tech Premium" vibe */
-.hero.hero-payment .italic-serif {
-    font-family: 'Inter', sans-serif !important;
-    font-style: normal !important;
-    font-weight: inherit;
-    color: inherit;
-    font-size: 1em;
-}
-
-/* MOBILE SYNC: Drops height to 40vh just like the others */
-@media (max-width: 768px) {
-    .hero.hero-payment {
-        padding: 40px 25px;
-        height: 40vh;
-    }
-    .hero.hero-payment h1 {
-        font-size: 1.8rem !important;
-    }
-}
-
-/* SLIDE-OVER TRIGGER: Essential for the "Suites" effect */
-.hero.hero-payment ~ section,
-.hero.hero-payment ~ .payment-solutions,
-.hero.hero-payment ~ .rates-grid {
+/* This ensures the image doesn't 'disappear' under the next section too early */
+.hero.hero-payment ~ section {
     position: relative;
     z-index: 10;
     background: #ffffff; 
 }
+
+/* Matching the Suites H1 exactly */
+.hero.hero-payment h1 {
+    margin-bottom: 0 !important;
+    font-size: 2.4rem !important;
+    color: #1a1a1a !important;
+    letter-spacing: -0.5px !important;
+}
+
+/* Mobile Fix for the Hero Image */
+@media (max-width: 768px) {
+    .hero.hero-payment {
+        height: 40vh !important;
+        padding: 40px 25px !important;
+ 
 /* --- THE REST IS YOUR ORIGINAL DESIGN CODE --- */
 
 .hero-light-overlay {
