@@ -169,7 +169,7 @@
 
 
         
-   <section class="pricing-tiers" style="padding: 80px 0 60px 0; background: #fff; position: relative; overflow: hidden;">
+ <section class="pricing-tiers" style="padding: 80px 0 60px 0; background: #fff; position: relative; overflow: hidden;">
     <div class="swipe-indicator arrow-left"><i class="fa-solid fa-chevron-left"></i></div>
     <div class="swipe-indicator arrow-right"><i class="fa-solid fa-chevron-right"></i></div>
     
@@ -201,7 +201,8 @@
                         <h3 class="tier-title">Enhanced <br>Care</h3>
                         <p class="tier-desc">Our most requested level of stewardship, featuring specialized daily clinical routines.</p>
                         <div class="price-text">$220.79 <span>DAILY</span></div>
-                        <button class="tier-btn">Secure Suite</button>
+                        
+                        <button class="frosted-tier-btn">Secure Suite</button>
                     </div>
                 </div>
                 
@@ -219,21 +220,20 @@
 </section>
 
 <style>
-    /* --- THE STRIP FIX --- */
+    /* --- 1. THE PHOTO STRIP (Dark Blue Overlay) --- */
     .private-pay-strip-title {
         font-family: 'Playfair Display';
         font-size: 6rem;
         color: #0f172a;
         margin: 0;
         letter-spacing: -2px;
-        line-height: 0.8; /* Thickness of the strip */
+        line-height: 0.8; 
         position: relative;
         display: block;
         width: 100%;
         z-index: 1;
     }
 
-    /* THE STRIP: Dark Blue Overlay from Stewardship + Image */
     .private-pay-strip-title::before {
         content: "";
         position: absolute;
@@ -258,7 +258,36 @@
         vertical-align: middle;
     }
 
-    /* --- MOBILE RESPONSIVENESS (MATCHING FLEX PAY) --- */
+    /* --- 2. THE FROSTED ON-BRAND BUTTON --- */
+    .frosted-tier-btn {
+        margin-top: 25px;
+        width: 100%;
+        padding: 18px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        cursor: pointer;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+        
+        /* Glassmorphism Effect */
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        
+        transition: all 0.4s ease;
+    }
+
+    .frosted-tier-btn:hover {
+        background: rgba(191, 161, 95, 0.2); /* Subtle Gold Frost on hover */
+        border-color: #bfa15f;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        transform: translateY(-2px);
+    }
+
+    /* --- 3. MOBILE RESPONSIVENESS --- */
     @media (max-width: 768px) {
         .private-pay-strip-title {
             font-size: 3.8rem !important;
