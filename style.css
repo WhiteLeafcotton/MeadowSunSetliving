@@ -561,6 +561,7 @@
 
 
 /* Specific override for Payment Page Hero */
+/* Specific override for Payment Page Hero */
 .hero.hero-payment {
     height: 50vh; 
     background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2011.jpeg?raw=true') center/cover no-repeat;
@@ -569,14 +570,14 @@
     top: 0;
     z-index: -1;
     
-    /* REPOSITION TO BOTTOM LEFT */
+    /* REPOSITION TO BOTTOM LEFT - Exact Match */
     display: flex;
     align-items: flex-end;      /* Vertical: Bottom */
     justify-content: flex-start; /* Horizontal: Left */
-    padding: 60px;               /* Matches the 60px breathing room of other pages */
+    padding: 60px;               /* Precise breathing room */
 }
 
-/* ADJUSTING THE H1 FONT SIZE & COLOR */
+/* ADJUSTING THE H1 FONT SIZE & COLOR - Exact Match */
 .hero.hero-payment h1 {
     margin-bottom: 0 !important;
     font-size: 2.4rem !important;
@@ -585,7 +586,7 @@
     letter-spacing: -0.5px;
 }
 
-/* UNIFYING TYPOGRAPHY */
+/* UNIFYING TYPOGRAPHY - Removing slant/serif */
 .hero.hero-payment .italic-serif {
     font-family: 'Inter', sans-serif !important;
     font-style: normal !important;
@@ -594,7 +595,7 @@
     font-size: 1em;
 }
 
-/* MOBILE ADJUSTMENTS */
+/* MOBILE ADJUSTMENTS - Exact Match */
 @media (max-width: 768px) {
     .hero.hero-payment {
         padding: 40px 25px;
@@ -607,8 +608,8 @@
 
 /* Sticky slide-over logic for Payment Page sections */
 .hero.hero-payment ~ section,
-.hero.hero-payment ~ .payment-solutions-grid,
-.hero.hero-payment ~ .flex-pay-model {
+.hero.hero-payment ~ .payment-solutions,
+.hero.hero-payment ~ .rates-grid {
     position: relative;
     z-index: 10;
     background: #ffffff;
