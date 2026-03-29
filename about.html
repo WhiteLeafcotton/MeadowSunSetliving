@@ -299,14 +299,13 @@
         position: relative;
         z-index: 20; 
         display: block;
-        padding: 120px 0 !important; 
+        padding: 100px 0 !important; 
         overflow: hidden;
         
         /* BACKGROUND PHOTO + OVERLAY */
         background: linear-gradient(rgba(12, 24, 51, 0.78), rgba(12, 24, 51, 0.78)), 
                     url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2000') center/cover no-repeat fixed !important;
         
-        /* THE FROST EFFECT */
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
         
@@ -314,21 +313,15 @@
         border-bottom: 1px solid rgba(197, 160, 89, 0.2);
     }
 
-    /* 2. THE DUAL-COLUMN LAYOUT */
-    #premium-directory-unique .luxe-container {
-        display: flex;
-        align-items: center;
-        gap: 80px; 
-    }
-
-    /* 3. THE MAGAZINE STYLE TITLE (Left Column) */
-    #premium-directory-unique .event-title-wrap {
-        flex: 0 0 400px; 
+    /* 2. HEADER AREA (Above the cards) */
+    #premium-directory-unique .section-header-top {
+        margin-bottom: 50px;
+        text-align: left;
     }
 
     #premium-directory-unique .magazine-title {
         font-family: 'Playfair Display', serif;
-        font-size: 4rem; 
+        font-size: 3.8rem; 
         font-weight: 700;
         line-height: 1.1;
         color: #ffffff;
@@ -347,15 +340,16 @@
         letter-spacing: 5px;
         font-size: 0.75rem;
         color: #c5a059;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
     }
 
-    /* 4. THE SCROLLER ADJUSTMENT */
+    /* 3. THE SCROLLER ADJUSTMENT */
     #premium-directory-unique .dir-scroller-wrap {
-        flex: 1; 
+        width: 100%;
         overflow: hidden;
-        mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-        -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+        /* Fades cards at the edges for a high-end look */
+        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     }
 
     #premium-directory-unique .dir-track {
@@ -364,10 +358,9 @@
         animation: scrollInfinite 55s linear infinite !important;
     }
 
-    /* 5. DARK BLUE SOLID CARDS */
+    /* 4. DARK BLUE SOLID CARDS */
     #premium-directory-unique .dir-item {
         flex: 0 0 280px !important;
-        /* Increased Opacity for Dark Blue look */
         background: rgba(12, 24, 51, 0.92) !important; 
         border: 1px solid rgba(197, 160, 89, 0.15) !important;
         padding: 40px 25px !important;
@@ -381,7 +374,7 @@
     }
 
     #premium-directory-unique .dir-item:hover {
-        background: #0c1833 !important; /* Pure brand blue on hover */
+        background: #0c1833 !important; 
         border-color: #c5a059 !important;
         transform: translateY(-10px);
         box-shadow: 0 20px 50px rgba(0,0,0,0.5);
@@ -420,19 +413,18 @@
     }
 
     /* RESPONSIVE */
-    @media (max-width: 1100px) {
-        #premium-directory-unique .luxe-container { flex-direction: column; gap: 40px; }
-        #premium-directory-unique .event-title-wrap { flex: none; width: 100%; text-align: left; }
-        #premium-directory-unique .magazine-title { font-size: 3.2rem; }
+    @media (max-width: 768px) {
+        #premium-directory-unique .magazine-title { font-size: 2.8rem; }
+        #premium-directory-unique.stewardship-directory { padding: 60px 0 !important; }
     }
 </style>
 
 <section class="stewardship-directory" id="premium-directory-unique">
     <div class="luxe-container">
         
-        <div class="event-title-wrap animate-on-scroll">
+        <div class="section-header-top animate-on-scroll">
             <span class="gold-eyebrow">The Collective</span>
-            <h2 class="magazine-title">Scope of Our <br><span class="italic-serif">Dignity</span></h2>
+            <h2 class="magazine-title">Scope of Our <span class="italic-serif">Care</span></h2>
         </div>
 
         <div class="dir-scroller-wrap">
