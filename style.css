@@ -379,6 +379,8 @@
 /* --- SUBPAGE SPECIFIC OVERRIDES --- */
 /* This only affects pages with these specific classes */
 /* --- FULL-WIDTH LIGHT LUXURY HERO (RESTORED ORIGINAL) --- */
+/* --- 1. FULL-WIDTH INDEX HERO (RESTORED ORIGINAL) --- */
+/* This remains exactly as you had it for your home page */
 .hero {
     height: 100vh;
     width: 100%;
@@ -392,80 +394,52 @@
     z-index: 5;
 }
 
-/* --- SUBPAGE OVERRIDES (ABOUT, SUITES, RESIDENT) --- */
-
+/* --- 2. SUBPAGE SPECIFIC OVERRIDES --- */
+/* These rules ONLY trigger if the hero has these extra classes */
 .hero.hero-about, 
 .hero.hero-suites, 
 .hero.hero-resident {
     height: 50vh; 
-    background-attachment: scroll;
+    background-attachment: scroll; /* Disables parallax for subpages */
     position: sticky; 
     top: 0;
-    z-index: -1; 
-    display: flex;
-    align-items: center;
+    z-index: -1; /* Enables the slide-over effect */
 }
 
-/* Specific Hide Rules: Removes subtext, buttons, and scroll arrows on subpages only */
-.hero-about p, .hero-suites p, .hero-resident p,
-.hero-about .hero-buttons, .hero-suites .hero-buttons, .hero-resident .hero-buttons,
-.hero-about .scroll-indicator, .hero-suites .scroll-indicator, .hero-resident .scroll-indicator {
+/* HIDE ELEMENTS ON SUBPAGES ONLY */
+/* This leaves your Index Hero elements perfectly visible */
+.hero.hero-about p, .hero.hero-suites p, .hero.hero-resident p,
+.hero.hero-about .hero-buttons, .hero.hero-suites .hero-buttons, .hero.hero-resident .hero-buttons,
+.hero.hero-about .scroll-indicator, .hero.hero-suites .scroll-indicator, .hero.hero-resident .scroll-indicator {
     display: none !important;
 }
 
-/* Adjust title spacing for subpages */
-.hero-about h1, .hero-suites h1, .hero-resident h1 {
-    margin-bottom: 0 !important;
-}
+/* Specific Backgrounds for Subpages */
+.hero.hero-about { background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat; }
+.hero.hero-suites { background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true') center/cover no-repeat; }
+.hero.hero-resident { background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat; }
 
-/* Individual Backgrounds */
-.hero.hero-about {
-    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat;
-}
-.hero.hero-suites {
-    background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true') center/cover no-repeat;
-    justify-content: flex-start; /* Restored to left-align like original */
-}
-.hero.hero-resident {
-    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat;
-    justify-content: flex-start;
-}
-
-/* --- THE SLIDE-OVER TRIGGERS --- */
+/* --- 3. SLIDE-OVER TRIGGERS --- */
+/* Ensures subpage content covers the sticky hero */
 .hero.hero-about ~ section, .hero.hero-about ~ .main-content-wrapper,
-.hero.hero-suites ~ section, .hero.hero-suites ~ .blueprint-portal, .hero.hero-suites ~ .mobile-narrative-card,
-.hero.hero-resident ~ section, .hero.hero-resident ~ .admissions-journey, .hero.hero-resident ~ .magazine-editorial, .hero.hero-resident ~ .stewardship-directory {
+.hero.hero-suites ~ section, .hero.hero-suites ~ .blueprint-portal,
+.hero.hero-resident ~ section, .hero.hero-resident ~ .admissions-journey {
     position: relative;
     z-index: 10;
     background: #ffffff;
 }
 
-/* --- ORIGINAL DESIGN ELEMENTS --- */
-
+/* --- 4. ORIGINAL DESIGN ELEMENTS (NO CHANGES) --- */
 .hero-light-overlay {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: linear-gradient(to right, 
-        rgba(255, 255, 255, 0.7) 0%, 
-        rgba(255, 255, 255, 0.3) 50%, 
-        transparent 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
     z-index: 1;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 750px;
-}
-
-.hero-badge {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
+.hero-content { position: relative; z-index: 2; max-width: 750px; }
+.hero-badge { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
 .badge-line { width: 40px; height: 1px; background: #475569; }
 .badge-text { text-transform: uppercase; letter-spacing: 5px; font-size: 0.7rem; color: #475569; font-weight: 600; }
 
@@ -489,7 +463,7 @@
     font-weight: 300;
 }
 
-/* Luxury Buttons - Restored for Index Hero */
+/* Original Luxury Buttons */
 .hero-buttons { display: flex; gap: 15px; }
 .btn-midnight { padding: 18px 40px; background: #0f172a; color: #ffffff; text-decoration: none; font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; transition: 0.4s ease; }
 .btn-glass-light { padding: 18px 40px; border: 1px solid #0f172a; color: #0f172a; text-decoration: none; font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; transition: 0.4s ease; }
@@ -498,24 +472,13 @@
 .scroll-text { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; color: #64748b; writing-mode: vertical-lr; }
 .scroll-line { width: 1px; height: 60px; background: linear-gradient(to bottom, #64748b, transparent); }
 
-/* --- MOBILE ADAPTATION --- */
+/* --- 5. MOBILE ADAPTATION --- */
 @media (max-width: 768px) {
     .hero { padding: 0 10%; justify-content: flex-start; background-attachment: scroll; }
-    
-    /* Shrink subpages even more on mobile for better focus */
-    .hero.hero-about, .hero.hero-suites, .hero.hero-resident { height: 40vh; }
-
-    .hero-light-overlay {
-        background: linear-gradient(to right, 
-            rgba(255, 255, 255, 0.85) 0%, 
-            rgba(255, 255, 255, 0.4) 70%, 
-            transparent 100%);
-    }
-
+    .hero-light-overlay { background: linear-gradient(to right, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.4) 70%, transparent 100%); }
     .hero-content { max-width: 100%; text-align: left; }
     .hero h1 { font-size: 2.8rem; line-height: 1.1; margin-bottom: 20px; }
     .hero p { font-size: 0.95rem; max-width: 90%; margin-bottom: 35px; }
-
     .hero-buttons { flex-direction: column; align-items: flex-start; gap: 15px; }
     .btn-midnight, .btn-glass-light { width: auto; min-width: 200px; padding: 14px 25px; text-align: center; }
     .scroll-indicator { left: 10%; bottom: 30px; transform: scale(0.8); }
