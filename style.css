@@ -563,33 +563,46 @@
 /* Specific override for Payment Page Hero */
 /* Specific override for Payment Page Hero */
 /* Specific override for Payment Page Hero */
+/* --- PAYMENT HERO: EXACT SUITES REPLICA --- */
 .hero.hero-payment {
-    /* Use 'scroll' to ensure sticky positioning works correctly across all browsers */
+    height: 50vh; 
+    /* The core fix: ensuring the image is called correctly with scroll attachment */
     background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2011.jpeg?raw=true') center/cover no-repeat !important;
     background-attachment: scroll !important; 
     
-    height: 50vh; 
+    /* Sticky Logic: Pushes image behind content as you scroll */
     position: sticky; 
     top: 0;
-    z-index: -1; /* Pushes image behind the scrolling content */
+    z-index: -1; 
     
-    /* Alignment: Bottom Left (Exact Match to Suites/About) */
+    /* Alignment: Matches Suites (Bottom Left) */
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
     padding: 60px;
 }
 
-/* ADJUSTING THE H1 FONT SIZE & COLOR - Exact Match */
+/* Force the Overlay to be invisible on this subpage so the image is crisp */
+.hero.hero-payment .hero-light-overlay {
+    display: none !important;
+}
+
+/* Hide the Badge to match the clean look of the Suites page */
+.hero.hero-payment .hero-badge {
+    display: none !important;
+}
+
+/* MATCHING TYPOGRAPHY: Exact match to Suites H1 */
 .hero.hero-payment h1 {
     margin-bottom: 0 !important;
     font-size: 2.4rem !important;
     text-align: left;
     color: #1a1a1a;
     letter-spacing: -0.5px;
+    line-height: 1;
 }
 
-/* UNIFYING TYPOGRAPHY - Removing slant/serif to match your premium brand */
+/* REMOVE SLANT: Matches your "High-Tech Premium" vibe */
 .hero.hero-payment .italic-serif {
     font-family: 'Inter', sans-serif !important;
     font-style: normal !important;
@@ -598,7 +611,7 @@
     font-size: 1em;
 }
 
-/* MOBILE ADJUSTMENTS - Exact Match */
+/* MOBILE SYNC: Drops height to 40vh just like the others */
 @media (max-width: 768px) {
     .hero.hero-payment {
         padding: 40px 25px;
@@ -609,13 +622,13 @@
     }
 }
 
-/* Sticky slide-over logic - Forces content to scroll OVER the hero */
+/* SLIDE-OVER TRIGGER: Essential for the "Suites" effect */
 .hero.hero-payment ~ section,
 .hero.hero-payment ~ .payment-solutions,
 .hero.hero-payment ~ .rates-grid {
     position: relative;
     z-index: 10;
-    background: #ffffff; /* This must be solid white to hide the hero as you scroll */
+    background: #ffffff; 
 }
 /* --- THE REST IS YOUR ORIGINAL DESIGN CODE --- */
 
