@@ -1955,16 +1955,62 @@ body {
 }
 
 /* 3. THE DIRECTORY (ULTRA-THIN RIBBON) */
-.stewardship-directory {
+/* 1. SCOPE THE MAIN CONTAINER */
+/* Using the ID ensures this ONLY affects this specific section */
+#client-directory.stewardship-directory {
     position: relative;
     z-index: 20; 
-    background-color: #0f172a !important; 
     display: block;
-    /* Minimal sauce for a thin ribbon effect */
-    padding: 10px 0 20px 0; 
-    margin-top: 0; 
-    border-top: 1px solid rgba(197, 160, 89, 0.1);
-    border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+    
+    /* INCREASE HEIGHT: Adjusted padding for a taller section */
+    padding: 100px 0; 
+    
+    /* FROSTED BACKGROUND LOGIC */
+    /* Replace the URL with your actual image path */
+    background: linear-gradient(rgba(12, 24, 51, 0.85), rgba(12, 24, 51, 0.85)), 
+                url('your-background-photo.jpg') center/cover no-repeat;
+    
+    /* The "Blur" behind the blue tint */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    
+    border-top: 1px solid rgba(197, 160, 89, 0.2);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+/* 2. THE SLIDER TRACK (Adjust gap for taller look) */
+#client-directory .dir-track {
+    display: flex;
+    gap: 25px; 
+    width: max-content;
+    animation: scrollInfinite 45s linear infinite;
+}
+
+/* 3. SCOPE THE INDIVIDUAL CARDS */
+#client-directory .dir-item {
+    flex: 0 0 250px; 
+    /* Semi-transparent background for the glass look */
+    background: rgba(255, 255, 255, 0.03); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* INCREASE CARD HEIGHT */
+    padding: 30px 20px; 
+    min-height: 140px; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.4s ease;
+    
+    /* Glass blur effect on the card itself */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+#client-directory .dir-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--brand-gold);
+    transform: translateY(-5px); /* Subtle lift on hover */
 }
 
 /* THE BROW LINE (ONLY TEXT ABOVE CARDS) */
@@ -2019,10 +2065,6 @@ body {
     transition: all 0.4s ease;
 }
 
-.dir-item:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: var(--brand-gold);
-}
 
 /* --- REFINED TEXT --- */
 .client-type { 
