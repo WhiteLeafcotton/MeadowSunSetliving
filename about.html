@@ -91,65 +91,7 @@
     </div>
 </section>
 
-<style>
-    /* 1. HERO SECTION: BOTTOM-LEFT & FONT RESET */
-    .hero.hero-about {
-        height: 50vh; 
-        background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat;
-        background-attachment: scroll;
-        position: sticky; 
-        top: 0;
-        z-index: -1;
 
-        /* Position Content at Bottom Left */
-        display: flex !important;
-        align-items: flex-end !important;      /* Vertical: Bottom */
-        justify-content: flex-start !important; /* Horizontal: Left */
-        padding: 60px !important;               /* Space from the corner */
-    }
-
-    .hero.hero-about .hero-content {
-        text-align: left;
-    }
-
-    .hero.hero-about h1 {
-        margin: 0 !important;
-        font-size: 2.4rem !important; /* Larger, but refined */
-        color: #1a1a1a;               /* Matching your dark text */
-        font-family: 'Inter', sans-serif !important;
-        font-weight: 700;
-        letter-spacing: -0.5px;
-    }
-
-    /* 2. REMOVE ITALIC SERIF (Sunset Meadow) */
-    .hero.hero-about h1 .italic-serif {
-        font-family: 'Inter', sans-serif !important; 
-        font-style: normal !important;               
-        font-weight: inherit;                        
-        color: inherit;                              
-        font-size: 1em;                              
-    }
-
-    /* 3. SLIDE-OVER FIX */
-    /* This ensures the Mission Console slides OVER the sticky hero */
-    .hero.hero-about ~ .locked-mission-console,
-    .hero.hero-about ~ section {
-        position: relative;
-        z-index: 10;
-        background: #ffffff;
-    }
-
-    /* MOBILE ADJUSTMENTS */
-    @media (max-width: 768px) {
-        .hero.hero-about {
-            padding: 30px 20px !important;       
-            height: 45vh;             
-        }
-        .hero.hero-about h1 {
-            font-size: 1.8rem !important;
-        }
-    }
-</style>
 
 
 
