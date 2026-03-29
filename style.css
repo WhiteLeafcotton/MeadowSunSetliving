@@ -407,6 +407,7 @@
     z-index: 10;
     background: #ffffff;
 }
+
 /* Specific override for Suites Page Hero */
 .hero.hero-suites {
     height: 50vh; 
@@ -414,24 +415,43 @@
     background-attachment: scroll;
     position: sticky; 
     top: 0;
-    z-index: -1; /* Enables the slide-over effect */
+    z-index: -1;
+    
+    /* REPOSITION TO BOTTOM RIGHT */
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-/* This is what makes "Suites" look like the stylized "The" */
-.italic-serif {
-    font-family: "Playfair Display", serif; /* Ensure this matches your luxury font */
-    font-style: italic;
-    color: #64748b; /* Your signature muted blue-grey */
-    font-weight: 400; /* Keeps it elegant and thin */
+    align-items: flex-end;    /* Vertical: Bottom */
+    justify-content: flex-end; /* Horizontal: Right */
+    padding: 40px;            /* Spacing from the corner */
 }
 
-/* Ensure the subpage H1 doesn't have extra bottom margin since there is no subtext */
+/* REDUCING THE H1 FONT SIZE */
 .hero.hero-suites h1 {
     margin-bottom: 0 !important;
+    font-size: 1.8rem !important; /* Smaller, refined size */
+    text-align: right;            /* Aligns text to the right */
+    letter-spacing: 1px;
 }
-/* Ensure the Suites content slides over the sticky hero */
+
+/* REMOVING THE ITALIC SERIF STYLE */
+.hero.hero-suites .italic-serif {
+    font-family: "Inter", sans-serif !important; /* Switching from Playfair to your clean font */
+    font-style: normal !important;               /* Removing the slant */
+    color: #c5a059;                              /* Using your signature gold instead of blue-grey */
+    font-weight: 600;                            /* Slightly bolder for clarity at a smaller size */
+    font-size: 0.9em;                            /* Makes the "Suites" part slightly smaller than the main text */
+}
+
+/* MOBILE ADJUSTMENT: Ensure it doesn't get cramped */
+@media (max-width: 768px) {
+    .hero.hero-suites {
+        padding: 25px;
+    }
+    .hero.hero-suites h1 {
+        font-size: 1.4rem !important;
+    }
+}
+
+/* Keep your existing section logic for the slide-over effect */
 .hero.hero-suites ~ section,
 .hero.hero-suites ~ .blueprint-portal,
 .hero.hero-suites ~ .mobile-narrative-card {
@@ -439,8 +459,6 @@
     z-index: 10;
     background: #ffffff;
 }
-
-
 /* Specific override for Resident Page Hero */
 /* Specific override for Resident Page Hero */
 .hero.hero-resident {
