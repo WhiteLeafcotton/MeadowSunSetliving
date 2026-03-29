@@ -768,35 +768,36 @@
         </div>
     </footer>
 
-    <script>
-        // Frosted Header Scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.main-header');
-            header.classList.toggle('scrolled', window.scrollY > 50);
-        });
+   <script>
+    // 1. Frosted Header Scroll (KEEP THIS - it makes the header blur when you move)
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('.main-header');
+        header.classList.toggle('scrolled', window.scrollY > 50);
+    });
 
-        // Intersection Observer for All Animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    // Mobile Snap Logic
-                    if (entry.target.classList.contains('tier-card-snap') && window.innerWidth <= 768) {
-                        entry.target.querySelector('.tier-v3').classList.add('active-mobile');
-                    }
-                } else if (entry.target.classList.contains('tier-card-snap')) {
-                    entry.target.querySelector('.tier-v3').classList.remove('active-mobile');
+    // 2. Mobile Feature Logic (KEEP THIS - it handles the highlight on your pricing tiers)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Only toggle the 'active-mobile' class for the pricing cards
+                if (entry.target.classList.contains('tier-card-snap') && window.innerWidth <= 768) {
+                    entry.target.querySelector('.tier-v3').classList.add('active-mobile');
                 }
-            });
-        }, { threshold: 0.6 });
+            } else if (entry.target.classList.contains('tier-card-snap')) {
+                entry.target.querySelector('.tier-v3').classList.remove('active-mobile');
+            }
+        });
+    }, { threshold: 0.6 });
 
-        document.querySelectorAll('.reveal-up, .reveal-left, .tier-card-snap').forEach(el => observer.observe(el));
+    // We only need to "observe" the tier cards now, not the reveal sections
+    document.querySelectorAll('.tier-card-snap').forEach(el => observer.observe(el));
 
-        function toggleMenu() {
-            const menu = document.getElementById("sideMenu");
-            menu.classList.toggle("active");
-        }
-    </script>
+    // 3. Mobile Side Menu (KEEP THIS)
+    function toggleMenu() {
+        const menu = document.getElementById("sideMenu");
+        menu.classList.toggle("active");
+    }
+</script>
 
 
 
