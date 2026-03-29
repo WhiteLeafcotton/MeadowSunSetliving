@@ -297,92 +297,108 @@
 
 
 <style>
-    /* Using #premium-directory-unique ensures this ONLY 
-       affects this specific section and no other pages.
-    */
+    /* 1. THE MAIN SECTION (Isolated ID) */
     #premium-directory-unique.stewardship-directory {
         position: relative;
         z-index: 20; 
         display: block;
+        padding: 120px 0 !important; 
+        overflow: hidden;
         
-        /* INCREASED HEIGHT */
-        padding: 110px 0 !important; 
+        /* BACKGROUND PHOTO + OVERLAY */
+        /* Replace URL with your actual photo path */
+        background: linear-gradient(rgba(12, 24, 51, 0.82), rgba(12, 24, 51, 0.82)), 
+                    url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2000') center/cover no-repeat fixed !important;
         
-        /* FROSTED BLURRY PHOTO BACKGROUND */
-        /* Replace the URL below with your actual image path */
-        background: linear-gradient(rgba(12, 24, 51, 0.8), rgba(12, 24, 51, 0.8)), 
-                    url('https://images.unsplash.com/photo-1516592653434-7541ef74558e?q=80&w=2000') center/cover no-repeat !important;
-        
-        /* The Blur Effect */
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
+        /* THE FROST EFFECT */
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         
         border-top: 1px solid rgba(197, 160, 89, 0.2);
         border-bottom: 1px solid rgba(197, 160, 89, 0.2);
     }
 
-    /* TALLER GLASS CARDS */
-    #premium-directory-unique .dir-item {
-        flex: 0 0 260px !important;
-        background: rgba(255, 255, 255, 0.05) !important; 
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        
-        /* Increased card height */
-        padding: 35px 22px !important; 
-        min-height: 150px !important; 
-        
+    /* 2. THE DUAL-COLUMN LAYOUT */
+    #premium-directory-unique .luxe-container {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        transition: all 0.4s ease;
-        
-        /* Card-level frosting */
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
+        align-items: center;
+        gap: 60px; /* Space between title and slider */
     }
 
-    #premium-directory-unique .dir-item:hover {
-        background: rgba(255, 255, 255, 0.12) !important;
-        border-color: #c5a059 !important;
-        transform: translateY(-5px);
+    /* 3. THE "EVENT STYLE" SPARE TITLE */
+    #premium-directory-unique .event-title-wrap {
+        flex: 0 0 350px; /* Width of the title area */
+    }
+
+    #premium-directory-unique .spare-title {
+        font-family: 'Cormorant Garamond', serif; /* Or your preferred serif */
+        font-style: italic;
+        font-size: 4.5rem; /* Large event size */
+        line-height: 1.1;
+        color: #ffffff;
+        margin-bottom: 10px;
+    }
+
+    #premium-directory-unique .gold-eyebrow {
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-size: 0.75rem;
+        color: #c5a059;
+        margin-bottom: 15px;
+    }
+
+    /* 4. THE SCROLLER ADJUSTMENT */
+    #premium-directory-unique .dir-scroller-wrap {
+        flex: 1; /* Takes up remaining space */
+        overflow: hidden;
+        mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
     }
 
     #premium-directory-unique .dir-track {
         display: flex;
-        gap: 25px !important; 
-        width: max-content;
-        animation: scrollInfinite 45s linear infinite !important;
+        gap: 30px !important;
+        animation: scrollInfinite 50s linear infinite !important;
+    }
+
+    /* 5. TALL GLASS CARDS */
+    #premium-directory-unique .dir-item {
+        flex: 0 0 280px !important;
+        background: rgba(255, 255, 255, 0.04) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        padding: 40px 25px !important;
+        min-height: 180px !important; 
+        backdrop-filter: blur(10px);
+        transition: all 0.4s ease;
     }
 
     #premium-directory-unique .client-type { 
-        font-size: 1.1rem !important; 
-        margin-bottom: 5px !important; 
-        color: #ffffff !important;
+        font-size: 1.2rem !important; 
         font-family: 'Playfair Display', serif;
+        color: #ffffff !important;
     }
 
-    #premium-directory-unique .client-status { 
-        font-size: 0.65rem !important; 
-        color: #c5a059 !important;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-    }
-
-    #premium-directory-unique .dir-index-end {
-        border: 1px solid #c5a059 !important;
-    }
-
+    /* ANIMATION */
     @keyframes scrollInfinite {
         0% { transform: translateX(0); }
         100% { transform: translateX(-50%); } 
     }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 991px) {
+        #premium-directory-unique .luxe-container { flex-direction: column; align-items: flex-start; }
+        #premium-directory-unique .spare-title { font-size: 3rem; }
+        #premium-directory-unique .event-title-wrap { flex: none; width: 100%; }
+    }
 </style>
 
-<section class="stewardship-directory brand-bg-blue" id="premium-directory-unique">
+<section class="stewardship-directory" id="premium-directory-unique">
     <div class="luxe-container">
         
-        <div class="directory-header animate-on-scroll">
-            <span class="gold-eyebrow">The Scope of Our Dignity</span>
+        <div class="event-title-wrap animate-on-scroll">
+            <span class="gold-eyebrow">The Collective</span>
+            <h2 class="spare-title">Scope of Our <br>Dignity</h2>
         </div>
 
         <div class="dir-scroller-wrap">
@@ -420,56 +436,8 @@
                     <div class="dir-icon"><i class="fa-solid fa-brain"></i></div>
                 </div>
 
-                <div class="dir-item">
-                    <div class="dir-meta">
-                        <h4 class="client-type">Dementia Care</h4>
-                        <span class="client-status">Cognitive Support</span>
-                    </div>
-                    <div class="dir-icon"><i class="fa-solid fa-feather-pointed"></i></div>
-                </div>
-
-                <div class="dir-item">
-                    <div class="dir-meta">
-                        <h4 class="client-type">Physically Disabled</h4>
-                        <span class="client-status">Mobility Support</span>
-                    </div>
-                    <div class="dir-icon"><i class="fa-solid fa-universal-access"></i></div>
-                </div>
-
-                <div class="dir-item">
-                    <div class="dir-meta">
-                        <h4 class="client-type">Terminally Ill</h4>
-                        <span class="client-status">Hospice Peace</span>
-                    </div>
-                    <div class="dir-icon"><i class="fa-solid fa-dove"></i></div>
-                </div>
-
-                <div class="dir-item">
-                    <div class="dir-meta">
-                        <h4 class="client-type">Brain Injury</h4>
-                        <span class="client-status">Neuro-Wellness</span>
-                    </div>
-                    <div class="dir-icon"><i class="fa-solid fa-microchip"></i></div>
-                </div>
-
-                <div class="dir-item">
-                    <div class="dir-meta">
-                        <h4 class="client-type">Correctional</h4>
-                        <span class="client-status">Rehabilitative</span>
-                    </div>
-                    <div class="dir-icon"><i class="fa-solid fa-gavel"></i></div>
-                </div>
-
-                <div class="dir-item">
-                    <div class="dir-meta">
-                        <h4 class="client-type">Respite Available</h4>
-                        <span class="client-status">Short-Term Stays</span>
-                    </div>
-                    <div class="dir-icon"><i class="fa-solid fa-bed"></i></div>
-                </div>
-
                 <div class="dir-item dir-index-end">
-                    <div class="index-digit">11</div>
+                    <div class="index-digit" style="font-size: 2.5rem; color:#c5a059; font-family:'Playfair Display'">11</div>
                     <span class="client-status">Continuum Served</span>
                 </div>
 
@@ -481,7 +449,11 @@
                     <div class="dir-icon"><i class="fa-solid fa-shield-pulse"></i></div>
                 </div>
 
-            </div> </div> </div> </section>
+            </div>
+        </div> 
+
+    </div>
+</section>
 
 
 
