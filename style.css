@@ -435,20 +435,36 @@
 @media (max-width: 768px) {
     .hero.hero-about {
         height: 40vh !important;
-        padding: 20px 25px !important; /* Slightly tighter bottom padding */
+        display: flex !important;
+        align-items: flex-end !important; /* Forces content to the very bottom */
+        justify-content: flex-start !important;
+        padding: 30px 25px !important; /* Match Suites/Payment padding */
+        position: sticky !important;
+        top: 0;
+        z-index: -1;
     }
 
-    /* This targets the container inside the hero to kill extra spacing */
-    .hero.hero-about .hero-content {
-        margin: 0 !important;
-        padding: 0 !important;
-        display: flex;
-        flex-direction: column;
-        gap: 5px; /* Keeps the badge and H1 very close together */
-    }
-
+    /* Keep the badge from pushing the text too high */
     .hero.hero-about .hero-badge {
-        margin-bottom: 5px !important; /* Prevents the badge from pushing the text up too high */
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 5px !important; /* Tightens the gap between badge and H1 */
+    }
+
+    .hero.hero-about h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.1 !important;
+        margin: 0 !important;
+        text-align: left !important;
+    }
+
+    /* Prevent the next section from having a 'loose' gap */
+    .hero.hero-about ~ .locked-mission-console {
+        position: relative;
+        z-index: 10;
+        background: #ffffff;
+        margin-top: 0 !important;
     }
 }
 /* Specific override for Suites Page Hero */
