@@ -392,62 +392,65 @@
 /* Specific override for About Page Hero */
 /* --- HERO ALIGNMENT: MATCHING SUITES --- */
 /* --- ABOUT PAGE HERO: SUITES CLONE --- */
+/* --- ABOUT HERO: EXACT SUITES REPLICA --- */
+
 .hero.hero-about {
-    height: 55vh; /* Matching the sub-page height in your screenshot */
-    background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true') center/cover no-repeat;
-    display: flex;
-    align-items: flex-end; /* Keeps text at the bottom */
-    justify-content: flex-start; /* Keeps text on the left */
-    padding: 0 0 80px 10%; /* Positions the text exactly like the screenshot */
+    height: 60vh !important; /* Matches the tall sub-page hero height */
+    display: flex !important;
+    align-items: flex-end !important;   /* Pulls text to the bottom */
+    justify-content: flex-start !important; /* Pulls text to the left */
+    padding: 0 0 10% 8% !important;   /* Exact bottom-left offset from your screenshot */
+    background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true') center/cover no-repeat !important;
     position: relative;
 }
 
-/* 1. THE EDITORIAL BADGE (Eyebrow + Line) */
+/* 1. THE BADGE (Line + Eyebrow) */
 .hero.hero-about .hero-badge {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Space between "The Mission" and "Our Private Care" */
 }
 
 .hero.hero-about .gold-line {
-    width: 50px;
+    width: 60px; /* Exact width from your screenshot */
     height: 1px;
-    background: #1a1a1a; /* Matches the dark thin line in your screenshot */
+    background: #1a1a1a; /* Dark charcoal line */
 }
 
 .hero.hero-about .eyebrow-text {
     font-family: 'Inter', sans-serif;
     text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 0.75rem;
+    letter-spacing: 5px; /* High-end magazine spacing */
+    font-size: 0.8rem;
     font-weight: 500;
     color: #1a1a1a;
 }
 
-/* 2. THE MAIN TITLE */
+/* 2. THE MAIN TITLE (Font & Size Fix) */
 .hero.hero-about .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem; /* Large editorial size */
-    color: #1a1a1a;
+    font-family: 'Playfair Display', serif !important;
+    font-size: 3.8rem !important; /* Increased to match the "Suites" impact */
+    color: #1a1a1a !important;    /* Matching the dark text in the screenshot */
     margin: 0;
-    font-weight: 600;
-    line-height: 1.1;
+    font-weight: 600; /* Medium-bold serif */
+    line-height: 1.05;
+    letter-spacing: -1px; /* Tighter letter spacing for luxury feel */
 }
 
-/* --- MOBILE ADJUSTMENTS --- */
+/* --- MOBILE SYNC --- */
 @media (max-width: 768px) {
     .hero.hero-about {
-        height: 50vh;
-        padding: 0 0 60px 8%;
+        height: 50vh !important;
+        padding: 0 0 15% 10% !important;
     }
     
     .hero.hero-about .hero-title {
-        font-size: 2.2rem; /* Scaled for mobile view */
+        font-size: 2.4rem !important; /* Scaled for phone screens */
     }
     
     .hero.hero-about .gold-line {
-        width: 30px;
+        width: 40px;
     }
 }
 /* Specific override for Suites Page Hero */
