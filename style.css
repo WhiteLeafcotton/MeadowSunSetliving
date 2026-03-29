@@ -530,24 +530,46 @@
 }
 
 /* MOBILE ADJUSTMENTS */
+/* MOBILE SYNC - RESIDENT PAGE */
 @media (max-width: 768px) {
     .hero.hero-resident {
-        padding: 40px 25px;
-        height: 40vh;
+        /* Matches your Payment page height exactly */
+        height: 40vh !important;
+        min-height: 40vh !important;
+        
+        /* Layout logic: Bottom-Left alignment */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-end !important;
+        align-items: flex-start !important;
+        
+        /* Padding: Identical to your payment mobile fix */
+        padding: 40px 25px !important;
+        box-sizing: border-box !important;
+        
+        /* Sticky logic for the slide-over effect */
+        position: sticky !important;
+        top: 0;
+        z-index: -1;
     }
-    .hero.hero-resident h1 {
-        font-size: 1.8rem !important;
-    }
-}
 
-/* Sticky slide-over logic for Resident Page sections */
-.hero.hero-resident ~ section,
-.hero.hero-resident ~ .admissions-journey,
-.hero.hero-resident ~ .magazine-editorial,
-.hero.hero-resident ~ .stewardship-directory {
-    position: relative;
-    z-index: 10;
-    background: #ffffff;
+    .hero.hero-resident h1 {
+        /* Font size: Identical to payment mobile fix */
+        font-size: 1.8rem !important;
+        line-height: 1.1 !important;
+        margin: 0 !important;
+        color: #1a1a1a !important;
+        text-align: left !important;
+        font-family: 'Playfair Display', serif;
+    }
+
+    /* Ensure the "Events" or content below slides OVER properly */
+    .hero.hero-resident ~ section {
+        position: relative;
+        z-index: 10;
+        background: #ffffff;
+        margin-top: 0 !important;
+    }
 }
 
 
