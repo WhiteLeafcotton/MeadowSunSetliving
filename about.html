@@ -453,10 +453,10 @@
 @media (max-width: 768px) {
     
     /* 1. FIXING THE GLOBAL SCROLL ISSUE */
-    /* We ensure only the specific containers scroll, not the whole page/body */
-    .hero-about, .locked-mission-console, .stewardship-ribbon {
+    /* Scoping the overflow to prevent 'wobble' on the about page only */
+    .hero-about, .locked-mission-console, .stewardship-ribbon, .admissions-journey {
         width: 100%;
-        overflow-x: hidden; /* Prevents side-scrolling on the main page */
+        overflow-x: hidden !important; 
     }
 
     /* 2. PROFILES: NO CARDS / GHOST STYLE */
@@ -470,9 +470,10 @@
     }
 
     /* 3. CONTINUUM: LIGHT & FRESH (ONLY ON THIS SECTION) */
+    /* Using the ID #client-directory ensures this doesn't touch other tickers */
     #client-directory.stewardship-ribbon {
-        background: #f8fafc !important; /* Fresh Off-White */
-        background-image: none !important; /* Kills the photo background */
+        background: #f8fafc !important; 
+        background-image: none !important; 
         padding: 60px 0 !important;
     }
     #client-directory .glass-photo-base, 
@@ -480,6 +481,7 @@
         display: none !important;
     }
     #client-directory .ribbon-title { color: #0c1833 !important; }
+    #client-directory .accent-eyebrow, #client-directory .accent-italic { color: #64748b !important; }
     
     /* Ticker Cards - Light Mode */
     #client-directory .dir-item {
@@ -489,6 +491,7 @@
     }
     #client-directory .client-type { color: #0c1833 !important; }
     #client-directory .acuity-tag { color: #94a3b8 !important; }
+    #client-directory .client-status { color: #64748b !important; }
 
     /* 4. ADMISSIONS: VERTICAL FULL-SIZE VIDEO */
     .admissions-journey .split-view-container {
@@ -497,49 +500,56 @@
     }
     
     .admissions-journey .video-card-container {
-        order: -1; /* Video first */
+        order: -1; 
         width: 100% !important;
         padding: 0 !important;
         margin: 0 !important;
+        background: none !important;
+        border: none !important;
     }
 
     .admissions-journey .iframe-viewport {
         position: relative;
         width: 100vw !important;
-        margin-left: calc(-50vw + 50%); /* Forces true edge-to-edge */
-        aspect-ratio: 9/16 !important; /* FORCES VERTICAL FORMAT */
+        margin-left: calc(-50vw + 50%); 
+        /* The secret sauce for vertical video: 9:16 Ratio */
+        aspect-ratio: 9 / 16 !important; 
         height: auto !important;
-        overflow: hidden;
+        background: #000;
     }
 
-    .admissions-journey iframe {
+    .admissions-journey .iframe-viewport iframe {
         position: absolute;
-        top: 0; left: 0;
+        top: 0;
+        left: 0;
         width: 100% !important;
         height: 100% !important;
-        object-fit: cover; /* Ensures video fills the vertical space */
+        border: none !important;
     }
 
-    /* 5. SWAPPABLE ADMISSIONS CARDS */
+    /* 5. SWAPPABLE ADMISSIONS CARDS (HORIZONTAL SWIPE) */
     .journey-steps-container {
         display: flex !important;
         overflow-x: auto !important;
         scroll-snap-type: x mandatory;
         gap: 15px;
-        padding: 20px !important;
+        padding: 20px 8% !important; /* Padding keeps cards centered */
         -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Hides scrollbar on Firefox */
     }
     
+    .journey-steps-container::-webkit-scrollbar { display: none; } /* Hides scrollbar on Chrome/Safari */
+    
     .journey-steps-container .step-card-editorial {
-        flex: 0 0 85% !important; /* Shows peek of next card */
+        flex: 0 0 85% !important; 
         scroll-snap-align: center;
         background: #fff !important;
         border: 1px solid #eee !important;
         box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         padding: 30px !important;
+        height: auto !important;
     }
     
-    /* Remove the vertical line on mobile to keep it clean */
     .vertical-connector-blue { display: none !important; }
 }
 </style>
