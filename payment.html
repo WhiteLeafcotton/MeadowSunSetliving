@@ -169,76 +169,180 @@
 
 
         
-        <section class="pricing-tiers" style="padding: 60px 5% 20px 5%; background: #fff; position: relative; overflow: hidden;">
-            <div class="swipe-indicator arrow-left"><i class="fa-solid fa-chevron-left"></i></div>
-            <div class="swipe-indicator arrow-right"><i class="fa-solid fa-chevron-right"></i></div>
-            
-            <div style="max-width: 1400px; margin: 0 auto; position: relative; z-index: 2;">
-                <div class="section-header reveal-up" style="margin-bottom: 60px;">
-    <span style="color: #bfa15f; letter-spacing: 10px; text-transform: uppercase; font-size: 0.65rem; font-family: 'Inter'; font-weight: 800; display: block; margin-bottom: 20px;">Payments Accepted</span>
+    <section class="pricing-tiers" style="padding: 100px 0 60px 0; background: #fff; position: relative; overflow: hidden;">
+    <div class="swipe-indicator arrow-left"><i class="fa-solid fa-chevron-left"></i></div>
+    <div class="swipe-indicator arrow-right"><i class="fa-solid fa-chevron-right"></i></div>
     
-    <h2 style="font-family: 'Playfair Display'; font-size: 6rem; color: #0f172a; margin: 0; letter-spacing: -2px; display: flex; align-items: baseline; flex-wrap: wrap;">
-        Private <span class="italic-pay-match">Pay.</span>
-    </h2>
-</div>
+    <div class="flex-container" style="max-width: 1400px; margin: 0 auto; padding: 0 5%; position: relative; z-index: 2;">
+        
+        <div class="section-header reveal-up" style="margin-bottom: 80px; position: relative;">
+            <span class="private-eyebrow">Payments Accepted</span>
+            
+            <h2 class="private-pay-title">
+                Private <span class="italic-pay-match">Pay.</span>
+            </h2>
+        </div>
+
+        <div class="tier-scroll-container">
+            <div class="tier-grid">
+                <div class="tier-card-snap reveal-up stagger-1">
+                    <div class="tier-v3">
+                        <span class="tier-label">01 / Essential</span>
+                        <h3 class="tier-title">Wellness <br>Base</h3>
+                        <p class="tier-desc">An intimate setting for those who value independence with the security of 24/7 oversight.</p>
+                        <div class="price-text">$203.50 <span>DAILY</span></div>
+                    </div>
+                </div>
+
+                <div class="tier-card-snap reveal-up stagger-2">
+                    <div class="tier-v3 featured">
+                        <div class="featured-badge">Signature</div>
+                        <span class="tier-label">02 / Signature</span>
+                        <h3 class="tier-title">Enhanced <br>Care</h3>
+                        <p class="tier-desc">Our most requested level of stewardship, featuring specialized daily clinical routines.</p>
+                        <div class="price-text">$220.79 <span>DAILY</span></div>
+                        <button class="tier-btn">Secure Suite</button>
+                    </div>
+                </div>
+
+                <div class="tier-card-snap reveal-up stagger-3">
+                    <div class="tier-v3">
+                        <span class="tier-label">03 / Elite</span>
+                        <h3 class="tier-title">Total <br>Assurance</h3>
+                        <p class="tier-desc">Comprehensive assistance for residents with complex clinical or cognitive requirements.</p>
+                        <div class="price-text">$238.08 <span>DAILY</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <style>
-    /* Exact replica of your .italic-pay class */
+    /* --- PRIVATE PAY HEADER STYLES --- */
+    .private-eyebrow {
+        color: #bfa15f; 
+        letter-spacing: 10px; 
+        text-transform: uppercase; 
+        font-size: 0.65rem; 
+        font-family: 'Inter', sans-serif; 
+        font-weight: 800; 
+        display: block; 
+        margin-bottom: 20px;
+    }
+
+    .private-pay-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 6rem;
+        color: #0f172a;
+        margin: 0;
+        letter-spacing: -2px;
+        line-height: 0.85; /* Controls the thickness of the photo strip */
+        position: relative;
+        display: block;
+        width: 100%;
+        z-index: 1;
+    }
+
+    /* THE PHOTO STRIP: Matches Flex Pay logic + Stewardship Dark Blue Overlay */
+    .private-pay-title::before {
+        content: "";
+        position: absolute;
+        left: -100vw; /* Bleeds out to left edge of screen */
+        right: -100vw; /* Bleeds out to right edge of screen */
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        /* THE EXACT DARK BLUE OVERLAY: rgba(12, 24, 51, 0.78) */
+        background-image: linear-gradient(rgba(12, 24, 51, 0.78), rgba(12, 24, 51, 0.78)), 
+                          url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+    }
+
     .italic-pay-match {
         font-family: 'Cormorant Garamond', serif;
         font-style: italic;
         font-weight: 400;
         color: #bfa15f;
-        font-size: 7.5rem; /* 20% bigger than the main word */
-        margin-left: 15px; /* Adds breathing room on the same line */
+        font-size: 7.5rem;
+        margin-left: -10px;
+        vertical-align: middle;
         line-height: 1;
     }
 
+    /* --- MOBILE RESPONSIVENESS --- */
     @media (max-width: 768px) {
-        /* Matches your mobile .flex-main-title exactly */
-        .section-header h2 {
-            font-size: 3.8rem !important;
+        .private-pay-title { 
+            font-size: 3.8rem !important; 
+            line-height: 0.9 !important;
         }
-        /* Matches your mobile .italic-pay exactly */
-        .italic-pay-match {
-            font-size: 4.8rem !important;
-            margin-left: 10px !important;
+        
+        .italic-pay-match { 
+            font-size: 4.8rem !important; 
+            margin-left: 0px !important;
+        }
+
+        .section-header {
+            margin-bottom: 40px !important;
         }
     }
-</style>
 
-                <div class="tier-scroll-container">
-                    <div class="tier-grid">
-                        <div class="tier-card-snap reveal-up stagger-1">
-                            <div class="tier-v3">
-                                <span class="tier-label">01 / Essential</span>
-                                <h3 class="tier-title">Wellness <br>Base</h3>
-                                <p class="tier-desc">An intimate setting for those who value independence with the security of 24/7 oversight.</p>
-                                <div class="price-text">$203.50 <span>DAILY</span></div>
-                            </div>
-                        </div>
-                        <div class="tier-card-snap reveal-up stagger-2">
-                            <div class="tier-v3 featured">
-                                <div class="featured-badge">Signature</div>
-                                <span class="tier-label">02 / Signature</span>
-                                <h3 class="tier-title">Enhanced <br>Care</h3>
-                                <p class="tier-desc">Our most requested level of stewardship, featuring specialized daily clinical routines.</p>
-                                <div class="price-text">$220.79 <span>DAILY</span></div>
-                                <button class="tier-btn">Secure Suite</button>
-                            </div>
-                        </div>
-                        <div class="tier-card-snap reveal-up stagger-3">
-                            <div class="tier-v3">
-                                <span class="tier-label">03 / Elite</span>
-                                <h3 class="tier-title">Total <br>Assurance</h3>
-                                <p class="tier-desc">Comprehensive assistance for residents with complex clinical or cognitive requirements.</p>
-                                <div class="price-text">$238.08 <span>DAILY</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    /* --- GRID & CARDS (Inherited styles for consistency) --- */
+    .tier-grid {
+        display: flex;
+        gap: 30px;
+        overflow-x: auto;
+        padding-bottom: 20px;
+        scrollbar-width: none; /* Firefox */
+    }
+    .tier-grid::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
+    .tier-v3 {
+        min-width: 300px;
+        padding: 40px;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        transition: transform 0.3s ease;
+    }
+
+    .tier-v3.featured {
+        background: #0f172a;
+        color: #fff;
+        border-color: #bfa15f;
+        transform: scale(1.05);
+    }
+
+    .tier-v3.featured .tier-title, 
+    .tier-v3.featured .tier-desc {
+        color: #fff;
+    }
+
+    .tier-title {
+        font-family: 'Playfair Display';
+        font-size: 2rem;
+        margin: 15px 0;
+    }
+
+    .price-text {
+        font-weight: 700;
+        font-size: 1.5rem;
+        margin-top: 20px;
+        color: #bfa15f;
+    }
+
+    .tier-btn {
+        margin-top: 25px;
+        width: 100%;
+        padding: 15px;
+        background: #bfa15f;
+        color: #fff;
+        border: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        cursor: pointer;
+    }
+</style>
 
 
 
