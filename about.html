@@ -288,11 +288,8 @@
 
     <div class="ribbon-content-wrap">
         <header class="ribbon-header-box animate-on-scroll">
-            <span class="gold-eyebrow">The 2026 Clinical Index</span>
-            <h2 class="ribbon-title">A Continuum of <span class="gold-italic">Specialized</span> Care</h2>
-            <p class="ribbon-subtext">
-                From high-acuity behavioral support to restorative geriatric wellness, our stewardship spans the full spectrum of human dignity and clinical precision.
-            </p>
+            <span class="accent-eyebrow">The 2026 Clinical Index</span>
+            <h2 class="ribbon-title">A Continuum of <span class="accent-italic">Specialized</span> Care</h2>
         </header>
 
         <div class="dir-slider-viewport">
@@ -351,12 +348,11 @@
     /* --- THE ENGINE: PHOTO-BACKED FROST --- */
     .stewardship-ribbon {
         position: relative;
-        padding: 120px 0 100px 0;
+        padding: 50px 0 40px 0; /* SHORTER CONTAINER */
         overflow: hidden;
         background: #fff;
     }
 
-    /* THE ACTUAL PHOTO: Fixed attachment creates depth */
     .glass-photo-base {
         position: absolute;
         top: 0; left: 0; width: 100%; height: 100%;
@@ -364,10 +360,9 @@
         background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=2000');
         background-size: cover;
         background-position: center;
-        background-attachment: fixed; /* Crucial for "floating" effect */
+        background-attachment: fixed;
     }
 
-    /* THE FROST LAYER: This turns the photo into glass */
     .frost-layer {
         position: absolute;
         top: 0; left: 0; width: 100%; height: 100%;
@@ -384,12 +379,33 @@
         z-index: 3;
     }
 
-    /* --- TYPOGRAPHY (LOCKED DARK BLUE) --- */
-    .ribbon-header-box { padding: 0 8%; margin-bottom: 60px; max-width: 540px; }
-    .gold-eyebrow { display: block; text-transform: uppercase; letter-spacing: 5px; font-size: 0.65rem; font-weight: 800; color: #c5a059; margin-bottom: 15px; }
-    .ribbon-title { font-family: 'Playfair Display', serif; font-size: 3rem; color: #0c1833; line-height: 1.1; margin-bottom: 20px; font-weight: 700; }
-    .gold-italic { color: #c5a059; font-style: italic; font-weight: 400; }
-    .ribbon-subtext { font-size: 0.95rem; color: #0c1833; line-height: 1.8; font-weight: 400; opacity: 0.9; }
+    /* --- TYPOGRAPHY (LOCKED DARK BLUE + NEW ACCENT) --- */
+    .ribbon-header-box { padding: 0 8%; margin-bottom: 30px; max-width: 600px; }
+    
+    .accent-eyebrow { 
+        display: block; 
+        text-transform: uppercase; 
+        letter-spacing: 5px; 
+        font-size: 0.65rem; 
+        font-weight: 800; 
+        color: #b91c1c; /* VIBRANT CRIMSON */
+        margin-bottom: 10px; 
+    }
+
+    .ribbon-title { 
+        font-family: 'Playfair Display', serif; 
+        font-size: 2.4rem; 
+        color: #0c1833; 
+        line-height: 1.1; 
+        margin-bottom: 0; 
+        font-weight: 700; 
+    }
+
+    .accent-italic { 
+        color: #b91c1c; /* VIBRANT CRIMSON */
+        font-style: italic; 
+        font-weight: 400; 
+    }
 
     /* --- THE TICKER --- */
     .dir-slider-viewport {
@@ -398,33 +414,41 @@
         mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
         -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
     }
-    .dir-track { display: flex; gap: 25px; width: max-content; animation: tickerScroll 40s linear infinite; padding: 20px 0; }
+    .dir-track { display: flex; gap: 20px; width: max-content; animation: tickerScroll 40s linear infinite; padding: 15px 0; }
     @keyframes tickerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
     /* --- THE DEEP BLUE CARDS (LOCKED) --- */
     .dir-item {
-        flex: 0 0 300px;
+        flex: 0 0 280px;
         background: #0c1833;
         border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 30px;
-        min-height: 130px;
+        padding: 22px 28px;
+        min-height: 110px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
-    .dir-item:hover { transform: translateY(-10px); border-color: #c5a059; box-shadow: 0 20px 40px rgba(12, 24, 51, 0.4); }
+    .dir-item:hover { transform: translateY(-5px); border-color: #b91c1c; }
 
-    .acuity-tag { font-size: 0.55rem; color: #c5a059; letter-spacing: 2px; text-transform: uppercase; font-weight: 900; margin-bottom: 8px; display: block; }
-    .client-type { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: #ffffff; }
-    .client-status { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255, 255, 255, 0.5); display: block; }
-    .dir-icon i { font-size: 1.4rem; color: #94a3b8; opacity: 0.6; }
+    .acuity-tag { 
+        font-size: 0.5rem; 
+        color: #b91c1c; /* VIBRANT CRIMSON */
+        letter-spacing: 2px; 
+        text-transform: uppercase; 
+        font-weight: 900; 
+        margin-bottom: 6px; 
+        display: block; 
+    }
+
+    .client-type { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #ffffff; }
+    .client-status { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255, 255, 255, 0.5); display: block; }
+    .dir-icon i { font-size: 1.2rem; color: #94a3b8; opacity: 0.6; }
 
     /* --- INDEX CARD --- */
-    .index-card { background: #c5a059; border: none; justify-content: center; gap: 15px; }
-    .index-digit { font-family: 'Playfair Display', serif; font-size: 3rem; color: #0c1833; font-weight: 800; }
-    .index-card .client-status { color: #0c1833; font-weight: 900; }
+    .index-card { background: #b91c1c; border: none; justify-content: center; gap: 15px; }
+    .index-digit { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #ffffff; font-weight: 800; }
+    .index-card .client-status { color: #ffffff; font-weight: 900; opacity: 0.9; }
 </style>
 
 
