@@ -375,12 +375,7 @@
 /* BASE HERO LOGIC */
 /* 1. BASE HERO DEFAULTS */
 /* --- 1. THE MAIN INDEX HERO (Full Height) --- */
-/* --- GLOBAL HERO DEFAULTS --- */
-/* --- SUBPAGE SPECIFIC OVERRIDES --- */
-/* This only affects pages with these specific classes */
 /* --- FULL-WIDTH LIGHT LUXURY HERO (RESTORED ORIGINAL) --- */
-/* --- 1. FULL-WIDTH INDEX HERO (RESTORED ORIGINAL) --- */
-/* This remains exactly as you had it for your home page */
 .hero {
     height: 100vh;
     width: 100%;
@@ -394,54 +389,109 @@
     z-index: 5;
 }
 
-/* --- 2. SUBPAGE SPECIFIC OVERRIDES --- */
-/* These rules ONLY trigger if the hero has these extra classes */
-.hero.hero-about, 
-.hero.hero-suites, 
-.hero.hero-resident {
+/* Specific override for About Page Hero */
+.hero.hero-about {
     height: 50vh; 
-    background-attachment: scroll; /* Disables parallax for subpages */
+    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat;
+    background-attachment: scroll;
+    position: sticky; /* This enables the slide-over */
+    top: 0;
+    z-index: -1; /* Pushes it back ONLY on the about page */
+}
+
+/* THE SLIDE-OVER TRIGGER (ABOUT PAGE ONLY) */
+/* This ensures other sections slide over the sticky About hero */
+.hero.hero-about ~ section,
+.hero.hero-about ~ .main-content-wrapper {
+    position: relative;
+    z-index: 10;
+    background: #ffffff;
+}
+/* Specific override for Suites Page Hero */
+.hero.hero-suites {
+    height: 50vh; 
+    background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true') center/cover no-repeat;
+    background-attachment: scroll;
     position: sticky; 
     top: 0;
     z-index: -1; /* Enables the slide-over effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* HIDE ELEMENTS ON SUBPAGES ONLY */
-/* This leaves your Index Hero elements perfectly visible */
-.hero.hero-about p, .hero.hero-suites p, .hero.hero-resident p,
-.hero.hero-about .hero-buttons, .hero.hero-suites .hero-buttons, .hero.hero-resident .hero-buttons,
-.hero.hero-about .scroll-indicator, .hero.hero-suites .scroll-indicator, .hero.hero-resident .scroll-indicator {
-    display: none !important;
-}
-
-/* Specific Backgrounds for Subpages */
-.hero.hero-about { background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat; }
-.hero.hero-suites { background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true') center/cover no-repeat; }
-.hero.hero-resident { background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat; }
-
-/* --- 3. SLIDE-OVER TRIGGERS --- */
-/* Ensures subpage content covers the sticky hero */
-.hero.hero-about ~ section, .hero.hero-about ~ .main-content-wrapper,
-.hero.hero-suites ~ section, .hero.hero-suites ~ .blueprint-portal,
-.hero.hero-resident ~ section, .hero.hero-resident ~ .admissions-journey {
+/* Ensure the Suites content slides over the sticky hero */
+.hero.hero-suites ~ section,
+.hero.hero-suites ~ .blueprint-portal,
+.hero.hero-suites ~ .mobile-narrative-card {
     position: relative;
     z-index: 10;
     background: #ffffff;
 }
 
-/* --- 4. ORIGINAL DESIGN ELEMENTS (NO CHANGES) --- */
+
+/* Specific override for Resident Page Hero */
+/* Specific override for Resident Page Hero */
+.hero.hero-resident {
+    height: 50vh; 
+    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat;
+    background-attachment: scroll;
+    position: sticky; 
+    top: 0;
+    z-index: -1; /* Matches the Suites/About slide-over logic */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure the Resident content (Events, Table, etc.) slides over the sticky hero */
+.hero.hero-resident ~ section,
+.hero.hero-resident ~ .admissions-journey,
+.hero.hero-resident ~ .magazine-editorial,
+.hero.hero-resident ~ .stewardship-directory {
+    position: relative;
+    z-index: 10;
+    background: #ffffff; /* This is what "covers" the hero as you scroll */
+}
+/* --- THE REST IS YOUR ORIGINAL DESIGN CODE --- */
+
 .hero-light-overlay {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+    background: linear-gradient(to right, 
+        rgba(255, 255, 255, 0.7) 0%, 
+        rgba(255, 255, 255, 0.3) 50%, 
+        transparent 100%);
     z-index: 1;
 }
 
-.hero-content { position: relative; z-index: 2; max-width: 750px; }
-.hero-badge { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
-.badge-line { width: 40px; height: 1px; background: #475569; }
-.badge-text { text-transform: uppercase; letter-spacing: 5px; font-size: 0.7rem; color: #475569; font-weight: 600; }
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+}
+
+.hero-badge {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.badge-line {
+    width: 40px;
+    height: 1px;
+    background: #475569;
+}
+
+.badge-text {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 0.7rem;
+    color: #475569;
+    font-weight: 600;
+}
 
 .hero h1 {
     font-size: clamp(50px, 7vw, 90px);
@@ -452,7 +502,10 @@
     font-weight: 400;
 }
 
-.italic-serif { font-style: italic; color: #64748b; }
+.italic-serif {
+    font-style: italic;
+    color: #64748b;
+}
 
 .hero p {
     font-size: 1.15rem;
@@ -463,26 +516,124 @@
     font-weight: 300;
 }
 
-/* Original Luxury Buttons */
-.hero-buttons { display: flex; gap: 15px; }
-.btn-midnight { padding: 18px 40px; background: #0f172a; color: #ffffff; text-decoration: none; font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; transition: 0.4s ease; }
-.btn-glass-light { padding: 18px 40px; border: 1px solid #0f172a; color: #0f172a; text-decoration: none; font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; transition: 0.4s ease; }
+/* Luxury Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
 
-.scroll-indicator { position: absolute; bottom: 40px; left: 10%; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 10px; }
-.scroll-text { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; color: #64748b; writing-mode: vertical-lr; }
-.scroll-line { width: 1px; height: 60px; background: linear-gradient(to bottom, #64748b, transparent); }
+.btn-midnight {
+    padding: 18px 40px;
+    background: #0f172a;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.4s ease;
+}
 
-/* --- 5. MOBILE ADAPTATION --- */
+.btn-glass-light {
+    padding: 18px 40px;
+    border: 1px solid #0f172a;
+    color: #0f172a;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.4s ease;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 10%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.scroll-text {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #64748b;
+    writing-mode: vertical-lr;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, #64748b, transparent);
+}
+/* --- MOBILE ADAPTATION --- */
+/* --- EXTRA SPECIAL MOBILE HERO --- */
+/* --- MOBILE ADAPTATION --- */
+/* --- PREMIUM DESKTOP-STYLE MOBILE HERO --- */
 @media (max-width: 768px) {
-    .hero { padding: 0 10%; justify-content: flex-start; background-attachment: scroll; }
-    .hero-light-overlay { background: linear-gradient(to right, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.4) 70%, transparent 100%); }
-    .hero-content { max-width: 100%; text-align: left; }
-    .hero h1 { font-size: 2.8rem; line-height: 1.1; margin-bottom: 20px; }
-    .hero p { font-size: 0.95rem; max-width: 90%; margin-bottom: 35px; }
-    .hero-buttons { flex-direction: column; align-items: flex-start; gap: 15px; }
-    .btn-midnight, .btn-glass-light { width: auto; min-width: 200px; padding: 14px 25px; text-align: center; }
-    .scroll-indicator { left: 10%; bottom: 30px; transform: scale(0.8); }
-    .hero-watermark { right: 20px; bottom: 20px; width: 80px; opacity: 0.1; }
+    .hero {
+        padding: 0 10%; /* Keep that generous 10% breathing room on the left */
+        justify-content: flex-start; /* Keeps text left-aligned, not centered */
+        background-attachment: scroll; /* Better performance on mobile chips */
+    }
+
+    .hero-light-overlay {
+        /* We make the light wash a bit more solid (0.8) so text is 100% readable over the image */
+        background: linear-gradient(to right, 
+            rgba(255, 255, 255, 0.85) 0%, 
+            rgba(255, 255, 255, 0.4) 70%, 
+            transparent 100%);
+    }
+
+    .hero-content {
+        max-width: 100%; /* Let it use the available width */
+        text-align: left; /* Strict left alignment to match desktop */
+    }
+
+    .hero h1 {
+        font-size: 2.8rem; /* Large enough to feel "Premium" but fits the screen */
+        line-height: 1.1;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+        max-width: 90%; /* Don't let text hit the right edge */
+        margin-bottom: 35px;
+    }
+
+    /* Keep the buttons sleek and side-by-side if they fit, or stack elegantly */
+    .hero-buttons {
+        flex-direction: column; /* Stacking is safer for long mobile text */
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .btn-midnight, .btn-glass-light {
+        width: auto; /* Keeps them from looking like "blocks" */
+        min-width: 200px;
+        padding: 14px 25px;
+        text-align: center;
+    }
+
+    /* The Scroll Indicator - We keep this because it looks expensive */
+    .scroll-indicator {
+        left: 10%;
+        bottom: 30px;
+        transform: scale(0.8); /* Scale it down slightly for mobile */
+    }
+
+    /* The Fox Watermark - Move it to the bottom right corner */
+    .hero-watermark {
+        right: 20px;
+        bottom: 20px;
+        width: 80px;
+        opacity: 0.1; /* Keep it very faint like a real watermark */
+    }
 }
 /* SERVICES */
 
@@ -3142,5 +3293,3 @@ body {
     display: none !important; /* Forces it to stay hidden on computers */
     visibility: hidden;
 }
-
-
