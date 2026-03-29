@@ -552,6 +552,34 @@
     
     .vertical-connector-blue { display: none !important; }
 }
+
+    @media (max-width: 768px) {
+    /* 1. Re-enable the sliding 'engine' for the Clinical Index (Continuum) */
+    #client-directory .dir-slider-viewport {
+        overflow-x: auto !important;
+        display: flex !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* 2. Re-enable the sliding 'engine' for your Events Squares */
+    /* Assuming your events use the 'dir-scroller-wrap' class from before */
+    .dir-scroller-wrap {
+        display: flex !important;
+        overflow-x: auto !important; 
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch;
+        width: 100vw !important;
+        margin-left: -20px; /* Aligns with container padding to look full-width */
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* 3. Ensure the cards don't shrink (The Square Fix) */
+    .luxe-card {
+        flex: 0 0 300px !important; /* Forces them to stay squares and scroll off-screen */
+        margin-right: 15px !important;
+    }
+}
 </style>
 
 
