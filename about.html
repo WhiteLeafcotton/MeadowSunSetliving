@@ -580,6 +580,36 @@
         margin-right: 15px !important;
     }
 }
+
+
+    @media (max-width: 768px) {
+    /* 1. STOP THE ANIMATION: This is what's "freezing" the cards */
+    #client-directory .dir-track {
+        animation: none !important; 
+        width: auto !important; /* Resets from the huge desktop width */
+        display: flex !important;
+        gap: 15px !important;
+        padding: 20px !important;
+    }
+
+    /* 2. ENABLE THE SWIPE: This allows the finger to move them */
+    #client-directory .dir-slider-viewport {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        display: block !important;
+        -webkit-overflow-scrolling: touch;
+        /* Optional: keeps the fade effect but allows scrolling */
+        mask-image: none !important; 
+        -webkit-mask-image: none !important;
+    }
+
+    /* 3. LOCK THE SQUARE SIZE: Prevents them from squishing */
+    #client-directory .dir-item {
+        flex: 0 0 260px !important; /* Adjust this number to change square size */
+        height: 120px !important;
+        scroll-snap-align: center;
+    }
+}
 </style>
 
 
