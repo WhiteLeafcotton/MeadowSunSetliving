@@ -425,6 +425,25 @@
         z-index: 10;
     }
 }
+
+
+
+
+
+
+
+    /* FORCE EVERYTHING VISIBLE IMMEDIATELY */
+.reveal-up, .reveal-left, .tier-card-snap {
+    opacity: 1 !important;
+    transform: translate(0, 0) !important;
+    visibility: visible !important;
+    transition: none !important; /* Removes the 1.2s delay so it's instant */
+}
+
+/* Ensure the pricing cards are visible too */
+.tier-v3 {
+    opacity: 1 !important;
+}
 </style>
 
 <script>
