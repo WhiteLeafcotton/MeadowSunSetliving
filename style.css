@@ -562,47 +562,29 @@
 
 /* Specific override for Payment Page Hero */
 /* Specific override for Payment Page Hero */
-/* Specific override for Payment Page Hero */
-/* --- PAYMENT HERO: EXACT SUITES REPLICA --- */
 .hero.hero-payment {
+    /* Add 'auto' and remove 'scroll' to test if the position:sticky is fighting the background */
+    background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2011.jpeg?raw=true') center/cover no-repeat !important;
     height: 50vh; 
-    /* The core fix: ensuring the image is called correctly with scroll attachment */
-    background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true') center/cover no-repeat !important;
-    background-attachment: scroll !important; 
-    
-    /* Sticky Logic: Pushes image behind content as you scroll */
     position: sticky; 
     top: 0;
-    z-index: -1; 
-    
-    /* Alignment: Matches Suites (Bottom Left) */
+    z-index: -1;
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
     padding: 60px;
 }
 
-/* Force the Overlay to be invisible on this subpage so the image is crisp */
-.hero.hero-payment .hero-light-overlay {
-    display: none !important;
-}
-
-/* Hide the Badge to match the clean look of the Suites page */
-.hero.hero-payment .hero-badge {
-    display: none !important;
-}
-
-/* MATCHING TYPOGRAPHY: Exact match to Suites H1 */
+/* ADJUSTING THE H1 FONT SIZE & COLOR - Exact Match */
 .hero.hero-payment h1 {
     margin-bottom: 0 !important;
     font-size: 2.4rem !important;
     text-align: left;
     color: #1a1a1a;
     letter-spacing: -0.5px;
-    line-height: 1;
 }
 
-/* REMOVE SLANT: Matches your "High-Tech Premium" vibe */
+/* UNIFYING TYPOGRAPHY - Removing slant/serif */
 .hero.hero-payment .italic-serif {
     font-family: 'Inter', sans-serif !important;
     font-style: normal !important;
@@ -611,7 +593,7 @@
     font-size: 1em;
 }
 
-/* MOBILE SYNC: Drops height to 40vh just like the others */
+/* MOBILE ADJUSTMENTS - Exact Match */
 @media (max-width: 768px) {
     .hero.hero-payment {
         padding: 40px 25px;
@@ -622,13 +604,13 @@
     }
 }
 
-/* SLIDE-OVER TRIGGER: Essential for the "Suites" effect */
+/* Sticky slide-over logic for Payment Page sections */
 .hero.hero-payment ~ section,
 .hero.hero-payment ~ .payment-solutions,
 .hero.hero-payment ~ .rates-grid {
     position: relative;
     z-index: 10;
-    background: #ffffff; 
+    background: #ffffff;
 }
 /* --- THE REST IS YOUR ORIGINAL DESIGN CODE --- */
 
