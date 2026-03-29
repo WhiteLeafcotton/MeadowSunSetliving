@@ -417,6 +417,53 @@
         #premium-directory-unique .magazine-title { font-size: 2.8rem; }
         #premium-directory-unique.stewardship-directory { padding: 60px 0 !important; }
     }
+
+
+
+
+
+
+
+
+    
+
+/* Fix for the Video Container */
+.iframe-viewport {
+    position: relative;
+    width: 100%;
+    /* This ensures a perfect widescreen shape regardless of device width */
+    aspect-ratio: 16 / 9; 
+    background: #000; /* Black bars if the video takes a second to load */
+    overflow: hidden;
+    border-radius: 4px; /* Optional: matches your luxury aesthetic */
+}
+
+/* Ensure the iframes fill the viewport perfectly without stretching */
+.iframe-viewport iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+}
+
+/* Hide/Show logic for your mobile/desktop divs */
+.mobile-only-video, .desktop-only-video {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .desktop-only-video { display: none; }
+    .mobile-only-video { display: block; }
+}
+
+@media (min-width: 769px) {
+    .desktop-only-video { display: block; }
+    .mobile-only-video { display: none; }
+}
+
 </style>
 
 <section class="stewardship-directory" id="premium-directory-unique">
