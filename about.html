@@ -282,10 +282,7 @@
 
 <section class="stewardship-ribbon" id="client-directory">
     
-    <div class="glass-blobs">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-    </div>
+    <div class="glass-photo-base"></div>
 
     <div class="frost-layer"></div>
 
@@ -351,91 +348,82 @@
 </section>
 
 <style>
-    /* --- THE ENGINE: AMBIENT FROSTED CONTAINER --- */
+    /* --- THE ENGINE: PHOTO-BACKED FROST --- */
     .stewardship-ribbon {
         position: relative;
-        padding: 100px 0 80px 0;
+        padding: 120px 0 100px 0;
         overflow: hidden;
-        background: #fff; /* Base background */
+        background: #fff;
     }
 
-    /* THE COLORED BLOBS (Hidden behind the frost) */
-    .glass-blobs {
+    /* THE ACTUAL PHOTO: Fixed attachment creates depth */
+    .glass-photo-base {
         position: absolute;
         top: 0; left: 0; width: 100%; height: 100%;
         z-index: 1;
-    }
-    .blob {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(80px);
-        opacity: 0.15; /* Keep it subtle */
-        animation: blobMove 20s infinite alternate;
-    }
-    .blob-1 { width: 400px; height: 400px; background: #c5a059; top: -100px; right: -50px; }
-    .blob-2 { width: 500px; height: 500px; background: #0c1833; bottom: -150px; left: -100px; animation-delay: -5s; }
-
-    @keyframes blobMove {
-        from { transform: translate(0, 0); }
-        to { transform: translate(50px, 100px); }
+        background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=2000');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; /* Crucial for "floating" effect */
     }
 
-    /* THE FROST LAYER */
+    /* THE FROST LAYER: This turns the photo into glass */
     .frost-layer {
         position: absolute;
         top: 0; left: 0; width: 100%; height: 100%;
         z-index: 2;
-        background: rgba(255, 255, 255, 0.4); 
-        backdrop-filter: blur(40px) saturate(150%);
-        -webkit-backdrop-filter: blur(40px) saturate(150%);
-        border-top: 1px solid rgba(255, 255, 255, 0.8);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.45); 
+        backdrop-filter: blur(25px) saturate(120%);
+        -webkit-backdrop-filter: blur(25px) saturate(120%);
+        border-top: 1px solid rgba(255, 255, 255, 0.6);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.6);
     }
 
     .ribbon-content-wrap {
         position: relative;
-        z-index: 3; /* Above the frost */
+        z-index: 3;
     }
 
-    /* --- THE TYPOGRAPHY (LOCKED DARK BLUE) --- */
-    .ribbon-header-box { padding: 0 8%; margin-bottom: 50px; max-width: 540px; }
-    .gold-eyebrow { display: block; text-transform: uppercase; letter-spacing: 5px; font-size: 0.65rem; font-weight: 800; color: #c5a059; margin-bottom: 12px; }
-    .ribbon-title { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: #0c1833; line-height: 1.1; margin-bottom: 15px; font-weight: 700; }
+    /* --- TYPOGRAPHY (LOCKED DARK BLUE) --- */
+    .ribbon-header-box { padding: 0 8%; margin-bottom: 60px; max-width: 540px; }
+    .gold-eyebrow { display: block; text-transform: uppercase; letter-spacing: 5px; font-size: 0.65rem; font-weight: 800; color: #c5a059; margin-bottom: 15px; }
+    .ribbon-title { font-family: 'Playfair Display', serif; font-size: 3rem; color: #0c1833; line-height: 1.1; margin-bottom: 20px; font-weight: 700; }
     .gold-italic { color: #c5a059; font-style: italic; font-weight: 400; }
-    .ribbon-subtext { font-size: 0.95rem; color: #0c1833; line-height: 1.7; font-weight: 400; opacity: 0.8; }
+    .ribbon-subtext { font-size: 0.95rem; color: #0c1833; line-height: 1.8; font-weight: 400; opacity: 0.9; }
 
-    /* --- THE TICKER ENGINE --- */
+    /* --- THE TICKER --- */
     .dir-slider-viewport {
         width: 100%;
         display: flex;
         mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
         -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
     }
-    .dir-track { display: flex; gap: 25px; width: max-content; animation: tickerScroll 40s linear infinite; padding: 15px 0; }
+    .dir-track { display: flex; gap: 25px; width: max-content; animation: tickerScroll 40s linear infinite; padding: 20px 0; }
     @keyframes tickerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
     /* --- THE DEEP BLUE CARDS (LOCKED) --- */
     .dir-item {
-        flex: 0 0 290px;
-        background: #0c1833; /* Dark Blue */
+        flex: 0 0 300px;
+        background: #0c1833;
         border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 25px 30px;
-        min-height: 120px;
+        padding: 30px;
+        min-height: 130px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        transition: 0.4s ease;
+        transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
-    .dir-item:hover { transform: translateY(-8px); border-color: #c5a059; box-shadow: 0 15px 30px rgba(12, 24, 51, 0.3); }
+    .dir-item:hover { transform: translateY(-10px); border-color: #c5a059; box-shadow: 0 20px 40px rgba(12, 24, 51, 0.4); }
 
-    .acuity-tag { font-size: 0.5rem; color: #c5a059; letter-spacing: 2px; text-transform: uppercase; font-weight: 900; margin-bottom: 6px; display: block; }
-    .client-type { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #ffffff; }
-    .client-status { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255, 255, 255, 0.5); display: block; }
-    .dir-icon i { font-size: 1.3rem; color: #94a3b8; opacity: 0.6; }
+    .acuity-tag { font-size: 0.55rem; color: #c5a059; letter-spacing: 2px; text-transform: uppercase; font-weight: 900; margin-bottom: 8px; display: block; }
+    .client-type { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: #ffffff; }
+    .client-status { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255, 255, 255, 0.5); display: block; }
+    .dir-icon i { font-size: 1.4rem; color: #94a3b8; opacity: 0.6; }
 
     /* --- INDEX CARD --- */
     .index-card { background: #c5a059; border: none; justify-content: center; gap: 15px; }
-    .index-digit { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: #0c1833; font-weight: 800; }
+    .index-digit { font-family: 'Playfair Display', serif; font-size: 3rem; color: #0c1833; font-weight: 800; }
     .index-card .client-status { color: #0c1833; font-weight: 900; }
 </style>
 
