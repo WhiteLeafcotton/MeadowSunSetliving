@@ -73,56 +73,7 @@
             .flex-card-compact { padding: 20px 10px !important; min-width: 100px; text-align: center; }
             .flex-card-compact h4 { font-size: 0.9rem !important; margin-bottom: 10px !important; }
             .flex-card-compact p { font-size: 0.7rem !important; display: none; } /* Hide desc on tiny mobile screens to keep row static */
-        }
-
-
-        /* --- FIXED PAYMENT HERO --- */
-.hero.hero-payment {
-    height: 50vh !important; 
-    /* We use !important here to ensure it overrides any conflicting general .hero styles */
-    background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true') center/cover no-repeat !important;
-    background-attachment: scroll !important; 
-    
-    position: sticky !important; 
-    top: 0;
-    z-index: -1; 
-    
-    display: flex !important;
-    align-items: flex-end !important;
-    justify-content: flex-start !important;
-    padding: 60px !important;
-    overflow: visible !important;
-}
-
-/* Ensure the content inside the hero is visible */
-.hero.hero-payment .hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: left;
-    width: 100%;
-}
-
-/* This ensures the image doesn't 'disappear' under the next section too early */
-.hero.hero-payment ~ section {
-    position: relative;
-    z-index: 10;
-    background: #ffffff; 
-}
-
-/* Matching the Suites H1 exactly */
-.hero.hero-payment h1 {
-    margin-bottom: 0 !important;
-    font-size: 2.4rem !important;
-    color: #1a1a1a !important;
-    letter-spacing: -0.5px !important;
-}
-
-/* Mobile Fix for the Hero Image */
-@media (max-width: 768px) {
-    .hero.hero-payment {
-        height: 40vh !important;
-        padding: 40px 25px !important;
-    
+   
 
     </style>
 </head>
