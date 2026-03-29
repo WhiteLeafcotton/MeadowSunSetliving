@@ -1901,108 +1901,174 @@ body { font-family: sans-serif; overflow-x: hidden; }
 /* ==========================================
    GLOBAL BRAND VARIABLES & CORE
 ============================================= */
-/* --- PREMIUM FROSTED SECTION (Isolated) --- */
-#premium-frosted-directory.stewardship-directory {
-    position: relative;
-    z-index: 20; 
-    display: block;
-    padding: 120px 0; /* Tall height */
-    
-    /* FROSTED BACKGROUND */
-    background: linear-gradient(rgba(12, 24, 51, 0.8), rgba(12, 24, 51, 0.8)), 
-                url('your-background-photo.jpg') center/cover no-repeat;
-    
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    
-    border-top: 1px solid rgba(197, 160, 89, 0.2);
-    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+:root {
+    --brand-blue: #0c1833;
+    --brand-gold: #c5a059;
+    --white: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --glass-bg: rgba(255, 255, 255, 0.05);
 }
 
-/* SCOPED TRACK */
-#premium-frosted-directory .dir-scroller-wrap {
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+.italic-serif { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+.luxe-container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 5%; }
+
+/* --- REVEAL ANIMATION ENGINE --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.animate-on-scroll.show, 
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+
+
+/* ==========================================
+   REFINED SECTION 1: WHO WE SERVE (SLIM)
+
+
+
+/* ==========================================
+   REFINED SECTION 1: SLIM DIRECTORY (TOP-HEAVY LAYOUT)
+============================================= */
+/* ==========================================
+   REFINED SECTION 1: SLIM DIRECTORY (INFINITE SLIDE)
+============================================= */
+:root {
+    --brand-blue: #0c1833;
+    --brand-gold: #c5a059;
+}
+
+/* 3. THE DIRECTORY (ULTRA-THIN RIBBON) */
+.stewardship-directory {
+    position: relative;
+    z-index: 20; 
+    background-color: #0f172a !important; 
+    display: block;
+    /* Minimal sauce for a thin ribbon effect */
+    padding: 10px 0 20px 0; 
+    margin-top: 0; 
+    border-top: 1px solid rgba(197, 160, 89, 0.1);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+}
+
+/* THE BROW LINE (ONLY TEXT ABOVE CARDS) */
+.directory-header {
+    padding: 0 10%; 
+    margin-bottom: 8px; /* Tight gap to cards */
+}
+
+.gold-eyebrow {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 4px; /* Increased for high-end look */
+    font-size: 0.65rem; 
+    color: var(--brand-gold);
+    opacity: 0.8;
+}
+
+/* THE SLIDER ENGINE */
+.dir-scroller-wrap {
     width: 100%;
     display: flex;
     overflow: hidden;
 }
 
-#premium-frosted-directory .dir-track {
+.dir-track {
     display: flex;
-    gap: 25px; 
+    gap: 12px; 
     width: max-content;
-    animation: scrollInfinite 45s linear infinite;
+    animation: scrollInfinite 45s linear infinite; /* Slightly slower for elegance */
 }
 
-/* SCOPED TALL CARDS */
-#premium-frosted-directory .dir-item {
-    flex: 0 0 260px; 
-    background: rgba(255, 255, 255, 0.05); 
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 35px 20px; 
-    min-height: 150px; /* Tall card height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: all 0.4s ease;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+.dir-track:hover {
+    animation-play-state: paused;
 }
 
-#premium-frosted-directory .dir-item:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: #c5a059;
-    transform: translateY(-5px);
-}
-
-/* SCOPED TEXT */
-#premium-frosted-directory .client-type { 
-    font-size: 1.1rem; 
-    color: #ffffff;
-    font-family: 'Playfair Display', serif;
-}
-
-#premium-frosted-directory .client-status { 
-    font-size: 0.65rem; 
-    color: #c5a059;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-}
-
-#premium-frosted-directory .dir-icon i {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.3);
-}
-
-#premium-frosted-directory .dir-index-end {
-    border: 1px solid #c5a059 !important;
-}
-
-/* GLOBAL ENGINE (Safe to keep) */
 @keyframes scrollInfinite {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); } 
 }
 
+/* SLEEK LOW-PROFILE CARD */
+.dir-item {
+    flex: 0 0 220px; 
+    background: rgba(255, 255, 255, 0.02); 
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 10px 18px; 
+    /* The "Thin" Logic: Cards now hug the text tightly */
+    min-height: 85px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
 
+.dir-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--brand-gold);
+}
 
+/* --- REFINED TEXT --- */
+.client-type { 
+    font-size: 0.9rem; 
+    margin-bottom: 2px; 
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    line-height: 1; 
+    letter-spacing: 0.5px;
+}
 
+.client-status { 
+    font-size: 0.55rem; 
+    text-transform: uppercase;
+    letter-spacing: 1.5px; 
+    color: var(--brand-gold);
+    line-height: 1;
+    margin: 0;
+}
 
+/* ICON */
+.dir-icon {
+    margin-top: 4px;
+    line-height: 1;
+}
 
+.dir-icon i {
+    font-size: 0.9rem; 
+    color: rgba(255, 255, 255, 0.2); 
+}
 
+/* 11th CARD (GOLD INDEX) */
+.dir-index-end {
+    border: 1px solid rgba(197, 160, 89, 0.3) !important;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+.index-digit {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; 
+    font-weight: 700;
+    color: var(--brand-gold);
+    line-height: 1;
+}
+/* ==========================================
+   SECTION 2: ADMISSIONS JOURNEY (WHITE THEME)
+============================================= */
 /* --- BLUEPRINT ADMISSIONS STYLING --- */
 /* --- BLUEPRINT ADMISSIONS STYLING --- */
 
