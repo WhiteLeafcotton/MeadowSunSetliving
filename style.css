@@ -405,6 +405,11 @@
     padding: 60px;              /* Matches Suites padding */
 }
 
+.hero-about .hero-badge {
+    justify-content: flex-start; /* Keeps the gold line on the left */
+    margin-bottom: 15px;         /* Adds a nice gap above your H1 */
+}
+
 /* MATCHING THE H1 FONT SIZE & COLOR */
 .hero.hero-about h1 {
     margin-bottom: 0 !important;
