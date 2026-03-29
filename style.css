@@ -431,50 +431,13 @@
 
 /* MOBILE ADJUSTMENTS */
 /* MOBILE ADJUSTMENTS - EXACT SYNC */
-/* MOBILE ADJUSTMENTS - HARD SYNC */
-@media (max-width: 768px) {
-    .hero.hero-about {
-        /* Dropped from 40vh to 30vh (25% reduction) */
-        height: 30vh !important; 
-        min-height: 30vh !important;
-        
-        /* Tightened padding to account for shorter height */
-        padding: 20px 20px !important; 
-        
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-end !important;
-        align-items: flex-start !important;
-        
-        /* Sticky logic for the slide-over effect */
-        position: sticky !important;
-        top: 0;
-        z-index: -1;
-        overflow: hidden !important;
-    }
+/* MOBILE ADJUSTMENTS for about page - HARD SYNC */
 
-    /* Tighten the Badge and Header spacing */
-    .hero.hero-about .hero-badge {
-        margin-bottom: 2px !important;
-        transform: scale(0.9); /* Slightly smaller badge to fit shorter height */
-        transform-origin: left;
-    }
 
-    .hero.hero-about h1 {
-        font-size: 1.6rem !important; /* Slightly smaller to prevent overcrowding */
-        line-height: 1.1 !important;
-        margin: 0 !important;
-        letter-spacing: -0.5px !important;
-    }
 
-    /* FORCE next section to start immediately */
-    .hero.hero-about ~ .locked-mission-console {
-        position: relative;
-        z-index: 10;
-        margin-top: 0 !important;
-        background: #ffffff;
-    }
-}
+
+
+
 /* Specific override for Suites Page Hero */
 /* Specific override for Suites Page Hero */
 /* Specific override for Suites Page Hero */
