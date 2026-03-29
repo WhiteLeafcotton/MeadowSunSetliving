@@ -391,89 +391,64 @@
 
 /* Specific override for About Page Hero */
 /* --- HERO ALIGNMENT: MATCHING SUITES --- */
-.hero-about {
-    height: 50vh; /* Matching the sticky slide-over height */
-    display: flex;
-    align-items: flex-end; /* Positions text at the bottom */
-    justify-content: flex-start; /* Positions text to the left */
-    padding: 60px; /* Matching Suites padding */
+/* --- ABOUT PAGE HERO: SUITES CLONE --- */
+.hero.hero-about {
+    height: 55vh; /* Matching the sub-page height in your screenshot */
     background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true') center/cover no-repeat;
+    display: flex;
+    align-items: flex-end; /* Keeps text at the bottom */
+    justify-content: flex-start; /* Keeps text on the left */
+    padding: 0 0 80px 10%; /* Positions the text exactly like the screenshot */
     position: relative;
 }
 
-/* --- TYPOGRAPHY: MATCHING SUITES --- */
-.hero-about .hero-content {
-    text-align: left;
-    max-width: 800px;
-    z-index: 2;
+/* 1. THE EDITORIAL BADGE (Eyebrow + Line) */
+.hero.hero-about .hero-badge {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
-.hero-about h1 {
+.hero.hero-about .gold-line {
+    width: 50px;
+    height: 1px;
+    background: #1a1a1a; /* Matches the dark thin line in your screenshot */
+}
+
+.hero.hero-about .eyebrow-text {
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+/* 2. THE MAIN TITLE */
+.hero.hero-about .hero-title {
     font-family: 'Playfair Display', serif;
-    font-size: 2.4rem; /* Matching Suites Desktop Size */
-    color: #1a1a1a;    /* Dark font color */
+    font-size: 3.5rem; /* Large editorial size */
+    color: #1a1a1a;
     margin: 0;
-    line-height: 1.2;
-    font-weight: 700;
+    font-weight: 600;
+    line-height: 1.1;
 }
 
-/* The "gold eyebrow" or italic prefix used on Suites */
-.hero-about .italic-serif {
-    display: block;
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.1rem;
-    color: #c5a059;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-}
-
-/* --- MOBILE OVERRIDES --- */
-@media (max-width: 768px) {
-    .hero-about {
-        height: 40vh;
-        padding: 40px 30px;
-    }
-    
-    .hero-about h1 {
-        font-size: 1.8rem; /* Matching Suites Mobile Size */
-    }
-}
-.hero-about .hero-badge {
-    justify-content: flex-start; /* Keeps the gold line on the left */
-    margin-bottom: 15px;         /* Adds a nice gap above your H1 */
-}
-
-
-
-/* UNIFYING "SUNSET MEADOW" STYLING */
-.hero.hero-about .italic-serif {
-    font-family: 'Inter', sans-serif !important; 
-    font-style: normal !important;               
-    font-weight: inherit;                        
-    color: inherit;                              
-    font-size: 1em;                              
-}
-}
-
-/* MOBILE ADJUSTMENTS: Scale down for smaller screens */
+/* --- MOBILE ADJUSTMENTS --- */
 @media (max-width: 768px) {
     .hero.hero-about {
-        padding: 40px 25px;       
-        height: 40vh;             
+        height: 50vh;
+        padding: 0 0 60px 8%;
     }
-    .hero.hero-about h1 {
-        font-size: 1.8rem !important;
+    
+    .hero.hero-about .hero-title {
+        font-size: 2.2rem; /* Scaled for mobile view */
     }
-}
-
-/* THE SLIDE-OVER TRIGGER (ABOUT PAGE ONLY) */
-.hero.hero-about ~ section,
-.hero.hero-about ~ .main-content-wrapper,
-.hero.hero-about ~ .locked-mission-console { /* Added Mission Console to ensure it slides over */
-    position: relative;
-    z-index: 10;
-    background: #ffffff;
+    
+    .hero.hero-about .gold-line {
+        width: 30px;
+    }
 }
 /* Specific override for Suites Page Hero */
 /* Specific override for Suites Page Hero */
