@@ -1901,154 +1901,108 @@ body { font-family: sans-serif; overflow-x: hidden; }
 /* ==========================================
    GLOBAL BRAND VARIABLES & CORE
 ============================================= */
-:root {
-    --brand-blue: #0c1833;
-    --brand-gold: #c5a059;
-    --white: #ffffff;
-    --text-muted: rgba(255, 255, 255, 0.7);
-    --glass-bg: rgba(255, 255, 255, 0.05);
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
-}
-
-.italic-serif { font-family: 'Cormorant Garamond', serif; font-style: italic; }
-.luxe-container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 5%; }
-
-/* --- REVEAL ANIMATION ENGINE --- */
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.animate-on-scroll.show, 
-.animate-on-scroll.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-
-
-
-
-
-/* ==========================================
-   REFINED SECTION 1: WHO WE SERVE (SLIM)
-
-
-
-/* ==========================================
-   REFINED SECTION 1: SLIM DIRECTORY (TOP-HEAVY LAYOUT)
-============================================= */
-/* ==========================================
-   REFINED SECTION 1: SLIM DIRECTORY (INFINITE SLIDE)
-:root {
-    --brand-blue: #0c1833;
-    --brand-gold: #c5a059;
-}
-
-/* 1. THE MAIN CONTAINER (Taller & Frosted) */
-#client-directory.stewardship-directory {
+/* --- PREMIUM FROSTED SECTION (Isolated) --- */
+#premium-frosted-directory.stewardship-directory {
     position: relative;
     z-index: 20; 
     display: block;
-    padding: 100px 0; /* Taller section */
+    padding: 120px 0; /* Tall height */
     
-    /* FROSTED BACKGROUND: Tint + Image */
+    /* FROSTED BACKGROUND */
     background: linear-gradient(rgba(12, 24, 51, 0.8), rgba(12, 24, 51, 0.8)), 
                 url('your-background-photo.jpg') center/cover no-repeat;
     
-    /* Blurs the photo background */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     
     border-top: 1px solid rgba(197, 160, 89, 0.2);
     border-bottom: 1px solid rgba(197, 160, 89, 0.2);
 }
 
-/* 2. THE SLIDER ENGINE (Scoped) */
-#client-directory .dir-scroller-wrap {
+/* SCOPED TRACK */
+#premium-frosted-directory .dir-scroller-wrap {
     width: 100%;
     display: flex;
     overflow: hidden;
 }
 
-#client-directory .dir-track {
+#premium-frosted-directory .dir-track {
     display: flex;
     gap: 25px; 
     width: max-content;
     animation: scrollInfinite 45s linear infinite;
 }
 
-#client-directory .dir-track:hover {
-    animation-play-state: paused;
-}
-
-/* 3. THE CARDS (Scoped & Tall) */
-#client-directory .dir-item {
-    flex: 0 0 250px; 
+/* SCOPED TALL CARDS */
+#premium-frosted-directory .dir-item {
+    flex: 0 0 260px; 
     background: rgba(255, 255, 255, 0.05); 
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 30px 20px; 
-    min-height: 140px; /* Taller cards */
+    padding: 35px 20px; 
+    min-height: 150px; /* Tall card height */
     display: flex;
     flex-direction: column;
     justify-content: center;
     transition: all 0.4s ease;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
-#client-directory .dir-item:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--brand-gold);
+#premium-frosted-directory .dir-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #c5a059;
     transform: translateY(-5px);
 }
 
-/* 4. TEXT & ICONS (Shared or Scoped) */
-#client-directory .directory-header {
-    padding: 0 10%; 
-    margin-bottom: 15px;
-}
-
-#client-directory .client-type { 
-    font-size: 1rem; 
-    margin-bottom: 4px; 
-    font-family: 'Playfair Display', serif;
-    color: #ffffff;
-}
-
-#client-directory .client-status { 
-    font-size: 0.6rem; 
-    text-transform: uppercase;
-    letter-spacing: 1.5px; 
-    color: var(--brand-gold);
-}
-
-#client-directory .dir-icon i {
+/* SCOPED TEXT */
+#premium-frosted-directory .client-type { 
     font-size: 1.1rem; 
-    color: rgba(255, 255, 255, 0.4); 
+    color: #ffffff;
+    font-family: 'Playfair Display', serif;
 }
 
-/* 5. INDEX CARD (The 11th Card) */
-#client-directory .dir-index-end {
-    border: 1px solid var(--brand-gold) !important;
+#premium-frosted-directory .client-status { 
+    font-size: 0.65rem; 
+    color: #c5a059;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
-/* THE ANIMATION (Global is fine) */
+#premium-frosted-directory .dir-icon i {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+#premium-frosted-directory .dir-index-end {
+    border: 1px solid #c5a059 !important;
+}
+
+/* GLOBAL ENGINE (Safe to keep) */
 @keyframes scrollInfinite {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); } 
 }
-/* ==========================================
-   SECTION 2: ADMISSIONS JOURNEY (WHITE THEME)
-============================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* --- BLUEPRINT ADMISSIONS STYLING --- */
 /* --- BLUEPRINT ADMISSIONS STYLING --- */
 
