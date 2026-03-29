@@ -2931,31 +2931,30 @@ body {
 /* --- TIER HOVER ENGINE --- */
 /* --- HIGH-END ANIMATION ENGINE --- */
 /* --- AMBIENT REVEAL: NOW VISIBLE ON LOAD --- */
-.reveal-up {
-    opacity: 1;             /* Changed from 0 to 1 */
-    transform: translateY(0); /* Changed from 30px to 0 */
-    transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+/* --- AMBIENT REVEAL: NOW INSTANTLY VISIBLE --- */
+.reveal-up, .reveal-left {
+    opacity: 1 !important;      /* Forces visibility */
+    transform: translateY(0) !important; /* Forces correct position */
+    visibility: visible !important;
+    transition: none !important; /* Removes the 1.2s delay */
 }
 
-/* This class becomes a "safety net" but is no longer strictly needed for the initial show */
+/* This is now just a backup */
 .is-visible {
     opacity: 1 !important;
     transform: translateY(0) !important;
 }
 
-/* --- THE TIER HOVER LOGIC --- */
-/* We apply the hover to the inner content so it doesn't fight the reveal-up */
-/* --- TIER HOVER & COLOR ENGINE --- */
 /* --- THE FIXED TIER ENGINE --- */
 .tier-v3 { 
+    opacity: 1 !important;      /* Ensure the cards aren't invisible */
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
     background: #ffffff; 
     border: 1px solid #e2e8f0;
     position: relative;
-    z-index: 1;
+    z-index: 5;                 /* Slightly higher to stay above the hero */
 }
-
 
 
 
