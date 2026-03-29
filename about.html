@@ -476,123 +476,85 @@
    ========================================== */
 
 @media (max-width: 768px) {
-    /* --- HERO REFINEMENTS --- */
-    .hero-about h1 {
-        font-size: 2.2rem; /* Scaled for readability */
-        padding: 0 15px;
-    }
-    .hero-about p {
-        font-size: 0.9rem;
-        padding: 0 20px;
-        max-width: 100%;
-    }
-
-    /* --- MISSION CONSOLE: MOBILE STACK --- */
-    .locked-mission-console {
-        height: auto; /* Unlock the 380px constraint */
-        flex-direction: column;
-        border: none;
-    }
-
-    /* Expertise Rail - Horizontal Scroll on Mobile */
+    /* --- 1. PROFILES: NO CARDS (GHOST STYLE) --- */
     .profile-rail-tall {
-        width: 100%;
-        flex: none;
-        background: #fbfbfb;
-        padding-bottom: 20px;
-    }
-    .tall-scroll-area {
-        display: flex;
-        overflow-x: auto;
-        gap: 15px;
-        padding: 15px;
-        -webkit-overflow-scrolling: touch;
+        background: transparent !important;
+        border: none !important;
     }
     .dossier-card-tall {
-        flex: 0 0 260px; /* Fixed width for horizontal swipe */
-        margin-bottom: 0;
-        padding: 20px;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        flex: 0 0 100% !important; /* One profile per view */
+        padding: 10px 0 !important;
+    }
+    .mini-profile-photo {
+        width: 100px !important; /* Larger for impact */
+        height: 100px !important;
+        margin-bottom: 20px !important;
+    }
+    .nano-text {
+        font-size: 0.85rem !important; /* More readable on mobile */
+        color: #444 !important;
+        padding: 0 15px;
     }
 
-    /* Mission Master Card */
-    .mission-master-card {
-        padding: 40px 20px;
-    }
-    .mission-flex-container {
-        gap: 40px;
-    }
-    .mission-large-text {
-        font-size: 1.8rem;
-        text-align: center;
-    }
-    .mission-description {
-        text-align: center;
-    }
-
-    /* Deep Navy Card - Full Width */
-    .deep-navy-ratio-card {
-        width: 100%;
-        min-height: auto;
-        padding: 40px 25px;
-        text-align: center;
-    }
-    .navy-specs li {
-        justify-content: center;
-    }
-    .navy-accreditations {
-        justify-content: center;
-    }
-
-    /* --- STEWARDSHIP RIBBON (TICKER) --- */
+    /* --- 2. CONTINUUM SECTION: LIGHT & FRESH --- */
     .stewardship-ribbon {
-        padding: 40px 0;
+        background: #f8fafc !important; /* Fresh Off-White/Light Slate */
+        padding: 50px 0 !important;
     }
-    .ribbon-header-box {
-        text-align: center;
-        padding: 0 20px;
-        max-width: 100%;
+    .glass-photo-base, .frost-layer {
+        display: none !important; /* Remove heavy dark backgrounds */
     }
     .ribbon-title {
-        font-size: 1.8rem;
+        color: #0c1833 !important; /* Dark text for contrast on light bg */
     }
-    /* Speed up the ticker slightly for better mobile engagement */
-    .dir-track {
-        animation-duration: 25s; 
+    .dir-item {
+        background: #ffffff !important; /* Crisp white cards */
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
     }
+    .client-type { color: #0c1833 !important; }
+    .client-status { color: #64748b !important; }
 
-    /* --- ADMISSIONS JOURNEY --- */
+    /* --- 3. ADMISSIONS: FULL SIZE VIDEO --- */
     .split-view-container {
-        flex-direction: column;
+        display: flex;
+        flex-direction: column !important; /* Stack vertically */
     }
-    .journey-card-outline {
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid #eee;
+    .journey-card-outline.video-card-container {
+        order: -1; /* Move video to TOP of section */
+        height: auto !important;
+        border: none !important;
+        padding: 0 !important;
     }
-    .magazine-title {
-        font-size: 1.8rem;
-    }
-    
-    /* Video Viewport Adjustment */
     .iframe-viewport {
-        aspect-ratio: 9/16; /* Vertical video feel for mobile */
-        height: 500px;
+        height: 70vh !important; /* Tall, immersive mobile video */
+        width: 100vw !important;
+        margin-left: calc(-50vw + 50%); /* Center full-width */
     }
 
-    /* --- FOOTER GRID --- */
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 30px;
+    /* --- 4. ADMISSIONS: SWAPPABLE STEPS --- */
+    .journey-steps-container {
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory;
+        gap: 20px;
+        padding: 20px !important;
+        scrollbar-width: none;
     }
-    .footer-actions {
-        flex-direction: column;
-        width: 100%;
+    .journey-steps-container::-webkit-scrollbar { display: none; }
+    
+    .step-card-editorial {
+        flex: 0 0 85% !important; /* Show part of next card to hint at swipe */
+        scroll-snap-align: center;
+        background: #fff;
+        border: 1px solid #eee;
+        padding: 30px 20px !important;
+        height: auto !important;
     }
-    .btn-gold, .btn-phone {
-        width: 100%;
-        text-align: center;
-    }
+    .vertical-connector-blue { display: none; } /* Clean up connector for cards */
 }
 </style>
 
