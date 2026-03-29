@@ -99,6 +99,68 @@
 
 
 
+
+
+<style>
+    /* MOBILE ABOUT HERO OVERRIDE */
+    @media (max-width: 768px) {
+        .hero.hero-about {
+            /* SHORTER HEIGHT (25% less than other pages) */
+            height: 30vh !important;
+            min-height: 30vh !important;
+            
+            /* ALIGNMENT FIX */
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: flex-end !important;
+            align-items: flex-start !important;
+            
+            /* TIGHTER PADDING */
+            padding: 20px 25px !important;
+            box-sizing: border-box !important;
+            
+            /* STICKY SLIDE-OVER LOGIC */
+            position: sticky !important;
+            top: 0 !important;
+            z-index: -1 !important;
+        }
+
+        /* TIGHTEN THE TEXT AREA */
+        .hero.hero-about .hero-content {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            text-align: left !important;
+        }
+
+        .hero.hero-about .hero-badge {
+            margin-bottom: 4px !important;
+            transform: scale(0.85); /* Slightly smaller badge for shorter height */
+            transform-origin: left;
+        }
+
+        .hero.hero-about h1 {
+            font-size: 1.7rem !important; /* Slightly smaller to fit the 30vh frame */
+            line-height: 1.1 !important;
+            margin: 0 !important;
+            color: #1a1a1a !important;
+        }
+
+        /* KILL ANY GAP BELOW */
+        .locked-mission-console {
+            position: relative !important;
+            z-index: 10 !important;
+            margin-top: 0 !important;
+            background: #ffffff !important;
+        }
+    }
+</style>
+
+    
+
+
+
+
 <section class="locked-mission-console">
     
     <aside class="profile-rail-tall">
