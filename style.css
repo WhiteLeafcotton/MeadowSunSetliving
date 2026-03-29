@@ -434,48 +434,22 @@
 /* MOBILE ADJUSTMENTS - HARD SYNC */
 @media (max-width: 768px) {
     .hero.hero-about {
-        /* Force exact dimensions */
-        height: 40vh !important; 
-        min-height: 40vh !important;
-        max-height: 40vh !important;
-        width: 100% !important;
-        
-        /* Eliminate any hidden spacing */
-        margin: 0 !important;
-        padding: 40px 25px !important; 
-        box-sizing: border-box !important;
-        
-        /* Force bottom-left alignment */
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-end !important;
-        align-items: flex-start !important;
-        
-        /* Essential for sticky slide-over logic */
-        position: sticky !important;
-        top: 0 !important;
-        overflow: visible !important;
+        height: 40vh !important;
+        padding: 20px 25px !important; /* Slightly tighter bottom padding */
     }
 
-    .hero.hero-about h1 {
-        font-size: 1.8rem !important;
-        line-height: 1.2 !important;
+    /* This targets the container inside the hero to kill extra spacing */
+    .hero.hero-about .hero-content {
         margin: 0 !important;
         padding: 0 !important;
-        text-align: left !important;
+        display: flex;
+        flex-direction: column;
+        gap: 5px; /* Keeps the badge and H1 very close together */
     }
 
-    /* Ensure the content below doesn't create a gap */
-    .hero.hero-about + section {
-        margin-top: 0 !important;
+    .hero.hero-about .hero-badge {
+        margin-bottom: 5px !important; /* Prevents the badge from pushing the text up too high */
     }
-}
-
-/* Sticky slide-over logic for About Page sections */
-.hero.hero-about ~ section {
-    position: relative;
-    z-index: 10;
-    background: #ffffff;
 }
 /* Specific override for Suites Page Hero */
 /* Specific override for Suites Page Hero */
