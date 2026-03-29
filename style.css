@@ -419,7 +419,18 @@
     align-items: center;
     justify-content: center;
 }
+/* This is what makes "Suites" look like the stylized "The" */
+.italic-serif {
+    font-family: "Playfair Display", serif; /* Ensure this matches your luxury font */
+    font-style: italic;
+    color: #64748b; /* Your signature muted blue-grey */
+    font-weight: 400; /* Keeps it elegant and thin */
+}
 
+/* Ensure the subpage H1 doesn't have extra bottom margin since there is no subtext */
+.hero.hero-suites h1 {
+    margin-bottom: 0 !important;
+}
 /* Ensure the Suites content slides over the sticky hero */
 .hero.hero-suites ~ section,
 .hero.hero-suites ~ .blueprint-portal,
