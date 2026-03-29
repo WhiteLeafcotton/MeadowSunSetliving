@@ -431,26 +431,43 @@
 
 /* MOBILE ADJUSTMENTS */
 /* MOBILE ADJUSTMENTS - EXACT SYNC */
+/* MOBILE ADJUSTMENTS - HARD SYNC */
 @media (max-width: 768px) {
     .hero.hero-about {
-        height: 40vh !important;       /* Standardized height */
-        padding: 40px 25px !important;  /* Standardized padding */
+        /* Force exact dimensions */
+        height: 40vh !important; 
+        min-height: 40vh !important;
+        max-height: 40vh !important;
+        width: 100% !important;
         
-        /* Force the bottom-left alignment back on mobile */
+        /* Eliminate any hidden spacing */
+        margin: 0 !important;
+        padding: 40px 25px !important; 
+        box-sizing: border-box !important;
+        
+        /* Force bottom-left alignment */
         display: flex !important;
         flex-direction: column !important;
-        justify-content: flex-end !important; 
+        justify-content: flex-end !important;
         align-items: flex-start !important;
         
-        /* Ensure it behaves like the others */
-        width: 100% !important;
+        /* Essential for sticky slide-over logic */
+        position: sticky !important;
+        top: 0 !important;
         overflow: visible !important;
     }
 
     .hero.hero-about h1 {
         font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+        margin: 0 !important;
+        padding: 0 !important;
         text-align: left !important;
-        margin-bottom: 0 !important;
+    }
+
+    /* Ensure the content below doesn't create a gap */
+    .hero.hero-about + section {
+        margin-top: 0 !important;
     }
 }
 
