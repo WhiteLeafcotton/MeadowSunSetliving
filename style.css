@@ -375,7 +375,9 @@
 /* BASE HERO LOGIC */
 /* 1. BASE HERO DEFAULTS */
 /* --- 1. THE MAIN INDEX HERO (Full Height) --- */
-/* --- FULL-WIDTH LIGHT LUXURY HERO (RESTORED ORIGINAL) --- */
+/* ==========================================
+   1. MAIN INDEX HERO (NO CHANGES)
+   ============================================= */
 .hero {
     height: 100vh;
     width: 100%;
@@ -385,42 +387,55 @@
     padding: 0 10%;
     position: relative;
     overflow: hidden;
-    background-attachment: fixed; /* Your original parallax effect */
+    background-attachment: fixed; 
     z-index: 5;
 }
 
-/* Specific override for About Page Hero */
-.hero.hero-about {
+/* ==========================================
+   2. UNIFIED SUB-PAGE HEROES (About, Suites, Resident)
+   ============================================= */
+/* This forces About and Resident to follow the exact Suites layout */
+.hero.hero-about, 
+.hero.hero-suites,
+.hero.hero-resident {
     height: 50vh; 
-    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     background-attachment: scroll;
     position: sticky; 
     top: 0;
-    z-index: -1;
-
-    /* REPOSITION TO BOTTOM LEFT */
+    z-index: -1; 
+    
+    /* REPOSITION TO BOTTOM LEFT (The Suites Look) */
     display: flex;
-    align-items: flex-end;      /* Vertical: Bottom */
-    justify-content: flex-start; /* Horizontal: Left */
-    padding: 60px;              /* Matches Suites padding */
+    align-items: flex-end;      
+    justify-content: flex-start; 
+    padding: 60px;               
 }
 
-.hero-about .hero-badge {
-    justify-content: flex-start; /* Keeps the gold line on the left */
-    margin-bottom: 15px;         /* Adds a nice gap above your H1 */
-}
+/* Page Specific Backgrounds */
+.hero.hero-about { background-image: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true"); }
+.hero.hero-suites { background-image: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true"); }
+.hero.hero-resident { background-image: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true"); }
 
-/* MATCHING THE H1 FONT SIZE & COLOR */
-.hero.hero-about h1 {
+/* Unified Typography for Sub-pages */
+.hero.hero-about h1,
+.hero.hero-suites h1,
+.hero.hero-resident h1 {
     margin-bottom: 0 !important;
-    font-size: 2.4rem !important; /* Matches Suites size */
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem !important; 
     text-align: left;
-    color: #1a1a1a;               /* Clean dark text */
+    color: #1a1a1a; 
     letter-spacing: -0.5px;
+    line-height: 1.2;
 }
 
-/* UNIFYING "SUNSET MEADOW" STYLING */
-.hero.hero-about .italic-serif {
+/* Force "Sunset Meadow" and Sub-titles to look identical */
+.hero.hero-about .italic-serif,
+.hero.hero-suites .italic-serif,
+.hero.hero-resident .italic-serif {
     font-family: 'Inter', sans-serif !important; 
     font-style: normal !important;               
     font-weight: inherit;                        
@@ -428,283 +443,43 @@
     font-size: 1em;                              
 }
 
-/* MOBILE ADJUSTMENTS: Scale down for smaller screens */
-@media (max-width: 768px) {
-    .hero.hero-about {
-        padding: 40px 25px;       
-        height: 40vh;             
-    }
-    .hero.hero-about h1 {
-        font-size: 1.8rem !important;
-    }
-}
-
-/* THE SLIDE-OVER TRIGGER (ABOUT PAGE ONLY) */
+/* ==========================================
+   3. THE SLIDE-OVER TRIGGER (Logic)
+   ============================================= */
 .hero.hero-about ~ section,
-.hero.hero-about ~ .main-content-wrapper,
-.hero.hero-about ~ .locked-mission-console { /* Added Mission Console to ensure it slides over */
-    position: relative;
-    z-index: 10;
-    background: #ffffff;
-}
-/* Specific override for Suites Page Hero */
-/* Specific override for Suites Page Hero */
-/* Specific override for Suites Page Hero */
-.hero.hero-suites {
-    height: 50vh; 
-    background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true') center/cover no-repeat;
-    background-attachment: scroll;
-    position: sticky; 
-    top: 0;
-    z-index: -1;
-    
-    /* REPOSITION TO BOTTOM LEFT */
-    display: flex;
-    align-items: flex-end;      /* Vertical: Bottom */
-    justify-content: flex-start; /* Horizontal: Left */
-    padding: 60px;              /* Ample breathing room from the corner */
-}
-
-/* ADJUSTING THE H1 FONT SIZE & COLOR */
-.hero.hero-suites h1 {
-    margin-bottom: 0 !important;
-    font-size: 2.4rem !important; /* Slightly bigger, but still refined */
-    text-align: left;             /* Align text to the left */
-    color: #1a1a1a;               /* Matches your primary dark text color */
-    letter-spacing: -0.5px;       /* Keeps the larger text looking tight and professional */
-}
-
-/* UNIFYING "SUITES" STYLING */
-.hero.hero-suites .italic-serif {
-    font-family: 'Inter', sans-serif !important; /* Matches your primary body font */
-    font-style: normal !important;               /* No more slant */
-    font-weight: inherit;                        /* Matches the H1 weight */
-    color: inherit;                              /* Forces it to be the same color as the rest of the H1 */
-    font-size: 1em;                              /* Same size as the surrounding text */
-}
-
-/* MOBILE ADJUSTMENTS: Scale down for smaller screens */
-@media (max-width: 768px) {
-    .hero.hero-suites {
-        padding: 40px 25px;       /* Tighter padding for mobile */
-        height: 40vh;             /* Slightly shorter hero on mobile */
-    }
-    .hero.hero-suites h1 {
-        font-size: 1.8rem !important;
-    }
-}
-
-/* Sticky slide-over logic remains the same */
 .hero.hero-suites ~ section,
-.hero.hero-suites ~ .blueprint-portal,
-.hero.hero-suites ~ .mobile-narrative-card {
-    position: relative;
-    z-index: 10;
-    background: #ffffff;
-}
-/* Specific override for Resident Page Hero */
-/* Specific override for Resident Page Hero */
-.hero.hero-resident {
-    height: 50vh; 
-    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat;
-    background-attachment: scroll;
-    position: sticky; 
-    top: 0;
-    z-index: -1; /* Matches the Suites/About slide-over logic */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Ensure the Resident content (Events, Table, etc.) slides over the sticky hero */
 .hero.hero-resident ~ section,
+.hero.hero-about ~ .main-content-wrapper,
+.hero.hero-suites ~ .blueprint-portal,
 .hero.hero-resident ~ .admissions-journey,
-.hero.hero-resident ~ .magazine-editorial,
-.hero.hero-resident ~ .stewardship-directory {
+.hero.hero-resident ~ .magazine-editorial {
     position: relative;
     z-index: 10;
-    background: #ffffff; /* This is what "covers" the hero as you scroll */
-}
-/* --- THE REST IS YOUR ORIGINAL DESIGN CODE --- */
-
-.hero-light-overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(to right, 
-        rgba(255, 255, 255, 0.7) 0%, 
-        rgba(255, 255, 255, 0.3) 50%, 
-        transparent 100%);
-    z-index: 1;
+    background: #ffffff; 
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 750px;
-}
-
-.hero-badge {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
-.badge-line {
-    width: 40px;
-    height: 1px;
-    background: #475569;
-}
-
-.badge-text {
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 0.7rem;
-    color: #475569;
-    font-weight: 600;
-}
-
-.hero h1 {
-    font-size: clamp(50px, 7vw, 90px);
-    font-family: "Playfair Display", serif;
-    color: #0f172a;
-    line-height: 1.05;
-    margin-bottom: 25px;
-    font-weight: 400;
-}
-
-.italic-serif {
-    font-style: italic;
-    color: #64748b;
-}
-
-.hero p {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: #334155;
-    max-width: 500px;
-    margin-bottom: 45px;
-    font-weight: 300;
-}
-
-/* Luxury Buttons */
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-}
-
-.btn-midnight {
-    padding: 18px 40px;
-    background: #0f172a;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: 0.4s ease;
-}
-
-.btn-glass-light {
-    padding: 18px 40px;
-    border: 1px solid #0f172a;
-    color: #0f172a;
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: 0.4s ease;
-}
-
-.scroll-indicator {
-    position: absolute;
-    bottom: 40px;
-    left: 10%;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.scroll-text {
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #64748b;
-    writing-mode: vertical-lr;
-}
-
-.scroll-line {
-    width: 1px;
-    height: 60px;
-    background: linear-gradient(to bottom, #64748b, transparent);
-}
-/* --- MOBILE ADAPTATION --- */
-/* --- EXTRA SPECIAL MOBILE HERO --- */
-/* --- MOBILE ADAPTATION --- */
-/* --- PREMIUM DESKTOP-STYLE MOBILE HERO --- */
+/* ==========================================
+   4. MOBILE SYNC
+   ============================================= */
 @media (max-width: 768px) {
+    /* Maintain Index Main Page Padding */
     .hero {
-        padding: 0 10%; /* Keep that generous 10% breathing room on the left */
-        justify-content: flex-start; /* Keeps text left-aligned, not centered */
-        background-attachment: scroll; /* Better performance on mobile chips */
+        padding: 0 10%;
+        background-attachment: scroll;
     }
 
-    .hero-light-overlay {
-        /* We make the light wash a bit more solid (0.8) so text is 100% readable over the image */
-        background: linear-gradient(to right, 
-            rgba(255, 255, 255, 0.85) 0%, 
-            rgba(255, 255, 255, 0.4) 70%, 
-            transparent 100%);
+    /* Sub-Page Mobile Sync */
+    .hero.hero-about,
+    .hero.hero-suites,
+    .hero.hero-resident {
+        padding: 40px 25px;      
+        height: 40vh;            
     }
-
-    .hero-content {
-        max-width: 100%; /* Let it use the available width */
-        text-align: left; /* Strict left alignment to match desktop */
-    }
-
-    .hero h1 {
-        font-size: 2.8rem; /* Large enough to feel "Premium" but fits the screen */
-        line-height: 1.1;
-        margin-bottom: 20px;
-    }
-
-    .hero p {
-        font-size: 0.95rem;
-        max-width: 90%; /* Don't let text hit the right edge */
-        margin-bottom: 35px;
-    }
-
-    /* Keep the buttons sleek and side-by-side if they fit, or stack elegantly */
-    .hero-buttons {
-        flex-direction: column; /* Stacking is safer for long mobile text */
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .btn-midnight, .btn-glass-light {
-        width: auto; /* Keeps them from looking like "blocks" */
-        min-width: 200px;
-        padding: 14px 25px;
-        text-align: center;
-    }
-
-    /* The Scroll Indicator - We keep this because it looks expensive */
-    .scroll-indicator {
-        left: 10%;
-        bottom: 30px;
-        transform: scale(0.8); /* Scale it down slightly for mobile */
-    }
-
-    /* The Fox Watermark - Move it to the bottom right corner */
-    .hero-watermark {
-        right: 20px;
-        bottom: 20px;
-        width: 80px;
-        opacity: 0.1; /* Keep it very faint like a real watermark */
+    
+    .hero.hero-about h1,
+    .hero.hero-suites h1,
+    .hero.hero-resident h1 {
+        font-size: 1.8rem !important;
     }
 }
 /* SERVICES */
