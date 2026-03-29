@@ -2930,16 +2930,13 @@ body {
 
 /* --- TIER HOVER ENGINE --- */
 /* --- HIGH-END ANIMATION ENGINE --- */
-.reveal-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+.reveal-up { 
+    opacity: 1; 
+    transform: translateY(0); /* Removed the 30px jump */
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); 
 }
 
-.is-visible {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
+.is-visible { opacity: 1 !important; transform: translate(0, 0) !important; }
 
 /* --- THE TIER HOVER LOGIC --- */
 /* We apply the hover to the inner content so it doesn't fight the reveal-up */
