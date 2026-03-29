@@ -390,34 +390,61 @@
 }
 
 /* Specific override for About Page Hero */
-.hero.hero-about {
-    height: 50vh; 
-    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat;
-    background-attachment: scroll;
-    position: sticky; 
-    top: 0;
-    z-index: -1;
-
-    /* REPOSITION TO BOTTOM LEFT */
+/* --- HERO ALIGNMENT: MATCHING SUITES --- */
+.hero-about {
+    height: 50vh; /* Matching the sticky slide-over height */
     display: flex;
-    align-items: flex-end;      /* Vertical: Bottom */
-    justify-content: flex-start; /* Horizontal: Left */
-    padding: 60px;              /* Matches Suites padding */
+    align-items: flex-end; /* Positions text at the bottom */
+    justify-content: flex-start; /* Positions text to the left */
+    padding: 60px; /* Matching Suites padding */
+    background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true') center/cover no-repeat;
+    position: relative;
 }
 
+/* --- TYPOGRAPHY: MATCHING SUITES --- */
+.hero-about .hero-content {
+    text-align: left;
+    max-width: 800px;
+    z-index: 2;
+}
+
+.hero-about h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem; /* Matching Suites Desktop Size */
+    color: #1a1a1a;    /* Dark font color */
+    margin: 0;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+/* The "gold eyebrow" or italic prefix used on Suites */
+.hero-about .italic-serif {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #c5a059;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* --- MOBILE OVERRIDES --- */
+@media (max-width: 768px) {
+    .hero-about {
+        height: 40vh;
+        padding: 40px 30px;
+    }
+    
+    .hero-about h1 {
+        font-size: 1.8rem; /* Matching Suites Mobile Size */
+    }
+}
 .hero-about .hero-badge {
     justify-content: flex-start; /* Keeps the gold line on the left */
     margin-bottom: 15px;         /* Adds a nice gap above your H1 */
 }
 
-/* MATCHING THE H1 FONT SIZE & COLOR */
-.hero.hero-about h1 {
-    margin-bottom: 0 !important;
-    font-size: 2.4rem !important; /* Matches Suites size */
-    text-align: left;
-    color: #1a1a1a;               /* Clean dark text */
-    letter-spacing: -0.5px;
-}
+
 
 /* UNIFYING "SUNSET MEADOW" STYLING */
 .hero.hero-about .italic-serif {
