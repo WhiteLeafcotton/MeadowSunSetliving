@@ -454,6 +454,7 @@
     color: inherit;                              
     font-size: 1em;                              
 }
+}
 
 /* MOBILE ADJUSTMENTS: Scale down for smaller screens */
 @media (max-width: 768px) {
