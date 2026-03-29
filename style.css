@@ -564,17 +564,15 @@
 /* Specific override for Payment Page Hero */
 /* --- 1. HERO FIX: EXACT SUITES REPLICA --- */
         /* --- 1. HERO FIX: EXACT SUITES REPLICA --- */
+/* --- PAYMENT PAGE HERO: ISOLATED FIX --- */
 .hero.hero-payment {
     height: 50vh !important; 
     width: 100% !important;
-    /* FIXED: Added missing quote after Image 15.jpeg */
     background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2015.jpeg?raw=true') center/cover no-repeat !important;
     background-attachment: scroll !important; 
-    
     position: sticky !important; 
     top: 0;
     z-index: -1; 
-    
     display: flex !important;
     align-items: flex-end !important;
     justify-content: flex-start !important;
@@ -582,18 +580,34 @@
     overflow: visible !important;
 }
 
-/* Typography Sync */
+/* Ensure the light overlay stays behind the text but over the photo */
+.hero.hero-payment .hero-light-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to right, 
+        rgba(255, 255, 255, 0.8) 0%, 
+        rgba(255, 255, 255, 0.4) 50%, 
+        transparent 100%);
+    z-index: 1;
+}
+
+/* Text Styling: Bottom Left Align */
+.hero.hero-payment .hero-content {
+    position: relative;
+    z-index: 5; /* Forces text above the overlay */
+    text-align: left;
+}
+
 .hero.hero-payment h1 {
     margin-bottom: 0 !important;
     font-size: 2.4rem !important;
     color: #1a1a1a !important;
-    text-align: left !important;
     letter-spacing: -0.5px !important;
     font-family: 'Playfair Display', serif;
-    position: relative;
-    z-index: 5; /* Keeps text above the overlay */
 }
 
+/* Removes the italic/serif slant from the word 'Pricing' */
 .hero.hero-payment .italic-serif {
     font-family: 'Inter', sans-serif !important;
     font-style: normal !important;
@@ -602,23 +616,22 @@
     font-size: 1em;
 }
 
-/* Slide-Over Logic: Ensures the next section covers the hero image */
+/* Critical: Ensures the next sections slide OVER the hero */
 .hero.hero-payment ~ section {
     position: relative;
     z-index: 10;
     background: #ffffff; 
 }
 
-/* Overlay Styling */
-.hero-light-overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(to right, 
-        rgba(255, 255, 255, 0.7) 0%, 
-        rgba(255, 255, 255, 0.3) 50%, 
-        transparent 100%);
-    z-index: 1;
+/* Mobile Fix */
+@media (max-width: 768px) {
+    .hero.hero-payment {
+        height: 40vh !important;
+        padding: 40px 25px !important;
+    }
+    .hero.hero-payment h1 {
+        font-size: 1.8rem !important;
+    }
 }
 /* --- THE REST IS YOUR ORIGINAL DESIGN CODE --- */
 
