@@ -431,26 +431,34 @@
 /* --- ABOUT PAGE VIDEO OVERRIDE --- */
 /* --- ABOUT PAGE: MOBILE VIDEO SEPARATE TREATMENT --- */
 @media (max-width: 768px) {
+    /* This creates the 'Portrait' container for the vertical video */
     .mobile-only-video {
         position: relative;
-        width: 100vw;           /* Force it to the full width of the screen */
-        margin-left: -5%;       /* Pulls it back if your container has 5% padding */
-        height: 250px;          /* Cinematic height */
+        width: 100vw;           /* Edge to edge */
+        margin-left: -5%;       /* Adjust based on your container padding */
+        height: 550px;          /* HEIGHT FIXED: This makes it feel like a vertical story */
+        margin-top: 30px;       /* Pushes it away from the button above */
         overflow: hidden;
-        background: #000;       /* Black bars if the video ratio shifts */
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        background: #000;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
 
     .mobile-only-video iframe {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;            /* Makes the YouTube player fill the div */
-        height: 100%;           /* Makes the YouTube player fill the div */
+        top: 50%;
+        left: 50%;
+        width: 100%;            /* Fills the width */
+        height: 100%;           /* Fills the 550px height */
+        transform: translate(-50%, -50%) scale(1.1); /* Slight zoom to hide player edges */
         border: none;
-        pointer-events: none;    /* Keeps the "app-like" feel so people don't accidentally click to YouTube */
-        transform: scale(1.3);   /* Zooms slightly to hide the black edges of the YouTube player */
     }
+    
+    /* Ensure the video card container doesn't restrict the height */
+    .video-card-container {
+        height: auto !important;
+        padding-bottom: 20px;
+    }
+
 
 
 </style>
