@@ -169,16 +169,16 @@
 
 
         
-    <section class="pricing-tiers" style="padding: 100px 0 60px 0; background: #fff; position: relative; overflow: hidden;">
+   <section class="pricing-tiers" style="padding: 80px 0 60px 0; background: #fff; position: relative; overflow: hidden;">
     <div class="swipe-indicator arrow-left"><i class="fa-solid fa-chevron-left"></i></div>
     <div class="swipe-indicator arrow-right"><i class="fa-solid fa-chevron-right"></i></div>
     
-    <div class="flex-container" style="max-width: 1400px; margin: 0 auto; padding: 0 5%; position: relative; z-index: 2;">
+    <div style="max-width: 1400px; margin: 0 auto; position: relative; z-index: 2; padding: 0 5%;">
         
-        <div class="section-header reveal-up" style="margin-bottom: 80px; position: relative;">
-            <span class="private-eyebrow">Payments Accepted</span>
+        <div class="section-header reveal-up" style="margin-bottom: 80px;">
+            <span style="color: #bfa15f; letter-spacing: 10px; text-transform: uppercase; font-size: 0.65rem; font-family: 'Inter'; font-weight: 800; display: block; margin-bottom: 20px;">Payments Accepted</span>
             
-            <h2 class="private-pay-title">
+            <h2 class="private-pay-strip-title">
                 Private <span class="italic-pay-match">Pay.</span>
             </h2>
         </div>
@@ -193,7 +193,7 @@
                         <div class="price-text">$203.50 <span>DAILY</span></div>
                     </div>
                 </div>
-
+                
                 <div class="tier-card-snap reveal-up stagger-2">
                     <div class="tier-v3 featured">
                         <div class="featured-badge">Signature</div>
@@ -204,7 +204,7 @@
                         <button class="tier-btn">Secure Suite</button>
                     </div>
                 </div>
-
+                
                 <div class="tier-card-snap reveal-up stagger-3">
                     <div class="tier-v3">
                         <span class="tier-label">03 / Elite</span>
@@ -219,41 +219,29 @@
 </section>
 
 <style>
-    /* --- PRIVATE PAY HEADER STYLES --- */
-    .private-eyebrow {
-        color: #bfa15f; 
-        letter-spacing: 10px; 
-        text-transform: uppercase; 
-        font-size: 0.65rem; 
-        font-family: 'Inter', sans-serif; 
-        font-weight: 800; 
-        display: block; 
-        margin-bottom: 20px;
-    }
-
-    .private-pay-title {
-        font-family: 'Playfair Display', serif;
+    /* --- THE STRIP FIX --- */
+    .private-pay-strip-title {
+        font-family: 'Playfair Display';
         font-size: 6rem;
         color: #0f172a;
         margin: 0;
         letter-spacing: -2px;
-        line-height: 0.85; /* Controls the thickness of the photo strip */
+        line-height: 0.8; /* Thickness of the strip */
         position: relative;
         display: block;
         width: 100%;
         z-index: 1;
     }
 
-    /* THE PHOTO STRIP: Matches Flex Pay logic + Stewardship Dark Blue Overlay */
-    .private-pay-title::before {
+    /* THE STRIP: Dark Blue Overlay from Stewardship + Image */
+    .private-pay-strip-title::before {
         content: "";
         position: absolute;
-        left: -100vw; /* Bleeds out to left edge of screen */
-        right: -100vw; /* Bleeds out to right edge of screen */
+        left: -100vw; 
+        right: -100vw; 
         top: 0;
         bottom: 0;
         z-index: -1;
-        /* THE EXACT DARK BLUE OVERLAY: rgba(12, 24, 51, 0.78) */
         background-image: linear-gradient(rgba(12, 24, 51, 0.78), rgba(12, 24, 51, 0.78)), 
                           url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
         background-size: cover;
@@ -268,82 +256,23 @@
         font-size: 7.5rem;
         margin-left: -10px;
         vertical-align: middle;
-        line-height: 1;
     }
 
-    /* --- MOBILE RESPONSIVENESS --- */
+    /* --- MOBILE RESPONSIVENESS (MATCHING FLEX PAY) --- */
     @media (max-width: 768px) {
-        .private-pay-title { 
-            font-size: 3.8rem !important; 
+        .private-pay-strip-title {
+            font-size: 3.8rem !important;
             line-height: 0.9 !important;
         }
-        
-        .italic-pay-match { 
-            font-size: 4.8rem !important; 
-            margin-left: 0px !important;
+        .italic-pay-match {
+            font-size: 4.8rem !important;
+            margin-left: 5px !important;
         }
-
         .section-header {
             margin-bottom: 40px !important;
         }
     }
-
-    /* --- GRID & CARDS (Inherited styles for consistency) --- */
-    .tier-grid {
-        display: flex;
-        gap: 30px;
-        overflow-x: auto;
-        padding-bottom: 20px;
-        scrollbar-width: none; /* Firefox */
-    }
-    .tier-grid::-webkit-scrollbar { display: none; } /* Chrome/Safari */
-
-    .tier-v3 {
-        min-width: 300px;
-        padding: 40px;
-        background: #f8fafc;
-        border: 1px solid #e2e8f0;
-        transition: transform 0.3s ease;
-    }
-
-    .tier-v3.featured {
-        background: #0f172a;
-        color: #fff;
-        border-color: #bfa15f;
-        transform: scale(1.05);
-    }
-
-    .tier-v3.featured .tier-title, 
-    .tier-v3.featured .tier-desc {
-        color: #fff;
-    }
-
-    .tier-title {
-        font-family: 'Playfair Display';
-        font-size: 2rem;
-        margin: 15px 0;
-    }
-
-    .price-text {
-        font-weight: 700;
-        font-size: 1.5rem;
-        margin-top: 20px;
-        color: #bfa15f;
-    }
-
-    .tier-btn {
-        margin-top: 25px;
-        width: 100%;
-        padding: 15px;
-        background: #bfa15f;
-        color: #fff;
-        border: none;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        cursor: pointer;
-    }
 </style>
-
 
 
 
