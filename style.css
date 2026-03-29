@@ -503,26 +503,59 @@
 }
 /* Specific override for Resident Page Hero */
 /* Specific override for Resident Page Hero */
+/* Specific override for Resident Page Hero */
 .hero.hero-resident {
     height: 50vh; 
     background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat;
     background-attachment: scroll;
     position: sticky; 
     top: 0;
-    z-index: -1; /* Matches the Suites/About slide-over logic */
+    z-index: -1;
+    
+    /* REPOSITION TO BOTTOM LEFT - Matches About/Suites */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;      /* Vertical: Bottom */
+    justify-content: flex-start; /* Horizontal: Left */
+    padding: 60px;               /* Consistent breathing room */
 }
 
-/* Ensure the Resident content (Events, Table, etc.) slides over the sticky hero */
+/* ADJUSTING THE H1 FONT SIZE & COLOR */
+.hero.hero-resident h1 {
+    margin-bottom: 0 !important;
+    font-size: 2.4rem !important;
+    text-align: left;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+}
+
+/* UNIFYING TYPOGRAPHY */
+.hero.hero-resident .italic-serif {
+    font-family: 'Inter', sans-serif !important;
+    font-style: normal !important;
+    font-weight: inherit;
+    color: inherit;
+    font-size: 1em;
+}
+
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 768px) {
+    .hero.hero-resident {
+        padding: 40px 25px;
+        height: 40vh;
+    }
+    .hero.hero-resident h1 {
+        font-size: 1.8rem !important;
+    }
+}
+
+/* Sticky slide-over logic for Resident Page sections */
 .hero.hero-resident ~ section,
 .hero.hero-resident ~ .admissions-journey,
 .hero.hero-resident ~ .magazine-editorial,
 .hero.hero-resident ~ .stewardship-directory {
     position: relative;
     z-index: 10;
-    background: #ffffff; /* This is what "covers" the hero as you scroll */
+    background: #ffffff;
 }
 /* --- THE REST IS YOUR ORIGINAL DESIGN CODE --- */
 
