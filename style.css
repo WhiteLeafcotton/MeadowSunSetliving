@@ -430,13 +430,27 @@
 }
 
 /* MOBILE ADJUSTMENTS */
+/* MOBILE ADJUSTMENTS - EXACT SYNC */
 @media (max-width: 768px) {
     .hero.hero-about {
-        padding: 40px 25px;
-        height: 40vh;
+        height: 40vh !important;       /* Standardized height */
+        padding: 40px 25px !important;  /* Standardized padding */
+        
+        /* Force the bottom-left alignment back on mobile */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-end !important; 
+        align-items: flex-start !important;
+        
+        /* Ensure it behaves like the others */
+        width: 100% !important;
+        overflow: visible !important;
     }
+
     .hero.hero-about h1 {
         font-size: 1.8rem !important;
+        text-align: left !important;
+        margin-bottom: 0 !important;
     }
 }
 
