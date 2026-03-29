@@ -409,6 +409,7 @@
 }
 
 /* Specific override for Suites Page Hero */
+/* Specific override for Suites Page Hero */
 .hero.hero-suites {
     height: 50vh; 
     background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true') center/cover no-repeat;
@@ -417,41 +418,43 @@
     top: 0;
     z-index: -1;
     
-    /* REPOSITION TO BOTTOM RIGHT */
+    /* REPOSITION TO BOTTOM LEFT */
     display: flex;
-    align-items: flex-end;    /* Vertical: Bottom */
-    justify-content: flex-end; /* Horizontal: Right */
-    padding: 40px;            /* Spacing from the corner */
+    align-items: flex-end;      /* Vertical: Bottom */
+    justify-content: flex-start; /* Horizontal: Left */
+    padding: 60px;              /* Ample breathing room from the corner */
 }
 
-/* REDUCING THE H1 FONT SIZE */
+/* ADJUSTING THE H1 FONT SIZE & COLOR */
 .hero.hero-suites h1 {
     margin-bottom: 0 !important;
-    font-size: 1.8rem !important; /* Smaller, refined size */
-    text-align: right;            /* Aligns text to the right */
-    letter-spacing: 1px;
+    font-size: 2.4rem !important; /* Slightly bigger, but still refined */
+    text-align: left;             /* Align text to the left */
+    color: #1a1a1a;               /* Matches your primary dark text color */
+    letter-spacing: -0.5px;       /* Keeps the larger text looking tight and professional */
 }
 
-/* REMOVING THE ITALIC SERIF STYLE */
+/* UNIFYING "SUITES" STYLING */
 .hero.hero-suites .italic-serif {
-    font-family: "Inter", sans-serif !important; /* Switching from Playfair to your clean font */
-    font-style: normal !important;               /* Removing the slant */
-    color: #c5a059;                              /* Using your signature gold instead of blue-grey */
-    font-weight: 600;                            /* Slightly bolder for clarity at a smaller size */
-    font-size: 0.9em;                            /* Makes the "Suites" part slightly smaller than the main text */
+    font-family: 'Inter', sans-serif !important; /* Matches your primary body font */
+    font-style: normal !important;               /* No more slant */
+    font-weight: inherit;                        /* Matches the H1 weight */
+    color: inherit;                              /* Forces it to be the same color as the rest of the H1 */
+    font-size: 1em;                              /* Same size as the surrounding text */
 }
 
-/* MOBILE ADJUSTMENT: Ensure it doesn't get cramped */
+/* MOBILE ADJUSTMENTS: Scale down for smaller screens */
 @media (max-width: 768px) {
     .hero.hero-suites {
-        padding: 25px;
+        padding: 40px 25px;       /* Tighter padding for mobile */
+        height: 40vh;             /* Slightly shorter hero on mobile */
     }
     .hero.hero-suites h1 {
-        font-size: 1.4rem !important;
+        font-size: 1.8rem !important;
     }
 }
 
-/* Keep your existing section logic for the slide-over effect */
+/* Sticky slide-over logic remains the same */
 .hero.hero-suites ~ section,
 .hero.hero-suites ~ .blueprint-portal,
 .hero.hero-suites ~ .mobile-narrative-card {
