@@ -396,50 +396,55 @@
 
 /* --- CONSISTENT SUBPAGE HERO --- */
 /* --- ABOUT PAGE HERO: EXACT SUITES REPLICA --- */
-/* --- COMPACT ABOUT HERO: LOWER LEFT ALIGNMENT --- */
 .hero.hero-about {
-    height: 40vh; /* Reduced height */
-    min-height: 300px;
+    height: 50vh; 
     background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true') center/cover no-repeat;
     background-attachment: scroll;
     position: sticky; 
     top: 0;
     z-index: -1;
     
-    /* POSITIONING: BOTTOM LEFT */
+    /* REPOSITION TO BOTTOM LEFT */
     display: flex;
-    align-items: flex-end;      
-    justify-content: flex-start; 
-    padding: 40px 60px; /* Reduced vertical padding to tuck it into the corner */
+    align-items: flex-end;      /* Vertical: Bottom */
+    justify-content: flex-start; /* Horizontal: Left */
+    padding: 60px;               /* Ample breathing room from the corner */
 }
 
-/* MATCHING TEXT STYLING */
+/* ADJUSTING THE H1 FONT SIZE & COLOR TO MATCH SUITES */
 .hero.hero-about h1 {
-    margin-top: 10px; /* Space between the "brow" badge and the title */
     margin-bottom: 0 !important;
-    font-size: 2.2rem !important; /* Slightly scaled down for the smaller hero */
+    font-size: 2.4rem !important;
     text-align: left;
     color: #1a1a1a;
-    line-height: 1.1;
+    letter-spacing: -0.5px;
 }
 
-/* REMOVING SERIF/ITALIC TO MATCH SUITES OVERRIDE */
+/* UNIFYING TYPOGRAPHY (Removing the italic/serif styling as per your Suites override) */
 .hero.hero-about .italic-serif {
     font-family: 'Inter', sans-serif !important;
     font-style: normal !important;
     font-weight: inherit;
     color: inherit;
+    font-size: 1em;
 }
 
 /* MOBILE ADJUSTMENTS */
 @media (max-width: 768px) {
     .hero.hero-about {
-        height: 30vh; /* Even smaller for mobile */
-        padding: 30px 25px;
+        padding: 40px 25px;
+        height: 40vh;
     }
     .hero.hero-about h1 {
-        font-size: 1.6rem !important;
+        font-size: 1.8rem !important;
     }
+}
+
+/* Sticky slide-over logic for About Page sections */
+.hero.hero-about ~ section {
+    position: relative;
+    z-index: 10;
+    background: #ffffff;
 }
 /* Specific override for Suites Page Hero */
 /* Specific override for Suites Page Hero */
