@@ -567,7 +567,7 @@
 .hero.hero-payment {
     height: 50vh; 
     /* The core fix: ensuring the image is called correctly with scroll attachment */
-    background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2011.jpeg?raw=true') center/cover no-repeat !important;
+    background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true') center/cover no-repeat !important;
     background-attachment: scroll !important; 
     
     /* Sticky Logic: Pushes image behind content as you scroll */
