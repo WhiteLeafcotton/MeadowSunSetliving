@@ -376,97 +376,68 @@
 /* 1. BASE HERO DEFAULTS */
 /* --- 1. THE MAIN INDEX HERO (Full Height) --- */
 /* --- GLOBAL HERO DEFAULTS --- */
-.hero {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0 10%;
-    position: relative;
-    overflow: hidden;
-    z-index: 5;
-}
-
-/* Home Page Hero (Original) */
-.hero:not(.hero-about):not(.hero-suites):not(.hero-resident) {
-    background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat;
-    background-attachment: fixed;
-}
-
-/* --- SUBPAGE OVERRIDES (About, Suites, Resident) --- */
+/* --- SUBPAGE SPECIFIC OVERRIDES --- */
+/* This only affects pages with these specific classes */
 .hero.hero-about, 
 .hero.hero-suites, 
 .hero.hero-resident {
-    height: 50vh; /* Shorter for sub-titles */
+    height: 50vh !important; /* Shorter than the Home Page hero */
     position: sticky; 
     top: 0;
-    z-index: -1; /* Pushes behind the content for slide-over */
-    background-attachment: scroll;
+    z-index: -1; /* Pushes hero behind content for the slide-over */
+    background-attachment: scroll !important;
+    display: flex;
+    align-items: center;
 }
 
-/* Specific Subpage Backgrounds */
+/* Specific Backgrounds for Subpages */
 .hero.hero-about { background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true") center/cover no-repeat; }
 .hero.hero-suites { background: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2012.jpeg?raw=true') center/cover no-repeat; }
 .hero.hero-resident { background: url("https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%201.jpeg?raw=true") center/cover no-repeat; }
 
-/* --- HERO INTERNALS --- */
-.hero-light-overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3), transparent);
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 750px;
-}
-
-.hero-badge {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
-.badge-line { width: 40px; height: 1px; background: #475569; }
-.badge-text { text-transform: uppercase; letter-spacing: 5px; font-size: 0.7rem; color: #475569; font-weight: 600; }
-
-.hero h1 {
-    font-size: clamp(45px, 6vw, 80px); /* Slightly smaller for subpages */
-    font-family: "Playfair Display", serif;
-    color: #0f172a;
-    line-height: 1.05;
-    font-weight: 400;
-}
-
-.italic-serif { font-style: italic; color: #64748b; }
-
-/* Hide Subtext, Buttons, and Scroll Indicators on Subpages */
-.hero.hero-about p, .hero.hero-suites p, .hero.hero-resident p,
-.hero.hero-about .hero-buttons, .hero.hero-suites .hero-buttons, .hero.hero-resident .hero-buttons,
-.hero.hero-about .scroll-indicator, .hero.hero-suites .scroll-indicator, .hero.hero-resident .scroll-indicator {
+/* 1. HIDE SUBTEXT, BUTTONS, AND SCROLL INDICATOR ON SUBPAGES ONLY */
+.hero.hero-about p, 
+.hero.hero-suites p, 
+.hero.hero-resident p,
+.hero.hero-about .hero-buttons, 
+.hero.hero-suites .hero-buttons, 
+.hero.hero-resident .hero-buttons,
+.hero.hero-about .scroll-indicator, 
+.hero.hero-suites .scroll-indicator, 
+.hero.hero-resident .scroll-indicator {
     display: none !important;
 }
 
-/* --- THE SLIDE-OVER TRIGGER --- */
-/* This ensures your sections have a white background and slide OVER the sticky hero */
-.hero.hero-about ~ section, .hero.hero-about ~ .main-content-wrapper,
-.hero.hero-suites ~ section, .hero.hero-suites ~ .blueprint-portal,
-.hero.hero-resident ~ section, .hero.hero-resident ~ .admissions-journey {
-    position: relative;
-    z-index: 10;
-    background: #ffffff; 
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.05); /* Soft shadow for the transition */
+/* 2. ADJUST SUBPAGE HEADING SIZE */
+.hero.hero-about h1,
+.hero.hero-suites h1,
+.hero.hero-resident h1 {
+    font-size: clamp(40px, 5vw, 60px); /* Clean title size */
+    margin-bottom: 0;
 }
 
-/* --- MOBILE --- */
+/* 3. SUBPAGE SLIDE-OVER TRIGGER */
+/* This ensures the content has a solid background to "cover" the hero as you scroll */
+.hero.hero-about ~ section, 
+.hero.hero-about ~ .main-content-wrapper,
+.hero.hero-suites ~ section, 
+.hero.hero-suites ~ .blueprint-portal,
+.hero.hero-resident ~ section, 
+.hero.hero-resident ~ .admissions-journey {
+    position: relative;
+    z-index: 10;
+    background: #ffffff; /* Essential for the slide-over effect */
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* 4. MOBILE SUBPAGE ADAPTATION */
 @media (max-width: 768px) {
-    .hero { padding: 0 10%; }
-    .hero h1 { font-size: 2.5rem; }
-    .hero.hero-about, .hero.hero-suites, .hero.hero-resident { height: 40vh; }
+    .hero.hero-about, 
+    .hero.hero-suites, 
+    .hero.hero-resident {
+        height: 40vh !important;
+    }
 }
 /* SERVICES */
 
