@@ -785,25 +785,29 @@
     }
 
     /* 2. Force the mobile video container to be visible and have height */
-    .mobile-only-video {
-        display: block !important;
-        position: relative !important;
-        width: 100% !important;
-        height: 500px !important; /* Forces the 'window' open so you can see the video */
-        z-index: 10 !important;
-        background: #000;
-    }
+    /* 3. Scale the iframe to BLAST the black bars out of view */
+.mobile-only-video iframe {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    /* We make the video 150% of the height of the 500px container */
+    width: 180% !important; 
+    height: 150% !important; 
+    /* This centers the video and zooms it in just enough to hide the edges */
+    transform: translate(-50%, -50%) scale(1.2) !important; 
+    border: none !important;
+    pointer-events: none;
+}
 
-    /* 3. Scale the iframe so it fills the container perfectly */
-    .mobile-only-video iframe {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100% !important;
-        height: 100% !important;
-        transform: translate(-50%, -50%) scale(1.5); /* Crops the edges for a premium look */
-        border: none;
-    }
+/* THE CLIPPER: This is the 'frame' that hides the extra video/black bars */
+.mobile-only-video {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    height: 500px !important; /* THE FIXED HEIGHT */
+    overflow: hidden !important; /* THIS CHOPS OFF THE BLACK STRIPS */
+    background: #000;
+}
 
     /* 4. Ensure the main container stacks correctly */
     .split-view-container {
