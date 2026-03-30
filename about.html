@@ -490,33 +490,43 @@
 /* --- ABOUT PAGE VIDEO OVERRIDE --- */
 /* --- ABOUT PAGE: MOBILE VIDEO SEPARATE TREATMENT --- */
 @media (max-width: 768px) {
-    /* This creates the 'Portrait' container for the vertical video */
-    .mobile-only-video {
-        position: relative;
-        width: 100vw;           /* Edge to edge */
-        margin-left: -5%;       /* Adjust based on your container padding */
-        height: 550px;          /* HEIGHT FIXED: This makes it feel like a vertical story */
-        margin-top: 30px;       /* Pushes it away from the button above */
-        overflow: hidden;
-        background: #000;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    /* 1. Ensure the split container stacks vertically so the video gets full width */
+    .split-view-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
+    /* 2. Target the specific card holding the video */
+    .video-card-container {
+        width: 100% !important;
+        padding: 0 !important; /* Remove padding so video can go edge-to-edge */
+        border: none !important; /* Optional: removes border for a cleaner look */
+        height: 600px !important; /* Increased height for that 'Portrait' story feel */
+    }
+
+    /* 3. The Video Wrapper */
+    .mobile-only-video {
+        position: relative;
+        width: 100%;
+        height: 100%; /* Fills the 600px container */
+        margin: 0; 
+        overflow: hidden;
+        background: #000;
+    }
+
+    /* 4. The Iframe */
     .mobile-only-video iframe {
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 100%;            /* Fills the width */
-        height: 100%;           /* Fills the 550px height */
-        transform: translate(-50%, -50%) scale(1.1); /* Slight zoom to hide player edges */
-        border: none;
+        width: 100%;
+        height: 100%;
+        /* The 'transform' below ensures the video covers the area without bars */
+        transform: translate(-50%, -50%) scale(1.5); 
+        pointer-events: none; /* Prevents users from accidentally clicking YouTube links */
     }
-    
-    /* Ensure the video card container doesn't restrict the height */
-    .video-card-container {
-        height: auto !important;
-        padding-bottom: 20px;
-    }
+}
 
 
 
