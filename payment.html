@@ -221,86 +221,89 @@
 
 <style>
     /* --- 1. THE PHOTO STRIP (Dark Blue Overlay) --- */
+   /* --- 1. THE PHOTO STRIP (Fixed for Full-Width & No Wiggle) --- */
+.private-pay-strip-title {
+    font-family: 'Playfair Display';
+    font-size: 6rem;
+    color: #0f172a;
+    margin: 0;
+    letter-spacing: -2px;
+    line-height: 0.8; 
+    position: relative;
+    display: block;
+    width: 100%;
+    z-index: 1;
+}
+
+.private-pay-strip-title::before {
+    content: "";
+    position: absolute;
+    /* Centering Trick: Locks photo to screen edges without breaking the page */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    
+    z-index: -1;
+    background-image: linear-gradient(rgba(12, 24, 51, 0.78), rgba(12, 24, 51, 0.78)), 
+                      url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2036.jpeg?raw=true');
+    background-size: cover;
+    background-position: center;
+}
+
+.italic-pay-match {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: #bfa15f;
+    font-size: 7.5rem;
+    margin-left: -10px;
+    vertical-align: middle;
+}
+
+/* --- 2. THE FROSTED ON-BRAND BUTTON --- */
+.frosted-tier-btn {
+    margin-top: 25px;
+    width: 100%;
+    padding: 18px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+}
+
+.frosted-tier-btn:hover {
+    background: rgba(191, 161, 95, 0.2);
+    border-color: #bfa15f;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* --- 3. MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
     .private-pay-strip-title {
-        font-family: 'Playfair Display';
-        font-size: 6rem;
-        color: #0f172a;
-        margin: 0;
-        letter-spacing: -2px;
-        line-height: 0.8; 
-        position: relative;
-        display: block;
-        width: 100%;
-        z-index: 1;
+        font-size: 3.8rem !important;
+        line-height: 0.9 !important;
     }
-
-    .private-pay-strip-title::before {
-        content: "";
-        position: absolute;
-        left: -100vw; 
-        right: -100vw; 
-        top: 0;
-        bottom: 0;
-        z-index: -1;
-        background-image: linear-gradient(rgba(12, 24, 51, 0.78), rgba(12, 24, 51, 0.78)), 
-                          url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2036.jpeg?raw=true');
-        background-size: cover;
-        background-position: center;
-    }
-
     .italic-pay-match {
-        font-family: 'Cormorant Garamond', serif;
-        font-style: italic;
-        font-weight: 400;
-        color: #bfa15f;
-        font-size: 7.5rem;
-        margin-left: -10px;
-        vertical-align: middle;
+        font-size: 4.8rem !important;
+        margin-left: 5px !important;
     }
-
-    /* --- 2. THE FROSTED ON-BRAND BUTTON --- */
-    .frosted-tier-btn {
-        margin-top: 25px;
-        width: 100%;
-        padding: 18px;
-        font-family: 'Inter', sans-serif;
-        font-weight: 700;
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        cursor: pointer;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        color: #ffffff;
-        
-        /* Glassmorphism Effect */
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        
-        transition: all 0.4s ease;
+    .section-header {
+        margin-bottom: 40px !important;
+        /* Ensure the header container doesn't block the full-width strip */
+        overflow: visible !important; 
     }
-
-    .frosted-tier-btn:hover {
-        background: rgba(191, 161, 95, 0.2); /* Subtle Gold Frost on hover */
-        border-color: #bfa15f;
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-        transform: translateY(-2px);
-    }
-
-    /* --- 3. MOBILE RESPONSIVENESS --- */
-    @media (max-width: 768px) {
-        .private-pay-strip-title {
-            font-size: 3.8rem !important;
-            line-height: 0.9 !important;
-        }
-        .italic-pay-match {
-            font-size: 4.8rem !important;
-            margin-left: 5px !important;
-        }
-        .section-header {
-            margin-bottom: 40px !important;
-        }
-    }
+}
 </style>
 
 
