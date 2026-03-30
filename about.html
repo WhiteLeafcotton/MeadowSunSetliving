@@ -473,52 +473,60 @@
 
     /* RESPONSIVE */
     /* RESPONSIVE SCOPE OF CARE */
+/* SCOPE OF CARE MOBILE ONLY */
 @media (max-width: 768px) {
-    /* 1. FLIP THE MAIN BACKGROUND TO WHITE */
-    #premium-directory-unique.stewardship-directory {
-        background: #ffffff !important; /* Pure white main background */
+    /* 1. FLIP MAIN BACKGROUND TO WHITE */
+    #premium-directory-unique.stewardship-directory { 
+        background: #ffffff !important; 
         padding: 60px 0 !important;
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
         border-top: 1px solid #eee;
     }
 
-    /* 2. UPDATE TITLES FOR WHITE BACKGROUND */
+    /* 2. MAKE TITLE DARK (For visibility on white) */
     #premium-directory-unique .magazine-title { 
-        font-size: 2.4rem; 
-        color: #1a1a1a !important; /* Dark text for visibility */
+        font-size: 2.6rem !important; 
+        color: #1a1a1a !important; 
+        padding: 0 25px;
     }
     
-    #premium-directory-unique .section-header-top {
+    #premium-directory-unique .gold-eyebrow {
         padding: 0 25px;
-        margin-bottom: 30px;
+        margin-bottom: 8px;
     }
 
-    /* 3. MOVE THE PHOTO + OVERLAY INTO THE INDIVIDUAL CARDS */
+    /* 3. MOVE PHOTO + BLUE OVERLAY INTO THE INDIVIDUAL CARDS */
     #premium-directory-unique .dir-item {
-        flex: 0 0 280px !important;
-        /* Individual card now gets the dark blue + photo background */
+        flex: 0 0 260px !important;
+        /* Individual card now holds the photo and the dark blue tint */
         background: linear-gradient(rgba(12, 24, 51, 0.85), rgba(12, 24, 51, 0.85)), 
                     url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800') center/cover no-repeat !important;
         border: 1px solid rgba(197, 160, 89, 0.3) !important;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Lift the card off the background */
+        
+        /* ADDED THIS FOR ROUND CORNERS */
+        border-radius: 2px !important; 
     }
 
-    /* Ensure the Gold Index card stands out even more on white */
+    /* 4. THE GOLD INDEX CARD: Standing out even more on white */
     #premium-directory-unique .dir-index-end {
-        background: linear-gradient(rgba(197, 160, 89, 0.95), rgba(197, 160, 89, 0.95)), 
+        background: linear-gradient(rgba(197, 160, 89, 0.9), rgba(197, 160, 89, 0.9)), 
                     url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800') center/cover no-repeat !important;
+        
+        /* ADDED THIS FOR ROUND CORNERS */
+        border-radius: 2px !important; 
     }
     
     #premium-directory-unique .dir-index-end .index-digit,
     #premium-directory-unique .dir-index-end .client-status {
-        color: #fff !important; /* Make white on the gold card */
+        color: #fff !important; /* White text on the gold card */
     }
 
-    /* Remove the edge fading on mobile to make cards pop on white */
+    /* 5. CLEAN UP THE SCROLLER FOR MOBILE */
     #premium-directory-unique .dir-scroller-wrap {
-        mask-image: none;
-        -webkit-mask-image: none;
+        mask-image: none !important;
+        -webkit-mask-image: none !important;
     }
 }
 
