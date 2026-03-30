@@ -721,7 +721,40 @@
         width: 100%;
         font-size: 0.75rem;
     }
-}
+/* 1. Hide steps by default so the intro shows first */
+    #admissionsSteps {
+        display: none !important;
+        opacity: 0;
+    }
+
+    /* 2. When the button is clicked (JS adds this class), HIDE the intro */
+    #admissionsCard.mobile-view-active #admissionsIntro {
+        display: none !important;
+    }
+
+    /* 3. When the button is clicked, SHOW the steps */
+    #admissionsCard.mobile-view-active #admissionsSteps {
+        display: block !important;
+        opacity: 1;
+        animation: fadeIn 0.4s ease-in;
+    }
+
+    /* Elegant fade-in for the steps */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Style the "Back" button at the bottom of the steps */
+    .back-btn {
+        margin-top: 25px;
+        background: #f9f9f9;
+        border: 1px solid #eee;
+        color: #999;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+    }
 
 
 </style>
