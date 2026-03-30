@@ -474,21 +474,25 @@
     /* RESPONSIVE */
     /* RESPONSIVE SCOPE OF CARE */
 /* SCOPE OF CARE MOBILE ONLY */
+/* SCOPE OF CARE MOBILE CLEAN-UP */
 @media (max-width: 768px) {
-    /* 1. FLIP MAIN BACKGROUND TO WHITE */
+    /* 1. REMOVE LINES AND TIGHTEN BOTTOM PADDING */
     #premium-directory-unique.stewardship-directory { 
         background: #ffffff !important; 
-        padding: 60px 0 !important;
+        padding-top: 60px !important;    /* Keeps top spacing for the title */
+        padding-bottom: 20px !important; /* REDUCED: Removes the heavy bottom gap */
+        border-top: none !important;    /* REMOVES TOP LINE */
+        border-bottom: none !important; /* REMOVES BOTTOM LINE */
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
-        border-top: 1px solid #eee;
     }
 
-    /* 2. MAKE TITLE DARK (For visibility on white) */
+    /* 2. TITLE ALIGNMENT */
     #premium-directory-unique .magazine-title { 
         font-size: 2.6rem !important; 
         color: #1a1a1a !important; 
         padding: 0 25px;
+        margin-bottom: 5px !important;
     }
     
     #premium-directory-unique .gold-eyebrow {
@@ -496,34 +500,29 @@
         margin-bottom: 8px;
     }
 
-    /* 3. MOVE PHOTO + BLUE OVERLAY INTO THE INDIVIDUAL CARDS */
+    /* 3. CARDS WITH ROUND CORNERS */
     #premium-directory-unique .dir-item {
         flex: 0 0 260px !important;
-        /* Individual card now holds the photo and the dark blue tint */
         background: linear-gradient(rgba(12, 24, 51, 0.85), rgba(12, 24, 51, 0.85)), 
                     url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800') center/cover no-repeat !important;
         border: 1px solid rgba(197, 160, 89, 0.3) !important;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Lift the card off the background */
-        
-        /* ADDED THIS FOR ROUND CORNERS */
-        border-radius: 2px !important; 
+        border-radius: 8px !important; /* Rounded corners to match your aesthetic */
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     }
 
-    /* 4. THE GOLD INDEX CARD: Standing out even more on white */
+    /* 4. GOLD INDEX CARD ROUND CORNERS */
     #premium-directory-unique .dir-index-end {
         background: linear-gradient(rgba(197, 160, 89, 0.9), rgba(197, 160, 89, 0.9)), 
                     url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800') center/cover no-repeat !important;
-        
-        /* ADDED THIS FOR ROUND CORNERS */
-        border-radius: 2px !important; 
+        border-radius: 8px !important; 
     }
     
     #premium-directory-unique .dir-index-end .index-digit,
     #premium-directory-unique .dir-index-end .client-status {
-        color: #fff !important; /* White text on the gold card */
+        color: #fff !important;
     }
 
-    /* 5. CLEAN UP THE SCROLLER FOR MOBILE */
+    /* 5. REMOVE EDGE FADE */
     #premium-directory-unique .dir-scroller-wrap {
         mask-image: none !important;
         -webkit-mask-image: none !important;
