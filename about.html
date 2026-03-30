@@ -878,209 +878,113 @@
 
 
 
-
-// new thang perfect
 <script>
-/**
- * Toggles the 5-Step Admissions Journey on Mobile
- * Includes smooth scroll to ensure the user starts at Step 1
- */
-function toggleMobileSteps(showSteps) {
-    const card = document.getElementById('admissionsCard');
-    
-    if (window.innerWidth <= 768) {
-        if (showSteps) {
-            card.classList.add('mobile-view-active');
-            // Ensures the user is positioned correctly to read the steps
-            card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
-            card.classList.remove('mobile-view-active');
-        }
-    }
-}
+    /* 1. YOUTUBE API SETUP */
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-/**
- * Standard Mobile Navigation Menu
- */
-function toggleMenu() {
-    const sideMenu = document.getElementById('sideMenu');
-    sideMenu.classList.toggle('active');
-}
+    var playerDesktop, playerMobile;
 
-/**
- * YouTube Iframe Audio Controller
- * Targets both Desktop and Mobile iframes
- */
-const muteBtn = document.getElementById('customMuteBtn');
-const muteIcon = document.getElementById('muteIcon');
-const muteText = document.getElementById('muteText');
-let isMuted = true;
-
-if (muteBtn) {
-    muteBtn.addEventListener('click', function() {
-        isMuted = !isMuted;
-        const action = isMuted ? 'mute' : 'unMute';
-        
-        // Update UI
-        muteIcon.className = isMuted ? 'fa-solid fa-volume-xmark' : 'fa-solid fa-volume-high';
-        muteText.innerText = isMuted ? 'TAP FOR AUDIO' : 'AUDIO ON';
-
-        // Send command to all YouTube iframes
-        document.querySelectorAll('iframe').forEach(ifr => {
-            ifr.contentWindow.postMessage(JSON.stringify({
-                event: 'command',
-                func: action
-            }), '*');
+    function onYouTubeIframeAPIReady() {
+        playerDesktop = new YT.Player('journeyVideo', {
+            events: { 'onReady': onPlayersReady }
         });
-    });
-}
-
-/**
- * Tour Booking Modal Logic
- */
-function openModal() {
-    document.getElementById('bookingModal').style.display = 'block';
-}
-
-function closeModal() {
-    document.getElementById('bookingModal').style.display = 'none';
-}
-
-window.onclick = function(event) {
-    const modal = document.getElementById('bookingModal');
-    if (event.target == modal) {
-        closeModal();
-    }
-};
-</script>
-
-
-
-
-        
-
-
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-var playerDesktop, playerMobile;
-
-function onYouTubeIframeAPIReady() {
-    // Initialize Desktop Player
-    playerDesktop = new YT.Player('journeyVideo', {
-        events: { 'onReady': onPlayersReady }
-    });
-    
-    // Initialize Mobile Player
-    playerMobile = new YT.Player('journeyVideoMobile', {
-        events: { 'onReady': onPlayersReady }
-    });
-}
-
-function onPlayersReady() {
-    const muteBtn = document.getElementById('customMuteBtn');
-    
-    muteBtn.addEventListener('click', function() {
-        // Determine which player is currently visible/active
-        let activePlayer = (window.innerWidth <= 768) ? playerMobile : playerDesktop;
-
-        if (activePlayer.isMuted()) {
-            activePlayer.unMute();
-            document.getElementById('muteIcon').className = 'fa-solid fa-volume-high';
-            document.getElementById('muteText').innerText = 'SOUND ON';
-        } else {
-            activePlayer.mute();
-            document.getElementById('muteIcon').className = 'fa-solid fa-volume-xmark';
-            document.getElementById('muteText').innerText = 'TAP FOR AUDIO';
-        }
-    });
-}
-        
-
-
-
-
-
-
-        
-        function toggleMute() {
-    const video = document.getElementById('admissionsVideo');
-    const icon = document.getElementById('muteIcon');
-    const text = document.getElementById('muteText');
-
-    if (video.muted) {
-        video.muted = false;
-        icon.classList.remove('fa-volume-xmark');
-        icon.classList.add('fa-volume-high');
-        text.innerText = "SOUND ON";
-    } else {
-        video.muted = true;
-        icon.classList.remove('fa-volume-high');
-        icon.classList.add('fa-volume-xmark');
-        text.innerText = "TAP FOR AUDIO";
-    }
-}
-        // Toggle Mobile Menu
-        function toggleMenu() {
-            const menu = document.getElementById("sideMenu");
-            menu.classList.toggle("active");
-            document.body.style.overflow = menu.classList.contains("active") ? "hidden" : "auto";
-        }
-
-        // Header Scroll Effect perfect base
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.main-header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+        playerMobile = new YT.Player('journeyVideoMobile', {
+            events: { 'onReady': onPlayersReady }
         });
+    }
 
-        // Mobile DropdownsP
-        document.querySelectorAll('.mobile-dropdown .main-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                const subMenu = this.nextElementSibling;
-                if (subMenu && subMenu.classList.contains('sub-links')) {
-                    e.preventDefault();
-                    const isVisible = subMenu.style.display === 'block';
-                    subMenu.style.display = isVisible ? 'none' : 'block';
-                    const icon = this.querySelector('i');
-                    if(icon) {
-                        icon.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)';
-                        icon.style.transition = '0.3s';
+    function onPlayersReady() {
+        const muteBtn = document.getElementById('customMuteBtn');
+        if (muteBtn) {
+            muteBtn.addEventListener('click', function() {
+                let activePlayer = (window.innerWidth <= 768) ? playerMobile : playerDesktop;
+                
+                // Ensure the player is loaded before calling methods
+                if (activePlayer && activePlayer.isMuted) {
+                    if (activePlayer.isMuted()) {
+                        activePlayer.unMute();
+                        document.getElementById('muteIcon').className = 'fa-solid fa-volume-high';
+                        document.getElementById('muteText').innerText = 'SOUND ON';
+                    } else {
+                        activePlayer.mute();
+                        document.getElementById('muteIcon').className = 'fa-solid fa-volume-xmark';
+                        document.getElementById('muteText').innerText = 'TAP FOR AUDIO';
                     }
                 }
             });
-        });
-
-        // Modal Logic
-        window.openModal = function(){ document.getElementById("bookingModal").style.display = "block"; }
-        window.closeModal = function(){ document.getElementById("bookingModal").style.display = "none"; }
-        window.onclick = function(event){
-            const modal = document.getElementById("bookingModal");
-            if(event.target === modal){ modal.style.display = "none"; }
         }
+    }
 
-        // Reveal Animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    entry.target.classList.add('show');
+    /* 2. ADMISSIONS JOURNEY TOGGLE */
+    function toggleMobileSteps(showSteps) {
+        const card = document.getElementById('admissionsCard');
+        if (window.innerWidth <= 768) {
+            if (showSteps) {
+                card.classList.add('mobile-view-active');
+                card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                card.classList.remove('mobile-view-active');
+            }
+        }
+    }
+
+    /* 3. NAVIGATION & SCROLL EFFECTS */
+    function toggleMenu() {
+        const menu = document.getElementById("sideMenu");
+        menu.classList.toggle("active");
+        document.body.style.overflow = menu.classList.contains("active") ? "hidden" : "auto";
+    }
+
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('.main-header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Mobile Dropdown Interactions
+    document.querySelectorAll('.mobile-dropdown .main-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const subMenu = this.nextElementSibling;
+            if (subMenu && subMenu.classList.contains('sub-links')) {
+                e.preventDefault();
+                const isVisible = subMenu.style.display === 'block';
+                subMenu.style.display = isVisible ? 'none' : 'block';
+                const icon = this.querySelector('i');
+                if(icon) {
+                    icon.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)';
                 }
-            });
-        }, { threshold: 0.1 });
+            }
+        });
+    });
 
-        document.querySelectorAll('.animate-on-scroll, .video-footer').forEach(el => observer.observe(el));
-    </script>
+    /* 4. MODAL LOGIC */
+    function openModal() { document.getElementById("bookingModal").style.display = "block"; }
+    function closeModal() { document.getElementById("bookingModal").style.display = "none"; }
+    
+    window.onclick = function(event) {
+        const modal = document.getElementById("bookingModal");
+        if(event.target === modal) { modal.style.display = "none"; }
+    }
 
-    <script>
-        window.chatbaseConfig = { chatbotId: "PhPwg7-iLonUCo-_uKjPY" }
-    </script>
-    <script src="https://www.chatbase.co/embed.min.js" id="PhPwg7-iLonUCo-_uKjPY" defer></script>
+    /* 5. REVEAL ANIMATIONS */
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible', 'show');
+            }
+        });
+    }, { threshold: 0.1 });
 
-</body>
-</html>
+    document.querySelectorAll('.animate-on-scroll, .video-footer').forEach(el => observer.observe(el));
+</script>
+
+<script>
+    window.chatbaseConfig = { chatbotId: "PhPwg7-iLonUCo-_uKjPY" }
+</script>
+<script src="https://www.chatbase.co/embed.min.js" id="PhPwg7-iLonUCo-_uKjPY" defer></script>
