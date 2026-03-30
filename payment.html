@@ -597,12 +597,10 @@
 
 <style>
 /* --- CORE LAYOUT & STRIP (Unchanged per your request) --- */
-#flex-pay-section {
-    padding: 100px 0 !important;
-    background: #ffffff;
-    font-family: 'Inter', sans-serif;
+#flex-pay-section .flex-container {
+    max-width: none !important;
+    padding: 0 !important;
 }
-.flex-container { max-width: 1400px; margin: 0 auto; padding: 0 5%; }
 .title-strip-bg-wrapper { overflow: hidden; margin-bottom: 80px; padding: 20px 0; }
 .flex-main-title {
     font-family: 'Playfair Display'; font-size: 6rem; color: #0f172a; margin: 0;
@@ -748,14 +746,14 @@
 
     /* 2. THE PHOTO STRIP FIX (Full-Width Edge-to-Edge) */
     .section-header, 
-    .title-strip-bg-wrapper {
-        width: 100vw !important; /* Force to viewport width */
-        margin-left: -5vw !important; /* Pull left to negate parent padding */
-        position: relative;
-        padding: 60px 25px !important; /* Internal spacing for text */
-        box-sizing: border-box;
-        overflow: hidden !important;
-    }
+.title-strip-bg-wrapper {
+    width: 100vw !important;         /* Force to full viewport width */
+    margin-left: -5vw !important;    /* Pull left to offset the 5% parent padding */
+    position: relative;
+    padding: 60px 25px !important;   /* Add internal padding so text doesn't touch the glass */
+    box-sizing: border-box;
+    overflow: hidden !important;
+}
 
     .private-pay-strip-title, 
     .flex-main-title {
