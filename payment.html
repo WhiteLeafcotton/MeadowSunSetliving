@@ -175,7 +175,7 @@
     
     <div style="max-width: 1400px; margin: 0 auto; position: relative; z-index: 2; padding: 0 5%;">
         
-        <div class="section-header reveal-up" style="margin-bottom: 80px;">
+        <div class="section-header full-width-mobile-strip reveal-up" style="margin-bottom: 40px;">
             <span style="color: #bfa15f; letter-spacing: 10px; text-transform: uppercase; font-size: 0.65rem; font-family: 'Inter'; font-weight: 800; display: block; margin-bottom: 20px;">Payments Accepted</span>
             
             <h2 class="private-pay-strip-title">
@@ -746,26 +746,30 @@
         position: relative;
     }
 
-    /* 2. THE PHOTO STRIP FIX (Private Pay & Flex Pay) */
+    /* 2. THE PHOTO STRIP FIX (Full-Width Edge-to-Edge) */
     .section-header, 
     .title-strip-bg-wrapper {
-        width: 100% !important;
-        overflow: hidden !important; 
+        width: 100vw !important; /* Force to viewport width */
+        margin-left: -5vw !important; /* Pull left to negate parent padding */
         position: relative;
-        padding: 40px 0 !important;
+        padding: 60px 25px !important; /* Internal spacing for text */
+        box-sizing: border-box;
+        overflow: hidden !important;
     }
 
     .private-pay-strip-title, 
     .flex-main-title {
-        font-size: 3.2rem !important;
+        font-size: 3rem !important;
         line-height: 1.0 !important;
         width: 100% !important;
+        text-align: left;
     }
 
     .italic-pay-match, 
     .italic-pay {
-        font-size: 4.2rem !important;
+        font-size: 4rem !important;
         margin-left: 0 !important;
+        display: inline-block;
     }
 
     /* 3. PRICING TIERS (Scroll Fix) */
@@ -785,7 +789,7 @@
     }
 
     .tier-card-snap {
-        width: 280px !important; /* Forces cards to stay legible */
+        width: 280px !important;
     }
 
     /* 4. FLEX PAY STACK */
@@ -794,6 +798,7 @@
         flex-direction: column !important;
         width: 100% !important;
         border: none !important;
+        margin-top: 20px;
     }
 
     .flex-card-compact, 
@@ -803,6 +808,7 @@
         border-right: none !important;
         border-bottom: 1px solid #f1f5f9;
         text-align: left !important;
+        box-sizing: border-box;
     }
 
     .card-title, .cta-title { 
