@@ -472,10 +472,55 @@
     }
 
     /* RESPONSIVE */
-    @media (max-width: 768px) {
-        #premium-directory-unique .magazine-title { font-size: 2.8rem; }
-        #premium-directory-unique.stewardship-directory { padding: 60px 0 !important; }
+    /* RESPONSIVE SCOPE OF CARE */
+@media (max-width: 768px) {
+    /* 1. FLIP THE MAIN BACKGROUND TO WHITE */
+    #premium-directory-unique.stewardship-directory {
+        background: #ffffff !important; /* Pure white main background */
+        padding: 60px 0 !important;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border-top: 1px solid #eee;
     }
+
+    /* 2. UPDATE TITLES FOR WHITE BACKGROUND */
+    #premium-directory-unique .magazine-title { 
+        font-size: 2.4rem; 
+        color: #1a1a1a !important; /* Dark text for visibility */
+    }
+    
+    #premium-directory-unique .section-header-top {
+        padding: 0 25px;
+        margin-bottom: 30px;
+    }
+
+    /* 3. MOVE THE PHOTO + OVERLAY INTO THE INDIVIDUAL CARDS */
+    #premium-directory-unique .dir-item {
+        flex: 0 0 280px !important;
+        /* Individual card now gets the dark blue + photo background */
+        background: linear-gradient(rgba(12, 24, 51, 0.85), rgba(12, 24, 51, 0.85)), 
+                    url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800') center/cover no-repeat !important;
+        border: 1px solid rgba(197, 160, 89, 0.3) !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    /* Ensure the Gold Index card stands out even more on white */
+    #premium-directory-unique .dir-index-end {
+        background: linear-gradient(rgba(197, 160, 89, 0.95), rgba(197, 160, 89, 0.95)), 
+                    url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800') center/cover no-repeat !important;
+    }
+    
+    #premium-directory-unique .dir-index-end .index-digit,
+    #premium-directory-unique .dir-index-end .client-status {
+        color: #fff !important; /* Make white on the gold card */
+    }
+
+    /* Remove the edge fading on mobile to make cards pop on white */
+    #premium-directory-unique .dir-scroller-wrap {
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
+}
 
 
 
