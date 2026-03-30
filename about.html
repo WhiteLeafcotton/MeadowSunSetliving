@@ -682,11 +682,11 @@
 
     /* Target the text card specifically */
     #admissionsCard {
-        padding: 40px 30px !important; /* Give content some edge room */
+        padding: 40px 30px !important;
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Pushes content and button to edges */
-        overflow: hidden; /* Crucial for switching effect */
+        justify-content: center;
+        overflow: hidden;
         background: #fff;
     }
 
@@ -754,6 +754,39 @@
         font-size: 0.7rem;
         letter-spacing: 1px;
     }
+    /* 1. Hide the desktop video container so it doesn't block the mobile one */
+    .desktop-only-video {
+        display: none !important;
+    }
+
+    /* 2. Force the mobile video container to be visible and have height */
+    .mobile-only-video {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        height: 500px !important; /* Forces the 'window' open so you can see the video */
+        z-index: 10 !important;
+        background: #000;
+    }
+
+    /* 3. Scale the iframe so it fills the container perfectly */
+    .mobile-only-video iframe {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100% !important;
+        height: 100% !important;
+        transform: translate(-50%, -50%) scale(1.5); /* Crops the edges for a premium look */
+        border: none;
+    }
+
+    /* 4. Ensure the main container stacks correctly */
+    .split-view-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+    }
+
     }
 
 
