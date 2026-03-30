@@ -281,6 +281,7 @@
     .julianne-bg { background-image: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true'); }
     .eleanor-bg { background-image: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2015.jpeg?raw=true'); }
 
+    /* DESKTOP OVERLAY (Vertical Gradient) */
     .card-overlay {
         position: absolute;
         inset: 0;
@@ -302,30 +303,27 @@
     .mission-description { font-size: 1rem; line-height: 1.8; color: #555; font-weight: 300; }
 
     /* NAVY DATA CARD */
-    .deep-navy-ratio-card { flex: 0 0 280px; background: #0c1833; color: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 20px 40px rgba(12, 24, 51, 0.15); }
+    .deep-navy-ratio-card { flex: 0 0 280px; background: #0c1833; color: #fff; padding: 40px; border-radius: 8px; }
     .ratio-stat { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: #c5a059; line-height: 1; }
-    .ratio-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; display: block; }
+    .ratio-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; color: #fff; display: block; }
     .navy-divider { height: 1px; background: rgba(197, 160, 89, 0.3); margin: 25px 0; width: 40px; }
     .navy-specs { list-style: none; padding: 0; margin: 0 0 25px 0; }
     .navy-specs li { font-size: 0.85rem; padding: 8px 0; display: flex; align-items: center; color: rgba(255,255,255,0.9); }
     .gold-bullet { width: 5px; height: 5px; background: #c5a059; border-radius: 50%; margin-right: 12px; }
     .navy-accreditations { display: flex; gap: 15px; font-size: 7px; font-weight: 900; letter-spacing: 1px; color: #c5a059; }
 
-    /* --- MOBILE RE-DESIGN --- */
+    /* --- MOBILE RE-DESIGN: HORIZONTAL CARDS WITH GRADIENTS --- */
     @media (max-width: 768px) {
         .locked-mission-console { height: auto; flex-direction: column; border: none; }
         
-        /* 1. MISSION STATEMENT STACKS FIRST */
         .mission-master-card { order: 1; padding: 60px 25px 20px; width: 100%; }
         .mission-flex-container { flex-direction: column; gap: 30px; align-items: flex-start; }
-        .mission-large-text { font-size: 2.3rem; margin: 10px 0 15px; }
+        .mission-large-text { font-size: 2.3rem; }
         
-        /* 2. BLUE CARD STACKS SECOND */
         .deep-navy-ratio-card { order: 2; width: 100%; flex: none; margin-bottom: 40px; }
         
-        /* 3. EXPERTISE SWIPER STACKS THIRD */
         .profile-rail-tall { order: 3; width: 100%; border: none; background: #fff; }
-        .rail-header { padding: 0 25px 15px; border: none; }
+        .rail-header { padding: 0 25px 15px; }
         .tall-scroll-area { 
             display: flex; 
             overflow-x: auto; 
@@ -336,48 +334,39 @@
 
         /* 4. THE HORIZONTAL CARD */
         .dossier-card-tall {
-            height: 150px; 
-            flex: 0 0 310px; /* Width of the card in the swipe rail */
+            height: 160px; 
+            flex: 0 0 320px; 
             display: flex; 
-            flex-direction: row; /* Photo left, Text right */
-            background: #0c1833; /* Dark Navy base */
-            border: none;
+            flex-direction: row; 
+            background: #0c1833; /* Dark fallback */
             border-radius: 8px;
             margin-bottom: 0;
+            background-image: inherit; /* Uses staff photo as the base */
         }
 
-        /* LEFT SIDE: PHOTO */
+        /* MOBILE OVERLAY: Horizontal Gradient (Photo Left -> Dark Blue Right) */
         .card-overlay {
-            position: relative;
-            width: 120px; /* Fixed photo width */
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            padding: 0;
-            inset: auto;
-            flex-shrink: 0;
-            /* Simple blue tint for photo */
-            background-color: rgba(12, 24, 51, 0.3);
-            background-blend-mode: multiply;
+            position: absolute;
+            inset: 0;
+            /* This pushes the blue overlay to the right side where the text is */
+            background: linear-gradient(to right, rgba(12, 24, 51, 0) 0%, rgba(12, 24, 51, 0.6) 40%, rgba(12, 24, 51, 0.95) 80%) !important;
+            display: flex;
+            justify-content: flex-end; /* Pushes text to the right side */
+            align-items: center; /* Centers text vertically */
+            padding: 20px;
         }
 
-        /* RIGHT SIDE: TEXT ZONE */
+        /* TEXT STYLING: Pushed to Right 60% of the card */
         .card-content-bottom {
-            flex: 1;
-            padding: 20px;
+            width: 65%; 
+            text-align: right; /* Aligns text to the right edge */
             display: flex;
             flex-direction: column;
             justify-content: center;
-            text-align: left;
         }
 
-        /* Style text nicely against navy background */
-        .nano-name { color: #fff; font-size: 1.05rem; margin-bottom: 5px; }
-        .nano-text { color: rgba(255,255,255,0.7); font-size: 0.68rem; line-height: 1.4; }
-        
-        /* Apply background images specifically to the left-side 'overlay' container */
-        .julianne-bg .card-overlay { background-image: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true'); }
-        .eleanor-bg .card-overlay { background-image: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2015.jpeg?raw=true'); }
+        .nano-name { color: #fff; font-size: 1.05rem; margin-bottom: 4px; }
+        .nano-text { color: rgba(255,255,255,0.7); font-size: 0.68rem; line-height: 1.3; }
     }
 </style>
     
