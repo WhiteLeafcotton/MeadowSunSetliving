@@ -696,128 +696,86 @@
 
 .gold-text { color: #c5a059 !important; }
 
-/* --- MOBILE SPECIFICS --- */
+/* --- CONSOLIDATED MOBILE ADMISSIONS FIX --- */
 @media (max-width: 768px) {
-    .desktop-only-video { display: none; }
-    .mobile-only-video { display: block; }
-    .split-view-container { grid-template-columns: 1fr; }
-}
-/* --- ADMISSIONS MOBILE RESPONSIVE FIXES --- */
-@media (max-width: 768px) {
-
-    /* Target the text card specifically */
-    #admissionsCard {
-        padding: 40px 30px !important;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        overflow: hidden;
-        background: #fff;
-    }
-
-    /* Target the intro container specifically */
-    .journey-header-editorial {
-        display: flex !important;
-        flex-direction: column;
-        justify-content: center !important; /* Center text vertically */
-        height: 100%;
-        text-align: center;
-    }
-
-    /* Shrink the title so it doesn't take 3+ lines */
-    .magazine-title {
-        font-size: 1.7rem !important; /* Smaller title fits card better */
-        margin-bottom: 10px;
-    }
-
-    /* Small, elegant sub-text */
-    .header-subtext {
-        font-size: 0.85rem !important; /* Smaller text fits better */
-        line-height: 1.5;
-        color: #666; /* Lighter color is more elegant */
-        max-width: 90%;
-        margin: 15px auto 0 auto;
-    }
-
-    /* Anchor the "View" button at the bottom */
-    .mobile-process-btn {
-        margin-top: 30px; /* Space between text and button */
-        padding: 12px;
-        width: 100%;
-        font-size: 0.75rem;
-    }
-/* 1. Hide steps by default so the intro shows first */
-    #admissionsSteps {
-        display: none !important;
-        opacity: 0;
-    }
-
-    /* 2. When the button is clicked (JS adds this class), HIDE the intro */
-    #admissionsCard.mobile-view-active #admissionsIntro {
-        display: none !important;
-    }
-
-    /* 3. When the button is clicked, SHOW the steps */
-    #admissionsCard.mobile-view-active #admissionsSteps {
-        display: block !important;
-        opacity: 1;
-        animation: fadeIn 0.4s ease-in;
-    }
-
-    /* Elegant fade-in for the steps */
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Style the "Back" button at the bottom of the steps */
-    .back-btn {
-        margin-top: 25px;
-        background: #f9f9f9;
-        border: 1px solid #eee;
-        color: #999;
-        font-size: 0.7rem;
-        letter-spacing: 1px;
-    }
-    /* 1. Hide the desktop video container so it doesn't block the mobile one */
-    .desktop-only-video {
-        display: none !important;
-    }
-
-    /* 2. Force the mobile video container to be visible and have height */
-    /* 3. Scale the iframe to BLAST the black bars out of view */
-.mobile-only-video iframe {
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    /* We make the video 150% of the height of the 500px container */
-    width: 180% !important; 
-    height: 150% !important; 
-    /* This centers the video and zooms it in just enough to hide the edges */
-    transform: translate(-50%, -50%) scale(1.2) !important; 
-    border: none !important;
-    pointer-events: none;
-}
-
-/* THE CLIPPER: This is the 'frame' that hides the extra video/black bars */
-.mobile-only-video {
-    display: block !important;
-    position: relative !important;
-    width: 100% !important;
-    height: 500px !important; /* THE FIXED HEIGHT */
-    overflow: hidden !important; /* THIS CHOPS OFF THE BLACK STRIPS */
-    background: #000;
-}
-
-    /* 4. Ensure the main container stacks correctly */
+    /* 1. SEPARATE THE CARDS: Creates a physical gap between text and video */
     .split-view-container {
         display: flex !important;
         flex-direction: column !important;
-        gap: 0 !important;
+        gap: 25px !important; /* Forces the visual separation you want */
+        padding: 0 20px !important;
     }
 
+    /* 2. THE TEXT CARD: A distinct white box */
+    #admissionsCard {
+        width: 100% !important;
+        height: 500px !important;
+        padding: 40px 30px !important;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        background: #fff !important;
+        border: 1px solid #eee !important;
+        box-sizing: border-box !important;
     }
 
+    /* 3. THE VIDEO CONTAINER: The 'Clipper' */
+    .video-card-container, .mobile-only-video {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        height: 500px !important; /* Matches card height */
+        overflow: hidden !important; /* CHOPS OFF THE BLACK STRIPS */
+        background: #000 !important;
+        border: 1px solid #eee !important;
+    }
+
+    /* 4. THE VIDEO: Aggressive zoom to kill black lines */
+    .mobile-only-video iframe {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        width: 180% !important; /* Oversize width */
+        height: 160% !important; /* Oversize height to push bars out */
+        transform: translate(-50%, -50%) scale(1.4) !important; /* Heavy zoom */
+        border: none !important;
+        pointer-events: none;
+    }
+
+    /* 5. TYPOGRAPHY & BUTTONS */
+    .magazine-title {
+        font-size: 1.7rem !important;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .header-subtext {
+        font-size: 0.85rem !important;
+        text-align: center;
+        color: #666;
+    }
+
+    .mobile-process-btn {
+        margin-top: 30px;
+        padding: 15px;
+        background: #1a1a1a;
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.75rem;
+    }
+
+    /* Logic for showing/hiding steps */
+    #admissionsSteps { display: none !important; }
+    #admissionsCard.mobile-view-active #admissionsIntro { display: none !important; }
+    #admissionsCard.mobile-view-active #admissionsSteps { 
+        display: block !important; 
+        opacity: 1 !important;
+    }
+
+    .desktop-only-video { display: none !important; }
+}
 
 </style>
 
