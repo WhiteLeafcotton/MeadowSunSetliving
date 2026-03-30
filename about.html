@@ -490,52 +490,52 @@
 /* --- ABOUT PAGE VIDEO OVERRIDE --- */
 /* --- ABOUT PAGE: MOBILE VIDEO SEPARATE TREATMENT --- */
 @media (max-width: 768px) {
-    /* 1. Ensure the split container stacks vertically so the video gets full width */
+    /* 1. Stack the containers so they don't fight for space */
     .split-view-container {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0px !important; /* Removes gap so the video and card feel connected */
     }
 
-    /* 2. Target the specific card holding the video */
+    /* 2. Give the video card a HARD height so it cannot collapse */
     .video-card-container {
         width: 100% !important;
-        padding: 0 !important; /* Remove padding so video can go edge-to-edge */
-        border: none !important; /* Optional: removes border for a cleaner look */
-        height: 600px !important; /* Increased height for that 'Portrait' story feel */
+        height: 500px !important; /* Adjust this to your liking */
+        padding: 0 !important;
+        margin: 0 !important;
+        position: relative !important;
+        z-index: 5 !important;
+        overflow: hidden !important;
+        background: #000 !important;
     }
 
-    /* 3. The Video Wrapper */
+    /* 3. The Video Wrapper - Ensure it fills the 500px height */
     .mobile-only-video {
-        position: relative;
-        width: 100%;
-        height: 100%; /* Fills the 600px container */
-        margin: 0; 
-        overflow: hidden;
-        background: #000;
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        position: absolute !important;
+        top: 0;
+        left: 0;
     }
 
-    /* 4. The Iframe */
+    /* 4. The Iframe - Force it to be larger than the container to hide edges */
     .mobile-only-video iframe {
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 100%;
-        height: 100%;
-        /* The 'transform' below ensures the video covers the area without bars */
-        transform: translate(-50%, -50%) scale(1.5); 
-        pointer-events: none; /* Prevents users from accidentally clicking YouTube links */
+        width: 100vw !important; /* Use Viewport Width to ensure it covers mobile */
+        height: 120% !important; /* Slightly taller to hide YouTube top/bottom UI */
+        transform: translate(-50%, -50%) scale(1.6); 
+        pointer-events: none;
+        border: none;
     }
-/* --- ADMISSIONS CARD TEXT SCALING --- */
-.admissions-journey .magazine-title {
-    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Scalable title */
-    line-height: 1.1;
-}
 
-.admissions-journey .header-subtext {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    max-width: 90%;
+    /* 5. Keep your text scaling as it was */
+    .admissions-journey .magazine-title {
+        font-size: 1.8rem !important;
+        line-height: 1.1;
+    }
 }
 
 /* --- MOBILE SWITCHING LOGIC --- */
