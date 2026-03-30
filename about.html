@@ -281,6 +281,7 @@
     .julianne-bg { background-image: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true'); }
     .eleanor-bg { background-image: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2015.jpeg?raw=true'); }
 
+    /* DESKTOP OVERLAY & TEXT (OVER PHOTO) */
     .card-overlay {
         position: absolute;
         inset: 0;
@@ -318,66 +319,74 @@
     .gold-bullet { width: 5px; height: 5px; background: #c5a059; border-radius: 50%; margin-right: 12px; }
     .navy-accreditations { display: flex; gap: 15px; font-size: 7px; font-weight: 900; letter-spacing: 1px; color: #c5a059; }
 
-    /* --- MOBILE RE-ENGINEERING: HORIZONTAL PROFILES --- */
+    /* --- MOBILE RE-ENGINEERING: WIDE PROFILES & PUSHED TEXT --- */
     @media (max-width: 1024px) {
         .locked-mission-console { height: auto; flex-direction: column; }
         
-        .mission-master-card { order: 1; padding: 60px 25px 30px; }
+        /* Fixed Mission Flow */
+        .mission-master-card { order: 1; padding: 60px 25px 40px; }
         .mission-large-text { font-size: 2.2rem; }
         
-        .deep-navy-ratio-card { width: 100% !important; flex: none; order: 2; border-radius: 8px; margin-bottom: 30px; }
+        /* Fixed Blue Card */
+        .deep-navy-ratio-card { width: 100% !important; flex: none; order: 2; border-radius: 8px; margin-bottom: 20px; }
         
+        /* Horizontal Swiper Core */
         .profile-rail-tall { order: 3; width: 100%; border: none; background: #fff; }
         .rail-header { padding: 30px 25px 15px; }
-        
         .tall-scroll-area { 
             display: flex; 
-            flex-direction: column; /* Stack them horizontally across the screen */
-            padding: 0 25px 60px; 
+            overflow-x: auto; /* Forces horizontal scroll */
+            overflow-y: hidden;
             gap: 15px;
-            overflow: visible;
+            padding: 0 25px 60px; 
+            -webkit-overflow-scrolling: touch; 
         }
 
-        /* Convert Tall Card to Horizontal Landscape Card */
+        /* Convert Tall Card to Wide Card */
         .dossier-card-tall {
-            height: 140px; /* Slim landscape height */
+            height: 160px; /* Slim landscape height */
+            flex: 0 0 320px; /* Keeps card 320px wide in the swiper */
             margin-bottom: 0;
-            display: flex;
-            background-image: none !important; /* Remove full background */
-            background: #fbfbfb;
-            border: 1px solid #eee;
+            display: flex; /* Active columns */
+            background-image: none !important; /* Remove full-card photo */
+            background: #0c1833; /* Dark Navy Card Background */
             border-radius: 8px;
         }
 
-        /* Re-purpose the Overlay as a Left-Side Photo Column */
+        /* LEFT COLUMN (TEXT) - PUSHED AND CENTERED */
+        .card-content-bottom {
+            flex: 1; /* Takes 60% of width */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center text block vertically in its column */
+            background: transparent;
+            z-index: 5;
+        }
+
+        /* Ensure text is dark and left-aligned in the new navy column */
+        .nano-name { color: #fff; font-size: 1rem; margin-bottom: 4px; text-align: left; }
+        .nano-text { color: rgba(255,255,255,0.8); font-size: 0.65rem; line-height: 1.4; text-align: left; }
+
+        /* RIGHT COLUMN (PHOTO) */
+        /* Use the existing 'card-overlay' class as the right photo column */
         .card-overlay {
             position: relative;
-            width: 110px; /* Photo width */
+            width: 130px; /* Data point: fixed width photo */
             height: 100%;
             background-size: cover;
             background-position: center;
             padding: 0;
+            inset: auto;
+            align-items: stretch; /* Prevents text centering logic */
             flex-shrink: 0;
         }
 
-        /* Re-apply images specifically to the left column */
+        /* RE-APPLY STAFF IMAGES ( specifically to the right column ) */
         .julianne-bg .card-overlay { background-image: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true'); }
         .eleanor-bg .card-overlay { background-image: url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2015.jpeg?raw=true'); }
-
-        .card-content-bottom {
-            padding: 15px 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background: transparent;
-        }
-
-        .nano-name { color: #1a1a1a; font-size: 1rem; margin-bottom: 4px; }
-        .nano-text { color: #666; font-size: 0.65rem; line-height: 1.4; }
     }
-
 </style>
-
     
 
     
