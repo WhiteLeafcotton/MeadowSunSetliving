@@ -491,12 +491,24 @@
 /* --- ABOUT PAGE: MOBILE VIDEO SEPARATE TREATMENT --- */
 @media (max-width: 768px) {
     /* 1. The Parent: Stack them and remove the gap */
+    /* 4. Ensure the main container stacks correctly */
     .split-view-container {
-        display: flex !important;
+        display: flex !important; /* Switch from Grid to Flex for easier stacking */
         flex-direction: column !important;
+        grid-template-columns: 1fr !important; /* Kills the side-by-side grid */
         gap: 0 !important;
         width: 100% !important;
+    }
+
+    /* Add this: Ensure the video card is a separate block with height */
+    .video-card-container {
+        display: block !important;
+        width: 100% !important;
+        height: 500px !important; /* Creates the separate box for the video */
+        margin: 0 !important;
         padding: 0 !important;
+        position: relative;
+        background: #000;
     }
 
     /* 2. The Text Card: Force it to be a specific height */
@@ -513,14 +525,7 @@
     }
 
     /* 3. The Video Card: Force it to be the same height */
-    .video-card-container {
-        width: 100% !important;
-        height: 500px !important; /* Perfectly matches the text card above */
-        padding: 0 !important;
-        margin: 0 !important;
-        background: #000;
-        position: relative;
-    }
+   
 
     /* 4. The Video Content: Fill the card */
     .mobile-only-video {
