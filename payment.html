@@ -549,65 +549,58 @@
 
 
 
-<section class="flex-pay-frosted reveal-up" id="flex-pay-section">
-    <div class="title-strip-bg-wrapper mobile-full-bleed">
-        <div class="flex-title-content">
-            <span class="flex-eyebrow">Financial Agility</span>
-            <h2 class="flex-main-title">
-                Flex <span class="italic-pay">Pay.</span>
+<section class="flex-pay-frosted reveal-up" id="flex-pay-section" style="padding: 0; margin: 0; width: 100vw; overflow: hidden;">
+    
+    <div class="flex-pay-photo-strip">
+        <div class="flex-container-inner">
+            <span class="flex-eyebrow-match">Financial Agility</span>
+            <h2 class="flex-main-title-match">
+                Flex <span class="italic-pay-match">Pay.</span>
             </h2>
         </div>
     </div>
 
-    <div class="flex-cards-outer-container">
+    <div class="flex-grid-wrapper">
         <div class="flex-pay-grid">
+            
             <div class="flex-card-compact">
-                <div class="card-inner">
-                    <span class="card-number">01</span>
-                    <h4 class="card-title">Respite <br>Recovery</h4>
-                    <div class="divider-gold"></div>
-                    <p class="card-text">Premium stewardship for those transitioning from clinical settings.</p>
-                </div>
+                <span class="card-number">01</span>
+                <h4 class="card-title">Respite <br>Recovery</h4>
+                <div class="divider-gold"></div>
+                <p class="card-text">Premium stewardship for those transitioning from clinical settings.</p>
             </div>
 
             <div class="flex-card-compact">
-                <div class="card-inner">
-                    <span class="card-number">02</span>
-                    <h4 class="card-title">Custom <br>Scheduling</h4>
-                    <div class="divider-gold"></div>
-                    <p class="card-text">Non-traditional entry points curated for our two private suites.</p>
-                </div>
+                <span class="card-number">02</span>
+                <h4 class="card-title">Custom <br>Scheduling</h4>
+                <div class="divider-gold"></div>
+                <p class="card-text">Non-traditional entry points curated for our two private suites.</p>
             </div>
 
             <div class="flex-card-cta-luxe">
                 <div class="cta-frost-overlay"></div>
-                <div class="card-inner relative-z">
+                <div class="relative-z">
                     <p class="cta-eyebrow">The Collective</p>
                     <h4 class="cta-title">Private Suites</h4>
                     <p class="cta-sub-text">Limited availability for curated short-term stays.</p>
                     <a href="suite.html" class="flex-btn-frosted">Explore Suites</a>
                 </div>
             </div>
+
         </div> 
     </div>
 </section>
 
 <style>
-/* --- BASE DESKTOP STYLES --- */
-#flex-pay-section { width: 100%; overflow: hidden; padding: 60px 0; }
-
-.title-strip-bg-wrapper {
+/* --- 1. THE STRIP (EXACT MATCH TO PRIVATE PAY) --- */
+.flex-pay-photo-strip {
     position: relative;
-    padding: 80px 5%;
-    margin-bottom: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 200px;
+    padding: 80px 5%; /* Matches Private Pay spacing */
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* The Full-Width Background Logic */
-.title-strip-bg-wrapper::before {
+.flex-pay-photo-strip::before {
     content: "";
     position: absolute;
     top: 0;
@@ -616,46 +609,120 @@
     height: 100%;
     transform: translateX(-50%);
     z-index: -1;
-    background-image: linear-gradient(rgba(12, 24, 51, 0.8), rgba(12, 24, 51, 0.8)), 
+    background-image: linear-gradient(rgba(12, 24, 51, 0.78), rgba(12, 24, 51, 0.78)), 
                       url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2036.jpeg?raw=true');
     background-size: cover;
     background-position: center;
 }
 
-.flex-title-content { max-width: 1400px; margin: 0 auto; width: 100%; }
-.flex-main-title { font-family: 'Playfair Display'; font-size: 6rem; color: #fff; margin: 0; line-height: 0.8; letter-spacing: -2px; }
-.italic-pay { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #bfa15f; font-size: 7.5rem; }
+.flex-container-inner { max-width: 1400px; margin: 0 auto; }
 
-.flex-cards-outer-container { max-width: 1400px; margin: 0 auto; padding: 0 5%; }
-.flex-pay-grid { display: grid; grid-template-columns: 1fr 1fr 1.2fr; border: 1px solid #f1f5f9; background: #fff; }
-.flex-card-compact, .flex-card-cta-luxe { padding: 60px 40px; }
+.flex-eyebrow-match {
+    color: #bfa15f; 
+    letter-spacing: 10px; 
+    text-transform: uppercase; 
+    font-size: 0.65rem; 
+    font-family: 'Inter'; 
+    font-weight: 800; 
+    display: block; 
+    margin-bottom: 20px;
+}
 
-/* --- MOBILE FULL-WIDTH OVERRIDE --- */
+.flex-main-title-match {
+    font-family: 'Playfair Display';
+    font-size: 6rem;
+    color: #fff; /* White text on blue strip */
+    margin: 0;
+    letter-spacing: -2px;
+    line-height: 0.8;
+}
+
+.italic-pay-match {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: #bfa15f;
+    font-size: 7.5rem;
+    margin-left: -10px;
+}
+
+/* --- 2. THE GRID & CARDS --- */
+.flex-grid-wrapper { max-width: 1400px; margin: 40px auto; padding: 0 5%; }
+
+.flex-pay-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    border: 1px solid #f1f5f9;
+}
+
+.flex-card-compact {
+    padding: 60px 40px;
+    background: #fff;
+    border-right: 1px solid #f1f5f9;
+}
+
+.card-number { font-family: 'Playfair Display'; color: #bfa15f; font-weight: 700; font-size: 0.85rem; display: block; margin-bottom: 10px; }
+.card-title { font-family: 'Playfair Display'; font-size: 2.2rem; color: #0f172a; margin-bottom: 15px; }
+.divider-gold { width: 30px; height: 1px; background: #bfa15f; margin-bottom: 20px; }
+.card-text { font-size: 0.95rem; color: #64748b; line-height: 1.8; }
+
+/* --- 3. THE BLUE CTA BOX & FROSTED BUTTON --- */
+.flex-card-cta-luxe {
+    padding: 60px 40px;
+    background: #0f172a;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.cta-frost-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(191, 161, 95, 0.15) 0%, transparent 100%);
+}
+
+.relative-z { position: relative; z-index: 2; width: 100%; }
+.cta-eyebrow { color: #bfa15f; text-transform: uppercase; letter-spacing: 4px; font-size: 0.6rem; margin-bottom: 10px; }
+.cta-title { font-family: 'Playfair Display'; font-size: 2.2rem; margin-bottom: 15px; }
+.cta-sub-text { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 30px; }
+
+.flex-btn-frosted {
+    display: inline-block;
+    padding: 18px 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.flex-btn-frosted:hover {
+    background: #bfa15f;
+    border-color: #bfa15f;
+    color: #0f172a;
+    transform: translateY(-2px);
+}
+
+/* --- MOBILE SYNC --- */
 @media (max-width: 768px) {
-    #flex-pay-section { padding: 40px 0; }
-
-    /* Force the title strip to ignore parent padding */
-    .mobile-full-bleed {
-        width: 100vw !important;
-        left: 0 !important;
-        margin-left: 0 !important;
-        padding: 60px 25px !important;
-    }
-
-    .flex-main-title { font-size: 3.5rem !important; }
-    .italic-pay { font-size: 4.5rem !important; }
-
-    /* Stack the cards on mobile */
-    .flex-pay-grid { 
-        display: flex !important; 
-        flex-direction: column !important; 
-        border: none !important;
-    }
-
+    .flex-pay-photo-strip { padding: 60px 25px !important; }
+    .flex-main-title-match { font-size: 3.5rem !important; }
+    .italic-pay-match { font-size: 4.5rem !important; margin-left: 0 !important; }
+    
+    .flex-grid-wrapper { padding: 0; margin-top: 0; }
+    .flex-pay-grid { display: flex !important; flex-direction: column !important; border: none; }
     .flex-card-compact, .flex-card-cta-luxe { 
-        width: 100% !important; 
+        width: 100%; 
         padding: 40px 25px !important; 
-        border-bottom: 1px solid #f1f5f9 !important;
+        border-right: none; 
+        border-bottom: 1px solid #f1f5f9; 
     }
 }
 </style>
