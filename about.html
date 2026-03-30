@@ -252,33 +252,32 @@
         border-top: 1px solid #f0f0f0;
     }
 
-    /* SIDEBAR RAIL */
+    /* SIDEBAR RAIL (DESKTOP) */
     .profile-rail-tall { flex: 0 0 280px; background: #f8f9fa; border-right: 1px solid #eee; display: flex; flex-direction: column; }
     .rail-header { padding: 25px; border-bottom: 1px solid #eee; }
     .gold-eyebrow { color: #c5a059; text-transform: uppercase; font-size: 8px; letter-spacing: 4px; font-weight: 800; display: block; }
     .tall-scroll-area { flex: 1; overflow-y: auto; padding: 20px; scrollbar-width: none; }
     .tall-scroll-area::-webkit-scrollbar { display: none; }
 
-    /* STAFF CARDS - DESKTOP (Vertical Overlay) */
+    /* STAFF CARDS - DESKTOP */
     .dossier-card-tall {
         position: relative;
         height: 340px;
         margin-bottom: 20px;
         border-radius: 4px; 
         overflow: hidden;
-        background-size: cover;
-        background-position: center;
         display: flex;
-        align-items: flex-end;
+        flex-direction: column;
+        justify-content: flex-end; /* Text at bottom for desktop */
     }
     
-    /* APPLYING IMAGE + OVERLAY SIMULTANEOUSLY FOR DESKTOP */
+    /* DESKTOP BACKGROUNDS: Vertical Gradient Overlay */
     .julianne-bg { 
-        background: linear-gradient(to bottom, rgba(12, 24, 51, 0.1), rgba(12, 24, 51, 0.9)), 
+        background: linear-gradient(to bottom, rgba(12, 24, 51, 0.1) 0%, rgba(12, 24, 51, 0.9) 100%), 
                     url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true') center/cover; 
     }
     .eleanor-bg { 
-        background: linear-gradient(to bottom, rgba(12, 24, 51, 0.1), rgba(12, 24, 51, 0.9)), 
+        background: linear-gradient(to bottom, rgba(12, 24, 51, 0.1) 0%, rgba(12, 24, 51, 0.9) 100%), 
                     url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2015.jpeg?raw=true') center/cover; 
     }
 
@@ -287,13 +286,14 @@
     .gold-italic { color: #c5a059; font-style: italic; font-weight: 400; }
     .nano-text { font-size: 0.75rem; line-height: 1.5; color: rgba(255,255,255,0.8); margin: 0; font-weight: 300; }
 
-    /* MISSION & BLUE CARD (DESKTOP) */
+    /* MAIN MISSION AREA (DESKTOP) */
     .mission-master-card { flex: 1; padding: 40px 60px; display: flex; align-items: center; }
     .mission-flex-container { display: flex; width: 100%; gap: 50px; align-items: center; }
     .mission-statement-zone { flex: 1.4; }
     .mission-large-text { font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1.1; margin: 15px 0 25px; color: #0c1833; font-weight: 700; }
     .mission-description { font-size: 1rem; line-height: 1.8; color: #555; font-weight: 300; }
 
+    /* NAVY DATA CARD (280px Standard) */
     .deep-navy-ratio-card { flex: 0 0 280px; background: #0c1833; color: #fff; padding: 40px; border-radius: 8px; }
     .ratio-stat { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: #c5a059; line-height: 1; }
     .ratio-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; color: #fff; display: block; }
@@ -303,41 +303,50 @@
     .gold-bullet { width: 5px; height: 5px; background: #c5a059; border-radius: 50%; margin-right: 12px; }
     .navy-accreditations { display: flex; gap: 15px; font-size: 7px; font-weight: 900; letter-spacing: 1px; color: #c5a059; }
 
-    /* --- MOBILE RE-DESIGN (HORIZONTAL OVERLAY) --- */
+    /* --- MOBILE RE-DESIGN: HORIZONTAL SWIPE + RIGHT-SIDE TEXT --- */
     @media (max-width: 768px) {
         .locked-mission-console { height: auto; flex-direction: column; }
+        
+        /* Stack Order 1: Mission */
         .mission-master-card { order: 1; padding: 60px 25px 20px; width: 100%; }
         .mission-flex-container { flex-direction: column; gap: 30px; align-items: flex-start; }
         .mission-large-text { font-size: 2.3rem; }
+        
+        /* Stack Order 2: Navy Card */
         .deep-navy-ratio-card { order: 2; width: 100%; flex: none; margin-bottom: 40px; }
         
+        /* Stack Order 3: Swiper */
         .profile-rail-tall { order: 3; width: 100%; border: none; background: #fff; }
+        .rail-header { padding: 0 25px 15px; }
         .tall-scroll-area { display: flex; overflow-x: auto; gap: 15px; padding: 0 25px 50px; -webkit-overflow-scrolling: touch; }
 
+        /* MOBILE HORIZONTAL CARDS */
         .dossier-card-tall {
             height: 160px; 
             flex: 0 0 310px; 
             margin-bottom: 0;
             display: flex;
-            align-items: center; /* Center text vertically */
-            justify-content: flex-end; /* Push text to the right */
+            flex-direction: row; 
+            justify-content: flex-end; /* Locks content to the right */
+            align-items: center;
         }
 
-        /* APPLYING IMAGE + HORIZONTAL OVERLAY FOR MOBILE */
-        /* Left side is clear (0 opacity) to see the face, Right side is dark (0.9 opacity) for text */
+        /* MOBILE BACKGROUNDS: Horizontal Gradient Overlay (Clear Left -> Dark Right) */
         .julianne-bg { 
-            background: linear-gradient(to right, rgba(12, 24, 51, 0) 0%, rgba(12, 24, 51, 0.8) 60%, rgba(12, 24, 51, 0.95) 100%), 
+            background: linear-gradient(to right, rgba(12, 24, 51, 0) 0%, rgba(12, 24, 51, 0.7) 45%, rgba(12, 24, 51, 0.95) 90%), 
                         url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true') center/cover !important; 
         }
         .eleanor-bg { 
-            background: linear-gradient(to right, rgba(12, 24, 51, 0) 0%, rgba(12, 24, 51, 0.8) 60%, rgba(12, 24, 51, 0.95) 100%), 
+            background: linear-gradient(to right, rgba(12, 24, 51, 0) 0%, rgba(12, 24, 51, 0.7) 45%, rgba(12, 24, 51, 0.95) 90%), 
                         url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2015.jpeg?raw=true') center/cover !important; 
         }
 
+        /* TEXT ON THE RIGHT OVERLAY */
         .card-content-bottom {
-            width: 65%; /* Text takes up the right 65% */
-            text-align: right; /* Aligned to the right edge */
-            padding: 20px;
+            width: 65%; /* Constrains text to the dark right side */
+            text-align: right; /* Aligns text to the far right edge */
+            padding-right: 20px;
+            padding-left: 0;
         }
     }
 </style>
