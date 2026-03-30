@@ -564,7 +564,119 @@
     .step-body p { font-size: 0.8rem !important; line-height: 1.4; }
     .step-number-large { font-size: 1.5rem !important; }
 }
+/* --- ADMISSIONS SECTION LAYOUT --- */
+.admissions-journey {
+    padding: 80px 5%;
+    background: #fdfdfd;
+}
 
+.split-view-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.journey-card-outline {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 60px;
+    position: relative;
+}
+
+/* --- VIDEO OVERRIDE --- */
+.video-card-container {
+    padding: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.iframe-viewport {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+}
+
+.desktop-only-video, .mobile-only-video {
+    width: 100%;
+    height: 100%;
+}
+
+.iframe-viewport iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    transform: scale(1.1); /* Slight zoom to hide edges */
+}
+
+/* --- MUTE BUTTON GLASS --- */
+.mute-toggle-glass {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.mute-toggle-glass:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* --- ADMISSIONS STEPS --- */
+.step-card-editorial {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.step-number-large {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #eee;
+    font-weight: 700;
+}
+
+.vertical-connector-blue {
+    width: 1px;
+    height: 100%;
+    background: #eee;
+    margin: 10px auto;
+}
+
+.step-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin: 0 0 5px 0;
+}
+
+.step-body p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+.gold-text { color: #c5a059 !important; }
+
+/* --- MOBILE SPECIFICS --- */
+@media (max-width: 768px) {
+    .desktop-only-video { display: none; }
+    .mobile-only-video { display: block; }
+    .split-view-container { grid-template-columns: 1fr; }
+}
 /* --- ADMISSIONS MOBILE RESPONSIVE FIXES --- */
 @media (max-width: 768px) {
 
@@ -875,7 +987,68 @@
     </div>
 
     <script>
+<script>
+    /* --- MOBILE MENU LOGIC --- */
+    function toggleMenu() {
+        const menu = document.getElementById("sideMenu");
+        menu.classList.toggle("active");
+    }
 
+    /* --- ADMISSIONS MOBILE TOGGLE --- */
+    function toggleMobileSteps(showSteps) {
+        const card = document.getElementById('admissionsCard');
+        if (showSteps) {
+            card.classList.add('mobile-view-active');
+        } else {
+            card.classList.remove('mobile-view-active');
+        }
+    }
+
+    /* --- YOUTUBE API & MUTE TOGGLE --- */
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var playerDesktop, playerMobile;
+    function onYouTubeIframeAPIReady() {
+        playerDesktop = new YT.Player('journeyVideo', {
+            events: { 'onReady': onPlayerReady }
+        });
+        playerMobile = new YT.Player('journeyVideoMobile', {
+            events: { 'onReady': onPlayerReady }
+        });
+    }
+
+    function onPlayerReady(event) {
+        event.target.playVideo();
+    }
+
+    document.getElementById('customMuteBtn').addEventListener('click', function() {
+        const icon = document.getElementById('muteIcon');
+        const text = document.getElementById('muteText');
+        
+        // Check which player is currently visible
+        let activePlayer = window.innerWidth > 768 ? playerDesktop : playerMobile;
+
+        if (activePlayer.isMuted()) {
+            activePlayer.unMute();
+            icon.classList.replace('fa-volume-xmark', 'fa-volume-high');
+            text.innerText = "AUDIO ON";
+        } else {
+            activePlayer.mute();
+            icon.classList.replace('fa-volume-high', 'fa-volume-xmark');
+            text.innerText = "TAP FOR AUDIO";
+        }
+    });
+
+    /* --- MODAL LOGIC --- */
+    function openModal() { document.getElementById("bookingModal").style.display = "block"; }
+    function closeModal() { document.getElementById("bookingModal").style.display = "none"; }
+    window.onclick = function(event) {
+        if (event.target == document.getElementById("bookingModal")) closeModal();
+    }
+</script>
 
 
 <script>
