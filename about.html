@@ -565,6 +565,50 @@
     .step-number-large { font-size: 1.5rem !important; }
 }
 
+/* --- ADMISSIONS MOBILE RESPONSIVE FIXES --- */
+@media (max-width: 768px) {
+
+    /* Target the text card specifically */
+    #admissionsCard {
+        padding: 40px 30px !important; /* Give content some edge room */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Pushes content and button to edges */
+        overflow: hidden; /* Crucial for switching effect */
+        background: #fff;
+    }
+
+    /* Target the intro container specifically */
+    .journey-header-editorial {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center !important; /* Center text vertically */
+        height: 100%;
+        text-align: center;
+    }
+
+    /* Shrink the title so it doesn't take 3+ lines */
+    .magazine-title {
+        font-size: 1.7rem !important; /* Smaller title fits card better */
+        margin-bottom: 10px;
+    }
+
+    /* Small, elegant sub-text */
+    .header-subtext {
+        font-size: 0.85rem !important; /* Smaller text fits better */
+        line-height: 1.5;
+        color: #666; /* Lighter color is more elegant */
+        max-width: 90%;
+        margin: 15px auto 0 auto;
+    }
+
+    /* Anchor the "View" button at the bottom */
+    .mobile-process-btn {
+        margin-top: 30px; /* Space between text and button */
+        padding: 12px;
+        width: 100%;
+        font-size: 0.75rem;
+    }
 }
 
 
@@ -653,13 +697,13 @@
             
             <div class="journey-header-editorial" id="admissionsIntro">
                 <div class="editorial-content-wrapper">
-                    <span class="gold-eyebrow">The Path to Restorative Care</span>
                     <h2 class="magazine-title">
                         Our Five-Step <br>
                         <span class="italic-serif">Admissions Journey</span>
                     </h2>
                     <div class="header-accent-line"></div>
-                    <p class="header-subtext">A seamless, dignified transition into our community, designed to provide peace of mind for families and residents alike.</p>
+                    
+                    <p class="header-subtext">A dignified, seamless transition designed for your peace of mind.</p>
                 </div>
                 
                 <div class="mobile-process-btn" onclick="toggleMobileSteps(true)">
@@ -744,6 +788,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 </section>
 
@@ -835,20 +880,79 @@
 
 
 // new thang perfect
-
+<script>
+/**
+ * Toggles the 5-Step Admissions Journey on Mobile
+ * Includes smooth scroll to ensure the user starts at Step 1
+ */
 function toggleMobileSteps(showSteps) {
     const card = document.getElementById('admissionsCard');
     
     if (window.innerWidth <= 768) {
         if (showSteps) {
             card.classList.add('mobile-view-active');
-            // Scroll to top of card so user sees the first step
-            card.scrollIntoView({ behavior: 'smooth' });
+            // Ensures the user is positioned correctly to read the steps
+            card.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else {
             card.classList.remove('mobile-view-active');
         }
     }
 }
+
+/**
+ * Standard Mobile Navigation Menu
+ */
+function toggleMenu() {
+    const sideMenu = document.getElementById('sideMenu');
+    sideMenu.classList.toggle('active');
+}
+
+/**
+ * YouTube Iframe Audio Controller
+ * Targets both Desktop and Mobile iframes
+ */
+const muteBtn = document.getElementById('customMuteBtn');
+const muteIcon = document.getElementById('muteIcon');
+const muteText = document.getElementById('muteText');
+let isMuted = true;
+
+if (muteBtn) {
+    muteBtn.addEventListener('click', function() {
+        isMuted = !isMuted;
+        const action = isMuted ? 'mute' : 'unMute';
+        
+        // Update UI
+        muteIcon.className = isMuted ? 'fa-solid fa-volume-xmark' : 'fa-solid fa-volume-high';
+        muteText.innerText = isMuted ? 'TAP FOR AUDIO' : 'AUDIO ON';
+
+        // Send command to all YouTube iframes
+        document.querySelectorAll('iframe').forEach(ifr => {
+            ifr.contentWindow.postMessage(JSON.stringify({
+                event: 'command',
+                func: action
+            }), '*');
+        });
+    });
+}
+
+/**
+ * Tour Booking Modal Logic
+ */
+function openModal() {
+    document.getElementById('bookingModal').style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('bookingModal').style.display = 'none';
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById('bookingModal');
+    if (event.target == modal) {
+        closeModal();
+    }
+};
+</script>
 
 
 
