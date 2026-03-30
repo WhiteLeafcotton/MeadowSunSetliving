@@ -698,15 +698,15 @@
 
 /* --- CONSOLIDATED MOBILE ADMISSIONS FIX --- */
 @media (max-width: 768px) {
-    /* 1. SEPARATE THE CARDS: Creates a physical gap between text and video */
+    /* 1. SEPARATE THE CARDS: Creates a clean physical gap */
     .split-view-container {
         display: flex !important;
         flex-direction: column !important;
-        gap: 25px !important; /* Forces the visual separation you want */
+        gap: 30px !important; 
         padding: 0 20px !important;
     }
 
-    /* 2. THE TEXT CARD: A distinct white box */
+    /* 2. THE TEXT CARD: Stays tall to fit your process steps */
     #admissionsCard {
         width: 100% !important;
         height: 500px !important;
@@ -719,25 +719,25 @@
         box-sizing: border-box !important;
     }
 
-    /* 3. THE VIDEO CONTAINER: The 'Clipper' */
+    /* 3. THE VIDEO CONTAINER: 'Thinner' height for a better widescreen ratio */
     .video-card-container, .mobile-only-video {
         display: block !important;
         position: relative !important;
         width: 100% !important;
-        height: 500px !important; /* Matches card height */
-        overflow: hidden !important; /* CHOPS OFF THE BLACK STRIPS */
+        height: 280px !important; /* REDUCED: Creates a premium 'thinner' cinematic look */
+        overflow: hidden !important; 
         background: #000 !important;
         border: 1px solid #eee !important;
     }
 
-    /* 4. THE VIDEO: Aggressive zoom to kill black lines */
+    /* 4. THE VIDEO: Zoomed in to push black lines OUTSIDE the container */
     .mobile-only-video iframe {
         position: absolute !important;
         top: 50% !important;
         left: 50% !important;
-        width: 180% !important; /* Oversize width */
-        height: 160% !important; /* Oversize height to push bars out */
-        transform: translate(-50%, -50%) scale(1.4) !important; /* Heavy zoom */
+        width: 160% !important; 
+        height: 180% !important; /* Oversized height pushes letterboxing out of view */
+        transform: translate(-50%, -50%) scale(1.3) !important; 
         border: none !important;
         pointer-events: none;
     }
@@ -755,18 +755,7 @@
         color: #666;
     }
 
-    .mobile-process-btn {
-        margin-top: 30px;
-        padding: 15px;
-        background: #1a1a1a;
-        color: #fff;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-size: 0.75rem;
-    }
-
-    /* Logic for showing/hiding steps */
+    /* Logic for showing/hiding steps (KEEP THIS) */
     #admissionsSteps { display: none !important; }
     #admissionsCard.mobile-view-active #admissionsIntro { display: none !important; }
     #admissionsCard.mobile-view-active #admissionsSteps { 
