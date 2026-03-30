@@ -158,28 +158,30 @@
 
 
 
-
 <section class="locked-mission-console">
-    
     <aside class="profile-rail-tall">
         <div class="rail-header">
-            <span class="gold-eyebrow">Expertise</span>
+            <span class="gold-eyebrow">The Clinical Team</span>
         </div>
         
         <div class="tall-scroll-area">
             <article class="dossier-card-tall">
-                <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true" alt="Julianne Vance" class="mini-profile-photo">
-                <h3 class="nano-name">Julianne <span class="gold-italic">Vance</span></h3>
+                <div class="photo-wrapper">
+                    <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true" alt="Julianne Vance" class="mini-profile-photo">
+                </div>
+                <h3 class="nano-name">Julianne <span class="gold-italic">Vance, RN</span></h3>
                 <p class="nano-text">
-                    Bridging hospital-grade safety with residential warmth. Julianne implements bespoke protocols mirroring elite research facilities. Precision care delivered with grace.
+                    Bridging hospital-grade safety with residential warmth. Julianne implements bespoke protocols mirroring elite research facilities.
                 </p>
             </article>
 
             <article class="dossier-card-tall">
-                <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2015.jpeg?raw=true" alt="Eleanor Sterling" class="mini-profile-photo">
+                <div class="photo-wrapper">
+                    <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2015.jpeg?raw=true" alt="Eleanor Sterling" class="mini-profile-photo">
+                </div>
                 <h3 class="nano-name">Eleanor <span class="gold-italic">Sterling</span></h3>
                 <p class="nano-text">
-                    Curating the Sunset Meadow atmosphere with an eye for detail. Eleanor ensures a boutique experience in every interaction, redefining the expectations of luxury residency.
+                    Curating the Sunset Meadow atmosphere with an eye for detail. Eleanor ensures a boutique experience, redefining luxury residency.
                 </p>
             </article>
         </div>
@@ -194,14 +196,16 @@
                     To <span class="gold-italic">dissolve</span> the boundaries between medical necessity and <span class="gold-italic">residential luxury.</span>
                 </h2>
                 <p class="mission-description">
-                    Sunset Meadow is a clinical sanctuary built on **Clinical Rigor** and **Human Dignity**. We provide an unparalleled environment for those who demand the best in their later years.
+                    Sunset Meadow is a clinical sanctuary built on <strong>Clinical Rigor</strong> and <strong>Human Dignity</strong>. We provide an unparalleled environment for those who demand the best in their later years.
                 </p>
             </div>
 
             <div class="deep-navy-ratio-card">
                 <div class="navy-inner">
-                    <span class="ratio-stat">2:1</span>
-                    <span class="ratio-label">Elite Care Ratio</span>
+                    <div class="ratio-header">
+                        <span class="ratio-stat">2:1</span>
+                        <span class="ratio-label">Elite Care Ratio</span>
+                    </div>
                     <div class="navy-divider"></div>
                     <ul class="navy-specs">
                         <li><span class="gold-bullet"></span> Licensed Nurse</li>
@@ -222,59 +226,53 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;600;800&display=swap');
 
+    /* BASE LAYOUT */
     .locked-mission-console {
         display: flex;
-        height: 380px; /* STRICTLY LOCKED HEIGHT */
-        background: #fff;
+        height: 550px; /* Increased for better desktop breathing room */
+        background: #ffffff;
         color: #1a1a1a;
         font-family: 'Inter', sans-serif;
         overflow: hidden;
-        border: 1px solid #eee;
+        border-top: 1px solid #f0f0f0;
     }
 
-    /* LEFT 25% RAIL - TALL CARDS */
+    /* --- SIDEBAR RAIL --- */
     .profile-rail-tall {
-        flex: 0 0 28%;
-        background: #fbfbfb;
+        flex: 0 0 320px;
+        background: #f8f9fa;
         border-right: 1px solid #eee;
         display: flex;
         flex-direction: column;
     }
-    .rail-header { padding: 15px 25px; border-bottom: 1px solid #eee; }
-    .gold-eyebrow { color: #c5a059; text-transform: uppercase; font-size: 7px; letter-spacing: 3px; font-weight: 800; display: block; }
+    .rail-header { padding: 30px 40px; border-bottom: 1px solid #eee; }
+    .gold-eyebrow { color: #c5a059; text-transform: uppercase; font-size: 8px; letter-spacing: 4px; font-weight: 800; display: block; }
 
-    .tall-scroll-area { flex: 1; overflow-y: auto; padding: 20px; scrollbar-width: none; }
+    .tall-scroll-area { flex: 1; overflow-y: auto; padding: 30px; scrollbar-width: none; }
     .tall-scroll-area::-webkit-scrollbar { display: none; }
 
     .dossier-card-tall {
         background: #fff;
-        padding: 25px; /* Increased for taller look */
+        padding: 30px 20px;
         margin-bottom: 20px;
         border: 1px solid #f0f0f0;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Centerb content for vertical feel */
+        border-radius: 4px;
         text-align: center;
+        transition: transform 0.3s ease;
     }
+    .dossier-card-tall:hover { transform: translateY(-5px); border-color: #c5a059; }
 
-    .mini-profile-photo {
-        width: 65px;
-        height: 65px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 15px;
-        border: 1px solid #c5a059;
-    }
+    .photo-wrapper { position: relative; display: inline-block; margin-bottom: 15px; }
+    .mini-profile-photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 1px solid #c5a059; padding: 3px; }
 
-    .nano-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin: 0 0 8px 0; }
+    .nano-name { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin: 0 0 10px 0; font-weight: 700; }
     .gold-italic { color: #c5a059; font-style: italic; font-weight: 400; }
-    .nano-text { font-size: 0.65rem; line-height: 1.5; color: #666; margin: 0; }
+    .nano-text { font-size: 0.75rem; line-height: 1.6; color: #777; margin: 0; font-weight: 300; }
 
-    /* RIGHT 75% MASTER CARD */
+    /* --- MAIN CONTENT AREA --- */
     .mission-master-card {
         flex: 1;
-        padding: 40px 50px;
+        padding: 60px 80px;
         display: flex;
         align-items: center;
         background: #fff;
@@ -283,54 +281,58 @@
     .mission-flex-container {
         display: flex;
         width: 100%;
-        gap: 50px;
+        gap: 60px;
         align-items: center;
     }
 
-    /* MISSION TEXT */
-    .mission-statement-zone { flex: 1.6; }
+    .mission-statement-zone { flex: 1.4; }
     .mission-large-text {
         font-family: 'Playfair Display', serif;
-        font-size: 2.3rem; /* LARhGE MISSION TEXT */
+        font-size: 3.2rem; 
         line-height: 1.1;
-        margin: 15px 0 20px;
-        color: #111;
+        margin: 20px 0 30px;
+        color: #0c1833;
         font-weight: 700;
     }
-    .mission-description { font-size: 0.9rem; line-height: 1.7; color: #555; font-weight: 300; margin: 0; }
+    .mission-description { font-size: 1rem; line-height: 1.8; color: #555; font-weight: 300; max-width: 500px; }
 
-    /* DEEP NAVY RATIO CARD */
+    /* --- NAVY DATA CARD --- */
     .deep-navy-ratio-card {
         flex: 1;
-        background: #001f3f; /* Deep Navy Fill */
+        background: #0c1833; 
         color: #fff;
-        padding: 35px;
-        border-radius: 4px;
-        box-shadow: 0 20px 40px rgba(0,31,63,0.15);
-        min-height: 280px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        padding: 50px;
+        border-radius: 8px;
+        box-shadow: 0 30px 60px rgba(12, 24, 51, 0.2);
+        position: relative;
     }
+    .ratio-stat { font-family: 'Playfair Display', serif; font-size: 4rem; color: #c5a059; line-height: 1; }
+    .ratio-label { font-size: 11px; text-transform: uppercase; letter-spacing: 3px; font-weight: 800; color: #fff; margin-top: 10px; display: block; }
+    .navy-divider { height: 1px; background: rgba(197, 160, 89, 0.3); margin: 30px 0; width: 60px; }
+    .navy-specs { list-style: none; padding: 0; margin: 0 0 35px 0; }
+    .navy-specs li { font-size: 0.9rem; padding: 8px 0; display: flex; align-items: center; font-weight: 400; color: rgba(255,255,255,0.8); }
+    .gold-bullet { width: 6px; height: 6px; background: #c5a059; border-radius: 50%; margin-right: 15px; }
+    .navy-accreditations { display: flex; gap: 25px; font-size: 8px; font-weight: 900; letter-spacing: 2px; color: #c5a059; opacity: 0.8; }
 
-    .ratio-stat { font-family: 'Playfair Display', serif; font-size: 3rem; color: #c5a059; display: block; line-height: 1; }
-    .ratio-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; color: #fff; opacity: 0.9; margin-top: 5px; display: block; }
-    
-    .navy-divider { height: 1px; background: rgba(197, 160, 89, 0.3); margin: 20px 0; width: 40px; }
-
-    .navy-specs { list-style: none; padding: 0; margin: 0 0 25px 0; }
-    .navy-specs li { font-size: 0.85rem; padding: 6px 0; display: flex; align-items: center; font-weight: 400; }
-    .gold-bullet { width: 6px; height: 6px; background: #c5a059; border-radius: 50%; margin-right: 12px; }
-
-    .navy-accreditations { display: flex; gap: 20px; font-size: 7px; font-weight: 900; letter-spacing: 2px; color: #c5a059; }
-
+    /* --- MOBILE REORDERING (The Magic) --- */
     @media (max-width: 1024px) {
-        .locked-mission-console { height: auto; flex-direction: column; }
-        .profile-rail-tall, .mission-master-card { width: 100%; flex: none; }
-        .mission-flex-container { flex-direction: column; gap: 30px; }
+        .locked-mission-console { height: auto; flex-direction: column; border: none; }
+        
+        /* Mission Statement First */
+        .mission-master-card { order: 1; padding: 60px 25px; }
+        .mission-flex-container { flex-direction: column; gap: 40px; }
+        .mission-large-text { font-size: 2.4rem; }
+
+        /* Navy Card Second */
+        .deep-navy-ratio-card { width: 100%; padding: 40px 30px; order: 2; border-radius: 8px; }
+
+        /* Expertise Rail Third - Horizontal Swiper */
+        .profile-rail-tall { order: 3; width: 100%; background: #fbfbfb; border-top: 1px solid #eee; margin-top: 20px; }
+        .rail-header { padding: 40px 25px 20px; border: none; }
+        .tall-scroll-area { display: flex; overflow-x: auto; overflow-y: hidden; gap: 15px; padding: 0 25px 50px; }
+        .dossier-card-tall { flex: 0 0 280px; margin-bottom: 0; border-radius: 8px; }
     }
 </style>
-    
     
 
     
