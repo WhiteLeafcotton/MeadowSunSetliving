@@ -528,18 +528,25 @@
    
 
     /* 4. The Video Content: Fill the card */
-    .mobile-only-video {
-        display: block !important;
-        width: 100% !important;
-        height: 100% !important;
-    }
+    /* 3. Scale the iframe so it fills the container perfectly */
+.mobile-only-video iframe {
+    position: absolute;
+    top: 50% !important;   /* Pulls the middle of the video to the middle of the box */
+    left: 50% !important;  /* Centers it horizontally */
+    width: 180% !important; /* Make it extra wide so we can crop the sides */
+    height: 120% !important; /* Make it extra tall to kill the black bars */
+    transform: translate(-50%, -50%) scale(1.1) !important; /* Centering math */
+    border: none;
+    pointer-events: none; /* Prevents users from accidentally clicking 'Pause' */
+}
 
-    .mobile-only-video iframe {
-        width: 100% !important;
-        height: 100% !important;
-        transform: scale(1.6); /* Keeps that premium cropped look */
-        border: none;
-    }
+/* Ensure the wrapper itself hides the overflow of the oversized video */
+.mobile-only-video {
+    overflow: hidden !important;
+    position: relative !important;
+    height: 500px !important;
+    background: #000;
+}
 
     /* 5. Hide the Desktop video so it doesn't take up space */
     .desktop-only-video {
