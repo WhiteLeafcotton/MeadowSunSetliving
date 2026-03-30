@@ -739,65 +739,81 @@
 /* --- CUSTOM COMPACT MOBILE VIEW --- */
 /* --- THE WIGGLE KILLER & MOBILE REFINEMENTS --- */
 @media (max-width: 768px) {
-    /* LOCK DOWN THE PAGE WIDTH */
+    /* 1. LOCK DOWN OVERFLOW */
     html, body {
         overflow-x: hidden !important;
         width: 100% !important;
         position: relative;
     }
 
-    /* 1. Fix the Photo Strip Overflow */
-    .title-strip-bg-wrapper, 
-    .section-header {
+    /* 2. THE PHOTO STRIP FIX (Private Pay & Flex Pay) */
+    .section-header, 
+    .title-strip-bg-wrapper {
         width: 100% !important;
-        overflow: hidden !important; /* This clips the -100vw background */
+        overflow: hidden !important; 
         position: relative;
+        padding: 40px 0 !important;
     }
 
-    /* 2. Flex Pay Stack (No Horizontal Scroll) */
-    .flex-pay-grid { 
-        display: flex !important; 
-        flex-direction: column !important; 
+    .private-pay-strip-title, 
+    .flex-main-title {
+        font-size: 3.2rem !important;
+        line-height: 1.0 !important;
         width: 100% !important;
-        overflow-x: hidden !important;
+    }
+
+    .italic-pay-match, 
+    .italic-pay {
+        font-size: 4.2rem !important;
+        margin-left: 0 !important;
+    }
+
+    /* 3. PRICING TIERS (Scroll Fix) */
+    .tier-scroll-container {
+        margin: 0 !important; 
+        padding: 20px 0 !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tier-grid {
+        display: flex !important;
+        width: max-content !important;
+        padding: 0 25px !important;
+        gap: 15px !important;
+    }
+
+    .tier-card-snap {
+        width: 280px !important; /* Forces cards to stay legible */
+    }
+
+    /* 4. FLEX PAY STACK */
+    .flex-pay-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
         border: none !important;
     }
 
-    /* 3. Pricing Tier Scroll (Horizontal but contained) */
-    .tier-scroll-container { 
-        overflow-x: auto; 
-        scroll-snap-type: x mandatory; 
-        margin: 0; /* Removed negative margins which cause wiggle */
-        padding: 20px 0 40px; 
-        width: 100%;
-    }
-    
-    .tier-grid { 
-        display: flex; 
-        width: max-content; 
-        padding: 0 20px; /* Provides the 'gap' at the end of the scroll */
-    }
-
-    /* 4. Formatting Adjustments */
-    .private-pay-strip-title {
-        font-size: 3.5rem !important;
-        line-height: 0.9 !important;
-    }
-
-    .flex-card-compact { 
-        padding: 25px 0 !important; 
-        min-width: 0 !important; 
+    .flex-card-compact, 
+    .flex-card-cta-luxe {
         width: 100% !important;
+        padding: 40px 25px !important;
+        border-right: none !important;
+        border-bottom: 1px solid #f1f5f9;
+        text-align: left !important;
     }
 
-    /* Hide the text that's causing the row to be too wide */
-    .flex-card-compact p { display: block !important; font-size: 0.9rem !important; } 
-}
+    .card-title, .cta-title { 
+        font-size: 2rem !important; 
+    }
 
-@media (max-width: 768px) {
-    .flex-main-title { font-size: 3.5rem !important; }
-    .italic-pay { font-size: 4.5rem !important; }
-    .card-title, .cta-title { font-size: 1.8rem !important; }
+    .flex-card-compact p { 
+        display: block !important; 
+        font-size: 0.95rem !important; 
+        margin-top: 10px;
+    }
 }
 </style>
 
