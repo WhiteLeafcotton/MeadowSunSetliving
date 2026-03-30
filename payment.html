@@ -288,19 +288,101 @@
     }
 
     /* --- 3. MOBILE RESPONSIVENESS --- */
-    @media (max-width: 768px) {
-        .private-pay-strip-title {
-            font-size: 3.8rem !important;
-            line-height: 0.9 !important;
-        }
-        .italic-pay-match {
-            font-size: 4.8rem !important;
-            margin-left: 5px !important;
-        }
-        .section-header {
-            margin-bottom: 40px !important;
-        }
+   /* --- CUSTOM MOBILE "ELITE" VIEW --- */
+@media (max-width: 768px) {
+    /* 1. Section Spacing */
+    #flex-pay-section {
+        padding: 60px 0 !important; /* Edge-to-edge feel */
     }
+
+    .flex-container {
+        padding: 0 25px; /* Consistent side breathing room */
+    }
+
+    /* 2. Header Adjustments */
+    .flex-main-title {
+        font-size: 3.5rem !important;
+        line-height: 1.1 !important;
+        margin-bottom: 40px !important;
+    }
+
+    .italic-pay {
+        font-size: 4.2rem !important;
+        display: block; /* Stack "Pay" under "Flex" for better mobile impact */
+        margin-left: 0;
+        margin-top: -10px;
+    }
+
+    .flex-eyebrow {
+        letter-spacing: 6px;
+        font-size: 0.6rem;
+    }
+
+    /* 3. The Grid to Stack Transformation */
+    .flex-pay-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        border: none !important; /* Remove the square grid outline */
+    }
+
+    /* 4. Refined Editorial Cards */
+    .flex-card-compact {
+        padding: 40px 0 !important; /* Vertical spacing only */
+        border-right: none !important;
+        border-bottom: 1px solid #f1f5f9 !important; /* Elegant separator line */
+        background: transparent !important;
+    }
+
+    .card-number {
+        font-size: 0.75rem;
+        margin-bottom: 10px;
+    }
+
+    .card-title {
+        font-size: 1.8rem !important;
+        margin-bottom: 12px;
+    }
+
+    .card-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #475569;
+    }
+
+    /* 5. The Mobile Frosted CTA Box */
+    .flex-card-cta-luxe {
+        margin-top: 40px;
+        padding: 50px 30px !important;
+        border-radius: 4px; /* Slight rounding for a "card" feel on mobile */
+        text-align: center;
+        display: block !important;
+    }
+
+    .cta-title {
+        font-size: 2rem !important;
+    }
+
+    .cta-sub-text {
+        font-size: 0.85rem;
+        margin-bottom: 25px;
+    }
+
+    .flex-btn-frosted {
+        width: 100%; /* Full width button for easy thumb tapping */
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* Show the mobile subtext clearly */
+    .mobile-special-subtext {
+        display: block !important;
+        margin-top: 15px;
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        color: #bfa15f;
+        font-size: 0.9rem;
+    }
+}
 </style>
 
 
