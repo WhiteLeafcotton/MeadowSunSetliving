@@ -489,60 +489,45 @@
 /* Fix for the Video Container */
 /* --- ABOUT PAGE VIDEO OVERRIDE --- */
 /* --- ABOUT PAGE: MOBILE VIDEO SEPARATE TREATMENT --- */
-/* --- ADMISSIONS MOBILE SWAP LOGIC --- */
 @media (max-width: 768px) {
-    /* Ensure the card has a fixed minimum height to prevent "jumping" */
-    .journey-card-outline {
-        min-height: 520px; 
+    /* 1. Ensure the split container stacks vertically so the video gets full width */
+    .split-view-container {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        gap: 20px;
+    }
+
+    /* 2. Target the specific card holding the video */
+    .video-card-container {
+        width: 100% !important;
+        padding: 0 !important; /* Remove padding so video can go edge-to-edge */
+        border: none !important; /* Optional: removes border for a cleaner look */
+        height: 600px !important; /* Increased height for that 'Portrait' story feel */
+    }
+
+    /* 3. The Video Wrapper */
+    .mobile-only-video {
         position: relative;
+        width: 100%;
+        height: 100%; /* Fills the 600px container */
+        margin: 0; 
         overflow: hidden;
+        background: #000;
     }
 
-    /* 1. Hide the Steps by default on mobile */
-    .journey-steps-container {
-        display: none;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.5s ease;
-    }
-
-    /* 2. When active, show the steps and hide the intro */
-    .journey-steps-container.mobile-active {
-        display: block !important;
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* 3. Hide the intro text when steps are active */
-    .journey-steps-container.mobile-active ~ .journey-header-editorial,
-    .mobile-active-state .journey-header-editorial {
-        display: none !important;
-    }
-
-    /* 4. Style the "Tap" Button to look premium */
-    .mobile-process-btn {
-        display: block;
-        margin-top: 25px;
-        padding: 15px;
-        border: 1px solid #c5a059;
-        color: #c5a059;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 0.7rem;
-        font-weight: 800;
-        text-align: center;
-        cursor: pointer;
-    }
-    
-    /* Small adjustment to make step cards fit nicely on mobile */
-    .step-card-editorial {
-        padding: 15px 0 !important;
-        border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+    /* 4. The Iframe */
+    .mobile-only-video iframe {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        /* The 'transform' below ensures the video covers the area without bars */
+        transform: translate(-50%, -50%) scale(1.5); 
+        pointer-events: none; /* Prevents users from accidentally clicking YouTube links */
     }
 }
+
 
 
 </style>
@@ -628,6 +613,7 @@
     <div class="split-view-container">
         
         <div class="journey-card-outline animate-on-scroll" id="admissionsCard">
+            
             <div class="journey-header-editorial" id="admissionsIntro">
                 <span class="gold-eyebrow">The Path to Restorative Care</span>
                 <h2 class="magazine-title">
@@ -911,32 +897,6 @@ function onPlayersReady() {
             menu.classList.toggle("active");
             document.body.style.overflow = menu.classList.contains("active") ? "hidden" : "auto";
         }
-
-
-
-
-        function toggleMobileSteps(showSteps) {
-    const intro = document.getElementById('admissionsIntro');
-    const steps = document.getElementById('admissionsSteps');
-    const card = document.getElementById('admissionsCard');
-
-    if (window.innerWidth <= 768) {
-        if (showSteps) {
-            // SHOW THE STEPS
-            intro.style.display = 'none';
-            steps.style.display = 'block';
-            setTimeout(() => {
-                steps.classList.add('mobile-active');
-                card.classList.add('mobile-active-state');
-            }, 10);
-        } else {
-            // SHOW THE INTRO
-            steps.classList.remove('mobile-active');
-            card.classList.remove('mobile-active-state');
-            steps.style.display = 'none';
-            intro.style.display = 'block';
-        }
-    }
 
         // Header Scroll Effect perfect base
         window.addEventListener('scroll', function() {
