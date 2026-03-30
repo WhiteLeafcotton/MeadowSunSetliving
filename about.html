@@ -526,8 +526,46 @@
         transform: translate(-50%, -50%) scale(1.5); 
         pointer-events: none; /* Prevents users from accidentally clicking YouTube links */
     }
+/* --- ADMISSIONS CARD TEXT SCALING --- */
+.admissions-journey .magazine-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Scalable title */
+    line-height: 1.1;
 }
 
+.admissions-journey .header-subtext {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    max-width: 90%;
+}
+
+/* --- MOBILE SWITCHING LOGIC --- */
+@media (max-width: 768px) {
+    /* Hide steps by default on mobile */
+    #admissionsSteps {
+        display: none;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.4s ease;
+    }
+
+    /* When active, show steps and hide intro */
+    .journey-card-outline.mobile-view-active #admissionsIntro {
+        display: none;
+    }
+
+    .journey-card-outline.mobile-view-active #admissionsSteps {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    /* Shrink step text for mobile cards */
+    .step-body h3 { font-size: 1.1rem !important; }
+    .step-body p { font-size: 0.8rem !important; line-height: 1.4; }
+    .step-number-large { font-size: 1.5rem !important; }
+}
+
+}
 
 
 </style>
@@ -608,7 +646,6 @@
     
 
 
-    
 <section class="admissions-journey" id="admissions">
     <div class="split-view-container">
         
@@ -636,7 +673,7 @@
                     </div>
                     <div class="step-body">
                         <h3>Initial Assessment</h3>
-                        <p>A comprehensive clinical review to ensure every specific medical and lifestyle need is met with precision.</p>
+                        <p>A comprehensive clinical review to ensure medical needs are met.</p>
                     </div>
                 </div>
 
@@ -647,7 +684,7 @@
                     </div>
                     <div class="step-body">
                         <h3>Documentation</h3>
-                        <p>Gathering essential medical history and identity verification to create a secure foundation for care.</p>
+                        <p>Gathering essential history for a secure foundation.</p>
                     </div>
                 </div>
 
@@ -658,7 +695,7 @@
                     </div>
                     <div class="step-body">
                         <h3>Personal Care Plan</h3>
-                        <p>Developing a bespoke roadmap that balances restorative clinical health with world-class hospitality.</p>
+                        <p>Bespoke roadmap balancing health and hospitality.</p>
                     </div>
                 </div>
 
@@ -669,7 +706,7 @@
                     </div>
                     <div class="step-body">
                         <h3>Financial & Residency</h3>
-                        <p>Transparent agreements and residency confirmation tailored to your family's unique requirements.</p>
+                        <p>Transparent agreements tailored to your family.</p>
                     </div>
                 </div>
 
@@ -679,7 +716,7 @@
                     </div>
                     <div class="step-body">
                         <h3 class="gold-text">Welcome Home</h3>
-                        <p>The transition into a life of dignity, quiet luxury, and expert assisted living begins here.</p>
+                        <p>The transition into a life of dignity begins here.</p>
                     </div>
                 </div>
 
@@ -696,30 +733,18 @@
                     <span id="muteText">TAP FOR AUDIO</span>
                 </button>
             </div>
-
             <div class="iframe-viewport">
                 <div class="desktop-only-video">
-                    <iframe 
-                        id="journeyVideo"
-                        src="https://www.youtube.com/embed/jUxY2QqMDX0?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=jUxY2QqMDX0&controls=0&modestbranding=1&rel=0" 
-                        allow="autoplay; encrypted-media" 
-                        allowfullscreen>
-                    </iframe>
+                    <iframe id="journeyVideo" src="https://www.youtube.com/embed/jUxY2QqMDX0?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=jUxY2QqMDX0&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
-
                 <div class="mobile-only-video">
-                    <iframe 
-                        id="journeyVideoMobile"
-                        src="https://www.youtube.com/embed/3v7PPviuYMk?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=3v7PPviuYMk&controls=0&modestbranding=1&rel=0" 
-                        allow="autoplay; encrypted-media" 
-                        allowfullscreen>
-                    </iframe>
+                    <iframe id="journeyVideoMobile" src="https://www.youtube.com/embed/3v7PPviuYMk?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=3v7PPviuYMk&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
+
     </div>
 </section>
-
 
     
 
@@ -810,16 +835,17 @@
 
 // new thang perfect
 
-function toggleMobileSteps() {
-    const container = document.querySelector('.journey-steps-container');
-    container.classList.toggle('mobile-active');
+function toggleMobileSteps(showSteps) {
+    const card = document.getElementById('admissionsCard');
     
-    // Update button text based on state
-    const btn = document.querySelector('.mobile-process-btn');
-    if (container.classList.contains('mobile-active')) {
-        btn.innerText = "Hide Steps";
-    } else {
-        btn.innerText = "View the 5-Step Process";
+    if (window.innerWidth <= 768) {
+        if (showSteps) {
+            card.classList.add('mobile-view-active');
+            // Scroll to top of card so user sees the first step
+            card.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            card.classList.remove('mobile-view-active');
+        }
     }
 }
 
