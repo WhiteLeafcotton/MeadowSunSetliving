@@ -490,51 +490,64 @@
 /* --- ABOUT PAGE VIDEO OVERRIDE --- */
 /* --- ABOUT PAGE: MOBILE VIDEO SEPARATE TREATMENT --- */
 @media (max-width: 768px) {
-    /* 1. Stack the containers so they don't fight for space */
+    /* 1. The Parent: Stack them and remove the gap */
     .split-view-container {
         display: flex !important;
         flex-direction: column !important;
-        gap: 0px !important; /* Removes gap so the video and card feel connected */
+        gap: 0 !important;
+        width: 100% !important;
+        padding: 0 !important;
     }
 
-    /* 2. Give the video card a HARD height so it cannot collapse */
+    /* 2. The Text Card: Force it to be a specific height */
+    #admissionsCard {
+        width: 100% !important;
+        height: 500px !important; /* Matches video height */
+        padding: 40px 30px !important;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        background: #fff;
+        border: none !important;
+        border-bottom: 1px solid #eee !important; /* Visual separation line */
+    }
+
+    /* 3. The Video Card: Force it to be the same height */
     .video-card-container {
         width: 100% !important;
-        height: 500px !important; /* Adjust this to your liking */
+        height: 500px !important; /* Perfectly matches the text card above */
         padding: 0 !important;
         margin: 0 !important;
-        position: relative !important;
-        z-index: 5 !important;
-        overflow: hidden !important;
-        background: #000 !important;
+        background: #000;
+        position: relative;
     }
 
-    /* 3. The Video Wrapper - Ensure it fills the 500px height */
+    /* 4. The Video Content: Fill the card */
     .mobile-only-video {
         display: block !important;
         width: 100% !important;
         height: 100% !important;
-        position: absolute !important;
-        top: 0;
-        left: 0;
     }
 
-    /* 4. The Iframe - Force it to be larger than the container to hide edges */
     .mobile-only-video iframe {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100vw !important; /* Use Viewport Width to ensure it covers mobile */
-        height: 120% !important; /* Slightly taller to hide YouTube top/bottom UI */
-        transform: translate(-50%, -50%) scale(1.6); 
-        pointer-events: none;
+        width: 100% !important;
+        height: 100% !important;
+        transform: scale(1.6); /* Keeps that premium cropped look */
         border: none;
     }
 
-    /* 5. Keep your text scaling as it was */
-    .admissions-journey .magazine-title {
-        font-size: 1.8rem !important;
-        line-height: 1.1;
+    /* 5. Hide the Desktop video so it doesn't take up space */
+    .desktop-only-video {
+        display: none !important;
+    }
+
+    /* --- ADMISSIONS SWITCHING LOGIC (Keep this) --- */
+    #admissionsSteps { display: none !important; }
+    #admissionsCard.mobile-view-active #admissionsIntro { display: none !important; }
+    #admissionsCard.mobile-view-active #admissionsSteps { 
+        display: block !important; 
+        overflow-y: auto; 
+        height: 100%; 
     }
 }
 
