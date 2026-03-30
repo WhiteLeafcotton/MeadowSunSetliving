@@ -551,10 +551,10 @@
 
 <section class="flex-pay-frosted reveal-up" id="flex-pay-section" style="padding: 0; margin: 0; width: 100vw; overflow: hidden;">
     
-    <div class="flex-pay-photo-strip">
+    <div class="flex-title-strip-container">
         <div class="flex-container-inner">
             <span class="flex-eyebrow-match">Financial Agility</span>
-            <h2 class="flex-main-title-match">
+            <h2 class="flex-main-title-strip">
                 Flex <span class="italic-pay-match">Pay.</span>
             </h2>
         </div>
@@ -592,21 +592,32 @@
 </section>
 
 <style>
-/* --- 1. THE STRIP (EXACT MATCH TO PRIVATE PAY) --- */
-.flex-pay-photo-strip {
+/* --- THE SELECTIVE STRIP LOGIC --- */
+.flex-title-strip-container {
+    padding: 60px 0 40px 0; /* Adjusts the space above the strip */
     position: relative;
-    padding: 80px 5%; /* Matches Private Pay spacing */
-    width: 100%;
-    box-sizing: border-box;
 }
 
-.flex-pay-photo-strip::before {
+.flex-main-title-strip {
+    font-family: 'Playfair Display';
+    font-size: 6rem;
+    color: #fff;
+    margin: 0;
+    letter-spacing: -2px;
+    line-height: 0.85; /* Tight line height makes the strip thin */
+    position: relative;
+    padding: 20px 5%; /* This controls the "thickness" of the blue behind the text */
+    display: block;
+}
+
+/* This creates the thin blue bar that only lives behind the text */
+.flex-main-title-strip::before {
     content: "";
     position: absolute;
     top: 0;
+    bottom: 0;
     left: 50%;
     width: 100vw;
-    height: 100%;
     transform: translateX(-50%);
     z-index: -1;
     background-image: linear-gradient(rgba(12, 24, 51, 0.78), rgba(12, 24, 51, 0.78)), 
@@ -615,7 +626,14 @@
     background-position: center;
 }
 
-.flex-container-inner { max-width: 1400px; margin: 0 auto; }
+.italic-pay-match {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: #bfa15f;
+    font-size: 7.5rem;
+    margin-left: -10px;
+    vertical-align: middle;
+}
 
 .flex-eyebrow-match {
     color: #bfa15f; 
@@ -626,46 +644,18 @@
     font-weight: 800; 
     display: block; 
     margin-bottom: 20px;
+    padding-left: 5%; /* Matches alignment */
 }
 
-.flex-main-title-match {
-    font-family: 'Playfair Display';
-    font-size: 6rem;
-    color: #fff; /* White text on blue strip */
-    margin: 0;
-    letter-spacing: -2px;
-    line-height: 0.8;
-}
-
-.italic-pay-match {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    color: #bfa15f;
-    font-size: 7.5rem;
-    margin-left: -10px;
-}
-
-/* --- 2. THE GRID & CARDS --- */
-.flex-grid-wrapper { max-width: 1400px; margin: 40px auto; padding: 0 5%; }
-
-.flex-pay-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1.2fr;
-    border: 1px solid #f1f5f9;
-}
-
-.flex-card-compact {
-    padding: 60px 40px;
-    background: #fff;
-    border-right: 1px solid #f1f5f9;
-}
-
+/* --- THE GRID & LUXE BOX --- */
+.flex-grid-wrapper { max-width: 1400px; margin: 20px auto 60px; padding: 0 5%; }
+.flex-pay-grid { display: grid; grid-template-columns: 1fr 1fr 1.2fr; border: 1px solid #f1f5f9; }
+.flex-card-compact { padding: 60px 40px; background: #fff; border-right: 1px solid #f1f5f9; }
 .card-number { font-family: 'Playfair Display'; color: #bfa15f; font-weight: 700; font-size: 0.85rem; display: block; margin-bottom: 10px; }
 .card-title { font-family: 'Playfair Display'; font-size: 2.2rem; color: #0f172a; margin-bottom: 15px; }
 .divider-gold { width: 30px; height: 1px; background: #bfa15f; margin-bottom: 20px; }
 .card-text { font-size: 0.95rem; color: #64748b; line-height: 1.8; }
 
-/* --- 3. THE BLUE CTA BOX & FROSTED BUTTON --- */
 .flex-card-cta-luxe {
     padding: 60px 40px;
     background: #0f172a;
@@ -675,18 +665,13 @@
     display: flex;
     align-items: center;
 }
-
 .cta-frost-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(135deg, rgba(191, 161, 95, 0.15) 0%, transparent 100%);
 }
-
 .relative-z { position: relative; z-index: 2; width: 100%; }
-.cta-eyebrow { color: #bfa15f; text-transform: uppercase; letter-spacing: 4px; font-size: 0.6rem; margin-bottom: 10px; }
 .cta-title { font-family: 'Playfair Display'; font-size: 2.2rem; margin-bottom: 15px; }
-.cta-sub-text { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 30px; }
-
 .flex-btn-frosted {
     display: inline-block;
     padding: 18px 30px;
@@ -700,30 +685,17 @@
     letter-spacing: 3px;
     font-size: 0.7rem;
     font-weight: 700;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
-.flex-btn-frosted:hover {
-    background: #bfa15f;
-    border-color: #bfa15f;
-    color: #0f172a;
-    transform: translateY(-2px);
-}
-
-/* --- MOBILE SYNC --- */
+/* --- MOBILE REFINEMENTS --- */
 @media (max-width: 768px) {
-    .flex-pay-photo-strip { padding: 60px 25px !important; }
-    .flex-main-title-match { font-size: 3.5rem !important; }
+    .flex-main-title-strip { font-size: 3.5rem !important; padding: 15px 25px !important; }
     .italic-pay-match { font-size: 4.5rem !important; margin-left: 0 !important; }
-    
+    .flex-eyebrow-match { padding-left: 25px !important; }
     .flex-grid-wrapper { padding: 0; margin-top: 0; }
     .flex-pay-grid { display: flex !important; flex-direction: column !important; border: none; }
-    .flex-card-compact, .flex-card-cta-luxe { 
-        width: 100%; 
-        padding: 40px 25px !important; 
-        border-right: none; 
-        border-bottom: 1px solid #f1f5f9; 
-    }
+    .flex-card-compact, .flex-card-cta-luxe { width: 100%; padding: 40px 25px !important; border-bottom: 1px solid #f1f5f9; }
 }
 </style>
 
