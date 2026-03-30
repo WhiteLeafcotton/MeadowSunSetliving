@@ -684,12 +684,36 @@
 }
 
 /* --- MOBILE MATCHING --- */
+/* --- MOBILE MATCHING --- */
 @media (max-width: 768px) {
-    .private-pay-strip-title { font-size: 3.8rem !important; line-height: 0.9 !important; }
-    .italic-pay-match { font-size: 4.8rem !important; margin-left: 5px !important; }
+    .private-pay-strip-title { font-size: 3.2rem !important; line-height: 0.9 !important; }
+    .italic-pay-match { font-size: 4.2rem !important; margin-left: 5px !important; }
     
-    .flex-pay-grid { display: flex !important; flex-direction: column !important; border: none; }
-    .flex-card-compact, .flex-card-cta-luxe { width: 100%; padding: 40px 25px !important; border-bottom: 1px solid #f1f5f9; }
+    /* Change from Column to Grid for the 2+1 layout */
+    .flex-pay-grid { 
+        display: grid !important; 
+        grid-template-columns: 1fr 1fr !important; /* Forces 01 and 02 side-by-side */
+        border: none; 
+    }
+
+    .flex-card-compact { 
+        padding: 30px 20px !important; 
+        border-right: 1px solid #f1f5f9 !important;
+        border-bottom: 1px solid #f1f5f9 !important;
+        text-align: left;
+    }
+
+    /* Make the Blue Box (the 3rd item) span both columns */
+    .flex-card-cta-luxe { 
+        grid-column: span 2; 
+        width: 100%; 
+        padding: 40px 25px !important; 
+    }
+
+    /* Scale down text so it fits the smaller side-by-side cards */
+    .flex-card-compact .card-title { font-size: 1.2rem !important; min-height: 3rem; }
+    .flex-card-compact .card-text { font-size: 0.75rem !important; line-height: 1.4; display: block !important; }
+    
     .flex-grid-wrapper { padding: 0; margin-bottom: 40px; }
 }
 </style>
