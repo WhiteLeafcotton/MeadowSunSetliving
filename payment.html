@@ -721,9 +721,92 @@
 }
 
 /* --- MOBILE --- */
-@media (max-width: 1024px) {
-    .flex-pay-grid { grid-template-columns: 1fr; }
-    .flex-card-compact, .flex-card-cta-luxe { border-right: none; border-bottom: 1px solid #f1f5f9; padding: 60px 30px; }
+/* --- CUSTOM COMPACT MOBILE VIEW --- */
+@media (max-width: 768px) {
+    /* 1. Tighten Section Spacing */
+    #flex-pay-section {
+        padding: 40px 0 !important; /* Reduced from 100px */
+    }
+
+    /* 2. Reduce gap between Title Strip and Cards */
+    .title-strip-bg-wrapper {
+        margin-bottom: 20px !important; /* Tightened from 80px */
+        padding: 10px 0 !important;
+    }
+
+    /* 3. Transform Grid to Stack (Borderless) */
+    .flex-pay-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        border: none !important; /* Removes the box outline for a cleaner look */
+    }
+
+    /* 4. Compact Editorial Cards */
+    .flex-card-compact {
+        padding: 30px 0 !important; /* Significant reduction in vertical space */
+        border-right: none !important;
+        border-bottom: 1px solid #f1f5f9 !important; /* Minimalist separator */
+        background: transparent !important;
+    }
+
+    /* 5. Refined Typography for Mobile */
+    .card-number {
+        font-size: 0.7rem !important;
+        margin-bottom: 8px !important;
+    }
+
+    .divider-gold {
+        margin-bottom: 15px !important;
+    }
+
+    .card-title {
+        font-size: 1.6rem !important; /* More compact for smaller screens */
+        margin-bottom: 10px !important;
+    }
+
+    .card-text {
+        font-size: 0.9rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* 6. High-End Mobile CTA Box */
+    .flex-card-cta-luxe {
+        margin-top: 30px;
+        padding: 40px 25px !important;
+        border-radius: 2px;
+        text-align: center;
+        display: block !important;
+    }
+
+    .cta-title {
+        font-size: 1.8rem !important;
+        margin-bottom: 8px !important;
+    }
+
+    .cta-sub-text {
+        font-size: 0.8rem;
+        margin-bottom: 20px !important;
+    }
+
+    .flex-btn-frosted {
+        width: 100%; /* Easy thumb-tap target */
+        padding: 18px 0 !important;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    /* Show the subtext in a compact way */
+    .mobile-special-subtext {
+        display: block !important;
+        margin-top: 12px;
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        color: #bfa15f;
+        font-size: 0.85rem;
+        border-top: 1px solid #f8fafc;
+        padding-top: 8px;
+    }
 }
 
 @media (max-width: 768px) {
