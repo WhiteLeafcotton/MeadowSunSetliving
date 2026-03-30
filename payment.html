@@ -548,277 +548,114 @@
         
 
 
+
 <section class="flex-pay-frosted reveal-up" id="flex-pay-section">
-    <div class="title-strip-bg-wrapper">
-        <div class="flex-container">
-            <span class="flex-eyebrow eyebrow-match">Financial Agility</span>
-            <h2 class="flex-main-title title-match">
-                Flex <span class="italic-pay italic-match">Pay.</span>
+    <div class="title-strip-bg-wrapper mobile-full-bleed">
+        <div class="flex-title-content">
+            <span class="flex-eyebrow">Financial Agility</span>
+            <h2 class="flex-main-title">
+                Flex <span class="italic-pay">Pay.</span>
             </h2>
         </div>
     </div>
 
-    <div class="flex-container">
-        <div class="flex-cards-container">
-            <div class="flex-pay-grid grid-match">
-                
-                <div class="flex-card-compact card-match">
-                    <div class="card-inner">
-                        <span class="card-number">01</span>
-                        <h4 class="card-title title-match">Respite <br>Recovery</h4>
-                        <div class="divider-gold"></div>
-                        <p class="card-text text-match">Premium stewardship for those transitioning from clinical settings.</p>
-                        <span class="mobile-special-subtext">Ideal for post-operative transitions.</span>
-                    </div>
+    <div class="flex-cards-outer-container">
+        <div class="flex-pay-grid">
+            <div class="flex-card-compact">
+                <div class="card-inner">
+                    <span class="card-number">01</span>
+                    <h4 class="card-title">Respite <br>Recovery</h4>
+                    <div class="divider-gold"></div>
+                    <p class="card-text">Premium stewardship for those transitioning from clinical settings.</p>
                 </div>
+            </div>
 
-                <div class="flex-card-compact card-match">
-                    <div class="card-inner">
-                        <span class="card-number">02</span>
-                        <h4 class="card-title title-match">Custom <br>Scheduling</h4>
-                        <div class="divider-gold"></div>
-                        <p class="card-text text-match">Non-traditional entry points curated for our two private suites.</p>
-                        <span class="mobile-special-subtext">Flexible arrival dates for private suites.</span>
-                    </div>
+            <div class="flex-card-compact">
+                <div class="card-inner">
+                    <span class="card-number">02</span>
+                    <h4 class="card-title">Custom <br>Scheduling</h4>
+                    <div class="divider-gold"></div>
+                    <p class="card-text">Non-traditional entry points curated for our two private suites.</p>
                 </div>
+            </div>
 
-                <div class="flex-card-cta-luxe">
-                    <div class="cta-frost-overlay"></div>
-                    <div class="card-inner relative-z">
-                        <p class="cta-eyebrow">The Collective</p>
-                        <h4 class="cta-title">Private Suites</h4>
-                        <p class="cta-sub-text">Limited availability for curated short-term stays.</p>
-                        <a href="suites.html" class="flex-btn-frosted">Explore Suites</a>
-                    </div>
+            <div class="flex-card-cta-luxe">
+                <div class="cta-frost-overlay"></div>
+                <div class="card-inner relative-z">
+                    <p class="cta-eyebrow">The Collective</p>
+                    <h4 class="cta-title">Private Suites</h4>
+                    <p class="cta-sub-text">Limited availability for curated short-term stays.</p>
+                    <a href="suite.html" class="flex-btn-frosted">Explore Suites</a>
                 </div>
-
-            </div> 
-        </div>
+            </div>
+        </div> 
     </div>
 </section>
 
 <style>
-/* --- CORE LAYOUT & STRIP (Unchanged per your request) --- */
-#flex-pay-section .flex-container {
-    max-width: none !important;
-    padding: 0 !important;
+/* --- BASE DESKTOP STYLES --- */
+#flex-pay-section { width: 100%; overflow: hidden; padding: 60px 0; }
+
+.title-strip-bg-wrapper {
+    position: relative;
+    padding: 80px 5%;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 200px;
 }
-.title-strip-bg-wrapper { overflow: hidden; margin-bottom: 80px; padding: 20px 0; }
-.flex-main-title {
-    font-family: 'Playfair Display'; font-size: 6rem; color: #0f172a; margin: 0;
-    letter-spacing: -2px; line-height: 0.8; position: relative; display: block; width: 100%; z-index: 1;
-}
-.flex-main-title::before {
+
+/* The Full-Width Background Logic */
+.title-strip-bg-wrapper::before {
     content: "";
     position: absolute;
-    /* THE KEY FIX: Center and stretch to viewport width */
+    top: 0;
     left: 50%;
     width: 100vw;
+    height: 100%;
     transform: translateX(-50%);
-    
-    top: 0;
-    bottom: 0;
     z-index: -1;
-    background-image: linear-gradient(rgba(12, 24, 51, 0.78), rgba(12, 24, 51, 0.78)),  
+    background-image: linear-gradient(rgba(12, 24, 51, 0.8), rgba(12, 24, 51, 0.8)), 
                       url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2036.jpeg?raw=true');
     background-size: cover;
     background-position: center;
 }
-.flex-eyebrow { color: #bfa15f; letter-spacing: 10px; text-transform: uppercase; font-size: 0.65rem; font-weight: 800; display: block; margin-bottom: 20px; }
-.italic-pay { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; color: #bfa15f; font-size: 7.5rem; margin-left: -10px; vertical-align: middle; }
 
-/* --- REDESIGNED GRID & CARDS --- */
-.flex-pay-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1.2fr;
-    gap: 0;
-    border: 1px solid #f1f5f9;
-}
+.flex-title-content { max-width: 1400px; margin: 0 auto; width: 100%; }
+.flex-main-title { font-family: 'Playfair Display'; font-size: 6rem; color: #fff; margin: 0; line-height: 0.8; letter-spacing: -2px; }
+.italic-pay { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #bfa15f; font-size: 7.5rem; }
 
-.flex-card-compact {
-    padding: 80px 50px;
-    background: #fff;
-    border-right: 1px solid #f1f5f9;
-    position: relative;
-    transition: all 0.4s ease;
-}
+.flex-cards-outer-container { max-width: 1400px; margin: 0 auto; padding: 0 5%; }
+.flex-pay-grid { display: grid; grid-template-columns: 1fr 1fr 1.2fr; border: 1px solid #f1f5f9; background: #fff; }
+.flex-card-compact, .flex-card-cta-luxe { padding: 60px 40px; }
 
-.card-number {
-    font-family: 'Playfair Display';
-    font-size: 0.85rem;
-    color: #bfa15f;
-    display: block;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.divider-gold {
-    width: 30px;
-    height: 1px;
-    background: #bfa15f;
-    margin-bottom: 25px;
-}
-
-.card-title {
-    font-family: 'Playfair Display';
-    font-size: 2.2rem;
-    color: #0f172a;
-    margin-bottom: 15px;
-    line-height: 1.2;
-}
-
-.card-text {
-    font-size: 1rem;
-    color: #64748b;
-    line-height: 1.8;
-}
-
-/* --- THE REDESIGNED CTA BOX --- */
-.flex-card-cta-luxe {
-    padding: 80px 50px;
-    position: relative;
-    background: #0f172a; /* Dark base */
-    display: flex;
-    align-items: center;
-    color: #fff;
-    overflow: hidden;
-}
-
-.cta-frost-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(135deg, rgba(191, 161, 95, 0.1) 0%, rgba(15, 23, 42, 0) 100%);
-    z-index: 1;
-}
-
-.relative-z { position: relative; z-index: 2; width: 100%; }
-
-.cta-eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 0.6rem;
-    color: #bfa15f;
-    margin-bottom: 10px;
-}
-
-.cta-title {
-    font-family: 'Playfair Display';
-    font-size: 2.2rem;
-    margin-bottom: 15px;
-}
-
-.cta-sub-text {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.7);
-    margin-bottom: 30px;
-}
-
-.flex-btn-frosted {
-    display: inline-block;
-    padding: 18px 30px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    transition: all 0.3s ease;
-}
-
-.flex-btn-frosted:hover {
-    background: #bfa15f;
-    border-color: #bfa15f;
-    color: #0f172a;
-}
-
-/* --- MOBILE --- */
-/* --- CUSTOM COMPACT MOBILE VIEW --- */
-/* --- THE WIGGLE KILLER & MOBILE REFINEMENTS --- */
+/* --- MOBILE FULL-WIDTH OVERRIDE --- */
 @media (max-width: 768px) {
-    /* 1. LOCK DOWN OVERFLOW */
-    html, body {
-        overflow-x: hidden !important;
-        width: 100% !important;
-        position: relative;
-    }
+    #flex-pay-section { padding: 40px 0; }
 
-    /* 2. THE PHOTO STRIP FIX (Full-Width Edge-to-Edge) */
-    .section-header, 
-.title-strip-bg-wrapper {
-    width: 100vw !important;         /* Force to full viewport width */
-    margin-left: -5vw !important;    /* Pull left to offset the 5% parent padding */
-    position: relative;
-    padding: 60px 25px !important;   /* Add internal padding so text doesn't touch the glass */
-    box-sizing: border-box;
-    overflow: hidden !important;
-}
-
-    .private-pay-strip-title, 
-    .flex-main-title {
-        font-size: 3rem !important;
-        line-height: 1.0 !important;
-        width: 100% !important;
-        text-align: left;
-    }
-
-    .italic-pay-match, 
-    .italic-pay {
-        font-size: 4rem !important;
+    /* Force the title strip to ignore parent padding */
+    .mobile-full-bleed {
+        width: 100vw !important;
+        left: 0 !important;
         margin-left: 0 !important;
-        display: inline-block;
+        padding: 60px 25px !important;
     }
 
-    /* 3. PRICING TIERS (Scroll Fix) */
-    .tier-scroll-container {
-        margin: 0 !important; 
-        padding: 20px 0 !important;
-        width: 100% !important;
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch;
-    }
+    .flex-main-title { font-size: 3.5rem !important; }
+    .italic-pay { font-size: 4.5rem !important; }
 
-    .tier-grid {
-        display: flex !important;
-        width: max-content !important;
-        padding: 0 25px !important;
-        gap: 15px !important;
-    }
-
-    .tier-card-snap {
-        width: 280px !important;
-    }
-
-    /* 4. FLEX PAY STACK */
-    .flex-pay-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        width: 100% !important;
+    /* Stack the cards on mobile */
+    .flex-pay-grid { 
+        display: flex !important; 
+        flex-direction: column !important; 
         border: none !important;
-        margin-top: 20px;
     }
 
-    .flex-card-compact, 
-    .flex-card-cta-luxe {
-        width: 100% !important;
-        padding: 40px 25px !important;
-        border-right: none !important;
-        border-bottom: 1px solid #f1f5f9;
-        text-align: left !important;
-        box-sizing: border-box;
-    }
-
-    .card-title, .cta-title { 
-        font-size: 2rem !important; 
-    }
-
-    .flex-card-compact p { 
-        display: block !important; 
-        font-size: 0.95rem !important; 
-        margin-top: 10px;
+    .flex-card-compact, .flex-card-cta-luxe { 
+        width: 100% !important; 
+        padding: 40px 25px !important; 
+        border-bottom: 1px solid #f1f5f9 !important;
     }
 }
 </style>
