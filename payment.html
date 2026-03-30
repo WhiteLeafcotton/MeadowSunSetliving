@@ -549,69 +549,65 @@
 
 
 
-<section class="flex-pay-frosted reveal-up" id="flex-pay-section" style="padding: 0; margin: 0; width: 100vw; overflow: hidden;">
+<section class="flex-pay-frosted" id="flex-pay-section" style="padding: 0; margin: 0; width: 100vw; overflow: hidden; background: #fff;">
     
-    <div class="flex-title-strip-container">
-        <div class="flex-container-inner">
-            <span class="flex-eyebrow-match">Financial Agility</span>
-            <h2 class="flex-main-title-strip">
+    <div style="max-width: 1400px; margin: 0 auto; position: relative; z-index: 2; padding: 60px 0 0 0;">
+        <div class="section-header reveal-up" style="margin-bottom: 40px; padding: 0 5%;">
+            <span style="color: #bfa15f; letter-spacing: 10px; text-transform: uppercase; font-size: 0.65rem; font-family: 'Inter'; font-weight: 800; display: block; margin-bottom: 20px;">Financial Agility</span>
+            
+            <h2 class="private-pay-strip-title">
                 Flex <span class="italic-pay-match">Pay.</span>
             </h2>
         </div>
-    </div>
 
-    <div class="flex-grid-wrapper">
-        <div class="flex-pay-grid">
-            
-            <div class="flex-card-compact">
-                <span class="card-number">01</span>
-                <h4 class="card-title">Respite <br>Recovery</h4>
-                <div class="divider-gold"></div>
-                <p class="card-text">Premium stewardship for those transitioning from clinical settings.</p>
-            </div>
-
-            <div class="flex-card-compact">
-                <span class="card-number">02</span>
-                <h4 class="card-title">Custom <br>Scheduling</h4>
-                <div class="divider-gold"></div>
-                <p class="card-text">Non-traditional entry points curated for our two private suites.</p>
-            </div>
-
-            <div class="flex-card-cta-luxe">
-                <div class="cta-frost-overlay"></div>
-                <div class="relative-z">
-                    <p class="cta-eyebrow">The Collective</p>
-                    <h4 class="cta-title">Private Suites</h4>
-                    <p class="cta-sub-text">Limited availability for curated short-term stays.</p>
-                    <a href="suite.html" class="flex-btn-frosted">Explore Suites</a>
+        <div class="flex-grid-wrapper">
+            <div class="flex-pay-grid">
+                <div class="flex-card-compact">
+                    <span class="card-number">01</span>
+                    <h4 class="card-title">Respite <br>Recovery</h4>
+                    <div class="divider-gold"></div>
+                    <p class="card-text">Premium stewardship for those transitioning from clinical settings.</p>
                 </div>
-            </div>
 
-        </div> 
+                <div class="flex-card-compact">
+                    <span class="card-number">02</span>
+                    <h4 class="card-title">Custom <br>Scheduling</h4>
+                    <div class="divider-gold"></div>
+                    <p class="card-text">Non-traditional entry points curated for our two private suites.</p>
+                </div>
+
+                <div class="flex-card-cta-luxe">
+                    <div class="cta-frost-overlay"></div>
+                    <div class="relative-z">
+                        <p class="cta-eyebrow">The Collective</p>
+                        <h4 class="cta-title">Private Suites</h4>
+                        <p class="cta-sub-text">Limited availability for curated short-term stays.</p>
+                        <a href="suite.html" class="flex-btn-frosted">Explore Suites</a>
+                    </div>
+                </div>
+            </div> 
+        </div>
     </div>
 </section>
 
-<style>
-/* --- THE SELECTIVE STRIP LOGIC --- */
-.flex-title-strip-container {
-    padding: 60px 0 40px 0; /* Adjusts the space above the strip */
-    position: relative;
-}
 
-.flex-main-title-strip {
+/* --- THE SELECTIVE STRIP LOGIC --- */
+<style>
+/* --- SHARED STRIP STYLING (Used for both Private & Flex) --- */
+.private-pay-strip-title {
     font-family: 'Playfair Display';
     font-size: 6rem;
-    color: #fff;
+    color: #fff; /* White text for both strips */
     margin: 0;
     letter-spacing: -2px;
-    line-height: 0.85; /* Tight line height makes the strip thin */
+    line-height: 0.8; 
     position: relative;
-    padding: 20px 5%; /* This controls the "thickness" of the blue behind the text */
     display: block;
+    width: 100%;
+    z-index: 1;
 }
 
-/* This creates the thin blue bar that only lives behind the text */
-.flex-main-title-strip::before {
+.private-pay-strip-title::before {
     content: "";
     position: absolute;
     top: 0;
@@ -635,20 +631,8 @@
     vertical-align: middle;
 }
 
-.flex-eyebrow-match {
-    color: #bfa15f; 
-    letter-spacing: 10px; 
-    text-transform: uppercase; 
-    font-size: 0.65rem; 
-    font-family: 'Inter'; 
-    font-weight: 800; 
-    display: block; 
-    margin-bottom: 20px;
-    padding-left: 5%; /* Matches alignment */
-}
-
-/* --- THE GRID & LUXE BOX --- */
-.flex-grid-wrapper { max-width: 1400px; margin: 20px auto 60px; padding: 0 5%; }
+/* --- FLEX GRID & LUXE CARD STYLING --- */
+.flex-grid-wrapper { max-width: 1400px; margin: 20px auto 80px; padding: 0 5%; }
 .flex-pay-grid { display: grid; grid-template-columns: 1fr 1fr 1.2fr; border: 1px solid #f1f5f9; }
 .flex-card-compact { padding: 60px 40px; background: #fff; border-right: 1px solid #f1f5f9; }
 .card-number { font-family: 'Playfair Display'; color: #bfa15f; font-weight: 700; font-size: 0.85rem; display: block; margin-bottom: 10px; }
@@ -656,6 +640,7 @@
 .divider-gold { width: 30px; height: 1px; background: #bfa15f; margin-bottom: 20px; }
 .card-text { font-size: 0.95rem; color: #64748b; line-height: 1.8; }
 
+/* THE BLUE BOX */
 .flex-card-cta-luxe {
     padding: 60px 40px;
     background: #0f172a;
@@ -671,10 +656,14 @@
     background: linear-gradient(135deg, rgba(191, 161, 95, 0.15) 0%, transparent 100%);
 }
 .relative-z { position: relative; z-index: 2; width: 100%; }
+.cta-eyebrow { color: #bfa15f; text-transform: uppercase; letter-spacing: 4px; font-size: 0.6rem; margin-bottom: 10px; }
 .cta-title { font-family: 'Playfair Display'; font-size: 2.2rem; margin-bottom: 15px; }
+.cta-sub-text { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 30px; }
+
+/* FROSTED BUTTON */
 .flex-btn-frosted {
     display: inline-block;
-    padding: 18px 30px;
+    padding: 16px 28px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
@@ -688,16 +677,23 @@
     transition: 0.3s;
 }
 
-/* --- MOBILE REFINEMENTS --- */
+.flex-btn-frosted:hover {
+    background: #bfa15f;
+    border-color: #bfa15f;
+    color: #0f172a;
+}
+
+/* --- MOBILE MATCHING --- */
 @media (max-width: 768px) {
-    .flex-main-title-strip { font-size: 3.5rem !important; padding: 15px 25px !important; }
-    .italic-pay-match { font-size: 4.5rem !important; margin-left: 0 !important; }
-    .flex-eyebrow-match { padding-left: 25px !important; }
-    .flex-grid-wrapper { padding: 0; margin-top: 0; }
+    .private-pay-strip-title { font-size: 3.8rem !important; line-height: 0.9 !important; }
+    .italic-pay-match { font-size: 4.8rem !important; margin-left: 5px !important; }
+    
     .flex-pay-grid { display: flex !important; flex-direction: column !important; border: none; }
     .flex-card-compact, .flex-card-cta-luxe { width: 100%; padding: 40px 25px !important; border-bottom: 1px solid #f1f5f9; }
+    .flex-grid-wrapper { padding: 0; margin-bottom: 40px; }
 }
 </style>
+
 
 
 
