@@ -184,6 +184,94 @@
 
 
 
+
+
+/* Signature Hero Section with Full Width Photo */
+.signature-bg-section {
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80'); /* Replace with your resident photo */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.signature-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(8, 12, 22, 0.8) 30%, rgba(8, 12, 22, 0.4) 100%);
+    z-index: 1;
+}
+
+.signature-content-wrapper {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+/* The Signature Branding on the Left */
+.signature-branding {
+    flex: 1;
+}
+
+.founder-signature {
+    width: 250px; /* Adjust based on your signature image size */
+    filter: brightness(0) invert(1); /* Makes signature white */
+    opacity: 0.9;
+    margin-top: 20px;
+}
+
+/* The Large Photo Card on the Right */
+.enrichment-hero-card {
+    flex: 0 0 500px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
+
+.enrichment-hero-card img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+/* Typography matching "The Table" */
+.enrichment-match-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #c5a059;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.enrichment-match-head {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+
+
+
+
+        
+
+
+
+
 /* THE TABLE: Custom Styling */
 .table-grid .time-row {
     display: flex;
@@ -992,76 +1080,30 @@
 
 
 
-<section id="enrichment" class="enrichment-locked-window" style="background: #080c16; height: 500px; overflow-y: scroll; padding: 20px 0; position: relative; scroll-behavior: smooth;">
+<section id="enrichment" class="signature-bg-section">
+    <div class="signature-overlay"></div>
     
-    <div class="luxe-container" style="max-width: 1400px; margin: 0 auto; display: flex; gap: 20px; align-items: flex-start; padding: 0 40px;">
-        
-        <div class="cinematic-sticky" style="position: sticky; top: 20px; flex: 0.5; height: fit-content;">
-            <span class="gold-eyebrow" style="font-size: 0.7rem; letter-spacing: 5px; color: #c5a059;">The Collection</span>
-            <h2 class="magazine-title" style="color: white; font-size: 2.8rem; margin: 15px 0; line-height: 1.0; letter-spacing: -1px;">Life <br><span class="italic-serif text-gold" style="color: #c5a059;">Enrichment</span></h2>
-            <div style="width: 40px; height: 1px; background: #c5a059; margin: 20px 0;"></div>
-            <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem; line-height: 1.6; max-width: 180px;">
-                A master-curated sequence of spiritual engagements.
+    <div class="signature-content-wrapper">
+        <div class="signature-branding">
+            <span class="enrichment-match-title">Curated Living</span>
+            <h2 class="enrichment-match-head">Life <br><span class="italic-serif" style="color: #c5a059;">Enrichment</span></h2>
+            
+            <p style="color: rgba(255,255,255,0.7); max-width: 400px; line-height: 1.8; font-family: 'Inter', sans-serif;">
+                Experience a master-curated sequence of engagements designed to nourish the spirit and challenge the mind.
             </p>
+
+            <div class="signature-area">
+                <img src="your-signature-path.png" alt="Jessica Clark" class="founder-signature">
+                <p style="color: #c5a059; font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 2px; margin-top: 10px; text-transform: uppercase;">Founder's Signature</p>
+            </div>
         </div>
 
-        <div class="cinematic-track" style="flex: 3; padding-bottom: 20px;">
-            
-            <div class="filmstrip-card-ultra">
-                <div class="image-box-ultra">
-                    <img src="https://images.unsplash.com/photo-1516534775068-ba3e84529519?auto=format&fit=crop&q=80" alt="Cognitive">
-                </div>
-                <div class="text-box-ultra">
-                    <span class="card-count-ultra">01</span>
-                    <h3>Cognitive Architecture</h3>
-                    <p class="slim-desc">Neuro-plasticity training.</p>
-                </div>
+        <div class="enrichment-hero-card">
+            <img src="https://images.unsplash.com/photo-1516534775068-ba3e84529519?auto=format&fit=crop&q=80" alt="Resident Life">
+            <div style="padding: 20px 0 10px 0;">
+                <span style="font-family: 'Montserrat', sans-serif; font-size: 0.6rem; color: #c5a059; letter-spacing: 2px;">COLLECTION NO. 01</span>
+                <h4 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-top: 5px;">Cognitive Architecture</h4>
             </div>
-
-            <div class="filmstrip-card-ultra">
-                <div class="image-box-ultra">
-                    <img src="https://images.unsplash.com/photo-1460661419201-fd4ce186860d?auto=format&fit=crop&q=80" alt="Art">
-                </div>
-                <div class="text-box-ultra">
-                    <span class="card-count-ultra">02</span>
-                    <h3>The Artisanal Studio</h3>
-                    <p class="slim-desc">Fine arts masterclasses.</p>
-                </div>
-            </div>
-
-            <div class="filmstrip-card-ultra">
-                <div class="image-box-ultra">
-                    <img src="https://images.unsplash.com/photo-1557431177-36141475c676?auto=format&fit=crop&q=80" alt="Garden">
-                </div>
-                <div class="text-box-ultra">
-                    <span class="card-count-ultra">03</span>
-                    <h3>Botanical Stewardship</h3>
-                    <p class="slim-desc">Horticultural therapy.</p>
-                </div>
-            </div>
-
-            <div class="filmstrip-card-ultra">
-                <div class="image-box-ultra">
-                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80" alt="Culinary">
-                </div>
-                <div class="text-box-ultra">
-                    <span class="card-count-ultra">04</span>
-                    <h3>Epicurean Mastery</h3>
-                    <p class="slim-desc">Chef-led takeovers.</p>
-                </div>
-            </div>
-
-            <div class="filmstrip-card-ultra" style="margin-bottom: 0;">
-                <div class="image-box-ultra">
-                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80" alt="Yoga">
-                </div>
-                <div class="text-box-ultra">
-                    <span class="card-count-ultra">05</span>
-                    <h3>Movement & Vitality</h3>
-                    <p class="slim-desc">Somatic movement tracks.</p>
-                </div>
-            </div>
-
         </div>
     </div>
 </section>
