@@ -161,161 +161,181 @@
 <style>
 
 /* NEW EDITORIAL HERO */
-.editorial-hero {
+/* --- UNIVERSAL REFINEMENTS --- */
+.text-gold { color: #c5a059; }
+.italic-serif { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; }
+.gold-eyebrow { display: block; text-transform: uppercase; letter-spacing: 5px; font-size: 0.7rem; color: #c5a059; margin-bottom: 15px; font-weight: 700; }
+
+/* --- SECTION 1: EDITORIAL HERO --- */
+.editorial-hero-v2 {
     height: 100vh;
-    background: #fcfcfc;
+    background: #fdfdfd;
     display: flex;
     align-items: center;
-    padding: 0 8%;
-    overflow: hidden;
-}
-
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 60px;
-    align-items: center;
-    width: 100%;
-}
-
-.magazine-statement {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(3rem, 6vw, 5.5rem);
-    line-height: 0.95;
-    color: #0c1833;
-    margin: 20px 0;
-    font-weight: 700;
-}
-
-.hero-subline {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    color: #555;
-    max-width: 450px;
-    line-height: 1.6;
-    font-weight: 300;
-}
-
-.hero-image-block .image-wrapper {
     position: relative;
-    height: 70vh;
+    padding: 0 5%;
+}
+
+.luxe-content-wrapper {
+    display: flex;
     width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-layer-text { flex: 1; z-index: 10; }
+
+.display-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.85;
+    color: #0c1833;
+    margin-bottom: 40px;
+}
+
+.hero-description-block {
+    max-width: 400px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #555;
+}
+
+.hero-layer-image { flex: 1; display: flex; justify-content: flex-end; }
+
+.main-frame {
+    width: 80%;
+    height: 75vh;
+    position: relative;
     overflow: hidden;
-    box-shadow: 30px 30px 0px #f0f0f0;
 }
 
-.hero-image-block img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
+.main-frame img { width: 100%; height: 100%; object-fit: cover; }
 
-.hero-image-block:hover img { transform: scale(1.05); }
-
-/* MISSION DOSSIER SECTION */
-.mission-dossier {
-    padding: 120px 8%;
+/* --- SECTION 2: CLINICAL MANIFESTO --- */
+.clinical-manifesto {
+    padding: 150px 0;
     background: #fff;
-    border-top: 1px solid #f0f0f0;
+    overflow: hidden;
 }
 
-.dossier-header {
-    max-width: 900px;
-    margin-bottom: 80px;
+.manifesto-grid { display: flex; gap: 80px; }
+
+.vertical-title-wrap {
+    flex: 0 0 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.dossier-title {
+.vertical-title {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 12px;
+    color: #eee;
+    font-weight: 900;
+}
+
+.manifesto-main-content { flex: 1; padding-right: 10%; }
+
+.mission-statement-luxe h3 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    line-height: 1.2;
+    font-size: 3rem;
     color: #0c1833;
+    line-height: 1.1;
+    margin-bottom: 60px;
 }
 
-.dossier-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
-}
-
-.stat-box {
-    margin-bottom: 30px;
-}
-
-.stat-number {
-    font-family: 'Playfair Display', serif;
-    font-size: 5rem;
-    color: #c5a059;
-    display: block;
-    line-height: 1;
-}
-
-.stat-label {
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 0.7rem;
-    font-weight: 800;
-    color: #0c1833;
-}
-
-.luxe-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 40px;
-}
-
-.luxe-list li {
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
-    font-size: 0.9rem;
-    color: #444;
+.stats-row-premium {
     display: flex;
+    gap: 80px;
     align-items: center;
-    gap: 15px;
+    margin-bottom: 100px;
 }
 
-.luxe-list i { color: #c5a059; font-size: 0.8rem; }
+.big-num { font-family: 'Playfair Display', serif; font-size: 6rem; color: #c5a059; line-height: 1; }
 
-/* STAFF MINIMAL CARDS */
-.staff-column {
+.clinical-specs ul { list-style: none; padding: 0; }
+.clinical-specs li { 
+    font-size: 0.9rem; 
+    padding: 12px 0; 
+    border-bottom: 1px solid #f0f0f0; 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+}
+
+/* TEAM DOSSIER OVERLAP */
+.team-dossier-wrap {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    gap: 40px;
+    position: relative;
+    padding-top: 50px;
 }
 
-.staff-minimal-card {
-    display: flex;
-    gap: 25px;
-    align-items: center;
-    padding: 20px;
-    background: #f8f9fa;
-    transition: 0.4s;
+.team-card {
+    width: 320px;
+    background: #0c1833;
+    padding: 15px;
+    position: relative;
+    transition: transform 0.5s ease;
 }
 
-.staff-minimal-card:hover { background: #0c1833; }
-.staff-minimal-card:hover .staff-name, 
-.staff-minimal-card:hover .staff-role { color: #fff; }
+.team-card img { width: 100%; height: 400px; object-fit: cover; }
 
-.staff-minimal-card img {
-    width: 100px;
-    height: 120px;
-    object-fit: cover;
-    filter: grayscale(100%);
+.team-meta { padding: 20px 0; color: #fff; }
+.team-meta h4 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 5px; }
+.team-meta p { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #888; }
+
+.team-card.eleanor { margin-top: 80px; }
+.team-card:hover { transform: translateY(-20px); }
+
+/* --- SECTION 3: DIRECTORY (STYLING REANIMATED) --- */
+.stewardship-directory {
+    background: #0c1833;
+    padding: 120px 5%;
+    overflow: hidden;
 }
 
-.staff-minimal-card:hover img { filter: grayscale(0%); }
+.directory-header { margin-bottom: 60px; text-align: left; }
+.magazine-title { font-family: 'Playfair Display', serif; font-size: 4rem; color: #fff; }
 
-.staff-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin: 0; }
-.staff-role { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #888; }
+.dir-scroller-wrap { overflow: hidden; }
+.dir-track { display: flex; gap: 30px; animation: scrollInfinite 40s linear infinite; }
 
-/* MOBILE RESPONSIVENESS */
+.dir-item {
+    flex: 0 0 300px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    padding: 50px 30px;
+    position: relative;
+}
+
+.client-type { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #fff; margin-bottom: 10px; }
+.client-status { color: #c5a059; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; }
+.dir-item i { position: absolute; bottom: 20px; right: 20px; color: rgba(255,255,255,0.1); font-size: 1.5rem; }
+
+.dir-index-end { border: 1px solid #c5a059; }
+.index-digit { font-family: 'Playfair Display', serif; font-size: 3rem; color: #c5a059; }
+
+@keyframes scrollInfinite {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* MOBILE FIXES */
 @media (max-width: 768px) {
-    .editorial-hero { height: auto; padding: 120px 25px 60px; }
-    .hero-grid { grid-template-columns: 1fr; }
-    .hero-image-block { order: -1; }
-    .hero-image-block .image-wrapper { height: 40vh; box-shadow: 15px 15px 0px #f0f0f0; }
-    .dossier-grid { grid-template-columns: 1fr; gap: 60px; }
-    .stat-number { font-size: 4rem; }
+    .editorial-hero-v2 { height: auto; padding: 120px 25px 60px; }
+    .luxe-content-wrapper { flex-direction: column; text-align: center; }
+    .main-frame { width: 100%; height: 50vh; margin-bottom: 40px; }
+    .manifesto-grid { flex-direction: column; }
+    .vertical-title-wrap { display: none; }
+    .stats-row-premium { flex-direction: column; gap: 30px; }
+    .team-dossier-wrap { flex-direction: column; }
+    .team-card.eleanor { margin-top: 0; }
+    .magazine-title { font-size: 2.5rem; }
 }
 
 
@@ -328,6 +348,116 @@
 
 
 
+<section class="editorial-hero-v2">
+    <div class="luxe-content-wrapper">
+        <div class="hero-layer-text">
+            <span class="gold-eyebrow animate-fade">The 2026 Residency</span>
+            <h1 class="display-title">
+                The Heart <br>
+                <span class="italic-serif text-gold">of Care</span>
+            </h1>
+            <div class="hero-description-block">
+                <p>Sunset Meadow is a clinical sanctuary where medical precision meets bespoke residential luxury. We provide an unparalleled environment for those who demand the best.</p>
+                <div class="scroll-callout">
+                    <span class="line"></span>
+                    <span class="label">Scroll to Explore</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-layer-image">
+            <div class="main-frame">
+                <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true" alt="Luxe Interior">
+                <div class="frame-caption">Exclusive Wisconsin Residency</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="clinical-manifesto">
+    <div class="manifesto-grid">
+        <div class="vertical-title-wrap">
+            <h2 class="vertical-title">CLINICAL RIGOR</h2>
+        </div>
+
+        <div class="manifesto-main-content">
+            <div class="mission-statement-luxe">
+                <span class="gold-eyebrow">The Mandate</span>
+                <h3>To <span class="text-gold italic-serif">dissolve</span> the boundaries between medical necessity and <span class="text-gold italic-serif">residential luxury.</span></h3>
+            </div>
+
+            <div class="stats-row-premium">
+                <div class="stat-item">
+                    <span class="big-num">2:1</span>
+                    <span class="stat-label">Elite Care Ratio</span>
+                </div>
+                <div class="clinical-specs">
+                    <ul>
+                        <li><span class="dot"></span> Licensed Nurse On-Site</li>
+                        <li><span class="dot"></span> Breath-Tech Monitoring</li>
+                        <li><span class="dot"></span> Certified Executive Caregivers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="team-dossier-wrap">
+                <div class="team-card julianne">
+                    <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true" alt="Julianne Vance">
+                    <div class="team-meta">
+                        <h4>Julianne <span class="text-gold">Vance, RN</span></h4>
+                        <p>Director of Clinical Safety</p>
+                    </div>
+                </div>
+                <div class="team-card eleanor">
+                    <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2015.jpeg?raw=true" alt="Eleanor Sterling">
+                    <div class="team-meta">
+                        <h4>Eleanor <span class="text-gold">Sterling</span></h4>
+                        <p>Executive Director</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="stewardship-directory" id="premium-directory-unique">
+    <div class="directory-header">
+        <span class="gold-eyebrow">The Collective</span>
+        <h2 class="magazine-title">Scope of Our <span class="italic-serif text-gold">Care</span></h2>
+    </div>
+
+    <div class="dir-scroller-wrap">
+        <div class="dir-track">
+            <div class="dir-item">
+                <h4 class="client-type">High Behavior</h4>
+                <span class="client-status">Specialized Acuity</span>
+                <i class="fa-solid fa-shield-pulse"></i>
+            </div>
+            <div class="dir-item">
+                <h4 class="client-type">Advanced Aged</h4>
+                <span class="client-status">Premium Geriatric</span>
+                <i class="fa-solid fa-hourglass-start"></i>
+            </div>
+            <div class="dir-item">
+                <h4 class="client-type">Dementia Care</h4>
+                <span class="client-status">Cognitive Support</span>
+                <i class="fa-solid fa-feather-pointed"></i>
+            </div>
+            <div class="dir-item dir-index-end">
+                <div class="index-digit">11</div>
+                <span class="client-status">Continuum Served</span>
+            </div>
+            <div class="dir-item">
+                <h4 class="client-type">High Behavior</h4>
+                <span class="client-status">Specialized Acuity</span>
+                <i class="fa-solid fa-shield-pulse"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
 
 
 
@@ -337,74 +467,6 @@
 
 
     
-
-<section class="editorial-hero">
-    <div class="hero-grid">
-        <div class="hero-text-block">
-            <span class="gold-eyebrow animate-up">Est. 2026</span>
-            <h1 class="magazine-statement">
-                The New <br>
-                <span class="italic-serif gold-text">Standard</span> <br>
-                of Residency
-            </h1>
-            <p class="hero-subline">Sunset Meadow is a clinical sanctuary where medical precision meets bespoke residential luxury.</p>
-            <div class="scroll-indicator">
-                <span class="line"></span>
-                <span class="txt">Explore the Philosophy</span>
-            </div>
-        </div>
-        <div class="hero-image-block">
-            <div class="image-wrapper">
-                <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true" alt="Sunset Meadow Luxury">
-                <div class="image-caption">Boutique Assisted Living — Wisconsin</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="mission-dossier">
-    <div class="dossier-container">
-        <div class="dossier-header">
-            <span class="gold-eyebrow">The 2026 Mandate</span>
-            <h2 class="dossier-title">To <span class="italic-serif">dissolve</span> the boundaries between medical necessity and <span class="gold-italic">residential luxury.</span></h2>
-        </div>
-        
-        <div class="dossier-grid">
-            <div class="clinical-column">
-                <div class="stat-box">
-                    <span class="stat-number">2:1</span>
-                    <span class="stat-label">Elite Care Ratio</span>
-                </div>
-                <p class="clinical-description">
-                    We implement bespoke protocols mirroring elite research facilities, ensuring a clinical sanctuary built on <strong>Clinical Rigor</strong> and <strong>Human Dignity</strong>.
-                </p>
-                <ul class="luxe-list">
-                    <li><i class="fa-solid fa-check"></i> Licensed Nurse On-Site</li>
-                    <li><i class="fa-solid fa-check"></i> Breath-Tech Monitoring</li>
-                    <li><i class="fa-solid fa-check"></i> Certified Executive Caregivers</li>
-                </ul>
-            </div>
-
-            <div class="staff-column">
-                <div class="staff-minimal-card">
-                    <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true" alt="Julianne Vance">
-                    <div class="staff-info">
-                        <h4 class="staff-name">Julianne <span class="gold-italic">Vance, RN</span></h4>
-                        <p class="staff-role">Director of Clinical Safety</p>
-                    </div>
-                </div>
-                <div class="staff-minimal-card">
-                    <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2015.jpeg?raw=true" alt="Eleanor Sterling">
-                    <div class="staff-info">
-                        <h4 class="staff-name">Eleanor <span class="gold-italic">Sterling</span></h4>
-                        <p class="staff-role">Executive Director</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 
 
     
