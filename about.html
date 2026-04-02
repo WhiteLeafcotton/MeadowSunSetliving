@@ -158,756 +158,252 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <section class="locked-mission-console">
-    <aside class="profile-rail-tall">
-        <div class="rail-header">
-            <span class="gold-eyebrow">The Clinical Team</span>
-        </div>
-        
-        <div class="tall-scroll-area">
-            <article class="dossier-card-tall julianne-bg">
-                <div class="card-overlay">
-                    <div class="card-content-bottom">
-                        <h3 class="nano-name">Julianne <span class="gold-italic">Vance, RN</span></h3>
-                        <p class="nano-text">
-                            Bridging hospital-grade safety with residential warmth. Julianne implements bespoke protocols mirroring elite research facilities.
-                        </p>
-                    </div>
-                </div>
-            </article>
-
-            <article class="dossier-card-tall eleanor-bg">
-                <div class="card-overlay">
-                    <div class="card-content-bottom">
-                        <h3 class="nano-name">Eleanor <span class="gold-italic">Sterling</span></h3>
-                        <p class="nano-text">
-                            Curating the Sunset Meadow atmosphere with an eye for detail. Eleanor ensures a boutique experience, redefining luxury residency.
-                        </p>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </aside>
-
-    <main class="mission-master-card">
-        <div class="mission-flex-container">
-            <div class="mission-statement-zone">
-                <span class="gold-eyebrow">The 2026 Mandate</span>
-                <h2 class="mission-large-text">
-                    To <span class="gold-italic">dissolve</span> the boundaries between medical necessity and <span class="gold-italic">residential luxury.</span>
-                </h2>
-                <p class="mission-description">
-                    Sunset Meadow is a clinical sanctuary built on <strong>Clinical Rigor</strong> and <strong>Human Dignity</strong>. We provide an unparalleled environment for those who demand the best in their later years.
-                </p>
-            </div>
-
-            <div class="deep-navy-ratio-card">
-                <div class="navy-inner">
-                    <div class="ratio-header">
-                        <span class="ratio-stat">2:1</span>
-                        <span class="ratio-label">Elite Care Ratio</span>
-                    </div>
-                    <div class="navy-divider"></div>
-                    <ul class="navy-specs">
-                        <li><span class="gold-bullet"></span> Licensed Nurse</li>
-                        <li><span class="gold-bullet"></span> Breath Tech</li>
-                        <li><span class="gold-bullet"></span> Certified Caregivers</li>
-                    </ul>
-                    <div class="navy-accreditations">
-                        <span>🛡️ HIPAA SECURE</span>
-                        <span>⚖️ LEGAL STEWARD</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-</section>
-
-
-   
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;600;800&display=swap');
-
-    /* BASE LAYOUT */
-    .locked-mission-console {
-        display: flex;
-        height: 500px; 
-        background: #ffffff;
-        color: #1a1a1a;
-        font-family: 'Inter', sans-serif;
-        overflow: hidden;
-        border-top: 1px solid #f0f0f0;
-    }
-
-    /* SIDEBAR RAIL (DESKTOP) */
-    .profile-rail-tall { flex: 0 0 280px; background: #f8f9fa; border-right: 1px solid #eee; display: flex; flex-direction: column; }
-    .rail-header { padding: 25px; border-bottom: 1px solid #eee; }
-    .gold-eyebrow { color: #c5a059; text-transform: uppercase; font-size: 8px; letter-spacing: 4px; font-weight: 800; display: block; }
-    .tall-scroll-area { flex: 1; overflow-y: auto; padding: 20px; scrollbar-width: none; }
-    .tall-scroll-area::-webkit-scrollbar { display: none; }
-
-    /* STAFF CARDS - DESKTOP */
-    .dossier-card-tall {
-        position: relative;
-        height: 340px;
-        margin-bottom: 20px;
-        border-radius: 4px; 
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end; /* Text at bottom for desktop */
-    }
-    
-    /* DESKTOP BACKGROUNDS: Vertical Gradient Overlay */
-    .julianne-bg { 
-        background: linear-gradient(to bottom, rgba(12, 24, 51, 0.1) 0%, rgba(12, 24, 51, 0.9) 100%), 
-                    url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true') center/cover; 
-    }
-    .eleanor-bg { 
-        background: linear-gradient(to bottom, rgba(12, 24, 51, 0.1) 0%, rgba(12, 24, 51, 0.9) 100%), 
-                    url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2015.jpeg?raw=true') center/cover; 
-    }
-
-    .card-content-bottom { padding: 20px; width: 100%; z-index: 2; }
-    .nano-name { font-family: 'Playfair Display', serif; font-size: 1.15rem; margin: 0 0 5px 0; color: #fff; }
-    .gold-italic { color: #c5a059; font-style: italic; font-weight: 400; }
-    .nano-text { font-size: 0.75rem; line-height: 1.5; color: rgba(255,255,255,0.8); margin: 0; font-weight: 300; }
-
-    /* MAIN MISSION AREA (DESKTOP) */
-    .mission-master-card { flex: 1; padding: 40px 60px; display: flex; align-items: center; }
-    .mission-flex-container { display: flex; width: 100%; gap: 50px; align-items: center; }
-    .mission-statement-zone { flex: 1.4; }
-    .mission-large-text { font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1.1; margin: 15px 0 25px; color: #0c1833; font-weight: 700; }
-    .mission-description { font-size: 1rem; line-height: 1.8; color: #555; font-weight: 300; }
-
-    /* NAVY DATA CARD (280px Standard) */
-    .deep-navy-ratio-card { flex: 0 0 280px; background: #0c1833; color: #fff; padding: 40px; border-radius: 8px; }
-    .ratio-stat { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: #c5a059; line-height: 1; }
-    .ratio-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; color: #fff; display: block; }
-    .navy-divider { height: 1px; background: rgba(197, 160, 89, 0.3); margin: 25px 0; width: 40px; }
-    .navy-specs { list-style: none; padding: 0; margin: 0 0 25px 0; }
-    .navy-specs li { font-size: 0.85rem; padding: 8px 0; display: flex; align-items: center; color: rgba(255,255,255,0.9); }
-    .gold-bullet { width: 5px; height: 5px; background: #c5a059; border-radius: 50%; margin-right: 12px; }
-    .navy-accreditations { display: flex; gap: 15px; font-size: 7px; font-weight: 900; letter-spacing: 1px; color: #c5a059; }
-
-    /* --- MOBILE RE-DESIGN: HORIZONTAL SWIPE + RIGHT-SIDE TEXT --- */
-    @media (max-width: 768px) {
-        .locked-mission-console { height: auto; flex-direction: column; }
-        
-        /* Stack Order 1: Mission */
-        .mission-master-card { order: 1; padding: 60px 25px 20px; width: 100%; }
-        .mission-flex-container { flex-direction: column; gap: 30px; align-items: flex-start; }
-        .mission-large-text { font-size: 2.3rem; }
-        
-        /* Stack Order 2: Navy Card */
-        .deep-navy-ratio-card { order: 2; width: 100%; flex: none; margin-bottom: 40px; }
-        
-        /* Stack Order 3: Swiper */
-        .profile-rail-tall { order: 3; width: 100%; border: none; background: #fff; }
-        .rail-header { padding: 0 25px 15px; }
-        .tall-scroll-area { display: flex; overflow-x: auto; gap: 15px; padding: 0 25px 50px; -webkit-overflow-scrolling: touch; }
-
-        /* MOBILE HORIZONTAL CARDS */
-        .dossier-card-tall {
-            height: 160px; 
-            flex: 0 0 310px; 
-            margin-bottom: 0;
-            display: flex;
-            flex-direction: row; 
-            justify-content: flex-end; /* Locks content to the right */
-            align-items: center;
-        }
-
-        /* MOBILE BACKGROUNDS: Horizontal Gradient Overlay (Clear Left -> Dark Right) */
-        .julianne-bg { 
-            background: linear-gradient(to right, rgba(12, 24, 51, 0) 0%, rgba(12, 24, 51, 0.7) 45%, rgba(12, 24, 51, 0.95) 90%), 
-                        url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true') center/cover !important; 
-        }
-        .eleanor-bg { 
-            background: linear-gradient(to right, rgba(12, 24, 51, 0) 0%, rgba(12, 24, 51, 0.7) 45%, rgba(12, 24, 51, 0.95) 90%), 
-                        url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2015.jpeg?raw=true') center/cover !important; 
-        }
-
-        /* TEXT ON THE RIGHT OVERLAY */
-        .card-content-bottom {
-            width: 65%; /* Constrains text to the dark right side */
-            text-align: right; /* Aligns text to the far right edge */
-            padding-right: 20px;
-            padding-left: 0;
-        }
-    }
-</style>
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
 <style>
-    /* 1. THE MAIN SECTION (Isolated ID) */
-    #premium-directory-unique.stewardship-directory {
-        position: relative;
-        z-index: 20; 
-        display: block;
-        padding: 100px 0 !important; 
-        overflow: hidden;
-        
-        /* BACKGROUND PHOTO + OVERLAY */
-        background: linear-gradient(rgba(12, 24, 51, 0.78), rgba(12, 24, 51, 0.78)), 
-                    url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2036.jpeg?raw=true') center/cover no-repeat fixed !important;
-        
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        
-        border-top: 1px solid rgba(197, 160, 89, 0.2);
-        border-bottom: 1px solid rgba(197, 160, 89, 0.2);
-    }
 
-    /* 2. HEADER AREA (Above the cards) */
-    #premium-directory-unique .section-header-top {
-        margin-bottom: 50px;
-        text-align: left;
-    }
-
-    #premium-directory-unique .magazine-title {
-        font-family: 'Playfair Display', serif;
-        font-size: 3.8rem; 
-        font-weight: 700;
-        line-height: 1.1;
-        color: #ffffff;
-        margin: 0;
-    }
-
-    #premium-directory-unique .italic-serif {
-        font-family: 'Cormorant Garamond', serif;
-        font-style: italic;
-        font-weight: 400;
-    }
-
-    #premium-directory-unique .gold-eyebrow {
-        display: block;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        font-size: 0.75rem;
-        color: #c5a059;
-        margin-bottom: 12px;
-    }
-
-    /* 3. THE SCROLLER ADJUSTMENT */
-    #premium-directory-unique .dir-scroller-wrap {
-        width: 100%;
-        overflow: hidden;
-        /* Fades cards at the edges for a high-end look */
-        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-        -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    }
-
-    #premium-directory-unique .dir-track {
-        display: flex;
-        gap: 20px !important;
-        animation: scrollInfinite 55s linear infinite !important;
-    }
-
-    /* 4. DARK BLUE SOLID CARDS */
-    #premium-directory-unique .dir-item {
-        flex: 0 0 280px !important;
-        background: rgba(12, 24, 51, 0.92) !important; 
-        border: 1px solid rgba(197, 160, 89, 0.15) !important;
-        padding: 40px 25px !important;
-        min-height: 180px !important; 
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    #premium-directory-unique .dir-item:hover {
-        background: #0c1833 !important; 
-        border-color: #c5a059 !important;
-        transform: translateY(-10px);
-        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    }
-
-    #premium-directory-unique .client-type { 
-        font-size: 1.3rem !important; 
-        font-family: 'Playfair Display', serif;
-        color: #ffffff !important;
-        margin-bottom: 4px;
-        letter-spacing: 0.5px;
-    }
-
-    #premium-directory-unique .client-status { 
-        font-size: 0.65rem !important; 
-        color: #c5a059 !important;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
-
-    #premium-directory-unique .dir-icon i {
-        margin-top: 15px;
-        font-size: 1.4rem;
-        color: rgba(255, 255, 255, 0.25);
-    }
-
-    /* GOLD INDEX CARD */
-    #premium-directory-unique .dir-index-end {
-        border: 1px solid #c5a059 !important;
-        background: linear-gradient(145deg, rgba(12, 24, 51, 0.95), rgba(197, 160, 89, 0.05)) !important;
-    }
-
-    @keyframes scrollInfinite {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); } 
-    }
-
-    /* RESPONSIVE */
-    /* RESPONSIVE SCOPE OF CARE */
-/* SCOPE OF CARE MOBILE ONLY */
-/* SCOPE OF CARE MOBILE CLEAN-UP */
-@media (max-width: 768px) {
-    /* 1. REMOVE LINES AND TIGHTEN BOTTOM PADDING */
-    #premium-directory-unique.stewardship-directory { 
-        background: #ffffff !important; 
-        padding-top: 60px !important;    /* Keeps top spacing for the title */
-        padding-bottom: 20px !important; /* REDUCED: Removes the heavy bottom gap */
-        border-top: none !important;    /* REMOVES TOP LINE */
-        border-bottom: none !important; /* REMOVES BOTTOM LINE */
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-    }
-
-    /* 2. TITLE ALIGNMENT */
-    #premium-directory-unique .magazine-title { 
-        font-size: 2.6rem !important; 
-        color: #1a1a1a !important; 
-        padding: 0 25px;
-        margin-bottom: 5px !important;
-    }
-    
-    #premium-directory-unique .gold-eyebrow {
-        padding: 0 25px;
-        margin-bottom: 8px;
-    }
-
-    /* 3. CARDS WITH ROUND CORNERS */
-    #premium-directory-unique .dir-item {
-        flex: 0 0 260px !important;
-        background: linear-gradient(rgba(12, 24, 51, 0.85), rgba(12, 24, 51, 0.85)), 
-                    url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800') center/cover no-repeat !important;
-        border: 1px solid rgba(197, 160, 89, 0.3) !important;
-        border-radius: 8px !important; /* Rounded corners to match your aesthetic */
-        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    }
-
-    /* 4. GOLD INDEX CARD ROUND CORNERS */
-    #premium-directory-unique .dir-index-end {
-        background: linear-gradient(rgba(197, 160, 89, 0.9), rgba(197, 160, 89, 0.9)), 
-                    url('https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2036.jpeg?raw=true') center/cover no-repeat !important;
-        border-radius: 8px !important; 
-    }
-    
-    #premium-directory-unique .dir-index-end .index-digit,
-    #premium-directory-unique .dir-index-end .client-status {
-        color: #fff !important;
-    }
-
-    /* 5. REMOVE EDGE FADE */
-    #premium-directory-unique .dir-scroller-wrap {
-        mask-image: none !important;
-        -webkit-mask-image: none !important;
-    }
-}
-
-
-
-
-
-
-
-
-    
-
-/* Fix for the Video Container */
-/* --- ABOUT PAGE VIDEO OVERRIDE --- */
-/* --- ABOUT PAGE: MOBILE VIDEO SEPARATE TREATMENT --- */
-@media (max-width: 768px) {
-    /* 1. The Parent: Stack them and remove the gap */
-    /* 4. Ensure the main container stacks correctly */
-    .split-view-container {
-        display: flex !important; /* Switch from Grid to Flex for easier stacking */
-        flex-direction: column !important;
-        grid-template-columns: 1fr !important; /* Kills the side-by-side grid */
-        gap: 0 !important;
-        width: 100% !important;
-    }
-
-    /* Add this: Ensure the video card is a separate block with height */
-    .video-card-container {
-        display: block !important;
-        width: 100% !important;
-        height: 500px !important; /* Creates the separate box for the video */
-        margin: 0 !important;
-        padding: 0 !important;
-        position: relative;
-        background: #000;
-    }
-
-    /* 2. The Text Card: Force it to be a specific height */
-    #admissionsCard {
-        width: 100% !important;
-        height: 500px !important; /* Matches video height */
-        padding: 40px 30px !important;
-        display: flex !important;
-        flex-direction: column;
-        justify-content: center;
-        background: #fff;
-        border: none !important;
-        border-bottom: 1px solid #eee !important; /* Visual separation line */
-    }
-
-    /* 3. The Video Card: Force it to be the same height */
-   
-
-    /* 4. The Video Content: Fill the card */
-    /* 3. Scale the iframe so it fills the container perfectly */
-.mobile-only-video iframe {
-    position: absolute;
-    top: 50% !important;   /* Pulls the middle of the video to the middle of the box */
-    left: 50% !important;  /* Centers it horizontally */
-    width: 180% !important; /* Make it extra wide so we can crop the sides */
-    height: 120% !important; /* Make it extra tall to kill the black bars */
-    transform: translate(-50%, -50%) scale(1.1) !important; /* Centering math */
-    border: none;
-    pointer-events: none; /* Prevents users from accidentally clicking 'Pause' */
-}
-
-/* Ensure the wrapper itself hides the overflow of the oversized video */
-.mobile-only-video {
-    overflow: hidden !important;
-    position: relative !important;
-    height: 500px !important;
-    background: #000;
-}
-
-    /* 5. Hide the Desktop video so it doesn't take up space */
-    .desktop-only-video {
-        display: none !important;
-    }
-
-    /* --- ADMISSIONS SWITCHING LOGIC (Keep this) --- */
-    #admissionsSteps { display: none !important; }
-    #admissionsCard.mobile-view-active #admissionsIntro { display: none !important; }
-    #admissionsCard.mobile-view-active #admissionsSteps { 
-        display: block !important; 
-        overflow-y: auto; 
-        height: 100%; 
-    }
-}
-
-/* --- MOBILE SWITCHING LOGIC --- */
-@media (max-width: 768px) {
-    /* Hide steps by default on mobile */
-    #admissionsSteps {
-        display: none;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.4s ease;
-    }
-
-    /* When active, show steps and hide intro */
-    .journey-card-outline.mobile-view-active #admissionsIntro {
-        display: none;
-    }
-
-    .journey-card-outline.mobile-view-active #admissionsSteps {
-        display: block;
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    /* Shrink step text for mobile cards */
-    .step-body h3 { font-size: 1.1rem !important; }
-    .step-body p { font-size: 0.8rem !important; line-height: 1.4; }
-    .step-number-large { font-size: 1.5rem !important; }
-}
-/* --- ADMISSIONS SECTION LAYOUT --- */
-.admissions-journey {
-    padding: 80px 5%;
-    background: #fdfdfd;
-}
-
-.split-view-container {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 40px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.journey-card-outline {
-    background: #fff;
-    border: 1px solid #eee;
-    padding: 60px;
-    position: relative;
-}
-
-/* --- VIDEO OVERRIDE --- */
-.video-card-container {
-    padding: 0;
-    overflow: hidden;
-    background: #000;
-}
-
-.iframe-viewport {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-height: 500px;
-}
-
-.desktop-only-video, .mobile-only-video {
-    width: 100%;
-    height: 100%;
-}
-
-.iframe-viewport iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    transform: scale(1.1); /* Slight zoom to hide edges */
-}
-
-/* --- MUTE BUTTON GLASS --- */
-.mute-toggle-glass {
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-    z-index: 10;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    padding: 12px 20px;
-    cursor: pointer;
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    letter-spacing: 2px;
+/* NEW EDITORIAL HERO */
+.editorial-hero {
+    height: 100vh;
+    background: #fcfcfc;
     display: flex;
     align-items: center;
-    gap: 10px;
-    transition: 0.3s;
+    padding: 0 8%;
+    overflow: hidden;
 }
 
-.mute-toggle-glass:hover {
-    background: rgba(255, 255, 255, 0.2);
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
 }
 
-/* --- ADMISSIONS STEPS --- */
-.step-card-editorial {
-    display: flex;
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.step-number-large {
+.magazine-statement {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    color: #eee;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 0.95;
+    color: #0c1833;
+    margin: 20px 0;
     font-weight: 700;
 }
 
-.vertical-connector-blue {
-    width: 1px;
+.hero-subline {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 450px;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.hero-image-block .image-wrapper {
+    position: relative;
+    height: 70vh;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 30px 30px 0px #f0f0f0;
+}
+
+.hero-image-block img {
+    width: 100%;
     height: 100%;
-    background: #eee;
-    margin: 10px auto;
+    object-fit: cover;
+    transition: transform 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.step-body h3 {
+.hero-image-block:hover img { transform: scale(1.05); }
+
+/* MISSION DOSSIER SECTION */
+.mission-dossier {
+    padding: 120px 8%;
+    background: #fff;
+    border-top: 1px solid #f0f0f0;
+}
+
+.dossier-header {
+    max-width: 900px;
+    margin-bottom: 80px;
+}
+
+.dossier-title {
     font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    margin: 0 0 5px 0;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.2;
+    color: #0c1833;
 }
 
-.step-body p {
+.dossier-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+}
+
+.stat-box {
+    margin-bottom: 30px;
+}
+
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: #c5a059;
+    display: block;
+    line-height: 1;
+}
+
+.stat-label {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #0c1833;
+}
+
+.luxe-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.luxe-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
     font-size: 0.9rem;
-    color: #666;
-    margin: 0;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.gold-text { color: #c5a059 !important; }
+.luxe-list i { color: #c5a059; font-size: 0.8rem; }
 
-/* --- CONSOLIDATED MOBILE ADMISSIONS FIX --- */
+/* STAFF MINIMAL CARDS */
+.staff-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.staff-minimal-card {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    padding: 20px;
+    background: #f8f9fa;
+    transition: 0.4s;
+}
+
+.staff-minimal-card:hover { background: #0c1833; }
+.staff-minimal-card:hover .staff-name, 
+.staff-minimal-card:hover .staff-role { color: #fff; }
+
+.staff-minimal-card img {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+.staff-minimal-card:hover img { filter: grayscale(0%); }
+
+.staff-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin: 0; }
+.staff-role { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #888; }
+
+/* MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
-    /* 1. SEPARATE THE CARDS: Creates a clean physical gap */
-    .split-view-container {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 30px !important; 
-        padding: 0 20px !important;
-    }
-
-    /* 2. THE TEXT CARD: Stays tall to fit your process steps */
-    #admissionsCard {
-        width: 100% !important;
-        height: 500px !important;
-        padding: 40px 30px !important;
-        display: flex !important;
-        flex-direction: column;
-        justify-content: center;
-        background: #fff !important;
-        border: 1px solid #eee !important;
-        box-sizing: border-box !important;
-    }
-
-    /* 3. THE VIDEO CONTAINER: 'Thinner' height for a better widescreen ratio */
-    .video-card-container, .mobile-only-video {
-        display: block !important;
-        position: relative !important;
-        width: 100% !important;
-        height: 280px !important; /* REDUCED: Creates a premium 'thinner' cinematic look */
-        overflow: hidden !important; 
-        background: #000 !important;
-        border: 1px solid #eee !important;
-    }
-
-    /* 4. THE VIDEO: Zoomed in to push black lines OUTSIDE the container */
-    .mobile-only-video iframe {
-        position: absolute !important;
-        top: 50% !important;
-        left: 50% !important;
-        width: 160% !important; 
-        height: 180% !important; /* Oversized height pushes letterboxing out of view */
-        transform: translate(-50%, -50%) scale(1.3) !important; 
-        border: none !important;
-        pointer-events: none;
-    }
-
-    /* 5. TYPOGRAPHY & BUTTONS */
-    .magazine-title {
-        font-size: 1.7rem !important;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    .header-subtext {
-        font-size: 0.85rem !important;
-        text-align: center;
-        color: #666;
-    }
-
-    /* Logic for showing/hiding steps (KEEP THIS) */
-    #admissionsSteps { display: none !important; }
-    #admissionsCard.mobile-view-active #admissionsIntro { display: none !important; }
-    #admissionsCard.mobile-view-active #admissionsSteps { 
-        display: block !important; 
-        opacity: 1 !important;
-    }
-
-    .desktop-only-video { display: none !important; }
+    .editorial-hero { height: auto; padding: 120px 25px 60px; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-image-block { order: -1; }
+    .hero-image-block .image-wrapper { height: 40vh; box-shadow: 15px 15px 0px #f0f0f0; }
+    .dossier-grid { grid-template-columns: 1fr; gap: 60px; }
+    .stat-number { font-size: 4rem; }
 }
+
 
 </style>
+    
 
-<section class="stewardship-directory" id="premium-directory-unique">
-    <div class="luxe-container">
-        
-        <div class="section-header-top animate-on-scroll">
-            <span class="gold-eyebrow">The Collective</span>
-            <h2 class="magazine-title">Scope of Our <span class="italic-serif">Care</span></h2>
-        </div>
 
-        <div class="dir-scroller-wrap">
-            <div class="dir-track">
-                
-                <div class="dir-item">
-                    <div class="dir-meta">
-                        <h4 class="client-type">High Behavior</h4>
-                        <span class="client-status">Specialized Acuity</span>
-                    </div>
-                    <div class="dir-icon"><i class="fa-solid fa-shield-pulse"></i></div>
-                </div>
 
-                <div class="dir-item">
-                    <div class="dir-meta">
-                        <h4 class="client-type">Advanced Aged</h4>
-                        <span class="client-status">Premium Geriatric</span>
-                    </div>
-                    <div class="dir-icon"><i class="fa-solid fa-hourglass-start"></i></div>
-                </div>
 
-                <div class="dir-item">
-                    <div class="dir-meta">
-                        <h4 class="client-type">Developmental</h4>
-                        <span class="client-status">Habilitation & Growth</span>
-                    </div>
-                    <div class="dir-icon"><i class="fa-solid fa-seedling"></i></div>
-                </div>
 
-                <div class="dir-item">
-                    <div class="dir-meta">
-                        <h4 class="client-type">Mental Illness</h4>
-                        <span class="client-status">Emotional Health</span>
-                    </div>
-                    <div class="dir-icon"><i class="fa-solid fa-brain"></i></div>
-                </div>
 
-                <div class="dir-item">
-                    <div class="dir-meta">
-                        <h4 class="client-type">Dementia Care</h4>
-                        <span class="client-status">Cognitive Support</span>
-                    </div>
-                    <div class="dir-icon"><i class="fa-solid fa-feather-pointed"></i></div>
-                </div>
 
-                <div class="dir-item dir-index-end">
-                    <div class="index-digit" style="font-size: 2.8rem; color:#c5a059; font-family:'Playfair Display'; font-weight:700;">11</div>
-                    <span class="client-status">Continuum Served</span>
-                </div>
 
-                <div class="dir-item">
-                    <div class="dir-meta">
-                        <h4 class="client-type">High Behavior</h4>
-                        <span class="client-status">Specialized Acuity</span>
-                    </div>
-                    <div class="dir-icon"><i class="fa-solid fa-shield-pulse"></i></div>
-                </div>
 
+
+
+
+
+
+
+    
+
+<section class="editorial-hero">
+    <div class="hero-grid">
+        <div class="hero-text-block">
+            <span class="gold-eyebrow animate-up">Est. 2026</span>
+            <h1 class="magazine-statement">
+                The New <br>
+                <span class="italic-serif gold-text">Standard</span> <br>
+                of Residency
+            </h1>
+            <p class="hero-subline">Sunset Meadow is a clinical sanctuary where medical precision meets bespoke residential luxury.</p>
+            <div class="scroll-indicator">
+                <span class="line"></span>
+                <span class="txt">Explore the Philosophy</span>
             </div>
-        </div> 
-
+        </div>
+        <div class="hero-image-block">
+            <div class="image-wrapper">
+                <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true" alt="Sunset Meadow Luxury">
+                <div class="image-caption">Boutique Assisted Living — Wisconsin</div>
+            </div>
+        </div>
     </div>
 </section>
 
+<section class="mission-dossier">
+    <div class="dossier-container">
+        <div class="dossier-header">
+            <span class="gold-eyebrow">The 2026 Mandate</span>
+            <h2 class="dossier-title">To <span class="italic-serif">dissolve</span> the boundaries between medical necessity and <span class="gold-italic">residential luxury.</span></h2>
+        </div>
+        
+        <div class="dossier-grid">
+            <div class="clinical-column">
+                <div class="stat-box">
+                    <span class="stat-number">2:1</span>
+                    <span class="stat-label">Elite Care Ratio</span>
+                </div>
+                <p class="clinical-description">
+                    We implement bespoke protocols mirroring elite research facilities, ensuring a clinical sanctuary built on <strong>Clinical Rigor</strong> and <strong>Human Dignity</strong>.
+                </p>
+                <ul class="luxe-list">
+                    <li><i class="fa-solid fa-check"></i> Licensed Nurse On-Site</li>
+                    <li><i class="fa-solid fa-check"></i> Breath-Tech Monitoring</li>
+                    <li><i class="fa-solid fa-check"></i> Certified Executive Caregivers</li>
+                </ul>
+            </div>
+
+            <div class="staff-column">
+                <div class="staff-minimal-card">
+                    <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true" alt="Julianne Vance">
+                    <div class="staff-info">
+                        <h4 class="staff-name">Julianne <span class="gold-italic">Vance, RN</span></h4>
+                        <p class="staff-role">Director of Clinical Safety</p>
+                    </div>
+                </div>
+                <div class="staff-minimal-card">
+                    <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2015.jpeg?raw=true" alt="Eleanor Sterling">
+                    <div class="staff-info">
+                        <h4 class="staff-name">Eleanor <span class="gold-italic">Sterling</span></h4>
+                        <p class="staff-role">Executive Director</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
