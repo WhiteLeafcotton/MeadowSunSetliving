@@ -153,96 +153,135 @@
     }
 
     </style>
-<style>
+
 
     
+
 <style>
+/* --- MOBILE REFINEMENT (ONLY TRIGGERS ON PHONE) --- */
 @media (max-width: 768px) {
-    /* 1. LOCK VIEWPORT */
+    /* 1. LOCK HORIZONTAL OVERFLOW */
     html, body { 
         overflow-x: hidden !important; 
-        position: relative; 
         width: 100%;
+        position: relative;
     }
 
-    /* 2. SCOPE OF CARE: Single Column "Bigger" Tags */
-    .anchor-grid-v5 { display: block !important; }
-    
-    .luxe-card-white-solid { 
-        padding: 30px 20px !important; 
+    /* 2. CONTAINER ADJUSTMENT */
+    .container-solid-wide {
+        max-width: 100% !important;
+        padding: 0 20px !important;
+        box-sizing: border-box;
+    }
+
+    /* 3. HERO SYNC (Matches your Payment Page) */
+    .hero.hero-about {
+        height: 40vh !important;
+        padding: 40px 25px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-end !important;
+        align-items: flex-start !important;
+        position: sticky !important;
+        top: 0;
+        z-index: -1;
+    }
+
+    /* 4. SCOPE OF CARE: Single Column Tags (No Squeezing) */
+    .anchor-grid-v5 { 
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
     }
 
     .expanded-dossier-grid {
-        display: grid !important;
-        grid-template-columns: 1fr !important; /* One big tag per row */
-        gap: 10px !important;
+        grid-template-columns: 1fr !important; /* Single column prevents horizontal wiggle */
+        gap: 8px !important;
     }
 
     .luxe-tag-solid {
-        font-size: 0.8rem !important;
-        padding: 15px !important;
+        font-size: 0.75rem !important;
+        padding: 12px !important;
         height: auto !important;
-        min-height: 50px;
-        background: #fff !important;
-        border: 1px solid #e5e2db !important;
+        width: 100% !important;
+        box-sizing: border-box;
     }
 
-    /* 3. ELITE CARE RATIO: Vertically Thinner */
+    /* 5. ELITE CARE RATIO: Ribbon Style */
     .luxe-card-navy-solid {
-        padding: 20px 25px !important; /* Reduced top/bottom padding significantly */
+        padding: 25px !important;
         min-height: auto !important;
     }
 
     .ratio-flex-v5 {
-        display: flex !important;
-        flex-direction: row !important; /* Keeps 2:1 next to text to save height */
-        align-items: center;
-        gap: 20px;
+        flex-direction: row !important; /* Horizontal saves vertical space */
+        align-items: center !important;
+        gap: 20px !important;
     }
 
     .big-stat-v5 {
-        font-size: 3.2rem !important; /* Scaled down for the thinner card */
+        font-size: 3rem !important;
         margin-right: 0 !important;
     }
 
-    .stat-meta-v5 .gold-eyebrow { margin-bottom: 4px !important; }
-    .stat-meta-v5 p { font-size: 0.8rem !important; line-height: 1.3; }
+    .stat-meta-v5 p {
+        font-size: 0.8rem !important;
+        line-height: 1.4 !important;
+    }
 
-    /* 4. PROFILES: Compact & Elegant side-by-side */
-    .dossier-grid-v5 { 
+    /* 6. LEADERSHIP: Side-by-Side Compact Dossier */
+    .dossier-grid-v5 {
         display: flex !important;
         flex-direction: column !important;
-        gap: 25px !important; 
+        gap: 30px !important;
     }
 
     .profile-entry-v5 {
         display: grid !important;
-        grid-template-columns: 75px 1fr !important; /* Photo left, Text right */
-        gap: 20px !important;
-        align-items: center !important;
+        grid-template-columns: 80px 1fr !important; /* Image left, Text right */
+        gap: 15px !important;
+        align-items: start !important;
         text-align: left !important;
-        padding-bottom: 15px;
-        border-bottom: 1px solid #f0f0f0; /* Delicate separator */
     }
 
-    .circle-frame-v5 { 
-        width: 75px !important; 
-        height: 75px !important; 
-        flex: 0 0 75px !important;
-        margin: 0 !important;
+    .circle-frame-v5 {
+        width: 80px !important;
+        height: 80px !important;
+        flex: 0 0 80px !important;
     }
 
-    .profile-details-v5 h3 { font-size: 1.1rem !important; margin: 0 !important; }
-    .role-label-v5 { font-size: 0.65rem !important; margin: 2px 0 6px !important; }
-    .profile-details-v5 p { font-size: 0.85rem !important; line-height: 1.4 !important; }
+    .profile-details-v5 h3 { font-size: 1.1rem !important; }
+    .profile-details-v5 p { font-size: 0.85rem !important; }
 
-    /* 5. ADMISSIONS (Preserved Logic) */
-    .step-entry-v5 { border-bottom: 1px solid #eee; padding: 15px 0; }
-    .step-info p { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-    .step-entry-v5.active .step-info p { max-height: 100px; margin-top: 10px; }
+    /* 7. ADMISSIONS & VIDEO: Compact & Balanced */
+    #admissions .anchor-grid-v5 {
+        display: flex !important;
+        flex-direction: column-reverse !important; /* Video on top, Steps below */
+    }
+
+    .video-anchor {
+        min-height: 250px !important; /* Smaller footprint on mobile */
+        width: 100% !important;
+    }
+
+    .step-entry-v5 {
+        gap: 15px !important;
+        padding: 10px 0 !important;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .step-num { flex: 0 0 30px !important; font-size: 1.1rem !important; }
+    .step-info h3 { font-size: 1.05rem !important; margin-bottom: 5px !important; }
+    .step-info p { font-size: 0.85rem !important; }
+
+    /* 8. FOOTER MOBILE FIX */
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+        gap: 30px;
+    }
 }
 </style>
-
 
 
 <style>
