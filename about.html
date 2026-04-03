@@ -151,11 +151,88 @@
         background: #ffffff !important;
         margin-top: 0 !important;
     }
+
+     .final-solid-state-layout {
+        margin-top: -30px; 
+        border-radius: 30px 30px 0 0; /* Premium curved "sheet" look */
+        position: relative;
+        z-index: 10;
+        box-shadow: 0 -20px 40px rgba(0,0,0,0.05);
+        padding-top: 40px !important;
+    }
+
+    /* 3. TYPOGRAPHY: Scaling for Readability */
+    .muted-intro-title-v5 {
+        font-size: 1.8rem !important;
+        margin-bottom: 20px !important;
+    }
+
+    .gold-eyebrow {
+        letter-spacing: 3px !important;
+        font-size: 0.6rem !important;
+    }
+
+    /* 4. CARDS & GRIDS: Vertical Elegance */
+    .anchor-grid-v5 {
+        gap: 20px !important;
+        margin-bottom: 60px !important;
+    }
+
+    .luxe-card-white-solid, 
+    .luxe-card-navy-solid {
+        padding: 40px 25px !important; /* More breathing room */
+        border-radius: 0 !important; /* Sharp corners = Modern Premium */
+    }
+
+    /* 5. LEADERSHIP: The "Gallery" Frame on Mobile */
+    .dossier-grid-v5 {
+        gap: 30px !important;
+    }
+
+    .profile-entry-v5 {
+        flex-direction: column !important;
+        text-align: left !important; /* Keep text left-aligned for high-end feel */
+        padding: 30px 20px !important;
+        align-items: flex-start !important;
+    }
+
+    .circle-frame-v5 {
+        flex: 0 0 100px !important;
+        height: 100px !important;
+        margin-bottom: 15px;
+    }
+
+    .profile-details-v5 h3 {
+        font-size: 1.3rem !important;
+    }
+
+    /* 6. THE VIDEO: Full Bleed Experience */
+    .video-anchor {
+        min-height: 400px !important;
+        margin: 0 -20px; /* Pulls video to the very edges of the screen */
+        width: calc(100% + 40px);
+    }
+
+    .mute-toggle-glass {
+        bottom: 20px !important;
+        right: 20px !important;
+        padding: 10px 15px !important;
+        font-size: 0.6rem !important;
+    }
+
+    /* 7. ADMISSIONS STEPS: Clean List */
+    .step-entry-v5 {
+        gap: 20px !important;
+    }
+
+    .step-num {
+        font-size: 1.1rem !important;
+        flex: 0 0 30px !important;
+    }
 }
 </style>
-    
 
-
+   
 
 <style>
 /* --- CORE TOKENS --- */
@@ -241,11 +318,7 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
 .role-label-v5 { font-size: 0.75rem; text-transform: uppercase; color: var(--gold); letter-spacing: 2px; font-weight: 700; display: block; margin: 8px 0 12px; }
 .profile-details-v5 p { font-size: 0.95rem; line-height: 1.6; color: #666; margin: 0; }
 
-@media (max-width: 768px) {
-    .anchor-grid-v5, .dossier-grid-v5 { grid-template-columns: 1fr; }
-    .expanded-dossier-grid { grid-template-columns: repeat(2, 1fr); }
-    .big-stat-v5 { font-size: 5rem; }
-}
+
 
 
 
@@ -347,12 +420,7 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     background: rgba(255, 255, 255, 0.2);
 }
 
-/* Responsive Fix */
-@media (max-width: 768px) {
-    .video-anchor { min-height: 300px; }
-    .step-entry-v5 { gap: 15px; }
-    .step-num { font-size: 1.2rem; flex: 0 0 30px; }
-}    
+   
 </style>
     
 
