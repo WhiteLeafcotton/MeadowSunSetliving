@@ -157,94 +157,112 @@
 
     
 
+
+
 <style>
-/* --- MOBILE ENHANCEMENTS (EXCLUDING HERO) --- */
+/* --- MOBILE REFINEMENT (ZERO HERO CHANGES) --- */
 @media (max-width: 768px) {
-    /* 1. Global Reset for Mobile */
-    html, body { 
-        overflow-x: hidden !important; 
-        width: 100%;
+    /* 1. Global Container & Grid Alignment */
+    .container-solid-wide {
+        max-width: 100% !important;
+        padding: 0 20px !important;
     }
 
-    /* 2. Anchor Grid & Layout Stacking */
-    /* Changes 2-column desktop grid to a single column for phone */
     .anchor-grid-v5 { 
         display: flex !important;
         flex-direction: column !important;
-        gap: 20px !important;
-        margin-bottom: 40px !important;
+        gap: 15px !important; /* Tighter gap for a more cohesive look */
+        margin-bottom: 50px !important;
     }
 
-    /* 3. Scope of Care: 2-Column "Magazine" Tags */
+    /* 2. Scope of Care: Balanced 2-Column Grid */
     .luxe-card-white-solid {
-        padding: 40px 20px !important;
+        padding: 30px 15px !important;
+        text-align: center;
     }
 
     .expanded-dossier-grid {
         display: grid !important;
-        grid-template-columns: 1fr 1fr !important; /* Two tags per row */
-        gap: 10px !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+        margin-top: 25px !important;
     }
 
     .luxe-tag-solid {
-        font-size: 0.7rem !important;
-        padding: 12px 5px !important;
-        min-height: 45px;
-        height: auto !important;
+        font-size: 0.65rem !important;
+        padding: 10px 4px !important;
+        min-height: 40px !important;
+        letter-spacing: 0.5px !important;
     }
 
-    /* 4. Elite Care Ratio: Horizontal Layout */
+    /* 3. Elite Care Ratio: Streamlined */
     .luxe-card-navy-solid {
-        padding: 30px 20px !important;
-        min-height: auto !important;
+        padding: 25px !important;
     }
 
     .ratio-flex-v5 {
-        display: flex !important;
-        flex-direction: row !important; /* Keeps "2:1" and text side-by-side to save vertical space */
-        align-items: center;
-        gap: 20px;
+        flex-direction: row !important;
+        justify-content: center;
+        gap: 15px;
     }
 
     .big-stat-v5 {
-        font-size: 3.2rem !important;
-        margin-right: 0 !important;
+        font-size: 3rem !important;
     }
 
-    /* 5. Leadership: High-End Dossier List View */
+    /* 4. Leadership: Clean Editorial List */
     .dossier-grid-v5 { 
         display: flex !important;
         flex-direction: column !important;
-        gap: 25px !important; 
+        gap: 30px !important; 
     }
 
     .profile-entry-v5 {
         display: grid !important;
-        grid-template-columns: 85px 1fr !important; /* Photo left, Text right */
-        gap: 20px !important;
-        align-items: center !important;
+        grid-template-columns: 70px 1fr !important;
+        gap: 15px !important;
         text-align: left !important;
-        padding-bottom: 20px;
-        border-bottom: 1px solid #f2f2f2;
+        align-items: start !important;
     }
 
     .circle-frame-v5 { 
-        width: 85px !important; 
-        height: 85px !important; 
-        flex: 0 0 85px !important;
+        width: 70px !important; 
+        height: 70px !important; 
         margin: 0 !important;
     }
 
-    .profile-details-v5 h3 { font-size: 1.2rem !important; }
-    .role-label-v5 { font-size: 0.65rem !important; margin-bottom: 5px !important; }
-    .profile-details-v5 p { font-size: 0.85rem !important; line-height: 1.4 !important; }
+    .profile-details-v5 h3 { font-size: 1.1rem !important; }
+    .profile-details-v5 p { font-size: 0.8rem !important; line-height: 1.4 !important; }
 
-    /* 6. Video Section */
+    /* 5. HORIZONTAL VIDEO FIX */
     .video-anchor {
-        min-height: 350px !important; /* Ensures video has presence on phone */
+        min-height: auto !important; /* Removes the tall desktop height */
+        padding: 0 !important;
+        width: 100% !important;
+        aspect-ratio: 16 / 9 !important; /* Forces horizontal shape */
+        position: relative !important;
+    }
+
+    .video-container-v5 {
+        height: 100% !important;
+        width: 100% !important;
+        position: absolute !important;
+        top: 0;
+        left: 0;
+    }
+
+    .video-overlay-glass {
+        bottom: 15px !important;
+        right: 15px !important;
+    }
+
+    .mute-toggle-glass {
+        padding: 8px 12px !important;
+        font-size: 0.6rem !important;
     }
 }
 </style>
+
 
 
 
