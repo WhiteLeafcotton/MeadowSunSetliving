@@ -157,27 +157,8 @@
 
     
 
-
-    <style>
-@media (max-width: 768px) {
-    /* FORCE THE CONTENT TO OVERLAP THE HERO SO IT CAN SCROLL */
-    .final-solid-state-layout {
-        position: relative !important;
-        z-index: 99 !important; /* Lifts this above the sticky hero */
-        background: #ffffff !important; /* Ensures it's solid so you don't see the hero behind it */
-        min-height: 100vh !important;
-        margin-top: 0 !important;
-        overflow: visible !important; /* Allows child elements to scroll */
-    }
-
-    /* PREVENT BODY LOCK */
-    html, body {
-        overflow-y: scroll !important; /* Always allow vertical movement */
-        height: auto !important;
-        position: relative !important;
-        -webkit-overflow-scrolling: touch;
-    }
-
+<style>
+/* --- MOBILE REFINEMENT (ONLY TRIGGERS ON PHONE) --- */
 @media (max-width: 768px) {
     /* 1. LOCK HORIZONTAL OVERFLOW */
     html, body { 
