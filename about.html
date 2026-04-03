@@ -238,6 +238,113 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     .expanded-dossier-grid { grid-template-columns: repeat(2, 1fr); }
     .big-stat-v5 { font-size: 5rem; }
 }
+
+
+
+
+
+
+
+/* --- ADMISSIONS SPECIFIC REFINEMENTS --- */
+
+/* Steps List Styling */
+.admissions-steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.step-entry-v5 {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+    font-weight: 400;
+    flex: 0 0 40px;
+    border-bottom: 1px solid var(--gold);
+}
+
+.step-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin: 0 0 10px 0;
+    color: var(--navy);
+}
+
+.step-info p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+/* Video Section Refinement */
+.video-anchor {
+    padding: 0 !important; /* Flush video looks more premium */
+    overflow: hidden;
+    position: relative;
+    min-height: 500px;
+}
+
+.video-container-v5 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.iframe-viewport-v5 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.iframe-viewport-v5 iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    pointer-events: none; /* Allows click-through to the mute button */
+}
+
+.video-overlay-glass {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10;
+}
+
+.mute-toggle-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 12px 20px;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.mute-toggle-glass:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .video-anchor { min-height: 300px; }
+    .step-entry-v5 { gap: 15px; }
+    .step-num { font-size: 1.2rem; flex: 0 0 30px; }
+}    
 </style>
     
 
@@ -344,105 +451,71 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     
 
 
-<section class="admissions-journey" id="admissions">
-    <div class="split-view-container">
-        
-        <div class="journey-card-outline animate-on-scroll" id="admissionsCard">
-            
-            <div class="journey-header-editorial" id="admissionsIntro">
-                <div class="editorial-content-wrapper">
-                    <h2 class="magazine-title">
-                        Our Five-Step <br>
-                        <span class="italic-serif">Admissions Journey</span>
-                    </h2>
-                    <div class="header-accent-line"></div>
-                    
-                    <p class="header-subtext">A dignified, seamless transition designed for your peace of mind.</p>
-                </div>
-                
-                <div class="mobile-process-btn" onclick="toggleMobileSteps(true)">
-                    View the 5-Step Process
+<section class="final-solid-state-layout" id="admissions">
+    <div class="container-solid-wide">
+        <div class="header-solid-header">
+            <div class="intro-vertical-stack">
+                <span class="gold-eyebrow">The 2026 Admissions</span>
+                <h2 class="muted-intro-title-v5">Our Five-Step <br><span class="italic-serif">Admissions Journey</span></h2>
+                <div class="mission-mini-bracket-v5">
+                    <p>A dignified, seamless transition designed to ensure peace of mind for the refined soul and their family.</p>
                 </div>
             </div>
+        </div>
 
-            <div class="steps-container editorial-spacing scrollable-steps journey-steps-container" id="admissionsSteps">
-                <div class="step-card-editorial">
-                    <div class="step-aside">
-                        <span class="step-number-large">01</span>
-                        <div class="vertical-connector-blue"></div>
-                    </div>
-                    <div class="step-body">
+        <div class="anchor-grid-v5">
+            <div class="luxe-card-white-solid admissions-steps-list">
+                <div class="step-entry-v5">
+                    <span class="step-num">01</span>
+                    <div class="step-info">
                         <h3>Initial Assessment</h3>
-                        <p>A comprehensive clinical review to ensure medical needs are met.</p>
+                        <p>A comprehensive clinical review to ensure every medical and lifestyle need is met with precision.</p>
                     </div>
                 </div>
-
-                <div class="step-card-editorial">
-                    <div class="step-aside">
-                        <span class="step-number-large">02</span>
-                        <div class="vertical-connector-blue"></div>
-                    </div>
-                    <div class="step-body">
+                <div class="step-entry-v5">
+                    <span class="step-num">02</span>
+                    <div class="step-info">
                         <h3>Documentation</h3>
-                        <p>Gathering essential history for a secure foundation.</p>
+                        <p>Gathering essential history and clinical data to build a secure foundation for residency.</p>
                     </div>
                 </div>
-
-                <div class="step-card-editorial">
-                    <div class="step-aside">
-                        <span class="step-number-large">03</span>
-                        <div class="vertical-connector-blue"></div>
-                    </div>
-                    <div class="step-body">
+                <div class="step-entry-v5">
+                    <span class="step-num">03</span>
+                    <div class="step-info">
                         <h3>Personal Care Plan</h3>
-                        <p>Bespoke roadmap balancing health and hospitality.</p>
+                        <p>A bespoke roadmap created by our clinical directors, balancing health stewardship and hospitality.</p>
                     </div>
                 </div>
-
-                <div class="step-card-editorial">
-                    <div class="step-aside">
-                        <span class="step-number-large">04</span>
-                        <div class="vertical-connector-blue"></div>
-                    </div>
-                    <div class="step-body">
+                <div class="step-entry-v5">
+                    <span class="step-num">04</span>
+                    <div class="step-info">
                         <h3>Financial & Residency</h3>
-                        <p>Transparent agreements tailored to your family.</p>
+                        <p>Transparent agreements and residency paperwork tailored to your family's unique requirements.</p>
                     </div>
                 </div>
-
-                <div class="step-card-editorial">
-                    <div class="step-aside">
-                        <span class="step-number-large gold-text">05</span>
-                    </div>
-                    <div class="step-body">
-                        <h3 class="gold-text">Welcome Home</h3>
-                        <p>The transition into a life of dignity begins here.</p>
+                <div class="step-entry-v5">
+                    <span class="step-num">05</span>
+                    <div class="step-info">
+                        <h3 class="text-gold">Welcome Home</h3>
+                        <p>The final transition into a life of dignity and elite care begins with our signature welcome.</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="mobile-process-btn back-btn" onclick="toggleMobileSteps(false)">
-                    ← Back to Info
+            <div class="luxe-card-navy-solid video-anchor">
+                <div class="video-container-v5">
+                    <div class="video-overlay-glass">
+                        <button class="mute-toggle-glass" id="customMuteBtn">
+                            <i id="muteIcon" class="fa-solid fa-volume-xmark"></i>
+                            <span id="muteText">TAP FOR AUDIO</span>
+                        </button>
+                    </div>
+                    <div class="iframe-viewport-v5">
+                        <iframe id="journeyVideo" src="https://www.youtube.com/embed/jUxY2QqMDX0?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=jUxY2QqMDX0&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="journey-card-outline video-card-container animate-on-scroll">
-            <div class="video-overlay-wrapper">
-                <button class="mute-toggle-glass" id="customMuteBtn">
-                    <i id="muteIcon" class="fa-solid fa-volume-xmark"></i>
-                    <span id="muteText">TAP FOR AUDIO</span>
-                </button>
-            </div>
-            <div class="iframe-viewport">
-                <div class="desktop-only-video">
-                    <iframe id="journeyVideo" src="https://www.youtube.com/embed/jUxY2QqMDX0?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=jUxY2QqMDX0&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>
-                <div class="mobile-only-video">
-                    <iframe id="journeyVideoMobile" src="https://www.youtube.com/embed/3v7PPviuYMk?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=3v7PPviuYMk&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-
     </div>
 </section>
 
