@@ -151,11 +151,106 @@
         background: #ffffff !important;
         margin-top: 0 !important;
     }
-}
-</style>
+
     
+.anchor-grid-v5 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        padding: 0 !important;
+    }
 
+    .luxe-card-white-solid {
+        padding: 30px 20px !important;
+        border: none !important;
+        border-bottom: 1px solid #eee !important;
+    }
 
+    .expanded-dossier-grid {
+        display: flex !important;
+        overflow-x: auto !important; /* Premium horizontal scroll */
+        gap: 10px !important;
+        padding-bottom: 15px !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .luxe-tag-solid {
+        flex: 0 0 auto !important; /* Prevents shrinking */
+        font-size: 0.55rem !important;
+        padding: 8px 12px !important;
+        background: #fdfdfd !important;
+        border: 0.5px solid var(--navy) !important; /* Thinner, more elegant line */
+        color: var(--navy) !important;
+    }
+
+    /* 2:1 Ratio Card: Compact Signature Bar */
+    .luxe-card-navy-solid {
+        padding: 25px !important;
+        margin: 0 -20px !important; /* Full-bleed look */
+        display: block !important;
+    }
+
+    .ratio-flex-v5 {
+        display: flex !important;
+        align-items: center !important;
+        gap: 20px !important;
+    }
+
+    .big-stat-v5 {
+        font-size: 3rem !important; /* Smaller, punchier size */
+        margin-right: 0 !important;
+        border-right: 1px solid rgba(255,255,255,0.2);
+        padding-right: 20px;
+    }
+
+    .stat-meta-v5 p {
+        font-size: 0.75rem !important;
+        line-height: 1.4 !important;
+        opacity: 0.9;
+    }
+
+    /* 3. RECTANGLE PROFILES: Fixed Grid */
+    .profile-entry-v5 {
+        padding: 20px !important;
+        border: 1px solid var(--navy) !important;
+        margin-bottom: 15px !important;
+        display: grid !important;
+        grid-template-columns: 70px 1fr !important;
+        gap: 15px !important;
+    }
+
+    .circle-frame-v5 {
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+    .profile-details-v5 h3 { font-size: 1.1rem !important; }
+    .profile-details-v5 p { font-size: 0.8rem !important; }
+
+    /* 4. ADMISSIONS: The Vertical Timeline */
+    .step-entry-v5 {
+        gap: 15px !important;
+        margin-bottom: 25px !important;
+    }
+
+    .step-num {
+        font-size: 0.9rem !important;
+        color: var(--gold) !important;
+    }
+
+    .step-info h3 { font-size: 1rem !important; margin-bottom: 5px !important; }
+    .step-info p { font-size: 0.8rem !important; }
+
+    /* 5. VIDEO: Locked Aspect Ratio */
+    .video-anchor {
+        aspect-ratio: 16 / 9 !important;
+        min-height: auto !important;
+        margin: 20px -20px !important;
+        width: calc(100% + 40px) !important;
+    }
+}
+
+</style>
 
 <style>
 /* --- CORE TOKENS --- */
