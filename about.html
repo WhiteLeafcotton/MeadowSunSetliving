@@ -471,7 +471,55 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     background: rgba(255, 255, 255, 0.2);
 }
 
-  
+ @media (max-width: 768px) {
+    /* --- SCOPE OF CARE CARDS (MOBILE FIX) --- */
+    
+    /* 1. Force the cards to stack vertically and take full width */
+    .anchor-grid-v5 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        padding: 0 !important;
+    }
+
+    /* 2. Style the White Scope Card */
+    .luxe-card-white-solid {
+        padding: 40px 25px !important; /* Larger padding for premium feel */
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 3. Move Title to Top-Left */
+    .luxe-card-white-solid .gold-eyebrow.centered {
+        text-align: left !important;
+        margin: 0 0 20px 0 !important;
+        display: block !important;
+    }
+
+    /* 4. Make tags 2 columns for better readability */
+    .expanded-dossier-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    /* 5. Fix the Navy Ratio Card to match */
+    .luxe-card-navy-solid {
+        padding: 40px 25px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .ratio-flex-v5 {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+
+    .big-stat-v5 {
+        font-size: 4.5rem !important; /* Scaled for mobile */
+        margin-right: 0 !important;
+        margin-bottom: 10px !important;
+    }
+} 
 </style>
     
 
