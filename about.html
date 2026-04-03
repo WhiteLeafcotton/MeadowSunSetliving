@@ -159,103 +159,91 @@
 
 
 
-
 <style>
-/* --- MOBILE REFINEMENT: 2-COLUMN CARDS & ZERO WIGGLE (ZERO HERO CHANGES) --- */
+/* --- REFINED ADMISSIONS & LEADERSHIP (MOBILE ONLY) --- */
 @media (max-width: 768px) {
-    /* 1. STOPS SIDE-TO-SIDE WIGGLE */
-    html, body { 
-        overflow-x: hidden !important; 
-        width: 100% !important;
+    /* FIX THE SCROLL WIGGLE */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100vw !important;
         position: relative;
-        margin: 0;
-        padding: 0;
     }
 
-    /* 2. SCOPE OF CARE: EXTERNAL TITLE & 2-COLUMN GRID */
-    .anchor-grid-v5 { 
+    /* LEADERSHIP: BETTER PROFILE CARDS */
+    .dossier-grid-v5 { 
         display: flex !important;
         flex-direction: column !important;
-        width: 100% !important;
-        padding: 0 15px !important; /* Standardized side spacing */
-        box-sizing: border-box !important;
+        gap: 25px !important; 
+        padding: 0 10px;
     }
 
-    /* Moving Title Outside/Top of the Grid */
-    .luxe-card-white-solid .gold-eyebrow.centered {
-        display: block !important;
-        margin-bottom: 25px !important;
-        font-size: 0.75rem !important;
-        letter-spacing: 3px !important;
-    }
-
-    .luxe-card-white-solid {
-        padding: 20px 0 !important; /* Vertical padding only */
-        border: none !important;
-        width: 100% !important;
-        background: transparent !important; /* Makes the cards pop more */
-    }
-
-    .expanded-dossier-grid {
+    .profile-entry-v5 {
+        background: #fdfdfd !important;
+        border: 1px solid #f0f0f0 !important;
+        padding: 20px !important;
+        border-radius: 12px;
         display: grid !important;
-        grid-template-columns: 1fr 1fr !important; /* BACK TO 2 COLUMNS */
-        gap: 12px !important;
-        width: 100% !important;
-    }
-
-    .luxe-tag-solid {
-        font-size: 0.75rem !important; /* Slightly larger text for readability */
-        padding: 20px 10px !important; /* Increased height/padding for "Large" feel */
-        min-height: 60px !important;
-        display: flex !important;
-        justify-content: center !important;
+        grid-template-columns: 80px 1fr !important; /* Fixed photo size */
+        gap: 20px !important;
         align-items: center !important;
-        text-align: center !important;
-        background: #ffffff !important;
-        border: 1px solid #e5e2db !important;
-        box-sizing: border-box !important;
-        line-height: 1.2 !important;
     }
 
-    /* 3. ELITE CARE RATIO: LOCKED WIDTH */
-    .luxe-card-navy-solid {
-        width: 100% !important;
-        box-sizing: border-box !important;
-        padding: 30px 20px !important;
-        margin-top: 10px !important;
-    }
-
-    .ratio-flex-v5 {
-        flex-direction: row !important;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .big-stat-v5 {
-        font-size: 3.2rem !important;
+    .circle-frame-v5 { 
+        width: 80px !important; 
+        height: 80px !important; 
+        border: 2px solid var(--gold) !important; /* Signature gold touch */
         margin: 0 !important;
     }
 
-    /* 4. LEADERSHIP: PREVENT OVERFLOW */
-    .profile-entry-v5 {
-        width: 100% !important;
-        box-sizing: border-box !important;
-        grid-template-columns: 75px 1fr !important;
-        padding: 15px 0 !important;
+    /* ADMISSIONS: COLLAPSIBLE-STYLE DESIGN */
+    .admissions-steps-list {
+        gap: 15px !important;
+        padding: 0 !important;
     }
 
-    /* 5. VIDEO: HORIZONTAL LOCK */
+    .step-entry-v5 {
+        background: #fff;
+        border: 1px solid #e5e2db;
+        padding: 20px !important;
+        margin-bottom: 10px;
+        transition: 0.3s ease;
+        border-radius: 8px;
+        display: flex !important;
+        flex-direction: column !important; /* Stacked for better mobile reading */
+        gap: 10px !important;
+    }
+
+    .step-num {
+        border-bottom: 2px solid var(--gold) !important;
+        width: 30px;
+        font-size: 1.2rem !important;
+        margin-bottom: 5px;
+    }
+
+    .step-info h3 {
+        font-size: 1.1rem !important;
+        letter-spacing: 0.5px;
+    }
+
+    /* HORIZONTAL VIDEO LOCK */
     .video-anchor {
         width: 100% !important;
-        aspect-ratio: 16 / 9 !important;
+        aspect-ratio: 16 / 9 !important; /* Landscape lock */
         min-height: auto !important;
         height: auto !important;
-        overflow: hidden !important;
+        margin-top: 20px;
+        border-radius: 12px;
+    }
+
+    /* TITLE PLACEMENT */
+    .luxe-card-white-solid .gold-eyebrow.centered {
+        margin-top: 40px !important;
+        background: #fff;
+        padding: 10px 0;
+        z-index: 2;
     }
 }
 </style>
-
 
 
 
@@ -547,7 +535,6 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
 
 
 
-
 <section class="final-solid-state-layout" id="admissions">
     <div class="container-solid-wide">
         <div class="header-solid-header">
@@ -562,42 +549,42 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
 
         <div class="anchor-grid-v5">
             <div class="luxe-card-white-solid admissions-steps-list">
-                <div class="step-entry-v5">
-                    <span class="step-num">01</span>
-                    <div class="step-info">
-                        <h3>Initial Assessment</h3>
-                        <p>A comprehensive clinical review to ensure every medical and lifestyle need is met with precision.</p>
-                    </div>
-                </div>
-                <div class="step-entry-v5">
-                    <span class="step-num">02</span>
-                    <div class="step-info">
-                        <h3>Documentation</h3>
-                        <p>Gathering essential history and clinical data to build a secure foundation for residency.</p>
-                    </div>
-                </div>
-                <div class="step-entry-v5">
-                    <span class="step-num">03</span>
-                    <div class="step-info">
-                        <h3>Personal Care Plan</h3>
-                        <p>A bespoke roadmap created by our clinical directors, balancing health stewardship and hospitality.</p>
-                    </div>
-                </div>
-                <div class="step-entry-v5">
-                    <span class="step-num">04</span>
-                    <div class="step-info">
-                        <h3>Financial & Residency</h3>
-                        <p>Transparent agreements and residency paperwork tailored to your family's unique requirements.</p>
-                    </div>
-                </div>
-                <div class="step-entry-v5">
-                    <span class="step-num">05</span>
-                    <div class="step-info">
-                        <h3 class="text-gold">Welcome Home</h3>
-                        <p>The final transition into a life of dignity and elite care begins with our signature welcome.</p>
-                    </div>
-                </div>
-            </div>
+    <div class="step-entry-v5">
+        <span class="step-num">01</span>
+        <div class="step-info">
+            <h3>Initial Assessment</h3>
+            <p>A comprehensive clinical review to ensure every medical and lifestyle need is met.</p>
+        </div>
+    </div>
+    <div class="step-entry-v5">
+        <span class="step-num">02</span>
+        <div class="step-info">
+            <h3>Documentation</h3>
+            <p>Gathering clinical data to build a secure foundation for residency.</p>
+        </div>
+    </div>
+    <div class="step-entry-v5">
+        <span class="step-num">03</span>
+        <div class="step-info">
+            <h3>Personal Care Plan</h3>
+            <p>A bespoke roadmap balancing health stewardship and hospitality.</p>
+        </div>
+    </div>
+    <div class="step-entry-v5">
+        <span class="step-num">04</span>
+        <div class="step-info">
+            <h3>Financial Residency</h3>
+            <p>Transparent agreements tailored to your family's requirements.</p>
+        </div>
+    </div>
+    <div class="step-entry-v5">
+        <span class="step-num">05</span>
+        <div class="step-info">
+            <h3 class="text-gold">Welcome Home</h3>
+            <p>The final transition into a life of dignity and elite care.</p>
+        </div>
+    </div>
+</div>
 
             <div class="luxe-card-navy-solid video-anchor">
                 <div class="video-container-v5">
@@ -768,6 +755,26 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     }
 </script>
 
+
+
+
+
+
+<script>
+    // Force recalculation of width to prevent horizontal scroll "wiggle"
+    window.addEventListener('resize', () => {
+        document.body.style.width = window.innerWidth + 'px';
+    });
+    
+    // Auto-trigger on load
+    document.addEventListener('DOMContentLoaded', () => {
+        document.body.style.width = window.innerWidth + 'px';
+    });
+</script>
+
+
+
+    
 
 <script>
     /* 1. YOUTUBE API SETUP */
