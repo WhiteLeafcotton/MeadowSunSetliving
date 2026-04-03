@@ -102,135 +102,94 @@
 
 
 
+
 <style>
-    /* MOBILE ABOUT HERO OVERRgIDE */
-    /* MOBILE ABOUT HERO - SYNCED TO PAYMENT PAGE */
 @media (max-width: 768px) {
+    /* 1. ELIMINATE THE WIGGLE */
+    /* We remove 'position: sticky' because it causes jitter on mobile scroll */
     .hero.hero-about {
-        height: 40vh !important; /* Matches your Pajyment mobile height */
+        height: 50vh !important;
+        position: relative !important; 
         display: flex !important;
         flex-direction: column !important;
-        justify-content: flex-end !important; /* Pulls everything to the bottom */
-        align-items: flex-start !important; /* Pulls feverything to the left */
-        padding: 40px 25px !important; /* MATCHES YOUR PAYMENT PADDING EXACTLY */
-        position: sticky !important;
-        top: 0;
-        z-index: -1;
+        justify-content: flex-end !important;
+        align-items: flex-start !important;
+        padding: 30px 20px !important;
+        background-attachment: scroll !important; /* Mobile doesn't handle fixed/sticky well */
     }
 
-    .hero.hero-about .hero-content {
-        position: relative;
-        z-index: 5;
-        text-align: left;
-        width: 100%;
-    }
-
-    /* MATCHING THE PAYMENT TITLE STYLE */
+    /* 2. THE $500K "EDITORIAL" HEADER */
     .hero.hero-about h1 {
-        margin: 0 !important; /* Kill all margins to match Payment */
-        font-size: 1.8rem !important; /* MATCHES YOUR PAYMENT H1 SIZE */
-        color: #1a1a1a !important;
-        letter-spacing: -0.5px !important;
-        line-height: 1.1 !important;
-        font-family: 'Playfair Display', serif;
+        font-family: 'Playfair Display', serif !important;
+        font-size: 2.2rem !important;
+        line-height: 1 !important;
+        letter-spacing: -1.5px !important;
+        color: var(--navy) !important;
+        margin: 0 !important;
+        font-weight: 500 !important;
     }
 
-    /* HANDLING THE BADGE (The "Philosophy" text) */
-    .hero.hero-about .hero-badge {
-        margin-bottom: 8px !important; /* Small nudgbe so it sits just above the title */
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    /* FIXING THE NEXT SECTION SLIDE-OVER */
-    .hero.hero-about ~ section, 
-    .locked-mission-console {
-        position: relative !important;
-        z-index: 10 !important;
-        background: #ffffff !important;
+    /* 3. SOLID CONTENT BLOCK (No Overlap = No Jitter) */
+    .final-solid-state-layout {
         margin-top: 0 !important;
-    }
-
-     .final-solid-state-layout {
-        margin-top: -30px; 
-        border-radius: 30px 30px 0 0; /* Premium curved "sheet" look */
+        padding: 40px 20px !important;
+        background: #ffffff !important;
         position: relative;
-        z-index: 10;
-        box-shadow: 0 -20px 40px rgba(0,0,0,0.05);
-        padding-top: 40px !important;
+        z-index: 1;
     }
 
-    /* 3. TYPOGRAPHY: Scaling for Readability */
-    .muted-intro-title-v5 {
-        font-size: 1.8rem !important;
-        margin-bottom: 20px !important;
-    }
-
-    .gold-eyebrow {
-        letter-spacing: 3px !important;
-        font-size: 0.6rem !important;
-    }
-
-    /* 4. CARDS & GRIDS: Vertical Elegance */
-    .anchor-grid-v5 {
-        gap: 20px !important;
-        margin-bottom: 60px !important;
-    }
-
-    .luxe-card-white-solid, 
-    .luxe-card-navy-solid {
-        padding: 40px 25px !important; /* More breathing room */
-        border-radius: 0 !important; /* Sharp corners = Modern Premium */
-    }
-
-    /* 5. LEADERSHIP: The "Gallery" Frame on Mobile */
+    /* 4. RECTANGLE PROFILE FRAMES (Clean & Sharp) */
     .dossier-grid-v5 {
-        gap: 30px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
     }
 
     .profile-entry-v5 {
-        flex-direction: column !important;
-        text-align: left !important; /* Keep text left-aligned for high-end feel */
-        padding: 30px 20px !important;
-        align-items: flex-start !important;
+        display: grid !important;
+        grid-template-columns: 80px 1fr !important; /* Fixed image size prevents shift */
+        gap: 20px !important;
+        padding: 20px !important;
+        border: 1px solid var(--navy) !important;
+        align-items: start !important;
+        text-align: left !important;
     }
 
     .circle-frame-v5 {
-        flex: 0 0 100px !important;
-        height: 100px !important;
-        margin-bottom: 15px;
+        width: 80px !important;
+        height: 80px !important;
+        flex: none !important;
     }
 
-    .profile-details-v5 h3 {
-        font-size: 1.3rem !important;
-    }
-
-    /* 6. THE VIDEO: Full Bleed Experience */
+    /* 5. STABLE VIDEO CONTAINER */
+    /* Setting an aspect-ratio prevents the "jumping" when YouTube loads */
     .video-anchor {
-        min-height: 400px !important;
-        margin: 0 -20px; /* Pulls video to the very edges of the screen */
-        width: calc(100% + 40px);
+        width: 100% !important;
+        aspect-ratio: 16 / 9 !important; 
+        min-height: auto !important;
+        margin: 20px 0 !important;
+        border: 1px solid #eee;
     }
 
-    .mute-toggle-glass {
-        bottom: 20px !important;
-        right: 20px !important;
-        padding: 10px 15px !important;
-        font-size: 0.6rem !important;
+    /* 6. ADMISSIONS STEPS */
+    .admissions-steps-list {
+        padding: 20px 0 !important;
+        border: none !important;
     }
 
-    /* 7. ADMISSIONS STEPS: Clean List */
     .step-entry-v5 {
-        gap: 20px !important;
+        margin-bottom: 30px;
+        align-items: flex-start !important;
     }
 
     .step-num {
-        font-size: 1.1rem !important;
-        flex: 0 0 30px !important;
+        font-size: 1rem !important;
+        border-bottom: 2px solid var(--gold) !important;
+        padding-bottom: 2px;
     }
 }
 </style>
+
 
    
 
