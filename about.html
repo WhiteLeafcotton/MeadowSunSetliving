@@ -153,101 +153,97 @@
     }
 
     
-.anchor-grid-v5 {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 15px !important;
-        padding: 0 !important;
+<style>
+
+    
+@media (max-width: 768px) {
+    /* 1. LOCK THE VIEWPORT (Prevents the wiggle) */
+    html, body { 
+        overflow-x: hidden !important; 
+        position: relative; 
+        width: 100%;
     }
 
-    .luxe-card-white-solid {
-        padding: 30px 20px !important;
-        border: none !important;
-        border-bottom: 1px solid #eee !important;
+    /* 2. SCOPE OF CARE: Bold & Stately Grid */
+    /* No more side-scrolling. 2 columns, clean borders. */
+    .anchor-grid-v5 { 
+        display: block !important; 
+    }
+    
+    .luxe-card-white-solid { 
+        padding: 40px 15px !important; 
+        width: 100%;
     }
 
     .expanded-dossier-grid {
-        display: flex !important;
-        overflow-x: auto !important; /* Premium horizontal scroll */
-        gap: 10px !important;
-        padding-bottom: 15px !important;
-        -webkit-overflow-scrolling: touch;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* 2 columns for a "Bigger" feel */
+        gap: 8px !important;
+        overflow: hidden !important; /* Kills the side-to-side wiggle */
     }
 
     .luxe-tag-solid {
-        flex: 0 0 auto !important; /* Prevents shrinking */
-        font-size: 0.55rem !important;
-        padding: 8px 12px !important;
-        background: #fdfdfd !important;
-        border: 0.5px solid var(--navy) !important; /* Thinner, more elegant line */
-        color: var(--navy) !important;
-    }
-
-    /* 2:1 Ratio Card: Compact Signature Bar */
-    .luxe-card-navy-solid {
-        padding: 25px !important;
-        margin: 0 -20px !important; /* Full-bleed look */
-        display: block !important;
-    }
-
-    .ratio-flex-v5 {
+        font-size: 0.65rem !important;
+        padding: 12px 5px !important;
+        text-align: center;
+        border: 1px solid #e5e2db !important;
+        background: #fff !important;
         display: flex !important;
-        align-items: center !important;
-        gap: 20px !important;
+        justify-content: center;
+        height: 50px;
     }
 
-    .big-stat-v5 {
-        font-size: 3rem !important; /* Smaller, punchier size */
-        margin-right: 0 !important;
-        border-right: 1px solid rgba(255,255,255,0.2);
-        padding-right: 20px;
-    }
+    /* 3. PROFILES: Micro-Compact "Executive" Style */
+    .dossier-grid-v5 { gap: 15px !important; }
 
-    .stat-meta-v5 p {
-        font-size: 0.75rem !important;
-        line-height: 1.4 !important;
-        opacity: 0.9;
-    }
-
-    /* 3. RECTANGLE PROFILES: Fixed Grid */
     .profile-entry-v5 {
-        padding: 20px !important;
-        border: 1px solid var(--navy) !important;
-        margin-bottom: 15px !important;
-        display: grid !important;
-        grid-template-columns: 70px 1fr !important;
+        padding: 15px !important;
+        grid-template-columns: 60px 1fr !important; /* Tiny image */
         gap: 15px !important;
+        border: 0.5px solid var(--navy) !important;
     }
 
-    .circle-frame-v5 {
-        width: 70px !important;
-        height: 70px !important;
-    }
+    .circle-frame-v5 { width: 60px !important; height: 60px !important; }
+    .profile-details-v5 h3 { font-size: 1rem !important; }
+    .role-label-v5 { font-size: 0.6rem !important; margin: 4px 0 !important; }
+    .profile-details-v5 p { display: none; } /* Hides bio on mobile for extreme compactness */
 
-    .profile-details-v5 h3 { font-size: 1.1rem !important; }
-    .profile-details-v5 p { font-size: 0.8rem !important; }
-
-    /* 4. ADMISSIONS: The Vertical Timeline */
+    /* 4. COLLAPSIBLE ADMISSIONS */
     .step-entry-v5 {
-        gap: 15px !important;
-        margin-bottom: 25px !important;
+        border-bottom: 1px solid #eee;
+        padding: 15px 0;
+        margin-bottom: 0 !important;
+    }
+    
+    .step-info p { 
+        max-height: 0; 
+        overflow: hidden; 
+        transition: max-height 0.3s ease-out; 
+        font-size: 0.85rem !important;
+        margin-top: 0;
     }
 
-    .step-num {
-        font-size: 0.9rem !important;
-        color: var(--gold) !important;
+    /* Show description when parent has .active class */
+    .step-entry-v5.active .step-info p {
+        max-height: 100px;
+        margin-top: 10px;
     }
 
-    .step-info h3 { font-size: 1rem !important; margin-bottom: 5px !important; }
-    .step-info p { font-size: 0.8rem !important; }
-
-    /* 5. VIDEO: Locked Aspect Ratio */
-    .video-anchor {
-        aspect-ratio: 16 / 9 !important;
-        min-height: auto !important;
-        margin: 20px -20px !important;
-        width: calc(100% + 40px) !important;
+    .step-info h3 {
+        font-size: 0.95rem !important;
+        margin: 0 !important;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
+
+    .step-info h3::after {
+        content: '+';
+        color: var(--gold);
+        font-family: 'Inter', sans-serif;
+    }
+
+    .step-entry-v5.active h3::after { content: '−'; }
 }
 
 </style>
