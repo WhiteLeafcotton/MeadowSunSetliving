@@ -158,13 +158,7 @@
 
 
 <style>
-/* --- CORE TOKENS --- */
-/* --- CORE TOKENS --- */
-/* --- CORE TOKENS --- */
-/* --- CORE TOKENS --- */
-/* --- UNIVERSAL RESET TO PREVENT FLOATING --- */
-/* --- CORE TOKENS --- */
-/* --- CORE TOKENS --- */
+/* --- 1. CORE TOKENS & RESET --- */
 :root {
     --navy: #0c1833;
     --gold: #c5a059;
@@ -172,106 +166,55 @@
     --page-bg-solid: #ffffff;
 }
 
-/* Force the section to be a solid block with no transparency */
+body { 
+    background-color: var(--page-bg-solid); 
+    margin: 0; 
+    font-family: 'Inter', sans-serif; 
+    color: #333; 
+}
+
 .final-solid-state-layout { 
     background-color: var(--page-bg-solid); 
     width: 100%; 
     display: block;
     position: relative;
-    padding-bottom: 100px; /* Provides a solid base at the bottom */
+    padding-bottom: 100px;
 }
 
-body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', sans-serif; color: #333; }
+/* --- 2. GLOBAL UTILITIES --- */
 .text-gold { color: var(--gold); }
 .italic-serif { font-family: 'Playfair Display', serif; font-style: italic; }
 .gold-eyebrow { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 4px; color: var(--gold); font-weight: 800; display: block; margin-bottom: 15px; }
-.centered { text-align: center; }
-.white-text { color: #fff; opacity: 0.8; }
-
-/* Fixed Width Container to prevent floating/wandering */
 .container-solid-wide { max-width: 95%; margin: 0 auto; padding: 0 2%; }
 
-/* --- SECTION 1: STACKED HEADER --- */
-.header-solid-header { 
-    background-color: var(--page-bg-solid);
-    padding: 100px 0 60px; 
-}
+/* --- 3. HEADER & HERO --- */
+.header-solid-header { padding: 100px 0 60px; }
 .intro-vertical-stack { max-width: 800px; } 
 .muted-intro-title-v5 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--slate); font-weight: 400; margin: 0 0 30px 0; line-height: 1.2; }
-
-/* Mandate Style */
 .mission-mini-bracket-v5 { border-left: 1px solid var(--gold); padding-left: 30px; font-size: 1rem; line-height: 1.7; color: #666; max-width: 600px; }
 
-/* --- SECTION 2: THE CARDS --- */
-.anchor-solid-cards { background-color: var(--page-bg-solid); }
+/* --- 4. THE CONTENT GRIDS --- */
 .anchor-grid-v5 { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 30px; margin-bottom: 100px; }
-.luxe-card-white-solid { background: #ffffff; padding: 60px; border: 1px solid #eeeeee; box-shadow: none; } /* Removed shadows to keep it solid/flat */
+.luxe-card-white-solid { background: #ffffff; padding: 60px; border: 1px solid #eeeeee; }
 .luxe-card-navy-solid { background: var(--navy); color: #fff; padding: 60px; display: flex; align-items: center; }
 
-.expanded-dossier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 40px; }
-.luxe-tag-solid { font-size: 0.6rem; border: 1px solid #eeeeee; padding: 8px 14px; text-transform: uppercase; letter-spacing: 1px; color: #888; background-color: #ffffff; display: flex; justify-content: center; align-items: center; text-align: center; line-height: 1.2; }
+/* --- 5. ADMISSIONS STEPS --- */
+.admissions-steps-list { display: flex; flex-direction: column; gap: 40px; }
+.step-entry-v5 { display: flex; gap: 30px; align-items: flex-start; }
+.step-num { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--gold); flex: 0 0 40px; border-bottom: 1px solid var(--gold); }
+.step-info h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin: 0 0 10px 0; color: var(--navy); }
 
-.big-stat-v5 { font-family: 'Playfair Display', serif; font-size: 7rem; color: var(--gold); line-height: 1; margin-right: 40px; }
-.stat-meta-v5 p { font-size: 0.9rem; color: #aaaaaa; line-height: 1.6; max-width: 320px; }
-
-/* --- SECTION 3: LEADERSHIP --- */
-.leadership-solid-dossier { 
-    background-color: var(--page-bg-solid);
-    border-top: 1px solid #e5e2db; 
-    padding-top: 60px; 
-}
-.dossier-header-v5 { display: flex; align-items: center; gap: 20px; margin-bottom: 60px; }
-.divider-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 2px; color: #bbbbbb; white-space: nowrap; }
-.line-v5 { width: 100%; height: 1px; background: #e5e2db; }
-
-.dossier-grid-v5 { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
-.profile-entry-v5 { display: flex; gap: 35px; align-items: center; }
-.circle-frame-v5 { 
-    flex: 0 0 130px; 
-    height: 130px; 
-    border-radius: 50%; 
-    overflow: hidden; 
-    border: 1px solid var(--navy); /* Changed from 2px gold to 1px navy blue */
-    padding: 3px; 
-    background: white;
-}
-.circle-frame-v5 img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-
-.profile-details-v5 h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin: 0; color: var(--navy); }
-.role-label-v5 { font-size: 0.75rem; text-transform: uppercase; color: var(--gold); letter-spacing: 2px; font-weight: 700; display: block; margin: 8px 0 12px; }
-.profile-details-v5 p { font-size: 0.95rem; line-height: 1.6; color: #666; margin: 0; }
-
-@media (max-width: 768px) {
-    .anchor-grid-v5, .dossier-grid-v5 { grid-template-columns: 1fr; }
-    .expanded-dossier-grid { grid-template-columns: repeat(2, 1fr); }
-    .big-stat-v5 { font-size: 5rem; }
-}
-
-
-
-
-
-
-
-/* --- ADMISSIONS SPECIFIC REFINEMENTS --- */
-
-/* --- UPDATED LEADERSHIP PROFILE FRAMES --- */
-.dossier-grid-v5 { 
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: 40px; /* Adjusted gap for framed look */
-}
+/* --- 6. LEADERSHIP (WITH RECTANGLE BLUE FRAME) --- */
+.leadership-solid-dossier { border-top: 1px solid #e5e2db; padding-top: 60px; }
+.dossier-grid-v5 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
 
 .profile-entry-v5 { 
     display: flex; 
     gap: 35px; 
     align-items: center; 
-    
-    /* THE FIX: Thin blue frame around entire profile */
-    border: 1px solid var(--navy); 
+    border: 1px solid var(--navy); /* The Blue Frame */
     padding: 30px; 
-    background-color: #ffffff; 
-    transition: transform 0.3s ease;
+    background-color: #ffffff;
 }
 
 .circle-frame-v5 { 
@@ -279,39 +222,19 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     height: 130px; 
     border-radius: 50%; 
     overflow: hidden; 
-    border: none; /* Removed old individual photo border */
-    padding: 0; 
 }
+.circle-frame-v5 img { width: 100%; height: 100%; object-fit: cover; }
 
-.circle-frame-v5 img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-}
+.profile-details-v5 h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0; color: var(--navy); }
+.role-label-v5 { font-size: 0.75rem; text-transform: uppercase; color: var(--gold); letter-spacing: 2px; font-weight: 700; display: block; margin: 8px 0 12px; }
 
-.profile-details-v5 {
-    flex: 1;
-}
-
-/* Ensure the title and text remain elegant inside the frame */
-.profile-details-v5 h3 { 
-    font-family: 'Playfair Display', serif; 
-    font-size: 1.5rem; 
-    margin: 0; 
-    color: var(--navy); 
-}
-
-/* Mobile Adjustment */
+/* --- 7. RESPONSIVE (MOBILE) --- */
 @media (max-width: 768px) {
-    .profile-entry-v5 { 
-        flex-direction: column; 
-        text-align: center; 
-        padding: 25px; 
-        gap: 20px;
-    }
+    .anchor-grid-v5, .dossier-grid-v5 { grid-template-columns: 1fr; }
+    .profile-entry-v5 { flex-direction: column; text-align: center; padding: 25px; }
+    .step-entry-v5 { gap: 15px; }
+} /* <-- This bracket was missing! */
 </style>
-    
-
 
 
 
