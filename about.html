@@ -160,138 +160,57 @@
 
 <style>
 
-/* --- COMPACT CORE DECOR --- */
-.text-gold { color: #c5a059; }
+/* --- CORE TOKENS --- */
+:root {
+    --navy: #0c1833;
+    --gold: #c5a059;
+    --light-grey: #f4f4f4;
+}
+
+.text-gold { color: var(--gold); }
 .italic-serif { font-family: 'Cormorant Garamond', serif; font-style: italic; }
-.gold-eyebrow { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 4px; color: #c5a059; font-weight: 800; display: block; margin-bottom: 10px; }
+.gold-eyebrow { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 4px; color: var(--gold); font-weight: 800; display: block; margin-bottom: 12px; }
 
-/* --- VISION & MISSION ROW --- */
-.compact-vision-row {
-    padding: 60px 5% 40px;
-    background: #fff;
-    border-bottom: 1px solid #f0f0f0;
-}
+/* --- LAYOUT CONTAINERS --- */
+.container-slim { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 
-.vision-grid-header {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 60px;
-    max-width: 1300px;
-    margin: 0 auto;
-    align-items: flex-end;
-}
+/* --- VISION SECTION --- */
+.editorial-header { padding: 80px 0 60px; border-bottom: 1px solid var(--light-grey); }
+.vision-row { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; align-items: flex-end; }
+.compact-title { font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1.1; color: var(--navy); margin: 0; }
+.mission-bracket { border-left: 2px solid var(--gold); padding-left: 30px; font-size: 0.95rem; line-height: 1.6; color: #555; }
 
-.compact-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.2rem;
-    line-height: 1.1;
-    color: #0c1833;
-    margin: 0;
-}
+/* --- ANCHOR CARDS --- */
+.anchor-cards-section { padding: 60px 0 100px; }
+.anchor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 80px; }
 
-.mission-side-bracket {
-    border-left: 2px solid #c5a059;
-    padding-left: 30px;
-}
+.luxe-card-white { background: #fff; border: 1px solid var(--light-grey); padding: 50px; }
+.luxe-card-navy { background: var(--navy); color: #fff; padding: 50px; display: flex; align-items: center; }
 
-.mission-text {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: #555;
-    margin: 0;
-}
+.card-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 25px; color: var(--navy); }
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 10px; }
+.luxe-tag { font-size: 0.65rem; border: 1px solid #ddd; padding: 6px 14px; text-transform: uppercase; letter-spacing: 1px; color: #777; }
 
-/* --- LEADERSHIP SLIM --- */
-.compact-leadership {
-    padding: 40px 5%;
-    background: #fff;
-}
+.ratio-content { display: flex; align-items: center; gap: 30px; }
+.big-stat { font-family: 'Playfair Display', serif; font-size: 5rem; color: var(--gold); line-height: 1; }
+.stat-meta p { font-size: 0.85rem; color: #aaa; margin: 0; }
 
-.section-divider {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 40px;
-}
+/* --- RE-STYLED LEADERSHIP (No Photos) --- */
+.leadership-text-dossier { border-top: 1px solid var(--light-grey); padding-top: 40px; }
+.dossier-header { display: flex; align-items: center; gap: 20px; margin-bottom: 40px; }
+.divider-text { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 2px; color: #bbb; white-space: nowrap; }
+.line { width: 100%; height: 1px; background: var(--light-grey); }
 
-.divider-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 2px; color: #bbb; white-space: nowrap; }
-.horizontal-line { width: 100%; height: 1px; background: #eee; }
+.dossier-row { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+.name-wrap h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 5px; color: var(--navy); }
+.role-label { font-size: 0.7rem; text-transform: uppercase; color: var(--gold); letter-spacing: 2px; font-weight: 700; }
+.bio-text { margin-top: 15px; font-size: 0.9rem; line-height: 1.7; color: #666; }
 
-.leadership-slim-flex {
-    display: flex;
-    gap: 60px;
-    max-width: 1300px;
-    margin: 0 auto;
-}
-
-.slim-profile {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    flex: 1;
-}
-
-.profile-thumb img {
-    width: 90px;
-    height: 110px;
-    object-fit: cover;
-    border-radius: 2px;
-}
-
-.profile-meta h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin: 0; color: #0c1833; }
-.mini-role { font-size: 0.65rem; text-transform: uppercase; color: #c5a059; letter-spacing: 1px; display: block; margin: 4px 0 8px; }
-.profile-meta p { font-size: 0.8rem; line-height: 1.5; color: #666; margin: 0; }
-
-/* --- DIRECTORY COMPACT --- */
-.compact-directory {
-    padding: 40px 5% 80px;
-    background: #fff;
-}
-
-.directory-grid-premium {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    max-width: 1300px;
-    margin: 0 auto;
-}
-
-.directory-info-card {
-    background: #fcfcfc;
-    border: 1px solid #f0f0f0;
-    padding: 40px;
-}
-
-.magazine-sub { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 20px; color: #0c1833; }
-
-.service-tags { display: flex; flex-wrap: wrap; gap: 10px; }
-.tag { 
-    font-size: 0.7rem; 
-    padding: 8px 16px; 
-    border: 1px solid #eee; 
-    color: #555; 
-    text-transform: uppercase; 
-    letter-spacing: 1px;
-}
-
-.ratio-banner-slim {
-    background: #0c1833;
-    color: #fff;
-    padding: 40px;
-    display: flex;
-    align-items: center;
-}
-
-.ratio-flex { display: flex; align-items: center; gap: 30px; }
-.ratio-number { font-family: 'Playfair Display', serif; font-size: 4rem; color: #c5a059; line-height: 1; }
-.ratio-text strong { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
-.ratio-text p { font-size: 0.8rem; color: #aaa; margin: 0; }
-
-/* --- MOBILE --- */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    .vision-grid-header, .leadership-slim-flex, .directory-grid-premium { grid-template-columns: 1fr; flex-direction: column; gap: 40px; }
+    .vision-row, .anchor-grid, .dossier-row { grid-template-columns: 1fr; gap: 40px; }
     .compact-title { font-size: 2.2rem; }
-    .ratio-number { font-size: 3rem; }
+    .big-stat { font-size: 4rem; }
 }
 
 </style>
@@ -303,70 +222,66 @@
 
 
 
-<section class="compact-vision-row">
-    <div class="vision-grid-header">
-        <div class="vision-main">
-            <span class="gold-eyebrow">The 2026 Vision</span>
-            <h1 class="compact-title">A sanctuary for the <span class="italic-serif text-gold">refined soul.</span></h1>
-        </div>
-        <div class="mission-side-bracket">
-            <p class="mission-text">
-                <span class="text-gold">Our Mandate:</span> To dissolve the boundaries between clinical necessity and residential luxury, ensuring the pinnacle of boutique care.
-            </p>
+<section class="editorial-header">
+    <div class="container-slim">
+        <div class="vision-row">
+            <div class="vision-text">
+                <span class="gold-eyebrow">The 2026 Residency</span>
+                <h1 class="compact-title">A sanctuary for the <span class="italic-serif text-gold">refined soul.</span></h1>
+            </div>
+            <div class="mission-bracket">
+                <p><strong>Our Mandate:</strong> To dissolve the boundaries between clinical necessity and residential luxury, ensuring the pinnacle of boutique care.</p>
+            </div>
         </div>
     </div>
 </section>
 
-<section class="compact-leadership">
-    <div class="section-divider">
-        <span class="divider-label">Executive Leadership</span>
-        <div class="horizontal-line"></div>
-    </div>
-    
-    <div class="leadership-slim-flex">
-        <article class="slim-profile">
-            <div class="profile-thumb">
-                <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2014.jpeg?raw=true" alt="Julianne Vance">
+<section class="anchor-cards-section">
+    <div class="container-slim">
+        <div class="anchor-grid">
+            <div class="luxe-card-white">
+                <span class="gold-eyebrow">Scope of Care</span>
+                <h2 class="card-title">The <span class="italic-serif">Collective</span></h2>
+                <div class="tag-cloud">
+                    <span class="luxe-tag">Dementia Care</span>
+                    <span class="luxe-tag">Advanced Geriatrics</span>
+                    <span class="luxe-tag">High Behavior</span>
+                    <span class="luxe-tag">Mental Health</span>
+                </div>
             </div>
-            <div class="profile-meta">
-                <h4>Julianne <span class="text-gold">Vance, RN</span></h4>
-                <span class="mini-role">Director of Clinical Safety</span>
-                <p>Bridging acute medical precision with bespoke residential protocols.</p>
-            </div>
-        </article>
 
-        <article class="slim-profile">
-            <div class="profile-thumb">
-                <img src="https://github.com/WhiteLeafcotton/MeadowSunSetliving/blob/main/Image%2015.jpeg?raw=true" alt="Eleanor Sterling">
-            </div>
-            <div class="profile-meta">
-                <h4>Eleanor <span class="text-gold">Sterling</span></h4>
-                <span class="mini-role">Executive Director</span>
-                <p>Ensuring Sunset Meadow operates with the exclusivity of a private club.</p>
-            </div>
-        </article>
-    </div>
-</section>
-
-<section class="compact-directory">
-    <div class="directory-grid-premium">
-        <div class="directory-info-card">
-            <span class="gold-eyebrow">Scope of Care</span>
-            <h2 class="magazine-sub">The <span class="italic-serif">Collective</span></h2>
-            <div class="service-tags">
-                <span class="tag">Dementia Care</span>
-                <span class="tag">Advanced Geriatrics</span>
-                <span class="tag">High Behavior Acuity</span>
-                <span class="tag">Mental Health</span>
+            <div class="luxe-card-navy">
+                <div class="ratio-content">
+                    <span class="big-stat">2:1</span>
+                    <div class="stat-meta">
+                        <span class="gold-eyebrow">Elite Care Ratio</span>
+                        <p>Undivided attention from licensed professionals.</p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="ratio-banner-slim">
-            <div class="ratio-flex">
-                <span class="ratio-number">2:1</span>
-                <div class="ratio-text">
-                    <strong>Elite Care Ratio</strong>
-                    <p>Undivided attention from licensed professionals.</p>
+        <div class="leadership-text-dossier">
+            <div class="dossier-header">
+                <span class="divider-text">Executive Stewardship</span>
+                <div class="line"></div>
+            </div>
+            
+            <div class="dossier-row">
+                <div class="profile-entry">
+                    <div class="name-wrap">
+                        <h3>Julianne <span class="text-gold">Vance, RN</span></h3>
+                        <span class="role-label">Director of Clinical Safety</span>
+                    </div>
+                    <p class="bio-text">Bridging acute medical precision with a bespoke residential atmosphere. Julianne oversees all clinical safety protocols.</p>
+                </div>
+
+                <div class="profile-entry">
+                    <div class="name-wrap">
+                        <h3>Eleanor <span class="text-gold">Sterling</span></h3>
+                        <span class="role-label">Executive Director</span>
+                    </div>
+                    <p class="bio-text">With an eye for operational excellence, Eleanor ensures that Sunset Meadow feels like a private club, not a facility.</p>
                 </div>
             </div>
         </div>
