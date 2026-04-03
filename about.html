@@ -255,61 +255,105 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
 
 /* --- ADMISSIONS SPECIFIC REFINEMENTS --- */
 
-/* --- UPDATED LEADERSHIP PROFILE FRAMES --- */
-.dossier-grid-v5 { 
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: 40px; /* Adjusted gap for framed look */
+/* Steps List Styling */
+.admissions-steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
-.profile-entry-v5 { 
-    display: flex; 
-    gap: 35px; 
-    align-items: center; 
-    
-    /* THE FIX: Thin blue frame around entire profile */
-    border: 1px solid var(--navy); 
-    padding: 30px; 
-    background-color: #ffffff; 
-    transition: transform 0.3s ease;
+.step-entry-v5 {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
 }
 
-.circle-frame-v5 { 
-    flex: 0 0 130px; 
-    height: 130px; 
-    border-radius: 50%; 
-    overflow: hidden; 
-    border: none; /* Removed old individual photo border */
-    padding: 0; 
+.step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+    font-weight: 400;
+    flex: 0 0 40px;
+    border-bottom: 1px solid var(--gold);
 }
 
-.circle-frame-v5 img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
+.step-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin: 0 0 10px 0;
+    color: var(--navy);
 }
 
-.profile-details-v5 {
-    flex: 1;
+.step-info p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
 }
 
-/* Ensure the title and text remain elegant inside the frame */
-.profile-details-v5 h3 { 
-    font-family: 'Playfair Display', serif; 
-    font-size: 1.5rem; 
-    margin: 0; 
-    color: var(--navy); 
+/* Video Section Refinement */
+.video-anchor {
+    padding: 0 !important; /* Flush video looks more premium */
+    overflow: hidden;
+    position: relative;
+    min-height: 500px;
 }
 
-/* Mobile Adjustment */
+.video-container-v5 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.iframe-viewport-v5 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.iframe-viewport-v5 iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    pointer-events: none; /* Allows click-through to the mute button */
+}
+
+.video-overlay-glass {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10;
+}
+
+.mute-toggle-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 12px 20px;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.mute-toggle-glass:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Fix */
 @media (max-width: 768px) {
-    .profile-entry-v5 { 
-        flex-direction: column; 
-        text-align: center; 
-        padding: 25px; 
-        gap: 20px;
-    }
-}
+    .video-anchor { min-height: 300px; }
+    .step-entry-v5 { gap: 15px; }
+    .step-num { font-size: 1.2rem; flex: 0 0 30px; }
+}    
+</style>
     
 
 
