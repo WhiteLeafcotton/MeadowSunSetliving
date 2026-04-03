@@ -102,96 +102,60 @@
 
 
 
-
 <style>
+    /* MOBILE ABOUT HERO OVERRgIDE */
+    /* MOBILE ABOUT HERO - SYNCED TO PAYMENT PAGE */
 @media (max-width: 768px) {
-    /* 1. ELIMINATE THE WIGGLE */
-    /* We remove 'position: sticky' because it causes jitter on mobile scroll */
     .hero.hero-about {
-        height: 50vh !important;
-        position: relative !important; 
+        height: 40vh !important; /* Matches your Pajyment mobile height */
         display: flex !important;
         flex-direction: column !important;
-        justify-content: flex-end !important;
-        align-items: flex-start !important;
-        padding: 30px 20px !important;
-        background-attachment: scroll !important; /* Mobile doesn't handle fixed/sticky well */
+        justify-content: flex-end !important; /* Pulls everything to the bottom */
+        align-items: flex-start !important; /* Pulls feverything to the left */
+        padding: 40px 25px !important; /* MATCHES YOUR PAYMENT PADDING EXACTLY */
+        position: sticky !important;
+        top: 0;
+        z-index: -1;
     }
 
-    /* 2. THE $500K "EDITORIAL" HEADER */
-    .hero.hero-about h1 {
-        font-family: 'Playfair Display', serif !important;
-        font-size: 2.2rem !important;
-        line-height: 1 !important;
-        letter-spacing: -1.5px !important;
-        color: var(--navy) !important;
-        margin: 0 !important;
-        font-weight: 500 !important;
-    }
-
-    /* 3. SOLID CONTENT BLOCK (No Overlap = No Jitter) */
-    .final-solid-state-layout {
-        margin-top: 0 !important;
-        padding: 40px 20px !important;
-        background: #ffffff !important;
+    .hero.hero-about .hero-content {
         position: relative;
-        z-index: 1;
+        z-index: 5;
+        text-align: left;
+        width: 100%;
     }
 
-    /* 4. RECTANGLE PROFILE FRAMES (Clean & Sharp) */
-    .dossier-grid-v5 {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 20px !important;
+    /* MATCHING THE PAYMENT TITLE STYLE */
+    .hero.hero-about h1 {
+        margin: 0 !important; /* Kill all margins to match Payment */
+        font-size: 1.8rem !important; /* MATCHES YOUR PAYMENT H1 SIZE */
+        color: #1a1a1a !important;
+        letter-spacing: -0.5px !important;
+        line-height: 1.1 !important;
+        font-family: 'Playfair Display', serif;
     }
 
-    .profile-entry-v5 {
-        display: grid !important;
-        grid-template-columns: 80px 1fr !important; /* Fixed image size prevents shift */
-        gap: 20px !important;
-        padding: 20px !important;
-        border: 1px solid var(--navy) !important;
-        align-items: start !important;
-        text-align: left !important;
+    /* HANDLING THE BADGE (The "Philosophy" text) */
+    .hero.hero-about .hero-badge {
+        margin-bottom: 8px !important; /* Small nudgbe so it sits just above the title */
+        display: flex;
+        align-items: center;
+        gap: 8px;
     }
 
-    .circle-frame-v5 {
-        width: 80px !important;
-        height: 80px !important;
-        flex: none !important;
-    }
-
-    /* 5. STABLE VIDEO CONTAINER */
-    /* Setting an aspect-ratio prevents the "jumping" when YouTube loads */
-    .video-anchor {
-        width: 100% !important;
-        aspect-ratio: 16 / 9 !important; 
-        min-height: auto !important;
-        margin: 20px 0 !important;
-        border: 1px solid #eee;
-    }
-
-    /* 6. ADMISSIONS STEPS */
-    .admissions-steps-list {
-        padding: 20px 0 !important;
-        border: none !important;
-    }
-
-    .step-entry-v5 {
-        margin-bottom: 30px;
-        align-items: flex-start !important;
-    }
-
-    .step-num {
-        font-size: 1rem !important;
-        border-bottom: 2px solid var(--gold) !important;
-        padding-bottom: 2px;
+    /* FIXING THE NEXT SECTION SLIDE-OVER */
+    .hero.hero-about ~ section, 
+    .locked-mission-console {
+        position: relative !important;
+        z-index: 10 !important;
+        background: #ffffff !important;
+        margin-top: 0 !important;
     }
 }
 </style>
+    
 
 
-   
 
 <style>
 /* --- CORE TOKENS --- */
@@ -277,7 +241,11 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
 .role-label-v5 { font-size: 0.75rem; text-transform: uppercase; color: var(--gold); letter-spacing: 2px; font-weight: 700; display: block; margin: 8px 0 12px; }
 .profile-details-v5 p { font-size: 0.95rem; line-height: 1.6; color: #666; margin: 0; }
 
-
+@media (max-width: 768px) {
+    .anchor-grid-v5, .dossier-grid-v5 { grid-template-columns: 1fr; }
+    .expanded-dossier-grid { grid-template-columns: repeat(2, 1fr); }
+    .big-stat-v5 { font-size: 5rem; }
+}
 
 
 
@@ -379,7 +347,12 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     background: rgba(255, 255, 255, 0.2);
 }
 
-   
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .video-anchor { min-height: 300px; }
+    .step-entry-v5 { gap: 15px; }
+    .step-num { font-size: 1.2rem; flex: 0 0 30px; }
+}    
 </style>
     
 
