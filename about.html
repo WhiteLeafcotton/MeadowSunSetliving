@@ -159,109 +159,103 @@
 
 
 
+
 <style>
-/* --- MOBILE REFINEMENT (ZERO HERO CHANGES) --- */
+/* --- MOBILE REFINEMENT: 2-COLUMN CARDS & ZERO WIGGLE (ZERO HERO CHANGES) --- */
 @media (max-width: 768px) {
-    /* 1. Global Container & Grid Alignment */
-    .container-solid-wide {
-        max-width: 100% !important;
-        padding: 0 20px !important;
+    /* 1. STOPS SIDE-TO-SIDE WIGGLE */
+    html, body { 
+        overflow-x: hidden !important; 
+        width: 100% !important;
+        position: relative;
+        margin: 0;
+        padding: 0;
     }
 
+    /* 2. SCOPE OF CARE: EXTERNAL TITLE & 2-COLUMN GRID */
     .anchor-grid-v5 { 
         display: flex !important;
         flex-direction: column !important;
-        gap: 15px !important; /* Tighter gap for a more cohesive look */
-        margin-bottom: 50px !important;
+        width: 100% !important;
+        padding: 0 15px !important; /* Standardized side spacing */
+        box-sizing: border-box !important;
     }
 
-    /* 2. Scope of Care: Balanced 2-Column Grid */
+    /* Moving Title Outside/Top of the Grid */
+    .luxe-card-white-solid .gold-eyebrow.centered {
+        display: block !important;
+        margin-bottom: 25px !important;
+        font-size: 0.75rem !important;
+        letter-spacing: 3px !important;
+    }
+
     .luxe-card-white-solid {
-        padding: 30px 15px !important;
-        text-align: center;
+        padding: 20px 0 !important; /* Vertical padding only */
+        border: none !important;
+        width: 100% !important;
+        background: transparent !important; /* Makes the cards pop more */
     }
 
     .expanded-dossier-grid {
         display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 8px !important;
-        margin-top: 25px !important;
+        grid-template-columns: 1fr 1fr !important; /* BACK TO 2 COLUMNS */
+        gap: 12px !important;
+        width: 100% !important;
     }
 
     .luxe-tag-solid {
-        font-size: 0.65rem !important;
-        padding: 10px 4px !important;
-        min-height: 40px !important;
-        letter-spacing: 0.5px !important;
+        font-size: 0.75rem !important; /* Slightly larger text for readability */
+        padding: 20px 10px !important; /* Increased height/padding for "Large" feel */
+        min-height: 60px !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        background: #ffffff !important;
+        border: 1px solid #e5e2db !important;
+        box-sizing: border-box !important;
+        line-height: 1.2 !important;
     }
 
-    /* 3. Elite Care Ratio: Streamlined */
+    /* 3. ELITE CARE RATIO: LOCKED WIDTH */
     .luxe-card-navy-solid {
-        padding: 25px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 30px 20px !important;
+        margin-top: 10px !important;
     }
 
     .ratio-flex-v5 {
         flex-direction: row !important;
+        align-items: center;
         justify-content: center;
-        gap: 15px;
+        gap: 20px;
     }
 
     .big-stat-v5 {
-        font-size: 3rem !important;
-    }
-
-    /* 4. Leadership: Clean Editorial List */
-    .dossier-grid-v5 { 
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 30px !important; 
-    }
-
-    .profile-entry-v5 {
-        display: grid !important;
-        grid-template-columns: 70px 1fr !important;
-        gap: 15px !important;
-        text-align: left !important;
-        align-items: start !important;
-    }
-
-    .circle-frame-v5 { 
-        width: 70px !important; 
-        height: 70px !important; 
+        font-size: 3.2rem !important;
         margin: 0 !important;
     }
 
-    .profile-details-v5 h3 { font-size: 1.1rem !important; }
-    .profile-details-v5 p { font-size: 0.8rem !important; line-height: 1.4 !important; }
+    /* 4. LEADERSHIP: PREVENT OVERFLOW */
+    .profile-entry-v5 {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        grid-template-columns: 75px 1fr !important;
+        padding: 15px 0 !important;
+    }
 
-    /* 5. HORIZONTAL VIDEO FIX */
+    /* 5. VIDEO: HORIZONTAL LOCK */
     .video-anchor {
-        min-height: auto !important; /* Removes the tall desktop height */
-        padding: 0 !important;
         width: 100% !important;
-        aspect-ratio: 16 / 9 !important; /* Forces horizontal shape */
-        position: relative !important;
-    }
-
-    .video-container-v5 {
-        height: 100% !important;
-        width: 100% !important;
-        position: absolute !important;
-        top: 0;
-        left: 0;
-    }
-
-    .video-overlay-glass {
-        bottom: 15px !important;
-        right: 15px !important;
-    }
-
-    .mute-toggle-glass {
-        padding: 8px 12px !important;
-        font-size: 0.6rem !important;
+        aspect-ratio: 16 / 9 !important;
+        min-height: auto !important;
+        height: auto !important;
+        overflow: hidden !important;
     }
 }
 </style>
+
 
 
 
