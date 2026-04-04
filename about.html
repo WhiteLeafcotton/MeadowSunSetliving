@@ -259,8 +259,43 @@
 
     .step-entry-v5.active h3::after { content: '−'; }
 }
+@media (max-width: 768px) {
 
+    /* 1. Make the white card full-width and taller */
+    .luxe-card-white-solid {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 60px 15px 30px 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 2. Expand the inner grid to take full width */
+    .luxe-card-white-solid .expanded-dossier-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+        width: 100% !important;
+    }
+
+    /* 3. Make the title sit above the card */
+    .scope-title-wrapper {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        margin: 0 0 15px 0 !important;
+        width: 100% !important;
+        text-align: center !important;
+        display: block !important;
+    }
+
+    /* 4. Optional: make tags bigger for easier tapping */
+    .luxe-card-white-solid .luxe-tag-solid {
+        font-size: 1rem !important;
+        padding: 20px 12px !important;
+    }
+}
 </style>
+
+  
 
 <style>
 /* --- CORE TOKENS --- */
