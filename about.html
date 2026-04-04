@@ -399,6 +399,10 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
         padding: 40px 25px !important;
         margin: 0 !important;
     }
+    body.menu-open {
+    overflow: hidden;
+    height: 100vh;
+}
 
     /* 4. GRID REFINEMENTS */
     .expanded-dossier-grid {
@@ -690,18 +694,11 @@ function toggleMenu() {
     menu.classList.toggle("active");
 
     if (menu.classList.contains("active")) {
-        document.body.style.position = "fixed";
-        document.body.style.top = `-${window.scrollY}px`;
-        document.body.style.width = "100%";
+        document.body.classList.add("menu-open");
     } else {
-        const scrollY = document.body.style.top;
-        document.body.style.position = "";
-        document.body.style.top = "";
-        document.body.style.width = "";
-        window.scrollTo(0, parseInt(scrollY || "0") * -1);
+        document.body.classList.remove("menu-open");
     }
 }
-
 /* Header scroll effect */
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.main-header');
