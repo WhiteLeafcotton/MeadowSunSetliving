@@ -526,49 +526,6 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     background: rgba(255, 255, 255, 0.2);
 }
 
-    /* Admissions Toggle Styles */
-.mini-specs {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-}
-
-.mini-specs li {
-    font-size: 0.8rem;
-    color: #fff;
-    opacity: 0.9;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    letter-spacing: 1px;
-}
-
-.tour-mini-card {
-    padding: 20px;
-    text-align: left;
-}
-
-/* Ensure the video-anchor doesn't collapse when empty */
-.video-anchor.clickable-toggle {
-    min-height: 550px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.tap-hint {
-    text-align: center;
-    width: 100%;
-    padding: 15px 0;
-    background: rgba(0,0,0,0.2);
-    font-size: 0.6rem;
-    letter-spacing: 2px;
-    color: var(--gold);
-    text-transform: uppercase;
-}
-
 /* Responsive Fix */
 @media (max-width: 768px) {
     .video-anchor { min-height: 300px; }
@@ -679,6 +636,7 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
         <div class="header-solid-header">
             <div class="intro-vertical-stack">
                 <span class="gold-eyebrow">The 2026 Admissions</span>
+                
                 <div class="mission-mini-bracket-v5">
                     <p>A dignified, seamless transition designed to ensure peace of mind for the refined soul and their family.</p>
                 </div>
@@ -691,70 +649,51 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
                     <span class="step-num">01</span>
                     <div class="step-info">
                         <h3>Initial Assessment</h3>
-                        <p>A comprehensive clinical review to ensure every medical need is met with precision.</p>
+                        <p>A comprehensive clinical review to ensure every medical and lifestyle need is met with precision.</p>
                     </div>
                 </div>
                 <div class="step-entry-v5">
                     <span class="step-num">02</span>
                     <div class="step-info">
                         <h3>Documentation</h3>
-                        <p>Gathering essential history and clinical data to build a secure foundation.</p>
+                        <p>Gathering essential history and clinical data to build a secure foundation for residency.</p>
                     </div>
                 </div>
                 <div class="step-entry-v5">
                     <span class="step-num">03</span>
                     <div class="step-info">
                         <h3>Personal Care Plan</h3>
-                        <p>A bespoke roadmap balancing health stewardship and luxury hospitality.</p>
+                        <p>A bespoke roadmap created by our clinical directors, balancing health stewardship and hospitality.</p>
                     </div>
                 </div>
                 <div class="step-entry-v5">
                     <span class="step-num">04</span>
                     <div class="step-info">
                         <h3>Financial & Residency</h3>
-                        <p>Transparent agreements tailored to your family's unique requirements.</p>
+                        <p>Transparent agreements and residency paperwork tailored to your family's unique requirements.</p>
                     </div>
                 </div>
                 <div class="step-entry-v5">
                     <span class="step-num">05</span>
                     <div class="step-info">
                         <h3 class="text-gold">Welcome Home</h3>
-                        <p>The final transition into a life of dignity and elite care begins here.</p>
+                        <p>The final transition into a life of dignity and elite care begins with our signature welcome.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="luxe-card-navy-solid video-anchor clickable-toggle" id="admissionsToggleCard">
-                
-                <div class="toggle-content active" id="videoState">
-                    <div class="video-container-v5">
-                        <div class="video-overlay-glass">
-                            <button class="mute-toggle-glass" id="customMuteBtn">
-                                <i id="muteIcon" class="fa-solid fa-volume-xmark"></i>
-                                <span id="muteText">TAP FOR AUDIO</span>
-                            </button>
-                        </div>
-                        <div class="iframe-viewport-v5">
-                            <iframe id="journeyVideo" src="https://www.youtube.com/embed/jUxY2QqMDX0?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=jUxY2QqMDX0&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media"></iframe>
-                        </div>
+            <div class="luxe-card-navy-solid video-anchor">
+                <div class="video-container-v5">
+                    <div class="video-overlay-glass">
+                        <button class="mute-toggle-glass" id="customMuteBtn">
+                            <i id="muteIcon" class="fa-solid fa-volume-xmark"></i>
+                            <span id="muteText">TAP FOR AUDIO</span>
+                        </button>
                     </div>
-                    <span class="tap-hint">Tap for Inquiry Details</span>
-                </div>
-
-                <div class="toggle-content" id="contactState">
-                    <div class="tour-mini-card">
-                        <span class="gold-eyebrow white-text">Immediate Residency</span>
-                        <h2 class="muted-intro-title-v5" style="color: white; font-size: 2rem;">Begin the Journey</h2>
-                        <p class="white-text">Our admissions coordinator is available for private consultations and clinical walkthroughs.</p>
-                        <ul class="mini-specs">
-                            <li><i class="fa-solid fa-calendar-check text-gold"></i> 24-Hour Assessment Turnaround</li>
-                            <li><i class="fa-solid fa-shield-heart text-gold"></i> HIPAA Secure Documentation</li>
-                        </ul>
-                        <button class="btn-gold" onclick="openModal()" style="width: 100%; margin-top: 20px;">Schedule Tour</button>
+                    <div class="iframe-viewport-v5">
+                        <iframe id="journeyVideo" src="https://www.youtube.com/embed/jUxY2QqMDX0?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=jUxY2QqMDX0&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media"></iframe>
                     </div>
-                    <span class="tap-hint">Tap to Watch Journey</span>
                 </div>
-
             </div>
         </div>
     </div>
@@ -910,30 +849,6 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     window.onclick = function(event) {
         if (event.target == document.getElementById("bookingModal")) closeModal();
     }
-
-
-
-
-
-
-
-/* --- deletetappable--- */
-
-        document.getElementById('admissionsToggleCard').addEventListener('click', function(e) {
-    // Prevent flip if clicking the actual button
-    if (e.target.tagName === 'BUTTON' || e.target.closest('.btn-gold')) return;
-
-    const videoState = document.getElementById('videoState');
-    const contactState = document.getElementById('contactState');
-    
-    if (videoState.classList.contains('active')) {
-        videoState.classList.remove('active');
-        contactState.classList.add('active');
-    } else {
-        contactState.classList.remove('active');
-        videoState.classList.add('active');
-    }
-});
 </script>
 
 
