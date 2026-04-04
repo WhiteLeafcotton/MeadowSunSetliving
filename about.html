@@ -192,6 +192,41 @@
         justify-content: center;
         height: 50px;
     }
+    /* --- MOBILE ONLY: Scope of Care adjustments --- */
+
+    /* 1. Make the white card slightly taller so 2 columns feel spacious */
+    .luxe-card-white-solid {
+        padding: 50px 20px !important;
+        width: 100% !important;
+    }
+
+    /* 2. Force 2-column grid inside the card */
+    .expanded-dossier-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    /* 3. Make the tags larger for mobile readability */
+    .luxe-tag-solid {
+        font-size: 0.9rem !important;
+        padding: 18px 10px !important;
+        text-align: center;
+    }
+
+    /* 4. Move the title outside the card (already in HTML) */
+    .scope-title-wrapper {
+        display: block;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .scope-title-wrapper .gold-eyebrow {
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
 
     /* 3. PROFILES: Micro-Compact "Executive" Style */
     .dossier-grid-v5 { gap: 15px !important; }
