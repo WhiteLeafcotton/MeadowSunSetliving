@@ -387,7 +387,14 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
 /* --- SECTION 2: THE CARDS --- */
 .anchor-solid-cards { background-color: var(--page-bg-solid); }
 .anchor-grid-v5 { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 30px; margin-bottom: 100px; }
-.luxe-card-white-solid { background: #ffffff; padding: 60px; border: 1px solid #eeeeee; box-shadow: none; } /* Removed shadows to keep it solid/flat */
+.luxe-card-white-solid {
+    width: 100% !important;
+    max-width: 100% !important;
+    /* ADD THIS: Changes the large card frame to blue */
+    border: 1px solid var(--navy) !important; 
+    padding: 60px 15px 30px 15px !important;
+    box-sizing: border-box !important;
+}
 .luxe-card-navy-solid { background: var(--navy); color: #fff; padding: 60px; display: flex; align-items: center; }
 
 .expanded-dossier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 40px; }
