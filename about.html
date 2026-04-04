@@ -400,6 +400,24 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     padding: 60px 15px 30px 15px !important;
     box-sizing: border-box !important;
 }
+
+/* 1. Reduce the bottom gap of the previous layout block */
+.final-solid-state-layout { 
+    padding-bottom: 0 !important; /* Was 100px */
+}
+
+/* 2. Tighten the margin of the card grid above Admissions */
+.anchor-grid-v5 { 
+    margin-bottom: 40px !important; /* Was 100px */
+}
+
+/* 3. Specifically target the Admissions section header */
+#admissions .header-solid-header {
+    padding-top: 40px !important;    /* Was 100px */
+    padding-bottom: 30px !important; /* Was 60px */
+}
+
+    
 .luxe-card-navy-solid { background: var(--navy); color: #fff; padding: 60px; display: flex; align-items: center; }
 
 .expanded-dossier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 40px; }
