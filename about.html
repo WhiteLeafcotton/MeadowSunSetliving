@@ -1003,13 +1003,13 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     }
 
     /* 2. NAVIGATION & MOBILE MENU */
-    function toggleMenu() {
-        const menu = document.getElementById("sideMenu");
-        if (menu) {
-            menu.classList.toggle("active");
-            document.body.style.overflow = menu.classList.contains("active") ? "hidden" : "auto";
-        }
+   function toggleMenu() {
+    const menu = document.getElementById("sideMenu");
+    if (menu) {
+        menu.classList.toggle("active");
+        document.body.style.overflow = menu.classList.contains("active") ? "hidden" : "auto";
     }
+}
 
     window.addEventListener('scroll', function() {
         const header = document.querySelector('.main-header');
