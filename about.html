@@ -524,10 +524,36 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     #admissions .anchor-grid-v5 {
         display: none;
     }
-}  
+@media (max-width: 768px) {
+    /* 1. Target the wrapper and turn it into a column flexbox */
+    .admissions-mobile-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+
+    /* 2. Assign 'order: 1' to the Video so it jumps to the top */
+    .admissions-mobile-wrapper .video-anchor {
+        order: 1 !important;
+        min-height: 300px !important; /* Ensures video has presence */
+        width: 100% !important;
+    }
+
+    /* 3. Assign 'order: 2' to the Steps Title and List */
+    .admissions-mobile-wrapper .admissions-steps-list {
+        order: 2 !important;
+        width: 100% !important;
+        padding: 30px 20px !important;
+    }
+
+    /* 4. Fix the Admission Header position */
+    #admissions .header-solid-header {
+        padding-top: 40px !important;
+        padding-bottom: 20px !important;
+    }
+}
 </style>
     
-
 
 
 
@@ -596,14 +622,14 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
         <div class="header-solid-header">
             <div class="intro-vertical-stack">
                 <span class="gold-eyebrow">The 2026 Admissions</span>
-                
                 <div class="mission-mini-bracket-v5">
                     <p>A dignified, seamless transition designed to ensure peace of mind for the refined soul and their family.</p>
                 </div>
             </div>
         </div>
 
-        <div class="anchor-grid-v5">
+        <div class="anchor-grid-v5 admissions-mobile-wrapper">
+            
             <div class="luxe-card-white-solid admissions-steps-list">
                 <div class="step-entry-v5">
                     <span class="step-num">01</span>
@@ -612,35 +638,7 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
                         <p>A comprehensive clinical review to ensure every medical and lifestyle need is met with precision.</p>
                     </div>
                 </div>
-                <div class="step-entry-v5">
-                    <span class="step-num">02</span>
-                    <div class="step-info">
-                        <h3>Documentation</h3>
-                        <p>Gathering essential history and clinical data to build a secure foundation for residency.</p>
-                    </div>
                 </div>
-                <div class="step-entry-v5">
-                    <span class="step-num">03</span>
-                    <div class="step-info">
-                        <h3>Personal Care Plan</h3>
-                        <p>A bespoke roadmap created by our clinical directors, balancing health stewardship and hospitality.</p>
-                    </div>
-                </div>
-                <div class="step-entry-v5">
-                    <span class="step-num">04</span>
-                    <div class="step-info">
-                        <h3>Financial & Residency</h3>
-                        <p>Transparent agreements and residency paperwork tailored to your family's unique requirements.</p>
-                    </div>
-                </div>
-                <div class="step-entry-v5">
-                    <span class="step-num">05</span>
-                    <div class="step-info">
-                        <h3 class="text-gold">Welcome Home</h3>
-                        <p>The final transition into a life of dignity and elite care begins with our signature welcome.</p>
-                    </div>
-                </div>
-            </div>
 
             <div class="luxe-card-navy-solid video-anchor">
                 <div class="video-container-v5">
@@ -655,6 +653,7 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
 </section>
