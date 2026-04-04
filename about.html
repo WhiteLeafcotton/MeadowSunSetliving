@@ -102,49 +102,6 @@
 
 
 
-<style>
-    /* MOBILE ABOUT HERO OVERRgIDE */
-    /* MOBILE ABOUT HERO - SYNCED TO PAYMENT PAGE */
-
-    @media (max-width: 768px) {
-    /* MATCHES SUITES PAGE SLIM HERO */
-    .hero.hero-about {
-        height: 40vh !important;
-        min-height: 300px !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-end !important;
-        align-items: flex-start !important;
-        padding: 40px 25px !important;
-        position: relative !important; /* Changed from sticky to relative */
-        z-index: 1 !important;
-        background-color: #f9f9f9 !important; /* Matches your premium light aesthetic */
-    }
-
-    .hero.hero-about .hero-content {
-        text-align: left !important;
-        width: 100%;
-    }
-
-    /* MATCHES SUITES PAGE H1 */
-    .hero.hero-about h1 {
-        margin: 0 !important;
-        font-size: 1.85rem !important;
-        color: #1a1a1a !important;
-        line-height: 1.1 !important;
-        font-family: 'Playfair Display', serif;
-    }
-
-    /* Pushes the following content up naturally */
-    .hero.hero-about ~ section {
-        position: relative !important;
-        z-index: 2 !important;
-        background: #ffffff !important;
-        margin-top: 0 !important;
-    }
-}
-    </style>
-
 
     
 
@@ -152,59 +109,6 @@
 
 
 
-<style>
-@media (max-width: 768px) {
-    /* 1. CLEAN RESET - Removes the 'stuck' feeling */
-    html, body {
-        overflow-x: hidden;
-        width: 100%;
-        height: auto;
-        position: relative;
-        touch-action: auto; /* Let the browser handle the touch naturally */
-    }
-
-    /* 2. HERO ADJUSTMENT */
-    .hero.hero-about {
-        height: 45vh !important;
-        min-height: 320px !important;
-        padding: 30px 20px !important;
-    }
-
-    /* 3. CARD STACKING - Ensures no side-to-side 'wiggling' */
-    .anchor-grid-v5, .admissions-flex-container {
-        display: flex !important;
-        flex-direction: column !important;
-        width: 100% !important;
-        gap: 20px !important;
-    }
-
-    .luxe-card-white-solid, .luxe-card-navy-solid {
-        width: 100% !important;
-        padding: 30px 20px !important;
-        box-sizing: border-box !important;
-    }
-
-    /* 4. LEADERSHIP GRID */
-    .dossier-grid-v5 {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 30px !important;
-    }
-
-    .profile-entry-v5 {
-        grid-template-columns: 1fr !important; /* Stack photo over text for space */
-        text-align: center;
-        justify-items: center;
-    }
-
-    /* 5. VIDEO DIMENSIONS */
-    .video-anchor {
-        aspect-ratio: 16 / 9 !important;
-        min-height: 250px !important;
-        height: auto !important;
-    }
-}
-</style>
 
 
 
@@ -445,28 +349,87 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
         margin-right: 0 !important;
         margin-bottom: 10px !important;
     }
+
 @media (max-width: 768px) {
-    /* This makes sure your white and navy cards stack perfectly */
-    .anchor-grid-v5 {
+    /* 1. GLOBAL RESET & SCROLL FIX */
+    html, body {
+        overflow-x: hidden; /* Stops horizontal wiggle */
+        width: 100%;
+        height: auto;
+        -webkit-overflow-scrolling: touch; /* Smooth momentum scroll for iPhone */
+    }
+
+    * {
+        box-sizing: border-box !important; /* Forces padding to stay inside the width */
+    }
+
+    /* 2. HERO SECTION - Clean & Slender */
+    .hero.hero-about {
+        height: 40vh !important;
+        min-height: 300px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-end !important;
+        align-items: flex-start !important;
+        padding: 40px 25px !important;
+        background-color: #f9f9f9 !important;
+        position: relative !important;
+        z-index: 1 !important;
+    }
+
+    .hero.hero-about h1 {
+        font-size: 1.85rem !important;
+        line-height: 1.1 !important;
+        margin: 0 !important;
+        text-align: left !important;
+    }
+
+    /* 3. CARD STACKING (Scope of Care & Admissions) */
+    .anchor-grid-v5, 
+    .admissions-flex-container, 
+    .dossier-grid-v5 {
         display: flex !important;
         flex-direction: column !important;
         width: 100% !important;
-    }
-    
-    .luxe-card-white-solid, .luxe-card-navy-solid {
-        width: 100% !important;
-        box-sizing: border-box !important; /* Prevents the card from being wider than the screen */
-        padding: 40px 20px !important;
+        gap: 20px !important;
+        padding: 0 !important;
     }
 
-    /* This moves your 'Scope of Care' title to the top left on mobile */
+    .luxe-card-white-solid, 
+    .luxe-card-navy-solid {
+        width: 100% !important;
+        padding: 40px 25px !important;
+        margin: 0 !important;
+    }
+
+    /* 4. GRID REFINEMENTS */
+    .expanded-dossier-grid {
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 columns for tags is better than 1 */
+        gap: 10px !important;
+    }
+
     .luxe-card-white-solid .gold-eyebrow.centered {
         text-align: left !important;
         margin-left: 0 !important;
     }
+
+    /* 5. LEADERSHIP / NURSE PROFILES */
+    .profile-entry-v5 {
+        flex-direction: column !important; /* Stacks photo over text */
+        text-align: center !important;
+        gap: 20px !important;
+    }
+
+    /* 6. VIDEO STABILITY */
+    .video-anchor {
+        aspect-ratio: 16 / 9 !important;
+        min-height: 250px !important;
+        height: auto !important;
+        width: 100% !important;
+    }
 }
-    
 </style>
+
     
 
 
