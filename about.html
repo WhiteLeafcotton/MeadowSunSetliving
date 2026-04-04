@@ -586,11 +586,10 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     }
 /* Container must be relative so children can be absolute */
 /* --- THE MASTER PROFILE TOGGLE SYSTEM --- */
-/* --- THE MASTER PROFILE TOGGLE SYSTEM --- */
 .profile-toggle-container {
     position: relative;
     cursor: pointer;
-    /* This height MUST match your white 'Scope of Care' card for a perfect row */
+    /* ADJUST THIS: Match this height to your white 'Scope of Care' card for a perfect magazine row */
     height: 520px; 
     width: 100%;
     overflow: hidden; 
@@ -598,7 +597,7 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
 }
 
 .profile-toggle-card {
-    position: absolute; /* This stacks them on top of each other */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -611,7 +610,7 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     z-index: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; /* Keeps everything centered in the card */
     box-sizing: border-box;
 }
 
@@ -638,19 +637,40 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     max-width: 400px;
 }
 
+.tap-hint {
+    display: block;
+    font-size: 0.65rem;
+    color: var(--gold);
+    margin-top: 25px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
 /* --- MOBILE LOCK-IN --- */
 @media (max-width: 768px) {
     .profile-toggle-container {
-        height: 240px !important; /* Fixed slender height for mobile */
-        min-height: 240px !important;
-        order: 3;
+        height: 220px !important; /* Fixed slender height for mobile */
+        min-height: 220px !important;
+        order: 3; /* Keeps it below the Scope of Care card on mobile */
         margin-top: 10px;
     }
+
     .profile-toggle-card {
         padding: 30px 25px;
     }
+
     .profile-toggle-card h3 {
         font-size: 1.4rem;
+        margin: 8px 0;
+    }
+    
+    .profile-toggle-card p {
+        font-size: 0.85rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Keeps bio short on mobile */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 }
 </style>
@@ -1054,23 +1074,6 @@ function cycleProfileCards() {
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.animate-on-scroll, .video-footer').forEach(el => observer.observe(el));
-
-
-
-
-    let currentCardIndex = 0;
-const totalCards = 3;
-
-function cycleProfileCards() {
-    // 1. Hide the current card
-    document.getElementById(`card-${currentCardIndex}`).classList.remove('active');
-    
-    // 2. Move to the next index (loops back to 0 at the end)
-    currentCardIndex = (currentCardIndex + 1) % totalCards;
-    
-    // 3. Show the new card
-    document.getElementById(`card-${currentCardIndex}`).classList.add('active');
-}
 </script>
 
 <script>
