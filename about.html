@@ -105,53 +105,44 @@
 <style>
     /* MOBILE ABOUT HERO OVERRgIDE */
     /* MOBILE ABOUT HERO - SYNCED TO PAYMENT PAGE */
-@media (max-width: 768px) {
+
+    @media (max-width: 768px) {
+    /* MATCHES SUITES PAGE SLIM HERO */
     .hero.hero-about {
-        height: 40vh !important; /* Matches your Pajyment mobile height */
+        height: 40vh !important;
+        min-height: 300px !important;
         display: flex !important;
         flex-direction: column !important;
-        justify-content: flex-end !important; /* Pulls everything to the bottom */
-        align-items: flex-start !important; /* Pulls feverything to the left */
-        padding: 40px 25px !important; /* MATCHES YOUR PAYMENT PADDING EXACTLY */
-        position: sticky !important;
-        top: 0;
-        z-index: -1;
+        justify-content: flex-end !important;
+        align-items: flex-start !important;
+        padding: 40px 25px !important;
+        position: relative !important; /* Changed from sticky to relative */
+        z-index: 1 !important;
+        background-color: #f9f9f9 !important; /* Matches your premium light aesthetic */
     }
 
     .hero.hero-about .hero-content {
-        position: relative;
-        z-index: 5;
-        text-align: left;
+        text-align: left !important;
         width: 100%;
     }
 
-    /* MATCHING THE PAYMENT TITLE STYLE */
+    /* MATCHES SUITES PAGE H1 */
     .hero.hero-about h1 {
-        margin: 0 !important; /* Kill all margins to match Payment */
-        font-size: 1.8rem !important; /* MATCHES YOUR PAYMENT H1 SIZE */
+        margin: 0 !important;
+        font-size: 1.85rem !important;
         color: #1a1a1a !important;
-        letter-spacing: -0.5px !important;
         line-height: 1.1 !important;
         font-family: 'Playfair Display', serif;
     }
 
-    /* HANDLING THE BADGE (The "Philosophy" text) */
-    .hero.hero-about .hero-badge {
-        margin-bottom: 8px !important; /* Small nudgbe so it sits just above the title */
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    /* FIXING THE NEXT SECTION SLIDE-OVER */
-    .hero.hero-about ~ section, 
-    .locked-mission-console {
+    /* Pushes the following content up naturally */
+    .hero.hero-about ~ section {
         position: relative !important;
-        z-index: 10 !important;
+        z-index: 2 !important;
         background: #ffffff !important;
         margin-top: 0 !important;
     }
-
+}
     </style>
 
 
