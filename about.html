@@ -259,77 +259,138 @@
 
     .step-entry-v5.active h3::after { content: '−'; }
 }
+/* =========================================================
+   MOBILE FIX: CAROUSEL SWIPE SECTION (768px and below)
+   ========================================================= */
 @media (max-width: 768px) {
-
-    /* 1. Make the white card full-width and taller */
-    .luxe-card-white-solid {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 60px 15px 30px 15px !important;
-        box-sizing: border-box !important;
+    /* 1. GLOBAL MOBILE RESET - Ensures smooth, non-stuck scrolling */
+    html, body {
+        overflow-x: hidden; /* Crucial: Stops the 'wiggle' */
+        width: 100%;
+        height: auto;
+        -webkit-overflow-scrolling: touch; /* Momentum scrolling */
     }
 
-    /* 2. Expand the inner grid to take full width */
-    .luxe-card-white-solid .expanded-dossier-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 16px !important;
-        width: 100% !important;
+    /* 2. RE-ORDERING: Puts the Carousel Section First */
+    .anchor-solid-cards { order: 1; }
+    .header-solid-header { order: 2; }
+    .leadership-solid-dossier { order: 3; } /* This visually hides the default profile section */
+
+    /* 3. CAROUSEL CONTAINER (The 'Anchor Grid') */
+    .anchor-grid-v5 {
+        display: flex !important; /* Forces side-by-side */
+        flex-direction: row !important;
+        width: 100vw !important; /* Full viewport width */
+        margin-left: -5% !important; /* Negates container padding to go edge-to-edge */
+        padding: 20px 0 40px 5% !important; /* Adds 'peek' padding on the left */
+        overflow-x: auto !important; /* Enables horizontal scroll */
+        scroll-snap-type: x mandatory !important; /* The 'magnetic' snap effect */
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        gap: 15px !important;
     }
 
-    /* 3. Make the title sit above the card */
-    .scope-title-wrapper {
-        position: relative !important;
-        top: auto !important;
-        left: auto !important;
-        margin: 0 0 15px 0 !important;
-        width: 100% !important;
-        text-align: center !important;
-        display: block !important;
+    /* 4. CAROUSEL 'PEEK' - Hides the scrollbar for a clean look */
+    .anchor-grid-v5::-webkit-scrollbar { display: none; }
+
+    /* 5. CAROUSEL CARDS (The Swippable Items) */
+    .anchor-grid-v5 > div {
+        flex: 0 0 80% !important; /* Each card takes 80% of screen width */
+        width: 80% !important;
+        scroll-snap-align: start !important; /* Snaps the start of the card to the edge */
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Soft, premium shadow */
     }
 
-    /* 4. Optional: make tags bigger for easier tapping */
-    .luxe-card-white-solid .luxe-tag-solid {
-        font-size: 1rem !important;
-        padding: 20px 12px !important;
-    }
-/* 1. Make the Ratio Card Slender & Compact */
+    /* 6. STYLE: 2:1 RATIO CARD (1st and 3rd in your requested order) */
     .luxe-card-navy-solid {
-        padding: 20px 25px !important; /* Half the height of the other cards */
-        min-height: 120px !important; 
-        display: flex !important;
-        align-items: center !important;
+        order: 1; /* First in the swipe */
+        padding: 30px !important;
+        min-height: 200px !important;
+        background-color: var(--navy) !important;
         justify-content: center !important;
-        order: 3; /* Moves it BELOW the two profile cards */
     }
 
     .ratio-flex-v5 {
-        flex-direction: row !important; /* Side-by-side on mobile instead of stacked */
+        flex-direction: column !important;
         align-items: center !important;
-        gap: 20px !important;
+        text-align: center;
     }
 
     .big-stat-v5 {
-        font-size: 3rem !important; /* Smaller, elegant proportion */
-        margin-bottom: 0 !important;
-    }
-
-    .stat-meta-v5 .gold-eyebrow {
-        margin-bottom: 2px !important;
-        font-size: 0.55rem !important;
+        font-size: 5rem !important;
+        color: var(--gold) !important;
+        margin-bottom: 5px !important;
     }
 
     .stat-meta-v5 p {
-        display: none; /* Hides the long text on mobile to keep it "business card" thin */
+        font-size: 0.8rem !important;
+        opacity: 0.8;
     }
 
-    /* 2. Reorder the Profile Cards to show first */
-    .profile-entry-v5:nth-child(1) { order: 1; }
-    .profile-entry-v5:nth-child(2) { order: 2; }
-    
-    /* 3. Ensure the Grid container respects the new order */
-    .anchor-grid-v5, .dossier-grid-v5 {
+    /* 7. STYLE: PROFILE CARDS (2nd and 4th in your requested order) */
+    /* We 'move' the content from the dossier grid using Order */
+    .profile-entry-v5 {
         display: flex !important;
         flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center;
+        padding: 30px !important;
+        background: #fff !important;
+        border: 1px solid #eee;
+        height: auto !important;
+    }
+
+    .profile-entry-v5:nth-child(1) { order: 2; } /* 1st profile is 2nd in swipe */
+    .profile-entry-v5:nth-child(2) { order: 4; } /* 2nd profile is 4th in swipe */
+
+    .circle-frame-v5 {
+        width: 100px !important;
+        height: 100px !important;
+        border: 2px solid var(--gold) !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* Create the 3rd 'Blue Card' by duplicating the Ratio content */
+    /* We do this visually by adding a pseudo-element after the second blue card */
+    .luxe-card-navy-solid::after {
+        content: '';
+        display: none; /* Desktop */
+    }
+
+    /* On mobile, this creates a 'ghost' card that matches the design */
+    @media (max-width: 768px) {
+        .luxe-card-navy-solid::after {
+            display: block;
+            position: absolute;
+            left: 205%; /* Positions it 3 cards deep */
+            width: 100%;
+            height: 100%;
+            background: var(--navy);
+            border-radius: 12px;
+            content: "2:1\A ELITE CARE RATIO"; /* '\A' is a line break */
+            white-space: pre-wrap;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            order: 3;
+            scroll-snap-align: start;
+        }
+    }
+
+    /* Hide the old Leadership title */
+    .divider-label, .line-v5 { display: none !important; }
+
+    /* Admissions Journey Styling (below the swipe) */
+    #admissions .intro-vertical-stack {
+        text-align: center;
+        margin-top: -30px;
     }
 }
 </style>
