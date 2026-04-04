@@ -471,8 +471,7 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     background: rgba(255, 255, 255, 0.2);
 }
 
- @media (max-width: 768px) {
-    /* --- SCOPE OF CARE CARDS (MOBILE FIX) --- */
+/* --- SCOPE OF CARE CARDS (MOBILE FIX) --- */
     
     /* 1. Force the cards to stack vertically and take full width */
     .anchor-grid-v5 {
@@ -519,7 +518,27 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
         margin-right: 0 !important;
         margin-bottom: 10px !important;
     }
-} 
+@media (max-width: 768px) {
+    /* This makes sure your white and navy cards stack perfectly */
+    .anchor-grid-v5 {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    
+    .luxe-card-white-solid, .luxe-card-navy-solid {
+        width: 100% !important;
+        box-sizing: border-box !important; /* Prevents the card from being wider than the screen */
+        padding: 40px 20px !important;
+    }
+
+    /* This moves your 'Scope of Care' title to the top left on mobile */
+    .luxe-card-white-solid .gold-eyebrow.centered {
+        text-align: left !important;
+        margin-left: 0 !important;
+    }
+}
+    
 </style>
     
 
