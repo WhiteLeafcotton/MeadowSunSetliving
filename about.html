@@ -350,48 +350,81 @@
     --page-bg-solid: #ffffff;
 }
 
-/* Force the section to be a solid block with no transparency */
+/* --- THE SCOPE CARD REFINEMENT --- */
+.luxe-tag-solid { 
+    font-size: 0.6rem; 
+    /* CHANGED: Border is now your brand Navy */
+    border: 1px solid var(--navy); 
+    padding: 8px 14px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    color: var(--navy); /* Matching text to the border for a cohesive look */
+    background-color: #ffffff; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    line-height: 1.2; 
+}
+
+/* --- ADMISSIONS STEPS REFINEMENT --- */
+.step-entry-v5 {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    /* CHANGED: Border changed to Navy and made thin */
+    border-bottom: 1px solid var(--navy);
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+}
+
+/* Remove the border from the very last step so it stays clean */
+.step-entry-v5:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* --- SPACING & TITLE REMOVAL (Restored from previous step) --- */
 .final-solid-state-layout { 
     background-color: var(--page-bg-solid); 
     width: 100%; 
     display: block;
     position: relative;
-    padding-bottom: 0px; /* Provides a solid base at the bottom */
+    padding-bottom: 40px; 
 }
 
-body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', sans-serif; color: #333; }
-.text-gold { color: var(--gold); }
-.italic-serif { font-family: 'Playfair Display', serif; font-style: italic; }
-.gold-eyebrow { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 4px; color: var(--gold); font-weight: 800; display: block; margin-bottom: 15px; }
-.centered { text-align: center; }
-.white-text { color: #fff; opacity: 0.8; }
-
-/* Fixed Width Container to prevent floating/wandering */
-.container-solid-wide { max-width: 95%; margin: 0 auto; padding: 0 2%; }
-
-/* --- SECTION 1: STACKED HEADER --- */
 .header-solid-header { 
     background-color: var(--page-bg-solid);
-    padding: 100px 0 60px; 
+    padding: 80px 0 40px; 
 }
-.intro-vertical-stack { max-width: 800px; } 
-.muted-intro-title-v5 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--slate); font-weight: 400; margin: 0 0 30px 0; line-height: 1.2; }
 
-/* Mandate Style */
-.mission-mini-bracket-v5 { border-left: 1px solid var(--gold); padding-left: 30px; font-size: 1rem; line-height: 1.7; color: #666; max-width: 600px; }
+#admissions .header-solid-header {
+    padding-top: 0 !important;
+}
 
-/* --- SECTION 2: THE CARDS --- */
-.anchor-solid-cards { background-color: var(--page-bg-solid); }
-.anchor-grid-v5 { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 30px; margin-bottom: 100px; }
-.luxe-card-white-solid { background: #ffffff; padding: 60px; border: 1px solid #eeeeee; box-shadow: none; } /* Removed shadows to keep it solid/flat */
-.luxe-card-navy-solid { background: var(--navy); color: #fff; padding: 60px; display: flex; align-items: center; }
+.muted-intro-title-v5 { 
+    display: none; 
+}
+
+.anchor-grid-v5 { 
+    display: grid; 
+    grid-template-columns: 1.15fr 0.85fr; 
+    gap: 30px; 
+    margin-bottom: 40px; 
+}
+
+.luxe-card-white-solid { 
+    background: #ffffff; 
+    padding: 60px; 
+    border: 1px solid #eeeeee; 
+    box-shadow: none; 
+}
 
 .expanded-dossier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 40px; }
 .luxe-tag-solid { font-size: 0.6rem; border: 1px solid #eeeeee; padding: 8px 14px; text-transform: uppercase; letter-spacing: 1px; color: #888; background-color: #ffffff; display: flex; justify-content: center; align-items: center; text-align: center; line-height: 1.2; }
 
 .big-stat-v5 { font-family: 'Playfair Display', serif; font-size: 7rem; color: var(--gold); line-height: 1; margin-right: 40px; }
 .stat-meta-v5 p { font-size: 0.9rem; color: #aaaaaa; line-height: 1.6; max-width: 320px; }
-
 /* --- SECTION 3: LEADERSHIPdoneup --- */
 
 @media (max-width: 768px) {
@@ -691,7 +724,7 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
         <div class="container-solid-wide">
             <div class="intro-vertical-stack">
                 <span class="gold-eyebrow">The 2026 Residency</span>
-                <h1 class="muted-intro-title-v5">A sanctuary for the refined soul.</h1>
+                
                 
                 <div class="mission-mini-bracket-v5">
                     <p><strong>Our Mandate:</strong> To dissolve the boundaries between clinical necessity and residential luxury, ensuring the pinnacle of boutique care.</p>
