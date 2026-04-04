@@ -1003,11 +1003,19 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     }
 
     /* 2. NAVIGATION & MOBILE MENU */
-   function toggleMenu() {
+ function toggleMenu() {
     const menu = document.getElementById("sideMenu");
-    if (menu) {
-        menu.classList.toggle("active");
-        document.body.style.overflow = menu.classList.contains("active") ? "hidden" : "auto";
+
+    if (!menu) return;
+
+    menu.classList.toggle("active");
+
+    if (menu.classList.contains("active")) {
+        document.body.style.overflow = "hidden";
+        document.body.style.position = "fixed";   // locks background cleanly
+    } else {
+        document.body.style.overflow = "";
+        document.body.style.position = "";        // restores scroll properly
     }
 }
 
