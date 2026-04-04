@@ -698,6 +698,36 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     font-weight: 700;
 }
 
+
+
+
+        /* 1. SCOPE OF CARE: Keep this Navy */
+.luxe-card-white-solid {
+    background-color: var(--navy) !important;
+    border: 1px solid var(--gold) !important;
+    padding: 60px 15px 30px 15px !important;
+}
+
+/* 2. ADMISSIONS STEPS: Force this back to White */
+.admissions-steps-container {
+    background-color: #ffffff !important; /* The fix */
+    border: 1px solid #eeeeee !important;  /* Subtle light border */
+    padding: 60px 40px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* 3. TAG FIX: Ensure tags inside the BLUE card look high-tech */
+.luxe-card-white-solid .luxe-tag-solid {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(197, 160, 89, 0.3) !important;
+    color: #ffffff !important;
+}
+
+/* 4. ADMISSIONS TITLE FIX: Ensure text is dark for the white background */
+.admissions-steps-container h3 {
+    color: var(--navy) !important;
+}
 /* --- MOBILE LOCK-IN --- */
 @media (max-width: 768px) {
     .profile-toggle-container {
@@ -822,7 +852,7 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
 
         <div class="anchor-grid-v5 admissions-mobile-wrapper">
             
-           <div class="luxe-card-white-solid admissions-steps-list">
+           <div class="admissions-steps-container admissions-steps-list">
     <div class="step-entry-v5" onclick="this.classList.toggle('active')">
         <span class="step-num">01</span>
         <div class="step-info">
