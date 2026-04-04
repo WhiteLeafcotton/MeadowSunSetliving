@@ -365,7 +365,7 @@
     width: 100%; 
     display: block;
     position: relative;
-    padding-bottom: 20px; /* Provides a solid base at the bottom */
+    padding-bottom: 0px; /* Provides a solid base at the bottom */
 }
 
 body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', sans-serif; color: #333; }
@@ -391,7 +391,7 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
 
 /* --- SECTION 2: THE CARDS --- */
 .anchor-solid-cards { background-color: var(--page-bg-solid); }
-.anchor-grid-v5 { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 30px; margin-bottom: 100px; }
+.anchor-grid-v5 { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 30px; margin-bottom: 20px; }
 .luxe-card-white-solid {
     width: 100% !important;
     max-width: 100% !important;
@@ -401,15 +401,9 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     box-sizing: border-box !important;
 }
 
-/* 1. Reduce the bottom gap of the previous layout block */
-.final-solid-state-layout { 
-    padding-bottom: 0 !important; /* Was 100px */
-}
 
-/* 2. Tighten the margin of the card grid above Admissions */
-.anchor-grid-v5 { 
-    margin-bottom: 40px !important; /* Was 100px */
-}
+
+
 
 /* 3. Specifically target the Admissions section header */
 #admissions .header-solid-header {
