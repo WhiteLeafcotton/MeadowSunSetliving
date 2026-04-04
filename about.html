@@ -260,36 +260,40 @@
     .step-entry-v5.active h3::after { content: '−'; }
 }
 @media (max-width: 768px) {
-    /* 1. Reduce the "Boxed" feel of the large white card */
+
+    /* 1. Make the white card full-width and taller */
     .luxe-card-white-solid {
-        padding: 30px 15px !important; /* Shaved off side padding so content breathes */
-        border-left: none !important;  /* Optional: removes side borders for a cleaner edge-to-edge look */
-        border-right: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 60px 15px 30px 15px !important;
+        box-sizing: border-box !important;
     }
 
-    /* 2. Fix the "Scope" Tags so they don't feel cramped */
-    .expanded-dossier-grid {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important; /* Keeps 2 columns */
-        gap: 8px !important;
-        margin-top: 20px !important;
+    /* 2. Expand the inner grid to take full width */
+    .luxe-card-white-solid .expanded-dossier-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+        width: 100% !important;
     }
 
-    /* 3. Make the individual tags more compact for mobile */
-    .luxe-tag-solid {
-        font-size: 0.55rem !important;
-        padding: 10px 5px !important;
-        min-height: 45px; /* Ensures they stay uniform even with long text */
+    /* 3. Make the title sit above the card */
+    .scope-title-wrapper {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        margin: 0 0 15px 0 !important;
+        width: 100% !important;
+        text-align: center !important;
+        display: block !important;
     }
 
-    /* 4. Align the Title to feel more integrated */
-    .luxe-card-white-solid .gold-eyebrow.centered {
-        text-align: left !important;
-        font-size: 0.6rem !important;
-        letter-spacing: 2px !important;
-        margin-bottom: 15px !important;
+    /* 4. Optional: make tags bigger for easier tapping */
+    .luxe-card-white-solid .luxe-tag-solid {
+        font-size: 1rem !important;
+        padding: 20px 12px !important;
     }
 }
+</style>
 
   
 
