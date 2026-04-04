@@ -387,8 +387,20 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
 .luxe-card-navy-solid { background: var(--navy); color: #fff; padding: 60px; display: flex; align-items: center; }
 
 .expanded-dossier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 40px; }
-.luxe-tag-solid { font-size: 0.6rem; border: 1px solid #eeeeee; padding: 8px 14px; text-transform: uppercase; letter-spacing: 1px; color: #888; background-color: #ffffff; display: flex; justify-content: center; align-items: center; text-align: center; line-height: 1.2; }
-
+.luxe-tag-solid { 
+    font-size: 0.6rem; 
+    border: 1px solid var(--navy); /* Changed from #eeeeee to Dark Blue */
+    padding: 8px 14px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    color: var(--navy);           /* Changed from #888 to Dark Blue */
+    background-color: #ffffff; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    line-height: 1.2; 
+}
 .big-stat-v5 { font-family: 'Playfair Display', serif; font-size: 7rem; color: var(--gold); line-height: 1; margin-right: 40px; }
 .stat-meta-v5 p { font-size: 0.9rem; color: #aaaaaa; line-height: 1.6; max-width: 320px; }
 
