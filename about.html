@@ -501,12 +501,30 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     background: rgba(255, 255, 255, 0.2);
 }
 
-/* Responsive Fix */
+
 @media (max-width: 768px) {
-    .video-anchor { min-height: 300px; }
-    .step-entry-v5 { gap: 15px; }
-    .step-num { font-size: 1.2rem; flex: 0 0 30px; }
-}    
+    /* Make a flex container for mobile reordering */
+    .admissions-mobile-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Video first, steps second */
+    .admissions-mobile-wrapper .video-anchor {
+        order: 1;
+        min-height: 250px; /* adjust as needed */
+    }
+
+    .admissions-mobile-wrapper .admissions-steps-list {
+        order: 2;
+    }
+
+    /* Hide desktop grid if duplicated for mobile */
+    #admissions .anchor-grid-v5 {
+        display: none;
+    }
+}  
 </style>
     
 
