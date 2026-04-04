@@ -584,6 +584,56 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
         padding-top: 40px !important;
         padding-bottom: 20px !important;
     }
+/* Container must be relative so children can be absolute */
+.profile-toggle-container {
+    position: relative;
+    cursor: pointer;
+    min-height: 350px; /* Match your white card height */
+}
+
+.profile-toggle-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(10px);
+    z-index: 1;
+}
+
+.profile-toggle-card.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    z-index: 2;
+}
+
+/* Premium Touches */
+.tap-hint {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--gold);
+    margin-top: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.profile-mini-layout h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #fff;
+    margin: 10px 0;
+}
+
+/* Mobile height adjustment */
+@media (max-width: 768px) {
+    .profile-toggle-container {
+        min-height: 200px;
+        order: 3;
+    }
 }
 </style>
     
@@ -628,17 +678,41 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
                     </div>
                 </div>
 
-                <div class="luxe-card-navy-solid">
-                    <div class="ratio-flex-v5">
-                        <span class="big-stat-v5">2:1</span>
-                        <div class="stat-meta-v5">
-                            <span class="gold-eyebrow white-text">Elite Care Ratio</span>
-                            <p>Providing undivided clinical attention and bespoke support from our licensed professionals and certified caregivers.</p>
-                        </div>
-                    </div>
-                </div>
+              <div class="profile-toggle-container" onclick="cycleProfileCards()">
+    
+    <div class="luxe-card-navy-solid profile-toggle-card active" id="card-0">
+        <div class="ratio-flex-v5">
+            <span class="big-stat-v5">2:1</span>
+            <div class="stat-meta-v5">
+                <span class="gold-eyebrow white-text">Elite Care Ratio</span>
+                <p>Providing undivided clinical attention and bespoke support.</p>
+                <span class="tap-hint">Tap to meet the team <i class="fa-solid fa-arrow-right"></i></span>
             </div>
+        </div>
+    </div>
+
+    <div class="luxe-card-navy-solid profile-toggle-card" id="card-1">
+        <div class="profile-mini-layout">
+            <div class="profile-text">
+                <span class="gold-eyebrow white-text">Clinical Leadership</span>
+                <h3>Julianne Vance, RN</h3>
+                <p>Oversight of all clinical protocols and personalized care stewardship.</p>
             </div>
+        </div>
+    </div>
+
+    <div class="luxe-card-navy-solid profile-toggle-card" id="card-2">
+        <div class="profile-mini-layout">
+            <div class="profile-text">
+                <span class="gold-eyebrow white-text">Executive Direction</span>
+                <h3>Eleanor Sterling</h3>
+                <p>Ensuring the operational excellence and hospitality of the residency.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+             
     </div>
 </section>
 
@@ -886,6 +960,31 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
         }
     });
 
+
+
+
+
+// bluecardtap
+    let currentCardIndex = 0;
+const totalCards = 3;
+
+function cycleProfileCards() {
+    // Hide current
+    document.getElementById(`card-${currentCardIndex}`).classList.remove('active');
+    
+    // Increment index
+    currentCardIndex = (currentCardIndex + 1) % totalCards;
+    
+    // Show next
+    document.getElementById(`card-${currentCardIndex}`).classList.add('active');
+}
+
+
+
+
+
+
+    
     // Mobile Dropdown Interactions
     document.querySelectorAll('.mobile-dropdown .main-link').forEach(link => {
         link.addEventListener('click', function(e) {
