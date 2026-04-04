@@ -155,19 +155,17 @@
 
 
     
-@media (max-width: 768px) {
-    /* 1. LOCK THE VIEWPORT (Prevents the wiggle) */
-   html {
-        overflow-x: hidden;
+
+ @media (max-width: 768px) {
+    html, body {
+        /* Prevents horizontal shake without killing vertical scroll */
+        max-width: 100%;
+        overflow-x: clip; /* Modern alternative to hidden that is less 'stiff' */
+        position: relative;
+        height: auto;
+        min-height: 100%;
     }
-    
-    body {
-        overflow-x: hidden;
-        width: 100%;
-        /* Enable smooth momentum scrolling */
-        -webkit-overflow-scrolling: touch; 
-        /* Remove position: relative if not strictly needed for a modal */
-    }
+
 
     /* 2. SCOPE OF CARE: Bold & Stately Grid */
     /* No more side-scrolling. 2 columns, clean borders. */
