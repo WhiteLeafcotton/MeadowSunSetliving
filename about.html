@@ -585,10 +585,15 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
         padding-bottom: 20px !important;
     }
 /* Container must be relative so children can be absolute */
+/* --- THE MASTER PROFILE TOGGLE SYSTEM --- */
 .profile-toggle-container {
     position: relative;
     cursor: pointer;
-    min-height: 350px; /* Match your white card height */
+    /* ADJUST THIS: Match this height to your white 'Scope of Care' card for a perfect magazine row */
+    height: 520px; 
+    width: 100%;
+    overflow: hidden; 
+    background: var(--navy);
 }
 
 .profile-toggle-card {
@@ -597,11 +602,16 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     left: 0;
     width: 100%;
     height: 100%;
+    padding: 60px;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    transform: translateY(10px);
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s ease;
+    transform: translateY(15px);
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Keeps everything centered in the card */
+    box-sizing: border-box;
 }
 
 .profile-toggle-card.active {
@@ -611,28 +621,56 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
     z-index: 2;
 }
 
-/* Premium Touches */
+/* --- PREMIUM INTERIOR TYPOGRAPHY --- */
+.profile-toggle-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin: 15px 0;
+    line-height: 1.1;
+}
+
+.profile-toggle-card p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 400px;
+}
+
 .tap-hint {
     display: block;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--gold);
-    margin-top: 15px;
-    letter-spacing: 1px;
+    margin-top: 25px;
+    letter-spacing: 2px;
     text-transform: uppercase;
+    font-weight: 700;
 }
 
-.profile-mini-layout h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    color: #fff;
-    margin: 10px 0;
-}
-
-/* Mobile height adjustment */
+/* --- MOBILE LOCK-IN --- */
 @media (max-width: 768px) {
     .profile-toggle-container {
-        min-height: 200px;
-        order: 3;
+        height: 220px !important; /* Fixed slender height for mobile */
+        min-height: 220px !important;
+        order: 3; /* Keeps it below the Scope of Care card on mobile */
+        margin-top: 10px;
+    }
+
+    .profile-toggle-card {
+        padding: 30px 25px;
+    }
+
+    .profile-toggle-card h3 {
+        font-size: 1.4rem;
+        margin: 8px 0;
+    }
+    
+    .profile-toggle-card p {
+        font-size: 0.85rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Keeps bio short on mobile */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 }
 </style>
