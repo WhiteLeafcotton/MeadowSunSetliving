@@ -594,13 +594,13 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
 .profile-toggle-container {
     position: relative;
     cursor: pointer;
-    /* ADJUST THIS: Match this height to your white 'Scope of Care' card for a perfect magazine row */
-    height: 520px; 
+    height: auto;        /* ✅ REMOVE the 520px */
+    min-height: 100%;    /* ✅ allows it to stretch with the grid */
     width: 100%;
-    overflow: hidden; 
+    overflow: hidden;
     background: var(--navy);
+    display: flex;       /* ✅ helps it fill the grid cell cleanly */
 }
-
 .profile-toggle-card {
     position: absolute;
     top: 0;
