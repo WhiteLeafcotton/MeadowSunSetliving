@@ -102,14 +102,183 @@
 
 
 
+<style>
+    /* MOBILE ABOUT HERO OVERRgIDE */
+    /* MOBILE ABOUT HERO - SYNCED TO PAYMENT PAGE */
+@media (max-width: 768px) {
+    .hero.hero-about {
+        height: 40vh !important; /* Matches your Pajyment mobile height */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-end !important; /* Pulls everything to the bottom */
+        align-items: flex-start !important; /* Pulls feverything to the left */
+        padding: 40px 25px !important; /* MATCHES YOUR PAYMENT PADDING EXACTLY */
+        position: sticky !important;
+        top: 0;
+        z-index: -1;
+    }
+
+    .hero.hero-about .hero-content {
+        position: relative;
+        z-index: 5;
+        text-align: left;
+        width: 100%;
+    }
+
+    /* MATCHING THE PAYMENT TITLE STYLE */
+    .hero.hero-about h1 {
+        margin: 0 !important; /* Kill all margins to match Payment */
+        font-size: 1.8rem !important; /* MATCHES YOUR PAYMENT H1 SIZE */
+        color: #1a1a1a !important;
+        letter-spacing: -0.5px !important;
+        line-height: 1.1 !important;
+        font-family: 'Playfair Display', serif;
+    }
+
+    /* HANDLING THE BADGE (The "Philosophy" text) */
+    .hero.hero-about .hero-badge {
+        margin-bottom: 8px !important; /* Small nudgbe so it sits just above the title */
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    /* FIXING THE NEXT SECTION SLIDE-OVER */
+    .hero.hero-about ~ section, 
+    .locked-mission-console {
+        position: relative !important;
+        z-index: 10 !important;
+        background: #ffffff !important;
+        margin-top: 0 !important;
+    }
+
+    </style>
+
 
     
 
 
 
+<style>
+/* --- REFINED ADMISSIONS & LEADERSHIP (MOBILE ONLY) --- */
+@media (max-width: 768px) {
+    /* FIX THE SCROLL WIGGLE */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100vw !important;
+        position: relative;
+    }
 
+    /* LEADERSHIP: BETTER PROFILE CARDS */
+    .dossier-grid-v5 { 
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 25px !important; 
+        padding: 0 10px;
+    }
 
+    .profile-entry-v5 {
+        background: #fdfdfd !important;
+        border: 1px solid #f0f0f0 !important;
+        padding: 20px !important;
+        border-radius: 12px;
+        display: grid !important;
+        grid-template-columns: 80px 1fr !important; /* Fixed photo size */
+        gap: 20px !important;
+        align-items: center !important;
+    }
 
+    .circle-frame-v5 { 
+        width: 80px !important; 
+        height: 80px !important; 
+        border: 2px solid var(--gold) !important; /* Signature gold touch */
+        margin: 0 !important;
+    }
+
+    /* ADMISSIONS: COLLAPSIBLE-STYLE DESIGN */
+    .admissions-steps-list {
+        gap: 15px !important;
+        padding: 0 !important;
+    }
+
+    .step-entry-v5 {
+        background: #fff;
+        border: 1px solid #e5e2db;
+        padding: 20px !important;
+        margin-bottom: 10px;
+        transition: 0.3s ease;
+        border-radius: 8px;
+        display: flex !important;
+        flex-direction: column !important; /* Stacked for better mobile reading */
+        gap: 10px !important;
+    }
+
+    .step-num {
+        border-bottom: 2px solid var(--gold) !important;
+        width: 30px;
+        font-size: 1.2rem !important;
+        margin-bottom: 5px;
+    }
+
+    .step-info h3 {
+        font-size: 1.1rem !important;
+        letter-spacing: 0.5px;
+    }
+
+    /* HORIZONTAL VIDEO LOCK */
+    .video-anchor {
+        width: 100% !important;
+        aspect-ratio: 16 / 9 !important; /* Landscape lock */
+        min-height: auto !important;
+        height: auto !important;
+        margin-top: 20px;
+        border-radius: 12px;
+    }
+
+    /* TITLE PLACEMENT */
+    .luxe-card-white-solid .gold-eyebrow.centered {
+        margin-top: 40px !important;
+        background: #fff;
+        padding: 10px 0;
+        z-index: 2;
+    }
+
+  
+
+    .container-solid-wide {
+        width: 100%;
+        padding: 0 15px; /* Keeps content away from screen edge */
+        box-sizing: border-box;
+    }
+
+    /* REORDERING: VIDEO ON TOP, STEPS ON BOTTOM */
+    .admissions-flex-container {
+        display: flex !important;
+        flex-direction: column !important; /* Forces vertical stack */
+    }
+
+    .video-anchor {
+        order: 1 !important; /* Forces video to the top */
+        width: 100% !important;
+        aspect-ratio: 16 / 9; /* Keeps it horizontal */
+        min-height: auto !important;
+        margin-bottom: 20px;
+    }
+
+    .admissions-steps-list {
+        order: 2 !important; /* Forces steps below video */
+        padding: 20px !important;
+    }
+
+    .step-entry-v5 {
+        background: #fff;
+        border: 1px solid #e5e2db;
+        border-radius: 8px;
+        margin-bottom: 12px;
+        padding: 20px !important;
+    }
+}
+</style>
 
 
 
@@ -131,24 +300,21 @@
 }
 
 /* Force the section to be a solid block with no transparency */
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-    background-color: var(--page-bg-solid);
-    font-family: 'Inter', sans-serif;
-    color: #333;
-    -webkit-overflow-scrolling: touch; /* Essential for iOS smoothness */
-}
-
 .final-solid-state-layout { 
     background-color: var(--page-bg-solid); 
     width: 100%; 
     display: block;
     position: relative;
-    padding-bottom: 60px;
+    padding-bottom: 100px; /* Provides a solid base at the bottom */
 }
+
+body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', sans-serif; color: #333; }
+.text-gold { color: var(--gold); }
+.italic-serif { font-family: 'Playfair Display', serif; font-style: italic; }
+.gold-eyebrow { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 4px; color: var(--gold); font-weight: 800; display: block; margin-bottom: 15px; }
+.centered { text-align: center; }
+.white-text { color: #fff; opacity: 0.8; }
+
 /* Fixed Width Container to prevent floating/wandering */
 .container-solid-wide { max-width: 95%; margin: 0 auto; padding: 0 2%; }
 
@@ -251,16 +417,16 @@ html, body {
 
 /* Video Section Refinement */
 .video-anchor {
+    padding: 0 !important; /* Flush video looks more premium */
+    overflow: hidden;
     position: relative;
-    width: 100%;
-    height: auto;
-    overflow: visible; /* 🔥 important */
+    min-height: 500px;
 }
 
 .video-container-v5 {
-    position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9; /* clean responsive video */
+    height: 100%;
+    position: relative;
 }
 
 .iframe-viewport-v5 {
@@ -274,7 +440,9 @@ html, body {
 .iframe-viewport-v5 iframe {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     border: none;
+    pointer-events: none; /* Allows click-through to the mute button */
 }
 
 .video-overlay-glass {
@@ -303,7 +471,8 @@ html, body {
     background: rgba(255, 255, 255, 0.2);
 }
 
-/* --- SCOPE OF CARE CARDS (MOBILE FIX) --- */
+ @media (max-width: 768px) {
+    /* --- SCOPE OF CARE CARDS (MOBILE FIX) --- */
     
     /* 1. Force the cards to stack vertically and take full width */
     .anchor-grid-v5 {
@@ -349,92 +518,9 @@ html, body {
         font-size: 4.5rem !important; /* Scaled for mobile */
         margin-right: 0 !important;
         margin-bottom: 10px !important;
-    
-
-@media (max-width: 768px) {
-    /* 1. GLOBAL RESET & SCROLL FIX */
-    html, body {
-        overflow-x: hidden; /* Stops horizontal wiggle */
-        width: 100%;
-        
-        -webkit-overflow-scrolling: touch; /* Smooth momentum scroll for iPhone */
     }
-
-    * {
-        box-sizing: border-box !important; /* Forces padding to stay inside the width */
-    }
-
-    /* 2. HERO SECTION - Clean & Slender */
-    .hero.hero-about {
-        height: 40vh !important;
-        min-height: 300px !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-end !important;
-        align-items: flex-start !important;
-        padding: 40px 25px !important;
-        background-color: #f9f9f9 !important;
-        position: relative !important;
-        z-index: 1 !important;
-    }
-
-    .hero.hero-about h1 {
-        font-size: 1.85rem !important;
-        line-height: 1.1 !important;
-        margin: 0 !important;
-        text-align: left !important;
-    }
-
-    /* 3. CARD STACKING (Scope of Care & Admissions) */
-    .anchor-grid-v5, 
-    .admissions-flex-container, 
-    .dossier-grid-v5 {
-        display: flex !important;
-        flex-direction: column !important;
-        width: 100% !important;
-        gap: 20px !important;
-        padding: 0 !important;
-    }
-
-    .luxe-card-white-solid, 
-    .luxe-card-navy-solid {
-        width: 100% !important;
-        padding: 40px 25px !important;
-        margin: 0 !important;
-    }
-    body.menu-open {
-    overflow: hidden;
-    height: 100vh;
-}
-
-    /* 4. GRID REFINEMENTS */
-    .expanded-dossier-grid {
-        grid-template-columns: repeat(2, 1fr) !important; /* 2 columns for tags is better than 1 */
-        gap: 10px !important;
-    }
-
-    .luxe-card-white-solid .gold-eyebrow.centered {
-        text-align: left !important;
-        margin-left: 0 !important;
-    }
-
-    /* 5. LEADERSHIP / NURSE PROFILES */
-    .profile-entry-v5 {
-        flex-direction: column !important; /* Stacks photo over text */
-        text-align: center !important;
-        gap: 20px !important;
-    }
-
-    /* 6. VIDEO STABILITY */
-    .video-anchor {
-        aspect-ratio: 16 / 9 !important;
-        min-height: 250px !important;
-        height: auto !important;
-        width: 100% !important;
-    }
-}
+} 
 </style>
-
     
 
 
@@ -599,7 +685,22 @@ html, body {
     </div>
 </section>
 
-            
+            <div class="luxe-card-navy-solid video-anchor">
+                <div class="video-container-v5">
+                    <div class="video-overlay-glass">
+                        <button class="mute-toggle-glass" id="customMuteBtn">
+                            <i id="muteIcon" class="fa-solid fa-volume-xmark"></i>
+                            <span id="muteText">TAP FOR AUDIO</span>
+                        </button>
+                    </div>
+                    <div class="iframe-viewport-v5">
+                        <iframe id="journeyVideo" src="https://www.youtube.com/embed/jUxY2QqMDX0?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=jUxY2QqMDX0&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     
 
 
@@ -689,19 +790,149 @@ html, body {
         </div>
     </div>
 
- <script>
-    /* 1. CORE NAVIGATION & UI */
+    <script>
+<script>
+    /* --- MOBILE MENU LOGIC --- */
     function toggleMenu() {
         const menu = document.getElementById("sideMenu");
         menu.classList.toggle("active");
-        
-        if (menu.classList.contains("active")) {
-            document.body.classList.add("menu-open");
-            document.body.style.overflow = "hidden";
+    }
+
+    /* --- ADMISSIONS MOBILE TOGGLE --- */
+    function toggleMobileSteps(showSteps) {
+        const card = document.getElementById('admissionsCard');
+        if (showSteps) {
+            card.classList.add('mobile-view-active');
         } else {
-            document.body.classList.remove("menu-open");
-            document.body.style.overflow = "auto";
+            card.classList.remove('mobile-view-active');
         }
+    }
+
+    /* --- YOUTUBE API & MUTE TOGGLE --- */
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var playerDesktop, playerMobile;
+    function onYouTubeIframeAPIReady() {
+        playerDesktop = new YT.Player('journeyVideo', {
+            events: { 'onReady': onPlayerReady }
+        });
+        playerMobile = new YT.Player('journeyVideoMobile', {
+            events: { 'onReady': onPlayerReady }
+        });
+    }
+
+    function onPlayerReady(event) {
+        event.target.playVideo();
+    }
+
+    document.getElementById('customMuteBtn').addEventListener('click', function() {
+        const icon = document.getElementById('muteIcon');
+        const text = document.getElementById('muteText');
+        
+        // Check which player is currently visible
+        let activePlayer = window.innerWidth > 768 ? playerDesktop : playerMobile;
+
+        if (activePlayer.isMuted()) {
+            activePlayer.unMute();
+            icon.classList.replace('fa-volume-xmark', 'fa-volume-high');
+            text.innerText = "AUDIO ON";
+        } else {
+            activePlayer.mute();
+            icon.classList.replace('fa-volume-high', 'fa-volume-xmark');
+            text.innerText = "TAP FOR AUDIO";
+        }
+    });
+
+    /* --- MODAL LOGIC --- */
+    function openModal() { document.getElementById("bookingModal").style.display = "block"; }
+    function closeModal() { document.getElementById("bookingModal").style.display = "none"; }
+    window.onclick = function(event) {
+        if (event.target == document.getElementById("bookingModal")) closeModal();
+    }
+</script>
+
+
+
+
+
+
+<script>
+    // Force recalculation of width to prevent horizontal scroll "wiggle"
+    window.addEventListener('resize', () => {
+        document.body.style.width = window.innerWidth + 'px';
+    });
+    
+    // Auto-trigger on load
+    document.addEventListener('DOMContentLoaded', () => {
+        document.body.style.width = window.innerWidth + 'px';
+    });
+</script>
+
+
+
+    
+
+<script>
+    /* 1. YOUTUBE API SETUP */
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var playerDesktop, playerMobile;
+
+    function onYouTubeIframeAPIReady() {
+        playerDesktop = new YT.Player('journeyVideo', {
+            events: { 'onReady': onPlayersReady }
+        });
+        playerMobile = new YT.Player('journeyVideoMobile', {
+            events: { 'onReady': onPlayersReady }
+        });
+    }
+
+    function onPlayersReady() {
+        const muteBtn = document.getElementById('customMuteBtn');
+        if (muteBtn) {
+            muteBtn.addEventListener('click', function() {
+                let activePlayer = (window.innerWidth <= 768) ? playerMobile : playerDesktop;
+                
+                // Ensure the player is loaded before calling methods
+                if (activePlayer && activePlayer.isMuted) {
+                    if (activePlayer.isMuted()) {
+                        activePlayer.unMute();
+                        document.getElementById('muteIcon').className = 'fa-solid fa-volume-high';
+                        document.getElementById('muteText').innerText = 'SOUND ON';
+                    } else {
+                        activePlayer.mute();
+                        document.getElementById('muteIcon').className = 'fa-solid fa-volume-xmark';
+                        document.getElementById('muteText').innerText = 'TAP FOR AUDIO';
+                    }
+                }
+            });
+        }
+    }
+
+    /* 2. ADMISSIONS JOURNEY TOGGLE */
+    function toggleMobileSteps(showSteps) {
+        const card = document.getElementById('admissionsCard');
+        if (window.innerWidth <= 768) {
+            if (showSteps) {
+                card.classList.add('mobile-view-active');
+                card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                card.classList.remove('mobile-view-active');
+            }
+        }
+    }
+
+    /* 3. NAVIGATION & SCROLL EFFECTS */
+    function toggleMenu() {
+        const menu = document.getElementById("sideMenu");
+        menu.classList.toggle("active");
+        document.body.style.overflow = menu.classList.contains("active") ? "hidden" : "auto";
     }
 
     window.addEventListener('scroll', function() {
@@ -713,16 +944,128 @@ html, body {
         }
     });
 
-    /* 2. MODAL LOGIC */
+    // Mobile Dropdown Interactions
+    document.querySelectorAll('.mobile-dropdown .main-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const subMenu = this.nextElementSibling;
+            if (subMenu && subMenu.classList.contains('sub-links')) {
+                e.preventDefault();
+                const isVisible = subMenu.style.display === 'block';
+                subMenu.style.display = isVisible ? 'none' : 'block';
+                const icon = this.querySelector('i');
+                if(icon) {
+                    icon.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)';
+                }
+            }
+        });
+    });
+
+    /* 4. MODAL LOGIC */
     function openModal() { document.getElementById("bookingModal").style.display = "block"; }
     function closeModal() { document.getElementById("bookingModal").style.display = "none"; }
     
     window.onclick = function(event) {
         const modal = document.getElementById("bookingModal");
-        if (event.target === modal) closeModal();
+        if(event.target === modal) { modal.style.display = "none"; }
     }
 
-    /* 3. REVEAL ANIMATIONS */
+    /* 5. REVEAL ANIMATIONS */
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible', 'show');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate-on-scroll, .video-footer').forEach(el => observer.observe(el));
+</script>
+
+<script>
+    window.chatbaseConfig = { chatbotId: "PhPwg7-iLonUCo-_uKjPY" }
+</script>
+<script src="https://www.chatbase.co/embed.min.js" id="PhPwg7-iLonUCo-_uKjPY" defer></script>
+
+
+
+    <script>
+    /* 1. YOUTUBE API SETUP */
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var playerDesktop, playerMobile;
+
+    function onYouTubeIframeAPIReady() {
+        playerDesktop = new YT.Player('journeyVideo', {
+            events: { 'onReady': onPlayersReady }
+        });
+        playerMobile = new YT.Player('journeyVideoMobile', {
+            events: { 'onReady': onPlayersReady }
+        });
+    }
+
+    function onPlayersReady() {
+        const muteBtn = document.getElementById('customMuteBtn');
+        if (muteBtn) {
+            muteBtn.addEventListener('click', function() {
+                let activePlayer = (window.innerWidth <= 768) ? playerMobile : playerDesktop;
+                if (activePlayer && typeof activePlayer.isMuted === 'function') {
+                    if (activePlayer.isMuted()) {
+                        activePlayer.unMute();
+                        document.getElementById('muteIcon').className = 'fa-solid fa-volume-high';
+                        document.getElementById('muteText').innerText = 'SOUND ON';
+                    } else {
+                        activePlayer.mute();
+                        document.getElementById('muteIcon').className = 'fa-solid fa-volume-xmark';
+                        document.getElementById('muteText').innerText = 'TAP FOR AUDIO';
+                    }
+                }
+            });
+        }
+    }
+
+    /* 2. ADMISSIONS JOURNEY MOBILE TOGGLE */
+    function toggleMobileSteps(showSteps) {
+        const card = document.getElementById('admissionsCard');
+        if (window.innerWidth <= 768) {
+            if (showSteps) {
+                card.classList.add('mobile-view-active');
+                // Auto-scroll to top of card so user sees Step 1
+                card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                card.classList.remove('mobile-view-active');
+            }
+        }
+    }
+
+    /* 3. MOBILE MENU & HEADER SCROLL */
+    function toggleMenu() {
+        const menu = document.getElementById("sideMenu");
+        menu.classList.toggle("active");
+        document.body.style.overflow = menu.classList.contains("active") ? "hidden" : "auto";
+    }
+
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('.main-header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    /* 4. MODAL LOGIC */
+    function openModal() { document.getElementById("bookingModal").style.display = "block"; }
+    function closeModal() { document.getElementById("bookingModal").style.display = "none"; }
+    
+    window.onclick = function(event) {
+        const modal = document.getElementById("bookingModal");
+        if(event.target === modal) { modal.style.display = "none"; }
+    }
+
+    /* 5. REVEAL ANIMATIONS */
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -732,52 +1075,9 @@ html, body {
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.animate-on-scroll, .video-footer').forEach(el => observer.observe(el));
-
-    /* 4. YOUTUBE API & MUTE TOGGLE */
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    tag.async = true;
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    var player;
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('journeyVideo', {
-            events: {
-                'onReady': function(event) {
-                    if (window.innerWidth > 768) {
-                        event.target.playVideo();
-                    }
-                }
-            }
-        });
-    }
-
-    document.getElementById('customMuteBtn').addEventListener('click', function() {
-        if (player && typeof player.isMuted === 'function') {
-            const icon = document.getElementById('muteIcon');
-            const text = document.getElementById('muteText');
-            if (player.isMuted()) {
-                player.unMute();
-                icon.className = 'fa-solid fa-volume-high';
-                text.innerText = 'SOUND ON';
-            } else {
-                player.mute();
-                icon.className = 'fa-solid fa-volume-xmark';
-                text.innerText = 'TAP FOR AUDIO';
-            }
-        }
-    });
-
-    /* 5. DELAYED CHATBASE (The Scroll Fix) */
-    window.addEventListener('load', function() {
-        setTimeout(function() {
-            window.chatbaseConfig = { chatbotId: "PhPwg7-iLonUCo-_uKjPY" };
-            var s = document.createElement('script');
-            s.src = "https://www.chatbase.co/embed.min.js";
-            s.id = "PhPwg7-iLonUCo-_uKjPY";
-            s.defer = true;
-            document.body.appendChild(s);
-        }, 3000); 
-    });
 </script>
+
+<script>
+    window.chatbaseConfig = { chatbotId: "PhPwg7-iLonUCo-_uKjPY" }
+</script>
+<script src="https://www.chatbase.co/embed.min.js" id="PhPwg7-iLonUCo-_uKjPY" defer></script>
