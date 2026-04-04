@@ -131,21 +131,24 @@
 }
 
 /* Force the section to be a solid block with no transparency */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: var(--page-bg-solid);
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    -webkit-overflow-scrolling: touch; /* Essential for iOS smoothness */
+}
+
 .final-solid-state-layout { 
     background-color: var(--page-bg-solid); 
     width: 100%; 
     display: block;
     position: relative;
-    padding-bottom: 100px; /* Provides a solid base at the bottom */
+    padding-bottom: 60px;
 }
-
-body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', sans-serif; color: #333; }
-.text-gold { color: var(--gold); }
-.italic-serif { font-family: 'Playfair Display', serif; font-style: italic; }
-.gold-eyebrow { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 4px; color: var(--gold); font-weight: 800; display: block; margin-bottom: 15px; }
-.centered { text-align: center; }
-.white-text { color: #fff; opacity: 0.8; }
-
 /* Fixed Width Container to prevent floating/wandering */
 .container-solid-wide { max-width: 95%; margin: 0 auto; padding: 0 2%; }
 
@@ -346,7 +349,7 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
         font-size: 4.5rem !important; /* Scaled for mobile */
         margin-right: 0 !important;
         margin-bottom: 10px !important;
-    }
+    
 
 @media (max-width: 768px) {
     /* 1. GLOBAL RESET & SCROLL FIX */
@@ -686,35 +689,54 @@ body { background-color: var(--page-bg-solid); margin: 0; font-family: 'Inter', 
         </div>
     </div>
 
-   <script>
-    /* 1. CORE NAVIGATION & SCROLL */
-    /* 1. CORE NAVIGATION & SCROLL */
-function toggleMenu() {
-    const menu = document.getElementById("sideMenu");
-    menu.classList.toggle("active");
-
-    if (menu.classList.contains("active")) {
-        document.body.classList.add("menu-open");
-    } else {
-        document.body.classList.remove("menu-open");
+ <script>
+    /* 1. CORE NAVIGATION & UI */
+    function toggleMenu() {
+        const menu = document.getElementById("sideMenu");
+        menu.classList.toggle("active");
+        
+        if (menu.classList.contains("active")) {
+            document.body.classList.add("menu-open");
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.classList.remove("menu-open");
+            document.body.style.overflow = "auto";
+        }
     }
-}
-/* Header scroll effect */
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('.main-header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
+
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('.main-header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    /* 2. MODAL LOGIC */
+    function openModal() { document.getElementById("bookingModal").style.display = "block"; }
+    function closeModal() { document.getElementById("bookingModal").style.display = "none"; }
+    
+    window.onclick = function(event) {
+        const modal = document.getElementById("bookingModal");
+        if (event.target === modal) closeModal();
     }
-});
 
+    /* 3. REVEAL ANIMATIONS */
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show', 'is-visible');
+            }
+        });
+    }, { threshold: 0.1 });
 
-  
+    document.querySelectorAll('.animate-on-scroll, .video-footer').forEach(el => observer.observe(el));
 
-    /* 2. YOUTUBE API & MUTE TOGGLE */
+    /* 4. YOUTUBE API & MUTE TOGGLE */
     var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
+    tag.async = true;
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
@@ -722,7 +744,11 @@ window.addEventListener('scroll', function() {
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('journeyVideo', {
             events: {
-                'onReady': (event) => event.target.playVideo()
+                'onReady': function(event) {
+                    if (window.innerWidth > 768) {
+                        event.target.playVideo();
+                    }
+                }
             }
         });
     }
@@ -731,7 +757,6 @@ window.addEventListener('scroll', function() {
         if (player && typeof player.isMuted === 'function') {
             const icon = document.getElementById('muteIcon');
             const text = document.getElementById('muteText');
-            
             if (player.isMuted()) {
                 player.unMute();
                 icon.className = 'fa-solid fa-volume-high';
@@ -744,27 +769,15 @@ window.addEventListener('scroll', function() {
         }
     });
 
-    /* 3. MODAL & INTERACTIVE LOGIC */
-    function openModal() { document.getElementById("bookingModal").style.display = "block"; }
-    function closeModal() { document.getElementById("bookingModal").style.display = "none"; }
-    
-    window.onclick = function(event) {
-        const modal = document.getElementById("bookingModal");
-        if (event.target === modal) closeModal();
-    }
-
-    /* 4. REVEAL ANIMATIONS */
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show', 'is-visible');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.animate-on-scroll, .video-footer').forEach(el => observer.observe(el));
-
-    /* 5. CHATBASE CONFIG */
-    window.chatbaseConfig = { chatbotId: "PhPwg7-iLonUCo-_uKjPY" };
+    /* 5. DELAYED CHATBASE (The Scroll Fix) */
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            window.chatbaseConfig = { chatbotId: "PhPwg7-iLonUCo-_uKjPY" };
+            var s = document.createElement('script');
+            s.src = "https://www.chatbase.co/embed.min.js";
+            s.id = "PhPwg7-iLonUCo-_uKjPY";
+            s.defer = true;
+            document.body.appendChild(s);
+        }, 3000); 
+    });
 </script>
-<script src="https://www.chatbase.co/embed.min.js" id="PhPwg7-iLonUCo-_uKjPY" defer></script>
