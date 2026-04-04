@@ -174,8 +174,9 @@
 
     /* 1. Make the white card slightly taller so 2 columns feel spacious */
     .luxe-card-white-solid {
-        padding: 50px 20px !important;
         width: 100% !important;
+        border: 1px solid var(--navy) !important; /* Force blue on mobile */
+        padding: 60px 15px 30px 15px !important;
     }
 
     /* 2. Force 2-column grid inside the card */
@@ -287,10 +288,13 @@
     }
 
     /* 4. Optional: make tags bigger for easier tapping */
-    .luxe-card-white-solid .luxe-tag-solid {
-        font-size: 1rem !important;
-        padding: 20px 12px !important;
-    }
+   .luxe-card-white-solid { 
+    background: #ffffff; 
+    padding: 60px; 
+    /* CHANGED: Swapped light grey (#eeeeee) for Dark Blue */
+    border: 1px solid var(--navy); 
+    box-shadow: none; 
+}
 /* 1. Make the Ratio Card Slender & Compact */
     .luxe-card-navy-solid {
         padding: 20px 25px !important; /* Half the height of the other cards */
